@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+/* Obsidian Forge Design System - Dark theme for Slay the Spire 2 Guide */
+@theme {
+  --font-heading: 'Cinzel', serif;
+  --font-body: 'Inter', sans-serif;
+  
+  /* Color Palette - Obsidian Forge */
+  --color-forge-black: #0c0c0e;
+  --color-molten-orange: #f97316;
+  --color-steel-blue: #94a3b8;
+  --color-ember-glow: #fb923c;
+  --color-shadow-gray: #1e293b;
+  
+  /* Semantic Colors */
+  --color-background: var(--forge-black);
+  --color-foreground: #e2e8f0;
+  --color-primary: var(--molten-orange);
+  --color-secondary: var(--steel-blue);
+  --color-accent: var(--ember-glow);
+  --color-muted: var(--shadow-gray);
+  --color-border: #334155;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-forge-black text-foreground font-body antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-molten-orange to-ember-glow bg-clip-text text-transparent;
+  }
+  
+  .glow-orange {
+    text-shadow: 0 0 20px rgba(251, 146, 60, 0.5);
+  }
+  
+  .card-forge {
+    @apply bg-shadow-gray border border-border rounded-lg p-6 hover:border-molten-orange transition-all duration-300;
+  }
+}

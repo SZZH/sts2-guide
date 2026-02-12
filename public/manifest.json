@@ -1,0 +1,23 @@
+{
+  "name": "StS2 Guide - Slay the Spire 2 Strategy Hub",
+  "short_name": "StS2 Guide",
+  "description": "Master Slay the Spire 2 with comprehensive character guides, tier lists, and expert strategies.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0c0c0e",
+  "theme_color": "#f97316",
+  "icons": [
+    {
+      "src": "/logo-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
