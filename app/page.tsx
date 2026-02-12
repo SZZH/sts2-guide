@@ -97,9 +97,13 @@ export default function HomePage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-forge-black via-forge-black/50 to-transparent" />
                   <div className="absolute top-4 right-4">
                     <span className={`px-3 py-1 rounded-full text-sm font-semibold ${
-                      character.difficulty === 'Intermediate' 
+                      character.difficulty === 'Beginner'
+                        ? 'bg-green-500/80 text-white'
+                        : character.difficulty === 'Intermediate' 
                         ? 'bg-blue-500/80 text-white' 
-                        : 'bg-purple-500/80 text-white'
+                        : character.difficulty === 'Advanced'
+                        ? 'bg-purple-500/80 text-white'
+                        : 'bg-red-500/80 text-white'
                     }`}>
                       {character.difficulty}
                     </span>
@@ -119,6 +123,53 @@ export default function HomePage() {
               className="inline-block bg-shadow-gray hover:bg-muted border border-border text-foreground font-semibold px-8 py-3 rounded-lg transition-all duration-300"
             >
               View All Characters
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Quick Links */}
+      <section className="py-16 bg-gradient-to-b from-forge-black to-shadow-gray/30">
+        <div className="container mx-auto px-4">
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-center mb-12">
+            EXPLORE THE SPIRE
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <Link
+              href="/guides"
+              className="group bg-forge-black border border-border rounded-lg p-8 hover:border-orange-500 transition-all duration-300"
+            >
+              <div className="text-4xl mb-4">📚</div>
+              <h3 className="font-heading text-2xl font-bold mb-3 group-hover:text-orange-400 transition-colors">
+                Build Guides
+              </h3>
+              <p className="text-muted-foreground">
+                Expert deck building strategies for every character. Learn winning combos and synergies.
+              </p>
+            </Link>
+            <Link
+              href="/mechanics"
+              className="group bg-forge-black border border-border rounded-lg p-8 hover:border-purple-500 transition-all duration-300"
+            >
+              <div className="text-4xl mb-4">⚡</div>
+              <h3 className="font-heading text-2xl font-bold mb-3 group-hover:text-purple-400 transition-colors">
+                Game Mechanics
+              </h3>
+              <p className="text-muted-foreground">
+                Master Sly, Doom, Stars, and other new mechanics that define StS2 gameplay.
+              </p>
+            </Link>
+            <Link
+              href="/relics"
+              className="group bg-forge-black border border-border rounded-lg p-8 hover:border-yellow-500 transition-all duration-300"
+            >
+              <div className="text-4xl mb-4">⭐</div>
+              <h3 className="font-heading text-2xl font-bold mb-3 group-hover:text-yellow-400 transition-colors">
+                Relics Database
+              </h3>
+              <p className="text-muted-foreground">
+                Browse all relics with detailed descriptions and character synergies.
+              </p>
             </Link>
           </div>
         </div>

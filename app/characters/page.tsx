@@ -45,9 +45,13 @@ export default function CharactersPage() {
                 <div className="absolute top-4 right-4">
                   <span
                     className={`px-3 py-1 rounded-full text-sm font-semibold ${
-                      character.difficulty === 'Intermediate'
+                      character.difficulty === 'Beginner'
+                        ? 'bg-green-500/80 text-white'
+                        : character.difficulty === 'Intermediate'
                         ? 'bg-blue-500/80 text-white'
-                        : 'bg-purple-500/80 text-white'
+                        : character.difficulty === 'Advanced'
+                        ? 'bg-purple-500/80 text-white'
+                        : 'bg-red-500/80 text-white'
                     }`}
                   >
                     {character.difficulty}

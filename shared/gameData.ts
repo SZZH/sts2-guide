@@ -21,69 +21,136 @@ export interface Character {
 
 export const CHARACTERS: Character[] = [
   {
-    slug: 'necrobinder',
-    name: 'Necrobinder',
-    title: 'Master of Death',
-    image: 'https://files.manuscdn.com/user_upload_by_module/session_file/310419663030533337/aLFsveEAGLkukWZA.png',
-    color: '#a855f7',
-    description: 'A pale necromancer who commands the power of death itself, summoning spectral minions and binding souls to do their bidding.',
-    lore: 'Once a renowned healer, the Necrobinder crossed forbidden boundaries in their quest to conquer death. Now wielding powers that blur the line between life and the grave, they ascend the Spire seeking the ultimate secret: true resurrection. Their spectral servants whisper of ancient pacts and prices yet to be paid.',
-    startingRelic: 'Bone Phylactery',
+    slug: 'ironclad',
+    name: 'Ironclad',
+    title: 'The Relentless Warrior',
+    image: 'https://files.manuscdn.com/user_upload_by_module/session_file/310419663030533337/UECVXLNqwFQBvvos.jpg',
+    color: '#dc2626',
+    description: 'A battle-hardened warrior who channels raw strength and fury, sacrificing health for devastating power.',
+    lore: 'The Ironclad returns to the Spire, his golden helm gleaming with the scars of countless battles. A thousand years have passed since his kind last climbed these cursed halls, yet the call of combat burns as fiercely as ever. He seeks not glory or treasure, but the ultimate test of strength that only the Spire can provide.',
+    startingRelic: 'Burning Blood',
     startingDeck: [
       'Strike (5)',
       'Defend (4)',
-      'Raise Dead (1)',
-      'Soul Siphon (1)',
+      'Bash (1)',
     ],
     mechanics: [
       {
-        name: 'Summon',
-        description: 'Create spectral minions that fight alongside you. Minions have their own HP and attack automatically each turn.',
+        name: 'Strength',
+        description: 'Stack Strength to increase attack damage. Many Ironclad cards gain power from high Strength values.',
       },
       {
-        name: 'Bind',
-        description: 'Attach souls to enemies or allies, creating powerful synergies. Bound enemies take extra damage when minions attack.',
+        name: 'Exhaust',
+        description: 'Remove cards from your deck for the rest of combat. Exhaust synergies provide powerful effects when cards are exhausted.',
       },
       {
-        name: 'Decay',
-        description: 'Apply stacks of Decay to enemies. At the end of their turn, they lose HP equal to their Decay stacks, which then reduce by 1.',
+        name: 'Self-Damage',
+        description: 'Trade HP for powerful effects. Cards that cost health often provide exceptional value or strength gains.',
       },
     ],
-    playstyle: 'The Necrobinder excels at building an army of spectral minions while weakening enemies with Decay effects. Focus on cards that summon minions early, then use Bind effects to create devastating combos. Manage your minion count carefully — too many can clog the battlefield, but too few leaves you vulnerable. Decay effects provide excellent scaling damage for longer fights.',
+    playstyle: 'Ironclad excels at direct, aggressive strategies. Build Strength early to scale your damage, and use Exhaust synergies to streamline your deck. Self-damage cards offer incredible power, but require careful HP management. Best suited for players who enjoy straightforward, high-impact gameplay with explosive damage potential.',
+    difficulty: 'Intermediate',
+    hp: 80,
+    gold: 99,
+  },
+  {
+    slug: 'silent',
+    name: 'Silent',
+    title: 'The Deadly Assassin',
+    image: 'https://files.manuscdn.com/user_upload_by_module/session_file/310419663030533337/iYwmgGcugdkMSniR.jpg',
+    color: '#16a34a',
+    description: 'A cunning rogue who strikes from the shadows, wielding poison, shivs, and the new Sly mechanic to devastating effect.',
+    lore: 'Beneath her skull mask, the Silent watches and waits. She has returned to the Spire with new tricks learned over a millennium of shadows. The ancient halls whisper secrets to those patient enough to listen, and she has mastered the art of turning weakness into deadly opportunity. Her blades flash in darkness, and her poisons flow like whispered promises.',
+    startingRelic: 'Ring of the Snake',
+    startingDeck: [
+      'Strike (5)',
+      'Defend (5)',
+      'Survivor (1)',
+      'Neutralize (1)',
+    ],
+    mechanics: [
+      {
+        name: 'Sly',
+        description: 'NEW MECHANIC: When you discard a card with Sly, it automatically plays for free. Transform discarding from a cost into a powerful advantage.',
+      },
+      {
+        name: 'Poison',
+        description: 'Apply Poison to enemies. At the end of their turn, they lose HP equal to their Poison and Poison decreases by 1.',
+      },
+      {
+        name: 'Shiv',
+        description: 'Generate 0-cost attack cards that deal damage and trigger combo effects. Build massive chains of attacks in a single turn.',
+      },
+    ],
+    playstyle: 'Silent rewards careful planning and combo execution. The new Sly mechanic turns discarding into a tactical advantage, allowing you to play multiple cards per turn. Poison provides excellent scaling damage for long fights, while Shiv generation enables explosive burst turns. Master the art of chaining cards together and manipulating your hand for maximum efficiency.',
+    difficulty: 'Advanced',
+    hp: 70,
+    gold: 99,
+  },
+  {
+    slug: 'necrobinder',
+    name: 'Necrobinder',
+    title: 'Master of Death',
+    image: 'https://files.manuscdn.com/user_upload_by_module/session_file/310419663030533337/IhxzgFoKVFYaaDVz.jpg',
+    color: '#a855f7',
+    description: 'A pale necromancer who commands the power of death itself, binding souls and wielding Doom alongside her skeletal companion Osty.',
+    lore: 'Once a renowned healer, the Necrobinder crossed forbidden boundaries in their quest to conquer death. Now wielding powers that blur the line between life and the grave, they ascend the Spire seeking the ultimate secret: true resurrection. Their spectral servants whisper of ancient pacts and prices yet to be paid. Osty, their skeletal hand companion, serves as both shield and weapon.',
+    startingRelic: 'Osty\'s Binding',
+    startingDeck: [
+      'Strike (5)',
+      'Defend (4)',
+      'Blight Strike (1)',
+      'Bodyguard (1)',
+    ],
+    mechanics: [
+      {
+        name: 'Doom',
+        description: 'NEW MECHANIC: Apply Doom stacks to enemies. When they attempt to attack, Doom triggers first, dealing damage and reducing by 1. Delay and punish enemy actions.',
+      },
+      {
+        name: 'Osty',
+        description: 'Your skeletal hand companion with its own HP pool. Osty can block damage, attack enemies, and be empowered by your cards. Protect Osty to maintain your advantage.',
+      },
+      {
+        name: 'Souls',
+        description: 'Generate Soul cards that provide energy and card draw. Souls are the currency of death, fueling your most powerful abilities.',
+      },
+    ],
+    playstyle: 'Necrobinder excels at controlling the battlefield through Doom and Osty synergies. Stack Doom on enemies to punish their attacks, while using Osty as a defensive wall and offensive tool. Soul generation provides incredible card draw and energy, enabling long combo turns. Balance protecting Osty with aggressive Doom application for optimal results.',
     difficulty: 'Intermediate',
     hp: 68,
     gold: 99,
   },
   {
-    slug: 'the-regent',
+    slug: 'regent',
     name: 'The Regent',
     title: 'Cosmic Sovereign',
-    image: 'https://files.manuscdn.com/user_upload_by_module/session_file/310419663030533337/oVNAoBeWWaXsPyYX.png',
+    image: 'https://files.manuscdn.com/user_upload_by_module/session_file/310419663030533337/yHPdwwbYirYDUfys.jpg',
     color: '#3b82f6',
-    description: 'A regal cosmic monarch who wields the power of constellations, issuing divine edicts and channeling cosmic energy.',
-    lore: 'Born under a celestial alignment that occurs once every thousand years, The Regent was destined to rule the stars themselves. They ascend the Spire not for personal gain, but to restore cosmic balance and reclaim their throne among the heavens. Each edict they issue reshapes reality itself, and their blade cuts through the fabric of space.',
-    startingRelic: 'Crown of Stars',
+    description: 'A regal cosmic monarch who wields the power of constellations, channeling Stars energy and forging powerful artifacts.',
+    lore: 'Born under a celestial alignment that occurs once every thousand years, The Regent was destined to rule the stars themselves. They ascend the Spire not for personal gain, but to restore cosmic balance and reclaim their throne among the heavens. Each edict they issue reshapes reality itself, and their blade cuts through the fabric of space. The constellations bend to their will.',
+    startingRelic: 'Stellar Compass',
     startingDeck: [
       'Strike (5)',
       'Defend (4)',
-      'Royal Decree (1)',
-      'Starfall (1)',
+      'Forge (1)',
+      'Starlight (1)',
     ],
     mechanics: [
       {
-        name: 'Edict',
-        description: 'Issue powerful royal decrees that modify combat rules. Edicts remain active for several turns and affect both you and enemies.',
+        name: 'Stars',
+        description: 'NEW MECHANIC: A special resource that accumulates as you play cards. Spend Stars to activate powerful cosmic abilities and forge artifacts.',
       },
       {
-        name: 'Constellation',
-        description: 'Form patterns with your played cards. Completing constellations grants powerful bonus effects and cosmic energy.',
+        name: 'Forge',
+        description: 'Create permanent artifacts that provide ongoing benefits. Forged items remain for the entire combat and stack with each other.',
       },
       {
-        name: 'Cosmic Energy',
-        description: 'A special resource that builds as you complete constellations. Spend it to activate devastating cosmic powers.',
+        name: 'Minions',
+        description: 'Summon celestial minions that fight alongside you. Unlike Necrobinder\'s minions, Regent\'s minions are temporary but extremely powerful.',
       },
     ],
-    playstyle: 'The Regent requires strategic planning and pattern recognition. Focus on completing constellations by playing cards in specific sequences. Edicts can swing battles in your favor, but timing is crucial — some edicts have drawbacks that affect you as well. Build up Cosmic Energy through constellation completion, then unleash it at critical moments. This character rewards players who can think several turns ahead.',
+    playstyle: 'The Regent requires strategic resource management and long-term planning. Accumulate Stars through card play, then spend them on Forge abilities to create permanent advantages. Celestial minions provide burst damage and utility. This character rewards players who can balance immediate threats with building towards overwhelming late-game power.',
     difficulty: 'Advanced',
     hp: 75,
     gold: 99,
@@ -99,7 +166,7 @@ export interface NewsArticle {
   readTime: string;
   featured: boolean;
   image: string;
-  url: string; // External link to original article
+  url: string;
   source: string;
 }
 
@@ -187,8 +254,8 @@ export interface GameFeature {
 export const GAME_FEATURES: GameFeature[] = [
   {
     icon: '👥',
-    title: 'New Characters',
-    description: 'Master unique playstyles with the Necrobinder and The Regent, each featuring distinct mechanics and strategies.',
+    title: '4 Unique Characters',
+    description: 'Master distinct playstyles with Ironclad, Silent, Necrobinder, and The Regent, each featuring unique mechanics.',
   },
   {
     icon: '🃏',
@@ -196,13 +263,208 @@ export const GAME_FEATURES: GameFeature[] = [
     description: 'Build powerful decks from an expanded card pool with new synergies, combos, and strategic depth.',
   },
   {
-    icon: '🗺️',
-    title: 'Revamped Map',
-    description: 'Navigate a redesigned Spire with new event types, branching paths, and strategic decision points.',
+    icon: '⚡',
+    title: 'New Mechanics',
+    description: 'Experience innovative systems like Sly, Doom, Stars, and Forge that transform how you approach combat.',
   },
   {
     icon: '🎨',
     title: 'Godot Engine',
     description: 'Built on open-source Godot engine after migrating from Unity, ensuring better performance and mod support.',
+  },
+];
+
+// Game Mechanics
+export interface GameMechanic {
+  slug: string;
+  name: string;
+  icon: string;
+  category: 'Core' | 'Character' | 'Advanced';
+  description: string;
+  details: string;
+  characters?: string[];
+}
+
+export const GAME_MECHANICS: GameMechanic[] = [
+  {
+    slug: 'sly',
+    name: 'Sly',
+    icon: '🎭',
+    category: 'Character',
+    description: 'When you discard a card with Sly, it automatically plays for free.',
+    details: 'Sly is Silent\'s signature mechanic in StS2. It transforms discarding from a drawback into a powerful advantage. Cards with Sly can be intentionally discarded to trigger their effects without spending energy. This creates unique deck-building opportunities where you want cards that help you discard, and cards with Sly that benefit from being discarded. Master Planner and similar cards can grant Sly to other cards, opening up complex combo possibilities.',
+    characters: ['silent'],
+  },
+  {
+    slug: 'doom',
+    name: 'Doom',
+    icon: '💀',
+    category: 'Character',
+    description: 'Apply Doom stacks to enemies. When they attack, Doom triggers first, dealing damage.',
+    details: 'Doom is Necrobinder\'s signature mechanic. It functions as a delayed damage effect that punishes enemy actions. When an enemy with Doom attempts to attack, the Doom triggers first, dealing damage equal to the Doom stacks and reducing Doom by 1. This creates a defensive playstyle where you can neutralize or severely weaken enemy attacks before they land. Doom synergizes well with cards that increase enemy intent or force them to attack.',
+    characters: ['necrobinder'],
+  },
+  {
+    slug: 'stars',
+    name: 'Stars',
+    icon: '⭐',
+    category: 'Character',
+    description: 'A special resource that accumulates as you play cards. Spend Stars on powerful cosmic abilities.',
+    details: 'Stars is The Regent\'s unique resource system. You gain Stars by playing cards (amount varies by card), and can spend accumulated Stars to activate powerful effects, forge artifacts, or summon celestial minions. Managing your Stars economy is crucial - spend too early and you miss scaling opportunities; hoard too long and you may not survive. The best Regent players know exactly when to cash in their Stars for maximum impact.',
+    characters: ['regent'],
+  },
+  {
+    slug: 'forge',
+    name: 'Forge',
+    icon: '🔨',
+    category: 'Character',
+    description: 'Create permanent artifacts that provide ongoing benefits throughout combat.',
+    details: 'Forge is The Regent\'s artifact creation system. By spending Stars and playing Forge cards, you create permanent items that remain active for the entire combat. These artifacts stack with each other and provide powerful ongoing effects like bonus damage, extra card draw, or energy generation. Building a strong Forge engine early can snowball into overwhelming advantage, but requires surviving long enough to set up.',
+    characters: ['regent'],
+  },
+  {
+    slug: 'enchantments',
+    name: 'Enchantments',
+    icon: '✨',
+    category: 'Advanced',
+    description: 'Permanent modifications to cards that persist across combats.',
+    details: 'Enchantments are a new system in StS2 that allows you to permanently modify cards in your deck. Unlike upgrades, enchantments can be applied multiple times and come in many varieties. You might add damage, reduce cost, add keywords, or completely transform a card\'s effect. Enchantments are acquired through events, shops, and special relics. They provide a new layer of deck customization beyond simple upgrades.',
+  },
+  {
+    slug: 'afflictions',
+    name: 'Afflictions',
+    icon: '🩹',
+    category: 'Advanced',
+    description: 'Negative effects that enemies can apply to your cards, weakening them.',
+    details: 'Afflictions are the dark mirror of Enchantments. Certain enemies and events can curse your cards with Afflictions - negative modifications that persist across combats. A card might have its cost increased, damage reduced, or gain an undesirable keyword. Managing Afflictions becomes crucial in longer runs. Some shops and events offer Affliction removal, and certain relics can prevent or even benefit from Afflictions.',
+  },
+  {
+    slug: 'quest-cards',
+    name: 'Quest Cards',
+    icon: '📜',
+    category: 'Advanced',
+    description: 'Special cards that require completing objectives before they can be played.',
+    details: 'Quest Cards are powerful cards that start locked and require you to complete specific objectives during combat to unlock them. For example, "Deal 30 damage in a single turn" or "Play 5 Skills this combat". Once unlocked, Quest Cards typically provide exceptional value. They add a mini-game element to combat, encouraging you to build towards completing quests while managing immediate threats.',
+  },
+  {
+    slug: 'alternate-acts',
+    name: 'Alternate Acts',
+    icon: '🗺️',
+    category: 'Core',
+    description: 'Each Act has two different versions with unique enemies, events, and bosses.',
+    details: 'StS2 introduces branching paths at the Act level. After completing Act 1, you choose between two different versions of Act 2, each with distinct enemies, events, and a different boss. This doubles the variety of encounters and creates meaningful strategic decisions about which path suits your deck better. Some relics and cards are only available in specific Act variations, encouraging multiple runs to see all content.',
+  },
+  {
+    slug: 'ancients',
+    name: 'Ancients',
+    icon: '🏛️',
+    category: 'Core',
+    description: 'Powerful beings that replace Boss Relics, offering choices with trade-offs.',
+    details: 'The Ancients system replaces traditional Boss Relics. After defeating a boss, you encounter an Ancient - a powerful entity that offers you a choice of boons. Each Ancient has a different personality and offers different types of rewards. Some might offer powerful relics with drawbacks, others might modify your deck directly, and some might offer unique permanent upgrades. The Ancient you encounter is partially random, adding variety to each run.',
+  },
+];
+
+// Relics
+export interface Relic {
+  slug: string;
+  name: string;
+  rarity: 'Starter' | 'Common' | 'Uncommon' | 'Rare';
+  character?: string;
+  description: string;
+  flavor: string;
+}
+
+export const RELICS: Relic[] = [
+  {
+    slug: 'burning-blood',
+    name: 'Burning Blood',
+    rarity: 'Starter',
+    character: 'ironclad',
+    description: 'At the end of combat, heal 6 HP.',
+    flavor: 'The heart of a demon still beats within.',
+  },
+  {
+    slug: 'ring-of-the-snake',
+    name: 'Ring of the Snake',
+    rarity: 'Starter',
+    character: 'silent',
+    description: 'At the start of each combat, draw 2 additional cards.',
+    flavor: 'Made from a fossilized snake that bit its own tail.',
+  },
+  {
+    slug: 'ostys-binding',
+    name: 'Osty\'s Binding',
+    rarity: 'Starter',
+    character: 'necrobinder',
+    description: 'Start each combat with Osty, your skeletal hand companion.',
+    flavor: 'A pact sealed in bone and shadow.',
+  },
+  {
+    slug: 'stellar-compass',
+    name: 'Stellar Compass',
+    rarity: 'Starter',
+    character: 'regent',
+    description: 'Start each combat with 3 Stars.',
+    flavor: 'It points not north, but to destiny.',
+  },
+  {
+    slug: 'doom-hourglass',
+    name: 'Doom Hourglass',
+    rarity: 'Rare',
+    character: 'necrobinder',
+    description: 'Whenever Doom triggers, gain [E].',
+    flavor: 'Time runs out for all things.',
+  },
+  {
+    slug: 'vajra',
+    name: 'Vajra',
+    rarity: 'Common',
+    character: 'ironclad',
+    description: 'At the start of each combat, gain 1 Strength.',
+    flavor: 'Forged in the heart of a fallen star.',
+  },
+  {
+    slug: 'kunai',
+    name: 'Kunai',
+    rarity: 'Uncommon',
+    character: 'silent',
+    description: 'Every time you play 3 Attacks in a single turn, gain 1 Dexterity.',
+    flavor: 'A relic from a foreign land. The blade is unnaturally sharp.',
+  },
+  {
+    slug: 'ancient-coin',
+    name: 'Ancient Coin',
+    rarity: 'Common',
+    description: 'Gain 15% more Gold from combat rewards.',
+    flavor: 'A coin of unknown origin. It feels warm to the touch.',
+  },
+  {
+    slug: 'bag-of-marbles',
+    name: 'Bag of Marbles',
+    rarity: 'Common',
+    description: 'At the start of each combat, apply 1 Vulnerable to ALL enemies.',
+    flavor: 'Perfect for setting traps.',
+  },
+  {
+    slug: 'bottled-stars',
+    name: 'Bottled Stars',
+    rarity: 'Uncommon',
+    character: 'regent',
+    description: 'Upon pickup, choose a card. Start each combat with that card in your hand.',
+    flavor: 'Starlight preserved in crystal.',
+  },
+  {
+    slug: 'dead-branch',
+    name: 'Dead Branch',
+    rarity: 'Rare',
+    description: 'Whenever you Exhaust a card, add a random card to your hand.',
+    flavor: 'A branch from a tree that died long ago.',
+  },
+  {
+    slug: 'prayer-wheel',
+    name: 'Prayer Wheel',
+    rarity: 'Rare',
+    description: 'Normal combats reward an additional card reward.',
+    flavor: 'Spinning it is said to bring good fortune.',
   },
 ];

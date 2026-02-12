@@ -16,12 +16,12 @@ export default function Navigation() {
   };
 
   const navLinks = [
-    { id: 'home', href: '/', label: 'Home' },
-    { id: 'news', href: '/news', label: 'News' },
-    { id: 'characters', href: '/characters', label: 'Characters' },
-    { id: 'database', href: '#', label: 'Database', placeholder: true },
-    { id: 'tier-lists', href: '#', label: 'Tier Lists', placeholder: true },
-    { id: 'tools', href: '#', label: 'Tools', placeholder: true },
+    { id: 'home', href: '/', label: 'Home', placeholder: false },
+    { id: 'news', href: '/news', label: 'News', placeholder: false },
+    { id: 'characters', href: '/characters', label: 'Characters', placeholder: false },
+    { id: 'guides', href: '/guides', label: 'Guides', placeholder: false },
+    { id: 'mechanics', href: '/mechanics', label: 'Mechanics', placeholder: false },
+    { id: 'relics', href: '/relics', label: 'Relics', placeholder: false },
   ];
 
   return (
