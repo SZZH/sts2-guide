@@ -23,10 +23,14 @@ export const metadata: Metadata = {
   description: "Master Slay the Spire 2 with comprehensive character guides, tier lists, and expert strategies. Your ultimate StS2 resource.",
   keywords: ["Slay the Spire 2", "StS2", "guide", "strategy", "character builds", "tier list", "deck building"],
   authors: [{ name: "StS2 Guide Team" }],
+  metadataBase: new URL('https://sts2guide.com'),
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://sts2-guide.vercel.app",
+    url: "https://sts2guide.com",
     siteName: "StS2 Guide",
     title: "StS2 Guide — Slay the Spire 2 Strategy Hub",
     description: "Master Slay the Spire 2 with comprehensive character guides, tier lists, and expert strategies.",

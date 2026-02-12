@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { CHARACTERS, NEWS_ARTICLES } from '@/shared/gameData';
 import CountdownTimer from '@/components/CountdownTimer';
+import { WebsiteSchema, OrganizationSchema, VideoGameSchema } from './schema';
 
 export const metadata: Metadata = {
   title: 'Home',
@@ -17,7 +19,11 @@ export default function HomePage() {
   const latestNews = NEWS_ARTICLES.slice(0, 3);
 
   return (
-    <div className="min-h-screen">
+    <>
+      <WebsiteSchema />
+      <OrganizationSchema />
+      <VideoGameSchema />
+      <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-[600px] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
@@ -79,11 +85,14 @@ export default function HomePage() {
                 className="group relative overflow-hidden rounded-lg border border-border hover:border-molten-orange transition-all duration-300"
               >
                 <div className="relative h-64">
-                  <img 
+                  <Image 
                     src={character.image}
                     alt={character.name}
-                    className="w-full h-full object-cover"
+                    fill
+                    className="object-cover"
                     style={{ objectPosition: 'center 60%' }}
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    priority={false}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-forge-black via-forge-black/50 to-transparent" />
                   <div className="absolute top-4 right-4">
@@ -160,5 +169,6 @@ export default function HomePage() {
         </div>
       </section>
     </div>
+    </>
   );
 }

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { CHARACTERS } from '@/shared/gameData';
 import { ArrowLeft, Shield, Zap, Heart } from 'lucide-react';
+import { ArticleSchema, BreadcrumbSchema } from '@/app/schema';
 
 export async function generateStaticParams() {
   return CHARACTERS.map((character) => ({
@@ -41,7 +42,23 @@ export default async function CharacterDetailPage({ params }: { params: Promise<
   }
 
   return (
-    <div className="min-h-screen py-16">
+    <>
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: 'https://sts2guide.com' },
+          { name: 'Characters', url: 'https://sts2guide.com/characters' },
+          { name: character.name, url: `https://sts2guide.com/characters/${character.slug}` },
+        ]}
+      />
+      <ArticleSchema
+        title={`${character.name} Guide - Slay the Spire 2`}
+        description={character.description}
+        datePublished="2026-02-12"
+        dateModified={new Date().toISOString()}
+        url={`https://sts2guide.com/characters/${character.slug}`}
+        imageUrl={character.image}
+      />
+      <div className="min-h-screen py-16">
       <div className="container mx-auto px-4">
         {/* Back Button */}
         <Link
@@ -143,5 +160,6 @@ export default async function CharacterDetailPage({ params }: { params: Promise<
         </section>
       </div>
     </div>
+    </>
   );
 }

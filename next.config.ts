@@ -1,7 +1,24 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // Image optimization for external images
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'files.manuscdn.com',
+      },
+    ],
+  },
+  
+  // Enable compression
+  compress: true,
+  
+  // No trailing slash for cleaner URLs
+  trailingSlash: false,
+  
+  // Enable React strict mode for better development
+  reactStrictMode: true,
 };
 
 export default nextConfig;
