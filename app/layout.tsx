@@ -50,7 +50,8 @@ export const metadata: Metadata = {
     images: ["https://files.manuscdn.com/user_upload_by_module/session_file/310419663030533337/PBsDTIjrsKhkQaMa.png"],
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: "/logo.png",
+    shortcut: "/logo.png",
     apple: "/logo-192.png",
   },
   manifest: "/manifest.json",
