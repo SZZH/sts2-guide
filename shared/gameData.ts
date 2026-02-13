@@ -67,11 +67,11 @@ export const CHARACTERS = [
   {
     slug: 'necrobinder',
     name: 'Necrobinder',
-    title: 'The Soul Weaver',
+    title: 'The Undead Summoner',
     description: 'A dark sorceress who commands death itself, manipulating souls and wielding her skeletal companion Osty to overwhelm foes.',
-    image: 'https://files.manuscdn.com/user_upload_by_module/session_file/310419663030533337/KpXNHVdYgmLBjWzQ.jpg',
-    difficulty: 'Beginner',
-    hp: 75,
+    image: 'https://files.manuscdn.com/user_upload_by_module/session_file/310419663030533337/HdWLNbmRXgqVpjKz.jpg',
+    difficulty: 'Advanced',
+    hp: 35,
     gold: 99,
     startingRelic: 'Osty\'s Binding',
     startingDeck: [
@@ -95,7 +95,7 @@ export const CHARACTERS = [
       },
     ],
     playstyle: 'Necrobinder offers a unique minion-based playstyle centered around Osty. Players must decide when to use Osty defensively versus offensively, and when to sacrifice him for powerful effects. The Doom mechanic rewards planning ahead and stacking delayed damage. Soul generation provides resource flexibility and enables powerful turns.',
-    lore: 'Once a royal court mage who delved too deep into forbidden necromancy, the Necrobinder was exiled when her experiments with death magic were discovered. She ascends the Spire with Osty, a skeletal familiar bound to her will, seeking the power to transcend mortality itself. Her magic draws from the countless souls trapped within the Spire\'s walls.',
+    lore: 'A necromancer who bound their soul to Osty, a colossal undead hand. Sassy, dark-humored, and surprisingly cheerful for someone who deals in death. Despite having very low HP (35), Osty absorbs damage meant for you.',
     startingDeck: [
       'Strike (5)',
       'Defend (4)',
@@ -106,10 +106,10 @@ export const CHARACTERS = [
   {
     slug: 'regent',
     name: 'The Regent',
-    title: 'Cosmic Sovereign',
-    description: 'A regal cosmic monarch who wields the power of constellations, channeling Stars energy and forging powerful artifacts.',
+    title: 'Heir to the Throne of Stars',
+    description: 'Heir to the Throne of Stars. Accumulates Stars, Forges artifacts, and commands Minions in battle.',
     image: 'https://files.manuscdn.com/user_upload_by_module/session_file/310419663030533337/xhLNBdQkYmRzJWVg.jpg',
-    lore: 'Born under a celestial alignment that occurs once every thousand years, The Regent was destined to rule the stars themselves. They ascend the Spire not for personal gain, but to restore cosmic balance and reclaim their throne among the heavens. Each edict they issue reshapes reality itself, and their blade cuts through the fabric of space. The constellations bend to their will.',
+    lore: 'Heir to the Throne of Stars. Commands celestial magic to accumulate Stars, forge powerful artifacts, and summon minions. Seeks to reclaim their rightful place through the power of the Spire.',
     startingRelic: 'Stellar Compass',
     startingDeck: [
       'Strike (5)',
@@ -252,5 +252,165 @@ export const GAME_FEATURES: GameFeature[] = [
     icon: '✨',
     title: 'Ancients System',
     description: 'Replace boss relics with powerful Ancient blessings that fundamentally alter your run.',
+  },
+];
+
+
+// Game Mechanics
+export interface GameMechanic {
+  name: string;
+  category: 'Core' | 'Character' | 'Advanced';
+  description: string;
+  character?: string;
+  examples?: string[];
+}
+
+export const GAME_MECHANICS: GameMechanic[] = [
+  // Core Mechanics
+  {
+    name: 'Alternate Acts',
+    category: 'Core',
+    description: 'Each act now features two distinct versions with different enemies, events, and challenges. Choose your path wisely as each route offers unique rewards and risks.',
+    examples: ['Act 1A: The Exordium', 'Act 1B: The City'],
+  },
+  {
+    name: 'Ancients System',
+    category: 'Core',
+    description: 'Powerful beings who offer blessings after boss fights, replacing the traditional Boss Relic system. Ancients provide transformative effects that can define your entire run.',
+    examples: ['Ancient of Flame', 'Ancient of Frost', 'Ancient of Lightning'],
+  },
+  // Character-Specific Mechanics
+  {
+    name: 'Sly',
+    category: 'Character',
+    character: 'Silent',
+    description: 'Cards with Sly automatically play when discarded, enabling powerful discard-based strategies and unexpected combos.',
+    examples: ['Prepared', 'Reflex', 'Tactician'],
+  },
+  {
+    name: 'Doom',
+    category: 'Character',
+    character: 'Necrobinder',
+    description: 'A debuff that kills enemies when accumulated Doom damage equals their current HP. Build up Doom for devastating finishing blows.',
+    examples: ['Blight Strike', 'Scourge', 'Deathbringer'],
+  },
+  {
+    name: 'Stars',
+    category: 'Character',
+    character: 'Regent',
+    description: 'A resource that accumulates throughout combat. Spend Stars to power abilities, summon minions, and transform cards.',
+    examples: ['Starfall', 'Constellation', 'Celestial Strike'],
+  },
+  {
+    name: 'Forge',
+    category: 'Character',
+    character: 'Regent',
+    description: 'Create permanent artifacts that provide lasting benefits. Forge cards into powerful relics mid-combat.',
+    examples: ['Forge Weapon', 'Forge Armor', 'Forge Talisman'],
+  },
+  {
+    name: 'Minions',
+    category: 'Character',
+    character: 'Regent',
+    description: 'Summon allies to fight alongside you. Minions can block, attack, and provide utility effects.',
+    examples: ['Summon Guard', 'Summon Archer', 'Summon Mage'],
+  },
+  // Advanced Mechanics
+  {
+    name: 'Enchantments',
+    category: 'Advanced',
+    description: 'Persistent modifiers that can be applied to cards, altering their properties for the rest of the run. Unlike upgrades, Enchantments can add entirely new keywords.',
+    examples: ['Add Ethereal', 'Add Replay', 'Add Retain'],
+  },
+  {
+    name: 'Afflictions',
+    category: 'Advanced',
+    description: 'Negative effects that enemies can apply to your cards, making them harder to play or less effective. Manage Afflictions carefully to maintain deck efficiency.',
+    examples: ['Cursed', 'Corrupted', 'Weakened'],
+  },
+  {
+    name: 'Quest Cards',
+    category: 'Advanced',
+    description: 'Unplayable cards that require you to complete specific objectives before they can be used. Once completed, Quest Cards provide powerful rewards.',
+    examples: ['Quest: Deal 50 damage', 'Quest: Block 100 damage', 'Quest: Play 20 cards'],
+  },
+];
+
+// Relics
+export interface Relic {
+  name: string;
+  rarity: 'Starter' | 'Common' | 'Uncommon' | 'Rare';
+  character?: string;
+  description: string;
+}
+
+export const RELICS: Relic[] = [
+  // Starter Relics
+  {
+    name: "Burning Blood",
+    rarity: "Starter",
+    character: "Ironclad",
+    description: "At the end of combat, heal 6 HP.",
+  },
+  {
+    name: "Ring of the Snake",
+    rarity: "Starter",
+    character: "Silent",
+    description: "At the start of each combat, draw 2 additional cards.",
+  },
+  {
+    name: "Osty's Binding",
+    rarity: "Starter",
+    character: "Necrobinder",
+    description: "Start each combat with Osty, your undead companion who absorbs damage.",
+  },
+  {
+    name: "Crown of Stars",
+    rarity: "Starter",
+    character: "Regent",
+    description: "Start each combat with 3 Stars.",
+  },
+  // Common Relics
+  {
+    name: "Bag of Preparation",
+    rarity: "Common",
+    description: "At the start of each combat, draw 2 additional cards.",
+  },
+  {
+    name: "Anchor",
+    rarity: "Common",
+    description: "Start each combat with 10 Block.",
+  },
+  {
+    name: "Ancient Coin",
+    rarity: "Common",
+    description: "Gain 15% more Gold from combat rewards.",
+  },
+  // Uncommon Relics
+  {
+    name: "Ornamental Fan",
+    rarity: "Uncommon",
+    description: "Every time you play 3 Attacks in a single turn, gain 4 Block.",
+  },
+  {
+    name: "Kunai",
+    rarity: "Uncommon",
+    description: "Every time you play 3 Attacks in a single turn, gain 1 Dexterity.",
+  },
+  // Rare Relics
+  {
+    name: "Incense Burner",
+    rarity: "Rare",
+    description: "Every 6 turns, gain 2 Intangible.",
+  },
+  {
+    name: "Prismatic Shard",
+    rarity: "Rare",
+    description: "Combat reward screens now contain cards from all characters.",
+  },
+  {
+    name: "Dead Branch",
+    rarity: "Rare",
+    description: "Whenever you Exhaust a card, add a random card to your hand.",
   },
 ];

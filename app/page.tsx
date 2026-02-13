@@ -4,9 +4,10 @@ import Image from 'next/image';
 import { CHARACTERS, NEWS_ARTICLES } from '@/shared/gameData';
 import CountdownTimer from '@/components/CountdownTimer';
 import { WebsiteSchema, OrganizationSchema, VideoGameSchema } from './schema';
+import ContentDisclaimer from './disclaimer';
 
 export const metadata: Metadata = {
-  title: 'Home',
+  title: 'StS2 Guide - Slay the Spire 2 Strategy, Builds & Tier Lists',
   description: 'Master the ultimate roguelike deck-builder with comprehensive guides, tier lists, and expert strategies for Slay the Spire 2.',
   openGraph: {
     title: 'Slay the Spire 2 Guide - Master the Ultimate Roguelike',
@@ -24,6 +25,10 @@ export default function HomePage() {
       <OrganizationSchema />
       <VideoGameSchema />
       <div className="min-h-screen">
+      {/* Content Disclaimer */}
+      <div className="container py-8">
+        <ContentDisclaimer />
+      </div>
       {/* Hero Section */}
       <section className="relative h-[600px] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
