@@ -91,17 +91,14 @@ export default function MechanicsPage() {
                       </span>
                     </div>
                     <p className="text-sm text-purple-400 mb-2">{mechanic.description}</p>
-                    {mechanic.characters && (
+                    {mechanic.character && (
                       <div className="flex gap-2 mb-3">
-                        {mechanic.characters.map((char) => (
-                          <Link
-                            key={char}
-                            href={`/characters/${char}`}
-                            className="text-xs px-2 py-1 bg-background border border-border rounded hover:border-purple-400 transition-colors capitalize"
-                          >
-                            {char}
-                          </Link>
-                        ))}
+                        <Link
+                          href={`/characters/${mechanic.character.toLowerCase()}`}
+                          className="text-xs px-2 py-1 bg-background border border-border rounded hover:border-purple-400 transition-colors capitalize"
+                        >
+                          {mechanic.character}
+                        </Link>
                       </div>
                     )}
                     <p className="text-muted-foreground leading-relaxed">{mechanic.details}</p>

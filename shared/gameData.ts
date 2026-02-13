@@ -96,12 +96,6 @@ export const CHARACTERS = [
     ],
     playstyle: 'Necrobinder offers a unique minion-based playstyle centered around Osty. Players must decide when to use Osty defensively versus offensively, and when to sacrifice him for powerful effects. The Doom mechanic rewards planning ahead and stacking delayed damage. Soul generation provides resource flexibility and enables powerful turns.',
     lore: 'A necromancer who bound their soul to Osty, a colossal undead hand. Sassy, dark-humored, and surprisingly cheerful for someone who deals in death. Despite having very low HP (35), Osty absorbs damage meant for you.',
-    startingDeck: [
-      'Strike (5)',
-      'Defend (4)',
-      'Blight Strike (1)',
-      'Bodyguard (1)',
-    ],
   },
   {
     slug: 'regent',

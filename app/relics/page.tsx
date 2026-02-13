@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { RELICS, CHARACTERS } from '@/shared/gameData';
+import { RELICS } from '@/shared/gameData';
 
 export const metadata: Metadata = {
   title: 'Relics | StS2 Guide',
@@ -31,11 +31,8 @@ export default function RelicsPage() {
   const uncommonRelics = RELICS.filter(r => r.rarity === 'Uncommon');
   const rareRelics = RELICS.filter(r => r.rarity === 'Rare');
 
-  const getCharacterName = (slug?: string) => {
-    if (!slug) return null;
-    const character = CHARACTERS.find(c => c.slug === slug);
-    return character?.name;
-  };
+  const getCharacterName = (character?: string) => character ?? null;
+  const getCharacterSlug = (character?: string) => character?.toLowerCase();
 
   const RelicCard = ({ relic }: { relic: typeof RELICS[0] }) => {
     const characterName = getCharacterName(relic.character);
@@ -51,7 +48,7 @@ export default function RelicsPage() {
           </div>
           {characterName && (
             <Link
-              href={`/characters/${relic.character}`}
+              href={`/characters/${getCharacterSlug(relic.character)}`}
               className="text-xs px-2 py-1 bg-background border border-border rounded hover:border-orange-400 transition-colors"
             >
               {characterName}
@@ -63,9 +60,6 @@ export default function RelicsPage() {
           {relic.description}
         </p>
         
-        <p className="text-xs text-muted-foreground italic">
-          "{relic.flavor}"
-        </p>
       </div>
     );
   };
@@ -119,7 +113,7 @@ export default function RelicsPage() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
             {starterRelics.map((relic) => (
-              <RelicCard key={relic.slug} relic={relic} />
+              <RelicCard key={`${relic.rarity}-${relic.name}`} relic={relic} />
             ))}
           </div>
         </div>
@@ -139,7 +133,7 @@ export default function RelicsPage() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {commonRelics.map((relic) => (
-              <RelicCard key={relic.slug} relic={relic} />
+              <RelicCard key={`${relic.rarity}-${relic.name}`} relic={relic} />
             ))}
           </div>
         </div>
@@ -159,7 +153,7 @@ export default function RelicsPage() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {uncommonRelics.map((relic) => (
-              <RelicCard key={relic.slug} relic={relic} />
+              <RelicCard key={`${relic.rarity}-${relic.name}`} relic={relic} />
             ))}
           </div>
         </div>
@@ -179,7 +173,7 @@ export default function RelicsPage() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {rareRelics.map((relic) => (
-              <RelicCard key={relic.slug} relic={relic} />
+              <RelicCard key={`${relic.rarity}-${relic.name}`} relic={relic} />
             ))}
           </div>
         </div>
