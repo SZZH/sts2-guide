@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Cinzel, Inter } from "next/font/google";
+import Image from "next/image";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -64,12 +65,25 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${cinzel.variable} ${inter.variable}`}>
-      <body className="flex flex-col min-h-screen">
-        <Navigation />
-        <main className="flex-1">
-          {children}
-        </main>
-        <Footer />
+      <body className="relative flex flex-col min-h-screen overflow-x-hidden">
+        <div className="fixed inset-0 z-0 pointer-events-none">
+          <Image
+            src="/hero/home-hero.png"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center opacity-20"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-forge-black/60 via-forge-black/75 to-forge-black/90" />
+        </div>
+        <div className="relative z-10 flex flex-col min-h-screen">
+          <Navigation />
+          <main className="flex-1">
+            {children}
+          </main>
+          <Footer />
+        </div>
       </body>
     </html>
   );
