@@ -8,6 +8,14 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'files.manuscdn.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'shared.akamai.steamstatic.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.megacrit.com',
+      },
     ],
   },
   

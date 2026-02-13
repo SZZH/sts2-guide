@@ -26,7 +26,7 @@ export default function HomePage() {
       <VideoGameSchema />
       <div className="min-h-screen">
       {/* Content Disclaimer */}
-      <div className="container py-8">
+      <div className="container pt-8 pb-0">
         <ContentDisclaimer />
       </div>
       {/* Hero Section */}
