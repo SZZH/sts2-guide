@@ -258,6 +258,7 @@ export const GAME_FEATURES: GameFeature[] = [
 
 // Game Mechanics
 export interface GameMechanic {
+  slug: string;
   name: string;
   category: 'Core' | 'Character' | 'Advanced';
   description: string;
@@ -268,12 +269,14 @@ export interface GameMechanic {
 export const GAME_MECHANICS: GameMechanic[] = [
   // Core Mechanics
   {
+    slug: 'alternate-acts',
     name: 'Alternate Acts',
     category: 'Core',
     description: 'Each act now features two distinct versions with different enemies, events, and challenges. Choose your path wisely as each route offers unique rewards and risks.',
     examples: ['Act 1A: The Exordium', 'Act 1B: The City'],
   },
   {
+    slug: 'ancients-system',
     name: 'Ancients System',
     category: 'Core',
     description: 'Powerful beings who offer blessings after boss fights, replacing the traditional Boss Relic system. Ancients provide transformative effects that can define your entire run.',
@@ -281,6 +284,7 @@ export const GAME_MECHANICS: GameMechanic[] = [
   },
   // Character-Specific Mechanics
   {
+    slug: 'sly',
     name: 'Sly',
     category: 'Character',
     character: 'Silent',
@@ -288,6 +292,7 @@ export const GAME_MECHANICS: GameMechanic[] = [
     examples: ['Prepared', 'Reflex', 'Tactician'],
   },
   {
+    slug: 'doom',
     name: 'Doom',
     category: 'Character',
     character: 'Necrobinder',
@@ -295,6 +300,7 @@ export const GAME_MECHANICS: GameMechanic[] = [
     examples: ['Blight Strike', 'Scourge', 'Deathbringer'],
   },
   {
+    slug: 'stars',
     name: 'Stars',
     category: 'Character',
     character: 'Regent',
@@ -302,6 +308,7 @@ export const GAME_MECHANICS: GameMechanic[] = [
     examples: ['Starfall', 'Constellation', 'Celestial Strike'],
   },
   {
+    slug: 'forge',
     name: 'Forge',
     category: 'Character',
     character: 'Regent',
@@ -309,6 +316,7 @@ export const GAME_MECHANICS: GameMechanic[] = [
     examples: ['Forge Weapon', 'Forge Armor', 'Forge Talisman'],
   },
   {
+    slug: 'minions',
     name: 'Minions',
     category: 'Character',
     character: 'Regent',
@@ -317,18 +325,21 @@ export const GAME_MECHANICS: GameMechanic[] = [
   },
   // Advanced Mechanics
   {
+    slug: 'enchantments',
     name: 'Enchantments',
     category: 'Advanced',
     description: 'Persistent modifiers that can be applied to cards, altering their properties for the rest of the run. Unlike upgrades, Enchantments can add entirely new keywords.',
     examples: ['Add Ethereal', 'Add Replay', 'Add Retain'],
   },
   {
+    slug: 'afflictions',
     name: 'Afflictions',
     category: 'Advanced',
     description: 'Negative effects that enemies can apply to your cards, making them harder to play or less effective. Manage Afflictions carefully to maintain deck efficiency.',
     examples: ['Cursed', 'Corrupted', 'Weakened'],
   },
   {
+    slug: 'quest-cards',
     name: 'Quest Cards',
     category: 'Advanced',
     description: 'Unplayable cards that require you to complete specific objectives before they can be used. Once completed, Quest Cards provide powerful rewards.',
