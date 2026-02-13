@@ -30,6 +30,7 @@ export const CHARACTERS = [
     ],
     playstyle: 'Ironclad excels at building overwhelming offensive power through Strength stacking while maintaining survivability through Block and healing. The character rewards aggressive play and calculated risk-taking, often sacrificing health for immediate power gains. Exhaust synergies allow for deck manipulation and powerful combos.',
     lore: 'Once a decorated general of the mountain kingdoms, the Ironclad abandoned his post after witnessing the corruption of his commanders. Now he climbs the Spire seeking redemption, his body scarred by countless battles but his will unbroken. Each strike channels the fury of his fallen comrades, and his blood burns with an eternal flame that refuses to be extinguished.',
+    updatedAt: '2026-02-13',
   },
   {
     slug: 'silent',
@@ -63,6 +64,7 @@ export const CHARACTERS = [
     ],
     playstyle: 'Silent rewards careful planning and exploiting enemy patterns. The new Sly mechanic adds a layer of strategy around hand management and discard effects. Poison provides consistent damage over time, while Shivs enable burst damage through volume. Silent players must balance defensive play with setting up devastating combos.',
     lore: 'A master assassin who speaks only through action, the Silent has eliminated countless targets without leaving a trace. Her climb up the Spire is a contract unlike any other—one that promises answers about her forgotten past. The shadows themselves seem to bend to her will, and her blades carry toxins distilled from the Spire\'s own corrupted essence.',
+    updatedAt: '2026-02-13',
   },
   {
     slug: 'necrobinder',
@@ -96,6 +98,7 @@ export const CHARACTERS = [
     ],
     playstyle: 'Necrobinder offers a unique minion-based playstyle centered around Osty. Players must decide when to use Osty defensively versus offensively, and when to sacrifice him for powerful effects. The Doom mechanic rewards planning ahead and stacking delayed damage. Soul generation provides resource flexibility and enables powerful turns.',
     lore: 'A necromancer who bound their soul to Osty, a colossal undead hand. Sassy, dark-humored, and surprisingly cheerful for someone who deals in death. Despite having very low HP (35), Osty absorbs damage meant for you.',
+    updatedAt: '2026-02-13',
   },
   {
     slug: 'regent',
@@ -129,6 +132,7 @@ export const CHARACTERS = [
     difficulty: 'Advanced',
     hp: 75,
     gold: 99,
+    updatedAt: '2026-02-13',
   },
 ];
 
@@ -143,6 +147,7 @@ export interface NewsArticle {
   image: string;
   url: string;
   source: string;
+  updatedAt: string;
 }
 
 export const NEWS_ARTICLES: NewsArticle[] = [
@@ -156,7 +161,8 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     featured: true,
     image: 'https://images.unsplash.com/photo-1579373903781-fd5c0c30c4cd?w=800&q=80',
     url: 'https://www.gamesradar.com/games/roguelike/slay-the-spire-2-pulls-a-silksong-scares-indie-devs-into-releasing-roguelike-ahead-of-schedule-in-fear-of-losing-players-to-an-absolute-juggernaut-in-our-own-genre/',
-    source: 'GamesRadar+'
+    source: 'GamesRadar+',
+    updatedAt: '2026-01-28',
   },
   {
     slug: 'megacrit-regent-reveal',
@@ -168,7 +174,8 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     featured: false,
     image: 'https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=800&q=80',
     url: 'https://www.megacrit.com/news/2025-12-11-neowsletter-issue-17/',
-    source: 'Mega Crit Games'
+    source: 'Mega Crit Games',
+    updatedAt: '2025-12-11',
   },
   {
     slug: 'pc-gamer-complete-guide',
@@ -180,7 +187,8 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     featured: true,
     image: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&q=80',
     url: 'https://www.pcgamer.com/games/card-games/slay-the-spire-2-guide/',
-    source: 'PC Gamer'
+    source: 'PC Gamer',
+    updatedAt: '2025-11-26',
   },
   {
     slug: 'megacrit-necrobinder-reveal',
@@ -192,7 +200,8 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     featured: false,
     image: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=800&q=80',
     url: 'https://www.megacrit.com/news/2025-10-16-neowsletter-issue-15/',
-    source: 'Mega Crit Games'
+    source: 'Mega Crit Games',
+    updatedAt: '2025-10-16',
   },
   {
     slug: 'steam-delay-announcement',
@@ -204,7 +213,8 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     featured: false,
     image: 'https://images.unsplash.com/photo-1614680376593-902f74cf0d41?w=800&q=80',
     url: 'https://store.steampowered.com/news/app/2868840',
-    source: 'Steam News'
+    source: 'Steam News',
+    updatedAt: '2025-09-11',
   },
   {
     slug: 'ign-official-announcement',
@@ -216,7 +226,8 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     featured: true,
     image: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&q=80',
     url: 'https://www.ign.com/articles/slay-the-spire-2-officially-announced-first-gameplay-screens-revealed',
-    source: 'IGN'
+    source: 'IGN',
+    updatedAt: '2024-04-10',
   },
 ];
 

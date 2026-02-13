@@ -25,22 +25,28 @@ export default function HomePage() {
       <OrganizationSchema />
       <VideoGameSchema />
       <div className="min-h-screen">
-      {/* Content Disclaimer */}
-      <div className="container pt-8 pb-0">
-        <ContentDisclaimer />
-      </div>
       {/* Hero Section */}
       <section className="relative h-[600px] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: 'url(https://files.manuscdn.com/user_upload_by_module/session_file/310419663030533337/gFbKHMXVTdkNWJHQ.png)',
-          }}
-        >
+        <div className="absolute inset-0">
+          <Image
+            src="/hero/home-hero.png"
+            alt="Slay the Spire 2 gameplay"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
+          />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-forge-black/50 to-forge-black" />
           {/* Bottom gradient fade */}
           <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-forge-black to-transparent" />
+        </div>
+
+        {/* Content Disclaimer */}
+        <div className="absolute top-6 inset-x-0 z-20 px-4">
+          <div className="container mx-auto">
+            <ContentDisclaimer />
+          </div>
         </div>
 
         {/* Hero Content */}
