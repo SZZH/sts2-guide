@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { Calendar } from 'lucide-react';
 
-const LAUNCH_DATE = new Date('2025-08-01T00:00:00Z');
+const LAUNCH_DATE = new Date('2026-03-13T00:00:00Z');
 
 export default function CountdownTimer() {
   const [timeLeft, setTimeLeft] = useState({

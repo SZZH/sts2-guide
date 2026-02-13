@@ -37,6 +37,10 @@
 }
 
 @layer utilities {
+  .container {
+    @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
   .text-gradient {
     @apply bg-gradient-to-r from-molten-orange to-ember-glow bg-clip-text text-transparent;
   }
