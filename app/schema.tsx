@@ -6,14 +6,6 @@ export function WebsiteSchema() {
     alternateName: 'Slay the Spire 2 Guide',
     url: 'https://sts2guide.com',
     description: 'Master Slay the Spire 2 with comprehensive character guides, tier lists, and expert strategies.',
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: {
-        '@type': 'EntryPoint',
-        urlTemplate: 'https://sts2guide.com/search?q={search_term_string}',
-      },
-      'query-input': 'required name=search_term_string',
-    },
   };
 
   return (
@@ -30,9 +22,8 @@ export function OrganizationSchema() {
     '@type': 'Organization',
     name: 'StS2 Guide',
     url: 'https://sts2guide.com',
-    logo: 'https://files.manuscdn.com/user_upload_by_module/session_file/310419663030533337/PBsDTIjrsKhkQaMa.png',
+    logo: 'https://sts2guide.com/logo-512.png',
     description: 'Comprehensive strategy guides and resources for Slay the Spire 2',
-    sameAs: [],
   };
 
   return (
@@ -118,7 +109,7 @@ export function ArticleSchema({
       name: 'StS2 Guide',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://files.manuscdn.com/user_upload_by_module/session_file/310419663030533337/PBsDTIjrsKhkQaMa.png',
+        url: 'https://sts2guide.com/logo-512.png',
       },
     },
     mainEntityOfPage: {
