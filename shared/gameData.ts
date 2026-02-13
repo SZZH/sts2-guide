@@ -260,8 +260,10 @@ export const GAME_FEATURES: GameFeature[] = [
 export interface GameMechanic {
   slug: string;
   name: string;
+  icon: string;
   category: 'Core' | 'Character' | 'Advanced';
   description: string;
+  details?: string;
   character?: string;
   examples?: string[];
 }
@@ -271,6 +273,7 @@ export const GAME_MECHANICS: GameMechanic[] = [
   {
     slug: 'alternate-acts',
     name: 'Alternate Acts',
+    icon: '🗺️',
     category: 'Core',
     description: 'Each act now features two distinct versions with different enemies, events, and challenges. Choose your path wisely as each route offers unique rewards and risks.',
     examples: ['Act 1A: The Exordium', 'Act 1B: The City'],
@@ -278,6 +281,7 @@ export const GAME_MECHANICS: GameMechanic[] = [
   {
     slug: 'ancients-system',
     name: 'Ancients System',
+    icon: '✨',
     category: 'Core',
     description: 'Powerful beings who offer blessings after boss fights, replacing the traditional Boss Relic system. Ancients provide transformative effects that can define your entire run.',
     examples: ['Ancient of Flame', 'Ancient of Frost', 'Ancient of Lightning'],
@@ -286,6 +290,7 @@ export const GAME_MECHANICS: GameMechanic[] = [
   {
     slug: 'sly',
     name: 'Sly',
+    icon: '🃏',
     category: 'Character',
     character: 'Silent',
     description: 'Cards with Sly automatically play when discarded, enabling powerful discard-based strategies and unexpected combos.',
@@ -294,6 +299,7 @@ export const GAME_MECHANICS: GameMechanic[] = [
   {
     slug: 'doom',
     name: 'Doom',
+    icon: '💀',
     category: 'Character',
     character: 'Necrobinder',
     description: 'A debuff that kills enemies when accumulated Doom damage equals their current HP. Build up Doom for devastating finishing blows.',
@@ -302,6 +308,7 @@ export const GAME_MECHANICS: GameMechanic[] = [
   {
     slug: 'stars',
     name: 'Stars',
+    icon: '⭐',
     category: 'Character',
     character: 'Regent',
     description: 'A resource that accumulates throughout combat. Spend Stars to power abilities, summon minions, and transform cards.',
@@ -310,6 +317,7 @@ export const GAME_MECHANICS: GameMechanic[] = [
   {
     slug: 'forge',
     name: 'Forge',
+    icon: '⚒️',
     category: 'Character',
     character: 'Regent',
     description: 'Create permanent artifacts that provide lasting benefits. Forge cards into powerful relics mid-combat.',
@@ -318,6 +326,7 @@ export const GAME_MECHANICS: GameMechanic[] = [
   {
     slug: 'minions',
     name: 'Minions',
+    icon: '👥',
     category: 'Character',
     character: 'Regent',
     description: 'Summon allies to fight alongside you. Minions can block, attack, and provide utility effects.',
@@ -327,6 +336,7 @@ export const GAME_MECHANICS: GameMechanic[] = [
   {
     slug: 'enchantments',
     name: 'Enchantments',
+    icon: '✨',
     category: 'Advanced',
     description: 'Persistent modifiers that can be applied to cards, altering their properties for the rest of the run. Unlike upgrades, Enchantments can add entirely new keywords.',
     examples: ['Add Ethereal', 'Add Replay', 'Add Retain'],
@@ -334,6 +344,7 @@ export const GAME_MECHANICS: GameMechanic[] = [
   {
     slug: 'afflictions',
     name: 'Afflictions',
+    icon: '🩸',
     category: 'Advanced',
     description: 'Negative effects that enemies can apply to your cards, making them harder to play or less effective. Manage Afflictions carefully to maintain deck efficiency.',
     examples: ['Cursed', 'Corrupted', 'Weakened'],
@@ -341,6 +352,7 @@ export const GAME_MECHANICS: GameMechanic[] = [
   {
     slug: 'quest-cards',
     name: 'Quest Cards',
+    icon: '📜',
     category: 'Advanced',
     description: 'Unplayable cards that require you to complete specific objectives before they can be used. Once completed, Quest Cards provide powerful rewards.',
     examples: ['Quest: Deal 50 damage', 'Quest: Block 100 damage', 'Quest: Play 20 cards'],
