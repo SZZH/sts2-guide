@@ -14,9 +14,9 @@ export default function Footer() {
           {/* Brand Section */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <img 
-                src="/logo.png" 
-                alt="StS2 Guide Logo" 
+              <img
+                src="/logo-192.png"
+                alt="StS2 Guide Logo"
                 className="w-10 h-10 object-contain"
               />
               <span className="font-heading text-xl font-bold">StS2 Guide</span>

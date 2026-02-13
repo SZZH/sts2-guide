@@ -12,6 +12,7 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    "自定义计划的相似任务创建/**",
   ]),
 ]);
 

@@ -28,8 +28,8 @@ export default function AboutPage() {
               expert strategies to help you conquer every run.
             </p>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              Whether you're a newcomer learning the basics or a veteran pushing for Ascension 20
-              wins, we're here to forge your path to victory.
+              Whether you&apos;re a newcomer learning the basics or a veteran pushing for Ascension 20
+              wins, we&apos;re here to forge your path to victory.
             </p>
           </div>
         </section>

@@ -3,6 +3,13 @@
 import { useEffect } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 
+type WebVitalsMetric = {
+  name: string;
+  value: number;
+  id: string;
+  label?: string;
+};
+
 export function Analytics() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -19,7 +26,7 @@ export function Analytics() {
 }
 
 // Web Vitals reporting for performance monitoring
-export function reportWebVitals(metric: any) {
+export function reportWebVitals(metric: WebVitalsMetric) {
   if (typeof window !== 'undefined') {
     // Log Core Web Vitals
     console.log(metric);

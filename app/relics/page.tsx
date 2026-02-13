@@ -191,7 +191,7 @@ export default function RelicsPage() {
               Each Ancient has a unique personality and offers different types of rewards. Some might grant powerful relics with drawbacks, others might modify your deck directly, and some might offer permanent upgrades to your character.
             </p>
             <p className="text-muted-foreground">
-              The Ancient you encounter is partially random, adding variety and strategic depth to each run. Choose wisely - the Ancient's gift may define the rest of your journey up the Spire.
+              The Ancient you encounter is partially random, adding variety and strategic depth to each run. Choose wisely - the Ancient&apos;s gift may define the rest of your journey up the Spire.
             </p>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { CHARACTERS } from '@/shared/gameData';
 
 export const metadata: Metadata = {
@@ -22,7 +23,7 @@ export default function CharactersPage() {
             PLAYABLE CHARACTERS
           </h1>
           <p className="text-steel-blue text-lg max-w-2xl mx-auto">
-            Master each character's unique mechanics, card synergies, and optimal strategies to conquer the Spire.
+            Master each character&apos;s unique mechanics, card synergies, and optimal strategies to conquer the Spire.
           </p>
         </div>
 
@@ -35,10 +36,12 @@ export default function CharactersPage() {
               className="group relative overflow-hidden rounded-lg border border-border hover:border-molten-orange transition-all duration-300"
             >
               <div className="relative h-64">
-                <img
+                <Image
                   src={character.image}
                   alt={character.name}
-                  className="w-full h-full object-cover"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover"
                   style={{ objectPosition: 'center 60%' }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-forge-black via-forge-black/50 to-transparent" />

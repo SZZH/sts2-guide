@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { CHARACTERS } from '@/shared/gameData';
 import { ArrowLeft, Shield, Zap, Heart } from 'lucide-react';
@@ -72,10 +73,12 @@ export default async function CharacterDetailPage({ params }: { params: Promise<
         {/* Character Hero */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
           <div className="relative rounded-lg overflow-hidden border border-border">
-            <img
+            <Image
               src={character.image}
               alt={character.name}
-              className="w-full h-[500px] object-cover"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover"
               style={{ objectPosition: 'center 60%' }}
             />
             <div className="absolute top-4 right-4">

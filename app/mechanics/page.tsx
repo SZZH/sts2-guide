@@ -70,7 +70,7 @@ export default function MechanicsPage() {
           <div className="mb-12">
             <h2 className="text-3xl font-bold mb-3">Character-Specific Mechanics</h2>
             <p className="text-muted-foreground">
-              Unique systems that define each character's playstyle and strategic identity.
+              Unique systems that define each character&apos;s playstyle and strategic identity.
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-6">

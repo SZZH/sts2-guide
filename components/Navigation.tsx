@@ -30,9 +30,9 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-            <img 
-              src="/logo.png" 
-              alt="StS2 Guide Logo" 
+            <img
+              src="/logo-192.png"
+              alt="StS2 Guide Logo"
               className="w-10 h-10 object-contain"
             />
             <span className="font-heading text-xl font-bold">StS2 Guide</span>
