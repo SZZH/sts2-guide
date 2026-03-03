@@ -47,7 +47,7 @@ export function VideoGameSchema() {
       '@type': 'Organization',
       name: 'Mega Crit Games',
     },
-    datePublished: '2026-03-15',
+    datePublished: '2026-03-05',
   };
 
   return (
