@@ -3,10 +3,10 @@ import Link from 'next/link';
 import { RELICS } from '@/shared/gameData';
 
 export const metadata: Metadata = {
-  title: 'Relics | StS2 Guide',
+  title: 'Relics',
   description: 'Complete database of Slay the Spire 2 relics. Browse starter, common, uncommon, and rare relics with detailed descriptions and character synergies.',
   openGraph: {
-    title: 'Relics | StS2 Guide',
+    title: 'Relics',
     description: 'Complete database of Slay the Spire 2 relics with detailed descriptions and character synergies.',
   },
 };

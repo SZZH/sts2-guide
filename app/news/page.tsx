@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { NEWS_ARTICLES } from '@/shared/gameData';
 
 type NewsCategory = 'News' | 'Guide' | 'Analysis' | 'Update';
@@ -53,11 +54,9 @@ export default function NewsPage() {
         {/* Articles Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredArticles.map((article) => (
-            <a
+            <Link
               key={article.slug}
-              href={article.url}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={`/news/${article.slug}`}
               className="group bg-shadow-gray border border-border rounded-lg overflow-hidden hover:border-molten-orange transition-all duration-300"
             >
               <div className="p-6">
@@ -80,7 +79,7 @@ export default function NewsPage() {
                   <span>{article.readTime}</span>
                 </div>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
 

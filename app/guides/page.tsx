@@ -3,10 +3,10 @@ import Link from 'next/link';
 import { CHARACTERS } from '@/shared/gameData';
 
 export const metadata: Metadata = {
-  title: 'Build Guides | StS2 Guide',
+  title: 'Build Guides',
   description: 'Expert deck building guides for all Slay the Spire 2 characters. Learn winning strategies, card synergies, and optimal builds for Ironclad, Silent, Necrobinder, and The Regent.',
   openGraph: {
-    title: 'Build Guides | StS2 Guide',
+    title: 'Build Guides',
     description: 'Expert deck building guides for all Slay the Spire 2 characters with winning strategies and card synergies.',
   },
 };

@@ -3,10 +3,10 @@ import Link from 'next/link';
 import { GAME_MECHANICS } from '@/shared/gameData';
 
 export const metadata: Metadata = {
-  title: 'Game Mechanics | StS2 Guide',
+  title: 'Game Mechanics',
   description: 'Complete guide to Slay the Spire 2 game mechanics including Sly, Doom, Stars, Forge, Enchantments, and more. Master the new systems and dominate the Spire.',
   openGraph: {
-    title: 'Game Mechanics | StS2 Guide',
+    title: 'Game Mechanics',
     description: 'Complete guide to Slay the Spire 2 game mechanics including Sly, Doom, Stars, Forge, Enchantments, and more.',
   },
 };

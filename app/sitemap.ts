@@ -59,5 +59,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
-  return [...staticPages, ...characterPages];
+  const newsPages: MetadataRoute.Sitemap = NEWS_ARTICLES.map((article) => ({
+    url: `${baseUrl}/news/${article.slug}`,
+    lastModified: toDate(article.updatedAt),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
+  return [...staticPages, ...characterPages, ...newsPages];
 }
