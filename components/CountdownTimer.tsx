@@ -14,7 +14,7 @@ export default function CountdownTimer() {
     seconds: 0,
   });
   const localLaunchText = useMemo(() => {
-    const formatter = new Intl.DateTimeFormat(undefined, {
+    const formatter = new Intl.DateTimeFormat('en-US', {
       year: 'numeric',
       month: 'short',
       day: 'numeric',
