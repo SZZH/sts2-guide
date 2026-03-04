@@ -17,7 +17,9 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   const featuredCharacters = CHARACTERS.slice(0, 2);
-  const latestNews = NEWS_ARTICLES.slice(0, 3);
+  const latestNews = [...NEWS_ARTICLES]
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .slice(0, 3);
 
   return (
     <>
@@ -193,14 +195,8 @@ export default function HomePage() {
             LATEST NEWS
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {latestNews.map((article) => (
-              <a
-                key={article.slug}
-                href={article.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group bg-forge-black border border-border rounded-lg overflow-hidden hover:border-molten-orange transition-all duration-300"
-              >
+            {latestNews.map((article) => {
+              const cardContent = (
                 <div className="p-6">
                   <div className="flex items-center gap-2 mb-3">
                     <span className="text-xs font-semibold px-2 py-1 bg-molten-orange/20 text-molten-orange rounded">
@@ -217,8 +213,32 @@ export default function HomePage() {
                     <span>{article.readTime}</span>
                   </div>
                 </div>
-              </a>
-            ))}
+              );
+
+              if (article.sourceType === 'internal') {
+                return (
+                  <Link
+                    key={article.slug}
+                    href={`/news/${article.slug}`}
+                    className="group bg-forge-black border border-border rounded-lg overflow-hidden hover:border-molten-orange transition-all duration-300"
+                  >
+                    {cardContent}
+                  </Link>
+                );
+              }
+
+              return (
+                <a
+                  key={article.slug}
+                  href={article.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group bg-forge-black border border-border rounded-lg overflow-hidden hover:border-molten-orange transition-all duration-300"
+                >
+                  {cardContent}
+                </a>
+              );
+            })}
           </div>
           <div className="text-center mt-12">
             <Link 

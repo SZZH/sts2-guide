@@ -148,9 +148,100 @@ export interface NewsArticle {
   url: string;
   source: string;
   updatedAt: string;
+  intro?: string[];
+  sections?: {
+    heading: string;
+    paragraphs: string[];
+    bullets?: string[];
+  }[];
+  relatedLinks?: {
+    href: string;
+    label: string;
+  }[];
+  sourceType?: 'internal' | 'external';
 }
 
 export const NEWS_ARTICLES: NewsArticle[] = [
+  {
+    slug: 'slay-the-spire-2-launch-time-us-china',
+    title: 'Slay the Spire 2 Early Access Launch Time in US and China',
+    excerpt: 'Slay the Spire 2 enters Early Access on March 5, 2026. Here is the practical launch-time conversion for US Pacific Time and China Standard Time, plus a clear summary of confirmed characters, mechanics, and launch details.',
+    date: '2026-03-04',
+    category: 'News',
+    readTime: '7 min',
+    featured: true,
+    image: 'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2868840/ss_026b621a38b400c9f4080a7dd9152dd3050cbe2d.1920x1080.jpg?t=1770241822',
+    url: 'https://store.steampowered.com/app/2868840/Slay_the_Spire_2/',
+    source: 'StS2 Guide',
+    sourceType: 'internal',
+    updatedAt: '2026-03-04',
+    intro: [
+      'Slay the Spire 2 enters Early Access on March 5, 2026. For most players asking about the launch hour, the practical conversion is March 5 at 10:00 AM in US Pacific Time and March 6 at 2:00 AM in China Standard Time.',
+      'The important confirmed point is the Early Access date itself. The exact hour above is the player-friendly timezone conversion, which is useful for planning but should not be overstated as a verbatim official wording unless Mega Crit publishes it that way.',
+    ],
+    sections: [
+      {
+        heading: 'Slay the Spire 2 launch time',
+        paragraphs: [
+          'For the two regions most people keep asking about, the launch-time conversion is simple. In US Pacific Time, Slay the Spire 2 is expected to unlock on March 5, 2026 at 10:00 AM. In China Standard Time, that becomes March 6, 2026 at 2:00 AM.',
+          'If you are posting in communities or sharing launch details with friends, it is safer to describe the time as a useful conversion rather than an officially locked statement. That keeps the wording accurate while still giving players a clear expectation.',
+        ],
+        bullets: [
+          'US Pacific Time: March 5, 2026, 10:00 AM',
+          'China Standard Time: March 6, 2026, 2:00 AM',
+          'Confirmed date: Early Access begins on March 5, 2026',
+        ],
+      },
+      {
+        heading: 'What is confirmed so far',
+        paragraphs: [
+          'The most important confirmed fact is that Slay the Spire 2 launches into Early Access first, not as a full 1.0 release. That matters because a lot of first-week discussion will be shaped by what is present at launch and what still feels intentionally unfinished.',
+          'The other broadly established point is that the sequel is still rooted in the same roguelike deckbuilder loop that made the first game work: pathing, combat sequencing, deck shaping, scaling, and adaptation from run to run.',
+        ],
+        bullets: [
+          'Early Access starts on March 5, 2026',
+          'The game remains a roguelike deckbuilder at its core',
+          'Character-specific mechanics appear to be a larger focus in the sequel',
+          'Early discussion will likely center on characters, mechanics, and content volume',
+        ],
+      },
+      {
+        heading: 'Known characters and mechanics',
+        paragraphs: [
+          'At a high level, the sequel already looks more character-driven than Slay the Spire 1 did in its earliest impressions. Returning characters like Ironclad and Silent are joined by newly revealed characters such as Necrobinder and The Regent, giving players more obvious hooks for theorycrafting before launch.',
+          'Mechanically, the sequel has also drawn attention for systems like Sly, Doom, Stars, Forge, and other character-tied interactions. That does not automatically guarantee better balance or more depth, but it does suggest that player discussion will move quickly from basic first impressions into matchup questions, deck identity, and synergy exploration.',
+        ],
+      },
+      {
+        heading: 'How Slay the Spire 2 may differ from Slay the Spire 1',
+        paragraphs: [
+          'The original Slay the Spire had to prove that its structure worked. Slay the Spire 2 is in a different position. Players already trust the genre loop, so the sequel will be judged more on whether its new characters, mechanics, and run variety create fresh decision space.',
+          'That is why launch week will probably not just be about whether the game is fun. People will also be testing whether each character feels distinct enough, whether the new mechanics stay interesting after a few runs, and whether the Early Access content pool is broad enough to support replayability immediately.',
+        ],
+      },
+      {
+        heading: 'What to expect during the first week',
+        paragraphs: [
+          'If the launch follows the usual pattern for system-heavy deckbuilders, the first wave of opinions will change fast. Early tier lists are likely to be unstable, and some mechanics that look weak at first may get reevaluated once players understand their support pieces and scaling patterns.',
+          'The most useful early discussions will probably be the ones that share actual run observations: which characters feel coherent, which mechanics open up real build paths, and whether the Early Access version already has enough variety to keep repeated runs feeling fresh.',
+        ],
+      },
+    ],
+    relatedLinks: [
+      {
+        href: '/characters',
+        label: 'Browse all known Slay the Spire 2 characters',
+      },
+      {
+        href: '/mechanics',
+        label: 'See the currently known Slay the Spire 2 mechanics',
+      },
+      {
+        href: '/news',
+        label: 'Read more Slay the Spire 2 news and updates',
+      },
+    ],
+  },
   {
     slug: 'gamesradar-industry-impact',
     title: 'Indie Devs Adjust Release Schedules to Avoid StS2',

@@ -17,11 +17,20 @@ const categoryColors: Record<NewsCategory, string> = {
 
 export default function NewsPage() {
   const [selectedCategory, setSelectedCategory] = useState<NewsCategory | 'All'>('All');
+  const sortedArticles = [...NEWS_ARTICLES].sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
 
   const filteredArticles =
     selectedCategory === 'All'
-      ? NEWS_ARTICLES
-      : NEWS_ARTICLES.filter((article) => article.category === selectedCategory);
+      ? sortedArticles
+      : sortedArticles.filter((article) => article.category === selectedCategory);
+  const featuredLaunchArticle = selectedCategory === 'All'
+    ? sortedArticles.find((article) => article.slug === 'slay-the-spire-2-launch-time-us-china')
+    : null;
+  const gridArticles = featuredLaunchArticle
+    ? filteredArticles.filter((article) => article.slug !== featuredLaunchArticle.slug)
+    : filteredArticles;
 
   return (
     <div className="min-h-screen py-16">
@@ -51,9 +60,36 @@ export default function NewsPage() {
           ))}
         </div>
 
+        {featuredLaunchArticle && (
+          <Link
+            href={`/news/${featuredLaunchArticle.slug}`}
+            className="group block mb-12 rounded-2xl border border-molten-orange/40 bg-gradient-to-br from-molten-orange/10 via-shadow-gray/80 to-shadow-gray/60 p-8 hover:border-molten-orange transition-all duration-300"
+          >
+            <div className="flex flex-wrap items-center gap-3 mb-4">
+              <span className="text-xs font-semibold px-3 py-1 rounded-full bg-molten-orange text-white">
+                Featured Launch Guide
+              </span>
+              <span className="text-xs text-muted-foreground">{featuredLaunchArticle.date}</span>
+              <span className="text-xs text-muted-foreground">{featuredLaunchArticle.readTime}</span>
+            </div>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4 group-hover:text-molten-orange transition-colors">
+              {featuredLaunchArticle.title}
+            </h2>
+            <p className="text-base md:text-lg text-muted-foreground max-w-3xl leading-8 mb-5">
+              {featuredLaunchArticle.excerpt}
+            </p>
+            <div className="flex items-center gap-2 text-molten-orange font-semibold">
+              Read the launch guide
+              <span aria-hidden="true" className="transition-transform duration-300 group-hover:translate-x-1">
+                →
+              </span>
+            </div>
+          </Link>
+        )}
+
         {/* Articles Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredArticles.map((article) => (
+          {gridArticles.map((article) => (
             <Link
               key={article.slug}
               href={`/news/${article.slug}`}

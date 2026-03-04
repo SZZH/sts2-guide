@@ -89,23 +89,85 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ slu
               {article.excerpt}
             </p>
 
+            {article.intro && article.intro.length > 0 && (
+              <div className="space-y-5 mb-10 text-base text-foreground/90 leading-8">
+                {article.intro.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </div>
+            )}
+
+            {article.sections && article.sections.length > 0 && (
+              <div className="space-y-10 mb-10">
+                {article.sections.map((section) => (
+                  <section key={section.heading}>
+                    <h2 className="font-heading text-2xl md:text-3xl font-bold mb-4">
+                      {section.heading}
+                    </h2>
+                    <div className="space-y-4 text-base text-foreground/90 leading-8">
+                      {section.paragraphs.map((paragraph) => (
+                        <p key={paragraph}>{paragraph}</p>
+                      ))}
+                    </div>
+                    {section.bullets && section.bullets.length > 0 && (
+                      <ul className="mt-5 space-y-3 text-base text-foreground/90 leading-8 list-disc pl-6">
+                        {section.bullets.map((bullet) => (
+                          <li key={bullet}>{bullet}</li>
+                        ))}
+                      </ul>
+                    )}
+                  </section>
+                ))}
+              </div>
+            )}
+
             <div className="rounded-xl border border-border bg-background/70 p-5 mb-8">
               <p className="text-sm text-muted-foreground leading-7">
-                This summary page is designed to help users discover and revisit important Slay the Spire 2 updates.
-                For the full original reporting or official announcement, use the source link below.
+                {article.sourceType === 'internal'
+                  ? 'This page is a quick-reference guide for players tracking launch timing, confirmed details, and useful follow-up links before Early Access.'
+                  : 'This summary page is designed to help users discover and revisit important Slay the Spire 2 updates. For the full original reporting or official announcement, use the source link below.'}
               </p>
             </div>
 
+            {article.relatedLinks && article.relatedLinks.length > 0 && (
+              <div className="rounded-xl border border-border bg-background/70 p-5 mb-8">
+                <h2 className="font-heading text-xl font-bold mb-4">Related pages</h2>
+                <div className="flex flex-col gap-3">
+                  {article.relatedLinks.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className="text-molten-orange hover:text-ember-glow transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+
             <div className="flex flex-wrap gap-4">
-              <a
-                href={article.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-molten-orange hover:bg-ember-glow text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300"
-              >
-                Read Original Source
-                <ExternalLink className="w-4 h-4" />
-              </a>
+              {article.sourceType === 'internal' ? (
+                <a
+                  href={article.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-molten-orange hover:bg-ember-glow text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300"
+                >
+                  View Official Steam Page
+                  <ExternalLink className="w-4 h-4" />
+                </a>
+              ) : (
+                <a
+                  href={article.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-molten-orange hover:bg-ember-glow text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300"
+                >
+                  Read Original Source
+                  <ExternalLink className="w-4 h-4" />
+                </a>
+              )}
               <Link
                 href="/news"
                 className="inline-flex items-center gap-2 bg-shadow-gray hover:bg-muted border border-border text-foreground font-semibold px-6 py-3 rounded-lg transition-all duration-300"
