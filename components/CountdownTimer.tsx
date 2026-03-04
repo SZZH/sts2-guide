@@ -1,9 +1,10 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Calendar } from 'lucide-react';
 
-const LAUNCH_DATE = new Date('2026-03-05T00:00:00Z');
+// Widely reported Steam unlock time: Mar 5, 2026 10:00 AM Pacific Standard Time.
+const LAUNCH_DATE = new Date('2026-03-05T18:00:00Z');
 
 export default function CountdownTimer() {
   const [timeLeft, setTimeLeft] = useState({
@@ -12,6 +13,18 @@ export default function CountdownTimer() {
     minutes: 0,
     seconds: 0,
   });
+  const localLaunchText = useMemo(() => {
+    const formatter = new Intl.DateTimeFormat(undefined, {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+      hour: 'numeric',
+      minute: '2-digit',
+      timeZoneName: 'short',
+    });
+
+    return formatter.format(LAUNCH_DATE);
+  }, []);
 
   useEffect(() => {
     const calculateTimeLeft = () => {
@@ -39,6 +52,9 @@ export default function CountdownTimer() {
       <div className="flex items-center gap-2 mb-4 justify-center">
         <Calendar className="w-5 h-5 text-molten-orange" />
         <span className="text-steel-blue font-semibold">Early Access Launch</span>
+      </div>
+      <div className="text-xs text-muted-foreground mb-4 text-center">
+        Local launch time: {localLaunchText || 'Loading...'}
       </div>
       <div className="flex gap-4 justify-center">
         {[
