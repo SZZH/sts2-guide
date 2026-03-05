@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowLeft, ExternalLink } from 'lucide-react';
 import { NEWS_ARTICLES } from '@/shared/gameData';
-import { ArticleSchema, BreadcrumbSchema } from '@/app/schema';
+import { ArticleSchema, BreadcrumbSchema, FAQSchema } from '@/app/schema';
 
 export async function generateStaticParams() {
   return NEWS_ARTICLES.map((article) => ({
@@ -46,6 +46,29 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ slu
     notFound();
   }
 
+  const isLaunchGuide = article.slug === 'slay-the-spire-2-launch-time-us-china';
+  const launchFaqItems = [
+    {
+      question: 'Is Slay the Spire 2 a full 1.0 release?',
+      answer: 'No. Slay the Spire 2 launches as an Early Access release.',
+    },
+    {
+      question: 'What is the practical launch-time conversion for US Pacific Time and China Standard Time?',
+      answer:
+        'Practical conversion used on this page: US Pacific Time is March 5, 2026 at 10:00 AM, and China Standard Time is March 6, 2026 at 2:00 AM.',
+    },
+    {
+      question: 'Can launch-hour details change by region or platform behavior?',
+      answer:
+        'Yes. Use this page as a practical conversion reference, then verify your storefront and platform unlock status at launch time.',
+    },
+    {
+      question: 'Where should beginners continue after checking launch time?',
+      answer:
+        'Start with the mechanics page for core systems, then review character pages for role-specific strategy planning.',
+    },
+  ];
+
   return (
     <>
       <BreadcrumbSchema
@@ -63,6 +86,7 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ slu
         url={`https://sts2guide.com/news/${article.slug}`}
         imageUrl={article.image}
       />
+      {isLaunchGuide && <FAQSchema questions={launchFaqItems} />}
       <div className="min-h-screen py-16">
         <div className="container mx-auto px-4 max-w-4xl">
           <Link
