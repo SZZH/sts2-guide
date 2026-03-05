@@ -281,6 +281,94 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     ],
   },
   {
+    slug: 'slay-the-spire-2-first-run-guide-act-1-priorities',
+    title: 'Slay the Spire 2 First Run Guide: Act 1 Priorities for Beginners',
+    excerpt: 'A practical first-run guide for Slay the Spire 2 beginners. Learn what to prioritize in Act 1, when to take elite fights, and how to avoid common early mistakes in your first 10 runs.',
+    date: '2026-03-05',
+    category: 'Guide',
+    readTime: '8 min',
+    featured: true,
+    image: 'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2868840/ss_01ff255192aea73e2fd9940cea4f613cb2919298.1920x1080.jpg?t=1770241822',
+    url: 'https://store.steampowered.com/app/2868840/Slay_the_Spire_2/',
+    source: 'StS2 Guide',
+    sourceType: 'internal',
+    updatedAt: '2026-03-05',
+    intro: [
+      'If this is your first day with Slay the Spire 2, your goal is not to force a perfect build. The real goal is to make repeatable decisions that keep your run stable through Act 1.',
+      'This guide focuses on practical priorities for beginners: preserving HP, drafting a playable deck curve, choosing safe routes, and avoiding the most common first-run mistakes.',
+    ],
+    sections: [
+      {
+        heading: 'Act 1 priorities: survival first, scaling second',
+        paragraphs: [
+          'Most early losses come from trying to scale too fast while your deck still cannot survive basic hallway fights. In Act 1, treat HP as your most limited resource.',
+          'A stable Act 1 deck usually has enough early damage to end fights on time, enough block to avoid heavy chip damage, and at least one direction for mid-run scaling.',
+        ],
+        bullets: [
+          'Priority 1: keep HP high enough to enter elites or the boss with flexibility.',
+          'Priority 2: maintain a playable cost curve, especially 1-cost consistency.',
+          'Priority 3: take scaling pieces only when your immediate fights stay manageable.',
+        ],
+      },
+      {
+        heading: 'Card draft rule for the first three rewards',
+        paragraphs: [
+          'Beginners often overvalue rarity and undervalue immediate utility. In the first few picks, card quality is less important than whether the card solves your current fight pattern.',
+        ],
+        bullets: [
+          'Pick 1-2: take efficient damage or reliable block that improves your next two fights.',
+          'Pick 3: start shaping direction, but avoid hard-committing to one archetype too early.',
+          'Skip cards when all options lower deck consistency.',
+        ],
+      },
+      {
+        heading: 'When to fight elites in early runs',
+        paragraphs: [
+          'Elite fights are high value but also high variance for inexperienced players. Route into elites only when your deck and HP can support the risk.',
+        ],
+        bullets: [
+          'Fight elites when you already have enough front-loaded damage and stable defense.',
+          'Avoid elites if recent fights are already costing too much HP.',
+          'Use campfires to recover consistency before taking high-risk nodes.',
+        ],
+      },
+      {
+        heading: 'Top 5 first-run mistakes',
+        paragraphs: [
+          'These mistakes appear repeatedly in launch-week runs and are easy to correct once recognized.',
+        ],
+        bullets: [
+          'Taking flashy cards that do not solve current fights.',
+          'Overrouting into elites without damage checks.',
+          'Forcing one build after one lucky reward.',
+          'Ignoring defensive turns against unknown enemy patterns.',
+          'Copying final builds without learning transition cards.',
+        ],
+      },
+      {
+        heading: 'Use this as your first 10-run framework',
+        paragraphs: [
+          'For your first ten runs, optimize for decision quality, not win rate. Keep short notes on what consistently stabilizes Act 1, then refine from there.',
+          'If you also need unlock-time and launch FAQ context, use the launch hub linked below.',
+        ],
+      },
+    ],
+    relatedLinks: [
+      {
+        href: '/news/slay-the-spire-2-launch-time-us-china',
+        label: 'Launch time and first-24h checklist hub',
+      },
+      {
+        href: '/mechanics',
+        label: 'Core mechanics reference: Sly, Doom, Stars, Forge',
+      },
+      {
+        href: '/characters',
+        label: 'Compare characters and choose a beginner-friendly start',
+      },
+    ],
+  },
+  {
     slug: 'gamesradar-industry-impact',
     title: 'Indie Devs Adjust Release Schedules to Avoid StS2',
     excerpt: 'The highly anticipated sequel is causing other roguelike developers to adjust their release schedules. Developers fear losing players to "an absolute juggernaut in our own genre" when Slay the Spire 2 launches.',
