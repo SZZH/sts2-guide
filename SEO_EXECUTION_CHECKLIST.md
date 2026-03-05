@@ -26,6 +26,13 @@ Last updated: 2026-03-05
 - [ ] Homepage average position for brand + guide queries
 - [ ] Top queries with high impressions and low clicks
 
+## Tonight live monitoring (GSC + Vercel)
+- [ ] Keep GSC Performance page open for query/url delta checks (manual, delayed data)
+- [ ] Run Vercel snapshot (single): `VERCEL_TOKEN=... VERCEL_TEAM_ID=team_xxx VERCEL_TEAM_SLUG=szzhs-projects VERCEL_PROJECT_ID=sts2-guide pnpm monitor:vercel`
+- [ ] Run Vercel polling loop (5m x 24): `VERCEL_TOKEN=... VERCEL_TEAM_ID=team_xxx VERCEL_TEAM_SLUG=szzhs-projects VERCEL_PROJECT_ID=sts2-guide pnpm monitor:vercel:loop`
+- [ ] Confirm snapshots are written into `ops-logs/vercel/YYYY-MM-DD/*.json`
+- [ ] Confirm summary lines are appended into `ops-logs/YYYY-MM-DD.md`
+
 ## Rule to avoid cannibalization
 - Launch-time exact intent stays on:
   - `/news/slay-the-spire-2-launch-time-us-china`

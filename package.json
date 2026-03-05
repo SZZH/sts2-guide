@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "monitor:vercel": "node scripts/monitor-vercel.mjs",
+    "monitor:vercel:loop": "MONITOR_LOOP_SECONDS=300 MONITOR_ROUNDS=24 node scripts/monitor-vercel.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^1.6.1",
