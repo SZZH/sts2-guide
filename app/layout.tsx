@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Cinzel, Inter } from "next/font/google";
 import Image from "next/image";
+import { Analytics as VercelAnalytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -84,6 +86,8 @@ export default function RootLayout({
           </main>
           <Footer />
         </div>
+        <VercelAnalytics />
+        <SpeedInsights />
       </body>
     </html>
   );

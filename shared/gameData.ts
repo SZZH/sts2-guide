@@ -176,14 +176,14 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     sourceType: 'internal',
     updatedAt: '2026-03-05',
     intro: [
-      'Slay the Spire 2 enters Early Access on March 5, 2026. For most players asking about the launch hour, the practical conversion is March 5 at 10:00 AM in US Pacific Time and March 6 at 2:00 AM in China Standard Time.',
-      'The important confirmed point is the Early Access date itself. The exact hour above is the player-friendly timezone conversion, which is useful for planning but should not be overstated as a verbatim official wording unless Mega Crit publishes it that way.',
+      'Slay the Spire 2 enters Early Access on March 5, 2026. For players asking about launch hour, this page uses a practical conversion: March 5 at 10:00 AM in US Pacific Time and March 6 at 2:00 AM in China Standard Time.',
+      'The confirmed point is the Early Access date itself (March 5, 2026). The exact hour should be treated as a planning conversion and rechecked against live storefront unlock status at launch.',
     ],
     sections: [
       {
         heading: 'Slay the Spire 2 launch time',
         paragraphs: [
-          'For the two regions most people keep asking about, the launch-time conversion is simple. In US Pacific Time, Slay the Spire 2 is expected to unlock on March 5, 2026 at 10:00 AM. In China Standard Time, that becomes March 6, 2026 at 2:00 AM.',
+          'For the two regions most people keep asking about, the launch-time conversion is simple. In US Pacific Time, the practical unlock-time conversion used here is March 5, 2026 at 10:00 AM. In China Standard Time, that becomes March 6, 2026 at 2:00 AM.',
           'If you are posting in communities or sharing launch details with friends, it is safer to describe the time as a useful conversion rather than an officially locked statement. That keeps the wording accurate while still giving players a clear expectation.',
         ],
         bullets: [
@@ -261,6 +261,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
           'Q: Is this a full 1.0 release? A: No, Slay the Spire 2 launches in Early Access.',
           'Q: Is the unlock hour final for every region? A: Use the listed conversion as practical reference and verify against your storefront at launch.',
           'Q: Which page should I read next? A: Start with Mechanics for system understanding, then Characters for class-specific planning.',
+          'Verification note: as of March 5, 2026, official messaging clearly confirms the Early Access date; exact hour can vary by platform behavior and storefront rollout.',
           'Update log: 2026-03-05 - added first-24-hours checklist, beginner mistakes, and launch FAQ guidance.',
         ],
       },
@@ -277,6 +278,92 @@ export const NEWS_ARTICLES: NewsArticle[] = [
       {
         href: '/news',
         label: 'Read more Slay the Spire 2 news and updates',
+      },
+    ],
+  },
+  {
+    slug: 'best-starter-character-slay-the-spire-2-early-access',
+    title: 'Best Starter Character in Slay the Spire 2 (Early Access)',
+    excerpt: 'New to Slay the Spire 2 and not sure who to pick first? This practical guide compares Ironclad, Silent, Necrobinder, and Regent for early consistency, mistake tolerance, and first-10-run learning value.',
+    date: '2026-03-05',
+    category: 'Guide',
+    readTime: '9 min',
+    featured: true,
+    image: 'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2868840/ss_8f8dcd17d2dc8f228151f00ca17e59f2f65b9d85.1920x1080.jpg?t=1770241822',
+    url: 'https://store.steampowered.com/app/2868840/Slay_the_Spire_2/',
+    source: 'StS2 Guide',
+    sourceType: 'internal',
+    updatedAt: '2026-03-05',
+    intro: [
+      'If you are starting Slay the Spire 2 in Early Access, your first character should maximize learning speed and minimize run collapse from small mistakes.',
+      'This guide ranks starter options by early consistency, defensive stability, and how forgiving each character feels in your first ten runs.',
+    ],
+    sections: [
+      {
+        heading: 'Short answer: pick Ironclad first',
+        paragraphs: [
+          'For most beginners, Ironclad is the safest first pick because his baseline sustain and straightforward combat plan reduce punishment for imperfect drafting and routing.',
+          'He gives you cleaner feedback on fundamentals: damage pacing, block timing, and when to avoid overcommitting to elites.',
+        ],
+        bullets: [
+          'Most forgiving early-game floor among the four known characters.',
+          'Simple card evaluation: front-load damage, maintain block floor, add scaling later.',
+          'Good for learning pathing and HP management without heavy mechanic overhead.',
+        ],
+      },
+      {
+        heading: 'How the other starters compare',
+        paragraphs: [
+          'Silent is strong but can punish sequencing mistakes if your discard and hand-management decisions are inconsistent.',
+          'Necrobinder and Regent are high-upside but usually ask for more system understanding, so they are better as second or third picks after basic run discipline is stable.',
+        ],
+        bullets: [
+          'Silent: high ceiling, medium beginner risk due to sequencing complexity.',
+          'Necrobinder: strong control identity, but requires cleaner planning around Doom/Osty transitions.',
+          'Regent: flexible and explosive, but Stars/Forge decision trees can overload early runs.',
+        ],
+      },
+      {
+        heading: 'Beginner-safe pick order for first 10 runs',
+        paragraphs: [
+          'Use this order if your goal is to improve quickly instead of chasing highlight runs in day one chaos.',
+        ],
+        bullets: [
+          'Runs 1-4: Ironclad for core fundamentals and stable map decisions.',
+          'Runs 5-7: Silent to practice sequencing and discard value.',
+          'Runs 8-10: try Necrobinder or Regent once your early-game discipline is repeatable.',
+        ],
+      },
+      {
+        heading: 'Three rules that matter more than character choice',
+        paragraphs: [
+          'Character selection helps, but most early losses still come from universal decision mistakes. Keep these constraints active in every run.',
+        ],
+        bullets: [
+          'Draft for immediate fight quality before speculative late-game combos.',
+          'Route elites only when current damage plus defense can end fights on time.',
+          'Preserve HP for flexibility; low HP narrows all future decisions.',
+        ],
+      },
+      {
+        heading: 'Where to go next',
+        paragraphs: [
+          'If you need deeper class details, use the character page first, then read mechanics to understand Sly, Doom, Stars, and Forge interactions.',
+        ],
+      },
+    ],
+    relatedLinks: [
+      {
+        href: '/characters',
+        label: 'Character breakdowns: strengths, difficulty, and starter kits',
+      },
+      {
+        href: '/mechanics',
+        label: 'Mechanics reference: Sly, Doom, Stars, Forge, and more',
+      },
+      {
+        href: '/news/slay-the-spire-2-launch-time-us-china',
+        label: 'Launch-time hub with checklist and FAQ updates',
       },
     ],
   },
