@@ -3,10 +3,19 @@ import Link from 'next/link';
 import { RELICS } from '@/shared/gameData';
 
 export const metadata: Metadata = {
-  title: 'Relics',
+  title: 'Slay the Spire 2 Relics Guide - Starter, Common, Uncommon, Rare',
   description: 'Complete database of Slay the Spire 2 relics. Browse starter, common, uncommon, and rare relics with detailed descriptions and character synergies.',
+  keywords: [
+    'Slay the Spire 2 relics',
+    'StS2 relic database',
+    'best relics StS2',
+    'Slay the Spire 2 starter relics',
+  ],
+  alternates: {
+    canonical: '/relics',
+  },
   openGraph: {
-    title: 'Relics',
+    title: 'Slay the Spire 2 Relics Guide - Starter, Common, Uncommon, Rare',
     description: 'Complete database of Slay the Spire 2 relics with detailed descriptions and character synergies.',
   },
 };
@@ -72,7 +81,7 @@ export default function RelicsPage() {
         <div className="container relative">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 bg-clip-text text-transparent">
-              Relics
+              SLAY THE SPIRE 2 RELICS
             </h1>
             <p className="text-xl text-muted-foreground mb-4">
               Powerful artifacts that define your run. Each relic provides unique passive abilities that can dramatically alter your strategy.

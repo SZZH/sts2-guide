@@ -4,9 +4,12 @@ import Image from 'next/image';
 import { CHARACTERS } from '@/shared/gameData';
 
 export const metadata: Metadata = {
-  title: 'Characters',
+  title: 'Slay the Spire 2 Characters Guide - Classes, Difficulty & Playstyles',
   description: 'Explore all playable characters in Slay the Spire 2. Compare abilities, difficulty levels, and find the perfect character for your playstyle.',
   keywords: ['Slay the Spire 2 characters', 'StS2 character tier list', 'best character StS2', 'Necrobinder', 'The Regent'],
+  alternates: {
+    canonical: '/characters',
+  },
   openGraph: {
     title: 'All Slay the Spire 2 Characters - Tier List & Guides',
     description: 'Complete guide to all Slay the Spire 2 characters. Compare stats, abilities, and find the best character for your playstyle.',
@@ -20,7 +23,7 @@ export default function CharactersPage() {
         {/* Page Header */}
         <div className="text-center mb-12">
           <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">
-            PLAYABLE CHARACTERS
+            SLAY THE SPIRE 2 CHARACTERS
           </h1>
           <p className="text-steel-blue text-lg max-w-2xl mx-auto">
             Master each character&apos;s unique mechanics, card synergies, and optimal strategies to conquer the Spire.

@@ -17,6 +17,7 @@ export default function Navigation() {
 
   const navLinks = [
     { id: 'home', href: '/', label: 'Home', placeholder: false },
+    { id: 'launch', href: '/news/slay-the-spire-2-launch-time-us-china', label: 'Launch', placeholder: false },
     { id: 'news', href: '/news', label: 'News', placeholder: false },
     { id: 'characters', href: '/characters', label: 'Characters', placeholder: false },
     { id: 'guides', href: '/guides', label: 'Guides', placeholder: false },

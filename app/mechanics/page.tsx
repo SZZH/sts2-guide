@@ -3,10 +3,19 @@ import Link from 'next/link';
 import { GAME_MECHANICS } from '@/shared/gameData';
 
 export const metadata: Metadata = {
-  title: 'Game Mechanics',
+  title: 'Slay the Spire 2 Mechanics Guide - Sly, Doom, Stars, Forge',
   description: 'Complete guide to Slay the Spire 2 game mechanics including Sly, Doom, Stars, Forge, Enchantments, and more. Master the new systems and dominate the Spire.',
+  keywords: [
+    'Slay the Spire 2 mechanics',
+    'StS2 Sly mechanic',
+    'StS2 Doom Stars Forge',
+    'Slay the Spire 2 systems guide',
+  ],
+  alternates: {
+    canonical: '/mechanics',
+  },
   openGraph: {
-    title: 'Game Mechanics',
+    title: 'Slay the Spire 2 Mechanics Guide - Sly, Doom, Stars, Forge',
     description: 'Complete guide to Slay the Spire 2 game mechanics including Sly, Doom, Stars, Forge, Enchantments, and more.',
   },
 };
@@ -24,7 +33,7 @@ export default function MechanicsPage() {
         <div className="container relative">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-orange-400 to-red-400 bg-clip-text text-transparent">
-              Game Mechanics
+              SLAY THE SPIRE 2 MECHANICS
             </h1>
             <p className="text-xl text-muted-foreground">
               Master the systems that define Slay the Spire 2. From core mechanics to character-specific abilities, understanding these systems is key to conquering the Spire.

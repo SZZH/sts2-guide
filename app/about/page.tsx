@@ -2,8 +2,17 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'About',
+  title: 'About StS2 Guide - Mission, Roadmap & Editorial Policy',
   description: 'Learn about StS2 Guide - the ultimate fan-made strategy resource for Slay the Spire 2. Our mission, roadmap, and community commitment.',
+  keywords: [
+    'about StS2 Guide',
+    'Slay the Spire 2 fan site',
+    'StS2 editorial policy',
+    'Slay the Spire 2 roadmap',
+  ],
+  alternates: {
+    canonical: '/about',
+  },
 };
 
 export default function AboutPage() {

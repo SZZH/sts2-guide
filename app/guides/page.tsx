@@ -3,10 +3,19 @@ import Link from 'next/link';
 import { CHARACTERS } from '@/shared/gameData';
 
 export const metadata: Metadata = {
-  title: 'Build Guides',
+  title: 'Slay the Spire 2 Build Guides - Best Decks & Strategy',
   description: 'Expert deck building guides for all Slay the Spire 2 characters. Learn winning strategies, card synergies, and optimal builds for Ironclad, Silent, Necrobinder, and The Regent.',
+  keywords: [
+    'Slay the Spire 2 builds',
+    'StS2 build guide',
+    'best StS2 decks',
+    'Slay the Spire 2 strategy guide',
+  ],
+  alternates: {
+    canonical: '/guides',
+  },
   openGraph: {
-    title: 'Build Guides',
+    title: 'Slay the Spire 2 Build Guides - Best Decks & Strategy',
     description: 'Expert deck building guides for all Slay the Spire 2 characters with winning strategies and card synergies.',
   },
 };
@@ -260,7 +269,7 @@ export default function GuidesPage() {
         <div className="container relative">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-orange-400 via-red-400 to-purple-400 bg-clip-text text-transparent">
-              Build Guides
+              SLAY THE SPIRE 2 BUILD GUIDES
             </h1>
             <p className="text-xl text-muted-foreground">
               Expert strategies for every character. Learn proven builds, card synergies, and winning tactics to conquer the Spire.

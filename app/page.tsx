@@ -62,14 +62,22 @@ export default function HomePage() {
           
           {/* Countdown Timer */}
           <CountdownTimer />
+          <div className="mt-4 text-sm text-steel-blue">
+            <Link
+              href="/news/slay-the-spire-2-launch-time-us-china"
+              className="text-molten-orange hover:text-ember-glow font-semibold transition-colors"
+            >
+              Launch Time by Region + First 24h Checklist
+            </Link>
+          </div>
 
           {/* CTA Buttons */}
           <div className="flex gap-4 justify-center mt-8">
             <Link 
-              href="/characters"
+              href="/news/slay-the-spire-2-launch-time-us-china"
               className="bg-molten-orange hover:bg-ember-glow text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300 flex items-center gap-2"
             >
-              View Characters
+              Launch Guide
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
@@ -154,7 +162,7 @@ export default function HomePage() {
             >
               <div className="text-4xl mb-4">📚</div>
               <h3 className="font-heading text-2xl font-bold mb-3 group-hover:text-orange-400 transition-colors">
-                Build Guides
+                StS2 Build Guides
               </h3>
               <p className="text-muted-foreground">
                 Expert deck building strategies for every character. Learn winning combos and synergies.
@@ -166,7 +174,7 @@ export default function HomePage() {
             >
               <div className="text-4xl mb-4">⚡</div>
               <h3 className="font-heading text-2xl font-bold mb-3 group-hover:text-purple-400 transition-colors">
-                Game Mechanics
+                StS2 Mechanics
               </h3>
               <p className="text-muted-foreground">
                 Master Sly, Doom, Stars, and other new mechanics that define StS2 gameplay.
@@ -178,7 +186,7 @@ export default function HomePage() {
             >
               <div className="text-4xl mb-4">⭐</div>
               <h3 className="font-heading text-2xl font-bold mb-3 group-hover:text-yellow-400 transition-colors">
-                Relics Database
+                StS2 Relics Database
               </h3>
               <p className="text-muted-foreground">
                 Browse all relics with detailed descriptions and character synergies.

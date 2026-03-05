@@ -165,16 +165,16 @@ export const NEWS_ARTICLES: NewsArticle[] = [
   {
     slug: 'slay-the-spire-2-launch-time-us-china',
     title: 'Slay the Spire 2 Early Access Launch Time in US and China',
-    excerpt: 'Slay the Spire 2 enters Early Access on March 5, 2026. Here is the practical launch-time conversion for US Pacific Time and China Standard Time, plus a clear summary of confirmed characters, mechanics, and launch details.',
+    excerpt: 'Slay the Spire 2 enters Early Access on March 5, 2026. This launch hub includes region time conversion, a first-24-hours starter checklist, common beginner mistakes, and practical FAQ updates for launch week.',
     date: '2026-03-04',
     category: 'News',
-    readTime: '7 min',
+    readTime: '10 min',
     featured: true,
     image: 'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2868840/ss_026b621a38b400c9f4080a7dd9152dd3050cbe2d.1920x1080.jpg?t=1770241822',
     url: 'https://store.steampowered.com/app/2868840/Slay_the_Spire_2/',
     source: 'StS2 Guide',
     sourceType: 'internal',
-    updatedAt: '2026-03-04',
+    updatedAt: '2026-03-05',
     intro: [
       'Slay the Spire 2 enters Early Access on March 5, 2026. For most players asking about the launch hour, the practical conversion is March 5 at 10:00 AM in US Pacific Time and March 6 at 2:00 AM in China Standard Time.',
       'The important confirmed point is the Early Access date itself. The exact hour above is the player-friendly timezone conversion, which is useful for planning but should not be overstated as a verbatim official wording unless Mega Crit publishes it that way.',
@@ -224,6 +224,44 @@ export const NEWS_ARTICLES: NewsArticle[] = [
         paragraphs: [
           'If the launch follows the usual pattern for system-heavy deckbuilders, the first wave of opinions will change fast. Early tier lists are likely to be unstable, and some mechanics that look weak at first may get reevaluated once players understand their support pieces and scaling patterns.',
           'The most useful early discussions will probably be the ones that share actual run observations: which characters feel coherent, which mechanics open up real build paths, and whether the Early Access version already has enough variety to keep repeated runs feeling fresh.',
+        ],
+      },
+      {
+        heading: 'First 24 hours checklist (launch execution plan)',
+        paragraphs: [
+          'This section is built for players who want a clear launch-day routine instead of vague hype. Use it as a practical sequence and adapt based on your available time.',
+        ],
+        bullets: [
+          'T-30 minutes: update client, verify controller/keybinds, and check platform unlock status.',
+          'T+0 to T+2 hours: run exploratory attempts to learn enemy pacing and card pool direction instead of forcing one build.',
+          'T+2 to T+6 hours: pick one character to focus on, track which card packages consistently stabilize Act 1.',
+          'T+6 to T+24 hours: test two to three draft rules (card add discipline, pathing risk level, boss prep timing) and keep only what repeats results.',
+          'Do not lock tier-list conclusions too early; Early Access balance and player understanding will shift quickly.',
+        ],
+      },
+      {
+        heading: 'Top 5 beginner mistakes at launch (and better alternatives)',
+        paragraphs: [
+          'Most early losses come from decision quality, not bad luck. These patterns are common in launch week and are fixable with simple constraints.',
+        ],
+        bullets: [
+          'Mistake 1: drafting every flashy rare card. Better: draft for curve, block coverage, and energy consistency first.',
+          'Mistake 2: overfighting elites without a damage plan. Better: only route into elites when your current deck can end fights on time.',
+          'Mistake 3: forcing one archetype after one lucky reward. Better: commit late and pivot when card rewards clearly point elsewhere.',
+          'Mistake 4: undervaluing defensive turns in new matchups. Better: treat unknown enemy patterns as information turns and preserve HP.',
+          'Mistake 5: copying final builds without understanding transition cards. Better: learn the bridge cards that carry weak early decks.',
+        ],
+      },
+      {
+        heading: 'Launch FAQ and update policy',
+        paragraphs: [
+          'Because this is an Early Access launch page, some details can change quickly. This guide separates confirmed information from practical inference and will be updated during launch week.',
+        ],
+        bullets: [
+          'Q: Is this a full 1.0 release? A: No, Slay the Spire 2 launches in Early Access.',
+          'Q: Is the unlock hour final for every region? A: Use the listed conversion as practical reference and verify against your storefront at launch.',
+          'Q: Which page should I read next? A: Start with Mechanics for system understanding, then Characters for class-specific planning.',
+          'Update log: 2026-03-05 - added first-24-hours checklist, beginner mistakes, and launch FAQ guidance.',
         ],
       },
     ],

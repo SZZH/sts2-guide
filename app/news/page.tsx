@@ -37,7 +37,7 @@ export default function NewsPage() {
       <div className="container mx-auto px-4">
         {/* Page Header */}
         <div className="text-center mb-12">
-          <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">LATEST NEWS</h1>
+          <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">SLAY THE SPIRE 2 NEWS</h1>
           <p className="text-steel-blue text-lg max-w-2xl mx-auto">
             Stay updated with the latest Slay the Spire 2 news, guides, and community updates.
           </p>
