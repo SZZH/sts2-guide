@@ -15,9 +15,41 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   const featuredCharacters = CHARACTERS.slice(0, 2);
-  const latestNews = [...NEWS_ARTICLES]
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-    .slice(0, 3);
+  const prioritizedLatestNewsSlugs = [
+    'slay-the-spire-2-known-issues-and-fixes',
+    'slay-the-spire-2-hotfix-patch-notes',
+    'slay-the-spire-2-co-op-guide-how-it-works',
+  ];
+  const latestNews = [
+    ...prioritizedLatestNewsSlugs
+      .map((slug) => NEWS_ARTICLES.find((article) => article.slug === slug))
+      .filter((article): article is NonNullable<typeof article> => Boolean(article)),
+    ...NEWS_ARTICLES
+      .filter((article) => !prioritizedLatestNewsSlugs.includes(article.slug))
+      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()),
+  ].slice(0, 3);
+  const launchWeekArticles = [
+    {
+      href: '/news/slay-the-spire-2-known-issues-and-fixes',
+      label: 'Known Issues & Fixes',
+      description: 'Crash, black screen, freeze, and text issues during launch week.',
+    },
+    {
+      href: '/news/slay-the-spire-2-hotfix-patch-notes',
+      label: 'Hotfix Patch Notes',
+      description: 'What v0.98.1 fixed and what still needs troubleshooting.',
+    },
+    {
+      href: '/news/slay-the-spire-2-co-op-guide-how-it-works',
+      label: 'Co-op Guide',
+      description: 'What multiplayer officially confirms at launch and how to start cleanly.',
+    },
+    {
+      href: '/news/slay-the-spire-2-steam-deck-performance-guide',
+      label: 'Steam Deck Guide',
+      description: 'Current Deck performance picture and first troubleshooting steps.',
+    },
+  ];
 
   return (
     <>
@@ -133,6 +165,36 @@ export default function HomePage() {
             >
               Compare Characters
             </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-y border-border bg-shadow-gray/40 py-12">
+        <div className="container mx-auto px-4">
+          <div className="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+            <div>
+              <div className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-molten-orange">
+                Launch Week
+              </div>
+              <h2 className="font-heading text-3xl md:text-4xl font-bold">
+                Updated Today
+              </h2>
+            </div>
+            <p className="max-w-2xl text-sm text-steel-blue">
+              Start here if you need immediate answers after launch. These pages are built for live patch notes, crash fixes, co-op questions, and Steam Deck checks.
+            </p>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            {launchWeekArticles.map((article) => (
+              <Link
+                key={article.href}
+                href={article.href}
+                className="rounded-xl border border-border bg-forge-black/70 p-5 transition-all duration-300 hover:border-molten-orange hover:bg-forge-black/85"
+              >
+                <h3 className="font-heading text-xl font-bold text-white">{article.label}</h3>
+                <p className="mt-3 text-sm leading-6 text-steel-blue">{article.description}</p>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

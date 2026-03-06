@@ -292,6 +292,22 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     ],
     relatedLinks: [
       {
+        href: '/news/slay-the-spire-2-known-issues-and-fixes',
+        label: 'Known issues and fixes: crash, black screen, freeze, and text problems',
+      },
+      {
+        href: '/news/slay-the-spire-2-hotfix-patch-notes',
+        label: 'Hotfix patch notes: what v0.98.1 fixed on day one',
+      },
+      {
+        href: '/news/slay-the-spire-2-co-op-guide-how-it-works',
+        label: 'Co-op guide: what launch-week multiplayer confirms so far',
+      },
+      {
+        href: '/news/slay-the-spire-2-steam-deck-performance-guide',
+        label: 'Steam Deck guide: current performance picture and common fixes',
+      },
+      {
         href: '/news/slay-the-spire-2-first-run-guide-act-1-priorities',
         label: 'First-run priorities for launch week and Act 1 stability',
       },
@@ -312,82 +328,397 @@ export const NEWS_ARTICLES: NewsArticle[] = [
         label: 'Read more Slay the Spire 2 news and updates',
       },
       {
-        href: '/news/slay-the-spire-2-co-op-4-player-explained',
-        label: 'Does Slay the Spire 2 have co-op? 4-player feature explainer',
+        href: '/news/slay-the-spire-2-co-op-guide-how-it-works',
+        label: 'Co-op guide: what launch-week multiplayer confirms so far',
       },
     ],
   },
   {
-    slug: 'slay-the-spire-2-co-op-4-player-explained',
-    title: 'Does Slay the Spire 2 Have Co-op? 4-Player Co-op Explained',
-    excerpt: 'Yes. Slay the Spire 2 includes 4-player co-op in Early Access. This short guide explains the confirmed co-op answer, why it matters at launch, and which pages to read next if you are starting with friends.',
+    slug: 'slay-the-spire-2-hotfix-patch-notes',
+    title: 'Slay the Spire 2 Hotfix Patch Notes: What v0.98.1 Fixed on Day One',
+    excerpt: 'Slay the Spire 2 hotfix v0.98.1 is already live. This quick patch-notes guide explains what the launch-day hotfix fixed, which crashes and localization issues it targets, and what to try next if your problem remains.',
     date: '2026-03-06',
     category: 'News',
-    readTime: '5 min',
+    readTime: '6 min',
+    featured: false,
+    image: 'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2868840/ss_8f8dcd17d2dc8f228151f00ca17e59f2f65b9d85.1920x1080.jpg?t=1770241822',
+    url: 'https://steamdb.info/patchnotes/22221407/',
+    source: 'StS2 Guide',
+    sourceType: 'internal',
+    updatedAt: '2026-03-06',
+    intro: [
+      'Slay the Spire 2 hotfix v0.98.1 is already live. The practical takeaway is that this is a launch-day stability patch, not a content update.',
+      'If you only need the short answer, v0.98.1 targets multiplayer progression lockouts, several crash paths, and a set of localization problems that were visible immediately after release.',
+    ],
+    sections: [
+      {
+        heading: 'Short answer: v0.98.1 is a day-one stability hotfix',
+        paragraphs: [
+          'The hotfix was published on March 6, 2026 and its job is clear: clean up launch-day bugs and softlocks that players reported immediately after Early Access went live.',
+          'That makes this patch more important for troubleshooting than for theorycrafting. If you are deciding whether you need to update right now, the answer is yes.',
+        ],
+        bullets: [
+          'Patch version: v0.98.1',
+          'Focus: bug fixes, crash fixes, softlock fixes, localization fixes',
+          'Not a balance patch or content expansion',
+        ],
+      },
+      {
+        heading: 'What v0.98.1 fixed',
+        paragraphs: [
+          'The most important confirmed fix is a multiplayer progression problem. If your first run was in multiplayer and you disconnected after beating the Act 1 boss, the bug could stop you from starting a new run or entering the Timeline screen. The hotfix targets that case directly.',
+          'The patch also fixes several crash paths tied to fast card play and localization. That includes unsupported Steam language fallback problems and multiple non-English text-related crashes.',
+        ],
+        bullets: [
+          'Fixed multiplayer bug that could block a new run after an Act 1 boss disconnect',
+          'Fixed a crash from fast card play when targeting was cancelled',
+          'Fixed untranslated-text crash paths for languages with complex plural rules',
+          'Fixed intermittent non-English crashes and a Japanese localization-specific crash',
+          'Fixed unsupported Steam languages showing all text as W instead of falling back to English',
+        ],
+      },
+      {
+        heading: 'What this patch means for players',
+        paragraphs: [
+          'If you ran into launch-day instability, this patch may remove the need for some manual workarounds. Multiplayer users and non-English language users have the strongest reason to recheck the game immediately after updating.',
+          'At the same time, not every reported problem is guaranteed to disappear after one hotfix. The right expectation is that v0.98.1 removes several obvious failures, but some launch-week troubleshooting will still be necessary.',
+        ],
+        bullets: [
+          'Update first, then retry the exact failure case before changing system settings',
+          'Re-check language settings if you saw text display anomalies before the patch',
+          'Use the known-issues page if crashes or freezes continue after updating',
+        ],
+      },
+      {
+        heading: 'What to do if your issue remains after updating',
+        paragraphs: [
+          'If you still have a crash, black screen, or freeze after installing v0.98.1, move from patch reading into troubleshooting. Start with the simplest checks first: restart Steam, verify files, and retry without extra overlays or background capture tools.',
+          'If your issue looks language-specific, switch back to a fully supported language and test again. If your issue is multiplayer-specific, try reproducing it in solo first so you can separate a general stability problem from a co-op-only bug.',
+        ],
+        bullets: [
+          'Restart Steam and confirm the new build is installed',
+          'Verify game files before changing wider system settings',
+          'Separate solo issues from co-op issues when testing',
+        ],
+      },
+      {
+        heading: 'Launch-week FAQ',
+        paragraphs: [
+          'The most useful questions around this patch are short and practical. Use this as the quick-reference block before you move into deeper troubleshooting.',
+        ],
+        bullets: [
+          'Q: Is v0.98.1 a content patch? A: No, it is a stability and bug-fix hotfix.',
+          'Q: Does this hotfix target co-op issues? A: Yes, one confirmed fix addresses a multiplayer progression lockout after an Act 1 boss disconnect.',
+          'Q: Should I still troubleshoot after updating? A: Yes, if your exact issue remains after the patch, move to known-issues troubleshooting rather than assuming the problem is gone.',
+        ],
+      },
+    ],
+    relatedLinks: [
+      {
+        href: '/news/slay-the-spire-2-known-issues-and-fixes',
+        label: 'Known issues and fixes: crash, black screen, freeze, and text problems',
+      },
+      {
+        href: '/news/slay-the-spire-2-launch-time-us-china',
+        label: 'Launch hub: live status, FAQ, and the best next pages to read',
+      },
+      {
+        href: '/news/slay-the-spire-2-steam-deck-performance-guide',
+        label: 'Steam Deck guide: current performance picture and common fixes',
+      },
+      {
+        href: '/news',
+        label: 'Browse more Slay the Spire 2 launch-week updates',
+      },
+    ],
+  },
+  {
+    slug: 'slay-the-spire-2-known-issues-and-fixes',
+    title: 'Slay the Spire 2 Known Issues and Fixes: Crash, Black Screen, Freeze',
+    excerpt: 'The most common Slay the Spire 2 launch-week problems are crashes, black screens, freezes, and language-related display errors. This troubleshooting guide prioritizes the fastest checks first, then separates patched issues from problems that may still need a workaround.',
+    date: '2026-03-06',
+    category: 'News',
+    readTime: '8 min',
     featured: true,
+    image: 'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2868840/ss_026b621a38b400c9f4080a7dd9152dd3050cbe2d.1920x1080.jpg?t=1770241822',
+    url: 'https://store.steampowered.com/app/2868840/Slay_the_Spire_2/',
+    source: 'StS2 Guide',
+    sourceType: 'internal',
+    updatedAt: '2026-03-06',
+    intro: [
+      'The most common Slay the Spire 2 launch-week problems are startup crashes, black screens, freezes, and text display issues. The practical goal of this page is to help you separate “already addressed by the hotfix” from “still worth troubleshooting locally.”',
+      'Start with the fastest checks first. In launch week, that usually beats overcomplicated system tweaking.',
+    ],
+    sections: [
+      {
+        heading: 'Fastest troubleshooting steps first',
+        paragraphs: [
+          'Begin with the checks that resolve the highest number of launch-week failures at the lowest cost. That means confirming the game updated correctly, fully restarting Steam, and verifying local files before you make broader system changes.',
+          'If you are testing a multiplayer problem, also retry in solo after updating. That gives you a clean way to see whether the failure is specific to co-op or part of a wider stability issue.',
+        ],
+        bullets: [
+          'Confirm the game updated to the latest hotfix build',
+          'Fully restart Steam, then relaunch the game',
+          'Verify integrity of game files',
+          'Retry once in solo if the original problem happened in multiplayer',
+        ],
+      },
+      {
+        heading: 'Crash or freeze on launch',
+        paragraphs: [
+          'Launch-week crash reports have clustered around startup instability, fast card-play edge cases, and some language-related failures. The hotfix already targets several of those paths, so patch status matters before anything else.',
+          'If your game still crashes on launch after updating, narrow the problem rather than changing five things at once. Restart Steam, verify files, disable overlays or capture tools, and note whether the crash happens before the menu, at the menu, or only once you enter a run.',
+        ],
+        bullets: [
+          'Update first, because v0.98.1 already fixes multiple crash paths',
+          'Disable overlays and background capture tools if the crash persists',
+          'Test whether the crash is menu-level or run-level',
+          'Use the in-game feedback tool or Steam discussion boards if the crash remains reproducible',
+        ],
+      },
+      {
+        heading: 'Black screen or stuck loading',
+        paragraphs: [
+          'A visible cursor on top of a black screen has been reported by players during launch week. Community reports suggest that a full Steam restart can help in some cases, which makes this a good early check before deeper troubleshooting.',
+          'If the issue only appears after entering combat or after skipping tutorial flow, note that detail. It helps separate a general launch failure from a state-specific bug that may need another patch.',
+        ],
+        bullets: [
+          'Try a full Steam restart before wider system changes',
+          'Note whether the black screen happens on boot, menu load, or first combat',
+          'Re-test after the hotfix before assuming the issue is still current',
+        ],
+      },
+      {
+        heading: 'Text or language display issues',
+        paragraphs: [
+          'One confirmed hotfix target was unsupported Steam languages showing all text as W instead of falling back to English. The patch also fixes several non-English crash paths and a Japanese localization-specific error.',
+          'That means language settings are now a first-class troubleshooting signal. If you were using an unsupported or edge-case language setting on day one, update first and re-test before assuming the client is still broken.',
+        ],
+        bullets: [
+          'The W-text fallback issue is a confirmed hotfix target',
+          'Several non-English crash cases were also patched in v0.98.1',
+          'If text issues remain, switch to a fully supported language and re-test',
+        ],
+      },
+      {
+        heading: 'When to wait for another patch',
+        paragraphs: [
+          'Not every launch-week failure is best solved by local tweaking. If you can clearly reproduce the issue on the latest build and the problem survives file verification plus a clean Steam restart, the next useful step may be reporting rather than repeatedly reinstalling.',
+          'The right launch-week mindset is iterative. Update, retest, isolate the trigger, then decide whether you are dealing with a local environment problem or a bug that still needs another official fix.',
+        ],
+      },
+      {
+        heading: 'Launch-week FAQ',
+        paragraphs: [
+          'Use this block for the fastest version of the answer before moving into full troubleshooting.',
+        ],
+        bullets: [
+          'Q: My game still crashes after the hotfix. What should I do first? A: Restart Steam, verify files, and re-test on the latest build before deeper system changes.',
+          'Q: My text looked broken on day one. Is that a known issue? A: Yes. Unsupported-language fallback and several non-English text-related crashes were explicit hotfix targets.',
+          'Q: Should I keep troubleshooting if the issue is still reproducible? A: Isolate the trigger first, then decide whether to keep local testing or report it through official feedback channels.',
+        ],
+      },
+    ],
+    relatedLinks: [
+      {
+        href: '/news/slay-the-spire-2-hotfix-patch-notes',
+        label: 'Hotfix patch notes: what v0.98.1 fixed on day one',
+      },
+      {
+        href: '/news/slay-the-spire-2-steam-deck-performance-guide',
+        label: 'Steam Deck guide: current performance picture and common fixes',
+      },
+      {
+        href: '/news/slay-the-spire-2-launch-time-us-china',
+        label: 'Launch hub: live status, FAQ, and launch-week routing',
+      },
+      {
+        href: '/news',
+        label: 'Browse more Slay the Spire 2 launch-week updates',
+      },
+    ],
+  },
+  {
+    slug: 'slay-the-spire-2-co-op-guide-how-it-works',
+    title: 'Slay the Spire 2 Co-op Guide: How Multiplayer Works at Launch',
+    excerpt: 'Slay the Spire 2 does have online co-op, with up to 4 players on Steam. This launch-week guide separates what is officially confirmed from what still needs more player verification, then points groups toward the best first pages to read together.',
+    date: '2026-03-06',
+    category: 'News',
+    readTime: '7 min',
+    featured: false,
     image: 'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2868840/ss_8f8dcd17d2dc8f228151f00ca17e59f2f65b9d85.1920x1080.jpg?t=1770241822',
     url: 'https://store.steampowered.com/app/2868840/Slay_the_Spire_2/',
     source: 'StS2 Guide',
     sourceType: 'internal',
     updatedAt: '2026-03-06',
     intro: [
-      'Yes. Slay the Spire 2 has 4-player co-op, and that is one of the clearest launch-week differences people are searching for right now.',
-      'This page is meant to answer the co-op question quickly, then route you to the pages that are still useful whether you start solo or with friends.',
+      'Yes. Slay the Spire 2 has online co-op, and the official Steam page confirms support for up to 4 players.',
+      'What matters in launch week is separating confirmed multiplayer facts from details that still need broader player testing. This page is built around that split so you can make decisions without pretending every system interaction is already settled.',
     ],
     sections: [
       {
-        heading: 'Short answer: yes, Slay the Spire 2 supports 4-player co-op',
+        heading: 'What is confirmed about co-op at launch',
         paragraphs: [
-          'The confirmed answer is yes: Slay the Spire 2 includes 4-player co-op in its Early Access period. If you are comparing it to the first game, this is one of the easiest “what changed” answers to verify.',
-          'That makes co-op one of the best launch-week hooks for players who are not only interested in solo deckbuilding progression.',
+          'The official Steam store page confirms online co-op and explicitly says the game can be played with up to 4 players. It also states that the mode includes multiplayer-specific cards and team synergies.',
+          'That is enough to answer the highest-value launch-week query: yes, the sequel really does have a dedicated co-op mode, and it is one of the most concrete feature differences from how many players remember the first game.',
+        ],
+        bullets: [
+          'Officially confirmed: online co-op',
+          'Officially confirmed: up to 4 players',
+          'Officially confirmed: multiplayer-specific cards and team synergies',
         ],
       },
       {
-        heading: 'Why this matters at launch',
+        heading: 'How to start a multiplayer run',
         paragraphs: [
-          'For many players, the launch decision is not just about whether the sequel is live. It is about whether there is enough new structure to justify jumping in immediately. Co-op changes that answer because it creates a different reason to start early with friends.',
-          'It also changes search intent. Some users are not looking for deep mechanics first; they are simply asking whether the game is multiplayer at all.',
+          'Use the launch client and Steam account state as your baseline. In practical terms, the first step is making sure every player has updated to the latest version, because launch-day hotfixes already included a multiplayer progression fix.',
+          'Once your build is current, start a multiplayer session through the live Steam version of the game. If your group runs into disconnects or progression weirdness, re-test after confirming everyone is on the same build rather than assuming the mode itself is unavailable.',
         ],
         bullets: [
-          'Confirmed feature answer: 4-player co-op',
-          'Useful for “is it worth starting now with friends?” search intent',
-          'A clear difference from how many people remember the first game',
+          'Update the client before testing co-op',
+          'Confirm everyone is on the same live build',
+          'Retry after the hotfix if your first co-op session behaved strangely',
         ],
       },
       {
-        heading: 'What to read next if you are starting with friends',
+        heading: 'Questions players are asking most',
         paragraphs: [
-          'Even if co-op is your entry point, the most useful supporting pages are still the beginner flow pages. One player in the group usually benefits from reading the first-run guide, and the group still needs a quick view of character and mechanic differences.',
+          'The most common launch-week multiplayer questions are not always deep systems questions. Many groups just want to know whether co-op exists, whether it is stable enough to test now, and which supporting pages they should read before the first session.',
+          'That is why co-op search intent overlaps with beginner content. One player in the group usually benefits from the first-run guide, and character selection still matters even if your first session is primarily social.',
         ],
         bullets: [
-          'Read the first-run guide if your group wants a stable first few runs.',
-          'Use the starter character guide if someone wants the easiest first pick.',
-          'Use the mechanics page if terms like Sly, Doom, Stars, or Forge cause confusion mid-run.',
+          'If your group is new, start with the first-run guide before overplanning synergy',
+          'If one player wants the safest first pick, send them to the starter-character guide',
+          'If terms like Sly, Doom, Stars, or Forge cause confusion, use the mechanics page as a quick glossary',
+        ],
+      },
+      {
+        heading: 'Details still being verified',
+        paragraphs: [
+          'Launch-week discussion is still settling around finer multiplayer implementation details. That means this page should not overclaim on systems that need more player observation, such as exact reward flow, role specialization patterns, or edge-case interactions after disconnects.',
+          'The right way to use co-op information in week one is to anchor on what the official page confirms, then layer practical group observations on top once they repeat consistently.',
+        ],
+        bullets: [
+          'Treat edge-case reward and progression behavior as still being verified',
+          'Use official confirmation for feature existence, not for every emergent system detail',
+          'Expect more stable co-op guidance after additional patches and player testing',
         ],
       },
       {
         heading: 'Launch-week takeaway',
         paragraphs: [
-          'The strongest short-form launch answer is now: Slay the Spire 2 is live in Early Access and it has 4-player co-op. If you only need one status page, use the launch hub. If you already know you are playing, move straight into first-run and character pages.',
+          'The highest-value co-op answer right now is simple: Slay the Spire 2 supports online co-op for up to 4 players, and it is already part of the live Early Access build. If your group wants the cleanest start, combine that answer with one first-run page and one starter-character page instead of trying to learn everything inside multiplayer itself.',
         ],
       },
     ],
     relatedLinks: [
       {
         href: '/news/slay-the-spire-2-launch-time-us-china',
-        label: 'Launch hub: out now status, checklist, and next steps',
+        label: 'Launch hub: live status, FAQ, and first launch-week routes',
       },
       {
         href: '/news/slay-the-spire-2-first-run-guide-act-1-priorities',
-        label: 'First-run guide for launch week and Act 1 stability',
+        label: 'First-run guide for stable early decisions',
       },
       {
         href: '/news/best-starter-character-slay-the-spire-2-early-access',
-        label: 'Best starter character for the fastest clean start',
+        label: 'Best starter character if someone in the group wants the safest first pick',
       },
       {
         href: '/mechanics',
         label: 'Mechanics reference: Sly, Doom, Stars, Forge, and more',
+      },
+    ],
+  },
+  {
+    slug: 'slay-the-spire-2-steam-deck-performance-guide',
+    title: 'Slay the Spire 2 on Steam Deck: Performance and Common Fixes',
+    excerpt: 'Slay the Spire 2 appears to run well for many Steam Deck players so far, but launch-week troubleshooting still matters. This page focuses on the practical question first: can you play comfortably on Deck now, and what should you try if you hit crashes, UI friction, or startup problems?',
+    date: '2026-03-06',
+    category: 'News',
+    readTime: '7 min',
+    featured: false,
+    image: 'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2868840/ss_01ff255192aea73e2fd9940cea4f613cb2919298.1920x1080.jpg?t=1770241822',
+    url: 'https://store.steampowered.com/app/2868840/Slay_the_Spire_2/',
+    source: 'StS2 Guide',
+    sourceType: 'internal',
+    updatedAt: '2026-03-06',
+    intro: [
+      'The practical Steam Deck question is not “what is the perfect setting preset” but “is Slay the Spire 2 playable on Deck right now, and what should I try first if it is not behaving well?”',
+      'Early player feedback suggests the game can run well on Steam Deck, but launch-week stability guidance should stay conservative until more reports settle.',
+    ],
+    sections: [
+      {
+        heading: 'How Slay the Spire 2 is looking on Steam Deck so far',
+        paragraphs: [
+          'Early community feedback is encouraging rather than alarming. Players are already reporting that performance has been good so far on Steam Deck, which is the most useful short answer for launch week.',
+          'That does not mean every Deck user will have the same experience. The correct launch-week framing is that Deck play looks viable now, but individual troubleshooting may still be needed around startup behavior, controls, or UI comfort.',
+        ],
+        bullets: [
+          'Early Deck impressions are broadly positive',
+          'Launch-week stability can still vary by user environment and build state',
+          'Deck guidance should prioritize practical fixes over overconfident tuning claims',
+        ],
+      },
+      {
+        heading: 'First fixes to try if Deck play feels wrong',
+        paragraphs: [
+          'Start with the same lowest-cost checks that matter on desktop: confirm the latest build is installed, restart Steam, and verify game files. These steps are especially useful in the first 48 hours because launch hotfixes may already have changed the behavior you saw on your first boot.',
+          'If the issue feels input-related rather than performance-related, test a clean relaunch before you start hunting for custom control workarounds. If the issue feels UI-related, note whether the problem is readability, touch interaction, or a hard rendering failure.',
+        ],
+        bullets: [
+          'Update to the latest hotfix build first',
+          'Restart Steam and relaunch the game',
+          'Verify game files before deeper changes',
+          'Separate performance issues from input or UI issues when testing',
+        ],
+      },
+      {
+        heading: 'Community-reported workarounds',
+        paragraphs: [
+          'Because launch-week information is still moving, the safest useful guidance is to summarize repeated community behavior rather than freeze one “best settings” answer too early. One early note from players is that touch screen input works on Steam Deck, which is useful if you are checking interface flexibility.',
+          'For crashes or black screens that resemble desktop startup problems, use the known-issues flow first rather than assuming Deck-specific tuning is required.',
+        ],
+        bullets: [
+          'Touch screen input is already being reported as working on Deck',
+          'Use the desktop-style troubleshooting flow first for startup failures',
+          'Wait for stronger report consensus before treating one custom preset as definitive',
+        ],
+      },
+      {
+        heading: 'When to wait for future patches',
+        paragraphs: [
+          'If your Deck issue survives a clean restart, file verification, and retesting on the newest build, the next move may be patience rather than endless tweaking. Launch-week patches are likely to continue, and some hardware-specific rough edges may resolve faster through official updates than through user-side experimentation.',
+        ],
+      },
+      {
+        heading: 'Launch-week FAQ',
+        paragraphs: [
+          'These short answers are the practical Deck version of the launch-week state of play.',
+        ],
+        bullets: [
+          'Q: Is Slay the Spire 2 playable on Steam Deck right now? A: Early reports suggest yes, for many players, but week-one behavior can still vary.',
+          'Q: Should I start with advanced Deck tuning? A: No. Update, restart Steam, and verify files first.',
+          'Q: Is there one proven best preset already? A: Not yet. Launch-week guidance is still better framed as troubleshooting-first rather than one locked settings profile.',
+        ],
+      },
+    ],
+    relatedLinks: [
+      {
+        href: '/news/slay-the-spire-2-known-issues-and-fixes',
+        label: 'Known issues and fixes: crash, black screen, freeze, and text problems',
+      },
+      {
+        href: '/news/slay-the-spire-2-hotfix-patch-notes',
+        label: 'Hotfix patch notes: what v0.98.1 fixed on day one',
+      },
+      {
+        href: '/news/slay-the-spire-2-launch-time-us-china',
+        label: 'Launch hub: live status and first launch-week routes',
+      },
+      {
+        href: '/news',
+        label: 'Browse more Slay the Spire 2 launch-week updates',
       },
     ],
   },

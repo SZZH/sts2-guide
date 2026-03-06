@@ -49,6 +49,24 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ slu
   const isLaunchGuide = article.slug === 'slay-the-spire-2-launch-time-us-china';
   const isInternalArticle = article.sourceType === 'internal';
   const quickAnswerLinks = article.relatedLinks?.slice(0, 3) ?? [];
+  const updatedTodayLinks = [
+    {
+      href: '/news/slay-the-spire-2-known-issues-and-fixes',
+      label: 'Known issues and fixes',
+    },
+    {
+      href: '/news/slay-the-spire-2-hotfix-patch-notes',
+      label: 'Hotfix patch notes',
+    },
+    {
+      href: '/news/slay-the-spire-2-co-op-guide-how-it-works',
+      label: 'Co-op guide',
+    },
+    {
+      href: '/news/slay-the-spire-2-steam-deck-performance-guide',
+      label: 'Steam Deck guide',
+    },
+  ];
   const launchFaqItems = [
     {
       question: 'Is Slay the Spire 2 a full 1.0 release?',
@@ -160,6 +178,29 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ slu
                   <p key={paragraph}>{paragraph}</p>
                 ))}
               </div>
+            )}
+
+            {isLaunchGuide && (
+              <section className="mb-10 rounded-xl border border-molten-orange/30 bg-background/70 p-5">
+                <div className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-molten-orange">
+                  Updated Today
+                </div>
+                <h2 className="font-heading text-2xl font-bold mb-3">Launch-week pages to check first</h2>
+                <p className="mb-5 text-sm text-muted-foreground leading-7">
+                  Use these pages if your question is no longer about the unlock hour, but about what changed after launch, what is breaking, and what to read next before your next run.
+                </p>
+                <div className="grid gap-3 md:grid-cols-2">
+                  {updatedTodayLinks.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className="rounded-lg border border-border bg-shadow-gray/50 px-4 py-3 text-molten-orange transition-colors hover:text-ember-glow"
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              </section>
             )}
 
             {article.sections && article.sections.length > 0 && (
