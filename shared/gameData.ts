@@ -725,19 +725,19 @@ export const NEWS_ARTICLES: NewsArticle[] = [
   {
     slug: 'best-starter-character-slay-the-spire-2-early-access',
     title: 'Best Starter Character in Slay the Spire 2 (Early Access)',
-    excerpt: 'New to Slay the Spire 2 and not sure who to pick first? This practical guide compares Ironclad, Silent, Necrobinder, and Regent for early consistency, mistake tolerance, and first-10-run learning value.',
+    excerpt: 'New to Slay the Spire 2 and not sure who to pick first? This updated launch-week guide compares Ironclad, Silent, Necrobinder, and Regent for solo stability, co-op usefulness, and first-10-run learning value.',
     date: '2026-03-05',
     category: 'Guide',
-    readTime: '9 min',
+    readTime: '11 min',
     featured: true,
     image: 'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2868840/ss_8f8dcd17d2dc8f228151f00ca17e59f2f65b9d85.1920x1080.jpg?t=1770241822',
     url: 'https://store.steampowered.com/app/2868840/Slay_the_Spire_2/',
     source: 'StS2 Guide',
     sourceType: 'internal',
-    updatedAt: '2026-03-05',
+    updatedAt: '2026-03-06',
     intro: [
       'If you are starting Slay the Spire 2 in Early Access, your first character should maximize learning speed and minimize run collapse from small mistakes.',
-      'This guide ranks starter options by early consistency, defensive stability, and how forgiving each character feels in your first ten runs.',
+      'This updated launch-week guide now looks at three different needs instead of one: the safest solo starter, the easiest character for complete beginners, and the most practical roles to bring into early co-op sessions.',
     ],
     sections: [
       {
@@ -750,6 +750,18 @@ export const NEWS_ARTICLES: NewsArticle[] = [
           'Most forgiving early-game floor among the four known characters.',
           'Simple card evaluation: front-load damage, maintain block floor, add scaling later.',
           'Good for learning pathing and HP management without heavy mechanic overhead.',
+        ],
+      },
+      {
+        heading: 'If you are completely new to deckbuilders, still start with Ironclad',
+        paragraphs: [
+          'Some launch-week players are not only new to Slay the Spire 2, but new to the whole deckbuilder rhythm. For that group, Ironclad remains the cleanest first answer because his card evaluations are easier to read and his mistakes are easier to recover from.',
+          'The main value is not raw power. It is that Ironclad teaches fundamentals without asking you to learn discard timing, minion management, or Stars/Forge planning at the same time.',
+        ],
+        bullets: [
+          'Best pure beginner pick: Ironclad',
+          'Best second pick after basics: Silent',
+          'Save Necrobinder and Regent until your Act 1 discipline feels repeatable',
         ],
       },
       {
@@ -776,6 +788,18 @@ export const NEWS_ARTICLES: NewsArticle[] = [
         ],
       },
       {
+        heading: 'Best starter roles for co-op groups',
+        paragraphs: [
+          'Co-op changes the question slightly. Your group does not always need every player to pick the easiest solo class. Instead, you want one player on the most stable baseline pick and then let the others choose how much complexity the group can absorb.',
+          'That makes Ironclad the safest anchor pick in early co-op sessions, while Silent often works best as the second player for groups that already communicate well. Necrobinder and Regent are better once your group understands how much mechanic overhead it wants to manage in one run.',
+        ],
+        bullets: [
+          'Safest co-op anchor: Ironclad',
+          'Best co-op second pick for cleaner groups: Silent',
+          'High-upside but higher-overhead co-op picks: Necrobinder and Regent',
+        ],
+      },
+      {
         heading: 'Three rules that matter more than character choice',
         paragraphs: [
           'Character selection helps, but most early losses still come from universal decision mistakes. Keep these constraints active in every run.',
@@ -789,11 +813,19 @@ export const NEWS_ARTICLES: NewsArticle[] = [
       {
         heading: 'Where to go next',
         paragraphs: [
-          'If you need deeper class details, use the character page first, then read mechanics to understand Sly, Doom, Stars, and Forge interactions.',
+          'If you need deeper class details, use the character page first, then read mechanics to understand Sly, Doom, Stars, and Forge interactions. If your real problem is early mistakes rather than class choice, move into the beginner-mistakes guide next.',
         ],
       },
     ],
     relatedLinks: [
+      {
+        href: '/news/slay-the-spire-2-top-10-beginner-mistakes',
+        label: 'Top 10 beginner mistakes if your first runs keep collapsing early',
+      },
+      {
+        href: '/news/slay-the-spire-2-what-to-upgrade-first',
+        label: 'What to upgrade first if you want stronger early decisions',
+      },
       {
         href: '/characters',
         label: 'Character breakdowns: strengths, difficulty, and starter kits',
@@ -805,6 +837,184 @@ export const NEWS_ARTICLES: NewsArticle[] = [
       {
         href: '/news/slay-the-spire-2-launch-time-us-china',
         label: 'Launch-time hub with checklist and FAQ updates',
+      },
+    ],
+  },
+  {
+    slug: 'slay-the-spire-2-top-10-beginner-mistakes',
+    title: 'Slay the Spire 2 Top 10 Beginner Mistakes in Early Access',
+    excerpt: 'If your early Slay the Spire 2 runs keep collapsing, the problem is usually not bad luck. These are the 10 beginner mistakes hurting launch-week runs most often, along with the cleaner decisions that fix them.',
+    date: '2026-03-06',
+    category: 'Guide',
+    readTime: '9 min',
+    featured: false,
+    image: 'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2868840/ss_026b621a38b400c9f4080a7dd9152dd3050cbe2d.1920x1080.jpg?t=1770241822',
+    url: 'https://store.steampowered.com/app/2868840/Slay_the_Spire_2/',
+    source: 'StS2 Guide',
+    sourceType: 'internal',
+    updatedAt: '2026-03-06',
+    intro: [
+      'If your first Slay the Spire 2 runs feel unstable, the problem is usually not luck. It is usually one of a few repeatable beginner errors.',
+      'This page is built for launch-week players who want a fast correction loop: spot the mistake, replace it with a better rule, and get more stable Act 1 and Act 2 runs immediately.',
+    ],
+    sections: [
+      {
+        heading: 'Short answer: beginners usually lose on decision quality, not on hidden tech',
+        paragraphs: [
+          'Most launch-week players do not need deeper secrets first. They need cleaner constraints on drafting, routing, upgrades, and greed.',
+          'That is good news, because decision mistakes are easier to fix than hidden matchup knowledge.',
+        ],
+      },
+      {
+        heading: 'Mistakes 1 to 3: drafting problems',
+        paragraphs: [
+          'The most common early problem is drafting for a future deck while your current deck still cannot solve current fights. That usually shows up as weak hallway combat, bad elite timing, and panic upgrades.',
+        ],
+        bullets: [
+          'Mistake 1: taking flashy rare cards that do not solve current fights.',
+          'Mistake 2: forcing one archetype after one lucky reward.',
+          'Mistake 3: refusing to skip weak card rewards that lower deck consistency.',
+        ],
+      },
+      {
+        heading: 'Mistakes 4 to 6: pathing and elite greed',
+        paragraphs: [
+          'Early pathing errors often come from treating every elite as mandatory value. In reality, early elites are only good when your current deck can end fights on time and preserve enough HP for the rest of the map.',
+        ],
+        bullets: [
+          'Mistake 4: overrouting into elites without a damage check.',
+          'Mistake 5: spending too much HP in hallway fights before a planned elite.',
+          'Mistake 6: treating campfires as automatic upgrades when recovery is the better play.',
+        ],
+      },
+      {
+        heading: 'Mistakes 7 to 10: upgrades, defense, and copying final builds',
+        paragraphs: [
+          'The second major beginner trap is copying end-state logic too early. Final builds look clean because they already survived the hard middle, but new players often try to draft as if they are already there.',
+        ],
+        bullets: [
+          'Mistake 7: upgrading the coolest card instead of the card that improves the next fights most.',
+          'Mistake 8: undervaluing defensive turns against enemies you still do not understand.',
+          'Mistake 9: taking too many setup cards before stabilizing basic tempo.',
+          'Mistake 10: copying final builds without learning the bridge cards that got there.',
+        ],
+      },
+      {
+        heading: 'A better beginner rule set',
+        paragraphs: [
+          'If you want one launch-week framework, use this: draft for immediate fight quality, route elites only when your current deck is ready, and spend upgrades where they improve the next few combats rather than your dream deck.',
+          'That one shift is usually enough to make your first ten runs visibly cleaner.',
+        ],
+      },
+      {
+        heading: 'What to read next',
+        paragraphs: [
+          'If your next question is about who to start with, go to the starter-character guide. If your next problem is upgrade order, use the upgrade-priority page.',
+        ],
+      },
+    ],
+    relatedLinks: [
+      {
+        href: '/news/best-starter-character-slay-the-spire-2-early-access',
+        label: 'Best starter character if you want the safest first pick',
+      },
+      {
+        href: '/news/slay-the-spire-2-what-to-upgrade-first',
+        label: 'What to upgrade first for stronger early runs',
+      },
+      {
+        href: '/news/slay-the-spire-2-first-run-guide-act-1-priorities',
+        label: 'First-run guide for Act 1 priorities and route stability',
+      },
+      {
+        href: '/news/slay-the-spire-2-launch-time-us-china',
+        label: 'Launch hub with live status and launch-week routing',
+      },
+    ],
+  },
+  {
+    slug: 'slay-the-spire-2-what-to-upgrade-first',
+    title: 'Slay the Spire 2 What to Upgrade First: Early Access Priorities',
+    excerpt: 'Not sure what to upgrade first in Slay the Spire 2? This launch-week guide explains how to think about early upgrades, when to prioritize damage versus defense, and which classes benefit most from simple early upgrade rules.',
+    date: '2026-03-06',
+    category: 'Guide',
+    readTime: '8 min',
+    featured: false,
+    image: 'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2868840/ss_01ff255192aea73e2fd9940cea4f613cb2919298.1920x1080.jpg?t=1770241822',
+    url: 'https://store.steampowered.com/app/2868840/Slay_the_Spire_2/',
+    source: 'StS2 Guide',
+    sourceType: 'internal',
+    updatedAt: '2026-03-06',
+    intro: [
+      'The wrong upgrade can make an early run feel worse than it should. The right upgrade often does not look flashy, but it improves the next three fights immediately.',
+      'This launch-week page is built for the practical question first: what should beginners upgrade first if they want cleaner early runs instead of highlight turns.',
+    ],
+    sections: [
+      {
+        heading: 'Short answer: upgrade the card that changes the next few fights',
+        paragraphs: [
+          'In the first act, the best upgrade is usually the one that improves your immediate combat math. That can mean stronger front-loaded damage, a more efficient block card, or a key starter card that fixes tempo.',
+          'Beginners often upgrade the most exciting card in the deck. The cleaner rule is to upgrade the card you expect to draw often and rely on soon.',
+        ],
+      },
+      {
+        heading: 'When to prioritize damage upgrades',
+        paragraphs: [
+          'Damage upgrades matter most when hallway fights are lasting too long, elites are becoming risky, or your deck lacks enough front-loaded output to punish vulnerable turns.',
+          'If your early fights already feel slow, a damage upgrade often prevents more HP loss than a defensive upgrade would.',
+        ],
+        bullets: [
+          'Prioritize damage when fights drag on too long',
+          'Prioritize damage when your next route includes elites',
+          'Prioritize damage when your deck has enough baseline defense already',
+        ],
+      },
+      {
+        heading: 'When to prioritize defense or consistency upgrades',
+        paragraphs: [
+          'Defense upgrades become better when you are bleeding too much HP in normal fights or when your deck already has enough damage but poor survivability. Consistency upgrades also matter when a single improved starter card smooths the whole deck.',
+        ],
+        bullets: [
+          'Prioritize defense when hallway fights chip too much HP',
+          'Prioritize defense when you already kill fast enough',
+          'Prioritize consistency when one starter card upgrade improves many draws',
+        ],
+      },
+      {
+        heading: 'Simple launch-week class rules',
+        paragraphs: [
+          'You do not need a full card database to make better early upgrades. Use rough class rules until the deeper meta settles.',
+        ],
+        bullets: [
+          'Ironclad: upgrade toward cleaner immediate damage or core survivability first.',
+          'Silent: upgrade cards that make sequencing and tempo more stable, not just flashy payoff cards.',
+          'Necrobinder: prefer upgrades that reduce early instability before chasing high-overhead Doom lines.',
+          'Regent: early upgrades should simplify tempo before you lean too hard into Stars or Forge payoff.',
+        ],
+      },
+      {
+        heading: 'What to read next',
+        paragraphs: [
+          'If your problem is still broad run discipline, the beginner-mistakes page is the next best read. If your question is whether the problem is your class choice, use the starter-character guide.',
+        ],
+      },
+    ],
+    relatedLinks: [
+      {
+        href: '/news/slay-the-spire-2-top-10-beginner-mistakes',
+        label: 'Top 10 beginner mistakes that make early runs collapse',
+      },
+      {
+        href: '/news/best-starter-character-slay-the-spire-2-early-access',
+        label: 'Best starter character if you want fewer early mistakes',
+      },
+      {
+        href: '/news/slay-the-spire-2-first-run-guide-act-1-priorities',
+        label: 'First-run guide for Act 1 priorities and routing',
+      },
+      {
+        href: '/mechanics',
+        label: 'Mechanics reference if you need system-level context first',
       },
     ],
   },

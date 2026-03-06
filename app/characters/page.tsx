@@ -70,6 +70,31 @@ export default function CharactersPage() {
           </div>
         </div>
 
+        <div className="mb-12 max-w-5xl mx-auto rounded-2xl border border-molten-orange/20 bg-shadow-gray/60 p-6">
+          <div className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-molten-orange">
+            Launch Week Decision Path
+          </div>
+          <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+            <p className="max-w-3xl text-sm leading-7 text-muted-foreground">
+              If you are here because your first runs feel messy, do not only compare class fantasy. Use the starter-character page for the short answer, then use beginner mistakes to check whether your problem is really class choice or just early-run discipline.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <Link
+                href="/news/best-starter-character-slay-the-spire-2-early-access"
+                className="rounded-lg border border-border px-4 py-2 text-sm font-semibold transition-colors hover:border-molten-orange hover:text-molten-orange"
+              >
+                Best Starter Character
+              </Link>
+              <Link
+                href="/news/slay-the-spire-2-top-10-beginner-mistakes"
+                className="rounded-lg border border-border px-4 py-2 text-sm font-semibold transition-colors hover:border-molten-orange hover:text-molten-orange"
+              >
+                Beginner Mistakes
+              </Link>
+            </div>
+          </div>
+        </div>
+
         {/* Characters Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {CHARACTERS.map((character) => (

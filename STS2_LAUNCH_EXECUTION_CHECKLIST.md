@@ -63,13 +63,21 @@
 - 现有 starter character 页面权重被增强，而不是被重复新页分流。
 - `/mechanics` 和 `/characters` 从静态资料页变成真正的流量中转页。
 
-- [ ] 更新 `/news/best-starter-character-slay-the-spire-2-early-access`
-- [ ] 在 starter character 文章中补充 co-op 角色推荐部分
-- [ ] 在 starter character 文章中补充纯新手角色推荐部分
-- [ ] 发布 `/news/slay-the-spire-2-top-10-beginner-mistakes`
-- [ ] 发布 `/news/slay-the-spire-2-what-to-upgrade-first`
-- [ ] 强化 `/mechanics` 到发售周新手文章的导流
-- [ ] 强化 `/characters` 到 starter character 和 first-run 页面 的导流
+- [x] 更新 `/news/best-starter-character-slay-the-spire-2-early-access`
+- [x] 在 starter character 文章中补充 co-op 角色推荐部分
+- [x] 在 starter character 文章中补充纯新手角色推荐部分
+- [x] 发布 `/news/slay-the-spire-2-top-10-beginner-mistakes`
+- [x] 发布 `/news/slay-the-spire-2-what-to-upgrade-first`
+- [x] 强化 `/mechanics` 到发售周新手文章的导流
+- [x] 强化 `/characters` 到 starter character 和 first-run 页面 的导流
+
+第二阶段实现结果：
+- [x] 第二阶段新增 2 篇决策型文章并进入静态生成
+- [x] starter character 页面已升级为更适合 launch-week 的版本
+- [x] `/mechanics` 已增加面向新手决策页的导流入口
+- [x] `/characters` 已增加 starter character 与 beginner mistakes 的导流入口
+- [x] `pnpm lint`
+- [x] `pnpm build`
 
 ## 第三阶段：未来 7 天
 为什么这一周做：
