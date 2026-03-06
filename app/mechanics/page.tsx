@@ -71,6 +71,30 @@ export default function MechanicsPage() {
                 </p>
               </div>
             </div>
+            <div className="mt-6 rounded-2xl border border-orange-500/20 bg-card/70 p-5 text-left">
+              <div className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-orange-400">
+                Beginner Route
+              </div>
+              <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+                <p className="max-w-2xl text-sm leading-7 text-muted-foreground">
+                  If mechanics terms make sense but your runs still collapse, do not stay on theory pages too long. Move next into beginner mistakes or starter-character choice so the information turns into better launch-week decisions.
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  <Link
+                    href="/news/slay-the-spire-2-top-10-beginner-mistakes"
+                    className="rounded-lg border border-border px-4 py-2 text-sm font-semibold text-foreground transition-colors hover:border-orange-400 hover:text-orange-400"
+                  >
+                    Read Beginner Mistakes
+                  </Link>
+                  <Link
+                    href="/news/best-starter-character-slay-the-spire-2-early-access"
+                    className="rounded-lg border border-border px-4 py-2 text-sm font-semibold text-foreground transition-colors hover:border-orange-400 hover:text-orange-400"
+                  >
+                    Pick a Starter Character
+                  </Link>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
