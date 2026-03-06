@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { CHARACTERS, NEWS_ARTICLES } from '@/shared/gameData';
-import CountdownTimer from '@/components/CountdownTimer';
 import { WebsiteSchema, OrganizationSchema, VideoGameSchema } from './schema';
 import ContentDisclaimer from './disclaimer';
 
@@ -57,36 +56,90 @@ export default function HomePage() {
             SLAY THE SPIRE 2
           </h1>
           <p className="text-xl md:text-2xl text-steel-blue mb-8 max-w-3xl mx-auto">
-            Master the ultimate roguelike deck-builder with comprehensive guides, tier lists, and expert strategies.
+            Early Access is live. Start with the best Slay the Spire 2 guide pages for launch week, starter picks, and core mechanics.
           </p>
-          
-          {/* Countdown Timer */}
-          <CountdownTimer />
+
+          <div className="mx-auto grid max-w-5xl gap-4 md:grid-cols-3">
+            <Link
+              href="/mechanics"
+              className="rounded-xl border border-molten-orange/40 bg-forge-black/70 p-5 text-left backdrop-blur-sm transition-all duration-300 hover:border-molten-orange hover:bg-forge-black/85"
+            >
+              <div className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-molten-orange">
+                Start Here
+              </div>
+              <h2 className="font-heading text-2xl font-bold text-white">
+                Mechanics Guide
+              </h2>
+              <p className="mt-2 text-sm text-steel-blue">
+                Learn Sly, Doom, Stars, Forge, and the systems that shape early winning runs.
+              </p>
+            </Link>
+            <Link
+              href="/news/slay-the-spire-2-first-run-guide-act-1-priorities"
+              className="rounded-xl border border-border bg-forge-black/70 p-5 text-left backdrop-blur-sm transition-all duration-300 hover:border-molten-orange hover:bg-forge-black/85"
+            >
+              <div className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-molten-orange">
+                Launch Week
+              </div>
+              <h2 className="font-heading text-2xl font-bold text-white">
+                First-Run Guide
+              </h2>
+              <p className="mt-2 text-sm text-steel-blue">
+                Fast setup advice for Act 1 pathing, starter priorities, and launch-day decision making.
+              </p>
+            </Link>
+            <Link
+              href="/characters"
+              className="rounded-xl border border-border bg-forge-black/70 p-5 text-left backdrop-blur-sm transition-all duration-300 hover:border-molten-orange hover:bg-forge-black/85"
+            >
+              <div className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-molten-orange">
+                Pick Fast
+              </div>
+              <h2 className="font-heading text-2xl font-bold text-white">
+                Starter Characters
+              </h2>
+              <p className="mt-2 text-sm text-steel-blue">
+                Compare Necrobinder, Regent, Ironclad, and Silent before you lock your first serious run.
+              </p>
+            </Link>
+          </div>
+
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-3 text-sm text-steel-blue">
+            <span className="rounded-full border border-border bg-forge-black/60 px-4 py-2">
+              Released on March 5, 2026
+            </span>
+            <span className="rounded-full border border-border bg-forge-black/60 px-4 py-2">
+              Early Access live on Steam
+            </span>
+            <span className="rounded-full border border-border bg-forge-black/60 px-4 py-2">
+              Updated for launch-week search trends
+            </span>
+          </div>
+
           <div className="mt-4 text-sm text-steel-blue">
             <Link
               href="/news/slay-the-spire-2-launch-time-us-china"
               className="text-molten-orange hover:text-ember-glow font-semibold transition-colors"
             >
-              Launch Time by Region + First 24h Checklist
+              Launch status, release details, and first 24h checklist
             </Link>
           </div>
 
-          {/* CTA Buttons */}
           <div className="flex gap-4 justify-center mt-8">
             <Link 
-              href="/news/slay-the-spire-2-launch-time-us-china"
+              href="/mechanics"
               className="bg-molten-orange hover:bg-ember-glow text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300 flex items-center gap-2"
             >
-              Launch Guide
+              Explore Mechanics
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
             </Link>
             <Link 
-              href="/news"
+              href="/characters"
               className="bg-shadow-gray hover:bg-muted border border-border text-foreground font-semibold px-8 py-3 rounded-lg transition-all duration-300"
             >
-              Latest News
+              Compare Characters
             </Link>
           </div>
         </div>
