@@ -1,22 +1,10 @@
 import type { Metadata } from "next";
-import { Cinzel, Inter } from "next/font/google";
 import Image from "next/image";
 import { Analytics as VercelAnalytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-
-const cinzel = Cinzel({
-  variable: "--font-heading",
-  subsets: ["latin"],
-  weight: ["400", "600", "700"],
-});
-
-const inter = Inter({
-  variable: "--font-body",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: {
@@ -39,10 +27,10 @@ export const metadata: Metadata = {
     description: "Master Slay the Spire 2 with comprehensive character guides, tier lists, and expert strategies.",
     images: [
       {
-        url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030533337/PBsDTIjrsKhkQaMa.png",
+        url: "/hero/home-hero.png",
         width: 1200,
         height: 630,
-        alt: "StS2 Guide Logo",
+        alt: "StS2 Guide",
       },
     ],
   },
@@ -50,7 +38,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "StS2 Guide — Slay the Spire 2 Strategy Hub",
     description: "Master Slay the Spire 2 with comprehensive character guides, tier lists, and expert strategies.",
-    images: ["https://files.manuscdn.com/user_upload_by_module/session_file/310419663030533337/PBsDTIjrsKhkQaMa.png"],
+    images: ["/hero/home-hero.png"],
   },
   icons: {
     icon: "/logo.png",
@@ -66,7 +54,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${cinzel.variable} ${inter.variable}`}>
+    <html lang="en">
       <body className="relative flex flex-col min-h-screen overflow-x-hidden">
         <div className="fixed inset-0 z-0 pointer-events-none">
           <Image

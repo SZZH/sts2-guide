@@ -2,8 +2,8 @@
 
 /* Obsidian Forge Design System - Dark theme for Slay the Spire 2 Guide */
 @theme {
-  --font-heading: 'Cinzel', serif;
-  --font-body: 'Inter', sans-serif;
+  --font-heading: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  --font-body: "Avenir Next", "Segoe UI", Helvetica, Arial, sans-serif;
   
   /* Color Palette - Obsidian Forge */
   --color-forge-black: #0c0c0e;

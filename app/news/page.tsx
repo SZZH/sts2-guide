@@ -26,7 +26,9 @@ export default function NewsPage() {
       ? sortedArticles
       : sortedArticles.filter((article) => article.category === selectedCategory);
   const featuredLaunchArticle = selectedCategory === 'All'
-    ? sortedArticles.find((article) => article.slug === 'slay-the-spire-2-launch-time-us-china')
+    ? sortedArticles.find((article) => article.slug === 'best-starter-character-slay-the-spire-2-early-access')
+      ?? sortedArticles.find((article) => article.slug === 'slay-the-spire-2-first-run-guide-act-1-priorities')
+      ?? sortedArticles.find((article) => article.slug === 'slay-the-spire-2-launch-time-us-china')
     : null;
   const gridArticles = featuredLaunchArticle
     ? filteredArticles.filter((article) => article.slug !== featuredLaunchArticle.slug)
@@ -67,7 +69,7 @@ export default function NewsPage() {
           >
             <div className="flex flex-wrap items-center gap-3 mb-4">
               <span className="text-xs font-semibold px-3 py-1 rounded-full bg-molten-orange text-white">
-                Featured Launch Guide
+                Featured Launch Week Guide
               </span>
               <span className="text-xs text-muted-foreground">{featuredLaunchArticle.date}</span>
               <span className="text-xs text-muted-foreground">{featuredLaunchArticle.readTime}</span>
@@ -79,7 +81,7 @@ export default function NewsPage() {
               {featuredLaunchArticle.excerpt}
             </p>
             <div className="flex items-center gap-2 text-molten-orange font-semibold">
-              Read the launch guide
+              Read the featured guide
               <span aria-hidden="true" className="transition-transform duration-300 group-hover:translate-x-1">
                 →
               </span>

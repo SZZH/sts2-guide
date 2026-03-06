@@ -26,8 +26,48 @@ export default function CharactersPage() {
             SLAY THE SPIRE 2 CHARACTERS
           </h1>
           <p className="text-steel-blue text-lg max-w-2xl mx-auto">
-            Master each character&apos;s unique mechanics, card synergies, and optimal strategies to conquer the Spire.
+            Use this Slay the Spire 2 character guide to compare starter difficulty, mechanics, and early-run consistency before you choose your first serious run.
           </p>
+        </div>
+
+        <div className="grid gap-4 mb-12 max-w-5xl mx-auto md:grid-cols-3">
+          <div className="rounded-xl border border-molten-orange/30 bg-forge-black/70 p-6">
+            <div className="text-xs font-semibold uppercase tracking-[0.2em] text-molten-orange mb-2">
+              Beginner Pick
+            </div>
+            <h2 className="font-heading text-2xl font-bold mb-3">Start with consistency</h2>
+            <p className="text-sm text-muted-foreground leading-7">
+              If you are deciding between classes for launch week, use this page to compare which character gives you the cleanest first 5 to 10 runs.
+            </p>
+          </div>
+          <div className="rounded-xl border border-border bg-forge-black/70 p-6">
+            <div className="text-xs font-semibold uppercase tracking-[0.2em] text-molten-orange mb-2">
+              Best Next Read
+            </div>
+            <Link
+              href="/news/best-starter-character-slay-the-spire-2-early-access"
+              className="font-heading text-2xl font-bold mb-3 block hover:text-molten-orange transition-colors"
+            >
+              Best Starter Character
+            </Link>
+            <p className="text-sm text-muted-foreground leading-7">
+              Need the short answer instead of the full roster? Jump to the launch-week starter recommendation guide.
+            </p>
+          </div>
+          <div className="rounded-xl border border-border bg-forge-black/70 p-6">
+            <div className="text-xs font-semibold uppercase tracking-[0.2em] text-molten-orange mb-2">
+              Mechanics First
+            </div>
+            <Link
+              href="/mechanics"
+              className="font-heading text-2xl font-bold mb-3 block hover:text-molten-orange transition-colors"
+            >
+              Compare Core Systems
+            </Link>
+            <p className="text-sm text-muted-foreground leading-7">
+              Read Sly, Doom, Stars, and Forge first if you want to understand why each character feels different in Early Access.
+            </p>
+          </div>
         </div>
 
         {/* Characters Grid */}
@@ -70,6 +110,9 @@ export default function CharactersPage() {
                 </h2>
                 <p className="text-steel-blue mb-4">{character.title}</p>
                 <p className="text-muted-foreground">{character.description}</p>
+                <div className="mt-4 text-xs text-steel-blue">
+                  Launch-week use: compare starter comfort, mechanic complexity, and early consistency.
+                </div>
               </div>
             </Link>
           ))}

@@ -47,6 +47,8 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ slu
   }
 
   const isLaunchGuide = article.slug === 'slay-the-spire-2-launch-time-us-china';
+  const isInternalArticle = article.sourceType === 'internal';
+  const quickAnswerLinks = article.relatedLinks?.slice(0, 3) ?? [];
   const launchFaqItems = [
     {
       question: 'Is Slay the Spire 2 a full 1.0 release?',
@@ -113,6 +115,45 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ slu
               {article.excerpt}
             </p>
 
+            {isInternalArticle && (
+              <div className="grid gap-4 mb-10 md:grid-cols-3">
+                <section className="rounded-xl border border-molten-orange/30 bg-background/70 p-5">
+                  <h2 className="font-heading text-lg font-bold mb-3">Quick answers</h2>
+                  <ul className="space-y-2 text-sm text-muted-foreground leading-6">
+                    <li>Early Access is live, so this page is tuned for launch-week questions.</li>
+                    <li>Use this article for the fast answer, then branch into mechanics or character pages.</li>
+                    <li>Prioritize practical routes over full-read theory when checking updates during launch week.</li>
+                  </ul>
+                </section>
+                <section className="rounded-xl border border-border bg-background/70 p-5">
+                  <h2 className="font-heading text-lg font-bold mb-3">Best next page to read</h2>
+                  <div className="flex flex-col gap-2">
+                    {quickAnswerLinks.length > 0 ? (
+                      quickAnswerLinks.map((link) => (
+                        <Link
+                          key={link.href}
+                          href={link.href}
+                          className="text-sm text-molten-orange hover:text-ember-glow transition-colors"
+                        >
+                          {link.label}
+                        </Link>
+                      ))
+                    ) : (
+                      <Link href="/mechanics" className="text-sm text-molten-orange hover:text-ember-glow transition-colors">
+                        Read the mechanics guide
+                      </Link>
+                    )}
+                  </div>
+                </section>
+                <section className="rounded-xl border border-border bg-background/70 p-5">
+                  <h2 className="font-heading text-lg font-bold mb-3">Updated for launch week</h2>
+                  <p className="text-sm text-muted-foreground leading-6">
+                    Published {article.date}. Last updated {article.updatedAt}. This page is structured to answer current launch-week search intent before deeper browsing.
+                  </p>
+                </section>
+              </div>
+            )}
+
             {article.intro && article.intro.length > 0 && (
               <div className="space-y-5 mb-10 text-base text-foreground/90 leading-8">
                 {article.intro.map((paragraph) => (
@@ -148,7 +189,7 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ slu
             <div className="rounded-xl border border-border bg-background/70 p-5 mb-8">
               <p className="text-sm text-muted-foreground leading-7">
                 {article.sourceType === 'internal'
-                  ? 'This page is a quick-reference guide for players tracking launch timing, confirmed details, and useful follow-up links before Early Access.'
+                  ? 'This page is a quick-reference guide for players checking launch-week status, practical next steps, and the most useful follow-up links after release.'
                   : 'This summary page is designed to help users discover and revisit important Slay the Spire 2 updates. For the full original reporting or official announcement, use the source link below.'}
               </p>
             </div>

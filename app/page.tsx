@@ -3,7 +3,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { CHARACTERS, NEWS_ARTICLES } from '@/shared/gameData';
 import { WebsiteSchema, OrganizationSchema, VideoGameSchema } from './schema';
-import ContentDisclaimer from './disclaimer';
 
 export const metadata: Metadata = {
   title: 'StS2 Guide - Slay the Spire 2 Strategy, Builds & Tier Lists',
@@ -41,13 +40,6 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-forge-black/50 to-forge-black" />
           {/* Bottom gradient fade */}
           <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-forge-black to-transparent" />
-        </div>
-
-        {/* Content Disclaimer */}
-        <div className="absolute top-6 inset-x-0 z-20 px-4">
-          <div className="container mx-auto">
-            <ContentDisclaimer />
-          </div>
         </div>
 
         {/* Hero Content */}

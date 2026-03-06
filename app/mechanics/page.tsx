@@ -36,8 +36,41 @@ export default function MechanicsPage() {
               SLAY THE SPIRE 2 MECHANICS
             </h1>
             <p className="text-xl text-muted-foreground">
-              Master the systems that define Slay the Spire 2. From core mechanics to character-specific abilities, understanding these systems is key to conquering the Spire.
+              Your Slay the Spire 2 mechanics wiki for launch week. Start here if you need a fast beginner guide to Sly, Doom, Stars, Forge, and the systems shaping Early Access runs.
             </p>
+            <div className="mt-8 grid gap-4 text-left md:grid-cols-3">
+              <div className="rounded-xl border border-orange-500/30 bg-card/80 p-5">
+                <div className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-orange-400">
+                  Start Here
+                </div>
+                <h2 className="text-xl font-bold mb-2">Beginner Priority</h2>
+                <p className="text-sm text-muted-foreground">
+                  Learn the universal mechanics first, then jump to character-specific systems once your first run feels stable.
+                </p>
+              </div>
+              <div className="rounded-xl border border-purple-500/30 bg-card/80 p-5">
+                <div className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-purple-400">
+                  Best Next Page
+                </div>
+                <Link href="/characters" className="text-xl font-bold mb-2 block hover:text-purple-400 transition-colors">
+                  Compare Characters
+                </Link>
+                <p className="text-sm text-muted-foreground">
+                  Pick a starter character after you understand how Sly, Doom, and Stars change your decision making.
+                </p>
+              </div>
+              <div className="rounded-xl border border-blue-500/30 bg-card/80 p-5">
+                <div className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-blue-400">
+                  Launch Week
+                </div>
+                <Link href="/news/slay-the-spire-2-first-run-guide-act-1-priorities" className="text-xl font-bold mb-2 block hover:text-blue-400 transition-colors">
+                  First-Run Guide
+                </Link>
+                <p className="text-sm text-muted-foreground">
+                  Use this together with the mechanics page if you want a practical route from theory into Act 1 execution.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -48,7 +81,7 @@ export default function MechanicsPage() {
           <div className="mb-12">
             <h2 className="text-3xl font-bold mb-3">Core Mechanics</h2>
             <p className="text-muted-foreground">
-              Universal systems that affect all characters and define the foundation of gameplay.
+              Universal systems that affect all characters and define the foundation of gameplay. If you are searching for a Slay the Spire 2 beginner guide or wiki-style quick answers, start with these systems before browsing builds.
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
@@ -156,7 +189,7 @@ export default function MechanicsPage() {
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4">Ready to Master the Spire?</h2>
             <p className="text-muted-foreground mb-8">
-              Explore character guides to see how these mechanics work in practice, or check out our deck building guides for advanced strategies.
+              Explore character guides to see how these mechanics work in practice, or move into the first-run guide if you want a more practical launch-week route.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Link
@@ -166,10 +199,10 @@ export default function MechanicsPage() {
                 View Characters
               </Link>
               <Link
-                href="/guides"
+                href="/news/slay-the-spire-2-first-run-guide-act-1-priorities"
                 className="px-6 py-3 bg-card border border-border hover:border-orange-400 font-semibold rounded-lg transition-colors"
               >
-                Browse Guides
+                Read First-Run Guide
               </Link>
             </div>
           </div>

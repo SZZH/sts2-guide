@@ -164,8 +164,8 @@ export interface NewsArticle {
 export const NEWS_ARTICLES: NewsArticle[] = [
   {
     slug: 'slay-the-spire-2-launch-time-us-china',
-    title: 'Slay the Spire 2 Early Access Launch Time in US and China',
-    excerpt: 'Slay the Spire 2 enters Early Access on March 5, 2026. This launch hub includes region time conversion, a first-24-hours starter checklist, common beginner mistakes, and practical FAQ updates for launch week.',
+    title: 'Slay the Spire 2 Is Out Now in Early Access: Launch Status, Time, and First 24 Hours Guide',
+    excerpt: 'Slay the Spire 2 is now live in Early Access. This launch hub covers release status, practical launch-time conversion, first-24-hours priorities, beginner mistakes, and the best next pages to read during launch week.',
     date: '2026-03-04',
     category: 'News',
     readTime: '10 min',
@@ -174,12 +174,24 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     url: 'https://store.steampowered.com/app/2868840/Slay_the_Spire_2/',
     source: 'StS2 Guide',
     sourceType: 'internal',
-    updatedAt: '2026-03-05',
+    updatedAt: '2026-03-06',
     intro: [
-      'Slay the Spire 2 enters Early Access on March 5, 2026. For players asking about launch hour, this page uses a practical conversion: March 5 at 10:00 AM in US Pacific Time and March 6 at 2:00 AM in China Standard Time.',
-      'The confirmed point is the Early Access date itself (March 5, 2026). The exact hour should be treated as a planning conversion and rechecked against live storefront unlock status at launch.',
+      'Slay the Spire 2 is now live in Early Access. If you are landing here after release, use this page as a launch-week hub rather than only a pre-release time converter.',
+      'For players still searching launch time, the practical conversion remains the same: March 5, 2026 at 10:00 AM in US Pacific Time and March 6, 2026 at 2:00 AM in China Standard Time. The game is already out, so the better question now is what to read next and how to start well.',
     ],
     sections: [
+      {
+        heading: 'Slay the Spire 2 release status: out now in Early Access',
+        paragraphs: [
+          'The key launch-week update is simple: Slay the Spire 2 is out now in Early Access. If you reached this page through searches like “Slay the Spire 2 out now”, “early access live”, or “launch status”, you can treat the release as active rather than upcoming.',
+          'That changes what this page should do for users. Instead of stopping at launch timing, it should route players toward the pages that answer immediate post-launch questions: mechanics, starter character choice, and first-run priorities.',
+        ],
+        bullets: [
+          'Current status: live in Steam Early Access',
+          'Release date: March 5, 2026',
+          'Best next reads: mechanics guide, starter character guide, first-run priorities',
+        ],
+      },
       {
         heading: 'Slay the Spire 2 launch time',
         paragraphs: [
@@ -195,11 +207,11 @@ export const NEWS_ARTICLES: NewsArticle[] = [
       {
         heading: 'What is confirmed so far',
         paragraphs: [
-          'The most important confirmed fact is that Slay the Spire 2 launches into Early Access first, not as a full 1.0 release. That matters because a lot of first-week discussion will be shaped by what is present at launch and what still feels intentionally unfinished.',
+          'The most important confirmed fact is that Slay the Spire 2 launched into Early Access, not as a full 1.0 release. That matters because a lot of first-week discussion will be shaped by what is present at launch and what still feels intentionally unfinished.',
           'The other broadly established point is that the sequel is still rooted in the same roguelike deckbuilder loop that made the first game work: pathing, combat sequencing, deck shaping, scaling, and adaptation from run to run.',
         ],
         bullets: [
-          'Early Access starts on March 5, 2026',
+          'Early Access went live on March 5, 2026',
           'The game remains a roguelike deckbuilder at its core',
           'Character-specific mechanics appear to be a larger focus in the sequel',
           'Early discussion will likely center on characters, mechanics, and content volume',
@@ -253,20 +265,39 @@ export const NEWS_ARTICLES: NewsArticle[] = [
         ],
       },
       {
+        heading: 'What to read next after launch',
+        paragraphs: [
+          'The highest-value launch-week path is not the same for every user. If you are completely new, go to the first-run guide. If you are choosing a class, go to the starter character guide. If your question is about systems or keywords like Sly, Doom, Stars, or Forge, go to mechanics.',
+        ],
+        bullets: [
+          'Need the beginner route? Read the first-run guide.',
+          'Need the short answer on class choice? Read the best starter character guide.',
+          'Need wiki-style system explanations? Read the mechanics page.',
+        ],
+      },
+      {
         heading: 'Launch FAQ and update policy',
         paragraphs: [
           'Because this is an Early Access launch page, some details can change quickly. This guide separates confirmed information from practical inference and will be updated during launch week.',
         ],
         bullets: [
-          'Q: Is this a full 1.0 release? A: No, Slay the Spire 2 launches in Early Access.',
-          'Q: Is the unlock hour final for every region? A: Use the listed conversion as practical reference and verify against your storefront at launch.',
-          'Q: Which page should I read next? A: Start with Mechanics for system understanding, then Characters for class-specific planning.',
-          'Verification note: as of March 5, 2026, official messaging clearly confirms the Early Access date; exact hour can vary by platform behavior and storefront rollout.',
-          'Update log: 2026-03-05 - added first-24-hours checklist, beginner mistakes, and launch FAQ guidance.',
+          'Q: Is this a full 1.0 release? A: No, Slay the Spire 2 is live in Early Access.',
+          'Q: Is the unlock hour final for every region? A: Use the listed conversion as practical reference, but treat storefront live status as the final source of truth.',
+          'Q: Which page should I read next? A: Start with Mechanics for systems, Best Starter Character for class choice, or First-Run Guide for launch-day decisions.',
+          'Verification note: as of March 6, 2026 in China / March 5, 2026 in the US, official messaging confirms the game is live in Early Access.',
+          'Update log: 2026-03-06 - rewrote this page from pre-launch timing reference into a post-launch hub with direct next-step routing.',
         ],
       },
     ],
     relatedLinks: [
+      {
+        href: '/news/slay-the-spire-2-first-run-guide-act-1-priorities',
+        label: 'First-run priorities for launch week and Act 1 stability',
+      },
+      {
+        href: '/news/best-starter-character-slay-the-spire-2-early-access',
+        label: 'Best starter character if you want the fastest clean start',
+      },
       {
         href: '/characters',
         label: 'Browse all known Slay the Spire 2 characters',

@@ -3,6 +3,7 @@
  */
 
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -14,9 +15,11 @@ export default function Footer() {
           {/* Brand Section */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <img
+              <Image
                 src="/logo-192.png"
                 alt="StS2 Guide Logo"
+                width={40}
+                height={40}
                 className="w-10 h-10 object-contain"
               />
               <span className="font-heading text-xl font-bold">StS2 Guide</span>

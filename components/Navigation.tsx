@@ -6,14 +6,11 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Menu, X, Search } from 'lucide-react';
+import Image from 'next/image';
+import { Menu, X } from 'lucide-react';
 
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  const handlePlaceholderClick = (feature: string) => {
-    alert(`${feature} — Coming soon! Full-text search across all guides and database entries.`);
-  };
 
   const navLinks = [
     { id: 'home', href: '/', label: 'Home', placeholder: false },
@@ -31,9 +28,11 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-            <img
+            <Image
               src="/logo-192.png"
               alt="StS2 Guide Logo"
+              width={40}
+              height={40}
               className="w-10 h-10 object-contain"
             />
             <span className="font-heading text-xl font-bold">StS2 Guide</span>
@@ -46,20 +45,8 @@ export default function Navigation() {
                 key={link.id}
                 href={link.href}
                 label={link.label}
-                placeholder={link.placeholder}
-                onClick={
-                  link.placeholder
-                    ? () => handlePlaceholderClick(link.label)
-                    : undefined
-                }
               />
             ))}
-            <button
-              onClick={() => handlePlaceholderClick('Search')}
-              className="hover:bg-accent hover:text-accent-foreground p-2 rounded-md transition-all"
-            >
-              <Search className="w-5 h-5" />
-            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -84,25 +71,11 @@ export default function Navigation() {
                   key={link.id}
                   href={link.href}
                   label={link.label}
-                  placeholder={link.placeholder}
                   onClick={() => {
-                    if (link.placeholder) {
-                      handlePlaceholderClick(link.label);
-                    }
                     setMobileMenuOpen(false);
                   }}
                 />
               ))}
-              <button
-                className="text-left px-4 py-3 hover:bg-accent/10 rounded-md transition-all flex items-center gap-2"
-                onClick={() => {
-                  handlePlaceholderClick('Search');
-                  setMobileMenuOpen(false);
-                }}
-              >
-                <Search className="w-5 h-5" />
-                Search
-              </button>
             </div>
           </div>
         )}
@@ -114,25 +87,10 @@ export default function Navigation() {
 function NavLink({
   href,
   label,
-  placeholder,
-  onClick,
 }: {
   href: string;
   label: string;
-  placeholder?: boolean;
-  onClick?: () => void;
 }) {
-  if (placeholder) {
-    return (
-      <button
-        onClick={onClick}
-        className="text-muted-foreground hover:text-accent-foreground hover:bg-accent/10 px-3 py-2 rounded-md transition-all"
-      >
-        {label}
-      </button>
-    );
-  }
-
   return (
     <Link
       href={href}
@@ -146,25 +104,12 @@ function NavLink({
 function MobileNavLink({
   href,
   label,
-  placeholder,
   onClick,
 }: {
   href: string;
   label: string;
-  placeholder?: boolean;
   onClick?: () => void;
 }) {
-  if (placeholder) {
-    return (
-      <button
-        onClick={onClick}
-        className="text-muted-foreground hover:text-accent-foreground hover:bg-accent/10 px-4 py-3 rounded-md transition-all text-left"
-      >
-        {label}
-      </button>
-    );
-  }
-
   return (
     <Link
       href={href}
