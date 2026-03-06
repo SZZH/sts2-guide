@@ -176,66 +176,66 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     sourceType: 'internal',
     updatedAt: '2026-03-06',
     intro: [
-      'Slay the Spire 2 is now live in Early Access. If you are landing here after release, use this page as a launch-week hub rather than only a pre-release time converter.',
-      'For players still searching launch time, the practical conversion remains the same: March 5, 2026 at 10:00 AM in US Pacific Time and March 6, 2026 at 2:00 AM in China Standard Time. The game is already out, so the better question now is what to read next and how to start well.',
+      'Slay the Spire 2 is now live in Early Access on Steam. This page is no longer just a launch-time converter; it is a launch-status hub for players who want the fastest verified answer and the next useful page to open.',
+      'The release-date fact is already settled. The more useful launch-week questions now are: is it live, does it support co-op, what should beginners read first, and where should returning players go for mechanics and character differences.',
     ],
     sections: [
       {
         heading: 'Slay the Spire 2 release status: out now in Early Access',
         paragraphs: [
-          'The key launch-week update is simple: Slay the Spire 2 is out now in Early Access. If you reached this page through searches like “Slay the Spire 2 out now”, “early access live”, or “launch status”, you can treat the release as active rather than upcoming.',
-          'That changes what this page should do for users. Instead of stopping at launch timing, it should route players toward the pages that answer immediate post-launch questions: mechanics, starter character choice, and first-run priorities.',
+          'The key update is simple and confirmed: Slay the Spire 2 is out now in Early Access on Steam. If you reached this page through searches like “out now”, “launch status”, or “early access live”, you can treat the release as active rather than upcoming.',
+          'That changes the job of this page. After confirming the game is live, it should route you toward the next practical question: how to start your first run, which character is safest, and where to check mechanics like Sly, Doom, Stars, and Forge.',
         ],
         bullets: [
           'Current status: live in Steam Early Access',
           'Release date: March 5, 2026',
-          'Best next reads: mechanics guide, starter character guide, first-run priorities',
+          'Confirmed next-stop topics: first-run guide, starter character choice, mechanics reference',
         ],
       },
       {
-        heading: 'Slay the Spire 2 launch time',
+        heading: 'Launch time and current storefront status',
         paragraphs: [
-          'For the two regions most people keep asking about, the launch-time conversion is simple. In US Pacific Time, the practical unlock-time conversion used here is March 5, 2026 at 10:00 AM. In China Standard Time, that becomes March 6, 2026 at 2:00 AM.',
-          'If you are posting in communities or sharing launch details with friends, it is safer to describe the time as a useful conversion rather than an officially locked statement. That keeps the wording accurate while still giving players a clear expectation.',
+          'For users still checking the unlock-hour conversion, the practical launch-time reference remains the same: March 5, 2026 at 10:00 AM in US Pacific Time and March 6, 2026 at 2:00 AM in China Standard Time.',
+          'That timing question matters less now because the storefront is already live. The more important operational check is whether your Steam client has updated cleanly and whether your local storefront shows the game as playable.',
         ],
         bullets: [
           'US Pacific Time: March 5, 2026, 10:00 AM',
           'China Standard Time: March 6, 2026, 2:00 AM',
-          'Confirmed date: Early Access begins on March 5, 2026',
+          'Current storefront state: available on Steam',
         ],
       },
       {
-        heading: 'What is confirmed so far',
+        heading: 'What is officially confirmed right now',
         paragraphs: [
-          'The most important confirmed fact is that Slay the Spire 2 launched into Early Access, not as a full 1.0 release. That matters because a lot of first-week discussion will be shaped by what is present at launch and what still feels intentionally unfinished.',
-          'The other broadly established point is that the sequel is still rooted in the same roguelike deckbuilder loop that made the first game work: pathing, combat sequencing, deck shaping, scaling, and adaptation from run to run.',
+          'The most important confirmed fact is that Slay the Spire 2 launched as an Early Access release, not a full 1.0 release. That sets the right expectation for balance, content expansion, and week-one discussion.',
+          'Another confirmed talking point from launch coverage is that Slay the Spire 2 supports 4-player co-op. That is one of the clearest “what is new now” answers for people comparing it to the first game.',
         ],
         bullets: [
           'Early Access went live on March 5, 2026',
-          'The game remains a roguelike deckbuilder at its core',
-          'Character-specific mechanics appear to be a larger focus in the sequel',
-          'Early discussion will likely center on characters, mechanics, and content volume',
+          'The game is playable on Steam now',
+          '4-player co-op is part of the launch-week feature set',
+          'Character-specific mechanics remain a major discovery path for new players',
         ],
       },
       {
-        heading: 'Known characters and mechanics',
+        heading: 'Characters and mechanics new players should recognize fast',
         paragraphs: [
-          'At a high level, the sequel already looks more character-driven than Slay the Spire 1 did in its earliest impressions. Returning characters like Ironclad and Silent are joined by newly revealed characters such as Necrobinder and The Regent, giving players more obvious hooks for theorycrafting before launch.',
-          'Mechanically, the sequel has also drawn attention for systems like Sly, Doom, Stars, Forge, and other character-tied interactions. That does not automatically guarantee better balance or more depth, but it does suggest that player discussion will move quickly from basic first impressions into matchup questions, deck identity, and synergy exploration.',
+          'The fastest way to avoid information overload in launch week is to anchor on the known character set and a short list of mechanics. Ironclad and Silent remain the easiest reference points, while Necrobinder and Regent introduce more system-heavy play patterns.',
+          'Mechanics like Sly, Doom, Stars, and Forge are not just flavor labels. They are the terms that show up again and again when players try to understand why a run felt stable or why a draft line collapsed.',
         ],
       },
       {
-        heading: 'How Slay the Spire 2 may differ from Slay the Spire 1',
+        heading: '4-player co-op is one of the biggest launch-week differentiators',
         paragraphs: [
-          'The original Slay the Spire had to prove that its structure worked. Slay the Spire 2 is in a different position. Players already trust the genre loop, so the sequel will be judged more on whether its new characters, mechanics, and run variety create fresh decision space.',
-          'That is why launch week will probably not just be about whether the game is fun. People will also be testing whether each character feels distinct enough, whether the new mechanics stay interesting after a few runs, and whether the Early Access content pool is broad enough to support replayability immediately.',
+          'One of the most valuable launch-week facts to highlight is 4-player co-op. That is a concrete feature difference users are actively searching for, and it changes how some players judge the sequel even before they dive deep into solo progression.',
+          'If your question is not “when does it unlock” but “what is new enough to justify jumping in now,” co-op is one of the strongest short answers.',
         ],
       },
       {
-        heading: 'What to expect during the first week',
+        heading: 'What to do in your first 24 hours',
         paragraphs: [
-          'If the launch follows the usual pattern for system-heavy deckbuilders, the first wave of opinions will change fast. Early tier lists are likely to be unstable, and some mechanics that look weak at first may get reevaluated once players understand their support pieces and scaling patterns.',
-          'The most useful early discussions will probably be the ones that share actual run observations: which characters feel coherent, which mechanics open up real build paths, and whether the Early Access version already has enough variety to keep repeated runs feeling fresh.',
+          'Launch-week advice is most useful when it reduces wasted runs. Treat your first few hours as calibration: learn enemy pacing, test one character deeply enough to spot stable card packages, and avoid rushing into rigid tier-list thinking.',
+          'If you are splitting attention between solo runs and co-op curiosity, still start with one clean solo baseline. That gives you better judgment when comparing multiplayer impressions later.',
         ],
       },
       {
@@ -267,12 +267,13 @@ export const NEWS_ARTICLES: NewsArticle[] = [
       {
         heading: 'What to read next after launch',
         paragraphs: [
-          'The highest-value launch-week path is not the same for every user. If you are completely new, go to the first-run guide. If you are choosing a class, go to the starter character guide. If your question is about systems or keywords like Sly, Doom, Stars, or Forge, go to mechanics.',
+          'The highest-value launch-week path depends on your immediate question. If you are completely new, go to the first-run guide. If you are choosing a class, go to the starter character guide. If your question is about systems or keywords like Sly, Doom, Stars, or Forge, go to mechanics. If your question is about multiplayer, read the co-op explainer.',
         ],
         bullets: [
           'Need the beginner route? Read the first-run guide.',
           'Need the short answer on class choice? Read the best starter character guide.',
           'Need wiki-style system explanations? Read the mechanics page.',
+          'Need the multiplayer answer? Read the co-op explainer.',
         ],
       },
       {
@@ -309,6 +310,84 @@ export const NEWS_ARTICLES: NewsArticle[] = [
       {
         href: '/news',
         label: 'Read more Slay the Spire 2 news and updates',
+      },
+      {
+        href: '/news/slay-the-spire-2-co-op-4-player-explained',
+        label: 'Does Slay the Spire 2 have co-op? 4-player feature explainer',
+      },
+    ],
+  },
+  {
+    slug: 'slay-the-spire-2-co-op-4-player-explained',
+    title: 'Does Slay the Spire 2 Have Co-op? 4-Player Co-op Explained',
+    excerpt: 'Yes. Slay the Spire 2 includes 4-player co-op in Early Access. This short guide explains the confirmed co-op answer, why it matters at launch, and which pages to read next if you are starting with friends.',
+    date: '2026-03-06',
+    category: 'News',
+    readTime: '5 min',
+    featured: true,
+    image: 'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2868840/ss_8f8dcd17d2dc8f228151f00ca17e59f2f65b9d85.1920x1080.jpg?t=1770241822',
+    url: 'https://store.steampowered.com/app/2868840/Slay_the_Spire_2/',
+    source: 'StS2 Guide',
+    sourceType: 'internal',
+    updatedAt: '2026-03-06',
+    intro: [
+      'Yes. Slay the Spire 2 has 4-player co-op, and that is one of the clearest launch-week differences people are searching for right now.',
+      'This page is meant to answer the co-op question quickly, then route you to the pages that are still useful whether you start solo or with friends.',
+    ],
+    sections: [
+      {
+        heading: 'Short answer: yes, Slay the Spire 2 supports 4-player co-op',
+        paragraphs: [
+          'The confirmed answer is yes: Slay the Spire 2 includes 4-player co-op in its Early Access period. If you are comparing it to the first game, this is one of the easiest “what changed” answers to verify.',
+          'That makes co-op one of the best launch-week hooks for players who are not only interested in solo deckbuilding progression.',
+        ],
+      },
+      {
+        heading: 'Why this matters at launch',
+        paragraphs: [
+          'For many players, the launch decision is not just about whether the sequel is live. It is about whether there is enough new structure to justify jumping in immediately. Co-op changes that answer because it creates a different reason to start early with friends.',
+          'It also changes search intent. Some users are not looking for deep mechanics first; they are simply asking whether the game is multiplayer at all.',
+        ],
+        bullets: [
+          'Confirmed feature answer: 4-player co-op',
+          'Useful for “is it worth starting now with friends?” search intent',
+          'A clear difference from how many people remember the first game',
+        ],
+      },
+      {
+        heading: 'What to read next if you are starting with friends',
+        paragraphs: [
+          'Even if co-op is your entry point, the most useful supporting pages are still the beginner flow pages. One player in the group usually benefits from reading the first-run guide, and the group still needs a quick view of character and mechanic differences.',
+        ],
+        bullets: [
+          'Read the first-run guide if your group wants a stable first few runs.',
+          'Use the starter character guide if someone wants the easiest first pick.',
+          'Use the mechanics page if terms like Sly, Doom, Stars, or Forge cause confusion mid-run.',
+        ],
+      },
+      {
+        heading: 'Launch-week takeaway',
+        paragraphs: [
+          'The strongest short-form launch answer is now: Slay the Spire 2 is live in Early Access and it has 4-player co-op. If you only need one status page, use the launch hub. If you already know you are playing, move straight into first-run and character pages.',
+        ],
+      },
+    ],
+    relatedLinks: [
+      {
+        href: '/news/slay-the-spire-2-launch-time-us-china',
+        label: 'Launch hub: out now status, checklist, and next steps',
+      },
+      {
+        href: '/news/slay-the-spire-2-first-run-guide-act-1-priorities',
+        label: 'First-run guide for launch week and Act 1 stability',
+      },
+      {
+        href: '/news/best-starter-character-slay-the-spire-2-early-access',
+        label: 'Best starter character for the fastest clean start',
+      },
+      {
+        href: '/mechanics',
+        label: 'Mechanics reference: Sly, Doom, Stars, Forge, and more',
       },
     ],
   },
