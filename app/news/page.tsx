@@ -26,8 +26,9 @@ export default function NewsPage() {
       ? sortedArticles
       : sortedArticles.filter((article) => article.category === selectedCategory);
   const featuredLaunchArticle = selectedCategory === 'All'
-    ? sortedArticles.find((article) => article.slug === 'best-starter-character-slay-the-spire-2-early-access')
-      ?? sortedArticles.find((article) => article.slug === 'slay-the-spire-2-first-run-guide-act-1-priorities')
+    ? sortedArticles.find((article) => article.slug === 'slay-the-spire-2-known-issues-and-fixes')
+      ?? sortedArticles.find((article) => article.slug === 'slay-the-spire-2-co-op-guide-how-it-works')
+      ?? sortedArticles.find((article) => article.slug === 'slay-the-spire-2-hotfix-patch-notes')
       ?? sortedArticles.find((article) => article.slug === 'slay-the-spire-2-launch-time-us-china')
     : null;
   const gridArticles = featuredLaunchArticle
@@ -69,7 +70,7 @@ export default function NewsPage() {
           >
             <div className="flex flex-wrap items-center gap-3 mb-4">
               <span className="text-xs font-semibold px-3 py-1 rounded-full bg-molten-orange text-white">
-                Featured Launch Week Guide
+                Featured Launch Week Update
               </span>
               <span className="text-xs text-muted-foreground">{featuredLaunchArticle.date}</span>
               <span className="text-xs text-muted-foreground">{featuredLaunchArticle.readTime}</span>
