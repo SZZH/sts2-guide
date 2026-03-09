@@ -3,7 +3,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { CHARACTERS } from '@/shared/gameData';
-import { ArrowLeft, Shield, Zap, Heart } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
+import { getCharacterIndexEntry } from '@/shared/characterIndexData';
 import { ArticleSchema, BreadcrumbSchema } from '@/app/schema';
 
 export async function generateStaticParams() {
@@ -23,13 +24,21 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   }
 
   return {
-    title: `${character.name} Guide`,
-    description: `Master ${character.name} in Slay the Spire 2. Learn optimal card combos, relic synergies, and winning strategies for this ${character.difficulty.toLowerCase()} difficulty character.`,
-    keywords: [`${character.name} guide`, `${character.name} best build`, `${character.name} strategy`, 'Slay the Spire 2'],
+    title: `${character.name} in Slay the Spire 2: Unlock, Mechanics, and Card Pool`,
+    description: `Check ${character.name} in Slay the Spire 2 with current unlock status, core mechanics, starting deck, and the direct path into the ${character.name} card pool.`,
+    keywords: [
+      `${character.name} Slay the Spire 2`,
+      `${character.name} guide Slay the Spire 2`,
+      `${character.name} unlock Slay the Spire 2`,
+      `${character.name} cards Slay the Spire 2`,
+    ],
     openGraph: {
-      title: `${character.name} Guide - Best Builds & Strategy | StS2`,
-      description: `Master ${character.name} in Slay the Spire 2. ${character.description}`,
+      title: `${character.name} in Slay the Spire 2`,
+      description: `Unlock status, mechanics, starting deck, and card pool entry for ${character.name} in Slay the Spire 2.`,
       images: [{ url: character.image }],
+    },
+    alternates: {
+      canonical: `/characters/${character.slug}`,
     },
   };
 }
@@ -37,6 +46,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 export default async function CharacterDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const character = CHARACTERS.find((c) => c.slug === slug);
+  const characterIndex = getCharacterIndexEntry(slug);
 
   if (!character) {
     notFound();
@@ -52,8 +62,8 @@ export default async function CharacterDetailPage({ params }: { params: Promise<
         ]}
       />
       <ArticleSchema
-        title={`${character.name} Guide - Slay the Spire 2`}
-        description={character.description}
+        title={`${character.name} in Slay the Spire 2`}
+        description={`Unlock status, core mechanics, starting deck, and card pool entry for ${character.name} in Slay the Spire 2.`}
         datePublished="2026-02-12"
         dateModified={new Date().toISOString()}
         url={`https://sts2guide.com/characters/${character.slug}`}
@@ -70,20 +80,20 @@ export default async function CharacterDetailPage({ params }: { params: Promise<
           Back to Characters
         </Link>
 
-        {/* Character Hero */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-          <div className="relative rounded-lg overflow-hidden border border-border">
+        <div className="grid grid-cols-1 gap-6 mb-10 lg:grid-cols-[320px_minmax(0,1fr)] lg:items-start">
+          <div className="relative overflow-hidden rounded-2xl border border-border bg-shadow-gray/60">
             <Image
               src={character.image}
               alt={character.name}
-              fill
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover"
+              width={960}
+              height={640}
+              sizes="(max-width: 1024px) 100vw, 320px"
+              className="h-64 w-full object-cover lg:h-[420px]"
               style={{ objectPosition: 'center 60%' }}
             />
-            <div className="absolute top-4 right-4">
+            <div className="absolute left-4 top-4">
               <span
-                className={`px-4 py-2 rounded-full text-sm font-semibold ${
+                className={`rounded-full px-4 py-2 text-sm font-semibold ${
                   character.difficulty === 'Intermediate'
                     ? 'bg-blue-500/80 text-white'
                     : 'bg-purple-500/80 text-white'
@@ -95,32 +105,65 @@ export default async function CharacterDetailPage({ params }: { params: Promise<
           </div>
 
           <div>
-            <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">
+            <div className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-molten-orange">
+              Character Lookup
+            </div>
+            <h1 className="font-heading text-4xl md:text-5xl font-bold mb-3">
               {character.name}
             </h1>
-            <p className="text-steel-blue text-xl mb-6">{character.title}</p>
-            <p className="text-muted-foreground text-lg mb-8">{character.description}</p>
+            <p className="text-steel-blue text-lg mb-5">{character.title}</p>
+            <p className="text-muted-foreground text-base leading-8 mb-6">{characterIndex?.shortSummary ?? character.description}</p>
 
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-4 mb-8">
-              <div className="bg-shadow-gray border border-border rounded-lg p-4 text-center">
-                <Heart className="w-8 h-8 text-red-500 mx-auto mb-2" />
-                <div className="text-2xl font-bold text-molten-orange">{character.hp}</div>
-                <div className="text-xs text-muted-foreground">Starting HP</div>
+            <div className="grid gap-4 md:grid-cols-3">
+              <div className="bg-shadow-gray border border-border rounded-lg p-4">
+                <div className="text-xs font-semibold uppercase tracking-[0.18em] text-molten-orange mb-2">
+                  Unlock Status
+                </div>
+                <div className="text-2xl font-bold text-foreground">{characterIndex?.availabilityLabel ?? 'Confirmed'}</div>
               </div>
-              <div className="bg-shadow-gray border border-border rounded-lg p-4 text-center">
-                <Shield className="w-8 h-8 text-blue-500 mx-auto mb-2" />
-                <div className="text-2xl font-bold text-molten-orange">{character.gold}</div>
-                <div className="text-xs text-muted-foreground">Starting Gold</div>
+              <div className="bg-shadow-gray border border-border rounded-lg p-4">
+                <div className="text-xs font-semibold uppercase tracking-[0.18em] text-molten-orange mb-2">
+                  Card Pool
+                </div>
+                <div className="text-2xl font-bold text-foreground">{characterIndex?.cardCount ?? character.startingDeck.length}</div>
+                <div className="text-xs text-muted-foreground mt-1">Current indexed cards</div>
               </div>
-              <div className="bg-shadow-gray border border-border rounded-lg p-4 text-center">
-                <Zap className="w-8 h-8 text-yellow-500 mx-auto mb-2" />
-                <div className="text-2xl font-bold text-molten-orange">{character.startingRelic}</div>
-                <div className="text-xs text-muted-foreground">Relic</div>
+              <div className="bg-shadow-gray border border-border rounded-lg p-4">
+                <div className="text-xs font-semibold uppercase tracking-[0.18em] text-molten-orange mb-2">
+                  Best Next Query
+                </div>
+                <Link
+                  href={`/cards/character/${character.slug}`}
+                  className="text-sm font-semibold text-molten-orange transition-colors hover:text-ember-glow"
+                >
+                  Browse all {character.name} cards
+                </Link>
               </div>
             </div>
           </div>
         </div>
+
+        <section className="mb-12">
+          <h2 className="font-heading text-3xl font-bold mb-6">Quick Read</h2>
+          <div className="grid gap-4 md:grid-cols-2">
+            <div className="rounded-xl border border-border bg-shadow-gray p-6">
+              <div className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-molten-orange">
+                What This Page Solves
+              </div>
+              <p className="text-muted-foreground leading-7">
+                Use this page to confirm where {character.name} sits in the roster, what mechanics define its runs, and where to jump next if you need the actual card pool instead of guide text.
+              </p>
+            </div>
+            <div className="rounded-xl border border-border bg-shadow-gray p-6">
+              <div className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-molten-orange">
+                Mechanic Focus
+              </div>
+              <p className="text-muted-foreground leading-7">
+                {characterIndex?.mechanicFocus ?? character.mechanics.map((ability) => ability.name).join(', ')}
+              </p>
+            </div>
+          </div>
+        </section>
 
         {/* Mechanics */}
         <section className="mb-12">
@@ -137,20 +180,13 @@ export default async function CharacterDetailPage({ params }: { params: Promise<
           </div>
         </section>
 
-        {/* Playstyle */}
-        <section className="mb-12">
-          <h2 className="font-heading text-3xl font-bold mb-6">Playstyle & Strategy</h2>
-          <div className="bg-shadow-gray border border-border rounded-lg p-8">
-            <p className="text-muted-foreground text-lg leading-relaxed">
-              {character.playstyle}
-            </p>
-          </div>
-        </section>
-
         {/* Starting Deck */}
-        <section>
+        <section className="mb-12">
           <h2 className="font-heading text-3xl font-bold mb-6">Starting Deck</h2>
           <div className="bg-shadow-gray border border-border rounded-lg p-6">
+            <p className="mb-4 text-sm leading-7 text-muted-foreground">
+              Starter cards are listed here as the fastest roster-level reference. If you need every card this character can roll into, use the dedicated card pool page below.
+            </p>
             <ul className="space-y-2">
               {character.startingDeck.map((card, index) => (
                 <li key={index} className="flex items-start gap-2">
@@ -159,6 +195,29 @@ export default async function CharacterDetailPage({ params }: { params: Promise<
                 </li>
               ))}
             </ul>
+          </div>
+        </section>
+
+        <section className="mt-12">
+          <h2 className="font-heading text-3xl font-bold mb-6">Browse This Character&apos;s Cards</h2>
+          <div className="rounded-2xl border border-border bg-shadow-gray p-6 md:p-8">
+            <p className="text-muted-foreground text-lg leading-relaxed">
+              This guide explains how {character.name} plays. If you want the actual card pool, starter cards, and direct links into every {character.name} card, use the dedicated character card index instead of scanning the full all-cards database by hand.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-4">
+              <Link
+                href={`/cards/character/${character.slug}`}
+                className="rounded-lg bg-molten-orange px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-ember-glow"
+              >
+                Browse all {character.name} cards
+              </Link>
+              <Link
+                href={`/cards?character=${character.slug}&sort=name`}
+                className="rounded-lg border border-border px-5 py-3 text-sm font-semibold transition-colors hover:border-molten-orange hover:text-molten-orange"
+              >
+                Open the filtered card list
+              </Link>
+            </div>
           </div>
         </section>
       </div>

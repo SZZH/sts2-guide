@@ -123,7 +123,7 @@ export default function HomePage() {
                 Starter Characters
               </h2>
               <p className="mt-2 text-sm text-steel-blue">
-                Compare Necrobinder, Regent, Ironclad, and Silent before you lock your first serious run.
+                Compare the current five-character roster before you lock your first serious run.
               </p>
             </Link>
           </div>
@@ -195,6 +195,55 @@ export default function HomePage() {
                 <p className="mt-3 text-sm leading-6 text-steel-blue">{article.description}</p>
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-12 bg-gradient-to-b from-forge-black to-shadow-gray/30">
+        <div className="container mx-auto px-4">
+          <div className="rounded-2xl border border-border bg-background/50 p-6 md:p-8">
+            <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
+              <div>
+                <div className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-molten-orange">
+                  Database
+                </div>
+                <h2 className="font-heading text-3xl md:text-4xl font-bold">
+                  Browse The Cards Database
+                </h2>
+                <p className="mt-3 max-w-2xl text-sm leading-7 text-steel-blue">
+                  Use the new cards index when you need a fast lookup by character, rarity, type, or cost. This first version is text-first, paginated, and built to support image slots once local licensed assets are imported.
+                </p>
+              </div>
+              <div className="grid gap-3 sm:grid-cols-2">
+                <div className="rounded-xl border border-border bg-forge-black/70 p-4">
+                  <div className="text-xs uppercase tracking-[0.18em] text-molten-orange">Why it exists</div>
+                  <p className="mt-2 text-sm text-steel-blue">
+                    Faster card lookup during Early Access without waiting for the art pipeline.
+                  </p>
+                </div>
+                <div className="rounded-xl border border-border bg-forge-black/70 p-4">
+                  <div className="text-xs uppercase tracking-[0.18em] text-molten-orange">What it does</div>
+                  <p className="mt-2 text-sm text-steel-blue">
+                    Search, filter, paginate, and jump into detail pages with source tracking.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Link
+                href="/cards"
+                className="inline-flex items-center rounded-lg bg-molten-orange px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-ember-glow"
+              >
+                Open Cards Database
+              </Link>
+              <Link
+                href="/characters"
+                className="inline-flex items-center rounded-lg border border-border px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:border-molten-orange hover:text-molten-orange"
+              >
+                Compare Characters First
+              </Link>
+            </div>
           </div>
         </div>
       </section>

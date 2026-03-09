@@ -239,9 +239,9 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ slu
               <div className="rounded-xl border border-border bg-background/70 p-5 mb-8">
                 <h2 className="font-heading text-xl font-bold mb-4">Related pages</h2>
                 <div className="flex flex-col gap-3">
-                  {article.relatedLinks.map((link) => (
+                  {article.relatedLinks.map((link, index) => (
                     <Link
-                      key={link.href}
+                      key={`${link.href}-${index}`}
                       href={link.href}
                       className="text-molten-orange hover:text-ember-glow transition-colors"
                     >

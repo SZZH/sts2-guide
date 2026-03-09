@@ -1,0 +1,23 @@
+.cardsScroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(249, 115, 22, 0.58) rgba(15, 23, 42, 0.28);
+}
+
+.cardsScroll::-webkit-scrollbar {
+  width: 10px;
+}
+
+.cardsScroll::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.3);
+  border-radius: 9999px;
+}
+
+.cardsScroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(251, 146, 60, 0.9), rgba(234, 88, 12, 0.88));
+  border-radius: 9999px;
+  border: 2px solid rgba(15, 23, 42, 0.18);
+}
+
+.cardsScroll::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, rgba(253, 186, 116, 0.95), rgba(249, 115, 22, 0.95));
+}

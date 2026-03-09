@@ -1,0 +1,216 @@
+# Cards Verification Report
+
+Generated: 2026-03-09
+
+## Summary
+- Total cards in local dataset: 504
+- Wiki cards parsed: 566
+- Exact cross-check matches: 412
+- Reconciled text entries: 92
+- Source conflicts: 0
+- Missing on wiki: 0
+
+## Exact cross-check matches
+- Abrasive (`abrasive`) - silent / power / rare / 3 / Cross-checked
+- Accelerant (`accelerant`) - silent / power / rare / 1 / Cross-checked
+- Accuracy (`accuracy`) - silent / power / uncommon / 1 / Cross-checked
+- Acrobatics (`acrobatics`) - silent / skill / common / 1 / Cross-checked
+- Afterimage (`afterimage`) - silent / power / rare / 1 / Cross-checked
+- Afterlife (`afterlife`) - necrobinder / skill / common / 1 / Cross-checked
+- Aggression (`aggression`) - ironclad / power / rare / 1 / Cross-checked
+- Alchemize (`alchemize`) - colorless / skill / rare / 1 / Cross-checked
+- Anger (`anger`) - ironclad / attack / common / 0 / Cross-checked
+- Anointed (`anointed`) - colorless / skill / rare / 1 / Cross-checked
+- Anticipate (`anticipate`) - silent / skill / common / 0 / Cross-checked
+- Armaments (`armaments`) - ironclad / skill / common / 1 / Cross-checked
+- Arsenal (`arsenal`) - regent / power / rare / 1 / Cross-checked
+- Ashen Strike (`ashen_strike`) - ironclad / attack / uncommon / 1 / Cross-checked
+- Assassinate (`assassinate`) - silent / attack / rare / 0 / Cross-checked
+- Astral Pulse (`astral_pulse`) - regent / attack / common / 0 / Cross-checked
+- Backflip (`backflip`) - silent / skill / common / 1 / Cross-checked
+- Backstab (`backstab`) - silent / attack / uncommon / 0 / Cross-checked
+- Ball Lightning (`ball_lightning`) - defect / attack / common / 1 / Cross-checked
+- Barrage (`barrage`) - defect / attack / common / 1 / Cross-checked
+- Barricade (`barricade`) - ironclad / power / rare / 3 / Cross-checked
+- Bash (`bash`) - ironclad / attack / special / 2 / Cross-checked
+- Battle Trance (`battle_trance`) - ironclad / skill / uncommon / 0 / Cross-checked
+- Beacon of Hope (`beacon_of_hope`) - colorless / power / rare / 1 / Cross-checked
+- Beam Cell (`beam_cell`) - defect / attack / common / 0 / Cross-checked
+- Beat into Shape (`beat_into_shape`) - regent / attack / rare / 1 / Cross-checked
+- BEGONE! (`begone`) - regent / attack / common / 1 / Cross-checked
+- Biased Cognition (`biased_cognition`) - defect / power / special / 1 / Cross-checked
+- Blade Dance (`blade_dance`) - silent / skill / common / 1 / Cross-checked
+- Blade of Ink (`blade_of_ink`) - silent / skill / rare / 1 / Cross-checked
+- Blight Strike (`blight_strike`) - necrobinder / attack / common / 1 / Cross-checked
+- Blood Wall (`blood_wall`) - ironclad / skill / common / 2 / Cross-checked
+- Bludgeon (`bludgeon`) - ironclad / attack / uncommon / 3 / Cross-checked
+- Blur (`blur`) - silent / skill / uncommon / 1 / Cross-checked
+- Body Slam (`body_slam`) - ironclad / attack / common / 1 / Cross-checked
+- Bodyguard (`bodyguard`) - necrobinder / skill / special / 1 / Cross-checked
+- Bolas (`bolas`) - colorless / attack / rare / 0 / Cross-checked
+- Bombardment (`bombardment`) - regent / attack / rare / 3 / Cross-checked
+- Bone Shards (`bone_shards`) - necrobinder / attack / uncommon / 1 / Cross-checked
+- Boost Away (`boost_away`) - defect / skill / common / 0 / Cross-checked
+- Boot Sequence (`boot_sequence`) - defect / skill / uncommon / 0 / Cross-checked
+- Bouncing Flask (`bouncing_flask`) - silent / skill / uncommon / 2 / Cross-checked
+- Brand (`brand`) - ironclad / skill / rare / 0 / Cross-checked
+- Break (`break`) - ironclad / attack / special / 2 / Cross-checked
+- Breakthrough (`breakthrough`) - ironclad / attack / common / 1 / Cross-checked
+- Bubble Bubble (`bubble_bubble`) - silent / skill / uncommon / 1 / Cross-checked
+- Buffer (`buffer`) - defect / power / rare / 2 / Cross-checked
+- Bulk Up (`bulk_up`) - defect / power / uncommon / 2 / Cross-checked
+- Bullet Time (`bullet_time`) - silent / skill / rare / 3 / Cross-checked
+- Bully (`bully`) - ironclad / attack / uncommon / 0 / Cross-checked
+- Bulwark (`bulwark`) - regent / skill / uncommon / 2 / Cross-checked
+- Bundle of Joy (`bundle_of_joy`) - regent / skill / rare / 2 / Cross-checked
+- Burning Pact (`burning_pact`) - ironclad / skill / uncommon / 1 / Cross-checked
+- Burst (`burst`) - silent / skill / rare / 1 / Cross-checked
+- Bury (`bury`) - necrobinder / attack / uncommon / 4 / Cross-checked
+- Calamity (`calamity`) - colorless / power / rare / 3 / Cross-checked
+- Calcify (`calcify`) - necrobinder / power / uncommon / 1 / Cross-checked
+- Calculated Gamble (`calculated_gamble`) - silent / skill / uncommon / 0 / Cross-checked
+- Call of the Void (`call_of_the_void`) - necrobinder / power / rare / 1 / Cross-checked
+- Capacitor (`capacitor`) - defect / power / uncommon / 1 / Cross-checked
+- Capture Spirit (`capture_spirit`) - necrobinder / skill / uncommon / 1 / Cross-checked
+- Cascade (`cascade`) - ironclad / skill / rare / X / Cross-checked
+- Catastrophe (`catastrophe`) - colorless / skill / uncommon / 2 / Cross-checked
+- Celestial Might (`celestial_might`) - regent / attack / common / 2 / Cross-checked
+- Chaos (`chaos`) - defect / skill / uncommon / 1 / Cross-checked
+- CHARGE!! (`charge`) - regent / skill / uncommon / 1 / Cross-checked
+- Cinder (`cinder`) - ironclad / attack / common / 2 / Cross-checked
+- Claw (`claw`) - defect / attack / common / 0 / Cross-checked
+- Cleanse (`cleanse`) - necrobinder / skill / uncommon / 1 / Cross-checked
+- Cloak and Dagger (`cloak_and_dagger`) - silent / skill / common / 1 / Cross-checked
+- Cloak of Stars (`cloak_of_stars`) - regent / skill / common / 0 / Cross-checked
+- Cold Snap (`cold_snap`) - defect / attack / common / 1 / Cross-checked
+- Collision Course (`collision_course`) - regent / attack / common / 0 / Cross-checked
+- Colossus (`colossus`) - ironclad / skill / rare / 1 / Cross-checked
+- Comet (`comet`) - regent / attack / rare / 0 / Cross-checked
+- Compact (`compact`) - defect / skill / uncommon / 1 / Cross-checked
+- Compile Driver (`compile_driver`) - defect / attack / common / 1 / Cross-checked
+- Conflagration (`conflagration`) - ironclad / attack / rare / 1 / Cross-checked
+- Conqueror (`conqueror`) - regent / skill / uncommon / 1 / Cross-checked
+- Consuming Shadow (`consuming_shadow`) - defect / power / rare / 2 / Cross-checked
+
+## Reconciled text entries
+- Adaptive Strike (`adaptive_strike`) - defect / attack / rare / 2 / Reconciled text
+- Adrenaline (`adrenaline`) - silent / skill / rare / 0 / Reconciled text
+- Alignment (`alignment`) - regent / skill / uncommon / 0 / Reconciled text
+- All for One (`all_for_one`) - defect / attack / rare / 2 / Reconciled text
+- Automation (`automation`) - colorless / power / uncommon / 1 / Reconciled text
+- Banshee&#x27;s Cry (`banshees_cry`) - necrobinder / attack / rare / 6 / Reconciled text
+- Beat Down (`beat_down`) - colorless / skill / rare / 3 / Reconciled text
+- Believe in You (`believe_in_you`) - colorless / skill / uncommon / 0 / Reconciled text
+- Big Bang (`big_bang`) - regent / skill / rare / 0 / Reconciled text
+- Black Hole (`black_hole`) - regent / power / uncommon / 1 / Reconciled text
+- Bloodletting (`bloodletting`) - ironclad / skill / common / 0 / Reconciled text
+- Borrowed Time (`borrowed_time`) - necrobinder / skill / uncommon / 0 / Reconciled text
+- Charge Battery (`charge_battery`) - defect / skill / common / 1 / Reconciled text
+- Child of the Stars (`child_of_the_stars`) - regent / power / uncommon / 1 / Reconciled text
+- Chill (`chill`) - defect / skill / uncommon / 0 / Reconciled text
+- Convergence (`convergence`) - regent / skill / uncommon / 1 / Reconciled text
+- Corruption (`corruption`) - ironclad / power / special / 3 / Reconciled text
+- Crescent Spear (`crescent_spear`) - regent / attack / common / 1 / Reconciled text
+- Danse Macabre (`danse_macabre`) - necrobinder / power / uncommon / 1 / Reconciled text
+- Delay (`delay`) - necrobinder / skill / uncommon / 2 / Reconciled text
+- Demesne (`demesne`) - necrobinder / power / rare / 3 / Reconciled text
+- Demonic Shield (`demonic_shield`) - ironclad / skill / uncommon / 0 / Reconciled text
+- Discovery (`discovery`) - colorless / skill / uncommon / 1 / Reconciled text
+- Dominate (`dominate`) - ironclad / skill / uncommon / 1 / Reconciled text
+- Echo Form (`echo_form`) - defect / power / rare / 3 / Reconciled text
+- Energy Surge (`energy_surge`) - defect / skill / uncommon / 1 / Reconciled text
+- Expect a Fight (`expect_a_fight`) - ironclad / skill / uncommon / 2 / Reconciled text
+- Feral (`feral`) - defect / power / uncommon / 2 / Reconciled text
+- Flatten (`flatten`) - necrobinder / attack / common / 2 / Reconciled text
+- Forgotten Ritual (`forgotten_ritual`) - ironclad / skill / uncommon / 1 / Reconciled text
+- Friendship (`friendship`) - necrobinder / power / uncommon / 1 / Reconciled text
+- Gather Light (`gather_light`) - regent / skill / common / 1 / Reconciled text
+- Genesis (`genesis`) - regent / power / rare / 2 / Reconciled text
+- Glow (`glow`) - regent / skill / common / 1 / Reconciled text
+- Graveblast (`graveblast`) - necrobinder / attack / common / 1 / Reconciled text
+- Hegemony (`hegemony`) - regent / attack / uncommon / 2 / Reconciled text
+- Helix Drill (`helix_drill`) - defect / attack / rare / 0 / Reconciled text
+- Hidden Cache (`hidden_cache`) - regent / skill / common / 1 / Reconciled text
+- Hologram (`hologram`) - defect / skill / common / 1 / Reconciled text
+- Ignition (`ignition`) - defect / skill / rare / 1 / Reconciled text
+- Impatience (`impatience`) - colorless / skill / uncommon / 0 / Reconciled text
+- Invoke (`invoke`) - necrobinder / skill / common / 1 / Reconciled text
+- Knockout Blow (`knockout_blow`) - regent / attack / uncommon / 3 / Reconciled text
+- Know Thy Place (`know_thy_place`) - regent / skill / common / 0 / Reconciled text
+- Melancholy (`melancholy`) - necrobinder / skill / uncommon / 3 / Reconciled text
+- Mimic (`mimic`) - colorless / skill / rare / 1 / Reconciled text
+- Momentum Strike (`momentum_strike`) - defect / attack / common / 1 / Reconciled text
+- Neurosurge (`neurosurge`) - necrobinder / power / rare / 0 / Reconciled text
+- Offering (`offering`) - ironclad / skill / rare / 0 / Reconciled text
+- Orbit (`orbit`) - regent / power / uncommon / 2 / Reconciled text
+- Pinpoint (`pinpoint`) - silent / attack / uncommon / 3 / Reconciled text
+- Pounce (`pounce`) - silent / attack / uncommon / 2 / Reconciled text
+- Primal Force (`primal_force`) - ironclad / skill / rare / 0 / Reconciled text
+- Production (`production`) - colorless / skill / uncommon / 0 / Reconciled text
+- Prolong (`prolong`) - colorless / skill / uncommon / 0 / Reconciled text
+- Pyre (`pyre`) - ironclad / power / rare / 2 / Reconciled text
+- Radiate (`radiate`) - regent / attack / uncommon / 0 / Reconciled text
+- Rainbow (`rainbow`) - defect / skill / rare / 2 / Reconciled text
+- Reaper Form (`reaper_form`) - necrobinder / power / rare / 3 / Reconciled text
+- Refine Blade (`refine_blade`) - regent / skill / common / 1 / Reconciled text
+- Reflect (`reflect`) - regent / skill / uncommon / 1 / Reconciled text
+- Restlessness (`restlessness`) - colorless / skill / uncommon / 0 / Reconciled text
+- Right Hand Hand (`right_hand_hand`) - necrobinder / attack / uncommon / 0 / Reconciled text
+- Rocket Punch (`rocket_punch`) - defect / attack / uncommon / 2 / Reconciled text
+- Royal Gamble (`royal_gamble`) - regent / skill / uncommon / 0 / Reconciled text
+- Scavenge (`scavenge`) - defect / skill / uncommon / 1 / Reconciled text
+- Scrape (`scrape`) - defect / attack / uncommon / 1 / Reconciled text
+- Secret Technique (`secret_technique`) - colorless / skill / rare / 0 / Reconciled text
+- Secret Weapon (`secret_weapon`) - colorless / skill / rare / 0 / Reconciled text
+- Shadow Step (`shadow_step`) - silent / skill / rare / 1 / Reconciled text
+- Shining Strike (`shining_strike`) - regent / attack / uncommon / 1 / Reconciled text
+- Solar Strike (`solar_strike`) - regent / attack / common / 1 / Reconciled text
+- Splash (`splash`) - colorless / skill / uncommon / 1 / Reconciled text
+- Squeeze (`squeeze`) - necrobinder / attack / rare / 3 / Reconciled text
+- Stomp (`stomp`) - ironclad / attack / uncommon / 3 / Reconciled text
+- Subroutine (`subroutine`) - defect / power / uncommon / 1 / Reconciled text
+- Sunder (`sunder`) - defect / attack / uncommon / 3 / Reconciled text
+- Supercritical (`supercritical`) - defect / skill / rare / 0 / Reconciled text
+- Synchronize (`synchronize`) - defect / skill / uncommon / 1 / Reconciled text
+- Synthesis (`synthesis`) - defect / attack / uncommon / 2 / Reconciled text
+- Tactician (`tactician`) - silent / skill / uncommon / 3 / Reconciled text
+- The Sealed Throne (`the_sealed_throne`) - regent / power / special / 1 / Reconciled text
+- Thinking Ahead (`thinking_ahead`) - colorless / skill / uncommon / 0 / Reconciled text
+- Tracking (`tracking`) - silent / power / rare / 2 / Reconciled text
+- Transfigure (`transfigure`) - necrobinder / skill / rare / 1 / Reconciled text
+- True Grit (`true_grit`) - ironclad / skill / common / 1 / Reconciled text
+- TURBO (`turbo`) - defect / skill / common / 0 / Reconciled text
+- Unrelenting (`unrelenting`) - ironclad / attack / uncommon / 2 / Reconciled text
+- Veilpiercer (`veilpiercer`) - necrobinder / attack / uncommon / 1 / Reconciled text
+- Venerate (`venerate`) - regent / skill / special / 1 / Reconciled text
+- Voltaic (`voltaic`) - defect / skill / rare / 2 / Reconciled text
+- Wisp (`wisp`) - necrobinder / skill / common / 0 / Reconciled text
+
+## Source conflicts
+- None
+
+## First-page cards
+- Abrasive (`abrasive`) - silent / power / rare / 3 / Cross-checked
+- Accelerant (`accelerant`) - silent / power / rare / 1 / Cross-checked
+- Accuracy (`accuracy`) - silent / power / uncommon / 1 / Cross-checked
+- Acrobatics (`acrobatics`) - silent / skill / common / 1 / Cross-checked
+- Adaptive Strike (`adaptive_strike`) - defect / attack / rare / 2 / Reconciled text
+- Adrenaline (`adrenaline`) - silent / skill / rare / 0 / Reconciled text
+- Afterimage (`afterimage`) - silent / power / rare / 1 / Cross-checked
+- Afterlife (`afterlife`) - necrobinder / skill / common / 1 / Cross-checked
+- Aggression (`aggression`) - ironclad / power / rare / 1 / Cross-checked
+- Alchemize (`alchemize`) - colorless / skill / rare / 1 / Cross-checked
+- Alignment (`alignment`) - regent / skill / uncommon / 0 / Reconciled text
+- All for One (`all_for_one`) - defect / attack / rare / 2 / Reconciled text
+- Anger (`anger`) - ironclad / attack / common / 0 / Cross-checked
+- Anointed (`anointed`) - colorless / skill / rare / 1 / Cross-checked
+- Anticipate (`anticipate`) - silent / skill / common / 0 / Cross-checked
+- Armaments (`armaments`) - ironclad / skill / common / 1 / Cross-checked
+- Arsenal (`arsenal`) - regent / power / rare / 1 / Cross-checked
+- Ashen Strike (`ashen_strike`) - ironclad / attack / uncommon / 1 / Cross-checked
+- Assassinate (`assassinate`) - silent / attack / rare / 0 / Cross-checked
+- Astral Pulse (`astral_pulse`) - regent / attack / common / 0 / Cross-checked
+- Automation (`automation`) - colorless / power / uncommon / 1 / Reconciled text
+- Backflip (`backflip`) - silent / skill / common / 1 / Cross-checked
+- Backstab (`backstab`) - silent / attack / uncommon / 0 / Cross-checked
+- Ball Lightning (`ball_lightning`) - defect / attack / common / 1 / Cross-checked

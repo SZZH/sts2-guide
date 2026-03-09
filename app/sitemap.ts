@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next';
 import { CHARACTERS, NEWS_ARTICLES } from '@/shared/gameData';
+import { CARDS, CARD_CHARACTERS } from '@/shared/cardsData';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://sts2guide.com';
@@ -38,6 +39,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/cards`,
+      lastModified: toDate('2026-03-08'),
+      changeFrequency: 'daily',
+      priority: 0.85,
+    },
+    {
       url: `${baseUrl}/mechanics`,
       lastModified: toDate('2026-02-13'),
       changeFrequency: 'weekly',
@@ -66,5 +73,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...characterPages, ...newsPages];
+  const cardPages: MetadataRoute.Sitemap = CARDS.map((card) => ({
+    url: `${baseUrl}/cards/${card.slug}`,
+    lastModified: toDate(card.updatedAt),
+    changeFrequency: 'weekly' as const,
+    priority: 0.75,
+  }));
+
+  const characterCardPages: MetadataRoute.Sitemap = CARD_CHARACTERS.map((character) => ({
+    url: `${baseUrl}/cards/character/${character.value}`,
+    lastModified: toDate('2026-03-09'),
+    changeFrequency: 'weekly' as const,
+    priority: 0.78,
+  }));
+
+  return [...staticPages, ...characterPages, ...newsPages, ...cardPages, ...characterCardPages];
 }
