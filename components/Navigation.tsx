@@ -21,6 +21,7 @@ export default function Navigation() {
     { id: 'guides', href: '/guides', label: 'Guides', placeholder: false },
     { id: 'mechanics', href: '/mechanics', label: 'Mechanics', placeholder: false },
     { id: 'relics', href: '/relics', label: 'Relics', placeholder: false },
+    { id: 'potions', href: '/potions', label: 'Potions', placeholder: false },
   ];
 
   return (

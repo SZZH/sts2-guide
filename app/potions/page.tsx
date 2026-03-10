@@ -1,28 +1,28 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { RELICS } from '@/shared/gameData';
+import { POTIONS } from '@/shared/gameData';
 import { BreadcrumbSchema, CollectionPageSchema, ItemListSchema } from '@/app/schema';
 
 export const metadata: Metadata = {
-  title: 'Slay the Spire 2 Relics - Search by Rarity and Character',
+  title: 'Slay the Spire 2 Potions - Search by Rarity and Character',
   description:
-    'Search the Slay the Spire 2 relic index by rarity and character tag. Use this page for fast lookup instead of long guide text.',
+    'Search the Slay the Spire 2 potion index by rarity and character tag. Quickly find potion effects without scanning long guides.',
   keywords: [
-    'Slay the Spire 2 relics',
-    'StS2 relic database',
-    'Slay the Spire 2 relic list',
-    'StS2 relic search',
+    'Slay the Spire 2 potions',
+    'StS2 potion database',
+    'Slay the Spire 2 potion list',
+    'StS2 potion search',
   ],
   alternates: {
-    canonical: '/relics',
+    canonical: '/potions',
   },
   openGraph: {
-    title: 'Slay the Spire 2 Relics - Search Index',
-    description: 'Browse relics by rarity, character tag, and keyword in a clean lookup view.',
+    title: 'Slay the Spire 2 Potions - Search Index',
+    description: 'Browse potion effects by rarity, class context, and keyword filters.',
   },
 };
 
-type RelicsPageProps = {
+type PotionsPageProps = {
   searchParams: Promise<{
     q?: string;
     rarity?: string;
@@ -30,12 +30,8 @@ type RelicsPageProps = {
   }>;
 };
 
-const RARITY_FILTERS = ['all', 'Starter', 'Common', 'Uncommon', 'Rare'] as const;
-const CHARACTER_FILTERS = ['all', 'Ironclad', 'Silent', 'Regent', 'Necrobinder', 'Defect', 'Neutral'] as const;
-
-function toCharacterTag(character?: string) {
-  return character ?? 'Neutral';
-}
+const RARITY_FILTERS = ['all', 'Common', 'Uncommon', 'Rare'] as const;
+const CHARACTER_FILTERS = ['all', 'Neutral', 'Ironclad', 'Silent', 'Regent', 'Necrobinder', 'Defect'] as const;
 
 function buildHref(filters: { q?: string; rarity?: string; character?: string }) {
   const params = new URLSearchParams();
@@ -43,10 +39,10 @@ function buildHref(filters: { q?: string; rarity?: string; character?: string })
   if (filters.rarity && filters.rarity !== 'all') params.set('rarity', filters.rarity);
   if (filters.character && filters.character !== 'all') params.set('character', filters.character);
   const query = params.toString();
-  return query ? `/relics?${query}` : '/relics';
+  return query ? `/potions?${query}` : '/potions';
 }
 
-export default async function RelicsPage({ searchParams }: RelicsPageProps) {
+export default async function PotionsPage({ searchParams }: PotionsPageProps) {
   const params = await searchParams;
   const query = params.q?.trim().toLowerCase() ?? '';
   const rarity = RARITY_FILTERS.includes((params.rarity as (typeof RARITY_FILTERS)[number]) ?? 'all')
@@ -56,13 +52,11 @@ export default async function RelicsPage({ searchParams }: RelicsPageProps) {
     ? ((params.character as (typeof CHARACTER_FILTERS)[number]) ?? 'all')
     : 'all';
 
-  const filteredRelics = RELICS.filter((relic) => {
-    const characterTag = toCharacterTag(relic.character);
-    if (rarity !== 'all' && relic.rarity !== rarity) return false;
-    if (character !== 'all' && characterTag !== character) return false;
-
+  const filteredPotions = POTIONS.filter((potion) => {
+    if (rarity !== 'all' && potion.rarity !== rarity) return false;
+    if (character !== 'all' && potion.character !== character) return false;
     if (!query) return true;
-    const haystack = `${relic.name} ${relic.description} ${relic.rarity} ${characterTag}`.toLowerCase();
+    const haystack = `${potion.name} ${potion.description} ${potion.rarity} ${potion.character}`.toLowerCase();
     return haystack.includes(query);
   });
 
@@ -71,20 +65,20 @@ export default async function RelicsPage({ searchParams }: RelicsPageProps) {
       <BreadcrumbSchema
         items={[
           { name: 'Home', url: 'https://sts2guide.com' },
-          { name: 'Relics', url: 'https://sts2guide.com/relics' },
+          { name: 'Potions', url: 'https://sts2guide.com/potions' },
         ]}
       />
       <CollectionPageSchema
-        name="Slay the Spire 2 Relic Index"
-        description="Search Slay the Spire 2 relics by rarity, character tag, and keyword."
-        url="https://sts2guide.com/relics"
+        name="Slay the Spire 2 Potion Index"
+        description="Search Slay the Spire 2 potions by rarity, character context, and keyword."
+        url="https://sts2guide.com/potions"
       />
       <ItemListSchema
-        name="Slay the Spire 2 Relics"
-        url="https://sts2guide.com/relics"
-        items={RELICS.map((relic) => ({
-          name: relic.name,
-          url: 'https://sts2guide.com/relics',
+        name="Slay the Spire 2 Potions"
+        url="https://sts2guide.com/potions"
+        items={POTIONS.map((potion) => ({
+          name: potion.name,
+          url: 'https://sts2guide.com/potions',
         }))}
       />
 
@@ -95,14 +89,14 @@ export default async function RelicsPage({ searchParams }: RelicsPageProps) {
               <aside className="space-y-6">
                 <div>
                   <h2 className="mb-3 text-xl font-bold">Search</h2>
-                  <form action="/relics" className="space-y-3">
+                  <form action="/potions" className="space-y-3">
                     <input type="hidden" name="rarity" value={rarity === 'all' ? '' : rarity} />
                     <input type="hidden" name="character" value={character === 'all' ? '' : character} />
                     <input
                       type="search"
                       name="q"
                       defaultValue={query}
-                      placeholder="Search relic name or effect"
+                      placeholder="Search potion name or effect"
                       className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-molten-orange"
                     />
                     <button
@@ -146,7 +140,7 @@ export default async function RelicsPage({ searchParams }: RelicsPageProps) {
 
                 <div className="rounded-xl border border-border bg-background/40 p-4">
                   <h2 className="mb-2 text-lg font-bold">Reset</h2>
-                  <Link href="/relics" className="text-sm font-semibold text-molten-orange transition-colors hover:text-ember-glow">
+                  <Link href="/potions" className="text-sm font-semibold text-molten-orange transition-colors hover:text-ember-glow">
                     Clear all filters
                   </Link>
                 </div>
@@ -155,38 +149,38 @@ export default async function RelicsPage({ searchParams }: RelicsPageProps) {
               <div>
                 <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
                   <div>
-                    <h1 className="font-heading text-3xl font-bold md:text-4xl">Relic Database</h1>
+                    <h1 className="font-heading text-3xl font-bold md:text-4xl">Potions Database</h1>
                     <p className="mt-2 text-sm leading-7 text-steel-blue">
-                      Showing {filteredRelics.length} relics in the current index. Use filters to narrow by rarity and class context.
+                      Showing {filteredPotions.length} potions in the current index. Use filters to quickly find combat utility options.
                     </p>
                   </div>
-                  <Link href="/potions" className="text-sm font-semibold text-molten-orange transition-colors hover:text-ember-glow">
-                    Open potions database
+                  <Link href="/relics" className="text-sm font-semibold text-molten-orange transition-colors hover:text-ember-glow">
+                    Open relics database
                   </Link>
                 </div>
 
-                {filteredRelics.length === 0 ? (
+                {filteredPotions.length === 0 ? (
                   <div className="rounded-xl border border-border bg-background/40 p-10 text-center">
-                    <h2 className="font-heading text-2xl font-bold">No relics match this query</h2>
+                    <h2 className="font-heading text-2xl font-bold">No potions match this query</h2>
                     <p className="mt-3 text-muted-foreground">Broaden keyword filters or reset all conditions.</p>
                   </div>
                 ) : (
                   <div className="grid gap-4 md:grid-cols-2">
-                    {filteredRelics.map((relic) => (
+                    {filteredPotions.map((potion) => (
                       <article
-                        key={`${relic.rarity}-${relic.name}`}
+                        key={`${potion.rarity}-${potion.name}`}
                         className="rounded-2xl border border-border bg-background/55 p-5 transition-colors hover:border-molten-orange"
                       >
                         <div className="mb-3 flex flex-wrap items-center gap-2">
                           <span className="rounded-full border border-molten-orange/30 px-3 py-1 text-xs uppercase tracking-[0.16em] text-molten-orange">
-                            {relic.rarity}
+                            {potion.rarity}
                           </span>
                           <span className="rounded-full border border-border px-3 py-1 text-xs uppercase tracking-[0.16em] text-steel-blue">
-                            {toCharacterTag(relic.character)}
+                            {potion.character}
                           </span>
                         </div>
-                        <h2 className="font-heading text-2xl font-bold">{relic.name}</h2>
-                        <p className="mt-3 text-sm leading-7 text-muted-foreground">{relic.description}</p>
+                        <h2 className="font-heading text-2xl font-bold">{potion.name}</h2>
+                        <p className="mt-3 text-sm leading-7 text-muted-foreground">{potion.description}</p>
                       </article>
                     ))}
                   </div>

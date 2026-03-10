@@ -261,13 +261,12 @@ export default function HomePage() {
                 href={`/characters/${character.slug}`}
                 className="group relative overflow-hidden rounded-lg border border-border hover:border-molten-orange transition-all duration-300"
               >
-                <div className="relative h-64">
+                <div className="relative aspect-[825/464]">
                   <Image 
                     src={character.image}
                     alt={character.name}
                     fill
-                    className="object-cover"
-                    style={{ objectPosition: 'center 60%' }}
+                    className="object-contain bg-forge-black/40 p-2"
                     sizes="(max-width: 768px) 100vw, 50vw"
                     priority={false}
                   />
@@ -311,7 +310,7 @@ export default function HomePage() {
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-center mb-12">
             EXPLORE THE SPIRE
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 max-w-6xl mx-auto">
             <Link
               href="/guides"
               className="group bg-forge-black border border-border rounded-lg p-8 hover:border-orange-500 transition-all duration-300"
@@ -346,6 +345,18 @@ export default function HomePage() {
               </h3>
               <p className="text-muted-foreground">
                 Browse all relics with detailed descriptions and character synergies.
+              </p>
+            </Link>
+            <Link
+              href="/potions"
+              className="group bg-forge-black border border-border rounded-lg p-8 hover:border-cyan-500 transition-all duration-300"
+            >
+              <div className="text-4xl mb-4">🧪</div>
+              <h3 className="font-heading text-2xl font-bold mb-3 group-hover:text-cyan-300 transition-colors">
+                StS2 Potions Database
+              </h3>
+              <p className="text-muted-foreground">
+                Query potion effects by rarity and character context for faster in-run decisions.
               </p>
             </Link>
           </div>

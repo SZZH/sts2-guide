@@ -77,6 +77,7 @@ export const CHARACTER_INDEX: CharacterIndexEntry[] = [
     shortSummary: 'Roster character centered on Orb cycling and Focus-based passive scaling patterns.',
     mechanicFocus: 'Orbs, Focus scaling, passive setup turns',
     cardCount: countCardsForCharacter('defect'),
+    guideHref: '/characters/defect',
     cardsHref: '/cards/character/defect',
     updatedAt: OFFICIAL_UPDATED_AT,
   },

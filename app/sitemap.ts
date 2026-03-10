@@ -56,6 +56,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.8,
     },
+    {
+      url: `${baseUrl}/potions`,
+      lastModified: toDate('2026-03-10'),
+      changeFrequency: 'weekly',
+      priority: 0.78,
+    },
   ];
 
   // Dynamic character pages

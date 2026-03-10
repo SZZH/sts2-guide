@@ -80,16 +80,15 @@ export default async function CharacterDetailPage({ params }: { params: Promise<
           Back to Characters
         </Link>
 
-        <div className="grid grid-cols-1 gap-6 mb-10 lg:grid-cols-[320px_minmax(0,1fr)] lg:items-start">
+        <div className="mb-10 grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,640px)_minmax(0,1fr)] lg:items-start">
           <div className="relative overflow-hidden rounded-2xl border border-border bg-shadow-gray/60">
             <Image
               src={character.image}
               alt={character.name}
-              width={960}
-              height={640}
-              sizes="(max-width: 1024px) 100vw, 320px"
-              className="h-64 w-full object-cover lg:h-[420px]"
-              style={{ objectPosition: 'center 60%' }}
+              width={825}
+              height={464}
+              sizes="(max-width: 1024px) 100vw, 640px"
+              className="aspect-[825/464] w-full object-contain bg-forge-black/35 p-3"
             />
             <div className="absolute left-4 top-4">
               <span
@@ -104,7 +103,7 @@ export default async function CharacterDetailPage({ params }: { params: Promise<
             </div>
           </div>
 
-          <div>
+          <div className="self-start">
             <div className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-molten-orange">
               Character Lookup
             </div>
@@ -114,7 +113,7 @@ export default async function CharacterDetailPage({ params }: { params: Promise<
             <p className="text-steel-blue text-lg mb-5">{character.title}</p>
             <p className="text-muted-foreground text-base leading-8 mb-6">{characterIndex?.shortSummary ?? character.description}</p>
 
-            <div className="grid gap-4 md:grid-cols-3">
+            <div className="grid gap-4 xl:grid-cols-3">
               <div className="bg-shadow-gray border border-border rounded-lg p-4">
                 <div className="text-xs font-semibold uppercase tracking-[0.18em] text-molten-orange mb-2">
                   Unlock Status

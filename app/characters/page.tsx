@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { CHARACTER_INDEX } from '@/shared/characterIndexData';
+import { CHARACTERS } from '@/shared/gameData';
 import { BreadcrumbSchema, CollectionPageSchema, ItemListSchema } from '@/app/schema';
 
 export const metadata: Metadata = {
@@ -60,6 +62,8 @@ export default async function CharactersPage({ searchParams }: CharactersPagePro
     const haystack = `${character.name} ${character.shortSummary} ${character.mechanicFocus}`.toLowerCase();
     return haystack.includes(query);
   });
+
+  const characterImageMap = new Map(CHARACTERS.map((entry) => [entry.slug, entry.image]));
 
   return (
     <>
@@ -158,57 +162,57 @@ export default async function CharactersPage({ searchParams }: CharactersPagePro
                 </div>
               ) : (
                 <div className="grid gap-5 md:grid-cols-2">
-                  {filteredCharacters.map((character) => (
-                    <article
-                      key={character.slug}
-                      className="group relative rounded-2xl border border-border bg-background/55 p-6 transition-colors hover:border-molten-orange"
-                    >
-                      {character.guideHref ? (
-                        <Link
-                          href={character.guideHref}
-                          aria-label={`Open ${character.name} guide`}
-                          className="absolute inset-0 z-0 rounded-2xl"
-                        />
-                      ) : null}
-                      <div className="mb-4 flex flex-wrap items-center gap-2">
-                        <span className="rounded-full border border-molten-orange/30 px-3 py-1 text-xs uppercase tracking-[0.16em] text-molten-orange">
-                          {character.availabilityLabel}
-                        </span>
-                        <span className="rounded-full border border-border px-3 py-1 text-xs uppercase tracking-[0.16em] text-steel-blue">
-                          {character.cardCount} cards
-                        </span>
-                        <span className="rounded-full border border-border px-3 py-1 text-xs uppercase tracking-[0.16em] text-muted-foreground">
-                          Updated {character.updatedAt}
-                        </span>
-                      </div>
-
-                      <h2 className="relative z-10 font-heading text-3xl font-bold transition-colors group-hover:text-molten-orange">
-                        {character.name}
-                      </h2>
-                      <p className="relative z-10 mt-4 text-sm leading-7 text-muted-foreground">{character.shortSummary}</p>
-
-                      <div className="relative z-10 mt-5 rounded-xl border border-border bg-forge-black/35 p-4">
-                        <div className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-molten-orange">
-                          Mechanic Focus
+                  {filteredCharacters.map((character) => {
+                    const detailHref = character.guideHref ?? `/characters/${character.slug}`;
+                    return (
+                      <Link
+                        key={character.slug}
+                        href={detailHref}
+                        aria-label={`Open ${character.name} guide`}
+                        className="group block cursor-pointer overflow-hidden rounded-2xl border border-border bg-background/55 transition-colors hover:border-molten-orange"
+                      >
+                        <div className="relative aspect-[825/464] border-b border-border bg-forge-black/35">
+                          <Image
+                            src={characterImageMap.get(character.slug) ?? '/hero/home-hero.png'}
+                            alt={character.name}
+                            fill
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                            className="object-contain p-2"
+                          />
                         </div>
-                        <p className="text-sm leading-7 text-steel-blue">{character.mechanicFocus}</p>
-                      </div>
 
-                      <div className="relative z-10 mt-6 flex flex-wrap gap-3">
-                        <Link
-                          href={character.cardsHref}
-                          className="rounded-lg bg-molten-orange px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-ember-glow"
-                        >
-                          Open card pool
-                        </Link>
-                        {!character.guideHref ? (
-                          <span className="self-center text-sm text-steel-blue">
-                            No dedicated guide yet
-                          </span>
-                        ) : null}
-                      </div>
-                    </article>
-                  ))}
+                        <div className="p-6">
+                          <div className="mb-4 flex flex-wrap items-center gap-2">
+                            <span className="rounded-full border border-molten-orange/30 px-3 py-1 text-xs uppercase tracking-[0.16em] text-molten-orange">
+                              {character.availabilityLabel}
+                            </span>
+                            <span className="rounded-full border border-border px-3 py-1 text-xs uppercase tracking-[0.16em] text-steel-blue">
+                              {character.cardCount} cards
+                            </span>
+                            <span className="rounded-full border border-border px-3 py-1 text-xs uppercase tracking-[0.16em] text-muted-foreground">
+                              Updated {character.updatedAt}
+                            </span>
+                          </div>
+
+                          <h2 className="font-heading text-3xl font-bold transition-colors group-hover:text-molten-orange">
+                            {character.name}
+                          </h2>
+                          <p className="mt-4 text-sm leading-7 text-muted-foreground">{character.shortSummary}</p>
+
+                          <div className="mt-5 rounded-xl border border-border bg-forge-black/35 p-4">
+                            <div className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-molten-orange">
+                              Mechanic Focus
+                            </div>
+                            <p className="text-sm leading-7 text-steel-blue">{character.mechanicFocus}</p>
+                          </div>
+
+                          <p className="mt-6 text-sm font-semibold text-molten-orange transition-colors group-hover:text-ember-glow">
+                            Open detail page
+                          </p>
+                        </div>
+                      </Link>
+                    );
+                  })}
                 </div>
               )}
             </div>

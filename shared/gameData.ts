@@ -4,7 +4,7 @@ export const CHARACTERS = [
     name: 'Ironclad',
     title: 'The Relentless Warrior',
     description: 'Starter character focused on Strength scaling, Exhaust interactions, and controlled HP trade-offs.',
-    image: 'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2868840/ss_026b621a38b400c9f4080a7dd9152dd3050cbe2d.1920x1080.jpg?t=1770241822',
+    image: 'https://assets.sts2guide.com/assets/sts2/characters/ironclad.webp',
     difficulty: 'Intermediate',
     hp: 80,
     gold: 99,
@@ -37,7 +37,7 @@ export const CHARACTERS = [
     name: 'Silent',
     title: 'The Deadly Assassin',
     description: 'Unlock Step 2 character built around discard tempo, Sly triggers, Poison pressure, and Shiv volume turns.',
-    image: 'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2868840/ss_01ff255192aea73e2fd9940cea4f613cb2919298.1920x1080.jpg?t=1770241822',
+    image: 'https://assets.sts2guide.com/assets/sts2/characters/silent.webp',
     difficulty: 'Advanced',
     hp: 70,
     gold: 99,
@@ -71,7 +71,7 @@ export const CHARACTERS = [
     name: 'Necrobinder',
     title: 'The Undead Summoner',
     description: 'Unlock Step 4 character centered on Doom setups, Osty interactions, and Soul resource conversion.',
-    image: 'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2868840/ss_8c1bbb6d2a000405176cd625ef70bee8ebad1c87.1920x1080.jpg?t=1770241822',
+    image: 'https://assets.sts2guide.com/assets/sts2/characters/necrobinder.webp',
     difficulty: 'Advanced',
     hp: 35,
     gold: 99,
@@ -105,7 +105,7 @@ export const CHARACTERS = [
     name: 'The Regent',
     title: 'Heir to the Throne of Stars',
     description: 'Unlock Step 3 character focused on Stars economy, Forge decisions, and minion timing windows.',
-    image: 'https://www.megacrit.com/images/regent_gif.gif',
+    image: 'https://assets.sts2guide.com/assets/sts2/characters/regent.webp',
     lore: 'Reference summary calibrated from local game extract assets and card metadata. No official narrative text is embedded in this bundle.',
     startingRelic: 'Stellar Compass',
     startingDeck: [
@@ -133,6 +133,40 @@ export const CHARACTERS = [
     hp: 75,
     gold: 99,
     updatedAt: '2026-02-13',
+  },
+  {
+    slug: 'defect',
+    name: 'Defect',
+    title: 'The Broken Automaton',
+    description: 'Unlock Step 5 character focused on Orb sequencing, Focus scaling, and setup-to-burst combat pacing.',
+    image: 'https://assets.sts2guide.com/assets/sts2/characters/defect.webp',
+    lore: 'Reference summary calibrated from local game extract assets and card metadata. No official narrative text is embedded in this bundle.',
+    startingRelic: 'Cracked Core',
+    startingDeck: [
+      'Strike (4)',
+      'Defend (4)',
+      'Zap (1)',
+      'Dualcast (1)',
+    ],
+    mechanics: [
+      {
+        name: 'Orbs',
+        description: 'Channel Lightning, Frost, and Dark Orbs to generate recurring passive value and burst through evocation timing.',
+      },
+      {
+        name: 'Focus',
+        description: 'Scale Orb passive and evoke output with Focus buffs, turning setup turns into stronger late-combat control.',
+      },
+      {
+        name: 'Sequencing',
+        description: 'Defect rewards careful turn planning around channel, evoke, and hand tempo rather than pure front-loaded damage.',
+      },
+    ],
+    playstyle: 'Defect plays around long-run efficiency: stabilize early with Frost and block tools, then convert into high-value turns via Focus scaling, Orb loops, and precise evoke timing.',
+    difficulty: 'Advanced',
+    hp: 75,
+    gold: 99,
+    updatedAt: '2026-03-10',
   },
 ];
 
@@ -1395,5 +1429,123 @@ export const RELICS: Relic[] = [
     name: "Dead Branch",
     rarity: "Rare",
     description: "Whenever you Exhaust a card, add a random card to your hand.",
+  },
+];
+
+export interface Potion {
+  name: string;
+  rarity: 'Common' | 'Uncommon' | 'Rare';
+  character: 'Neutral' | 'Ironclad' | 'Silent' | 'Regent' | 'Necrobinder' | 'Defect';
+  description: string;
+}
+
+export const POTIONS: Potion[] = [
+  {
+    name: 'Attack Potion',
+    rarity: 'Common',
+    character: 'Neutral',
+    description: 'Choose 1 of 3 Attack cards and add it into your hand for this combat.',
+  },
+  {
+    name: 'Skill Potion',
+    rarity: 'Common',
+    character: 'Neutral',
+    description: 'Choose 1 of 3 Skill cards and add it into your hand for this combat.',
+  },
+  {
+    name: 'Power Potion',
+    rarity: 'Uncommon',
+    character: 'Neutral',
+    description: 'Choose 1 of 3 Power cards and add it into your hand for this combat.',
+  },
+  {
+    name: 'Block Potion',
+    rarity: 'Common',
+    character: 'Neutral',
+    description: 'Gain 12 Block.',
+  },
+  {
+    name: 'Strength Potion',
+    rarity: 'Common',
+    character: 'Ironclad',
+    description: 'Gain Strength for this combat.',
+  },
+  {
+    name: 'Dexterity Potion',
+    rarity: 'Common',
+    character: 'Silent',
+    description: 'Gain Dexterity for this combat.',
+  },
+  {
+    name: 'Focus Potion',
+    rarity: 'Uncommon',
+    character: 'Defect',
+    description: 'Gain Focus for this combat.',
+  },
+  {
+    name: 'Energy Potion',
+    rarity: 'Common',
+    character: 'Neutral',
+    description: 'Gain 2 Energy this turn.',
+  },
+  {
+    name: 'Swift Potion',
+    rarity: 'Common',
+    character: 'Neutral',
+    description: 'Draw 3 cards.',
+  },
+  {
+    name: 'Fire Potion',
+    rarity: 'Common',
+    character: 'Neutral',
+    description: 'Deal direct damage to a target enemy.',
+  },
+  {
+    name: 'Explosive Potion',
+    rarity: 'Uncommon',
+    character: 'Neutral',
+    description: 'Deal damage to all enemies.',
+  },
+  {
+    name: 'Fear Potion',
+    rarity: 'Common',
+    character: 'Neutral',
+    description: 'Apply Vulnerable to one enemy.',
+  },
+  {
+    name: 'Poison Potion',
+    rarity: 'Common',
+    character: 'Silent',
+    description: 'Apply Poison to one enemy.',
+  },
+  {
+    name: 'Regen Potion',
+    rarity: 'Uncommon',
+    character: 'Neutral',
+    description: 'Gain Regeneration for several turns.',
+  },
+  {
+    name: 'Duplication Potion',
+    rarity: 'Rare',
+    character: 'Neutral',
+    description: 'Your next card this turn is played twice.',
+  },
+  {
+    name: 'Distilled Chaos',
+    rarity: 'Rare',
+    character: 'Neutral',
+    description: 'Play the top 3 cards of your draw pile.',
+  },
+  {
+    name: 'Entropic Brew',
+    rarity: 'Rare',
+    character: 'Neutral',
+    description: 'Fill all empty potion slots with random potions.',
+  },
+  {
+    name: 'Ghost in a Jar',
+    rarity: 'Rare',
+    character: 'Neutral',
+    description: 'Gain Intangible this turn.',
   },
 ];
