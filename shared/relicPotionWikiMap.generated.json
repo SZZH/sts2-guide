@@ -1,0 +1,1361 @@
+{
+  "relics": {
+    "akabeko": {
+      "name": "Akabeko",
+      "description": "at the start of each combat, gain 8 vigor.",
+      "imageFileName": "akabeko.png"
+    },
+    "alchemical_coffer": {
+      "name": "Alchemical Coffer",
+      "description": "upon pickup, gain 4 potion slots filled with random potions.",
+      "imageFileName": "alchemical_coffer.png"
+    },
+    "amethyst_aubergine": {
+      "name": "Amethyst Aubergine",
+      "description": "enemies drop 10 additional gold.",
+      "imageFileName": "amethyst_aubergine.png"
+    },
+    "anchor": {
+      "name": "Anchor",
+      "description": "start each combat with 10 block.",
+      "imageFileName": "anchor.png"
+    },
+    "arcane_scroll": {
+      "name": "Arcane Scroll",
+      "description": "upon pickup, obtain a random rare card to add to your deck.",
+      "imageFileName": "arcane_scroll.png"
+    },
+    "archaic_tooth": {
+      "name": "Archaic Tooth",
+      "description": "upon pickup, transform a starter card with an ancient version.",
+      "imageFileName": "archaic_tooth.png"
+    },
+    "art_of_war": {
+      "name": "Art of War",
+      "description": "if you do not play any attacks during your turn, gain an additional colorless energy next turn.",
+      "imageFileName": "art_of_war.png"
+    },
+    "astrolabe": {
+      "name": "Astrolabe",
+      "description": "upon pickup, transform 3 cards, then upgrade them.",
+      "imageFileName": "astrolabe.png"
+    },
+    "bag_of_marbles": {
+      "name": "Bag of Marbles",
+      "description": "at the start of each combat, apply 1 vulnerable to all enemies.",
+      "imageFileName": "bag_of_marbles.png"
+    },
+    "bag_of_preparation": {
+      "name": "Bag of Preparation",
+      "description": "at the start of each combat, draw 2 additional cards.",
+      "imageFileName": "bag_of_preparation.png"
+    },
+    "beating_remnant": {
+      "name": "Beating Remnant",
+      "description": "you cannot lose more than 20 hp in a single turn.",
+      "imageFileName": "beating_remnant.png"
+    },
+    "beautiful_bracelet": {
+      "name": "Beautiful Bracelet",
+      "description": "upon pickup, choose 3 cards in your deck. enchant them with swift 3.",
+      "imageFileName": "beautiful_bracelet.png"
+    },
+    "bellows": {
+      "name": "Bellows",
+      "description": "the first hand you draw each combat is upgraded.",
+      "imageFileName": "bellows.png"
+    },
+    "belt_buckle": {
+      "name": "Belt Buckle",
+      "description": "while you have no potions, you have 2 additional dexterity.",
+      "imageFileName": "belt_buckle.png"
+    },
+    "big_hat": {
+      "name": "Big Hat",
+      "description": "at the start of each combat, add 2 random ethereal cards into your hand.",
+      "imageFileName": "big_hat.png"
+    },
+    "biiig_hug": {
+      "name": "Biiig Hug",
+      "description": "upon pickup, remove 4 cards from your deck. whenever you shuffle your draw pile, add a soot into your draw pile.",
+      "imageFileName": "biiig_hug.png"
+    },
+    "black_blood": {
+      "name": "Black Blood",
+      "description": "at the end of combat, heal 12 hp.",
+      "imageFileName": "black_blood.png"
+    },
+    "black_star": {
+      "name": "Black Star",
+      "description": "elites drop an additional relic when defeated.",
+      "imageFileName": "black_star.png"
+    },
+    "blessed_antler": {
+      "name": "Blessed Antler",
+      "description": "gain colorless energy at the start of each turn. at the start of each combat, shuffle 3 dazed into your draw pile.",
+      "imageFileName": "blessed_antler.png"
+    },
+    "blood_soaked_rose": {
+      "name": "Blood-Soaked Rose",
+      "description": "upon pickup, add 1 enthralled to your deck. gain colorless energy at the start of each turn.",
+      "imageFileName": "blood_soaked_rose.png"
+    },
+    "blood_vial": {
+      "name": "Blood Vial",
+      "description": "at the start of each combat, heal 2 hp.",
+      "imageFileName": "blood_vial.png"
+    },
+    "bone_flute": {
+      "name": "Bone Flute",
+      "description": "whenever osty attacks, gain 2 block.",
+      "imageFileName": "bone_flute.png"
+    },
+    "book_of_five_rings": {
+      "name": "Book of Five Rings",
+      "description": "every 5 cards you add to your deck, heal 15 hp.",
+      "imageFileName": "book_of_five_rings.png"
+    },
+    "book_repair_knife": {
+      "name": "Book Repair Knife",
+      "description": "whenever a non-minion enemy dies to doom, heal 3 hp.",
+      "imageFileName": "book_repair_knife.png"
+    },
+    "bookmark": {
+      "name": "Bookmark",
+      "description": "at the end of each turn, lower the cost of a random retained card by 1 until played.",
+      "imageFileName": "bookmark.png"
+    },
+    "booming_conch": {
+      "name": "Booming Conch",
+      "description": "at the start of elite combats, draw 2 additional cards.",
+      "imageFileName": "booming_conch.png"
+    },
+    "bound_phylactery": {
+      "name": "Bound Phylactery",
+      "description": "at the start of your turn, summon 1.",
+      "imageFileName": "bound_phylactery.png"
+    },
+    "bowler_hat": {
+      "name": "Bowler Hat",
+      "description": "gain 20% additional gold.",
+      "imageFileName": "bowler_hat.png"
+    },
+    "bread": {
+      "name": "Bread",
+      "description": "at the start of your first turn, lose 2 energy. at the start of all other turns, gain colorless energy.",
+      "imageFileName": "bread.png"
+    },
+    "brilliant_scarf": {
+      "name": "Brilliant Scarf",
+      "description": "the 5th card you play each turn is free.",
+      "imageFileName": "brilliant_scarf.png"
+    },
+    "brimstone": {
+      "name": "Brimstone",
+      "description": "at the start of your turn, gain 2 strength and all enemies gain 1 strength.",
+      "imageFileName": "brimstone.png"
+    },
+    "bronze_scales": {
+      "name": "Bronze Scales",
+      "description": "start each combat with 3 thorns.",
+      "imageFileName": "bronze_scales.png"
+    },
+    "burning_blood": {
+      "name": "Burning Blood",
+      "description": "at the end of combat, heal 6 hp.",
+      "imageFileName": "burning_blood.png"
+    },
+    "burning_sticks": {
+      "name": "Burning Sticks",
+      "description": "the first time each combat you exhaust a skill, add a copy of it into your hand.",
+      "imageFileName": "burning_sticks.png"
+    },
+    "calling_bell": {
+      "name": "Calling Bell",
+      "description": "upon pickup, obtain a unique curse and 3 relics.",
+      "imageFileName": "calling_bell.png"
+    },
+    "candelabra": {
+      "name": "Candelabra",
+      "description": "at the start of your 2nd turn, gain 2 energy.",
+      "imageFileName": "candelabra.png"
+    },
+    "captain_s_wheel": {
+      "name": "Captain's Wheel",
+      "description": "at the start of your 3rd turn, gain 18 block.",
+      "imageFileName": "captain_s_wheel.png"
+    },
+    "cauldron": {
+      "name": "Cauldron",
+      "description": "upon pickup, brews 5 random potions.",
+      "imageFileName": "cauldron.png"
+    },
+    "centennial_puzzle": {
+      "name": "Centennial Puzzle",
+      "description": "the first time you lose hp each combat, draw 3 cards.",
+      "imageFileName": "centennial_puzzle.png"
+    },
+    "chandelier": {
+      "name": "Chandelier",
+      "description": "at the start of your 3rd turn, gain 3 energy.",
+      "imageFileName": "chandelier.png"
+    },
+    "charon_s_ashes": {
+      "name": "Charon's Ashes",
+      "description": "whenever you exhaust a card, deal 3 damage to all enemies.",
+      "imageFileName": "charon_s_ashes.png"
+    },
+    "chemical_x": {
+      "name": "Chemical X",
+      "description": "the effects of your cost x cards are increased by 2.",
+      "imageFileName": "chemical_x.png"
+    },
+    "choices_paradox": {
+      "name": "Choices Paradox",
+      "description": "at the start of each combat, add 1 of 5 random cards into your hand. add retain to the chosen card.",
+      "imageFileName": "choices_paradox.png"
+    },
+    "claws": {
+      "name": "Claws",
+      "description": "upon pickup, transform up to 6 cards into maul.",
+      "imageFileName": "claws.png"
+    },
+    "cloak_clasp": {
+      "name": "Cloak Clasp",
+      "description": "at the end of your turn, gain 1 block for each card in your hand.",
+      "imageFileName": "cloak_clasp.png"
+    },
+    "cracked_core": {
+      "name": "Cracked Core",
+      "description": "at the start of each combat, channel 1 lightning.",
+      "imageFileName": "cracked_core.png"
+    },
+    "crossbow": {
+      "name": "Crossbow",
+      "description": "at the start of your turn, add a random attack into your hand. it costs 0 energy this turn.",
+      "imageFileName": "crossbow.png"
+    },
+    "cursed_pearl": {
+      "name": "Cursed Pearl",
+      "description": "upon pickup, receive greed. gain 333 gold.",
+      "imageFileName": "cursed_pearl.png"
+    },
+    "data_disk": {
+      "name": "Data Disk",
+      "description": "start each combat with 1 focus.",
+      "imageFileName": "data_disk.png"
+    },
+    "delicate_frond": {
+      "name": "Delicate Frond",
+      "description": "at the start of each combat, fill all empty potion slots with random potions.",
+      "imageFileName": "delicate_frond.png"
+    },
+    "demon_tongue": {
+      "name": "Demon Tongue",
+      "description": "the first time you lose hp on your turn, heal hp equal to the amount lost.",
+      "imageFileName": "demon_tongue.png"
+    },
+    "diamond_diadem": {
+      "name": "Diamond Diadem",
+      "description": "whenever you play 2 or fewer cards in a turn, take half damage from enemies.",
+      "imageFileName": "diamond_diadem.png"
+    },
+    "dingy_rug": {
+      "name": "Dingy Rug",
+      "description": "card rewards can now contain colorless cards.",
+      "imageFileName": "dingy_rug.png"
+    },
+    "distinguished_cape": {
+      "name": "Distinguished Cape",
+      "description": "upon pickup, lose 9 max hp. add 3 apparitions to your deck.",
+      "imageFileName": "distinguished_cape.png"
+    },
+    "divine_destiny": {
+      "name": "Divine Destiny",
+      "description": "at the start of each combat, gain 6 regent star energy.",
+      "imageFileName": "divine_destiny.png"
+    },
+    "divine_right": {
+      "name": "Divine Right",
+      "description": "at the start of each combat, gain 3 regent star energy.",
+      "imageFileName": "divine_right.png"
+    },
+    "dolly_s_mirror": {
+      "name": "Dolly's Mirror",
+      "description": "upon pickup, obtain an additional copy of a card in your deck.",
+      "imageFileName": "dolly_s_mirror.png"
+    },
+    "dragon_fruit": {
+      "name": "Dragon Fruit",
+      "description": "whenever you gain gold, raise your max hp by 1.",
+      "imageFileName": "dragon_fruit.png"
+    },
+    "driftwood": {
+      "name": "Driftwood",
+      "description": "you may reroll each card reward once.",
+      "imageFileName": "driftwood.png"
+    },
+    "dusty_tome": {
+      "name": "Dusty Tome",
+      "description": "upon pickup, obtain an ancient card.",
+      "imageFileName": "dusty_tome.png"
+    },
+    "ectoplasm": {
+      "name": "Ectoplasm",
+      "description": "you can no longer gain gold. gain colorless energy at the start of each turn.",
+      "imageFileName": "ectoplasm.png"
+    },
+    "electric_shrymp": {
+      "name": "Electric Shrymp",
+      "description": "upon pickup, enchant a skill with imbued.",
+      "imageFileName": "electric_shrymp.png"
+    },
+    "emotion_chip": {
+      "name": "Emotion Chip",
+      "description": "if you lost hp during the previous turn, trigger the passive ability of all orbs at the start of your turn.",
+      "imageFileName": "emotion_chip.png"
+    },
+    "empty_cage": {
+      "name": "Empty Cage",
+      "description": "upon pickup, remove 2 cards from your deck.",
+      "imageFileName": "empty_cage.png"
+    },
+    "eternal_feather": {
+      "name": "Eternal Feather",
+      "description": "for every 5 cards in your deck, heal 3 hp whenever you enter a rest site.",
+      "imageFileName": "eternal_feather.png"
+    },
+    "fencing_manual": {
+      "name": "Fencing Manual",
+      "description": "at the start of each combat, forge 10.",
+      "imageFileName": "fencing_manual.png"
+    },
+    "festive_popper": {
+      "name": "Festive Popper",
+      "description": "at the start of each combat, deal 9 damage to all enemies.",
+      "imageFileName": "festive_popper.png"
+    },
+    "fiddle": {
+      "name": "Fiddle",
+      "description": "at the start of each turn, draw 2 additional cards. you may not draw cards during your turn.",
+      "imageFileName": "fiddle.png"
+    },
+    "frozen_egg": {
+      "name": "Frozen Egg",
+      "description": "whenever you add a power into your deck, upgrade it.",
+      "imageFileName": "frozen_egg.png"
+    },
+    "funerary_mask": {
+      "name": "Funerary Mask",
+      "description": "at the start of each combat, add 3 souls into your draw pile.",
+      "imageFileName": "funerary_mask.png"
+    },
+    "fur_coat": {
+      "name": "Fur Coat",
+      "description": "upon pickup, mark 7 random combats. enemies in those rooms have 1 hp.",
+      "imageFileName": "fur_coat.png"
+    },
+    "galactic_dust": {
+      "name": "Galactic Dust",
+      "description": "for every 10 regent star energy spent, gain 10 block.",
+      "imageFileName": "galactic_dust.png"
+    },
+    "gambling_chip": {
+      "name": "Gambling Chip",
+      "description": "at the start of each combat, discard any number of cards then draw that many.",
+      "imageFileName": "gambling_chip.png"
+    },
+    "game_piece": {
+      "name": "Game Piece",
+      "description": "whenever you play a power, draw 1 card.",
+      "imageFileName": "game_piece.png"
+    },
+    "ghost_seed": {
+      "name": "Ghost Seed",
+      "description": "strikes and defends gain ethereal.",
+      "imageFileName": "ghost_seed.png"
+    },
+    "girya": {
+      "name": "Girya",
+      "description": "you can now gain strength at rest sites.",
+      "imageFileName": "girya.png"
+    },
+    "glass_eye": {
+      "name": "Glass Eye",
+      "description": "upon pickup, obtain 2 common cards, 2 uncommon cards, and 1 rare card.",
+      "imageFileName": "glass_eye.png"
+    },
+    "glitter": {
+      "name": "Glitter",
+      "description": "enchant all card rewards with glam.",
+      "imageFileName": "glitter.png"
+    },
+    "gnarled_hammer": {
+      "name": "Gnarled Hammer",
+      "description": "upon pickup, enchant up to 3 attacks with sharp 3.",
+      "imageFileName": "gnarled_hammer.png"
+    },
+    "gold_plated_cables": {
+      "name": "Gold-Plated Cables",
+      "description": "your rightmost orb triggers its passive an additional time.",
+      "imageFileName": "gold_plated_cables.png"
+    },
+    "golden_compass": {
+      "name": "Golden Compass",
+      "description": "upon pickup, replace the act 2 map with a single special path.",
+      "imageFileName": "golden_compass.png"
+    },
+    "golden_pearl": {
+      "name": "Golden Pearl",
+      "description": "upon pickup, gain 150 gold.",
+      "imageFileName": "golden_pearl.png"
+    },
+    "gorget": {
+      "name": "Gorget",
+      "description": "at the start of each combat, gain 4 plating.",
+      "imageFileName": "gorget.png"
+    },
+    "gremlin_horn": {
+      "name": "Gremlin Horn",
+      "description": "whenever an enemy dies, gain colorless energy and draw 1 card.",
+      "imageFileName": "gremlin_horn.png"
+    },
+    "happy_flower": {
+      "name": "Happy Flower",
+      "description": "every 3 turns, gain colorless energy.",
+      "imageFileName": "happy_flower.png"
+    },
+    "helical_dart": {
+      "name": "Helical Dart",
+      "description": "whenever you play a shiv, gain 1 dexterity this turn.",
+      "imageFileName": "helical_dart.png"
+    },
+    "horn_cleat": {
+      "name": "Horn Cleat",
+      "description": "at the start of your 2nd turn, gain 14 block.",
+      "imageFileName": "horn_cleat.png"
+    },
+    "ice_cream": {
+      "name": "Ice Cream",
+      "description": "energy is now conserved between turns.",
+      "imageFileName": "ice_cream.png"
+    },
+    "infused_core": {
+      "name": "Infused Core",
+      "description": "at the start of each combat, channel 3 lightning.",
+      "imageFileName": "infused_core.png"
+    },
+    "intimidating_helmet": {
+      "name": "Intimidating Helmet",
+      "description": "whenever you play a card that costs 2 energy or more, gain 4 block.",
+      "imageFileName": "intimidating_helmet.png"
+    },
+    "iron_club": {
+      "name": "Iron Club",
+      "description": "every 4 cards you play, draw 1 card.",
+      "imageFileName": "iron_club.png"
+    },
+    "ivory_tile": {
+      "name": "Ivory Tile",
+      "description": "whenever you play a card that costs 3 necrobinder energy or more, gain necrobinder energy.",
+      "imageFileName": "ivory_tile.png"
+    },
+    "jeweled_mask": {
+      "name": "Jeweled Mask",
+      "description": "at the start of combat put a random power from your draw pile into your hand, it's free to play.",
+      "imageFileName": "jeweled_mask.png"
+    },
+    "jewelry_box": {
+      "name": "Jewelry Box",
+      "description": "upon pickup, add 1 apotheosis to your deck.",
+      "imageFileName": "jewelry_box.png"
+    },
+    "joss_paper": {
+      "name": "Joss Paper",
+      "description": "every 5 times you exhaust a card, draw 1 card.",
+      "imageFileName": "joss_paper.png"
+    },
+    "juzu_bracelet": {
+      "name": "Juzu Bracelet",
+      "description": "regular enemy combats are no longer encountered in ? rooms.",
+      "imageFileName": "juzu_bracelet.png"
+    },
+    "kifuda": {
+      "name": "Kifuda",
+      "description": "upon pickup, enchant up to 3 cards with adroit.",
+      "imageFileName": "kifuda.png"
+    },
+    "kunai": {
+      "name": "Kunai",
+      "description": "every time you play 3 attacks in a single turn, gain 1 dexterity.",
+      "imageFileName": "kunai.png"
+    },
+    "kusarigama": {
+      "name": "Kusarigama",
+      "description": "every time you play 3 attacks in a single turn, deal 6 damage to a random enemy.",
+      "imageFileName": "kusarigama.png"
+    },
+    "lantern": {
+      "name": "Lantern",
+      "description": "start each combat with an additional colorless energy.",
+      "imageFileName": "lantern.png"
+    },
+    "large_capsule": {
+      "name": "Large Capsule",
+      "description": "upon pickup, obtain 2 random relics. add an additional strike and defend to your deck.",
+      "imageFileName": "large_capsule.png"
+    },
+    "lasting_candy": {
+      "name": "Lasting Candy",
+      "description": "every other combat, your card rewards gain an additional power.",
+      "imageFileName": "lasting_candy.png"
+    },
+    "lava_lamp": {
+      "name": "Lava Lamp",
+      "description": "at the end of combat, upgrade all card rewards if you took no damage.",
+      "imageFileName": "lava_lamp.png"
+    },
+    "lava_rock": {
+      "name": "Lava Rock",
+      "description": "the act 1 boss drops 2 relics.",
+      "imageFileName": "lava_rock.png"
+    },
+    "lead_paperweight": {
+      "name": "Lead Paperweight",
+      "description": "upon pickup, choose 1 of 2 colorless cards to add to your deck.",
+      "imageFileName": "lead_paperweight.png"
+    },
+    "leafy_poultice": {
+      "name": "Leafy Poultice",
+      "description": "upon pickup, transform 1 of your strikes and 1 of your defends and lose 10 max hp.",
+      "imageFileName": "leafy_poultice.png"
+    },
+    "lee_s_waffle": {
+      "name": "Lee's Waffle",
+      "description": "upon pickup, raise your max hp by 7 and heal all of your hp.",
+      "imageFileName": "lee_s_waffle.png"
+    },
+    "letter_opener": {
+      "name": "Letter Opener",
+      "description": "every time you play 3 skills in a single turn, deal 5 damage to all enemies.",
+      "imageFileName": "letter_opener.png"
+    },
+    "lizard_tail": {
+      "name": "Lizard Tail",
+      "description": "when you would die, heal to 50% of your max hp instead.",
+      "imageFileName": "lizard_tail.png"
+    },
+    "looming_fruit": {
+      "name": "Looming Fruit",
+      "description": "upon pickup, raise your max hp by 31.",
+      "imageFileName": "looming_fruit.png"
+    },
+    "lord_s_parasol": {
+      "name": "Lord's Parasol",
+      "description": "when you encounter the merchant, immediately obtain everything he sells.",
+      "imageFileName": "lord_s_parasol.png"
+    },
+    "lost_coffer": {
+      "name": "Lost Coffer",
+      "description": "upon pickup, gain 1 card reward and procure 1 random potion.",
+      "imageFileName": "lost_coffer.png"
+    },
+    "lucky_fysh": {
+      "name": "Lucky Fysh",
+      "description": "whenever you add a card to your deck, gain 15 gold.",
+      "imageFileName": "lucky_fysh.png"
+    },
+    "lunar_pastry": {
+      "name": "Lunar Pastry",
+      "description": "at the end of your turn, gain regent star energy.",
+      "imageFileName": "lunar_pastry.png"
+    },
+    "mango": {
+      "name": "Mango",
+      "description": "upon pickup, raise your max hp by 14.",
+      "imageFileName": "mango.png"
+    },
+    "massive_scroll": {
+      "name": "Massive Scroll",
+      "description": "upon pickup, choose 1 of 3 multiplayer colorless cards to add to your deck.",
+      "imageFileName": "massive_scroll.png"
+    },
+    "meal_ticket": {
+      "name": "Meal Ticket",
+      "description": "whenever you enter a shop room, heal 15 hp.",
+      "imageFileName": "meal_ticket.png"
+    },
+    "meat_cleaver": {
+      "name": "Meat Cleaver",
+      "description": "you may cook at rest sites.",
+      "imageFileName": "meat_cleaver.png"
+    },
+    "meat_on_the_bone": {
+      "name": "Meat on the Bone",
+      "description": "if your hp is at or below 50% at the end of combat, heal 12 hp.",
+      "imageFileName": "meat_on_the_bone.png"
+    },
+    "membership_card": {
+      "name": "Membership Card",
+      "description": "50% discount on all products!",
+      "imageFileName": "membership_card.png"
+    },
+    "mercury_hourglass": {
+      "name": "Mercury Hourglass",
+      "description": "at the start of your turn, deal 3 damage to all enemies.",
+      "imageFileName": "mercury_hourglass.png"
+    },
+    "metronome": {
+      "name": "Metronome",
+      "description": "the first time you channel 7 orbs each combat, deal 30 damage to all enemies.",
+      "imageFileName": "metronome.png"
+    },
+    "mini_regent": {
+      "name": "Mini Regent",
+      "description": "the first time you spend regent star energy each turn, gain 1 strength.",
+      "imageFileName": "mini_regent.png"
+    },
+    "miniature_cannon": {
+      "name": "Miniature Cannon",
+      "description": "upgraded attacks deal 3 additional damage.",
+      "imageFileName": "miniature_cannon.png"
+    },
+    "miniature_tent": {
+      "name": "Miniature Tent",
+      "description": "you may choose any number of options at rest sites.",
+      "imageFileName": "miniature_tent.png"
+    },
+    "molten_egg": {
+      "name": "Molten Egg",
+      "description": "whenever you add an attack card to your deck, upgrade it.",
+      "imageFileName": "molten_egg.png"
+    },
+    "mummified_hand": {
+      "name": "Mummified Hand",
+      "description": "whenever you play a power, a random card in your hand is free to play that turn.",
+      "imageFileName": "mummified_hand.png"
+    },
+    "music_box": {
+      "name": "Music Box",
+      "description": "create an ethereal copy of the first attack you play each turn.",
+      "imageFileName": "music_box.png"
+    },
+    "mystic_lighter": {
+      "name": "Mystic Lighter",
+      "description": "enchanted attacks deal 9 additional damage.",
+      "imageFileName": "mystic_lighter.png"
+    },
+    "neow_s_torment": {
+      "name": "Neow's Torment",
+      "description": "upon pickup, add 1 neow's fury to your deck.",
+      "imageFileName": "neow_s_torment.png"
+    },
+    "new_leaf": {
+      "name": "New Leaf",
+      "description": "upon pickup, transform 1 card.",
+      "imageFileName": "new_leaf.png"
+    },
+    "ninja_scroll": {
+      "name": "Ninja Scroll",
+      "description": "at the start of each combat, add 3 shivs into your hand.",
+      "imageFileName": "ninja_scroll.png"
+    },
+    "nunchaku": {
+      "name": "Nunchaku",
+      "description": "every time you play 10 attacks, gain colorless energy.",
+      "imageFileName": "nunchaku.png"
+    },
+    "nutritious_oyster": {
+      "name": "Nutritious Oyster",
+      "description": "upon pickup, raise your max hp by 11.",
+      "imageFileName": "nutritious_oyster.png"
+    },
+    "nutritious_soup": {
+      "name": "Nutritious Soup",
+      "description": "upon pickup, enchant all strikes in your deck with tezcatara's ember.",
+      "imageFileName": "nutritious_soup.png"
+    },
+    "oddly_smooth_stone": {
+      "name": "Oddly Smooth Stone",
+      "description": "start each combat with 1 dexterity.",
+      "imageFileName": "oddly_smooth_stone.png"
+    },
+    "old_coin": {
+      "name": "Old Coin",
+      "description": "upon pickup, gain 300 gold.",
+      "imageFileName": "old_coin.png"
+    },
+    "orange_dough": {
+      "name": "Orange Dough",
+      "description": "at the start of each combat, add 2 random colorless cards into your hand.",
+      "imageFileName": "orange_dough.png"
+    },
+    "orichalcum": {
+      "name": "Orichalcum",
+      "description": "if you end your turn without block, gain 6 block.",
+      "imageFileName": "orichalcum.png"
+    },
+    "ornamental_fan": {
+      "name": "Ornamental Fan",
+      "description": "every time you play 3 attacks in a single turn, gain 4 block.",
+      "imageFileName": "ornamental_fan.png"
+    },
+    "orrery": {
+      "name": "Orrery",
+      "description": "upon pickup, gain 5 card rewards.",
+      "imageFileName": "orrery.png"
+    },
+    "pael_s_blood": {
+      "name": "Pael's Blood",
+      "description": "at the start of your turn, draw 1 additional card.",
+      "imageFileName": "pael_s_blood.png"
+    },
+    "pael_s_claw": {
+      "name": "Pael's Claw",
+      "description": "upon pickup, enchant all defends with goopy.",
+      "imageFileName": "pael_s_claw.png"
+    },
+    "pael_s_eye": {
+      "name": "Pael's Eye",
+      "description": "the first time each combat you end your turn without playing cards, exhaust your hand, and take an extra turn.",
+      "imageFileName": "pael_s_eye.png"
+    },
+    "pael_s_flesh": {
+      "name": "Pael's Flesh",
+      "description": "gain an additional colorless energy at the start of your 3rd turn, and every turn after that.",
+      "imageFileName": "pael_s_flesh.png"
+    },
+    "pael_s_growth": {
+      "name": "Pael's Growth",
+      "description": "upon pickup, enchant a card with clone.",
+      "imageFileName": "pael_s_growth.png"
+    },
+    "pael_s_horn": {
+      "name": "Pael's Horn",
+      "description": "upon pickup, add 2 relax to your deck.",
+      "imageFileName": "pael_s_horn.png"
+    },
+    "pael_s_legion": {
+      "name": "Pael's Legion",
+      "description": "doubles block gained from a card, then goes to sleep for 2 turns.",
+      "imageFileName": "pael_s_legion.png"
+    },
+    "pael_s_tears": {
+      "name": "Pael's Tears",
+      "description": "if you end your turn with unspent colorless energy, gain an additional 2 energy next turn.",
+      "imageFileName": "pael_s_tears.png"
+    },
+    "pael_s_tooth": {
+      "name": "Pael's Tooth",
+      "description": "upon pickup, remove 5 cards from your deck. after each combat, randomly add 1 back upgraded.",
+      "imageFileName": "pael_s_tooth.png"
+    },
+    "pael_s_wing": {
+      "name": "Pael's Wing",
+      "description": "you may sacrifice card rewards to pael. every 2 sacrifices, obtain a relic.",
+      "imageFileName": "pael_s_wing.png"
+    },
+    "pandora_s_box": {
+      "name": "Pandora's Box",
+      "description": "transform all strikes and defends.",
+      "imageFileName": "pandora_s_box.png"
+    },
+    "pantograph": {
+      "name": "Pantograph",
+      "description": "at the start of each boss combat, heal 25 hp.",
+      "imageFileName": "pantograph.png"
+    },
+    "paper_krane": {
+      "name": "Paper Krane",
+      "description": "enemies with weak deal 40% less damage to you rather than 25%.",
+      "imageFileName": "paper_krane.png"
+    },
+    "paper_phrog": {
+      "name": "Paper Phrog",
+      "description": "enemies with vulnerable take 75% more damage rather than 50%.",
+      "imageFileName": "paper_phrog.png"
+    },
+    "parrying_shield": {
+      "name": "Parrying Shield",
+      "description": "if you end a turn with at least 10 block, deal 6 damage to a random enemy.",
+      "imageFileName": "parrying_shield.png"
+    },
+    "pear": {
+      "name": "Pear",
+      "description": "upon pickup, raise your max hp by 10.",
+      "imageFileName": "pear.png"
+    },
+    "pen_nib": {
+      "name": "Pen Nib",
+      "description": "every 10th attack you play deals double damage.",
+      "imageFileName": "pen_nib.png"
+    },
+    "pendulum": {
+      "name": "Pendulum",
+      "description": "whenever you shuffle your draw pile, draw a card.",
+      "imageFileName": "pendulum.png"
+    },
+    "permafrost": {
+      "name": "Permafrost",
+      "description": "the first time you play a power each combat, gain 6 block.",
+      "imageFileName": "permafrost.png"
+    },
+    "petrified_toad": {
+      "name": "Petrified Toad",
+      "description": "at the start of each combat, procure a potion-shaped rock.",
+      "imageFileName": "petrified_toad.png"
+    },
+    "philosopher_s_stone": {
+      "name": "Philosopher's Stone",
+      "description": "gain colorless energy at the start of each turn. all enemies start combat with 1 strength.",
+      "imageFileName": "philosopher_s_stone.png"
+    },
+    "phylactery_unbound": {
+      "name": "Phylactery Unbound",
+      "description": "at the start of each combat, summon 5. at the start of your turn, summon 2.",
+      "imageFileName": "phylactery_unbound.png"
+    },
+    "planisphere": {
+      "name": "Planisphere",
+      "description": "whenever you enter a ? room, heal 4 hp.",
+      "imageFileName": "planisphere.png"
+    },
+    "pocketwatch": {
+      "name": "Pocketwatch",
+      "description": "whenever you play 3 or fewer cards during your turn, draw 3 additional cards at the start of your next turn.",
+      "imageFileName": "pocketwatch.png"
+    },
+    "pomander": {
+      "name": "Pomander",
+      "description": "upon pickup, upgrade a card.",
+      "imageFileName": "pomander.png"
+    },
+    "potion_belt": {
+      "name": "Potion Belt",
+      "description": "upon pickup, gain 2 potion slots.",
+      "imageFileName": "potion_belt.png"
+    },
+    "power_cell": {
+      "name": "Power Cell",
+      "description": "at the start of each combat, add 2 zero-cost cards from your draw pile into your hand.",
+      "imageFileName": "power_cell.png"
+    },
+    "prayer_wheel": {
+      "name": "Prayer Wheel",
+      "description": "normal enemies drop an additional card reward.",
+      "imageFileName": "prayer_wheel.png"
+    },
+    "precarious_shears": {
+      "name": "Precarious Shears",
+      "description": "upon pickup, remove 2 cards from your deck and take 13 damage.",
+      "imageFileName": "precarious_shears.png"
+    },
+    "precise_scissors": {
+      "name": "Precise Scissors",
+      "description": "upon pickup, remove 1 card from your deck.",
+      "imageFileName": "precise_scissors.png"
+    },
+    "preserved_fog": {
+      "name": "Preserved Fog",
+      "description": "upon pickup, remove 5 cards from your deck. add folly to your deck.",
+      "imageFileName": "preserved_fog.png"
+    },
+    "prismatic_gem": {
+      "name": "Prismatic Gem",
+      "description": "gain colorless energy at the start of each turn. card rewards now contain cards from other colors.",
+      "imageFileName": "prismatic_gem.png"
+    },
+    "pumpkin_candle": {
+      "name": "Pumpkin Candle",
+      "description": "gain colorless energy at the start of each turn. extinguishes at the start of act 3.",
+      "imageFileName": "pumpkin_candle.png"
+    },
+    "punch_dagger": {
+      "name": "Punch Dagger",
+      "description": "upon pickup, enchant an attack with momentum 5.",
+      "imageFileName": "punch_dagger.png"
+    },
+    "radiant_pearl": {
+      "name": "Radiant Pearl",
+      "description": "at the start of each combat, add 1 luminesce into your hand.",
+      "imageFileName": "radiant_pearl.png"
+    },
+    "rainbow_ring": {
+      "name": "Rainbow Ring",
+      "description": "the first time you play an attack, skill, and power each turn, gain 1 strength and 1 dexterity.",
+      "imageFileName": "rainbow_ring.png"
+    },
+    "razor_tooth": {
+      "name": "Razor Tooth",
+      "description": "every time you play an attack or skill, upgrade it for the remainder of combat.",
+      "imageFileName": "razor_tooth.png"
+    },
+    "red_mask": {
+      "name": "Red Mask",
+      "description": "at the start of each combat, apply 1 weak to all enemies.",
+      "imageFileName": "red_mask.png"
+    },
+    "red_skull": {
+      "name": "Red Skull",
+      "description": "while your hp is at or below 50%, you have 3 additional strength.",
+      "imageFileName": "red_skull.png"
+    },
+    "regal_pillow": {
+      "name": "Regal Pillow",
+      "description": "whenever you rest, heal an additional 15 hp.",
+      "imageFileName": "regal_pillow.png"
+    },
+    "regalite": {
+      "name": "Regalite",
+      "description": "whenever you create a colorless card, gain 2 block.",
+      "imageFileName": "regalite.png"
+    },
+    "reptile_trinket": {
+      "name": "Reptile Trinket",
+      "description": "whenever you use a potion, gain 3 strength this turn.",
+      "imageFileName": "reptile_trinket.png"
+    },
+    "ring_of_the_drake": {
+      "name": "Ring of the Drake",
+      "description": "at the start of your first 3 turns, draw 2 additional cards.",
+      "imageFileName": "ring_of_the_drake.png"
+    },
+    "ring_of_the_snake": {
+      "name": "Ring of the Snake",
+      "description": "at the start of each combat, draw 2 additional cards.",
+      "imageFileName": "ring_of_the_snake.png"
+    },
+    "ringing_triangle": {
+      "name": "Ringing Triangle",
+      "description": "retain your hand on the first turn of combat.",
+      "imageFileName": "ringing_triangle.png"
+    },
+    "ripple_basin": {
+      "name": "Ripple Basin",
+      "description": "if you did not play any attacks during your turn, gain 4 block.",
+      "imageFileName": "ripple_basin.png"
+    },
+    "royal_stamp": {
+      "name": "Royal Stamp",
+      "description": "upon pickup, choose an attack or skill in your deck to enchant with royally approved.",
+      "imageFileName": "royal_stamp.png"
+    },
+    "ruined_helmet": {
+      "name": "Ruined Helmet",
+      "description": "the first time you gain strength each combat, double the amount gained.",
+      "imageFileName": "ruined_helmet.png"
+    },
+    "runic_capacitor": {
+      "name": "Runic Capacitor",
+      "description": "start each combat with 3 additional orb slots.",
+      "imageFileName": "runic_capacitor.png"
+    },
+    "runic_pyramid": {
+      "name": "Runic Pyramid",
+      "description": "at the end of your turn, you no longer discard your hand.",
+      "imageFileName": "runic_pyramid.png"
+    },
+    "sai": {
+      "name": "Sai",
+      "description": "at the start of your turn, gain 7 block.",
+      "imageFileName": "sai.png"
+    },
+    "sand_castle": {
+      "name": "Sand Castle",
+      "description": "upon pickup, upgrade 6 random cards.",
+      "imageFileName": "sand_castle.png"
+    },
+    "screaming_flagon": {
+      "name": "Screaming Flagon",
+      "description": "if you end your turn with no cards in your hand, deal 20 damage to all enemies.",
+      "imageFileName": "screaming_flagon.png"
+    },
+    "scroll_boxes": {
+      "name": "Scroll Boxes",
+      "description": "upon pickup, lose all gold and choose 1 of 2 packs of cards to add to your deck.",
+      "imageFileName": "scroll_boxes.png"
+    },
+    "sea_glass": {
+      "name": "Sea Glass",
+      "description": "see 15 cards from another character. choose any number of them to add to your deck.",
+      "imageFileName": "sea_glass.png"
+    },
+    "seal_of_gold": {
+      "name": "Seal of Gold",
+      "description": "at the start of your turn, spend 5 gold to gain colorless energy.",
+      "imageFileName": "seal_of_gold.png"
+    },
+    "self_forming_clay": {
+      "name": "Self-Forming Clay",
+      "description": "whenever you lose hp in combat, gain 3 block next turn.",
+      "imageFileName": "self_forming_clay.png"
+    },
+    "sere_talon": {
+      "name": "Sere Talon",
+      "description": "upon pickup, add 2 random curses and 3 wishes to your deck.",
+      "imageFileName": "sere_talon.png"
+    },
+    "shovel": {
+      "name": "Shovel",
+      "description": "you can now dig at rest sites to obtain a random relic.",
+      "imageFileName": "shovel.png"
+    },
+    "shuriken": {
+      "name": "Shuriken",
+      "description": "every time you play 3 attacks in a single turn, gain 1 strength.",
+      "imageFileName": "shuriken.png"
+    },
+    "signet_ring": {
+      "name": "Signet Ring",
+      "description": "upon pickup, gain 999 gold.",
+      "imageFileName": "signet_ring.png"
+    },
+    "silver_crucible": {
+      "name": "Silver Crucible",
+      "description": "the first 3 card rewards you see are upgraded. the first treasure chest you open is empty.",
+      "imageFileName": "silver_crucible.png"
+    },
+    "sling_of_courage": {
+      "name": "Sling of Courage",
+      "description": "start each elite combat with 2 strength.",
+      "imageFileName": "sling_of_courage.png"
+    },
+    "small_capsule": {
+      "name": "Small Capsule",
+      "description": "upon pickup, obtain a random relic.",
+      "imageFileName": "small_capsule.png"
+    },
+    "snecko_eye": {
+      "name": "Snecko Eye",
+      "description": "at the start of your turn, draw 2 additional cards. start each combat confused.",
+      "imageFileName": "snecko_eye.png"
+    },
+    "snecko_skull": {
+      "name": "Snecko Skull",
+      "description": "whenever you apply poison, apply an additional 1 poison.",
+      "imageFileName": "snecko_skull.png"
+    },
+    "sozu": {
+      "name": "Sozu",
+      "description": "gain colorless energy at the start of each turn. you can no longer obtain potions.",
+      "imageFileName": "sozu.png"
+    },
+    "sparkling_rouge": {
+      "name": "Sparkling Rouge",
+      "description": "at the start of your 3rd turn, gain 1 strength and 1 dexterity.",
+      "imageFileName": "sparkling_rouge.png"
+    },
+    "spiked_gauntlets": {
+      "name": "Spiked Gauntlets",
+      "description": "gain colorless energy at the start of each turn. powers cost 1 more colorless energy.",
+      "imageFileName": "spiked_gauntlets.png"
+    },
+    "stone_calendar": {
+      "name": "Stone Calendar",
+      "description": "at the end of turn 7, deal 52 damage to all enemies.",
+      "imageFileName": "stone_calendar.png"
+    },
+    "stone_cracker": {
+      "name": "Stone Cracker",
+      "description": "at the start of boss combats, upgrade 3 random cards in your draw pile for the rest of combat.",
+      "imageFileName": "stone_cracker.png"
+    },
+    "stone_humidifier": {
+      "name": "Stone Humidifier",
+      "description": "whenever you rest at a rest site, raise your max hp by 5.",
+      "imageFileName": "stone_humidifier.png"
+    },
+    "storybook": {
+      "name": "Storybook",
+      "description": "upon pickup, add 1 brightest flame to your deck.",
+      "imageFileName": "storybook.png"
+    },
+    "strawberry": {
+      "name": "Strawberry",
+      "description": "upon pickup, raise your max hp by 7.",
+      "imageFileName": "strawberry.png"
+    },
+    "strike_dummy": {
+      "name": "Strike Dummy",
+      "description": "cards containing &#34;strike&#34; deal 3 additional damage.",
+      "imageFileName": "strike_dummy.png"
+    },
+    "sturdy_clamp": {
+      "name": "Sturdy Clamp",
+      "description": "up to 10 block persists across turns.",
+      "imageFileName": "sturdy_clamp.png"
+    },
+    "symbiotic_virus": {
+      "name": "Symbiotic Virus",
+      "description": "at the start of each combat, channel 1 dark.",
+      "imageFileName": "symbiotic_virus.png"
+    },
+    "tanx_s_whistle": {
+      "name": "Tanx's Whistle",
+      "description": "upon pickup, add 1 whistle to your deck.",
+      "imageFileName": "tanx_s_whistle.png"
+    },
+    "the_abacus": {
+      "name": "The Abacus",
+      "description": "whenever you shuffle your draw pile, gain 6 block.",
+      "imageFileName": "the_abacus.png"
+    },
+    "the_courier": {
+      "name": "The Courier",
+      "description": "the merchant no longer runs out of cards, relics, or potions and his prices are reduced by 20%.",
+      "imageFileName": "the_courier.png"
+    },
+    "throwing_axe": {
+      "name": "Throwing Axe",
+      "description": "the first card you play each combat is played an extra time.",
+      "imageFileName": "throwing_axe.png"
+    },
+    "tingsha": {
+      "name": "Tingsha",
+      "description": "whenever you discard a card during your turn, deal 3 damage to a random enemy for each card discarded.",
+      "imageFileName": "tingsha.png"
+    },
+    "tiny_mailbox": {
+      "name": "Tiny Mailbox",
+      "description": "whenever you rest, procure a random potion.",
+      "imageFileName": "tiny_mailbox.png"
+    },
+    "toasty_mittens": {
+      "name": "Toasty Mittens",
+      "description": "at the start of your turn, exhaust the top card of your draw pile and gain 1 strength.",
+      "imageFileName": "toasty_mittens.png"
+    },
+    "toolbox": {
+      "name": "Toolbox",
+      "description": "at the start of each combat, choose 1 of 3 random colorless cards and add the chosen card into your hand.",
+      "imageFileName": "toolbox.png"
+    },
+    "touch_of_orobas": {
+      "name": "Touch of Orobas",
+      "description": "upon pickup, replace your starter relic with an ancient version.",
+      "imageFileName": "touch_of_orobas.png"
+    },
+    "tough_bandages": {
+      "name": "Tough Bandages",
+      "description": "whenever you discard a card during your turn, gain 3 block.",
+      "imageFileName": "tough_bandages.png"
+    },
+    "toxic_egg": {
+      "name": "Toxic Egg",
+      "description": "whenever you add a skill into your deck, upgrade it.",
+      "imageFileName": "toxic_egg.png"
+    },
+    "toy_box": {
+      "name": "Toy Box",
+      "description": "upon pickup, obtain 4 wax relics. every 3 combats, your left-most wax relic will melt away.",
+      "imageFileName": "toy_box.png"
+    },
+    "tri_boomerang": {
+      "name": "Tri-Boomerang",
+      "description": "choose 3 attacks in your deck. enchant them with instinct.",
+      "imageFileName": "tri_boomerang.png"
+    },
+    "tungsten_rod": {
+      "name": "Tungsten Rod",
+      "description": "whenever you would lose hp, lose 1 less.",
+      "imageFileName": "tungsten_rod.png"
+    },
+    "tuning_fork": {
+      "name": "Tuning Fork",
+      "description": "every time you play 10 skills, gain 7 block.",
+      "imageFileName": "tuning_fork.png"
+    },
+    "twisted_funnel": {
+      "name": "Twisted Funnel",
+      "description": "at the start of each combat, apply 4 poison to all enemies.",
+      "imageFileName": "twisted_funnel.png"
+    },
+    "unceasing_top": {
+      "name": "Unceasing Top",
+      "description": "whenever you have no cards in hand during your turn, draw a card.",
+      "imageFileName": "unceasing_top.png"
+    },
+    "undying_sigil": {
+      "name": "Undying Sigil",
+      "description": "enemies with at least as much doom as hp deal 50% less damage.",
+      "imageFileName": "undying_sigil.png"
+    },
+    "unsettling_lamp": {
+      "name": "Unsettling Lamp",
+      "description": "each combat, the first time you play a card that debuffs an enemy, double its effect.",
+      "imageFileName": "unsettling_lamp.png"
+    },
+    "vajra": {
+      "name": "Vajra",
+      "description": "start each combat with 1 strength.",
+      "imageFileName": "vajra.png"
+    },
+    "vambrace": {
+      "name": "Vambrace",
+      "description": "the first time you gain block from a card each combat, double the amount gained.",
+      "imageFileName": "vambrace.png"
+    },
+    "velvet_choker": {
+      "name": "Velvet Choker",
+      "description": "gain colorless energy at the start of each turn. you cannot play more than 6 cards per turn.",
+      "imageFileName": "velvet_choker.png"
+    },
+    "venerable_tea_set": {
+      "name": "Venerable Tea Set",
+      "description": "whenever you enter a rest site, start the next combat with an additional 2 energy.",
+      "imageFileName": "venerable_tea_set.png"
+    },
+    "very_hot_cocoa": {
+      "name": "Very Hot Cocoa",
+      "description": "start each combat with an additional 4 energy.",
+      "imageFileName": "very_hot_cocoa.png"
+    },
+    "vexing_puzzlebox": {
+      "name": "Vexing Puzzlebox",
+      "description": "at the start of each combat, add a random card into your hand. it costs 0 energy.",
+      "imageFileName": "vexing_puzzlebox.png"
+    },
+    "vitruvian_minion": {
+      "name": "Vitruvian Minion",
+      "description": "cards containing &#34;minion&#34; deal double damage and gain double block.",
+      "imageFileName": "vitruvian_minion.png"
+    },
+    "war_hammer": {
+      "name": "War Hammer",
+      "description": "whenever you kill an elite, upgrade 4 random cards.",
+      "imageFileName": "war_hammer.png"
+    },
+    "war_paint": {
+      "name": "War Paint",
+      "description": "upon pickup, upgrade 2 random skills.",
+      "imageFileName": "war_paint.png"
+    },
+    "whetstone": {
+      "name": "Whetstone",
+      "description": "upon pickup, upgrade 2 random attacks.",
+      "imageFileName": "whetstone.png"
+    },
+    "whispering_earring": {
+      "name": "Whispering Earring",
+      "description": "gain colorless energy at the start of each turn. vakuu plays your first turn for you.",
+      "imageFileName": "whispering_earring.png"
+    },
+    "white_beast_statue": {
+      "name": "White Beast Statue",
+      "description": "potions always appear in combat rewards.",
+      "imageFileName": "white_beast_statue.png"
+    },
+    "white_star": {
+      "name": "White Star",
+      "description": "elites drop an additional rare card reward.",
+      "imageFileName": "white_star.png"
+    },
+    "wing_charm": {
+      "name": "Wing Charm",
+      "description": "a random card in each card reward is enchanted with swift 1.",
+      "imageFileName": "wing_charm.png"
+    }
+  },
+  "potions": {
+    "ashwater": {
+      "name": "Ashwater",
+      "description": "exhaust any number of cards in your hand.",
+      "imageFileName": "ashwater.png"
+    },
+    "attack_potion": {
+      "name": "Attack Potion",
+      "description": "choose 1 of 3 random attack cards to add into your hand. it's free to play this turn.",
+      "imageFileName": "attack_potion.png"
+    },
+    "beetle_juice": {
+      "name": "Beetle Juice",
+      "description": "enemy's attacks deal 30% less damage for the next 4 turns.",
+      "imageFileName": "beetle_juice.png"
+    },
+    "blessing_of_the_forge": {
+      "name": "Blessing of the Forge",
+      "description": "upgrade all cards in your hand for the rest of combat.",
+      "imageFileName": "blessing_of_the_forge.png"
+    },
+    "block_potion": {
+      "name": "Block Potion",
+      "description": "gain 12 block.",
+      "imageFileName": "block_potion.png"
+    },
+    "blood_potion": {
+      "name": "Blood Potion",
+      "description": "heal for 20% of your max hp.",
+      "imageFileName": "blood_potion.png"
+    },
+    "bone_brew": {
+      "name": "Bone Brew",
+      "description": "summon 15.",
+      "imageFileName": "bone_brew.png"
+    },
+    "bottled_potential": {
+      "name": "Bottled Potential",
+      "description": "shuffle all your cards into your draw pile. draw 5 cards.",
+      "imageFileName": "bottled_potential.png"
+    },
+    "clarity_extract": {
+      "name": "Clarity Extract",
+      "description": "draw 1 card. at the start of your next 3 turns, draw 1 additional card.",
+      "imageFileName": "clarity_extract.png"
+    },
+    "colorless_potion": {
+      "name": "Colorless Potion",
+      "description": "choose 1 of 3 random colorless cards to add into your hand. it's free to play this turn.",
+      "imageFileName": "colorless_potion.png"
+    },
+    "cosmic_concoction": {
+      "name": "Cosmic Concoction",
+      "description": "add 3 upgraded colorless cards into your hand.",
+      "imageFileName": "cosmic_concoction.png"
+    },
+    "cunning_potion": {
+      "name": "Cunning Potion",
+      "description": "add 3 upgraded shivs into your hand.",
+      "imageFileName": "cunning_potion.png"
+    },
+    "cure_all": {
+      "name": "Cure All",
+      "description": "gain colorless energy. draw 2 cards.",
+      "imageFileName": "cure_all.png"
+    },
+    "dexterity_potion": {
+      "name": "Dexterity Potion",
+      "description": "gain 2 dexterity.",
+      "imageFileName": "dexterity_potion.png"
+    },
+    "distilled_chaos": {
+      "name": "Distilled Chaos",
+      "description": "play the top 3 cards of your draw pile.",
+      "imageFileName": "distilled_chaos.png"
+    },
+    "droplet_of_precognition": {
+      "name": "Droplet of Precognition",
+      "description": "choose a card in your draw pile and add it into your hand.",
+      "imageFileName": "droplet_of_precognition.png"
+    },
+    "duplicator": {
+      "name": "Duplicator",
+      "description": "this turn, your next card is played an extra time.",
+      "imageFileName": "duplicator.png"
+    },
+    "energy_potion": {
+      "name": "Energy Potion",
+      "description": "gain colorless energy colorless energy.",
+      "imageFileName": "energy_potion.png"
+    },
+    "entropic_brew": {
+      "name": "Entropic Brew",
+      "description": "fill all your empty potion slots with random potions.",
+      "imageFileName": "entropic_brew.png"
+    },
+    "essence_of_darkness": {
+      "name": "Essence of Darkness",
+      "description": "channel a dark for each of your orb slots.",
+      "imageFileName": "essence_of_darkness.png"
+    }
+  }
+}

@@ -7,10 +7,12 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   const navLinks = [
     { id: 'home', href: '/', label: 'Home', placeholder: false },
@@ -18,11 +20,19 @@ export default function Navigation() {
     { id: 'news', href: '/news', label: 'News', placeholder: false },
     { id: 'cards', href: '/cards', label: 'Cards', placeholder: false },
     { id: 'characters', href: '/characters', label: 'Characters', placeholder: false },
-    { id: 'guides', href: '/guides', label: 'Guides', placeholder: false },
-    { id: 'mechanics', href: '/mechanics', label: 'Mechanics', placeholder: false },
     { id: 'relics', href: '/relics', label: 'Relics', placeholder: false },
     { id: 'potions', href: '/potions', label: 'Potions', placeholder: false },
+    { id: 'guides', href: '/guides', label: 'Guides', placeholder: false },
+    { id: 'mechanics', href: '/mechanics', label: 'Mechanics', placeholder: false },
   ];
+
+  const isActive = (href: string) => {
+    if (href === '/') return pathname === '/';
+    if (href === '/news/slay-the-spire-2-launch-time-us-china') {
+      return pathname === href;
+    }
+    return pathname === href || pathname.startsWith(`${href}/`);
+  };
 
   return (
     <nav className="sticky top-0 z-50 backdrop-blur-md bg-background/80 border-b border-border">
@@ -47,6 +57,7 @@ export default function Navigation() {
                 key={link.id}
                 href={link.href}
                 label={link.label}
+                active={isActive(link.href)}
               />
             ))}
           </div>
@@ -73,6 +84,7 @@ export default function Navigation() {
                   key={link.id}
                   href={link.href}
                   label={link.label}
+                  active={isActive(link.href)}
                   onClick={() => {
                     setMobileMenuOpen(false);
                   }}
@@ -89,14 +101,20 @@ export default function Navigation() {
 function NavLink({
   href,
   label,
+  active = false,
 }: {
   href: string;
   label: string;
+  active?: boolean;
 }) {
   return (
     <Link
       href={href}
-      className="text-foreground hover:text-accent-foreground hover:bg-accent/10 px-3 py-2 rounded-md transition-all font-medium"
+      className={`px-3 py-2 rounded-md transition-all font-medium border ${
+        active
+          ? 'text-molten-orange border-molten-orange/60 bg-molten-orange/10 shadow-[0_0_24px_rgba(255,140,0,0.25)]'
+          : 'text-foreground border-transparent hover:text-accent-foreground hover:bg-accent/10'
+      }`}
     >
       {label}
     </Link>
@@ -106,17 +124,23 @@ function NavLink({
 function MobileNavLink({
   href,
   label,
+  active = false,
   onClick,
 }: {
   href: string;
   label: string;
+  active?: boolean;
   onClick?: () => void;
 }) {
   return (
     <Link
       href={href}
       onClick={onClick}
-      className="text-foreground hover:text-accent-foreground hover:bg-accent/10 px-4 py-3 rounded-md transition-all block"
+      className={`px-4 py-3 rounded-md transition-all block border ${
+        active
+          ? 'text-molten-orange border-molten-orange/60 bg-molten-orange/10'
+          : 'text-foreground border-transparent hover:text-accent-foreground hover:bg-accent/10'
+      }`}
     >
       {label}
     </Link>

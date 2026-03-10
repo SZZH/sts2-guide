@@ -305,6 +305,20 @@
 - [x] 说明当前最有效的还是“角色 / 机制 / 新手决策”这类入口意图
 - [x] `cards` 结构已经搭好，但从当前观测看还没成为最强流量前排页
 
+### GSC 页面索引结论（2026-03-10 补充）
+- [x] 已检查 GSC「网页索引编制」：已编入索引 `7`，未编入索引 `20`
+- [x] 未索引原因仅 2 类：
+  - `已发现 - 尚未编入索引`：`19`
+  - `已抓取 - 尚未编入索引`：`1`（`/manifest.json`）
+- [x] `已发现 - 尚未编入索引` 示例已覆盖核心入口页（`/characters`、部分角色详情、`/guides`、`/news`），说明当前主要是抓取/索引节奏问题，不是页面报错型问题
+- [x] GSC 站点地图状态为成功，`/sitemap.xml` 已被读取（上次读取：`2026-03-10`，已发现网页：`536`）
+
+### 基于索引现状的直接动作
+- [ ] 先对核心查询页发起手动请求索引：`/cards`、`/characters`、`/relics`、`/potions`
+- [ ] 对 5 个角色详情页发起手动请求索引
+- [ ] 持续提升查询页之间内链密度（尤其首页与角色页到 cards/relics/potions 的导流）
+- [ ] 以 7 天为周期复查索引变化，目标是先把核心页从「已发现」推进到「已抓取/已编入」
+
 ### 结论
 - [x] 当前方向是对的，不需要换策略
 - [x] `/characters`、`/mechanics`、`first-run guide`、`best starter character` 这些入口页，已经证明值得继续强化
@@ -504,6 +518,80 @@
 - [ ] `All for One`
 - [ ] `Charge Battery`
 - [ ] `Energy Surge`
+
+---
+
+## 模块十二：Google Trends 国家与查询意图驱动方案
+
+为什么要加这一块：
+- 现在站点已经有可用结构，下一步瓶颈不是“有没有页面”，而是“页面是否精准接住用户正在搜的词”。
+- Trends 已经证明：当前主流需求词不等于品牌词（`sts2 guide`），而是 `steam / multiplayer / steam charts / card list / tier list` 这类问题词。
+
+目的：
+- 用真实查询意图反推页面优先级，而不是继续平均发力。
+- 在不打乱当前英文主站节奏的前提下，规划下一步国家/语种扩量。
+
+希望达到的效果：
+- 新增页面上线后能更快拿到 impressions，不再依赖品牌词自然增长。
+- 英文主站先稳住美国查询需求，再按信号推进繁中扩展。
+
+### Google Trends 关键结论（2026-03-11）
+- [x] 时间窗口：过去 30 天
+- [x] 主查询：`slay the spire 2, sts2, sts2 guide, slay the spire 2 tier list, slay the spire 2 cards`
+- [x] 美国查询意图最完整：`multiplayer`、`steam charts`、`card list / tier list`、`regent / defect`
+- [x] 台湾出现明显繁中词：`殺戮 尖塔 2`、`slay the spire 2 攻略`、`巴哈`、`slay the spire 2 steam`
+- [x] 俄罗斯存在热度，但查询更偏 `steamdb / steam / скачать`，意图杂讯更高
+- [x] 当前品牌词 `sts2 guide` 仍低量，现阶段应继续以需求词抢量
+
+### 与当前实现的匹配判断
+- [x] 现有 `/cards`、`/characters`、`/relics`、`/potions` 可承接数据库型词
+- [x] 现有 `/news/[slug]` 架构适合快速扩展 Trends 词页
+- [x] 当前缺口是高意图词页不够精准（尤其 `steam charts`、`steamdb`、`multiplayer`、`release date`）
+
+### 立即执行（英文主站）
+
+为什么先做这批：
+- 这些词在 Trends 已经出现稳定上升，且可直接由现有 `news` 模块承接，不需要新架构。
+
+目的：
+- 先把高意图查询落到专页，提升相关性和收录效率。
+
+希望达到的效果：
+- 让首页、`/news`、数据库页都能把用户导向“词与页完全对应”的落地页。
+
+- [ ] 新增并上线以下英文落地页（标题/H1 精确包含目标词）：
+  - `/news/slay-the-spire-2-multiplayer-coop-guide`
+  - `/news/slay-the-spire-2-steam-charts-player-count`
+  - `/news/slay-the-spire-2-steamdb-patch-tracker`
+  - `/news/slay-the-spire-2-release-date`
+- [ ] 首页增加上述页面入口（趋势专题位）
+- [ ] `/news` 列表提升上述页面曝光优先级
+- [ ] 在 `/cards`、`/characters` 增加到上述页面的相关查询入口
+- [ ] 发布后立即提交 sitemap 与 URL 检查（GSC）
+- [ ] 7 天复查：这 4 页 impressions / query 覆盖是否起量
+
+### 国家/语种扩量顺序
+
+为什么这样排：
+- 美国词包最完整，英文页可直接承接，投入产出最高。
+- 台湾已出现明显繁中攻略词，具备中文化的明确收益信号。
+- 俄罗斯词意图更偏平台数据与下载词，先观察比立刻全量翻译更稳妥。
+
+目的：
+- 控制资源投入，把多语种动作放在有明确信号的市场上。
+
+希望达到的效果：
+- 扩量不是“多做语言”，而是“先做最可能带来新增点击的语言”。
+
+- [x] 优先级 1：美国（继续英文深耕）
+- [x] 优先级 2：台湾（繁中 MVP）
+- [ ] 优先级 3：俄罗斯（先小样本验证，不做全站）
+
+### 繁中 MVP 触发与范围（与模块十联动）
+- [ ] 触发条件：英文四个高意图页在 7~14 天内出现稳定 impressions
+- [ ] 首批仅做高意图页，不做全站翻译
+- [ ] 关键词优先：`殺戮尖塔 2`、`攻略`、`Steam`、`多人/联机`、`卡牌列表`
+- [ ] 上线后加 `hreflang` 与英文互链
 - [ ] `Feral`
 - [ ] `Sunder`
 - [ ] `Turbo`

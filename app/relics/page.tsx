@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { RELICS } from '@/shared/gameData';
 import { BreadcrumbSchema, CollectionPageSchema, ItemListSchema } from '@/app/schema';
@@ -30,7 +31,7 @@ type RelicsPageProps = {
   }>;
 };
 
-const RARITY_FILTERS = ['all', 'Starter', 'Common', 'Uncommon', 'Rare'] as const;
+const RARITY_FILTERS = ['all', 'Starter', 'Common', 'Uncommon', 'Rare', 'Shop', 'Ancient'] as const;
 const CHARACTER_FILTERS = ['all', 'Ironclad', 'Silent', 'Regent', 'Necrobinder', 'Defect', 'Neutral'] as const;
 
 function toCharacterTag(character?: string) {
@@ -174,19 +175,30 @@ export default async function RelicsPage({ searchParams }: RelicsPageProps) {
                   <div className="grid gap-4 md:grid-cols-2">
                     {filteredRelics.map((relic) => (
                       <article
-                        key={`${relic.rarity}-${relic.name}`}
+                        key={relic.slug ?? `${relic.rarity}-${relic.name}`}
                         className="rounded-2xl border border-border bg-background/55 p-5 transition-colors hover:border-molten-orange"
                       >
-                        <div className="mb-3 flex flex-wrap items-center gap-2">
-                          <span className="rounded-full border border-molten-orange/30 px-3 py-1 text-xs uppercase tracking-[0.16em] text-molten-orange">
-                            {relic.rarity}
-                          </span>
-                          <span className="rounded-full border border-border px-3 py-1 text-xs uppercase tracking-[0.16em] text-steel-blue">
-                            {toCharacterTag(relic.character)}
-                          </span>
+                        <div className="mb-4 flex items-start gap-4">
+                          <div className="relative h-[72px] w-[72px] shrink-0 overflow-hidden rounded-xl border border-border bg-forge-black/70">
+                            {relic.image ? (
+                              <Image src={relic.image} alt={relic.name} fill className="object-contain p-2" sizes="72px" />
+                            ) : (
+                              <div className="h-full w-full" />
+                            )}
+                          </div>
+                          <div className="min-w-0">
+                            <h2 className="font-heading text-2xl font-bold">{relic.name}</h2>
+                            <div className="mt-3 flex flex-wrap items-center gap-2">
+                              <span className="rounded-full border border-molten-orange/30 px-3 py-1 text-xs uppercase tracking-[0.16em] text-molten-orange">
+                                {relic.rarity}
+                              </span>
+                              <span className="rounded-full border border-border px-3 py-1 text-xs uppercase tracking-[0.16em] text-steel-blue">
+                                {toCharacterTag(relic.character)}
+                              </span>
+                            </div>
+                          </div>
                         </div>
-                        <h2 className="font-heading text-2xl font-bold">{relic.name}</h2>
-                        <p className="mt-3 text-sm leading-7 text-muted-foreground">{relic.description}</p>
+                        <p className="text-sm leading-7 text-muted-foreground">{relic.description}</p>
                       </article>
                     ))}
                   </div>

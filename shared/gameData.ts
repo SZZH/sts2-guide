@@ -1,3 +1,5 @@
+import { POTIONS_GENERATED, RELICS_GENERATED } from './relicPotionData.generated';
+
 export const CHARACTERS = [
   {
     slug: 'ironclad',
@@ -1355,197 +1357,23 @@ export const GAME_MECHANICS: GameMechanic[] = [
 
 // Relics
 export interface Relic {
+  slug?: string;
   name: string;
-  rarity: 'Starter' | 'Common' | 'Uncommon' | 'Rare';
+  rarity: 'Starter' | 'Common' | 'Uncommon' | 'Rare' | 'Shop' | 'Ancient';
   character?: string;
   description: string;
+  image?: string;
 }
 
-export const RELICS: Relic[] = [
-  // Starter Relics
-  {
-    name: "Burning Blood",
-    rarity: "Starter",
-    character: "Ironclad",
-    description: "At the end of combat, heal 6 HP.",
-  },
-  {
-    name: "Ring of the Snake",
-    rarity: "Starter",
-    character: "Silent",
-    description: "At the start of each combat, draw 2 additional cards.",
-  },
-  {
-    name: "Osty's Binding",
-    rarity: "Starter",
-    character: "Necrobinder",
-    description: "Start each combat with Osty, your undead companion who absorbs damage.",
-  },
-  {
-    name: "Crown of Stars",
-    rarity: "Starter",
-    character: "Regent",
-    description: "Start each combat with 3 Stars.",
-  },
-  // Common Relics
-  {
-    name: "Bag of Preparation",
-    rarity: "Common",
-    description: "At the start of each combat, draw 2 additional cards.",
-  },
-  {
-    name: "Anchor",
-    rarity: "Common",
-    description: "Start each combat with 10 Block.",
-  },
-  {
-    name: "Ancient Coin",
-    rarity: "Common",
-    description: "Gain 15% more Gold from combat rewards.",
-  },
-  // Uncommon Relics
-  {
-    name: "Ornamental Fan",
-    rarity: "Uncommon",
-    description: "Every time you play 3 Attacks in a single turn, gain 4 Block.",
-  },
-  {
-    name: "Kunai",
-    rarity: "Uncommon",
-    description: "Every time you play 3 Attacks in a single turn, gain 1 Dexterity.",
-  },
-  // Rare Relics
-  {
-    name: "Incense Burner",
-    rarity: "Rare",
-    description: "Every 6 turns, gain 2 Intangible.",
-  },
-  {
-    name: "Prismatic Shard",
-    rarity: "Rare",
-    description: "Combat reward screens now contain cards from all characters.",
-  },
-  {
-    name: "Dead Branch",
-    rarity: "Rare",
-    description: "Whenever you Exhaust a card, add a random card to your hand.",
-  },
-];
+export const RELICS: Relic[] = RELICS_GENERATED;
 
 export interface Potion {
+  slug?: string;
   name: string;
   rarity: 'Common' | 'Uncommon' | 'Rare';
   character: 'Neutral' | 'Ironclad' | 'Silent' | 'Regent' | 'Necrobinder' | 'Defect';
   description: string;
+  image?: string;
 }
 
-export const POTIONS: Potion[] = [
-  {
-    name: 'Attack Potion',
-    rarity: 'Common',
-    character: 'Neutral',
-    description: 'Choose 1 of 3 Attack cards and add it into your hand for this combat.',
-  },
-  {
-    name: 'Skill Potion',
-    rarity: 'Common',
-    character: 'Neutral',
-    description: 'Choose 1 of 3 Skill cards and add it into your hand for this combat.',
-  },
-  {
-    name: 'Power Potion',
-    rarity: 'Uncommon',
-    character: 'Neutral',
-    description: 'Choose 1 of 3 Power cards and add it into your hand for this combat.',
-  },
-  {
-    name: 'Block Potion',
-    rarity: 'Common',
-    character: 'Neutral',
-    description: 'Gain 12 Block.',
-  },
-  {
-    name: 'Strength Potion',
-    rarity: 'Common',
-    character: 'Ironclad',
-    description: 'Gain Strength for this combat.',
-  },
-  {
-    name: 'Dexterity Potion',
-    rarity: 'Common',
-    character: 'Silent',
-    description: 'Gain Dexterity for this combat.',
-  },
-  {
-    name: 'Focus Potion',
-    rarity: 'Uncommon',
-    character: 'Defect',
-    description: 'Gain Focus for this combat.',
-  },
-  {
-    name: 'Energy Potion',
-    rarity: 'Common',
-    character: 'Neutral',
-    description: 'Gain 2 Energy this turn.',
-  },
-  {
-    name: 'Swift Potion',
-    rarity: 'Common',
-    character: 'Neutral',
-    description: 'Draw 3 cards.',
-  },
-  {
-    name: 'Fire Potion',
-    rarity: 'Common',
-    character: 'Neutral',
-    description: 'Deal direct damage to a target enemy.',
-  },
-  {
-    name: 'Explosive Potion',
-    rarity: 'Uncommon',
-    character: 'Neutral',
-    description: 'Deal damage to all enemies.',
-  },
-  {
-    name: 'Fear Potion',
-    rarity: 'Common',
-    character: 'Neutral',
-    description: 'Apply Vulnerable to one enemy.',
-  },
-  {
-    name: 'Poison Potion',
-    rarity: 'Common',
-    character: 'Silent',
-    description: 'Apply Poison to one enemy.',
-  },
-  {
-    name: 'Regen Potion',
-    rarity: 'Uncommon',
-    character: 'Neutral',
-    description: 'Gain Regeneration for several turns.',
-  },
-  {
-    name: 'Duplication Potion',
-    rarity: 'Rare',
-    character: 'Neutral',
-    description: 'Your next card this turn is played twice.',
-  },
-  {
-    name: 'Distilled Chaos',
-    rarity: 'Rare',
-    character: 'Neutral',
-    description: 'Play the top 3 cards of your draw pile.',
-  },
-  {
-    name: 'Entropic Brew',
-    rarity: 'Rare',
-    character: 'Neutral',
-    description: 'Fill all empty potion slots with random potions.',
-  },
-  {
-    name: 'Ghost in a Jar',
-    rarity: 'Rare',
-    character: 'Neutral',
-    description: 'Gain Intangible this turn.',
-  },
-];
+export const POTIONS: Potion[] = POTIONS_GENERATED;

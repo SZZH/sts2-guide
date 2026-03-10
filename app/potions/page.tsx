@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { POTIONS } from '@/shared/gameData';
 import { BreadcrumbSchema, CollectionPageSchema, ItemListSchema } from '@/app/schema';
@@ -168,19 +169,30 @@ export default async function PotionsPage({ searchParams }: PotionsPageProps) {
                   <div className="grid gap-4 md:grid-cols-2">
                     {filteredPotions.map((potion) => (
                       <article
-                        key={`${potion.rarity}-${potion.name}`}
+                        key={potion.slug ?? `${potion.rarity}-${potion.name}`}
                         className="rounded-2xl border border-border bg-background/55 p-5 transition-colors hover:border-molten-orange"
                       >
-                        <div className="mb-3 flex flex-wrap items-center gap-2">
-                          <span className="rounded-full border border-molten-orange/30 px-3 py-1 text-xs uppercase tracking-[0.16em] text-molten-orange">
-                            {potion.rarity}
-                          </span>
-                          <span className="rounded-full border border-border px-3 py-1 text-xs uppercase tracking-[0.16em] text-steel-blue">
-                            {potion.character}
-                          </span>
+                        <div className="mb-4 flex items-start gap-4">
+                          <div className="relative h-[72px] w-[72px] shrink-0 overflow-hidden rounded-xl border border-border bg-forge-black/70">
+                            {potion.image ? (
+                              <Image src={potion.image} alt={potion.name} fill className="object-contain p-2" sizes="72px" />
+                            ) : (
+                              <div className="h-full w-full" />
+                            )}
+                          </div>
+                          <div className="min-w-0">
+                            <h2 className="font-heading text-2xl font-bold">{potion.name}</h2>
+                            <div className="mt-3 flex flex-wrap items-center gap-2">
+                              <span className="rounded-full border border-molten-orange/30 px-3 py-1 text-xs uppercase tracking-[0.16em] text-molten-orange">
+                                {potion.rarity}
+                              </span>
+                              <span className="rounded-full border border-border px-3 py-1 text-xs uppercase tracking-[0.16em] text-steel-blue">
+                                {potion.character}
+                              </span>
+                            </div>
+                          </div>
                         </div>
-                        <h2 className="font-heading text-2xl font-bold">{potion.name}</h2>
-                        <p className="mt-3 text-sm leading-7 text-muted-foreground">{potion.description}</p>
+                        <p className="text-sm leading-7 text-muted-foreground">{potion.description}</p>
                       </article>
                     ))}
                   </div>
