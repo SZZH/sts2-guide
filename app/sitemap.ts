@@ -5,6 +5,10 @@ import { CARDS, CARD_CHARACTERS } from '@/shared/cardsData';
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://sts2guide.com';
   const toDate = (value: string) => new Date(`${value}T00:00:00.000Z`);
+  const latestCardUpdate = CARDS.reduce((latest, card) => {
+    return toDate(card.updatedAt) > latest ? toDate(card.updatedAt) : latest;
+  }, toDate('2026-01-01'));
+  const latestDatabaseModuleUpdate = toDate('2026-03-10');
   const latestCharacterUpdate = CHARACTERS.reduce((latest, character) => {
     return toDate(character.updatedAt) > latest ? toDate(character.updatedAt) : latest;
   }, toDate('2026-01-01'));
@@ -40,7 +44,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/cards`,
-      lastModified: toDate('2026-03-08'),
+      lastModified: latestCardUpdate,
       changeFrequency: 'daily',
       priority: 0.85,
     },
@@ -52,13 +56,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/relics`,
-      lastModified: toDate('2026-02-13'),
+      lastModified: latestDatabaseModuleUpdate,
       changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/potions`,
-      lastModified: toDate('2026-03-10'),
+      lastModified: latestDatabaseModuleUpdate,
       changeFrequency: 'weekly',
       priority: 0.78,
     },
