@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from './page.module.css';
 import {
   CARDS,
@@ -10,6 +11,7 @@ import {
   CARD_TYPES,
   getCardCharacterLabel,
   getCardCostBucket,
+  getCardImageSrc,
   getCardRarityLabel,
   getCardTypeLabel,
   sortCards,
@@ -326,9 +328,19 @@ export default async function CardsPage({ searchParams }: CardsPageProps) {
                               href={listingQuery ? `/cards/${card.slug}?from=${encodeURIComponent(listingQuery)}` : `/cards/${card.slug}`}
                               className="group rounded-2xl border border-border bg-background/55 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-molten-orange"
                             >
-                              <div className="mb-4 aspect-[4/3] rounded-xl border border-dashed border-border bg-gradient-to-br from-shadow-gray to-forge-black p-4">
-                                <div className="flex h-full items-end justify-end rounded-lg border border-border/60 bg-black/20 p-4">
-                                  <div className="rounded-full border border-molten-orange/30 px-3 py-1 text-xs text-molten-orange">
+                              <div className="mb-4 aspect-[4/3] overflow-hidden rounded-xl border border-dashed border-border bg-gradient-to-br from-shadow-gray to-forge-black p-2">
+                                <div className="relative h-full rounded-lg border border-border/60 bg-black/20 p-2">
+                                  {getCardImageSrc(card.image) ? (
+                                    <Image
+                                      src={getCardImageSrc(card.image)!}
+                                      alt={card.name}
+                                      fill
+                                      unoptimized
+                                      sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                                      className="object-contain"
+                                    />
+                                  ) : null}
+                                  <div className="absolute bottom-3 right-3 rounded-full border border-molten-orange/30 bg-black/40 px-3 py-1 text-xs text-molten-orange backdrop-blur">
                                     {card.costText}
                                   </div>
                                 </div>

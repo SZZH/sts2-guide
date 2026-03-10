@@ -7,6 +7,14 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "sts2:validate-bundle": "node scripts/validate-sts2-official-bundle.mjs",
+    "sts2:validate-mapping": "node --experimental-strip-types scripts/validate-card-mapping-integrity.mjs",
+    "sts2:import-bundle": "node scripts/import-sts2-official-bundle.mjs",
+    "sts2:import-character-assets": "node scripts/import-sts2-character-assets.mjs",
+    "sts2:wiki-fallback": "node scripts/generate-cards-wiki-fallback.mjs",
+    "sts2:rebuild-wiki-mapping": "node --experimental-strip-types scripts/rebuild-card-image-mapping-from-wiki.mjs",
+    "sts2:download-wiki-images": "node scripts/download-wiki-card-images.mjs",
+    "sts2:upload-r2": "node scripts/upload-sts2-cards-to-r2.mjs",
     "monitor:vercel": "node scripts/monitor-vercel.mjs",
     "monitor:vercel:loop": "MONITOR_LOOP_SECONDS=300 MONITOR_ROUNDS=24 node scripts/monitor-vercel.mjs"
   },
@@ -20,6 +28,7 @@
     "react-dom": "19.2.3"
   },
   "devDependencies": {
+    "@aws-sdk/client-s3": "^3.911.0",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",

@@ -1,10 +1,12 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { ArrowLeft } from 'lucide-react';
 import {
   CARDS,
   getCardCharacterLabel,
+  getCardImageSrc,
   getCardRarityLabel,
   getCardTypeLabel,
 } from '@/shared/cardsData';
@@ -98,15 +100,24 @@ export default async function CardDetailPage({
 
         <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
           <section className="rounded-2xl border border-border bg-background/55 p-6 md:p-8">
-            <div className="mb-6 aspect-[4/3] rounded-2xl border border-dashed border-border bg-gradient-to-br from-shadow-gray to-forge-black p-6">
-              <div className="flex h-full flex-col justify-between rounded-2xl border border-border/60 bg-black/25 p-6">
-                <div className="flex items-center justify-between gap-4">
-                  <span className="rounded-full border border-molten-orange/30 px-3 py-1 text-xs uppercase tracking-[0.16em] text-molten-orange">
-                    {getCardCharacterLabel(card.character)}
-                  </span>
-                  <span className="font-heading text-3xl font-bold text-white">{card.costText}</span>
+            <div className="mb-6 aspect-[4/3] overflow-hidden rounded-2xl border border-dashed border-border bg-gradient-to-br from-shadow-gray to-forge-black p-3">
+              <div className="relative h-full rounded-2xl border border-border/60 bg-black/25 p-4">
+                {getCardImageSrc(card.image) ? (
+                  <Image
+                    src={getCardImageSrc(card.image)!}
+                    alt={card.name}
+                    fill
+                    unoptimized
+                    sizes="(max-width: 1024px) 100vw, 60vw"
+                    className="object-contain"
+                  />
+                ) : null}
+                <div className="absolute left-4 top-4 rounded-full border border-molten-orange/30 bg-black/40 px-3 py-1 text-xs uppercase tracking-[0.16em] text-molten-orange backdrop-blur">
+                  {getCardCharacterLabel(card.character)}
                 </div>
-                <div />
+                <div className="absolute right-4 top-4 rounded-full border border-molten-orange/30 bg-black/40 px-3 py-1 font-heading text-base font-bold text-white backdrop-blur">
+                  {card.costText}
+                </div>
               </div>
             </div>
 
@@ -128,7 +139,7 @@ export default async function CardDetailPage({
             <div className="rounded-xl border border-molten-orange/25 bg-molten-orange/5 p-5">
               <div className="text-xs uppercase tracking-[0.18em] text-molten-orange mb-2">Data Source</div>
               <p className="text-sm text-foreground/90 leading-7">
-                Card facts on this page are parsed from the temporary public card source and verified on {card.source.verifiedAt}. Art remains a local placeholder until a licensed source is imported.
+                Card facts on this page are merged from the local game extract bundle and verified on {card.source.verifiedAt}.
               </p>
             </div>
           </section>

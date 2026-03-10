@@ -5,7 +5,8 @@ export default function ContentDisclaimer() {
         <span className="text-sm leading-5">ℹ️</span>
         <p className="text-xs leading-5 text-orange-100/95">
           This guide is based on publicly available information and Early Access gameplay.
-          Game data may change as development continues. Character descriptions and lore are based on official sources.
+          Game data may change as development continues. Card facts and image assets are calibrated against the local game extract bundle;
+          character overview text is editorial and continuously cross-checked with official updates.
         </p>
       </div>
     </div>

@@ -1,5 +1,6 @@
 import { GENERATED_CARDS } from './cardsData.generated';
 import { getCardVerification, type CardVerificationRecord } from './cardsVerification';
+import { CARD_WIKI_TEXT_BY_SLUG } from './cardsWikiFallback.generated';
 
 export type CardCharacter = 'ironclad' | 'silent' | 'defect' | 'necrobinder' | 'regent' | 'colorless';
 export type CardType = 'attack' | 'skill' | 'power';
@@ -110,6 +111,8 @@ function buildKeywords(card: GeneratedCardRecord) {
   return [...new Set([card.name.toLowerCase(), card.color, card.type, card.rarity, ...normalizedText])];
 }
 
+type EnrichedCard = Omit<Sts2Card, 'keywords'> & { keywords?: string[]; resolvedText?: string };
+
 export const CARDS: Sts2Card[] = (GENERATED_CARDS as GeneratedCardRecord[]).map((card) => ({
   ...card,
   character: card.color,
@@ -117,14 +120,33 @@ export const CARDS: Sts2Card[] = (GENERATED_CARDS as GeneratedCardRecord[]).map(
   verification: getCardVerification(card.slug),
 }))
   .map((card) => ({
+    ...(() => {
+      const preferred = card.verification.preferredText ?? card.text;
+      const hasTemplateArtifacts =
+        /\b[A-Za-z]+Power\b/.test(preferred) ||
+        /\b[A-Za-z]+If\w+\b/.test(preferred) ||
+        /\{[^}]*$/.test(preferred) ||
+        /\{[^}]*\}/.test(preferred) ||
+        /\bCards cards\b/.test(preferred) ||
+        /\bHpLoss\b/.test(preferred);
+      const wikiFallback = CARD_WIKI_TEXT_BY_SLUG[card.slug];
+
+      return {
+        resolvedText: hasTemplateArtifacts && wikiFallback ? wikiFallback : preferred,
+      };
+    })(),
     ...card,
-    text: card.verification.preferredText ?? card.text,
+    text: (card.verification.preferredText ?? card.text),
+  }))
+  .map((card): EnrichedCard => ({
+    ...card,
+    text: card.resolvedText ?? card.text,
     keywords: buildKeywords({
       ...card,
       color: card.character,
-      text: card.verification.preferredText ?? card.text,
+      text: card.resolvedText ?? card.text,
     }),
-  }));
+  })) as Sts2Card[];
 
 export function getCardCharacterLabel(character: CardCharacter) {
   return CARD_CHARACTERS.find((entry) => entry.value === character)?.label ?? character;
@@ -148,6 +170,42 @@ export function getCardCostBucket(costText: string) {
 
 export function getCardsByCharacter(character: CardCharacter) {
   return CARDS.filter((card) => card.character === character);
+}
+
+export function getCardImageSrc(image: Sts2Card['image']) {
+  if (!image?.localPath) return undefined;
+  if (/^https?:\/\//i.test(image.localPath)) return image.localPath;
+
+  const base = process.env.NEXT_PUBLIC_STS2_ASSET_BASE_URL?.trim() || 'https://assets.sts2guide.com';
+  const keyPrefix =
+    process.env.NEXT_PUBLIC_STS2_ASSET_KEY_PREFIX?.trim().replace(/^\/+|\/+$/g, '') ||
+    'assets/sts2/cards-v20260310';
+  if (!base) return image.localPath;
+  const normalizedBase = base.replace(/\/+$/, '');
+  const normalizedInputPath = image.localPath.replace(/^\/+/, '');
+
+  // Convert local placeholder path to a publishable key path.
+  // Example: /assets/sts2/cards/adrenaline.webp -> assets/sts2/cards-v20260310/adrenaline.webp
+  let normalizedPath = normalizedInputPath;
+  const localCardsPrefix = 'assets/sts2/cards/';
+  if (normalizedInputPath.startsWith(localCardsPrefix)) {
+    normalizedPath = `${keyPrefix}/${normalizedInputPath.slice(localCardsPrefix.length)}`;
+  }
+
+  // Avoid duplicated segments when base already includes the same prefix.
+  try {
+    const baseUrl = new URL(normalizedBase);
+    const basePrefix = baseUrl.pathname.replace(/^\/+|\/+$/g, '');
+    if (basePrefix && normalizedPath.startsWith(`${basePrefix}/`)) {
+      normalizedPath = normalizedPath.slice(basePrefix.length + 1);
+    } else if (basePrefix && normalizedPath === basePrefix) {
+      normalizedPath = '';
+    }
+  } catch {
+    // Base may be a relative path. Ignore URL parsing errors.
+  }
+
+  return `${normalizedBase}/${normalizedPath}`;
 }
 
 export function sortCards(cards: Sts2Card[], sort: CardSort) {

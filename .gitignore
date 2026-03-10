@@ -16,9 +16,11 @@
 # next.js
 /.next/
 /out/
+/public/assets/
 
 # production
 /build
+/.cache/
 
 # misc
 .DS_Store
