@@ -5,6 +5,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { siteAssetUrl } from "@/shared/siteAssets";
 
 export const metadata: Metadata = {
   title: {
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
     description: "Master Slay the Spire 2 with comprehensive character guides, tier lists, and expert strategies.",
     images: [
       {
-        url: "/hero/home-hero.png",
+        url: siteAssetUrl('/hero/home-hero.png'),
         width: 1200,
         height: 630,
         alt: "StS2 Guide",
@@ -38,12 +39,12 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "StS2 Guide — Slay the Spire 2 Strategy Hub",
     description: "Master Slay the Spire 2 with comprehensive character guides, tier lists, and expert strategies.",
-    images: ["/hero/home-hero.png"],
+    images: [siteAssetUrl('/hero/home-hero.png')],
   },
   icons: {
-    icon: "/logo.png",
-    shortcut: "/logo.png",
-    apple: "/logo-192.png",
+    icon: siteAssetUrl('/logo.png'),
+    shortcut: siteAssetUrl('/logo.png'),
+    apple: siteAssetUrl('/logo-192.png'),
   },
   manifest: "/manifest.json",
 };
@@ -58,7 +59,7 @@ export default function RootLayout({
       <body className="relative flex flex-col min-h-screen overflow-x-hidden">
         <div className="fixed inset-0 z-0 pointer-events-none">
           <Image
-            src="/hero/home-hero.png"
+            src={siteAssetUrl('/hero/home-hero.png')}
             alt=""
             fill
             priority

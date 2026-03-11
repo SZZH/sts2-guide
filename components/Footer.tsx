@@ -4,6 +4,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { siteAssetUrl } from '@/shared/siteAssets';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -16,7 +17,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-3 mb-4">
               <Image
-                src="/logo-192.png"
+                src={siteAssetUrl('/logo-192.png')}
                 alt="StS2 Guide Logo"
                 width={40}
                 height={40}

@@ -107,7 +107,6 @@ export default async function CardDetailPage({
                     src={getCardImageSrc(card.image)!}
                     alt={card.name}
                     fill
-                    unoptimized
                     sizes="(max-width: 1024px) 100vw, 60vw"
                     className="object-contain"
                   />

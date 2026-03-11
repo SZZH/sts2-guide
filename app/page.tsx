@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { CHARACTERS, NEWS_ARTICLES } from '@/shared/gameData';
 import { WebsiteSchema, OrganizationSchema, VideoGameSchema } from './schema';
+import { siteAssetUrl } from '@/shared/siteAssets';
 
 export const metadata: Metadata = {
   title: 'StS2 Guide - Slay the Spire 2 Strategy, Builds & Tier Lists',
@@ -62,7 +63,7 @@ export default function HomePage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="/hero/home-hero.png"
+            src={siteAssetUrl('/hero/home-hero.png')}
             alt="Slay the Spire 2 gameplay"
             fill
             priority

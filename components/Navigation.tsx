@@ -9,6 +9,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
+import { siteAssetUrl } from '@/shared/siteAssets';
 
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -31,6 +32,9 @@ export default function Navigation() {
     if (href === '/news/slay-the-spire-2-launch-time-us-china') {
       return pathname === href;
     }
+    if (href === '/news') {
+      return pathname === '/news' || (pathname.startsWith('/news/') && pathname !== '/news/slay-the-spire-2-launch-time-us-china');
+    }
     return pathname === href || pathname.startsWith(`${href}/`);
   };
 
@@ -41,7 +45,7 @@ export default function Navigation() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
             <Image
-              src="/logo-192.png"
+              src={siteAssetUrl('/logo-192.png')}
               alt="StS2 Guide Logo"
               width={40}
               height={40}

@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { CHARACTER_INDEX } from '@/shared/characterIndexData';
 import { CHARACTERS } from '@/shared/gameData';
 import { BreadcrumbSchema, CollectionPageSchema, ItemListSchema } from '@/app/schema';
+import { siteAssetUrl } from '@/shared/siteAssets';
 
 export const metadata: Metadata = {
   title: 'Slay the Spire 2 Characters - Roster, Unlock Order, and Card Pools',
@@ -173,7 +174,7 @@ export default async function CharactersPage({ searchParams }: CharactersPagePro
                       >
                         <div className="relative aspect-[825/464] border-b border-border bg-forge-black/35">
                           <Image
-                            src={characterImageMap.get(character.slug) ?? '/hero/home-hero.png'}
+                            src={characterImageMap.get(character.slug) ?? siteAssetUrl('/hero/home-hero.png')}
                             alt={character.name}
                             fill
                             sizes="(max-width: 768px) 100vw, 50vw"

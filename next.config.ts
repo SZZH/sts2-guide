@@ -13,6 +13,8 @@ const nextConfig: NextConfig = {
 
   // Image optimization for external images
   images: {
+    // Use direct browser requests for all images to avoid server-side fetch DNS issues
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
