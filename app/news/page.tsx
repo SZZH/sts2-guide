@@ -26,9 +26,9 @@ export default function NewsPage() {
       ? sortedArticles
       : sortedArticles.filter((article) => article.category === selectedCategory);
   const featuredLaunchArticle = selectedCategory === 'All'
-    ? sortedArticles.find((article) => article.slug === 'slay-the-spire-2-known-issues-and-fixes')
-      ?? sortedArticles.find((article) => article.slug === 'slay-the-spire-2-co-op-guide-how-it-works')
-      ?? sortedArticles.find((article) => article.slug === 'slay-the-spire-2-hotfix-patch-notes')
+    ? sortedArticles.find((article) => article.slug === 'slay-the-spire-2-steam-charts-player-count')
+      ?? sortedArticles.find((article) => article.slug === 'slay-the-spire-2-steamdb-patch-tracker')
+      ?? sortedArticles.find((article) => article.slug === 'slay-the-spire-2-multiplayer-guide')
       ?? sortedArticles.find((article) => article.slug === 'slay-the-spire-2-launch-time-us-china')
     : null;
   const gridArticles = featuredLaunchArticle

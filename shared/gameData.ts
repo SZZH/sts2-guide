@@ -759,6 +759,300 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     ],
   },
   {
+    slug: 'slay-the-spire-2-steam-charts-player-count',
+    title: 'Slay the Spire 2 Steam Charts: Player Count, 24-Hour Peak, and Trend Read',
+    excerpt: 'A practical Steam Charts tracker for Slay the Spire 2. See current players, 24-hour peak, all-time peak, and what these trend changes actually mean during Early Access.',
+    date: '2026-03-11',
+    category: 'News',
+    readTime: '8 min',
+    featured: false,
+    image: 'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2868840/ss_026b621a38b400c9f4080a7dd9152dd3050cbe2d.1920x1080.jpg?t=1770241822',
+    url: 'https://steamcharts.com/app/2868840',
+    source: 'StS2 Guide',
+    sourceType: 'internal',
+    updatedAt: '2026-03-11',
+    intro: [
+      'If you searched for “Slay the Spire 2 steam charts” or “player count”, you usually want one thing first: the latest numbers with a clear timestamp.',
+      'This page keeps the answer practical: current players, 24-hour peak, and all-time peak, then a short interpretation of what the trend likely means for real players in Early Access.',
+    ],
+    sections: [
+      {
+        heading: 'Live player count snapshot (with timestamp)',
+        paragraphs: [
+          'As of 2026-03-11 07:00 UTC, SteamCharts showed around 264,766 players currently online, a 24-hour peak of 571,535, and an all-time peak of 574,638 for Slay the Spire 2.',
+          'Use this block as a snapshot, not a fixed truth. These numbers change continuously, so the timestamp is as important as the number itself.',
+        ],
+        bullets: [
+          'Current players (snapshot): 264,766',
+          '24-hour peak (snapshot): 571,535',
+          'All-time peak (snapshot): 574,638',
+          'Data source: SteamCharts app page for 2868840',
+        ],
+      },
+      {
+        heading: 'How to read the trend without overreacting',
+        paragraphs: [
+          'In launch-month Early Access, daily spikes and dips are normal. Weekend activity, patch timing, and regional playtime overlap can move the chart sharply without meaning the game is suddenly healthy or suddenly dying.',
+          'The better read is to watch repeated patterns over 7 to 14 days, then compare those changes with patch cadence and update quality.',
+        ],
+        bullets: [
+          'Do not treat one-day movement as a long-term signal',
+          'Watch 7-day and 14-day direction before drawing conclusions',
+          'Interpret peaks together with patch and announcement timing',
+        ],
+      },
+      {
+        heading: 'What these numbers mean for players',
+        paragraphs: [
+          'For players, strong concurrent counts usually mean faster community discovery, faster bug reproduction cycles, and quicker strategy iteration. That matters more than hype framing.',
+          'For co-op groups, active population also makes it easier to find fresh discussions and troubleshoot edge-case multiplayer behavior, even though matchmaking is not the official model right now.',
+        ],
+        bullets: [
+          'Higher activity usually means faster guide and build iteration',
+          'Patch-impact discussion tends to converge faster during high concurrency windows',
+          'Use numbers as context, not as a substitute for your own run-level testing',
+        ],
+      },
+      {
+        heading: 'Method note: SteamCharts vs SteamDB',
+        paragraphs: [
+          'SteamCharts and SteamDB both track player activity, but they can show slightly different values at specific moments because of data collection timing and presentation choices.',
+          'For editorial consistency, this page uses SteamCharts for headline snapshots and links SteamDB as a secondary verification source.',
+        ],
+        bullets: [
+          'Primary snapshot source: SteamCharts',
+          'Secondary cross-check source: SteamDB charts page',
+          'Always read numbers together with timestamp',
+        ],
+      },
+      {
+        heading: 'FAQ',
+        paragraphs: [
+          'Short answers for the most common traffic-intent questions around this keyword.',
+        ],
+        bullets: [
+          'Q: Does player count equal sales? A: No. Concurrent players and total units sold are different metrics.',
+          'Q: Is one big peak enough to judge game health? A: No. Use multi-day trend plus patch quality context.',
+          'Q: Why did my number not match exactly? A: Values move constantly and can vary by snapshot time and source.',
+        ],
+      },
+    ],
+    relatedLinks: [
+      {
+        href: '/news/slay-the-spire-2-steamdb-patch-tracker',
+        label: 'SteamDB patch tracker: timeline and what each update changed',
+      },
+      {
+        href: '/news/slay-the-spire-2-launch-time-us-china',
+        label: 'Launch status and release-time reference hub',
+      },
+      {
+        href: '/news/slay-the-spire-2-multiplayer-guide',
+        label: 'Multiplayer guide: co-op rules, limits, and setup basics',
+      },
+      {
+        href: '/news',
+        label: 'Browse more Slay the Spire 2 launch-week and Early Access updates',
+      },
+    ],
+  },
+  {
+    slug: 'slay-the-spire-2-steamdb-patch-tracker',
+    title: 'Slay the Spire 2 SteamDB Patch Tracker: Latest Patch Notes and Impact',
+    excerpt: 'Track Slay the Spire 2 updates with a SteamDB-focused patch timeline. This guide maps each patch to official notes and explains what changed for stability, localization, and multiplayer.',
+    date: '2026-03-11',
+    category: 'News',
+    readTime: '9 min',
+    featured: false,
+    image: 'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2868840/ss_8f8dcd17d2dc8f228151f00ca17e59f2f65b9d85.1920x1080.jpg?t=1770241822',
+    url: 'https://steamdb.info/app/2868840/patchnotes/',
+    source: 'StS2 Guide',
+    sourceType: 'internal',
+    updatedAt: '2026-03-11',
+    intro: [
+      'If you searched “Slay the Spire 2 steamdb”, your intent is usually patch tracking, not lore. This page is built as a practical patch timeline.',
+      'We use SteamDB for patch indexing and official Steam/Mega Crit posts for meaning, so readers can separate confirmed fixes from interpretation.',
+    ],
+    sections: [
+      {
+        heading: 'How to use this patch tracker',
+        paragraphs: [
+          'Treat SteamDB as the fast index that tells you when updates landed, then read the matching official notes to understand what actually changed.',
+          'That two-source method is more reliable than reading SteamDB entries alone, especially during active Early Access weeks.',
+        ],
+        bullets: [
+          'Step 1: check SteamDB patch timeline for timing',
+          'Step 2: map to official Steam community update notes',
+          'Step 3: test impact in your own runs before changing build rules',
+        ],
+      },
+      {
+        heading: 'Known launch-week patch milestones',
+        paragraphs: [
+          'Early Access launched on March 5, 2026, then quickly received follow-up fixes. One of the earliest high-impact patches was v0.98.1, published on March 6, 2026.',
+          'Official notes describe that hotfix as stability-focused: multiplayer progression lockout fixes, crash-path fixes, and localization fixes rather than meta-shifting balance changes.',
+        ],
+        bullets: [
+          'Early Access launch: 2026-03-05',
+          'Hotfix v0.98.1: 2026-03-06',
+          'Patch class: stability and bug-fix focused',
+        ],
+      },
+      {
+        heading: 'What v0.98.1 changed (officially stated)',
+        paragraphs: [
+          'The official hotfix notes highlight a multiplayer progression bug where disconnect timing after Act 1 could block subsequent progression flow. The patch targets that directly.',
+          'It also addresses multiple crash and localization paths, including unsupported-language fallback behavior and specific non-English text-related crash cases.',
+        ],
+        bullets: [
+          'Co-op progression lockout fix after specific disconnect scenario',
+          'Fast card-play and targeting-related crash fixes',
+          'Localization and unsupported-language fallback fixes',
+          'Not framed as a broad balance patch',
+        ],
+      },
+      {
+        heading: 'Player-facing impact: what to do after each patch',
+        paragraphs: [
+          'After a bug-fix patch, the best workflow is simple: update, reproduce your previous issue, and only then decide whether local troubleshooting is still needed.',
+          'Do not over-adjust deck plans after stability patches. Save build-rule changes for patches that explicitly target card, relic, or encounter balance.',
+        ],
+        bullets: [
+          'Update first, then re-test exact failure cases',
+          'Separate stability fixes from balance and economy changes',
+          'Keep a small personal changelog for your own repeatable issues',
+        ],
+      },
+      {
+        heading: 'FAQ',
+        paragraphs: [
+          'Short operational answers for patch-tracker search intent.',
+        ],
+        bullets: [
+          'Q: Is SteamDB itself the official patch note source? A: No. It is a timeline/index source. Use official notes for semantics.',
+          'Q: Why track both SteamDB and official notes? A: SteamDB is fast for timing, official notes are authoritative for meaning.',
+          'Q: Should I rewrite builds after every patch? A: Only when patch notes indicate balance/system changes, not routine stability fixes.',
+        ],
+      },
+    ],
+    relatedLinks: [
+      {
+        href: '/news/slay-the-spire-2-hotfix-patch-notes',
+        label: 'Hotfix breakdown: what v0.98.1 fixed in launch week',
+      },
+      {
+        href: '/news/slay-the-spire-2-known-issues-and-fixes',
+        label: 'Known issues and troubleshooting checklist',
+      },
+      {
+        href: '/news/slay-the-spire-2-steam-charts-player-count',
+        label: 'Steam Charts tracker: player count and trend interpretation',
+      },
+      {
+        href: '/news',
+        label: 'Browse all Slay the Spire 2 updates and guides',
+      },
+    ],
+  },
+  {
+    slug: 'slay-the-spire-2-multiplayer-guide',
+    title: 'Slay the Spire 2 Multiplayer Guide: Co-op Rules, Limits, and Setup',
+    excerpt: 'A direct multiplayer FAQ for Slay the Spire 2. Covers what is officially confirmed about co-op, key launch-week limits, and the fastest setup checks for groups.',
+    date: '2026-03-11',
+    category: 'Guide',
+    readTime: '8 min',
+    featured: false,
+    image: 'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2868840/ss_8f8dcd17d2dc8f228151f00ca17e59f2f65b9d85.1920x1080.jpg?t=1770241822',
+    url: 'https://store.steampowered.com/app/2868840/Slay_the_Spire_2/',
+    source: 'StS2 Guide',
+    sourceType: 'internal',
+    updatedAt: '2026-03-11',
+    intro: [
+      'This page targets one specific search intent: “Does Slay the Spire 2 have multiplayer, and how does it work right now?”',
+      'We keep the answer strict: official confirmation first, launch-week constraints second, and setup steps last.',
+    ],
+    sections: [
+      {
+        heading: 'Officially confirmed multiplayer facts',
+        paragraphs: [
+          'The Steam store page confirms Online Co-op and states support for up to 4 players. That is the core yes-or-no answer for multiplayer intent.',
+          'Official launch communication also places co-op as a major sequel differentiator, so multiplayer is part of baseline feature expectation rather than a hidden mode.',
+        ],
+        bullets: [
+          'Confirmed feature: Online Co-op',
+          'Confirmed player count: up to 4 players',
+          'Confirmed release state: part of active Early Access build',
+        ],
+      },
+      {
+        heading: 'Launch-week limits you should know',
+        paragraphs: [
+          'The official FAQ for launch-week clarified that co-op was Steam-friends based rather than open matchmaking at launch. That detail changes how groups should plan sessions.',
+          'If your group expects public queue matchmaking by default, align expectations before session setup to avoid unnecessary troubleshooting.',
+        ],
+        bullets: [
+          'Launch FAQ guidance: Steam friends first model',
+          'Do not assume public random matchmaking flow',
+          'Re-check patch notes for future matchmaking changes',
+        ],
+      },
+      {
+        heading: 'Fast setup checklist for groups',
+        paragraphs: [
+          'Before your first group session, sync build version across all players, then validate invites and session start on a clean restart.',
+          'Most early failures are version mismatch or stale client state, not fundamental co-op absence.',
+        ],
+        bullets: [
+          'All players update to latest build first',
+          'Restart Steam once before session setup',
+          'Confirm everyone can launch solo before joining group run',
+          'If one user fails repeatedly, isolate by testing host swap',
+        ],
+      },
+      {
+        heading: 'When to use this page vs the co-op deep-dive page',
+        paragraphs: [
+          'Use this multiplayer page for direct yes/no and setup answers. Use the launch-week co-op deep-dive page when you need broader context, including what is confirmed versus still being validated.',
+          'This split avoids keyword cannibalization and helps readers land on the shortest useful answer first.',
+        ],
+        bullets: [
+          'This page: multiplayer keyword intent and setup',
+          'Co-op deep-dive: broader launch-week interpretation',
+          'Both pages are updated during Early Access changes',
+        ],
+      },
+      {
+        heading: 'FAQ',
+        paragraphs: [
+          'Fast answers for common multiplayer search queries.',
+        ],
+        bullets: [
+          'Q: Does Slay the Spire 2 have multiplayer? A: Yes, official Online Co-op support is confirmed.',
+          'Q: How many players can co-op support? A: Up to 4 players, per official store listing.',
+          'Q: Is this a final 1.0 co-op ruleset? A: No. The game is in Early Access and rules/features can evolve.',
+        ],
+      },
+    ],
+    relatedLinks: [
+      {
+        href: '/news/slay-the-spire-2-co-op-guide-how-it-works',
+        label: 'Co-op launch guide: what is confirmed and what is still being validated',
+      },
+      {
+        href: '/news/slay-the-spire-2-known-issues-and-fixes',
+        label: 'Known issues if your co-op session runs into crash or freeze',
+      },
+      {
+        href: '/news/slay-the-spire-2-launch-time-us-china',
+        label: 'Release-time and launch-status hub',
+      },
+      {
+        href: '/news',
+        label: 'More Slay the Spire 2 guides and update tracking',
+      },
+    ],
+  },
+  {
     slug: 'best-starter-character-slay-the-spire-2-early-access',
     title: 'Best Starter Character in Slay the Spire 2 (Early Access)',
     excerpt: 'New to Slay the Spire 2 and not sure who to pick first? This updated launch-week guide compares Ironclad, Silent, Necrobinder, and Regent for solo stability, co-op usefulness, and first-10-run learning value.',

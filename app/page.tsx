@@ -17,9 +17,9 @@ export const metadata: Metadata = {
 export default function HomePage() {
   const featuredCharacters = CHARACTERS.slice(0, 2);
   const prioritizedLatestNewsSlugs = [
-    'slay-the-spire-2-known-issues-and-fixes',
-    'slay-the-spire-2-hotfix-patch-notes',
-    'slay-the-spire-2-co-op-guide-how-it-works',
+    'slay-the-spire-2-steam-charts-player-count',
+    'slay-the-spire-2-steamdb-patch-tracker',
+    'slay-the-spire-2-multiplayer-guide',
   ];
   const latestNews = [
     ...prioritizedLatestNewsSlugs
@@ -31,24 +31,24 @@ export default function HomePage() {
   ].slice(0, 3);
   const launchWeekArticles = [
     {
-      href: '/news/slay-the-spire-2-known-issues-and-fixes',
-      label: 'Known Issues & Fixes',
-      description: 'Crash, black screen, freeze, and text issues during launch week.',
+      href: '/news/slay-the-spire-2-steam-charts-player-count',
+      label: 'Steam Charts Tracker',
+      description: 'Current players, 24-hour peak, and all-time peak with timestamped context.',
     },
     {
-      href: '/news/slay-the-spire-2-hotfix-patch-notes',
-      label: 'Hotfix Patch Notes',
-      description: 'What v0.98.1 fixed and what still needs troubleshooting.',
+      href: '/news/slay-the-spire-2-steamdb-patch-tracker',
+      label: 'SteamDB Patch Tracker',
+      description: 'Patch timeline mapped to official notes and practical player impact.',
     },
     {
-      href: '/news/slay-the-spire-2-co-op-guide-how-it-works',
-      label: 'Co-op Guide',
-      description: 'What multiplayer officially confirms at launch and how to start cleanly.',
+      href: '/news/slay-the-spire-2-multiplayer-guide',
+      label: 'Multiplayer Guide',
+      description: 'Official co-op rules, launch limits, and fastest setup checks for groups.',
     },
     {
-      href: '/news/slay-the-spire-2-steam-deck-performance-guide',
-      label: 'Steam Deck Guide',
-      description: 'Current Deck performance picture and first troubleshooting steps.',
+      href: '/news/slay-the-spire-2-launch-time-us-china',
+      label: 'Release Date & Time',
+      description: 'Early Access release date, unlock-time conversion, and launch-status hub.',
     },
   ];
 
