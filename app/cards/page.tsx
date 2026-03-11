@@ -393,6 +393,45 @@ export default async function CardsPage({ searchParams }: CardsPageProps) {
                     </div>
                   </>
                 )}
+
+                <div className="mt-6 rounded-xl border border-border bg-background/40 p-4">
+                  <h3 className="font-heading text-lg font-bold">Related Queries</h3>
+                  <div className="mt-3 flex flex-wrap gap-3 text-sm">
+                    <Link href="/characters" className="text-molten-orange transition-colors hover:text-ember-glow">
+                      Character roster and unlock order
+                    </Link>
+                    <Link href="/relics" className="text-molten-orange transition-colors hover:text-ember-glow">
+                      Relics database
+                    </Link>
+                    <Link href="/potions" className="text-molten-orange transition-colors hover:text-ember-glow">
+                      Potions database
+                    </Link>
+                    <Link
+                      href="/news/slay-the-spire-2-co-op-guide-how-it-works"
+                      className="text-molten-orange transition-colors hover:text-ember-glow"
+                    >
+                      Co-op and multiplayer guide
+                    </Link>
+                    <Link
+                      href="/news/slay-the-spire-2-steam-charts-player-count"
+                      className="text-molten-orange transition-colors hover:text-ember-glow"
+                    >
+                      Steam charts player count
+                    </Link>
+                    <Link
+                      href="/news/slay-the-spire-2-steamdb-patch-tracker"
+                      className="text-molten-orange transition-colors hover:text-ember-glow"
+                    >
+                      SteamDB patch tracker
+                    </Link>
+                    <Link
+                      href="/news/slay-the-spire-2-launch-time-us-china"
+                      className="text-molten-orange transition-colors hover:text-ember-glow"
+                    >
+                      Release date and launch time
+                    </Link>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

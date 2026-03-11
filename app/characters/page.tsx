@@ -216,6 +216,45 @@ export default async function CharactersPage({ searchParams }: CharactersPagePro
                   })}
                 </div>
               )}
+
+              <div className="mt-6 rounded-xl border border-border bg-background/40 p-4">
+                <h3 className="font-heading text-lg font-bold">Related Queries</h3>
+                <div className="mt-3 flex flex-wrap gap-3 text-sm">
+                  <Link href="/cards" className="text-molten-orange transition-colors hover:text-ember-glow">
+                    Full cards database
+                  </Link>
+                  <Link href="/relics" className="text-molten-orange transition-colors hover:text-ember-glow">
+                    Relics by rarity and character
+                  </Link>
+                  <Link href="/potions" className="text-molten-orange transition-colors hover:text-ember-glow">
+                    Potions by rarity and character
+                  </Link>
+                  <Link
+                    href="/news/slay-the-spire-2-top-10-beginner-mistakes"
+                    className="text-molten-orange transition-colors hover:text-ember-glow"
+                  >
+                    Beginner mistakes to avoid
+                  </Link>
+                  <Link
+                    href="/news/slay-the-spire-2-what-to-upgrade-first"
+                    className="text-molten-orange transition-colors hover:text-ember-glow"
+                  >
+                    What to upgrade first
+                  </Link>
+                  <Link
+                    href="/characters/necrobinder"
+                    className="text-molten-orange transition-colors hover:text-ember-glow"
+                  >
+                    Necrobinder character page
+                  </Link>
+                  <Link
+                    href="/cards/character/necrobinder"
+                    className="text-molten-orange transition-colors hover:text-ember-glow"
+                  >
+                    Necrobinder card pool
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
           </div>

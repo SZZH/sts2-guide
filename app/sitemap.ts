@@ -15,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const latestNewsUpdate = NEWS_ARTICLES.reduce((latest, article) => {
     return toDate(article.updatedAt) > latest ? toDate(article.updatedAt) : latest;
   }, toDate('2026-01-01'));
+  const latestSeoPushUpdate = toDate('2026-03-11');
 
   // Static pages
   const staticPages: MetadataRoute.Sitemap = [
@@ -71,17 +72,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Dynamic character pages
   const characterPages: MetadataRoute.Sitemap = CHARACTERS.map((character) => ({
     url: `${baseUrl}/characters/${character.slug}`,
-    lastModified: toDate(character.updatedAt),
-    changeFrequency: 'weekly' as const,
-    priority: 0.9,
+    lastModified: character.slug === 'necrobinder' ? latestSeoPushUpdate : toDate(character.updatedAt),
+    changeFrequency: character.slug === 'necrobinder' ? ('daily' as const) : ('weekly' as const),
+    priority: character.slug === 'necrobinder' ? 0.95 : 0.9,
   }));
 
-  const newsPages: MetadataRoute.Sitemap = NEWS_ARTICLES.map((article) => ({
-    url: `${baseUrl}/news/${article.slug}`,
-    lastModified: toDate(article.updatedAt),
-    changeFrequency: 'monthly' as const,
-    priority: 0.7,
-  }));
+  const newsPages: MetadataRoute.Sitemap = NEWS_ARTICLES.map((article) => {
+    const isPriorityHotfix =
+      article.slug === 'slay-the-spire-2-hotfix-patch-notes' ||
+      article.slug === 'slay-the-spire-2-known-issues-and-fixes';
+
+    return {
+      url: `${baseUrl}/news/${article.slug}`,
+      lastModified: isPriorityHotfix ? latestSeoPushUpdate : toDate(article.updatedAt),
+      changeFrequency: isPriorityHotfix ? ('daily' as const) : ('monthly' as const),
+      priority: isPriorityHotfix ? 0.82 : 0.7,
+    };
+  });
 
   const cardPages: MetadataRoute.Sitemap = CARDS.map((card) => ({
     url: `${baseUrl}/cards/${card.slug}`,
@@ -92,9 +99,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const characterCardPages: MetadataRoute.Sitemap = CARD_CHARACTERS.map((character) => ({
     url: `${baseUrl}/cards/character/${character.value}`,
-    lastModified: toDate('2026-03-09'),
-    changeFrequency: 'weekly' as const,
-    priority: 0.78,
+    lastModified: character.value === 'necrobinder' ? latestSeoPushUpdate : toDate('2026-03-09'),
+    changeFrequency: character.value === 'necrobinder' ? ('daily' as const) : ('weekly' as const),
+    priority: character.value === 'necrobinder' ? 0.85 : 0.78,
   }));
 
   return [...staticPages, ...characterPages, ...newsPages, ...cardPages, ...characterCardPages];

@@ -50,6 +50,16 @@ export default function HomePage() {
       label: 'Release Date & Time',
       description: 'Early Access release date, unlock-time conversion, and launch-status hub.',
     },
+    {
+      href: '/news/slay-the-spire-2-hotfix-patch-notes',
+      label: 'Hotfix Patch Notes',
+      description: 'Track launch hotfixes and check what changed before your next run.',
+    },
+    {
+      href: '/news/slay-the-spire-2-known-issues-and-fixes',
+      label: 'Known Issues',
+      description: 'Current known problems, temporary workarounds, and fix status.',
+    },
   ];
 
   return (
@@ -237,6 +247,12 @@ export default function HomePage() {
                 className="inline-flex items-center rounded-lg bg-molten-orange px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-ember-glow"
               >
                 Open Cards Database
+              </Link>
+              <Link
+                href="/potions"
+                className="inline-flex items-center rounded-lg border border-border px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:border-molten-orange hover:text-molten-orange"
+              >
+                Open Potions Database
               </Link>
               <Link
                 href="/characters"

@@ -197,6 +197,27 @@ export default async function PotionsPage({ searchParams }: PotionsPageProps) {
                     ))}
                   </div>
                 )}
+
+                <div className="mt-6 rounded-xl border border-border bg-background/40 p-4">
+                  <h3 className="font-heading text-lg font-bold">Related Queries</h3>
+                  <div className="mt-3 flex flex-wrap gap-3 text-sm">
+                    <Link href="/cards" className="text-molten-orange transition-colors hover:text-ember-glow">
+                      Full cards database
+                    </Link>
+                    <Link href="/characters" className="text-molten-orange transition-colors hover:text-ember-glow">
+                      Character roster and card pools
+                    </Link>
+                    <Link href="/relics" className="text-molten-orange transition-colors hover:text-ember-glow">
+                      Relics database
+                    </Link>
+                    <Link
+                      href="/news/slay-the-spire-2-steam-charts-player-count"
+                      className="text-molten-orange transition-colors hover:text-ember-glow"
+                    >
+                      Steam charts player count
+                    </Link>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

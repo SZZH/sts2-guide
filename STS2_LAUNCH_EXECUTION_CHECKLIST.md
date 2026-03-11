@@ -258,6 +258,81 @@
 - [x] 给 `/characters` 接入 breadcrumb + collection + item list schema
 - [x] 给 `/cards` 接入 breadcrumb + collection + item list schema
 - [x] 给 `/cards/character/[slug]` 接入 breadcrumb + collection + item list schema
+
+---
+
+## 模块六：社媒发布攻略（Reddit / X / Steam，必读）
+
+为什么单独写这一块：
+- Reddit 对外链和自推广极其敏感，直接贴站点链接很容易触发 `Spam / Excessive self-promotion` 或站内过滤。
+- 相同内容跨社区重复发布，也容易被判定为批量推广。
+
+目标：
+- 在尽量不触发风控的前提下获取真实讨论和有效引流。
+- 先做社区价值，再做链接承接。
+
+### 执行前检查（每次都要做）
+- [ ] 先读本节完整策略（不可跳过）。
+- [ ] 查看目标社区规则：是否允许自帖、是否允许外链、是否要求标签/标题格式。
+- [ ] 检查最近 24 小时是否已在相邻社区发过同主题内容；若有，改角度再发。
+
+### 发帖策略（默认）
+- 主贴默认不放链接，先发讨论型文本帖。
+- 一帖只讨论一个问题，不做“合集导流”。
+- 标题避免营销词：`best/ultimate/full guide`。
+- 首贴文案必须社区定制，禁止跨版块完全复用。
+- 单日频率建议：1-2 帖（新号或低 karma 账号优先保守）。
+
+### 链接策略（默认）
+- 链接优先放在楼主评论，不放正文。
+- 发布时间建议：主贴发出后 15-60 分钟，再补评论链接。
+- 每个帖子最多 1 个外链，且只指向单一落地页。
+- 外链前先给出可读摘要（例如：更新点、时间线、结论），避免“裸链”。
+
+### 社区优先级（当前项目）
+- 第一优先：`r/slaythespire`
+- 第二优先：`r/roguelites`
+- 第三优先：`r/Games`（讨论导向，规则严格）
+- 谨慎：`r/pcgaming`、`r/gaming`（高风控，易触发广告检测）
+
+### 异常处理
+- 若出现 `Post Check` 或疑似广告提示：先改成“求反馈/求建议”语气，再提交。
+- 若出现 `Removed by Reddit filters`：
+  - 不重复立即重发同文案；
+  - 24h 后改标题、改结构、降推广感再试；
+  - 优先转到更垂直社区。
+- 若社区为私密或需审批成员：记录并更换公开社区，不强行继续。
+
+### 可复用文案骨架（低风控）
+- 开场：我在做一个用于 Early Access 追踪的小工具/页面，想听玩家反馈。
+- 中段：明确 2-3 个想解决的问题（例如补丁时间线、玩家趋势解释）。
+- 结尾：问一个具体问题（例如“你最想先看到哪个指标？”）。
+- 备注：默认不在主贴放链接；需要时在评论补单链接。
+
+### X（Twitter）发布注意事项
+- 目标：先拿互动和收藏，再拿点击；避免看起来像硬广。
+- 首帖结构：`一句结论 + 1个关键数据/观察 + 1个问题`。
+- 外链策略：默认每条推文只放 1 个链接；更推荐做 2-3 条串帖，链接放末条。
+- 语气策略：少用营销词（`best/ultimate/must read`），多用“正在验证/欢迎纠错”。
+- 频率建议：同主题 24 小时内不重复刷屏；改角度再发。
+- 配图建议：优先数据截图、更新对比图；不要无关配图。
+- 风险规避：避免机械化重复文案、避免连续只发外链不互动。
+
+### Steam 社区发帖注意事项
+- 先读目标讨论区版规和置顶帖（每个游戏社区标准不同）。
+- 标题要可检索：包含游戏名、版本、问题关键词或主题关键词。
+- 一帖只讲一件事：`现象 -> 复现步骤 -> 期望结果 -> 实际结果 -> 版本/设备`。
+- 先搜索是否已有同主题高质量帖；能补充就优先补充，减少重复发帖。
+- 外链策略：正文先给完整信息，外链仅作补充参考，不做导流式裸链。
+- 语气策略：保持建设性，避免情绪化攻击和引战表达。
+- 证据优先：截图、日志片段、时间点、系统配置能显著提高回复质量。
+
+### 跨平台通用执行清单（Reddit / X / Steam）
+- [ ] 发帖前确认：本条内容的唯一目的是什么（求反馈 / 报告问题 / 分享更新）。
+- [ ] 发帖前确认：是否能在“无链接”情况下让用户读懂核心信息。
+- [ ] 发帖前确认：每帖最多 1 个链接，且链接直达单一落地页。
+- [ ] 发帖后 30-60 分钟内，至少做 1 次回复互动（不是只发不回）。
+- [ ] 若被风控/移除：记录触发平台、触发文案、处理结果，禁止原文立即重发。
 - [x] 给 `/cards/[slug]` 接入 breadcrumb + collection schema
 
 ### 当前判断
@@ -428,25 +503,79 @@
 - [x] 校验 sitemap 中新增模块的更新频率与实际更新节奏匹配（`/cards` 改为按实际卡数据最新日期；`/relics` 与 `/potions` 使用当前模块更新时间）
 
 ### 顺序 2：完成 cards 的高价值数据复核闭环
+- 最新校验（2026-03-11）：
+  - `cardsChecked=504`
+  - `missingOfficial=0`
+  - `nameMismatch=0`
+  - `descriptionMismatch=90`（当前首要风险）
+  - `imageHashMismatch=160`（来源差异，不等于错误；待官方图完全落地后再收口）
 - [ ] 继续复核 `/cards` 默认第一页所有卡
 - [ ] 继续复核每个角色全部 starter 卡
 - [ ] 继续复核角色卡池页首屏展示卡
 - [ ] 建立“已人工核过卡片清单”（后续官方数据替换优先集）
 
 ### 顺序 3：补齐 relics / potions 的数据可信度
+- 最新校验（2026-03-11）：
+  - `relics total=290`，`filenameStemMismatch=0`，`hasImageButFileNotExists=0`
+  - `potions total=64`，`filenameStemMismatch=0`，`hasImageButFileNotExists=0`
+  - 结论：名称/slug/图片文件存在性链路完整，可先进入内容文本准确性抽检阶段
 - [ ] 建立 `relics / potions` 最小可用准确性清单（名称、稀有度、效果）
 - [ ] 在页面加入版本与更新时间信号（不夸大权威性）
 - [ ] 暂不接图，等确认到可用官方素材后统一上 R2
 
 ### 顺序 4：强化四大查询入口的内链闭环
-- [ ] `cards` 增加到对应角色、relics、potions 的推荐路径
-- [ ] `characters` 增加到对应卡池与关键新手指南的双向入口
-- [ ] `relics / potions` 增加回流到 cards 与角色页面的入口
-- [ ] 首页和导航维持四入口并给出明确使用场景
+- [x] `cards` 增加到对应角色、relics、potions 的推荐路径
+- [x] `characters` 增加到对应卡池与关键新手指南的双向入口
+- [x] `relics / potions` 增加回流到 cards 与角色页面的入口
+- [x] 首页和导航维持四入口并给出明确使用场景
 
 ### 顺序 5：再做增量内容扩展
 - [ ] 仅在前四步稳定后，新增高意图专题页（starter / first-run / class-specific）
 - [ ] 中文站保持暂缓，待英文主站稳定后按模块十启动
+
+### 顺序 6：GSC 索引推进（执行状态）
+- 为什么要做：
+  - 当前主要瓶颈是“页面未收录/收录慢”，不是页面不存在。
+- 目的：
+  - 把已完成的核心查询页和高意图词页尽快送入抓取优先队列。
+- 希望达到的效果：
+  - 缩短新页面进入搜索结果的时间，尽快验证 impressions 与点击。
+- 已完成（2026-03-11）：
+  - [x] 已请求编入索引：`/cards`
+  - [x] 已请求编入索引：`/characters`
+  - [x] 已请求编入索引：`/relics`
+  - [x] 已请求编入索引：`/potions`
+  - [x] 已请求编入索引：`/news`
+  - [x] 已请求编入索引：`/guides`
+  - [x] 已请求编入索引：`/news/slay-the-spire-2-steam-charts-player-count`
+  - [x] 已请求编入索引：`/news/slay-the-spire-2-steamdb-patch-tracker`
+  - [x] 已请求编入索引：`/characters/ironclad`
+  - [x] 已请求编入索引：`/characters/regent`
+  - [x] 已请求编入索引：`/characters/defect`
+  - [x] 已请求编入索引：`/cards/character/ironclad`
+  - [x] 已请求编入索引：`/cards/character/silent`
+  - [x] 已请求编入索引：`/cards/character/regent`
+  - [x] 已请求编入索引：`/cards/character/defect`
+  - [x] 已核验：首页 `/` 在 GSC 显示“网址已收录到 Google”
+  - [x] 已核验：`/mechanics` 在 GSC 显示“网址已收录到 Google”
+  - [x] 已核验：`/news/slay-the-spire-2-launch-time-us-china` 在 GSC 显示“网址已收录到 Google”
+  - [x] 已核验：`/characters/silent` 在 GSC 显示“网址已收录到 Google”
+- 待完成：
+  - [ ] 批量继续提交剩余核心 URL（news 其余高意图页 + 其余角色详情 + 其余角色卡池页）
+  - [ ] 复查 `Google 无法识别此网址` 的页面是否被 sitemap/内链覆盖（重点：`/potions`）
+- 阻塞说明：
+  - [x] 已出现 GSC 频率限制提示（“出了点问题，请过几个小时再试”），需分批继续提交
+  - [x] 本轮已在限流窗口内追加成功提交 2 条高意图 news URL，说明可继续采用“小批量 + 间隔”策略
+  - [x] 角色页继续提交时再次出现频率限制（示例：`/characters/defect` 提交时报错），需下一轮重试
+  - [x] 今日触发 GSC 硬上限（`超出了配额`：今日已超每日配额），后续提交需在明天继续
+- `/potions` 复查结论（2026-03-11）：
+  - [x] 线上返回 `HTTP 200`，无 `noindex` 信号
+  - [x] canonical 正确：`https://sts2guide.com/potions`
+  - [x] 已在 `sitemap.xml` 中
+  - [x] 已有导航与查询页内链，且首页 Database 主行动区新增 `/potions` 直链
+  - [ ] 判定为索引节奏问题，等待 GSC 下一轮抓取验证
+  - [x] 提交日志：`ops-logs/gsc-submission-log-2026-03-11.md`
+  - [x] 索引体检日志：`ops-logs/indexability-audit-2026-03-11.md`
 
 ### 当前可执行的复核顺序
 
@@ -560,14 +689,20 @@
 - 让首页、`/news`、数据库页都能把用户导向“词与页完全对应”的落地页。
 
 - [ ] 新增并上线以下英文落地页（标题/H1 精确包含目标词）：
+- 当前状态说明（2026-03-11）：
+  - [x] 已有并可承接：`/news/slay-the-spire-2-steam-charts-player-count`
+  - [x] 已有并可承接：`/news/slay-the-spire-2-steamdb-patch-tracker`
+  - [x] 已有并可承接（同主题）：`/news/slay-the-spire-2-co-op-guide-how-it-works`
+  - [ ] 仍缺严格同名落地页：`/news/slay-the-spire-2-release-date`
+- [ ] 新增并上线以下英文落地页（标题/H1 精确包含目标词）：
   - `/news/slay-the-spire-2-multiplayer-coop-guide`
   - `/news/slay-the-spire-2-steam-charts-player-count`
   - `/news/slay-the-spire-2-steamdb-patch-tracker`
   - `/news/slay-the-spire-2-release-date`
 - [ ] 首页增加上述页面入口（趋势专题位）
-- [ ] `/news` 列表提升上述页面曝光优先级
-- [ ] 在 `/cards`、`/characters` 增加到上述页面的相关查询入口
-- [ ] 发布后立即提交 sitemap 与 URL 检查（GSC）
+- [x] `/news` 列表提升上述页面曝光优先级
+- [x] 在 `/cards`、`/characters` 增加到上述页面的相关查询入口
+- [~] 发布后立即提交 sitemap 与 URL 检查（GSC）（已提交首批，受 GSC 限流，待继续）
 - [ ] 7 天复查：这 4 页 impressions / query 覆盖是否起量
 
 ### 国家/语种扩量顺序

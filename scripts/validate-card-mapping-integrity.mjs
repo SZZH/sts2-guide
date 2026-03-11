@@ -7,7 +7,7 @@ import { CARD_CROSSCHECK_RECORDS } from '../shared/cardsCrosscheck.generated.ts'
 import { CARD_WIKI_TEXT_BY_SLUG } from '../shared/cardsWikiFallback.generated.ts';
 
 const DEFAULT_BUNDLE_ROOT =
-  '/Users/jiaojian/Desktop/sts2/sts2整理过的文件/sts2_site_asset_bundle_v2/named_assets';
+  '/Users/jiaojian/Desktop/sts2/sts2整理过的文件/named_assets';
 const BUNDLE_ROOT = process.env.STS2_BUNDLE_ROOT ?? DEFAULT_BUNDLE_ROOT;
 const CARD_DATA_CSV = path.join(BUNDLE_ROOT, 'card_data_full.csv');
 const ASSET_BASE_URL = (process.env.STS2_ASSET_BASE_URL ?? 'https://assets.sts2guide.com').replace(/\/+$/, '');

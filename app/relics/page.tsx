@@ -203,6 +203,27 @@ export default async function RelicsPage({ searchParams }: RelicsPageProps) {
                     ))}
                   </div>
                 )}
+
+                <div className="mt-6 rounded-xl border border-border bg-background/40 p-4">
+                  <h3 className="font-heading text-lg font-bold">Related Queries</h3>
+                  <div className="mt-3 flex flex-wrap gap-3 text-sm">
+                    <Link href="/cards" className="text-molten-orange transition-colors hover:text-ember-glow">
+                      Full cards database
+                    </Link>
+                    <Link href="/characters" className="text-molten-orange transition-colors hover:text-ember-glow">
+                      Character roster and card pools
+                    </Link>
+                    <Link href="/potions" className="text-molten-orange transition-colors hover:text-ember-glow">
+                      Potions database
+                    </Link>
+                    <Link
+                      href="/news/slay-the-spire-2-steamdb-patch-tracker"
+                      className="text-molten-orange transition-colors hover:text-ember-glow"
+                    >
+                      Patch tracker and metadata
+                    </Link>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

@@ -63,6 +63,24 @@ export default function NewsPage() {
           ))}
         </div>
 
+        <div className="mb-10 rounded-xl border border-border bg-shadow-gray/60 p-5">
+          <h2 className="font-heading text-xl font-bold">Priority Updates</h2>
+          <div className="mt-3 flex flex-wrap gap-4 text-sm">
+            <Link href="/news/slay-the-spire-2-hotfix-patch-notes" className="text-molten-orange transition-colors hover:text-ember-glow">
+              Hotfix patch notes
+            </Link>
+            <Link href="/news/slay-the-spire-2-known-issues-and-fixes" className="text-molten-orange transition-colors hover:text-ember-glow">
+              Known issues and fixes
+            </Link>
+            <Link href="/characters/necrobinder" className="text-molten-orange transition-colors hover:text-ember-glow">
+              Necrobinder character guide
+            </Link>
+            <Link href="/cards/character/necrobinder" className="text-molten-orange transition-colors hover:text-ember-glow">
+              Necrobinder card pool
+            </Link>
+          </div>
+        </div>
+
         {featuredLaunchArticle && (
           <Link
             href={`/news/${featuredLaunchArticle.slug}`}

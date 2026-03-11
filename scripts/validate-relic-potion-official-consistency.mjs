@@ -5,7 +5,7 @@ import path from 'node:path';
 
 const BUNDLE_DIR =
   process.env.STS2_BUNDLE_DIR ??
-  '/Users/jiaojian/Desktop/sts2/sts2整理过的文件/sts2_site_asset_bundle_v3/named_assets';
+  '/Users/jiaojian/Desktop/sts2/sts2整理过的文件/named_assets';
 const REPORT_PATH = path.resolve(process.cwd(), 'ops-logs/relic-potion-official-consistency-2026-03-10.md');
 
 function mustReadJson(filePath) {
