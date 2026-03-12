@@ -67,22 +67,22 @@ export default function NewsPage() {
           <h2 className="font-heading text-xl font-bold">Priority Updates</h2>
           <div className="mt-3 flex flex-wrap gap-4 text-sm">
             <Link href="/news/slay-the-spire-2-hotfix-patch-notes" className="text-molten-orange transition-colors hover:text-ember-glow">
-              Hotfix patch notes
+              What changed in the latest hotfix?
             </Link>
             <Link href="/news/slay-the-spire-2-known-issues-and-fixes" className="text-molten-orange transition-colors hover:text-ember-glow">
-              Known issues and fixes
+              Which known issues are still active?
             </Link>
             <Link href="/news/slay-the-spire-2-multiplayer-coop-guide" className="text-molten-orange transition-colors hover:text-ember-glow">
-              Multiplayer co-op guide
+              How does Slay the Spire 2 co-op work?
             </Link>
             <Link href="/news/slay-the-spire-2-release-date" className="text-molten-orange transition-colors hover:text-ember-glow">
-              Release date status page
+              What is the confirmed release date and status?
             </Link>
             <Link href="/characters/necrobinder" className="text-molten-orange transition-colors hover:text-ember-glow">
-              Necrobinder character guide
+              How should I play Necrobinder?
             </Link>
             <Link href="/cards/character/necrobinder" className="text-molten-orange transition-colors hover:text-ember-glow">
-              Necrobinder card pool
+              Which cards are in the Necrobinder pool?
             </Link>
           </div>
         </div>

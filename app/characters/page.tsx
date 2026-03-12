@@ -3,8 +3,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { CHARACTER_INDEX } from '@/shared/characterIndexData';
 import { CHARACTERS } from '@/shared/gameData';
-import { BreadcrumbSchema, CollectionPageSchema, ItemListSchema } from '@/app/schema';
+import { BreadcrumbSchema, CollectionPageSchema, FAQSchema, ItemListSchema } from '@/app/schema';
 import { siteAssetUrl } from '@/shared/siteAssets';
+import MobileFiltersPanel from '@/components/MobileFiltersPanel';
 
 export const metadata: Metadata = {
   title: 'Slay the Spire 2 Characters - Roster, Unlock Order, and Card Pools',
@@ -38,6 +39,20 @@ const AVAILABILITY_FILTERS = [
   { value: 'starter', label: 'Starter' },
   { value: 'unlocking', label: 'Unlocking' },
 ] as const;
+const CHARACTERS_FAQ_ITEMS = [
+  {
+    question: 'Which page should I use to compare Slay the Spire 2 characters fast?',
+    answer: 'Use this character roster page to compare availability, mechanic focus, and direct links into each character detail and card pool.',
+  },
+  {
+    question: 'Can I filter between starter and unlockable characters?',
+    answer: 'Yes. Use the Availability filter to switch between starter-only, unlocking-only, or full roster views.',
+  },
+  {
+    question: 'Where do I go after picking a character?',
+    answer: 'Open the character detail page first, then jump to that character card pool or the full cards database for draft-level decisions.',
+  },
+];
 
 function buildHref(filters: { q?: string; availability?: string }) {
   const params = new URLSearchParams();
@@ -63,6 +78,14 @@ export default async function CharactersPage({ searchParams }: CharactersPagePro
     const haystack = `${character.name} ${character.shortSummary} ${character.mechanicFocus}`.toLowerCase();
     return haystack.includes(query);
   });
+  const mobileActiveFilters = [
+    availability !== 'all'
+      ? `Availability: ${AVAILABILITY_FILTERS.find((entry) => entry.value === availability)?.label ?? availability}`
+      : null,
+    query ? `Search: "${query}"` : null,
+  ].filter(Boolean) as string[];
+  const mobileFilterSummary =
+    mobileActiveFilters.length > 0 ? mobileActiveFilters.join(' · ') : 'No filters applied';
 
   const characterImageMap = new Map(CHARACTERS.map((entry) => [entry.slug, entry.image]));
 
@@ -87,11 +110,53 @@ export default async function CharactersPage({ searchParams }: CharactersPagePro
           url: `https://sts2guide.com${character.guideHref ?? character.cardsHref}`,
         }))}
       />
+      <FAQSchema questions={CHARACTERS_FAQ_ITEMS} />
       <div className="min-h-screen py-12">
         <div className="container mx-auto px-4">
           <div className="rounded-2xl border border-border bg-forge-black/70 p-6 md:p-8">
+          <MobileFiltersPanel
+            title="Filters"
+            activeCount={mobileActiveFilters.length}
+            summaryText={mobileFilterSummary}
+            clearHref="/characters"
+          >
+              <div>
+                <h2 className="mb-3 text-xl font-bold">Search</h2>
+                <form action="/characters" className="space-y-3">
+                  <input type="hidden" name="availability" value={availability === 'all' ? '' : availability} />
+                  <input
+                    type="search"
+                    name="q"
+                    defaultValue={query}
+                    placeholder="Search role or mechanic"
+                    className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-molten-orange"
+                  />
+                  <button
+                    type="submit"
+                    className="w-full rounded-lg bg-molten-orange px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-ember-glow"
+                  >
+                    Apply Search
+                  </button>
+                </form>
+              </div>
+              <div>
+                <h2 className="mb-3 text-xl font-bold">Availability</h2>
+                <div className="flex flex-wrap gap-2">
+                  {AVAILABILITY_FILTERS.map((entry) => (
+                    <Link
+                      key={entry.value}
+                      href={buildHref({ q: query || undefined, availability: entry.value })}
+                      scroll={false}
+                      className={`rounded-full border px-3 py-2 text-sm transition-colors ${availability === entry.value ? 'border-molten-orange text-molten-orange' : 'border-border text-muted-foreground hover:border-molten-orange'}`}
+                    >
+                      {entry.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+          </MobileFiltersPanel>
           <div className="grid gap-6 lg:grid-cols-[300px_minmax(0,1fr)]">
-            <aside className="space-y-6">
+            <aside className="hidden space-y-6 lg:block">
               <div>
                 <h2 className="mb-3 text-xl font-bold">Search</h2>
                 <form action="/characters" className="space-y-3">
@@ -135,6 +200,39 @@ export default async function CharactersPage({ searchParams }: CharactersPagePro
                 >
                   Clear all filters
                 </Link>
+              </div>
+
+              <div className="hidden rounded-xl border border-border bg-background/40 p-4 lg:block">
+                <h3 className="font-heading text-lg font-bold">Related Queries</h3>
+                <div className="mt-3 flex flex-wrap gap-3 text-sm">
+                  <Link href="/cards" className="text-molten-orange transition-colors hover:text-ember-glow">
+                    Which cards belong to each character?
+                  </Link>
+                  <Link href="/relics" className="text-molten-orange transition-colors hover:text-ember-glow">
+                    Which relics fit each character?
+                  </Link>
+                  <Link href="/potions" className="text-molten-orange transition-colors hover:text-ember-glow">
+                    Which potions are best per character?
+                  </Link>
+                  <Link
+                    href="/news/slay-the-spire-2-top-10-beginner-mistakes"
+                    className="text-molten-orange transition-colors hover:text-ember-glow"
+                  >
+                    What beginner mistakes should I avoid?
+                  </Link>
+                  <Link
+                    href="/news/slay-the-spire-2-what-to-upgrade-first"
+                    className="text-molten-orange transition-colors hover:text-ember-glow"
+                  >
+                    What should I upgrade first?
+                  </Link>
+                  <Link
+                    href="/news/slay-the-spire-2-multiplayer-coop-guide"
+                    className="text-molten-orange transition-colors hover:text-ember-glow"
+                  >
+                    How does co-op work in Slay the Spire 2?
+                  </Link>
+                </div>
               </div>
             </aside>
 
@@ -217,53 +315,53 @@ export default async function CharactersPage({ searchParams }: CharactersPagePro
                 </div>
               )}
 
-              <div className="mt-6 rounded-xl border border-border bg-background/40 p-4">
+              <div className="mt-6 rounded-xl border border-border bg-background/40 p-4 lg:hidden">
                 <h3 className="font-heading text-lg font-bold">Related Queries</h3>
                 <div className="mt-3 flex flex-wrap gap-3 text-sm">
                   <Link href="/cards" className="text-molten-orange transition-colors hover:text-ember-glow">
-                    Full cards database
+                    Which cards belong to each character?
                   </Link>
                   <Link href="/relics" className="text-molten-orange transition-colors hover:text-ember-glow">
-                    Relics by rarity and character
+                    Which relics fit each character?
                   </Link>
                   <Link href="/potions" className="text-molten-orange transition-colors hover:text-ember-glow">
-                    Potions by rarity and character
+                    Which potions are best per character?
                   </Link>
                   <Link
                     href="/news/slay-the-spire-2-top-10-beginner-mistakes"
                     className="text-molten-orange transition-colors hover:text-ember-glow"
                   >
-                    Beginner mistakes to avoid
+                    What beginner mistakes should I avoid?
                   </Link>
                   <Link
                     href="/news/slay-the-spire-2-what-to-upgrade-first"
                     className="text-molten-orange transition-colors hover:text-ember-glow"
                   >
-                    What to upgrade first
+                    What should I upgrade first?
                   </Link>
                   <Link
                     href="/news/slay-the-spire-2-multiplayer-coop-guide"
                     className="text-molten-orange transition-colors hover:text-ember-glow"
                   >
-                    Multiplayer co-op guide
+                    How does co-op work in Slay the Spire 2?
                   </Link>
                   <Link
                     href="/news/slay-the-spire-2-release-date"
                     className="text-molten-orange transition-colors hover:text-ember-glow"
                   >
-                    Release date and launch status
+                    Is Slay the Spire 2 already released?
                   </Link>
                   <Link
                     href="/characters/necrobinder"
                     className="text-molten-orange transition-colors hover:text-ember-glow"
                   >
-                    Necrobinder character page
+                    How should I play Necrobinder?
                   </Link>
                   <Link
                     href="/cards/character/necrobinder"
                     className="text-molten-orange transition-colors hover:text-ember-glow"
                   >
-                    Necrobinder card pool
+                    What cards does Necrobinder use?
                   </Link>
                 </div>
               </div>

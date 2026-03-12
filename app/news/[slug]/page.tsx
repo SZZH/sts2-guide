@@ -48,6 +48,19 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ slu
 
   const isLaunchGuide = article.slug === 'slay-the-spire-2-launch-time-us-china';
   const isInternalArticle = article.sourceType === 'internal';
+  const HIGH_INTENT_NEWS_SLUGS = new Set([
+    'slay-the-spire-2-multiplayer-coop-guide',
+    'slay-the-spire-2-co-op-guide-how-it-works',
+    'slay-the-spire-2-steam-charts-player-count',
+    'slay-the-spire-2-steamdb-patch-tracker',
+    'slay-the-spire-2-release-date',
+  ]);
+  const isHighIntentNews = HIGH_INTENT_NEWS_SLUGS.has(article.slug);
+  const quickConclusion = article.intro?.[0] ?? article.excerpt;
+  const evidenceLinks = [
+    article.url,
+    ...(article.relatedLinks?.slice(0, 2).map((link) => `https://sts2guide.com${link.href}`) ?? []),
+  ];
   const quickAnswerLinks = article.relatedLinks?.slice(0, 3) ?? [];
   const updatedTodayLinks = [
     {
@@ -105,6 +118,10 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ slu
         dateModified={article.updatedAt}
         url={`https://sts2guide.com/news/${article.slug}`}
         imageUrl={article.image}
+        inLanguage="en"
+        about={['Slay the Spire 2', article.category, 'Early Access', 'Patch and launch updates']}
+        citationUrls={evidenceLinks}
+        quickConclusion={isHighIntentNews ? quickConclusion : undefined}
       />
       {isLaunchGuide && <FAQSchema questions={launchFaqItems} />}
       <div className="min-h-screen py-16">

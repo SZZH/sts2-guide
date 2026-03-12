@@ -2,7 +2,8 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { POTIONS } from '@/shared/gameData';
-import { BreadcrumbSchema, CollectionPageSchema, ItemListSchema } from '@/app/schema';
+import { BreadcrumbSchema, CollectionPageSchema, FAQSchema, ItemListSchema } from '@/app/schema';
+import MobileFiltersPanel from '@/components/MobileFiltersPanel';
 
 export const metadata: Metadata = {
   title: 'Slay the Spire 2 Potions - Search by Rarity and Character',
@@ -33,6 +34,20 @@ type PotionsPageProps = {
 
 const RARITY_FILTERS = ['all', 'Common', 'Uncommon', 'Rare'] as const;
 const CHARACTER_FILTERS = ['all', 'Neutral', 'Ironclad', 'Silent', 'Regent', 'Necrobinder', 'Defect'] as const;
+const POTIONS_FAQ_ITEMS = [
+  {
+    question: 'How can I quickly find a potion effect in Slay the Spire 2?',
+    answer: 'Use keyword search with rarity and character filters to narrow down potion effects in a few clicks.',
+  },
+  {
+    question: 'Can I filter potions for one character only?',
+    answer: 'Yes. Select a specific character tag to view only potions associated with that class context.',
+  },
+  {
+    question: 'Does this page include all rarity tiers for potions?',
+    answer: 'Yes. The index supports Common, Uncommon, and Rare potion filtering in the current Early Access dataset.',
+  },
+];
 
 function buildHref(filters: { q?: string; rarity?: string; character?: string }) {
   const params = new URLSearchParams();
@@ -60,6 +75,13 @@ export default async function PotionsPage({ searchParams }: PotionsPageProps) {
     const haystack = `${potion.name} ${potion.description} ${potion.rarity} ${potion.character}`.toLowerCase();
     return haystack.includes(query);
   });
+  const mobileActiveFilters = [
+    rarity !== 'all' ? `Rarity: ${rarity}` : null,
+    character !== 'all' ? `Character: ${character}` : null,
+    query ? `Search: "${query}"` : null,
+  ].filter(Boolean) as string[];
+  const mobileFilterSummary =
+    mobileActiveFilters.length > 0 ? mobileActiveFilters.join(' · ') : 'No filters applied';
 
   return (
     <>
@@ -82,12 +104,72 @@ export default async function PotionsPage({ searchParams }: PotionsPageProps) {
           url: 'https://sts2guide.com/potions',
         }))}
       />
+      <FAQSchema questions={POTIONS_FAQ_ITEMS} />
 
       <div className="min-h-screen py-12">
         <div className="container mx-auto px-4">
           <div className="rounded-2xl border border-border bg-forge-black/70 p-6 md:p-8">
+            <MobileFiltersPanel
+              title="Filters"
+              activeCount={mobileActiveFilters.length}
+              summaryText={mobileFilterSummary}
+              clearHref="/potions"
+            >
+              <div>
+                <h2 className="mb-3 text-xl font-bold">Search</h2>
+                <form action="/potions" className="space-y-3">
+                  <input type="hidden" name="rarity" value={rarity === 'all' ? '' : rarity} />
+                  <input type="hidden" name="character" value={character === 'all' ? '' : character} />
+                  <input
+                    type="search"
+                    name="q"
+                    defaultValue={query}
+                    placeholder="Search potion name or effect"
+                    className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-molten-orange"
+                  />
+                  <button
+                    type="submit"
+                    className="w-full rounded-lg bg-molten-orange px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-ember-glow"
+                  >
+                    Apply Search
+                  </button>
+                </form>
+              </div>
+
+              <div>
+                <h2 className="mb-3 text-xl font-bold">Rarity</h2>
+                <div className="flex flex-wrap gap-2">
+                  {RARITY_FILTERS.map((entry) => (
+                    <Link
+                      key={entry}
+                      href={buildHref({ q: query || undefined, rarity: entry, character })}
+                      scroll={false}
+                      className={`rounded-full border px-3 py-2 text-sm transition-colors ${rarity === entry ? 'border-molten-orange text-molten-orange' : 'border-border text-muted-foreground hover:border-molten-orange'}`}
+                    >
+                      {entry}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <h2 className="mb-3 text-xl font-bold">Character</h2>
+                <div className="flex flex-wrap gap-2">
+                  {CHARACTER_FILTERS.map((entry) => (
+                    <Link
+                      key={entry}
+                      href={buildHref({ q: query || undefined, rarity, character: entry })}
+                      scroll={false}
+                      className={`rounded-full border px-3 py-2 text-sm transition-colors ${character === entry ? 'border-molten-orange text-molten-orange' : 'border-border text-muted-foreground hover:border-molten-orange'}`}
+                    >
+                      {entry}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </MobileFiltersPanel>
             <div className="grid gap-6 lg:grid-cols-[300px_minmax(0,1fr)]">
-              <aside className="space-y-6">
+              <aside className="hidden space-y-6 lg:block">
                 <div>
                   <h2 className="mb-3 text-xl font-bold">Search</h2>
                   <form action="/potions" className="space-y-3">
@@ -145,6 +227,33 @@ export default async function PotionsPage({ searchParams }: PotionsPageProps) {
                     Clear all filters
                   </Link>
                 </div>
+
+                <div className="hidden rounded-xl border border-border bg-background/40 p-4 lg:block">
+                  <h3 className="font-heading text-lg font-bold">Related Queries</h3>
+                  <div className="mt-3 flex flex-wrap gap-3 text-sm">
+                    <Link href="/cards" className="text-molten-orange transition-colors hover:text-ember-glow">
+                      Which cards work best with this potion?
+                    </Link>
+                    <Link href="/characters" className="text-molten-orange transition-colors hover:text-ember-glow">
+                      Which character benefits most from this potion?
+                    </Link>
+                    <Link href="/relics" className="text-molten-orange transition-colors hover:text-ember-glow">
+                      Which relics synergize with this potion?
+                    </Link>
+                    <Link
+                      href="/news/slay-the-spire-2-steam-charts-player-count"
+                      className="text-molten-orange transition-colors hover:text-ember-glow"
+                    >
+                      Is the player base growing right now?
+                    </Link>
+                    <Link
+                      href="/news/slay-the-spire-2-multiplayer-coop-guide"
+                      className="text-molten-orange transition-colors hover:text-ember-glow"
+                    >
+                      Does co-op change potion value?
+                    </Link>
+                  </div>
+                </div>
               </aside>
 
               <div>
@@ -198,35 +307,35 @@ export default async function PotionsPage({ searchParams }: PotionsPageProps) {
                   </div>
                 )}
 
-                <div className="mt-6 rounded-xl border border-border bg-background/40 p-4">
+                <div className="mt-6 rounded-xl border border-border bg-background/40 p-4 lg:hidden">
                   <h3 className="font-heading text-lg font-bold">Related Queries</h3>
                   <div className="mt-3 flex flex-wrap gap-3 text-sm">
                     <Link href="/cards" className="text-molten-orange transition-colors hover:text-ember-glow">
-                      Full cards database
+                      Which cards work best with this potion?
                     </Link>
                     <Link href="/characters" className="text-molten-orange transition-colors hover:text-ember-glow">
-                      Character roster and card pools
+                      Which character benefits most from this potion?
                     </Link>
                     <Link href="/relics" className="text-molten-orange transition-colors hover:text-ember-glow">
-                      Relics database
+                      Which relics synergize with this potion?
                     </Link>
                     <Link
                       href="/news/slay-the-spire-2-steam-charts-player-count"
                       className="text-molten-orange transition-colors hover:text-ember-glow"
                     >
-                      Steam charts player count
+                      Is the player base growing right now?
                     </Link>
                     <Link
                       href="/news/slay-the-spire-2-multiplayer-coop-guide"
                       className="text-molten-orange transition-colors hover:text-ember-glow"
                     >
-                      Multiplayer co-op guide
+                      Does co-op change potion value?
                     </Link>
                     <Link
                       href="/news/slay-the-spire-2-release-date"
                       className="text-molten-orange transition-colors hover:text-ember-glow"
                     >
-                      Release date and launch status
+                      Is the game live in Early Access now?
                     </Link>
                   </div>
                 </div>

@@ -2,7 +2,8 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { RELICS } from '@/shared/gameData';
-import { BreadcrumbSchema, CollectionPageSchema, ItemListSchema } from '@/app/schema';
+import { BreadcrumbSchema, CollectionPageSchema, FAQSchema, ItemListSchema } from '@/app/schema';
+import MobileFiltersPanel from '@/components/MobileFiltersPanel';
 
 export const metadata: Metadata = {
   title: 'Slay the Spire 2 Relics - Search by Rarity and Character',
@@ -33,6 +34,20 @@ type RelicsPageProps = {
 
 const RARITY_FILTERS = ['all', 'Starter', 'Common', 'Uncommon', 'Rare', 'Shop', 'Ancient'] as const;
 const CHARACTER_FILTERS = ['all', 'Ironclad', 'Silent', 'Regent', 'Necrobinder', 'Defect', 'Neutral'] as const;
+const RELICS_FAQ_ITEMS = [
+  {
+    question: 'How do I filter relics in Slay the Spire 2 by rarity and character?',
+    answer: 'Use the rarity and character filters together to narrow the relic list to the exact context of your run.',
+  },
+  {
+    question: 'Are neutral relics included in this relic index?',
+    answer: 'Yes. Choose Neutral in the character filter to isolate relics that are not tied to a single class.',
+  },
+  {
+    question: 'Should I use this page as a relic tier list?',
+    answer: 'No. This page is a factual lookup index for effect text and tags; pair it with cards and character pages for build decisions.',
+  },
+];
 
 function toCharacterTag(character?: string) {
   return character ?? 'Neutral';
@@ -66,6 +81,13 @@ export default async function RelicsPage({ searchParams }: RelicsPageProps) {
     const haystack = `${relic.name} ${relic.description} ${relic.rarity} ${characterTag}`.toLowerCase();
     return haystack.includes(query);
   });
+  const mobileActiveFilters = [
+    rarity !== 'all' ? `Rarity: ${rarity}` : null,
+    character !== 'all' ? `Character: ${character}` : null,
+    query ? `Search: "${query}"` : null,
+  ].filter(Boolean) as string[];
+  const mobileFilterSummary =
+    mobileActiveFilters.length > 0 ? mobileActiveFilters.join(' · ') : 'No filters applied';
 
   return (
     <>
@@ -88,12 +110,70 @@ export default async function RelicsPage({ searchParams }: RelicsPageProps) {
           url: 'https://sts2guide.com/relics',
         }))}
       />
+      <FAQSchema questions={RELICS_FAQ_ITEMS} />
 
       <div className="min-h-screen py-12">
         <div className="container mx-auto px-4">
           <div className="rounded-2xl border border-border bg-forge-black/70 p-6 md:p-8">
+            <MobileFiltersPanel
+              title="Filters"
+              activeCount={mobileActiveFilters.length}
+              summaryText={mobileFilterSummary}
+              clearHref="/relics"
+            >
+                <div>
+                  <h2 className="mb-3 text-xl font-bold">Search</h2>
+                  <form action="/relics" className="space-y-3">
+                    <input type="hidden" name="rarity" value={rarity === 'all' ? '' : rarity} />
+                    <input type="hidden" name="character" value={character === 'all' ? '' : character} />
+                    <input
+                      type="search"
+                      name="q"
+                      defaultValue={query}
+                      placeholder="Search relic name or effect"
+                      className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-molten-orange"
+                    />
+                    <button
+                      type="submit"
+                      className="w-full rounded-lg bg-molten-orange px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-ember-glow"
+                    >
+                      Apply Search
+                    </button>
+                  </form>
+                </div>
+                <div>
+                  <h2 className="mb-3 text-xl font-bold">Rarity</h2>
+                  <div className="flex flex-wrap gap-2">
+                    {RARITY_FILTERS.map((entry) => (
+                      <Link
+                        key={entry}
+                        href={buildHref({ q: query || undefined, rarity: entry, character })}
+                        scroll={false}
+                        className={`rounded-full border px-3 py-2 text-sm transition-colors ${rarity === entry ? 'border-molten-orange text-molten-orange' : 'border-border text-muted-foreground hover:border-molten-orange'}`}
+                      >
+                        {entry}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <h2 className="mb-3 text-xl font-bold">Character</h2>
+                  <div className="flex flex-wrap gap-2">
+                    {CHARACTER_FILTERS.map((entry) => (
+                      <Link
+                        key={entry}
+                        href={buildHref({ q: query || undefined, rarity, character: entry })}
+                        scroll={false}
+                        className={`rounded-full border px-3 py-2 text-sm transition-colors ${character === entry ? 'border-molten-orange text-molten-orange' : 'border-border text-muted-foreground hover:border-molten-orange'}`}
+                      >
+                        {entry}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+            </MobileFiltersPanel>
             <div className="grid gap-6 lg:grid-cols-[300px_minmax(0,1fr)]">
-              <aside className="space-y-6">
+              <aside className="hidden space-y-6 lg:block">
                 <div>
                   <h2 className="mb-3 text-xl font-bold">Search</h2>
                   <form action="/relics" className="space-y-3">
@@ -151,6 +231,33 @@ export default async function RelicsPage({ searchParams }: RelicsPageProps) {
                     Clear all filters
                   </Link>
                 </div>
+
+                <div className="hidden rounded-xl border border-border bg-background/40 p-4 lg:block">
+                  <h3 className="font-heading text-lg font-bold">Related Queries</h3>
+                  <div className="mt-3 flex flex-wrap gap-3 text-sm">
+                    <Link href="/cards" className="text-molten-orange transition-colors hover:text-ember-glow">
+                      Which cards combo with this relic?
+                    </Link>
+                    <Link href="/characters" className="text-molten-orange transition-colors hover:text-ember-glow">
+                      Which character should use this relic?
+                    </Link>
+                    <Link href="/potions" className="text-molten-orange transition-colors hover:text-ember-glow">
+                      Which potions pair with this relic?
+                    </Link>
+                    <Link
+                      href="/news/slay-the-spire-2-steamdb-patch-tracker"
+                      className="text-molten-orange transition-colors hover:text-ember-glow"
+                    >
+                      Which relics changed in the latest patch?
+                    </Link>
+                    <Link
+                      href="/news/slay-the-spire-2-multiplayer-coop-guide"
+                      className="text-molten-orange transition-colors hover:text-ember-glow"
+                    >
+                      Is relic sharing relevant in co-op runs?
+                    </Link>
+                  </div>
+                </div>
               </aside>
 
               <div>
@@ -204,35 +311,35 @@ export default async function RelicsPage({ searchParams }: RelicsPageProps) {
                   </div>
                 )}
 
-                <div className="mt-6 rounded-xl border border-border bg-background/40 p-4">
+                <div className="mt-6 rounded-xl border border-border bg-background/40 p-4 lg:hidden">
                   <h3 className="font-heading text-lg font-bold">Related Queries</h3>
                   <div className="mt-3 flex flex-wrap gap-3 text-sm">
                     <Link href="/cards" className="text-molten-orange transition-colors hover:text-ember-glow">
-                      Full cards database
+                      Which cards combo with this relic?
                     </Link>
                     <Link href="/characters" className="text-molten-orange transition-colors hover:text-ember-glow">
-                      Character roster and card pools
+                      Which character should use this relic?
                     </Link>
                     <Link href="/potions" className="text-molten-orange transition-colors hover:text-ember-glow">
-                      Potions database
+                      Which potions pair with this relic?
                     </Link>
                     <Link
                       href="/news/slay-the-spire-2-steamdb-patch-tracker"
                       className="text-molten-orange transition-colors hover:text-ember-glow"
                     >
-                      Patch tracker and metadata
+                      Which relics changed in the latest patch?
                     </Link>
                     <Link
                       href="/news/slay-the-spire-2-multiplayer-coop-guide"
                       className="text-molten-orange transition-colors hover:text-ember-glow"
                     >
-                      Multiplayer co-op guide
+                      Is relic sharing relevant in co-op runs?
                     </Link>
                     <Link
                       href="/news/slay-the-spire-2-release-date"
                       className="text-molten-orange transition-colors hover:text-ember-glow"
                     >
-                      Release date and launch status
+                      What is the current release status?
                     </Link>
                   </div>
                 </div>

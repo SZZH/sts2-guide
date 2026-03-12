@@ -246,19 +246,19 @@ export default function HomePage() {
                 href="/cards"
                 className="inline-flex items-center rounded-lg bg-molten-orange px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-ember-glow"
               >
-                Open Cards Database
+                Which cards should I look up first?
               </Link>
               <Link
                 href="/potions"
                 className="inline-flex items-center rounded-lg border border-border px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:border-molten-orange hover:text-molten-orange"
               >
-                Open Potions Database
+                Which potions are strongest right now?
               </Link>
               <Link
                 href="/characters"
                 className="inline-flex items-center rounded-lg border border-border px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:border-molten-orange hover:text-molten-orange"
               >
-                Compare Characters First
+                Which character should I start with?
               </Link>
             </div>
           </div>

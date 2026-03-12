@@ -85,6 +85,10 @@ export function ArticleSchema({
   dateModified,
   url,
   imageUrl,
+  inLanguage,
+  about,
+  citationUrls,
+  quickConclusion,
 }: {
   title: string;
   description: string;
@@ -92,14 +96,20 @@ export function ArticleSchema({
   dateModified: string;
   url: string;
   imageUrl?: string;
+  inLanguage?: string;
+  about?: string[];
+  citationUrls?: string[];
+  quickConclusion?: string;
 }) {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: title,
     description: description,
+    ...(quickConclusion ? { abstract: quickConclusion } : {}),
     datePublished: datePublished,
     dateModified: dateModified,
+    ...(inLanguage ? { inLanguage } : {}),
     author: {
       '@type': 'Organization',
       name: 'StS2 Guide Team',
@@ -116,6 +126,15 @@ export function ArticleSchema({
       '@type': 'WebPage',
       '@id': url,
     },
+    ...(about && about.length > 0
+      ? {
+          about: about.map((name) => ({
+            '@type': 'Thing',
+            name,
+          })),
+        }
+      : {}),
+    ...(citationUrls && citationUrls.length > 0 ? { citation: citationUrls } : {}),
     ...(imageUrl && {
       image: {
         '@type': 'ImageObject',

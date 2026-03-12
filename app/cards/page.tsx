@@ -17,7 +17,8 @@ import {
   sortCards,
   type CardSort,
 } from '@/shared/cardsData';
-import { BreadcrumbSchema, CollectionPageSchema, ItemListSchema } from '@/app/schema';
+import { BreadcrumbSchema, CollectionPageSchema, FAQSchema, ItemListSchema } from '@/app/schema';
+import MobileFiltersPanel from '@/components/MobileFiltersPanel';
 
 export const metadata: Metadata = {
   title: 'Slay the Spire 2 Cards Database: All Early Access Cards by Character, Type, and Cost',
@@ -53,6 +54,20 @@ type CardsPageProps = {
 };
 
 const PAGE_SIZE = 24;
+const CARDS_FAQ_ITEMS = [
+  {
+    question: 'How do I find a specific Slay the Spire 2 card quickly?',
+    answer: 'Use character, type, rarity, cost, and keyword filters together, then open the card detail page from the filtered results.',
+  },
+  {
+    question: 'Can I browse cards by character in this database?',
+    answer: 'Yes. The character filter and character card-pool pages let you isolate cards for Ironclad, Silent, Regent, Necrobinder, and Defect.',
+  },
+  {
+    question: 'Is this card list based on the current Early Access build?',
+    answer: 'Yes. This index is maintained for the active Early Access cycle and is updated when higher-confidence data checks are completed.',
+  },
+];
 
 function buildHref(filters: {
   character?: string;
@@ -132,6 +147,19 @@ export default async function CardsPage({ searchParams }: CardsPageProps) {
     q: query,
     page: String(safePage),
   });
+  const selectedCharacterLabel = CARD_CHARACTERS.find((entry) => entry.value === character)?.label ?? character;
+  const selectedTypeLabel = CARD_TYPES.find((entry) => entry.value === type)?.label ?? type;
+  const selectedRarityLabel = CARD_RARITIES.find((entry) => entry.value === rarity)?.label ?? rarity;
+  const mobileActiveFilters = [
+    character ? `Character: ${selectedCharacterLabel}` : null,
+    type ? `Type: ${selectedTypeLabel}` : null,
+    rarity ? `Rarity: ${selectedRarityLabel}` : null,
+    cost ? `Cost: ${cost}` : null,
+    sort !== 'name' ? `Sort: ${CARD_SORTS.find((entry) => entry.value === sort)?.label ?? sort}` : null,
+    query ? `Search: "${query}"` : null,
+  ].filter(Boolean) as string[];
+  const mobileFilterSummary =
+    mobileActiveFilters.length > 0 ? mobileActiveFilters.join(' · ') : 'No filters applied';
 
   return (
     <>
@@ -154,12 +182,146 @@ export default async function CardsPage({ searchParams }: CardsPageProps) {
           url: `https://sts2guide.com/cards/${card.slug}`,
         }))}
       />
+      <FAQSchema questions={CARDS_FAQ_ITEMS} />
       <div className="min-h-screen bg-gradient-to-b from-background via-background/95 to-background">
       <section className="px-4 pt-4 pb-16 lg:pb-6">
         <div className="container">
           <div className="rounded-2xl border border-border bg-forge-black/70 p-6 md:p-8 lg:h-[calc(100vh-8rem)] lg:overflow-hidden">
+            <MobileFiltersPanel
+              title="Filters"
+              activeCount={mobileActiveFilters.length}
+              summaryText={mobileFilterSummary}
+              clearHref="/cards"
+            >
+                <div>
+                  <h2 className="font-heading text-xl font-bold mb-3">Search</h2>
+                  <form action="/cards" className="space-y-3">
+                    <input type="hidden" name="character" value={character ?? ''} />
+                    <input type="hidden" name="type" value={type ?? ''} />
+                    <input type="hidden" name="rarity" value={rarity ?? ''} />
+                    <input type="hidden" name="cost" value={cost ?? ''} />
+                    <input type="hidden" name="sort" value={sort} />
+                    <input
+                      type="search"
+                      name="q"
+                      defaultValue={query ?? ''}
+                      placeholder="Search name or keyword"
+                      className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-molten-orange"
+                    />
+                    <button
+                      type="submit"
+                      className="w-full rounded-lg bg-molten-orange px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-ember-glow"
+                    >
+                      Apply Search
+                    </button>
+                  </form>
+                </div>
+                <div>
+                  <h2 className="font-heading text-xl font-bold mb-3">Character</h2>
+                  <div className="flex flex-wrap gap-2">
+                    <Link
+                      href={buildHref({ type, rarity, cost, sort, q: query })}
+                      scroll={false}
+                      className={`rounded-full border px-3 py-2 text-sm transition-colors ${!character ? 'border-molten-orange text-molten-orange' : 'border-border text-muted-foreground hover:border-molten-orange'}`}
+                    >
+                      All
+                    </Link>
+                    {CARD_CHARACTERS.map((entry) => (
+                      <Link
+                        key={entry.value}
+                        href={buildHref({ character: entry.value, type, rarity, cost, sort, q: query })}
+                        scroll={false}
+                        className={`rounded-full border px-3 py-2 text-sm transition-colors ${character === entry.value ? 'border-molten-orange text-molten-orange' : 'border-border text-muted-foreground hover:border-molten-orange'}`}
+                      >
+                        {entry.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <h2 className="font-heading text-xl font-bold mb-3">Type</h2>
+                  <div className="flex flex-wrap gap-2">
+                    <Link
+                      href={buildHref({ character, rarity, cost, sort, q: query })}
+                      scroll={false}
+                      className={`rounded-full border px-3 py-2 text-sm transition-colors ${!type ? 'border-molten-orange text-molten-orange' : 'border-border text-muted-foreground hover:border-molten-orange'}`}
+                    >
+                      All
+                    </Link>
+                    {CARD_TYPES.map((entry) => (
+                      <Link
+                        key={entry.value}
+                        href={buildHref({ character, type: entry.value, rarity, cost, sort, q: query })}
+                        scroll={false}
+                        className={`rounded-full border px-3 py-2 text-sm transition-colors ${type === entry.value ? 'border-molten-orange text-molten-orange' : 'border-border text-muted-foreground hover:border-molten-orange'}`}
+                      >
+                        {entry.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <h2 className="font-heading text-xl font-bold mb-3">Rarity</h2>
+                  <div className="flex flex-wrap gap-2">
+                    <Link
+                      href={buildHref({ character, type, cost, sort, q: query })}
+                      scroll={false}
+                      className={`rounded-full border px-3 py-2 text-sm transition-colors ${!rarity ? 'border-molten-orange text-molten-orange' : 'border-border text-muted-foreground hover:border-molten-orange'}`}
+                    >
+                      All
+                    </Link>
+                    {CARD_RARITIES.map((entry) => (
+                      <Link
+                        key={entry.value}
+                        href={buildHref({ character, type, rarity: entry.value, cost, sort, q: query })}
+                        scroll={false}
+                        className={`rounded-full border px-3 py-2 text-sm transition-colors ${rarity === entry.value ? 'border-molten-orange text-molten-orange' : 'border-border text-muted-foreground hover:border-molten-orange'}`}
+                      >
+                        {entry.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <h2 className="font-heading text-xl font-bold mb-3">Cost</h2>
+                  <div className="flex flex-wrap gap-2">
+                    <Link
+                      href={buildHref({ character, type, rarity, sort, q: query })}
+                      scroll={false}
+                      className={`rounded-full border px-3 py-2 text-sm transition-colors ${!cost ? 'border-molten-orange text-molten-orange' : 'border-border text-muted-foreground hover:border-molten-orange'}`}
+                    >
+                      All
+                    </Link>
+                    {CARD_COST_FILTERS.map((entry) => (
+                      <Link
+                        key={entry}
+                        href={buildHref({ character, type, rarity, cost: entry, sort, q: query })}
+                        scroll={false}
+                        className={`rounded-full border px-3 py-2 text-sm transition-colors ${cost === entry ? 'border-molten-orange text-molten-orange' : 'border-border text-muted-foreground hover:border-molten-orange'}`}
+                      >
+                        {entry}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <h2 className="font-heading text-xl font-bold mb-3">Sort</h2>
+                  <div className="flex flex-wrap gap-2">
+                    {CARD_SORTS.map((entry) => (
+                      <Link
+                        key={entry.value}
+                        href={buildHref({ character, type, rarity, cost, sort: entry.value, q: query })}
+                        scroll={false}
+                        className={`rounded-full border px-3 py-2 text-sm transition-colors ${sort === entry.value ? 'border-molten-orange text-molten-orange' : 'border-border text-muted-foreground hover:border-molten-orange'}`}
+                      >
+                        {entry.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+            </MobileFiltersPanel>
             <div className="grid gap-6 lg:h-full lg:grid-cols-[300px_minmax(0,1fr)]">
-              <aside className={`${styles.cardsScroll} space-y-6 lg:h-full lg:overflow-y-auto lg:pr-2`}>
+              <aside className={`${styles.cardsScroll} hidden space-y-6 lg:block lg:h-full lg:overflow-y-auto lg:pr-2`}>
                 <div>
                   <h2 className="font-heading text-xl font-bold mb-3">Search</h2>
                   <form action="/cards" className="space-y-3">
@@ -292,6 +454,45 @@ export default async function CardsPage({ searchParams }: CardsPageProps) {
                     Reset all filters
                   </Link>
                 </div>
+
+                <div className="hidden rounded-xl border border-border bg-background/40 p-4 lg:block">
+                  <h3 className="font-heading text-lg font-bold">Related Queries</h3>
+                  <div className="mt-3 flex flex-wrap gap-3 text-sm">
+                    <Link href="/characters" className="text-molten-orange transition-colors hover:text-ember-glow">
+                      Which character should I start with?
+                    </Link>
+                    <Link href="/relics" className="text-molten-orange transition-colors hover:text-ember-glow">
+                      Which relics matter for this build?
+                    </Link>
+                    <Link href="/potions" className="text-molten-orange transition-colors hover:text-ember-glow">
+                      Which potions save weak runs?
+                    </Link>
+                    <Link
+                      href="/news/slay-the-spire-2-multiplayer-coop-guide"
+                      className="text-molten-orange transition-colors hover:text-ember-glow"
+                    >
+                      Does Slay the Spire 2 have co-op?
+                    </Link>
+                    <Link
+                      href="/news/slay-the-spire-2-steam-charts-player-count"
+                      className="text-molten-orange transition-colors hover:text-ember-glow"
+                    >
+                      How many players are online now?
+                    </Link>
+                    <Link
+                      href="/news/slay-the-spire-2-steamdb-patch-tracker"
+                      className="text-molten-orange transition-colors hover:text-ember-glow"
+                    >
+                      What changed in the latest patch?
+                    </Link>
+                    <Link
+                      href="/news/slay-the-spire-2-release-date"
+                      className="text-molten-orange transition-colors hover:text-ember-glow"
+                    >
+                      What is the release date and status?
+                    </Link>
+                  </div>
+                </div>
               </aside>
 
               <div className="lg:flex lg:h-full lg:min-h-0 lg:flex-col">
@@ -394,44 +595,45 @@ export default async function CardsPage({ searchParams }: CardsPageProps) {
                   </>
                 )}
 
-                <div className="mt-6 rounded-xl border border-border bg-background/40 p-4">
+                <div className="mt-6 rounded-xl border border-border bg-background/40 p-4 lg:hidden">
                   <h3 className="font-heading text-lg font-bold">Related Queries</h3>
                   <div className="mt-3 flex flex-wrap gap-3 text-sm">
                     <Link href="/characters" className="text-molten-orange transition-colors hover:text-ember-glow">
-                      Character roster and unlock order
+                      Which character should I start with?
                     </Link>
                     <Link href="/relics" className="text-molten-orange transition-colors hover:text-ember-glow">
-                      Relics database
+                      Which relics matter for this build?
                     </Link>
                     <Link href="/potions" className="text-molten-orange transition-colors hover:text-ember-glow">
-                      Potions database
+                      Which potions save weak runs?
                     </Link>
                     <Link
                       href="/news/slay-the-spire-2-multiplayer-coop-guide"
                       className="text-molten-orange transition-colors hover:text-ember-glow"
                     >
-                      Multiplayer co-op guide
+                      Does Slay the Spire 2 have co-op?
                     </Link>
                     <Link
                       href="/news/slay-the-spire-2-steam-charts-player-count"
                       className="text-molten-orange transition-colors hover:text-ember-glow"
                     >
-                      Steam charts player count
+                      How many players are online now?
                     </Link>
                     <Link
                       href="/news/slay-the-spire-2-steamdb-patch-tracker"
                       className="text-molten-orange transition-colors hover:text-ember-glow"
                     >
-                      SteamDB patch tracker
+                      What changed in the latest patch?
                     </Link>
                     <Link
                       href="/news/slay-the-spire-2-release-date"
                       className="text-molten-orange transition-colors hover:text-ember-glow"
                     >
-                      Release date and launch status
+                      What is the release date and status?
                     </Link>
                   </div>
                 </div>
+
               </div>
             </div>
           </div>
