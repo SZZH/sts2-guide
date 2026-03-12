@@ -568,6 +568,12 @@
   - [x] 已核验：`/mechanics` 在 GSC 显示“网址已收录到 Google”
   - [x] 已核验：`/news/slay-the-spire-2-launch-time-us-china` 在 GSC 显示“网址已收录到 Google”
   - [x] 已核验：`/characters/silent` 在 GSC 显示“网址已收录到 Google”
+- 已完成增量（2026-03-12）：
+  - [x] 已请求编入索引：`/news/slay-the-spire-2-hotfix-patch-notes`（状态：已发现未收录 -> 已提交抓取队列）
+  - [x] 已请求编入索引：`/news/slay-the-spire-2-steam-deck-performance-guide`（状态：已发现未收录 -> 已提交抓取队列）
+  - [x] 已核验：`/news/slay-the-spire-2-known-issues-and-fixes` 在 GSC 显示“网址已收录到 Google”
+  - [x] 已核验：`/cards/character/necrobinder` 在 GSC 显示“网址已收录到 Google”
+  - [x] 已核验：`/characters/necrobinder` 在 GSC 显示“网址已收录到 Google”
 - 待完成：
   - [ ] 批量继续提交剩余核心 URL（news 其余高意图页 + 其余角色详情 + 其余角色卡池页）
   - [ ] 复查 `Google 无法识别此网址` 的页面是否被 sitemap/内链覆盖（重点：`/potions`）
