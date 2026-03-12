@@ -1053,6 +1053,141 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     ],
   },
   {
+    slug: 'slay-the-spire-2-multiplayer-coop-guide',
+    title: 'Slay the Spire 2 Multiplayer Co-op Guide: 4-Player Rules, Setup, and Launch Limits',
+    excerpt: 'A focused Slay the Spire 2 multiplayer co-op guide covering official 4-player support, launch-week setup steps, and current constraints you should verify before your first group run.',
+    date: '2026-03-11',
+    category: 'Guide',
+    readTime: '7 min',
+    featured: false,
+    image: 'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2868840/ss_8f8dcd17d2dc8f228151f00ca17e59f2f65b9d85.1920x1080.jpg?t=1770241822',
+    url: 'https://store.steampowered.com/app/2868840/Slay_the_Spire_2/',
+    source: 'StS2 Guide',
+    sourceType: 'internal',
+    updatedAt: '2026-03-11',
+    intro: [
+      'If your query is exactly “slay the spire 2 multiplayer co-op guide”, this page gives the shortest operational answer path: what is confirmed, what is constrained at launch, and what to check first.',
+      'Use this as the quick multiplayer entry page, then move to deeper guides only if your group needs troubleshooting detail.',
+    ],
+    sections: [
+      {
+        heading: 'What is confirmed right now',
+        paragraphs: [
+          'The official store listing confirms online co-op and support for up to 4 players. That is the core answer for multiplayer intent.',
+          'Treat this as launch-week operational guidance for the current Early Access build, not a final 1.0 ruleset.',
+        ],
+        bullets: [
+          'Officially confirmed: Online Co-op',
+          'Officially confirmed: Up to 4 players',
+          'Current product stage: Early Access',
+        ],
+      },
+      {
+        heading: 'Fast group setup checklist',
+        paragraphs: [
+          'Most first-session failures are caused by version mismatch or stale client state. Confirm those first before deeper diagnosis.',
+        ],
+        bullets: [
+          'All players update to latest build',
+          'Restart Steam once before creating lobby',
+          'Verify each player can enter solo run before group invite',
+          'If connection fails repeatedly, switch host and retry',
+        ],
+      },
+      {
+        heading: 'Launch limits to keep in mind',
+        paragraphs: [
+          'Launch-week co-op guidance has been Steam-friends first, not open matchmaking-first. Set group expectations upfront.',
+          'Check hotfix notes if your issue appeared during launch day, because multiplayer stability fixes are actively rolling out.',
+        ],
+        bullets: [
+          'Do not assume public random matchmaking flow',
+          'Use hotfix and known-issues pages for active issue status',
+        ],
+      },
+    ],
+    relatedLinks: [
+      {
+        href: '/news/slay-the-spire-2-multiplayer-guide',
+        label: 'Multiplayer FAQ: co-op rules, limits, and setup',
+      },
+      {
+        href: '/news/slay-the-spire-2-co-op-guide-how-it-works',
+        label: 'Co-op deep dive: what is confirmed vs still being validated',
+      },
+      {
+        href: '/news/slay-the-spire-2-hotfix-patch-notes',
+        label: 'Hotfix patch notes for launch-week multiplayer issues',
+      },
+      {
+        href: '/news/slay-the-spire-2-known-issues-and-fixes',
+        label: 'Known issues and practical troubleshooting',
+      },
+    ],
+  },
+  {
+    slug: 'slay-the-spire-2-release-date',
+    title: 'Slay the Spire 2 Release Date: Early Access Date, Current Status, and What Changed',
+    excerpt: 'Slay the Spire 2 release date is March 5, 2026 (Early Access). This page keeps the date/status answer explicit and links directly to launch updates, hotfixes, and next-step guides.',
+    date: '2026-03-11',
+    category: 'News',
+    readTime: '6 min',
+    featured: false,
+    image: 'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2868840/ss_026b621a38b400c9f4080a7dd9152dd3050cbe2d.1920x1080.jpg?t=1770241822',
+    url: 'https://store.steampowered.com/app/2868840/Slay_the_Spire_2/',
+    source: 'StS2 Guide',
+    sourceType: 'internal',
+    updatedAt: '2026-03-11',
+    intro: [
+      'If your search is “slay the spire 2 release date”, you likely want one clear answer first, not a long timeline.',
+      'This page keeps release-date intent explicit, then routes you to launch-week pages that answer “what now?”',
+    ],
+    sections: [
+      {
+        heading: 'Direct answer',
+        paragraphs: [
+          'Slay the Spire 2 released into Early Access on March 5, 2026.',
+          'The release is live on Steam, so this is no longer a pre-launch countdown question.',
+        ],
+        bullets: [
+          'Release date: March 5, 2026',
+          'Release model: Early Access (not full 1.0)',
+          'Current status: live',
+        ],
+      },
+      {
+        heading: 'Why this page exists separately',
+        paragraphs: [
+          'Release-date intent is high-volume and narrow. A dedicated page reduces mismatch between keyword and landing answer.',
+          'For practical launch decisions, continue to launch status, patch notes, and first-run guidance.',
+        ],
+        bullets: [
+          'Date answer page: this URL',
+          'Launch operations page: launch status hub',
+          'Live changes page: hotfix and known-issues trackers',
+        ],
+      },
+    ],
+    relatedLinks: [
+      {
+        href: '/news/slay-the-spire-2-launch-time-us-china',
+        label: 'Launch status and first-24-hours checklist',
+      },
+      {
+        href: '/news/slay-the-spire-2-hotfix-patch-notes',
+        label: 'Hotfix patch notes and launch fixes',
+      },
+      {
+        href: '/news/slay-the-spire-2-steamdb-patch-tracker',
+        label: 'SteamDB patch timeline and impact tracking',
+      },
+      {
+        href: '/news/slay-the-spire-2-first-run-guide-act-1-priorities',
+        label: 'First-run guide for launch week',
+      },
+    ],
+  },
+  {
     slug: 'best-starter-character-slay-the-spire-2-early-access',
     title: 'Best Starter Character in Slay the Spire 2 (Early Access)',
     excerpt: 'New to Slay the Spire 2 and not sure who to pick first? This updated launch-week guide compares Ironclad, Silent, Necrobinder, and Regent for solo stability, co-op usefulness, and first-10-run learning value.',

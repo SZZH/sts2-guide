@@ -222,6 +222,18 @@ export default async function RelicsPage({ searchParams }: RelicsPageProps) {
                     >
                       Patch tracker and metadata
                     </Link>
+                    <Link
+                      href="/news/slay-the-spire-2-multiplayer-coop-guide"
+                      className="text-molten-orange transition-colors hover:text-ember-glow"
+                    >
+                      Multiplayer co-op guide
+                    </Link>
+                    <Link
+                      href="/news/slay-the-spire-2-release-date"
+                      className="text-molten-orange transition-colors hover:text-ember-glow"
+                    >
+                      Release date and launch status
+                    </Link>
                   </div>
                 </div>
               </div>

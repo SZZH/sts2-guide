@@ -380,6 +380,14 @@
 - [x] 说明当前最有效的还是“角色 / 机制 / 新手决策”这类入口意图
 - [x] `cards` 结构已经搭好，但从当前观测看还没成为最强流量前排页
 
+### GSC 7 天效果补充（2026-03-11）
+- [x] 总点击 `76`，总曝光 `3,417`，CTR `2.2%`，平均排名 `8.3`
+- [x] 查询词头部已出现明确品牌+意图组合：`sts2 guide`、`sts2 tips`、`slay the spire 2 guide`
+- [x] 页面点击头部仍集中在：`/`、`/mechanics`、`first-run`、`best-starter-character`
+- [x] 国家/地区点击头部：美国 `25`、加拿大 `11`、英国 `6`（7 天）
+- [x] 设备结构：移动点击更高（`48`），桌面曝光更高（`2,169`）
+- [x] 搜索结果呈现暂无独立类型数据，当前主线仍是基础网页结果竞争
+
 ### GSC 页面索引结论（2026-03-10 补充）
 - [x] 已检查 GSC「网页索引编制」：已编入索引 `7`，未编入索引 `20`
 - [x] 未索引原因仅 2 类：
@@ -575,6 +583,7 @@
   - [x] 已有导航与查询页内链，且首页 Database 主行动区新增 `/potions` 直链
   - [ ] 判定为索引节奏问题，等待 GSC 下一轮抓取验证
   - [x] 提交日志：`ops-logs/gsc-submission-log-2026-03-11.md`
+  - [x] 提交日志：`ops-logs/gsc-submission-log-2026-03-12.md`
   - [x] 索引体检日志：`ops-logs/indexability-audit-2026-03-11.md`
 
 ### 当前可执行的复核顺序
@@ -693,16 +702,19 @@
   - [x] 已有并可承接：`/news/slay-the-spire-2-steam-charts-player-count`
   - [x] 已有并可承接：`/news/slay-the-spire-2-steamdb-patch-tracker`
   - [x] 已有并可承接（同主题）：`/news/slay-the-spire-2-co-op-guide-how-it-works`
-  - [ ] 仍缺严格同名落地页：`/news/slay-the-spire-2-release-date`
+  - [x] 已新增：`/news/slay-the-spire-2-release-date`
 - [ ] 新增并上线以下英文落地页（标题/H1 精确包含目标词）：
-  - `/news/slay-the-spire-2-multiplayer-coop-guide`
+  - [x] `/news/slay-the-spire-2-multiplayer-coop-guide`
   - `/news/slay-the-spire-2-steam-charts-player-count`
   - `/news/slay-the-spire-2-steamdb-patch-tracker`
-  - `/news/slay-the-spire-2-release-date`
-- [ ] 首页增加上述页面入口（趋势专题位）
+  - [x] `/news/slay-the-spire-2-release-date`
+- [x] 首页增加上述页面入口（趋势专题位）
 - [x] `/news` 列表提升上述页面曝光优先级
 - [x] 在 `/cards`、`/characters` 增加到上述页面的相关查询入口
-- [~] 发布后立即提交 sitemap 与 URL 检查（GSC）（已提交首批，受 GSC 限流，待继续）
+- [~] 发布后立即提交 sitemap 与 URL 检查（GSC）（已提交首批；2026-03-12 对两篇新 news 页重提时出现“索引编制请求遭拒”，待 sitemap/内链被抓取后重试）
+- [x] 已确认阻塞根因：两篇新页线上当前返回 `HTTP 404`（未部署），在上线前重复提交 GSC 无效
+- [x] 2026-03-12 已核验：`/cards`、`/cards/character/necrobinder`、`/characters/necrobinder` 当前显示“网址已收录到 Google”
+- [x] 提交日志补充：`ops-logs/gsc-submission-log-2026-03-12.md`
 - [ ] 7 天复查：这 4 页 impressions / query 覆盖是否起量
 
 ### 国家/语种扩量顺序

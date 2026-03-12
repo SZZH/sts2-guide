@@ -19,7 +19,7 @@ export default function HomePage() {
   const prioritizedLatestNewsSlugs = [
     'slay-the-spire-2-steam-charts-player-count',
     'slay-the-spire-2-steamdb-patch-tracker',
-    'slay-the-spire-2-multiplayer-guide',
+    'slay-the-spire-2-multiplayer-coop-guide',
   ];
   const latestNews = [
     ...prioritizedLatestNewsSlugs
@@ -41,14 +41,14 @@ export default function HomePage() {
       description: 'Patch timeline mapped to official notes and practical player impact.',
     },
     {
-      href: '/news/slay-the-spire-2-multiplayer-guide',
-      label: 'Multiplayer Guide',
-      description: 'Official co-op rules, launch limits, and fastest setup checks for groups.',
+      href: '/news/slay-the-spire-2-multiplayer-coop-guide',
+      label: 'Multiplayer Co-op Guide',
+      description: 'Official 4-player co-op support, launch checks, and fastest setup path.',
     },
     {
-      href: '/news/slay-the-spire-2-launch-time-us-china',
+      href: '/news/slay-the-spire-2-release-date',
       label: 'Release Date & Time',
-      description: 'Early Access release date, unlock-time conversion, and launch-status hub.',
+      description: 'Official release date answer with launch status and next-step links.',
     },
     {
       href: '/news/slay-the-spire-2-hotfix-patch-notes',

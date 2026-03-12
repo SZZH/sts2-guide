@@ -28,8 +28,8 @@ export default function NewsPage() {
   const featuredLaunchArticle = selectedCategory === 'All'
     ? sortedArticles.find((article) => article.slug === 'slay-the-spire-2-steam-charts-player-count')
       ?? sortedArticles.find((article) => article.slug === 'slay-the-spire-2-steamdb-patch-tracker')
-      ?? sortedArticles.find((article) => article.slug === 'slay-the-spire-2-multiplayer-guide')
-      ?? sortedArticles.find((article) => article.slug === 'slay-the-spire-2-launch-time-us-china')
+      ?? sortedArticles.find((article) => article.slug === 'slay-the-spire-2-multiplayer-coop-guide')
+      ?? sortedArticles.find((article) => article.slug === 'slay-the-spire-2-release-date')
     : null;
   const gridArticles = featuredLaunchArticle
     ? filteredArticles.filter((article) => article.slug !== featuredLaunchArticle.slug)
@@ -71,6 +71,12 @@ export default function NewsPage() {
             </Link>
             <Link href="/news/slay-the-spire-2-known-issues-and-fixes" className="text-molten-orange transition-colors hover:text-ember-glow">
               Known issues and fixes
+            </Link>
+            <Link href="/news/slay-the-spire-2-multiplayer-coop-guide" className="text-molten-orange transition-colors hover:text-ember-glow">
+              Multiplayer co-op guide
+            </Link>
+            <Link href="/news/slay-the-spire-2-release-date" className="text-molten-orange transition-colors hover:text-ember-glow">
+              Release date status page
             </Link>
             <Link href="/characters/necrobinder" className="text-molten-orange transition-colors hover:text-ember-glow">
               Necrobinder character guide

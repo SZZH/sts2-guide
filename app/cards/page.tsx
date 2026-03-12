@@ -407,10 +407,10 @@ export default async function CardsPage({ searchParams }: CardsPageProps) {
                       Potions database
                     </Link>
                     <Link
-                      href="/news/slay-the-spire-2-co-op-guide-how-it-works"
+                      href="/news/slay-the-spire-2-multiplayer-coop-guide"
                       className="text-molten-orange transition-colors hover:text-ember-glow"
                     >
-                      Co-op and multiplayer guide
+                      Multiplayer co-op guide
                     </Link>
                     <Link
                       href="/news/slay-the-spire-2-steam-charts-player-count"
@@ -425,10 +425,10 @@ export default async function CardsPage({ searchParams }: CardsPageProps) {
                       SteamDB patch tracker
                     </Link>
                     <Link
-                      href="/news/slay-the-spire-2-launch-time-us-china"
+                      href="/news/slay-the-spire-2-release-date"
                       className="text-molten-orange transition-colors hover:text-ember-glow"
                     >
-                      Release date and launch time
+                      Release date and launch status
                     </Link>
                   </div>
                 </div>
