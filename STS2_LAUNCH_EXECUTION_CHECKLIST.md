@@ -719,6 +719,7 @@
 - [x] 在 `/cards`、`/characters` 增加到上述页面的相关查询入口
 - [~] 发布后立即提交 sitemap 与 URL 检查（GSC）（已提交首批；2026-03-12 对两篇新 news 页重提时出现“索引编制请求遭拒”，待 sitemap/内链被抓取后重试）
 - [x] 已确认阻塞根因：两篇新页线上当前返回 `HTTP 404`（未部署），在上线前重复提交 GSC 无效
+- [x] 已完成线上部署后复提（2026-03-12）：两篇新页线上 `HTTP 200`，`release-date` 已进入抓取优先队列，`multiplayer-coop-guide` 已触发请求但仍待 GSC 发现信号刷新
 - [x] 2026-03-12 已核验：`/cards`、`/cards/character/necrobinder`、`/characters/necrobinder` 当前显示“网址已收录到 Google”
 - [x] 提交日志补充：`ops-logs/gsc-submission-log-2026-03-12.md`
 - [ ] 7 天复查：这 4 页 impressions / query 覆盖是否起量
