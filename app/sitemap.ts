@@ -3,6 +3,14 @@ import { CHARACTERS, NEWS_ARTICLES } from '@/shared/gameData';
 import { CARDS, CARD_CHARACTERS } from '@/shared/cardsData';
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const archivedNewsSlugs = new Set([
+    'gamesradar-industry-impact',
+    'megacrit-regent-reveal',
+    'pc-gamer-complete-guide',
+    'megacrit-necrobinder-reveal',
+    'steam-delay-announcement',
+    'ign-official-announcement',
+  ]);
   const baseUrl = 'https://sts2guide.com';
   const toDate = (value: string) => new Date(`${value}T00:00:00.000Z`);
   const latestCardUpdate = CARDS.reduce((latest, card) => {
@@ -77,7 +85,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: character.slug === 'necrobinder' ? 0.95 : 0.9,
   }));
 
-  const newsPages: MetadataRoute.Sitemap = NEWS_ARTICLES.map((article) => {
+  const newsPages: MetadataRoute.Sitemap = NEWS_ARTICLES.filter(
+    (article) => !archivedNewsSlugs.has(article.slug)
+  ).map((article) => {
     const isPriorityHotfix =
       article.slug === 'slay-the-spire-2-hotfix-patch-notes' ||
       article.slug === 'slay-the-spire-2-known-issues-and-fixes';

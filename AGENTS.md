@@ -1,5 +1,25 @@
 # Project Rules (sts2-guide)
 
+## 部署触发规则（强制）
+- 默认发布流程：代码合并/推送到 `main` 分支后，由 Vercel 自动触发生产部署。
+- 非必要不手动执行 `vercel --prod`；仅在“紧急修复且用户明确要求立即手动发版”时才使用。
+
+## Git 提交规则（强制）
+- 后续所有 Git 提交信息（commit message）默认使用中文描述。
+- 若无特别要求，提交标题与正文均使用中文，且应准确说明改动范围与目的。
+
+## 数据调研规则（强制）
+- 当我被要求做“数据监控/数据调研/增长分析/复盘”时，必须执行四端综合调研：`GSC + Vercel + Bing Webmaster Tools + Google Trends`。
+- 调研深度要求：必须覆盖所有可能相关指标，不得只看单一点击或流量曲线。
+  - GSC：点击、展现、CTR、平均排名、查询、页面、国家/地区、设备、搜索呈现、索引覆盖、结构化结果（Rich Results）状态。
+  - Vercel（或站内分析）：Visitors、PV、Bounce Rate、Top Landing/Exit、页面趋势、异常波动时间段。
+  - Bing Webmaster：Search Performance、Index Coverage、Sitemaps、URL Inspection、Crawl/Index 异常、IndexNow 接收状态。
+  - Google Trends：核心词/品牌词/意图词趋势、区域差异、时间窗口变化、相关主题与相关查询。
+- 输出格式要求：
+  - 已完成动作必须显式标记（如 `DONE`）。
+  - 未完成动作必须标记优先级（`P0/P1/P2`）和原因（如依赖平台状态、数据延迟、权限限制）。
+  - 必须给出跨平台综合结论与后续执行清单，不能只给单平台结论。
+
 ## 社媒发布任务强制规则（Reddit / X / Steam）
 - 当任务涉及 Reddit、X（Twitter）、Steam 社区的发帖、回帖、补链接、分发时，执行前必须先阅读：
   - `STS2_LAUNCH_EXECUTION_CHECKLIST.md` 中的 `模块六：社媒发布攻略（Reddit / X / Steam，必读）`

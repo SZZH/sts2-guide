@@ -27,11 +27,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   }
 
   return {
-    title: `${card.name} - Slay the Spire 2 ${getCardCharacterLabel(card.character)} Card`,
-    description: `${card.name} is a ${getCardCharacterLabel(card.character)} ${getCardTypeLabel(card.type)} card in Slay the Spire 2 Early Access. Review its cost, rarity, card text, and related cards.`,
+    title: `${card.name} Card Guide (${getCardCharacterLabel(card.character)})`,
+    description: `${card.name} card guide for Slay the Spire 2: cost ${card.costText}, ${getCardRarityLabel(card.rarity)} ${getCardTypeLabel(card.type)}, full text, and related cards.`,
     keywords: [
       `${card.name} Slay the Spire 2`,
       `${card.name} card Slay the Spire 2`,
+      `${card.name} slay the spire`,
       `${card.name} ${getCardCharacterLabel(card.character)} card`,
       'Slay the Spire 2 cards',
     ],
@@ -39,8 +40,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       canonical: `/cards/${card.slug}`,
     },
     openGraph: {
-      title: `${card.name} - Slay the Spire 2 ${getCardCharacterLabel(card.character)} Card`,
-      description: `${card.text} Current Early Access card details remain under ongoing verification.`,
+      title: `${card.name} Card Guide for Slay the Spire 2`,
+      description: `${card.name} card details, rarity, cost, and effect text for ${getCardCharacterLabel(card.character)} runs.`,
     },
   };
 }

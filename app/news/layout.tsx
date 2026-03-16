@@ -1,15 +1,17 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Slay the Spire 2 News - Launch Updates, Patch Notes & Guides',
-  description: 'Stay updated with the latest Slay the Spire 2 news, patch notes, developer updates, and community guides from top gaming sources.',
-  keywords: ['Slay the Spire 2 news', 'StS2 updates', 'patch notes', 'developer blog', 'game updates'],
+  title: 'Slay the Spire 2 News, Patch Notes, and Launch Guides',
+  description:
+    'Track Slay the Spire 2 launch updates, SteamDB patch changes, co-op news, known issues, and practical beginner guides in one feed.',
+  keywords: ['Slay the Spire 2 news', 'StS2 updates', 'StS2 patch notes', 'Slay the Spire 2 guide', 'Early Access updates'],
   alternates: {
     canonical: '/news',
   },
   openGraph: {
-    title: 'Slay the Spire 2 News & Updates - Latest Patch Notes',
-    description: 'Get the latest Slay the Spire 2 news, updates, and community guides from IGN, PC Gamer, and official sources.',
+    title: 'Slay the Spire 2 News: Patch Notes, Co-op, and Launch Updates',
+    description:
+      'Daily Slay the Spire 2 update feed with patch trackers, launch troubleshooting, and high-intent guide pages.',
   },
 };
 

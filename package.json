@@ -27,7 +27,8 @@
     "sts2:upload-r2:relics:wiki-r1": "STS2_LOCAL_DIR='/Users/jiaojian/Desktop/self/sts2-guide/.cache/wiki-relic-potion-images/relics' STS2_R2_KEY_PREFIX='assets/sts2/relics-v20260310-wiki-r1' node scripts/upload-sts2-assets-to-r2.mjs",
     "sts2:upload-r2:potions:wiki-r1": "STS2_LOCAL_DIR='/Users/jiaojian/Desktop/self/sts2-guide/.cache/wiki-relic-potion-images/potions' STS2_R2_KEY_PREFIX='assets/sts2/potions-v20260310-wiki-r1' node scripts/upload-sts2-assets-to-r2.mjs",
     "monitor:vercel": "node scripts/monitor-vercel.mjs",
-    "monitor:vercel:loop": "MONITOR_LOOP_SECONDS=300 MONITOR_ROUNDS=24 node scripts/monitor-vercel.mjs"
+    "monitor:vercel:loop": "MONITOR_LOOP_SECONDS=300 MONITOR_ROUNDS=24 node scripts/monitor-vercel.mjs",
+    "indexnow:submit": "node scripts/indexnow-submit.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^1.6.1",

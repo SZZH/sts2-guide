@@ -5,6 +5,15 @@ import { ArrowLeft, ExternalLink } from 'lucide-react';
 import { NEWS_ARTICLES } from '@/shared/gameData';
 import { ArticleSchema, BreadcrumbSchema, FAQSchema } from '@/app/schema';
 
+const ARCHIVED_NEWS_SLUGS = new Set([
+  'gamesradar-industry-impact',
+  'megacrit-regent-reveal',
+  'pc-gamer-complete-guide',
+  'megacrit-necrobinder-reveal',
+  'steam-delay-announcement',
+  'ign-official-announcement',
+]);
+
 export async function generateStaticParams() {
   return NEWS_ARTICLES.map((article) => ({
     slug: article.slug,
@@ -21,20 +30,36 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     };
   }
 
+  const metadataTitle = article.category === 'Guide' ? `${article.title} (StS2 Guide)` : article.title;
+  const isArchivedNews = ARCHIVED_NEWS_SLUGS.has(article.slug);
+
   return {
-    title: article.title,
+    title: metadataTitle,
     description: article.excerpt,
-    keywords: ['Slay the Spire 2 news', article.category, article.source, article.title],
+    keywords: [
+      'Slay the Spire 2 guide',
+      'StS2 guide',
+      'Slay the Spire 2 news',
+      article.category,
+      article.source,
+      article.title,
+    ],
     alternates: {
       canonical: `/news/${article.slug}`,
     },
     openGraph: {
-      title: article.title,
+      title: metadataTitle,
       description: article.excerpt,
       type: 'article',
       url: `https://sts2guide.com/news/${article.slug}`,
       images: article.image ? [{ url: article.image }] : undefined,
     },
+    robots: isArchivedNews
+      ? {
+          index: false,
+          follow: true,
+        }
+      : undefined,
   };
 }
 

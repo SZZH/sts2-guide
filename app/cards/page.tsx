@@ -21,9 +21,9 @@ import { BreadcrumbSchema, CollectionPageSchema, FAQSchema, ItemListSchema } fro
 import MobileFiltersPanel from '@/components/MobileFiltersPanel';
 
 export const metadata: Metadata = {
-  title: 'Slay the Spire 2 Cards Database: All Early Access Cards by Character, Type, and Cost',
+  title: 'Slay the Spire 2 Cards Database: Search by Character, Type, and Cost',
   description:
-    'Browse all Slay the Spire 2 Early Access cards by character, type, rarity, cost, and keyword. This searchable cards database is built for fast lookup while local assets and final data verification are still in progress.',
+    'Search all Slay the Spire 2 cards by character, type, rarity, cost, and keyword. Fast card lookup for Early Access deck decisions.',
   keywords: [
     'Slay the Spire 2 cards',
     'Slay the Spire 2 all cards',
@@ -35,9 +35,9 @@ export const metadata: Metadata = {
     canonical: '/cards',
   },
   openGraph: {
-    title: 'Slay the Spire 2 Cards Database: All Early Access Cards',
+    title: 'Slay the Spire 2 Card Database and Search',
     description:
-      'Search, filter, and page through all Slay the Spire 2 Early Access cards by character, rarity, type, and cost.',
+      'Filter and browse StS2 cards by character, rarity, type, and cost with direct detail pages.',
   },
 };
 

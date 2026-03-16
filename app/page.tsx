@@ -6,11 +6,13 @@ import { WebsiteSchema, OrganizationSchema, VideoGameSchema } from './schema';
 import { siteAssetUrl } from '@/shared/siteAssets';
 
 export const metadata: Metadata = {
-  title: 'StS2 Guide - Slay the Spire 2 Strategy, Builds & Tier Lists',
-  description: 'Master the ultimate roguelike deck-builder with comprehensive guides, tier lists, and expert strategies for Slay the Spire 2.',
+  title: 'Slay the Spire 2 Guide, Starter Tips, and Card Database',
+  description:
+    'StS2 Guide for Slay the Spire 2: starter character picks, first-run tips, mechanics, and searchable card/relic/potion databases.',
   openGraph: {
-    title: 'Slay the Spire 2 Guide - Master the Ultimate Roguelike',
-    description: 'Comprehensive character guides, tier lists, and winning strategies for Slay the Spire 2.',
+    title: 'StS2 Guide: Slay the Spire 2 Starter Tips, Builds, and Card Lookup',
+    description:
+      'Find Slay the Spire 2 launch-week updates, beginner routes, mechanics, and fast card lookup pages in one place.',
   },
 };
 
@@ -59,6 +61,38 @@ export default function HomePage() {
       href: '/news/slay-the-spire-2-known-issues-and-fixes',
       label: 'Known Issues',
       description: 'Current known problems, temporary workarounds, and fix status.',
+    },
+  ];
+  const intentShortcuts = [
+    {
+      href: '/news/slay-the-spire-2-first-run-guide-act-1-priorities',
+      query: 'sts2 tips',
+      label: 'First Run Act 1 Guide',
+    },
+    {
+      href: '/news/best-starter-character-slay-the-spire-2-early-access',
+      query: 'best starter character slay the spire 2',
+      label: 'Best Starter Character',
+    },
+    {
+      href: '/cards/celestial_might',
+      query: 'celestial might slay the spire',
+      label: 'Celestial Might Card',
+    },
+    {
+      href: '/cards',
+      query: 'sts2 cards',
+      label: 'All Cards Database',
+    },
+    {
+      href: '/characters',
+      query: 'sts2 guide',
+      label: 'Character Roster',
+    },
+    {
+      href: '/news/slay-the-spire-2-steamdb-patch-tracker',
+      query: 'sts2 patch',
+      label: 'SteamDB Patch Tracker',
     },
   ];
 
@@ -176,6 +210,38 @@ export default function HomePage() {
             >
               Compare Characters
             </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-y border-border bg-forge-black/70 py-10">
+        <div className="container mx-auto px-4">
+          <div className="mb-5 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+            <div>
+              <div className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-molten-orange">
+                Most Searched
+              </div>
+              <h2 className="font-heading text-2xl md:text-3xl font-bold">
+                Open the exact page for each query
+              </h2>
+            </div>
+            <p className="max-w-2xl text-sm text-steel-blue">
+              These shortcuts map directly to recurring search intent and reduce first-click mismatch.
+            </p>
+          </div>
+          <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+            {intentShortcuts.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="rounded-xl border border-border bg-background/55 p-4 transition-all duration-300 hover:border-molten-orange"
+              >
+                <div className="text-xs uppercase tracking-[0.16em] text-steel-blue">
+                  Query: {item.query}
+                </div>
+                <h3 className="mt-2 font-heading text-xl font-bold text-white">{item.label}</h3>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
