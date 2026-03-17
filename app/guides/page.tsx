@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { CHARACTERS } from '@/shared/gameData';
+import { GUIDE_ARTICLES } from '@/shared/guidesData';
 
 export const metadata: Metadata = {
   title: 'Slay the Spire 2 Build Guides and Starter Strategy',
@@ -263,6 +264,8 @@ const BUILDS: Build[] = [
 ];
 
 export default function GuidesPage() {
+  const highlightedGuides = GUIDE_ARTICLES.slice(0, 6);
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-background via-background/95 to-background">
       {/* Hero Section */}
@@ -276,6 +279,31 @@ export default function GuidesPage() {
             <p className="text-xl text-muted-foreground">
               Expert strategies for every character. Learn proven builds, card synergies, and winning tactics to conquer the Spire.
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="px-4 pb-6">
+        <div className="container">
+          <div className="rounded-2xl border border-border bg-card/40 p-6 md:p-8">
+            <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+              <h2 className="font-heading text-2xl font-bold">Foundational Guides</h2>
+              <Link href="/mechanics" className="text-sm font-semibold text-molten-orange transition-colors hover:text-ember-glow">
+                Need mechanic basics first?
+              </Link>
+            </div>
+            <div className="grid gap-3 md:grid-cols-2">
+              {highlightedGuides.map((guide) => (
+                <Link
+                  key={guide.slug}
+                  href={`/guides/${guide.slug}`}
+                  className="rounded-xl border border-border bg-background/50 px-4 py-3 transition-colors hover:border-molten-orange"
+                >
+                  <div className="font-semibold">{guide.title}</div>
+                  <div className="mt-1 text-xs text-muted-foreground">{guide.readTime} · Updated {guide.updatedAt}</div>
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </section>

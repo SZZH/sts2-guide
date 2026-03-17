@@ -1,6 +1,8 @@
 import { MetadataRoute } from 'next';
 import { CHARACTERS, NEWS_ARTICLES } from '@/shared/gameData';
 import { CARDS, CARD_CHARACTERS } from '@/shared/cardsData';
+import { GUIDE_ARTICLES } from '@/shared/guidesData';
+import { RELICS_GENERATED } from '@/shared/relicPotionData.generated';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const archivedNewsSlugs = new Set([
@@ -17,6 +19,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     return toDate(card.updatedAt) > latest ? toDate(card.updatedAt) : latest;
   }, toDate('2026-01-01'));
   const latestDatabaseModuleUpdate = toDate('2026-03-10');
+  const latestGuideUpdate = GUIDE_ARTICLES.reduce((latest, guide) => {
+    return toDate(guide.updatedAt) > latest ? toDate(guide.updatedAt) : latest;
+  }, toDate('2026-01-01'));
   const latestCharacterUpdate = CHARACTERS.reduce((latest, character) => {
     return toDate(character.updatedAt) > latest ? toDate(character.updatedAt) : latest;
   }, toDate('2026-01-01'));
@@ -47,7 +52,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/guides`,
-      lastModified: toDate('2026-02-13'),
+      lastModified: latestGuideUpdate,
       changeFrequency: 'weekly',
       priority: 0.9,
     },
@@ -114,5 +119,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: character.value === 'necrobinder' ? 0.85 : 0.78,
   }));
 
-  return [...staticPages, ...characterPages, ...newsPages, ...cardPages, ...characterCardPages];
+  const relicPages: MetadataRoute.Sitemap = RELICS_GENERATED.map((relic) => ({
+    url: `${baseUrl}/relics/${relic.slug}`,
+    lastModified: latestDatabaseModuleUpdate,
+    changeFrequency: 'weekly' as const,
+    priority: 0.72,
+  }));
+
+  const guidePages: MetadataRoute.Sitemap = GUIDE_ARTICLES.map((guide) => ({
+    url: `${baseUrl}/guides/${guide.slug}`,
+    lastModified: toDate(guide.updatedAt),
+    changeFrequency: 'weekly' as const,
+    priority: 0.86,
+  }));
+
+  return [...staticPages, ...characterPages, ...newsPages, ...cardPages, ...characterCardPages, ...relicPages, ...guidePages];
 }

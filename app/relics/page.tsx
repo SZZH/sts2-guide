@@ -107,7 +107,7 @@ export default async function RelicsPage({ searchParams }: RelicsPageProps) {
         url="https://sts2guide.com/relics"
         items={RELICS.map((relic) => ({
           name: relic.name,
-          url: 'https://sts2guide.com/relics',
+          url: relic.slug ? `https://sts2guide.com/relics/${relic.slug}` : 'https://sts2guide.com/relics',
         }))}
       />
       <FAQSchema questions={RELICS_FAQ_ITEMS} />
@@ -294,7 +294,15 @@ export default async function RelicsPage({ searchParams }: RelicsPageProps) {
                             )}
                           </div>
                           <div className="min-w-0">
-                            <h2 className="font-heading text-2xl font-bold">{relic.name}</h2>
+                            <h2 className="font-heading text-2xl font-bold">
+                              {relic.slug ? (
+                                <Link href={`/relics/${relic.slug}`} className="transition-colors hover:text-molten-orange">
+                                  {relic.name}
+                                </Link>
+                              ) : (
+                                relic.name
+                              )}
+                            </h2>
                             <div className="mt-3 flex flex-wrap items-center gap-2">
                               <span className="rounded-full border border-molten-orange/30 px-3 py-1 text-xs uppercase tracking-[0.16em] text-molten-orange">
                                 {relic.rarity}
@@ -306,6 +314,16 @@ export default async function RelicsPage({ searchParams }: RelicsPageProps) {
                           </div>
                         </div>
                         <p className="text-sm leading-7 text-muted-foreground">{relic.description}</p>
+                        {relic.slug ? (
+                          <div className="mt-4">
+                            <Link
+                              href={`/relics/${relic.slug}`}
+                              className="text-sm font-semibold text-molten-orange transition-colors hover:text-ember-glow"
+                            >
+                              Open relic details
+                            </Link>
+                          </div>
+                        ) : null}
                       </article>
                     ))}
                   </div>
