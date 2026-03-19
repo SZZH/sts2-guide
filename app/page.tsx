@@ -94,6 +94,26 @@ export default function HomePage() {
       query: 'sts2 patch',
       label: 'SteamDB Patch Tracker',
     },
+    {
+      href: '/cards/danse_macabre',
+      query: 'danse macabre sts2',
+      label: 'Danse Macabre Card',
+    },
+    {
+      href: '/cards/eradicate',
+      query: 'sts2 eradicate',
+      label: 'Eradicate Card',
+    },
+    {
+      href: '/relics/book_of_five_rings',
+      query: 'book of five rings slay the spire',
+      label: 'Book of Five Rings Relic',
+    },
+    {
+      href: '/guides/exhaust-mechanic-explained',
+      query: 'slay the spire 2 exhaust mechanic',
+      label: 'Exhaust Mechanic Guide',
+    },
   ];
 
   return (

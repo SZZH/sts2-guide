@@ -467,6 +467,18 @@ export default async function CardsPage({ searchParams }: CardsPageProps) {
                     <Link href="/potions" className="text-molten-orange transition-colors hover:text-ember-glow">
                       Which potions save weak runs?
                     </Link>
+                    <Link href="/cards/hammer_time" className="text-molten-orange transition-colors hover:text-ember-glow">
+                      How does Hammer Time scale Forge turns?
+                    </Link>
+                    <Link href="/cards/danse_macabre" className="text-molten-orange transition-colors hover:text-ember-glow">
+                      Is Danse Macabre worth in Necrobinder decks?
+                    </Link>
+                    <Link href="/cards/eradicate" className="text-molten-orange transition-colors hover:text-ember-glow">
+                      How do I pilot Eradicate lines?
+                    </Link>
+                    <Link href="/relics/book_of_five_rings" className="text-molten-orange transition-colors hover:text-ember-glow">
+                      Which cards pair with Book of Five Rings?
+                    </Link>
                     <Link
                       href="/news/slay-the-spire-2-multiplayer-coop-guide"
                       className="text-molten-orange transition-colors hover:text-ember-glow"
@@ -606,6 +618,18 @@ export default async function CardsPage({ searchParams }: CardsPageProps) {
                     </Link>
                     <Link href="/potions" className="text-molten-orange transition-colors hover:text-ember-glow">
                       Which potions save weak runs?
+                    </Link>
+                    <Link href="/cards/hammer_time" className="text-molten-orange transition-colors hover:text-ember-glow">
+                      How does Hammer Time scale Forge turns?
+                    </Link>
+                    <Link href="/cards/danse_macabre" className="text-molten-orange transition-colors hover:text-ember-glow">
+                      Is Danse Macabre worth in Necrobinder decks?
+                    </Link>
+                    <Link href="/cards/eradicate" className="text-molten-orange transition-colors hover:text-ember-glow">
+                      How do I pilot Eradicate lines?
+                    </Link>
+                    <Link href="/relics/book_of_five_rings" className="text-molten-orange transition-colors hover:text-ember-glow">
+                      Which cards pair with Book of Five Rings?
                     </Link>
                     <Link
                       href="/news/slay-the-spire-2-multiplayer-coop-guide"

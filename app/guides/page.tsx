@@ -265,6 +265,28 @@ const BUILDS: Build[] = [
 
 export default function GuidesPage() {
   const highlightedGuides = GUIDE_ARTICLES.slice(0, 6);
+  const intentLinks = [
+    {
+      href: '/guides/exhaust-mechanic-explained',
+      query: 'slay the spire 2 exhaust mechanic',
+      label: 'Exhaust Mechanic Explained',
+    },
+    {
+      href: '/guides/drawpile-mechanic-explained',
+      query: 'sts2 drawpile mechanic',
+      label: 'Drawpile Mechanic Explained',
+    },
+    {
+      href: '/guides/act1-route-priority',
+      query: 'sts2 act 1 route',
+      label: 'Act 1 Route Priority',
+    },
+    {
+      href: '/cards/hammer_time',
+      query: 'slay the spire 2 hammer time',
+      label: 'Hammer Time Card',
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-background via-background/95 to-background">
@@ -303,6 +325,25 @@ export default function GuidesPage() {
                   <div className="mt-1 text-xs text-muted-foreground">{guide.readTime} · Updated {guide.updatedAt}</div>
                 </Link>
               ))}
+            </div>
+
+            <div className="mt-6 rounded-xl border border-border bg-background/40 p-4">
+              <h3 className="font-heading text-lg font-bold">Search Intent Shortcuts</h3>
+              <p className="mt-1 text-sm text-muted-foreground">
+                Open the exact guide or card page that matches recurring player questions.
+              </p>
+              <div className="mt-3 grid gap-3 md:grid-cols-2">
+                {intentLinks.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="rounded-lg border border-border bg-background/50 px-3 py-2 transition-colors hover:border-molten-orange"
+                  >
+                    <div className="text-[11px] uppercase tracking-[0.16em] text-steel-blue">Query: {item.query}</div>
+                    <div className="mt-1 text-sm font-semibold">{item.label}</div>
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         </div>

@@ -244,6 +244,12 @@ export default async function RelicsPage({ searchParams }: RelicsPageProps) {
                     <Link href="/potions" className="text-molten-orange transition-colors hover:text-ember-glow">
                       Which potions pair with this relic?
                     </Link>
+                    <Link href="/relics/book_of_five_rings" className="text-molten-orange transition-colors hover:text-ember-glow">
+                      What does Book of Five Rings do in current runs?
+                    </Link>
+                    <Link href="/relics/pocketwatch" className="text-molten-orange transition-colors hover:text-ember-glow">
+                      Is Pocketwatch still worth around 3-card turns?
+                    </Link>
                     <Link
                       href="/news/slay-the-spire-2-steamdb-patch-tracker"
                       className="text-molten-orange transition-colors hover:text-ember-glow"
@@ -340,6 +346,12 @@ export default async function RelicsPage({ searchParams }: RelicsPageProps) {
                     </Link>
                     <Link href="/potions" className="text-molten-orange transition-colors hover:text-ember-glow">
                       Which potions pair with this relic?
+                    </Link>
+                    <Link href="/relics/book_of_five_rings" className="text-molten-orange transition-colors hover:text-ember-glow">
+                      What does Book of Five Rings do in current runs?
+                    </Link>
+                    <Link href="/relics/pocketwatch" className="text-molten-orange transition-colors hover:text-ember-glow">
+                      Is Pocketwatch still worth around 3-card turns?
                     </Link>
                     <Link
                       href="/news/slay-the-spire-2-steamdb-patch-tracker"
