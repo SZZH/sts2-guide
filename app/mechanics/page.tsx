@@ -4,7 +4,8 @@ import { GAME_MECHANICS } from '@/shared/gameData';
 
 export const metadata: Metadata = {
   title: 'Slay the Spire 2 Mechanics Guide - Sly, Doom, Stars, Forge',
-  description: 'Complete guide to Slay the Spire 2 game mechanics including Sly, Doom, Stars, Forge, Enchantments, and more. Master the new systems and dominate the Spire.',
+  description:
+    'Mechanics guide for Slay the Spire 2 covering Sly, Doom, Stars, Forge, Drawpile, and Exhaust. Use this page to map common questions to practical run decisions.',
   keywords: [
     'Slay the Spire 2 mechanics',
     'StS2 Sly mechanic',
@@ -24,6 +25,38 @@ export default function MechanicsPage() {
   const coreMechanics = GAME_MECHANICS.filter(m => m.category === 'Core');
   const characterMechanics = GAME_MECHANICS.filter(m => m.category === 'Character');
   const advancedMechanics = GAME_MECHANICS.filter(m => m.category === 'Advanced');
+  const intentShortcuts = [
+    {
+      href: '/guides/exhaust-mechanic-explained',
+      query: 'slay the spire 2 exhaust mechanic',
+      label: 'Exhaust Mechanic Explained',
+    },
+    {
+      href: '/guides/drawpile-mechanic-explained',
+      query: 'sts2 drawpile mechanic',
+      label: 'Drawpile Mechanic Explained',
+    },
+    {
+      href: '/guides/act1-route-priority',
+      query: 'sts2 act 1 route',
+      label: 'Act 1 Route Priority',
+    },
+    {
+      href: '/cards/hammer_time',
+      query: 'slay the spire 2 hammer time',
+      label: 'Hammer Time Card',
+    },
+    {
+      href: '/relics/book_of_five_rings',
+      query: 'book of five rings slay the spire',
+      label: 'Book of Five Rings Relic',
+    },
+    {
+      href: '/cards/abrasive',
+      query: 'abrasive sts2',
+      label: 'Abrasive Card',
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-background via-background/95 to-background">
@@ -93,6 +126,27 @@ export default function MechanicsPage() {
                     Pick a Starter Character
                   </Link>
                 </div>
+              </div>
+            </div>
+
+            <div className="mt-6 rounded-2xl border border-border bg-card/70 p-5 text-left">
+              <div className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-orange-400">
+                Search Intent Shortcuts
+              </div>
+              <p className="text-sm leading-7 text-muted-foreground">
+                Jump to the exact page behind recurring mechanic questions instead of starting from broad wiki sections.
+              </p>
+              <div className="mt-4 grid gap-3 md:grid-cols-2">
+                {intentShortcuts.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="rounded-lg border border-border bg-background/60 px-4 py-3 transition-colors hover:border-orange-400"
+                  >
+                    <div className="text-[11px] uppercase tracking-[0.16em] text-orange-400">Query: {item.query}</div>
+                    <div className="mt-1 text-sm font-semibold">{item.label}</div>
+                  </Link>
+                ))}
               </div>
             </div>
           </div>

@@ -88,6 +88,28 @@ export default async function CharactersPage({ searchParams }: CharactersPagePro
     mobileActiveFilters.length > 0 ? mobileActiveFilters.join(' · ') : 'No filters applied';
 
   const characterImageMap = new Map(CHARACTERS.map((entry) => [entry.slug, entry.image]));
+  const intentShortcuts = [
+    {
+      href: '/characters/necrobinder',
+      query: 'how to play necrobinder',
+      label: 'Necrobinder Starter Guide',
+    },
+    {
+      href: '/cards/character/necrobinder',
+      query: 'necrobinder cards sts2',
+      label: 'Necrobinder Card Pool',
+    },
+    {
+      href: '/news/best-starter-character-slay-the-spire-2-early-access',
+      query: 'best starter character slay the spire 2',
+      label: 'Best Starter Character',
+    },
+    {
+      href: '/guides/exhaust-mechanic-explained',
+      query: 'slay the spire 2 exhaust mechanic',
+      label: 'Exhaust Mechanic Guide',
+    },
+  ];
 
   return (
     <>
@@ -250,6 +272,25 @@ export default async function CharactersPage({ searchParams }: CharactersPagePro
                 >
                   Open full cards database
                 </Link>
+              </div>
+
+              <div className="mb-6 rounded-xl border border-border bg-background/40 p-4">
+                <h2 className="font-heading text-lg font-bold">Search Intent Shortcuts</h2>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  Open the exact page that matches common character-selection and starter questions.
+                </p>
+                <div className="mt-3 grid gap-3 md:grid-cols-2">
+                  {intentShortcuts.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="rounded-lg border border-border bg-background/60 px-3 py-2 transition-colors hover:border-molten-orange"
+                    >
+                      <div className="text-[11px] uppercase tracking-[0.16em] text-steel-blue">Query: {item.query}</div>
+                      <div className="mt-1 text-sm font-semibold">{item.label}</div>
+                    </Link>
+                  ))}
+                </div>
               </div>
 
               {filteredCharacters.length === 0 ? (
