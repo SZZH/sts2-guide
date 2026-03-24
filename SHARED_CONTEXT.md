@@ -46,12 +46,27 @@
 - 风险/阻塞: 需 48-72 小时观察回流，不能立即定性为长期改善
 - 下一步: 固定同一时刻盯盘 3 天，完成 Batch A 全量页面级复核
 
+## 2026-03-24 上午
+- Task: 复核四端流量并推进 Bing 链路闭环
+- 结果: 确认下滑主因仍为 Bing/DDG；Google 侧点击与曝光保持稳定
+- 数据信号: Bing Sitemap 已重新提交并进入 Processing；IndexNow 仍返回 403 未授权
+- 风险/阻塞: IndexNow 权限绑定未打通，需等待平台回流并复测
+- 下一步: 继续走 URL Submission + URL Inspection 抽检，48 小时后复测 IndexNow
+
+## 2026-03-24 下午
+- Task: 执行可立即落地修复项（图片 alt 与提交链路）
+- 结果: 修复全局背景图 alt 文案；确认 URL Submission 列表可用并保留批次 URL 记录
+- 数据信号: Bing URL Inspection 对核心页显示 indexed，但仍提示少量 SEO/GEO 细项
+- 风险/阻塞: Bing Search Performance 回流仍弱，短时无法做细粒度归因
+- 下一步: 完成 10-15 个核心页 URL Inspection 清单并在 SHARED_CONTEXT 中补全页级状态
+
 ---
 
 ## 2) 待办优先级
 - P0: 连续 3 天固定时点监控（GSC 24h + Vercel 来源/承接/跳出）
 - P0: 完成 Batch A 全量页面级状态表（收录/曝光/前 30）
 - P0: 补齐 Bing 基础链路（Sitemap 入库 + IndexNow 可观测）
+- P0: 完成 10-15 个核心页 Bing URL Inspection 清单（收录/抓取/问题）
 - P1: 对已有曝光但低 CTR 页面做标题与描述小范围 A/B
 - P2: 周度闸门判定复盘（D+7）
 

@@ -60,7 +60,7 @@ export default function RootLayout({
         <div className="fixed inset-0 z-0 pointer-events-none">
           <Image
             src={siteAssetUrl('/hero/home-hero.png')}
-            alt=""
+            alt="Slay the Spire 2 thematic background"
             fill
             priority
             sizes="100vw"
