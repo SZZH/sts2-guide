@@ -1,5 +1,5 @@
 const DEFAULT_SITE_ORIGIN = "https://sts2guide.com";
-const DEFAULT_INDEXNOW_KEY = "9b140331fdfef9def5d086169aa7aac2";
+const DEFAULT_INDEXNOW_KEY = "0c603396994c416cadaa5c4280992fa4";
 const DEFAULT_INDEXNOW_ENDPOINT = "https://api.indexnow.org/indexnow";
 
 function normalizeSiteOrigin() {

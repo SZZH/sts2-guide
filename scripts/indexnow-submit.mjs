@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const DEFAULT_SITE_ORIGIN = "https://sts2guide.com";
-const DEFAULT_INDEXNOW_KEY = "9b140331fdfef9def5d086169aa7aac2";
+const DEFAULT_INDEXNOW_KEY = "0c603396994c416cadaa5c4280992fa4";
 const DEFAULT_ENDPOINT = "https://api.indexnow.org/indexnow";
 
 const siteOrigin = (process.env.SITE_URL || process.env.NEXT_PUBLIC_SITE_URL || DEFAULT_SITE_ORIGIN).replace(/\/+$/g, "");

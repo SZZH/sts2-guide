@@ -55,7 +55,7 @@
 
 ## 2026-03-24 下午
 - Task: 执行可立即落地修复项（图片 alt 与提交链路）
-- 结果: 修复全局背景图 alt 文案；确认 URL Submission 列表可用并保留批次 URL 记录
+- 结果: 修复全局背景图 alt 文案；确认 URL Submission 列表可用并保留批次 URL 记录；IndexNow key 已轮换并重新提交
 - 数据信号: Bing URL Inspection 对核心页显示 indexed，但仍提示少量 SEO/GEO 细项
 - 风险/阻塞: Bing Search Performance 回流仍弱，短时无法做细粒度归因
 - 下一步: 完成 10-15 个核心页 URL Inspection 清单并在 SHARED_CONTEXT 中补全页级状态
