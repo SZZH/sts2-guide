@@ -25,12 +25,7 @@ export default function NewsPage() {
     selectedCategory === 'All'
       ? sortedArticles
       : sortedArticles.filter((article) => article.category === selectedCategory);
-  const featuredLaunchArticle = selectedCategory === 'All'
-    ? sortedArticles.find((article) => article.slug === 'slay-the-spire-2-steam-charts-player-count')
-      ?? sortedArticles.find((article) => article.slug === 'slay-the-spire-2-steamdb-patch-tracker')
-      ?? sortedArticles.find((article) => article.slug === 'slay-the-spire-2-multiplayer-coop-guide')
-      ?? sortedArticles.find((article) => article.slug === 'slay-the-spire-2-release-date')
-    : null;
+  const featuredLaunchArticle = filteredArticles[0] ?? null;
   const gridArticles = featuredLaunchArticle
     ? filteredArticles.filter((article) => article.slug !== featuredLaunchArticle.slug)
     : filteredArticles;
@@ -93,9 +88,9 @@ export default function NewsPage() {
             className="group block mb-12 rounded-2xl border border-molten-orange/40 bg-gradient-to-br from-molten-orange/10 via-shadow-gray/80 to-shadow-gray/60 p-8 hover:border-molten-orange transition-all duration-300"
           >
             <div className="flex flex-wrap items-center gap-3 mb-4">
-              <span className="text-xs font-semibold px-3 py-1 rounded-full bg-molten-orange text-white">
-                Featured Launch Week Update
-              </span>
+                <span className="text-xs font-semibold px-3 py-1 rounded-full bg-molten-orange text-white">
+                  Latest Update
+                </span>
               <span className="text-xs text-muted-foreground">{featuredLaunchArticle.date}</span>
               <span className="text-xs text-muted-foreground">{featuredLaunchArticle.readTime}</span>
             </div>
@@ -106,7 +101,7 @@ export default function NewsPage() {
               {featuredLaunchArticle.excerpt}
             </p>
             <div className="flex items-center gap-2 text-molten-orange font-semibold">
-              Read the featured guide
+              Read this update
               <span aria-hidden="true" className="transition-transform duration-300 group-hover:translate-x-1">
                 →
               </span>

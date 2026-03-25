@@ -199,6 +199,245 @@ export interface NewsArticle {
 
 export const NEWS_ARTICLES: NewsArticle[] = [
   {
+    slug: 'slay-the-spire-board-game-downfall-expansion-live',
+    title: 'Slay the Spire Downfall Expansion Kickstarter Is Live (March 24): What StS2 Players Need to Know',
+    excerpt: 'The Slay the Spire board game Downfall expansion Kickstarter is live as of March 24. This is not a Slay the Spire 2 gameplay patch, but it does affect current franchise discussion and update tracking intent.',
+    date: '2026-03-24',
+    category: 'News',
+    readTime: '5 min',
+    featured: true,
+    image: 'https://clan.akamai.steamstatic.com/images/44971832/15b8306661e164d0fb11bad9a80377e1eda18911.png',
+    url: 'https://store.steampowered.com/news/app/2868840/view/503978984819656657',
+    source: 'Steam News',
+    sourceType: 'internal',
+    updatedAt: '2026-03-24',
+    intro: [
+      'Quick heads-up: this latest official update is about the board game, not a fresh StS2 balance patch.',
+      'Still worth reading, though. It tells us where community attention is going next, even if it does not change your current run math today.',
+    ],
+    sections: [
+      {
+        heading: 'What happened on March 24',
+        paragraphs: [
+          'Steam posted a new announcement for app 2868840 confirming that the Downfall board game expansion campaign is now live.',
+          'If you came here asking, "Did this change card balance in StS2 right now?" the short answer is no. This is franchise news, not a client patch.',
+        ],
+        bullets: [
+          'Announcement type: board game expansion campaign launch',
+          'Direct StS2 gameplay impact: none confirmed in this post',
+          'Most useful player action: keep this as franchise context, then continue tracking digital patch notes',
+        ],
+      },
+      {
+        heading: 'Why this still matters to StS2 content strategy',
+        paragraphs: [
+          'Even without balance changes, posts like this shift what people search for and talk about for the next few days.',
+          'Best move is simple: explain what changed, what did not, and point players straight to live StS2 patch coverage.',
+        ],
+      },
+      {
+        heading: 'What to read next if you only care about StS2 updates',
+        paragraphs: [
+          'If your goal is deckbuilding decisions and patch-impact reading, switch to the patch tracker and current mechanic guides. Those pages are the ones that change your run outcomes.',
+        ],
+        bullets: [
+          'Open the StS2 patch tracker for timeline-level updates',
+          'Check current mechanic guides before adjusting build assumptions',
+          'Use relic and card entity pages for concrete post-patch decision support',
+        ],
+      },
+    ],
+    relatedLinks: [
+      { href: '/news/slay-the-spire-2-steamdb-patch-tracker', label: 'Track the latest StS2 patch timeline' },
+      { href: '/guides/exhaust-mechanic-explained', label: 'Read the exhaust mechanic guide' },
+      { href: '/cards/hammer_time', label: 'Check Hammer Time card page' },
+      { href: '/relics/book_of_five_rings', label: 'Check Book of Five Rings relic page' },
+    ],
+  },
+  {
+    slug: 'slay-the-spire-2-beta-patch-v0-100-0-highlights',
+    title: 'Slay the Spire 2 Beta Patch Notes v0.100.0: Full Balance Highlights, Nerfs, and Meta Impact',
+    excerpt: 'Slay the Spire 2 beta patch v0.100.0 is the first major post-launch balance pass. The core direction is reducing infinite loops, with broad card, relic, enemy, event, and multiplayer changes that shift early meta assumptions.',
+    date: '2026-03-20',
+    category: 'Update',
+    readTime: '11 min',
+    featured: true,
+    image: 'https://clan.akamai.steamstatic.com/images/44971832/ef2c49f649628f6b0c3e7f916b71b8fa04927e64.png',
+    url: 'https://store.steampowered.com/news/app/2868840/view/503978984819655259',
+    source: 'Steam News',
+    sourceType: 'internal',
+    updatedAt: '2026-03-20',
+    intro: [
+      'v0.100.0 is the first big beta patch after launch, and yes, you can feel it.',
+      'If you are still using launch-week assumptions, treat this patch like a reset and retest your core lines from scratch.',
+    ],
+    sections: [
+      {
+        heading: 'Patch direction: less infinite abuse, more controlled scaling',
+        paragraphs: [
+          'The dev note says it plainly: they want infinite loops to be harder to reach.',
+          'There are visual and accessibility additions too, but run outcomes will mostly come from the card, relic, enemy, and event changes in this patch.',
+        ],
+      },
+      {
+        heading: 'High-impact gameplay areas to re-evaluate now',
+        paragraphs: [
+          'The important part is the breadth. This is not one flashy buff; multiple classes and relic lines got touched at once.',
+        ],
+        bullets: [
+          'Card reworks and numbers changed across all major classes',
+          'Relic economy and specific relic values adjusted (including Book of Five Rings)',
+          'Enemy and event tuning changes can alter Act routing expectations',
+          'Multiplayer-specific cards were also rebalanced',
+        ],
+      },
+      {
+        heading: 'How to adapt without overreacting',
+        paragraphs: [
+          'Do not rewrite your entire tier list after one run. Recheck Act 1 stability first, then update your archetype calls after a few solid samples.',
+        ],
+        bullets: [
+          'Treat old infinite lines as lower reliability by default',
+          'Prioritize repeatable block/damage curves before speculative combo pieces',
+          'Use mechanics and card pages to validate changed assumptions quickly',
+        ],
+      },
+    ],
+    relatedLinks: [
+      { href: '/news/slay-the-spire-2-steamdb-patch-tracker', label: 'Patch tracker timeline and impact log' },
+      { href: '/guides/act1-route-priority', label: 'Act 1 route priorities after balance shifts' },
+      { href: '/cards/danse_macabre', label: 'Danse Macabre card reference' },
+      { href: '/relics/book_of_five_rings', label: 'Book of Five Rings relic reference' },
+    ],
+  },
+  {
+    slug: 'slay-the-spire-2-patch-v0-99-1-main-branch',
+    title: 'Slay the Spire 2 Patch Notes v0.99.1 (Main Branch): Stability Fixes Merged from Beta',
+    excerpt: 'The March 17 Slay the Spire 2 patch v0.99.1 moved earlier beta fixes to the main branch. This update is mostly stability, multiplayer sync, and localization cleanup for players who stayed on the default live branch.',
+    date: '2026-03-17',
+    category: 'Update',
+    readTime: '7 min',
+    featured: false,
+    image: 'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2868840/ss_8f8dcd17d2dc8f228151f00ca17e59f2f65b9d85.1920x1080.jpg?t=1770241822',
+    url: 'https://store.steampowered.com/news/app/2868840/view/502852451136701666',
+    source: 'Steam News',
+    sourceType: 'internal',
+    updatedAt: '2026-03-17',
+    intro: [
+      'v0.99.1 is the "okay, now main branch is safer" patch.',
+    ],
+    sections: [
+      {
+        heading: 'What changed in practice',
+        paragraphs: [
+          'Most of the patch is bug and stability work: controller behavior, crash reduction, multiplayer sync, and localization cleanup.',
+          'It is not a meta-defining balance update, but it does remove a lot of launch-week friction.',
+        ],
+        bullets: [
+          'Main-branch reliability increased through merged beta fixes',
+          'Multiplayer and localization issues received broad cleanup',
+          'Use this as the baseline before assessing newer beta balance shifts',
+        ],
+      },
+      {
+        heading: 'Who should care most',
+        paragraphs: [
+          'If you skipped beta or are still troubleshooting old launch bugs, this should be your first checkpoint.',
+          'If your issue started before March 17, update first and retest before trying complicated workarounds.',
+        ],
+      },
+    ],
+    relatedLinks: [
+      { href: '/news/slay-the-spire-2-hotfix-patch-notes', label: 'Day-one hotfix context (v0.98.1)' },
+      { href: '/news/slay-the-spire-2-known-issues-and-fixes', label: 'Known issues troubleshooting guide' },
+      { href: '/news/slay-the-spire-2-beta-patch-v0-100-0-highlights', label: 'Read next: beta v0.100.0 changes' },
+    ],
+  },
+  {
+    slug: 'slay-the-spire-2-beta-hotfix-v0-99-1',
+    title: 'Slay the Spire 2 Beta Hotfix v0.99.1 Patch Notes: Multiplayer Softlock Fixes',
+    excerpt: 'The March 14 Slay the Spire 2 beta hotfix v0.99.1 targets specific multiplayer softlocks, including Breakthrough self-HP loss death states and Architect event end-state lock issues.',
+    date: '2026-03-14',
+    category: 'Update',
+    readTime: '4 min',
+    featured: false,
+    image: 'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2868840/ss_026b621a38b400c9f4080a7dd9152dd3050cbe2d.1920x1080.jpg?t=1770241822',
+    url: 'https://store.steampowered.com/news/app/2868840/view/502852451136701250',
+    source: 'Steam News',
+    sourceType: 'internal',
+    updatedAt: '2026-03-14',
+    intro: [
+      'This one is short and focused: fix specific multiplayer softlocks, fast.',
+    ],
+    sections: [
+      {
+        heading: 'What was fixed',
+        paragraphs: [
+          'Official notes call out two direct fixes: one tied to Breakthrough self-damage deaths, and one at the end of the Architect event in multiplayer.',
+        ],
+        bullets: [
+          'Breakthrough self-HP loss death softlock fixed (multiplayer)',
+          'Architect event end softlock fixed (multiplayer)',
+        ],
+      },
+      {
+        heading: 'How to use this information',
+        paragraphs: [
+          'If your group hit either of these exact lock states, this is the patch to retest first.',
+          'If your issue is different, keep repro notes and compare against later main-branch updates.',
+        ],
+      },
+    ],
+    relatedLinks: [
+      { href: '/news/slay-the-spire-2-patch-v0-99-1-main-branch', label: 'Main-branch v0.99.1 rollout summary' },
+      { href: '/news/slay-the-spire-2-multiplayer-coop-guide', label: 'Multiplayer setup and rules guide' },
+      { href: '/news/slay-the-spire-2-known-issues-and-fixes', label: 'Known issues page for remaining failures' },
+    ],
+  },
+  {
+    slug: 'slay-the-spire-neowsletter-march-2026',
+    title: 'The Neowsletter March 2026 (Slay the Spire 2): Key Signals, Priorities, and Next Update Focus',
+    excerpt: 'The March 2026 Neowsletter is not a direct patch note, but it provides useful Slay the Spire 2 direction. It highlights team priorities, community discussion focus, and likely near-term update attention.',
+    date: '2026-03-13',
+    category: 'Analysis',
+    readTime: '6 min',
+    featured: false,
+    image: 'https://www.megacrit.com/images/neowsletter_cover_march_2026_hu6024b048b79063ddf09a1d2ab345d1e7_504528_836x470_resize_q75_h2_lanczos_3.webp',
+    url: 'https://www.megacrit.com/news/2026-3-13-neowsletter-issue-20/',
+    source: 'Mega Crit',
+    sourceType: 'internal',
+    updatedAt: '2026-03-13',
+    intro: [
+      'It is easy to skip newsletters, but they often show priority signals before they show up in obvious patch patterns.',
+      'You are not reading this for a secret buff. You are reading it to understand direction.',
+    ],
+    sections: [
+      {
+        heading: 'Why this newsletter belongs in your update watchlist',
+        paragraphs: [
+          'Patch notes tell you what changed. Newsletters tell you where the focus is moving. You want both.',
+        ],
+      },
+      {
+        heading: 'Practical use for content and players',
+        paragraphs: [
+          'Use newsletter context to decide which mechanic pages, class pages, and troubleshooting guides to refresh first.',
+          'For players, it is a fast way to keep up without digging through every thread.',
+        ],
+        bullets: [
+          'Pair newsletter context with patch tracker entries',
+          'Refresh high-intent mechanic and starter guides after major messaging shifts',
+          'Treat newsletter language as directional, then validate with live patch behavior',
+        ],
+      },
+    ],
+    relatedLinks: [
+      { href: '/news/slay-the-spire-2-steamdb-patch-tracker', label: 'Patch tracker for concrete changelog history' },
+      { href: '/guides/drawpile-mechanic-explained', label: 'Drawpile mechanic guide' },
+      { href: '/guides/exhaust-mechanic-explained', label: 'Exhaust mechanic guide' },
+    ],
+  },
+  {
     slug: 'slay-the-spire-2-launch-time-us-china',
     title: 'Slay the Spire 2 Is Out Now in Early Access: Launch Status, Time, and First 24 Hours Guide',
     excerpt: 'Slay the Spire 2 is now live in Early Access. This launch hub covers release status, practical launch-time conversion, first-24-hours priorities, beginner mistakes, and the best next pages to read during launch week.',
