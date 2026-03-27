@@ -199,6 +199,98 @@ export interface NewsArticle {
 
 export const NEWS_ARTICLES: NewsArticle[] = [
   {
+    slug: 'slay-the-spire-2-beta-patch-v0-101-0-analysis',
+    title: 'Slay the Spire 2 Beta Patch v0.101.0 Analysis: Reworks, Reverts, and Why This Update Feels Different',
+    excerpt: 'v0.101.0 is more than a balance pass. It reveals a clearer design loop: revert changes that hurt class feel, rework swingy mechanics, and slow low-effort dominant lines without flattening build diversity.',
+    date: '2026-03-27',
+    category: 'Analysis',
+    readTime: '12 min',
+    featured: true,
+    image: 'https://clan.akamai.steamstatic.com/images/44971832/ef2c49f649628f6b0c3e7f916b71b8fa04927e64.png',
+    url: 'https://store.steampowered.com/news/app/2868840/view/507357499795439629',
+    source: 'Steam News',
+    sourceType: 'internal',
+    updatedAt: '2026-03-27',
+    intro: [
+      'At first glance, v0.101.0 looks messy: some cards got reverted, others got reworked, and several pacing levers were changed at once. Read as isolated lines, it looks inconsistent. Read as a full patch, it is surprisingly coherent.',
+      'This is not just a number patch. It is a direction patch. Mega Crit is trying to make the game less autopilot at the top end while preserving what makes each class feel like itself.',
+    ],
+    sections: [
+      {
+        heading: 'The hidden headline: this patch is about design process, not only card values',
+        paragraphs: [
+          'v0.101.0 openly discusses design intent and then backs that intent with reversible changes. That is the important part. A healthy early-access balancing loop is not "only nerf" or "only buff". It is test, read feedback, revert when needed, and keep moving toward clearer gameplay.',
+          'In practical terms, this patch says three things: low-effort dominant lines should be less automatic, random frustration should be reduced, and class identity should not be collateral damage while balancing.',
+        ],
+      },
+      {
+        heading: 'Representative case 1: Prepared shows where the team draws the line',
+        paragraphs: [
+          'Prepared was pulled back toward Silent\'s classic low-cost draw/discard identity. This is bigger than one card text change. It is a class-feel correction. Silent can be adjusted without removing the hand-shaping language that defines the class.',
+          'The message is clear: yes, over-dominant Sly lines can be constrained, but core class texture is still protected. That distinction matters for long-term roster health.',
+        ],
+        bullets: [
+          'Balancing target: dominant line reliability',
+          'Protected asset: class identity and pilot feel',
+          'Player implication: old "Silent is losing identity" takes need re-testing',
+        ],
+      },
+      {
+        heading: 'Representative case 2: Borrowed Time and Capture Spirit are quality-of-play reversions',
+        paragraphs: [
+          'Necrobinder\'s Borrowed Time and Capture Spirit were both reverted upward. These are not random giveaways. They restore deck usability and reduce anti-fun tax in normal runs.',
+          'When both pieces return in the same patch, the strategic impact is that Soul tempo lines become less awkward to assemble. It does not mean "Necrobinder is solved". It means the class is playable without forcing narrow comfort picks.',
+        ],
+      },
+      {
+        heading: 'Representative case 3: Arsenal rework changes Regent\'s build logic, not just power budget',
+        paragraphs: [
+          'Arsenal moving from colorless-trigger to card-creation-trigger is a role rewrite. You cannot evaluate this as a +1/-1 patch note line. It changes what support pieces Regent wants and what sequencing now creates value.',
+          'Whenever a trigger condition shifts, draft heuristics should reset. Old evaluations based on colorless density no longer transfer cleanly.',
+        ],
+      },
+      {
+        heading: 'Representative case 4: Voltaic + Pendulum + Doormaker point to pace control and readability',
+        paragraphs: [
+          'Voltaic moving from 2 to 3 cost is a direct tempo brake for Defect. Pendulum changing into a fixed cadence lowers high-roll volatility. Doormaker rework aiming for less randomness pushes encounters toward readable response windows.',
+          'Taken together, these are not disconnected edits. They form one design thread: reduce the proportion of outcomes decided by swingy burst or opaque patterns, increase the proportion decided by sequencing and adaptation.',
+        ],
+      },
+      {
+        heading: 'System-level changes most players will underestimate',
+        paragraphs: [
+          'The floor-6 Elite spawn adjustment and map consistency improvements may affect win quality more than flashy card edits. Early routing in weak openings becomes less coin-flip and more skill-expressive.',
+          'That matters because many "this class is doomed" takes are actually route-and-pressure artifacts. If the route pressure changes, class conclusions can change with it.',
+        ],
+        bullets: [
+          'Elites no longer spawning on floor 6 shifts early risk curve',
+          'Map consistency tuning reduces extreme low-agency starts',
+          'Act 1 pathing should be re-evaluated before meta claims',
+        ],
+      },
+      {
+        heading: 'What this means for players right now',
+        paragraphs: [
+          'If you are on beta, do not lock your conclusions after one run. Use 3-5 run samples and evaluate role changes first, raw numbers second. If you are on main branch, treat v0.101.0 as directional signal for upcoming merges, not immediate live meta truth.',
+          'Most importantly, stop asking only "is this card stronger?" and start asking "what job is this card doing now?" v0.101.0 is full of role edits disguised as stat edits.',
+        ],
+        bullets: [
+          'Beta players: retest Prepared, Borrowed Time, Capture Spirit, Arsenal, Voltaic assumptions',
+          'Main-branch players: watch which reworks survive future merges',
+          'All players: prioritize decision quality over one-line patch hype',
+        ],
+      },
+    ],
+    relatedLinks: [
+      { href: '/news/slay-the-spire-2-steamdb-patch-tracker', label: 'Follow patch timeline and merge history' },
+      { href: '/guides/act1-route-priority', label: 'Recheck Act 1 routing under new pressure curve' },
+      { href: '/guides/exhaust-mechanic-explained', label: 'Revisit core mechanic fundamentals after role changes' },
+      { href: '/cards/danse_macabre', label: 'Danse Macabre card page' },
+      { href: '/cards/hammer_time', label: 'Hammer Time card page' },
+      { href: '/relics/book_of_five_rings', label: 'Book of Five Rings relic page' },
+    ],
+  },
+  {
     slug: 'slay-the-spire-board-game-downfall-expansion-live',
     title: 'Slay the Spire Downfall Expansion Kickstarter Is Live (March 24): What StS2 Players Need to Know',
     excerpt: 'The Slay the Spire board game Downfall expansion Kickstarter is live as of March 24. This is not a Slay the Spire 2 gameplay patch, but it does affect current franchise discussion and update tracking intent.',
