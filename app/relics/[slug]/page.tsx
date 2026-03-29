@@ -10,9 +10,79 @@ const RELIC_SLUG_ALIASES: Record<string, string> = {
   prismatic_shard: 'prismatic_gem',
 };
 
+type RelicClusterPage = {
+  slug: string;
+  title: string;
+  description: string;
+  intro: string;
+  bullets: string[];
+  relatedLinks: Array<{ href: string; label: string }>;
+};
+
+const RELIC_CLUSTER_PAGES: Record<string, RelicClusterPage> = {
+  energy_relics_guide: {
+    slug: 'energy_relics_guide',
+    title: 'Energy Relics Guide',
+    description:
+      'Core Slay the Spire 2 energy relic picks, when to draft around them, and what to avoid in early routes.',
+    intro:
+      'Use this quick guide to decide whether an energy relic is actually solving your run bottleneck, or just adding raw output without consistency.',
+    bullets: [
+      'Prioritize relics that improve turn consistency before raw spike turns.',
+      'If your deck already has draw problems, avoid relics that punish hand quality.',
+      'Pair energy gain with low-cost card density so you can convert extra energy every turn.',
+    ],
+    relatedLinks: [
+      { href: '/relics', label: 'Browse all relics' },
+      { href: '/guides/act1-route-priority', label: 'Review Act 1 route planning' },
+      { href: '/guides/card-upgrade-priority', label: 'Check upgrade priority rules' },
+    ],
+  },
+  card_draw_relics_guide: {
+    slug: 'card_draw_relics_guide',
+    title: 'Card Draw Relics Guide',
+    description:
+      'How to evaluate draw-focused relics in Slay the Spire 2 and when they outperform direct damage scaling.',
+    intro:
+      'Draw relics are strongest when they improve decision quality. If your hand remains cluttered, they can still underperform even with high card volume.',
+    bullets: [
+      'Treat draw relics as consistency tools, not automatic power spikes.',
+      'Check whether your deck has enough playable cards to exploit extra draw.',
+      'Combine draw scaling with exhaust or discard plans to keep hand quality high.',
+    ],
+    relatedLinks: [
+      { href: '/relics', label: 'Browse all relics' },
+      { href: '/guides/drawpile-mechanic-explained', label: 'Open drawpile mechanic guide' },
+      { href: '/cards', label: 'Find draw-friendly cards' },
+    ],
+  },
+  starter_relics_tier_list: {
+    slug: 'starter_relics_tier_list',
+    title: 'Starter Relics Tier List',
+    description:
+      'Starter relic priority for early runs in Slay the Spire 2, focused on consistency and route safety.',
+    intro:
+      'This tier view favors relics that reduce early-run volatility and keep your Act 1/Act 2 routes flexible.',
+    bullets: [
+      'Top tier relics should improve both weak and average opening hands.',
+      'Mid tier relics are strong only when your deck already supports them.',
+      'Skip niche relics early unless they directly solve your current run problem.',
+    ],
+    relatedLinks: [
+      { href: '/relics', label: 'Browse all relics' },
+      { href: '/guides/common-beginner-mistakes', label: 'Avoid beginner trap decisions' },
+      { href: '/characters', label: 'Match relic picks to character' },
+    ],
+  },
+};
+
 function getRelicBySlug(slug: string) {
   const normalizedSlug = RELIC_SLUG_ALIASES[slug] ?? slug;
   return RELICS.find((relic) => relic.slug === normalizedSlug);
+}
+
+function getRelicClusterPage(slug: string) {
+  return RELIC_CLUSTER_PAGES[slug];
 }
 
 function getCharacterTag(character?: string) {
@@ -20,14 +90,35 @@ function getCharacterTag(character?: string) {
 }
 
 export async function generateStaticParams() {
-  return RELICS.filter((relic) => Boolean(relic.slug)).map((relic) => ({
-    slug: relic.slug!,
-  }));
+  return [
+    ...RELICS.filter((relic) => Boolean(relic.slug)).map((relic) => ({
+      slug: relic.slug!,
+    })),
+    ...Object.keys(RELIC_CLUSTER_PAGES).map((slug) => ({ slug })),
+  ];
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const relic = getRelicBySlug(slug);
+  const clusterPage = getRelicClusterPage(slug);
+
+  if (clusterPage) {
+    return {
+      title: `${clusterPage.title} (Slay the Spire 2)`,
+      description: clusterPage.description,
+      keywords: ['slay the spire 2 relic guide', 'sts2 relics', clusterPage.title.toLowerCase()],
+      alternates: {
+        canonical: `/relics/${clusterPage.slug}`,
+      },
+      openGraph: {
+        title: `${clusterPage.title} for Slay the Spire 2`,
+        description: clusterPage.description,
+        url: `https://sts2guide.com/relics/${clusterPage.slug}`,
+        type: 'article',
+      },
+    };
+  }
 
   if (!relic || !relic.slug) {
     return { title: 'Relic Not Found' };
@@ -58,6 +149,60 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 export default async function RelicDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const relic = getRelicBySlug(slug);
+  const clusterPage = getRelicClusterPage(slug);
+
+  if (clusterPage) {
+    return (
+      <>
+        <BreadcrumbSchema
+          items={[
+            { name: 'Home', url: 'https://sts2guide.com' },
+            { name: 'Relics', url: 'https://sts2guide.com/relics' },
+            { name: clusterPage.title, url: `https://sts2guide.com/relics/${clusterPage.slug}` },
+          ]}
+        />
+        <CollectionPageSchema
+          name={`${clusterPage.title} - Slay the Spire 2`}
+          description={clusterPage.description}
+          url={`https://sts2guide.com/relics/${clusterPage.slug}`}
+        />
+
+        <div className="min-h-screen py-16">
+          <div className="container mx-auto px-4">
+            <Link
+              href="/relics"
+              className="mb-8 inline-flex items-center gap-2 text-steel-blue transition-colors hover:text-molten-orange"
+            >
+              <ArrowLeft className="h-5 w-5" />
+              Back to Relics
+            </Link>
+
+            <section className="rounded-2xl border border-border bg-background/55 p-6 md:p-8">
+              <h1 className="mb-5 font-heading text-4xl font-bold md:text-5xl">{clusterPage.title}</h1>
+              <p className="mb-8 text-lg leading-8 text-muted-foreground">{clusterPage.intro}</p>
+
+              <div className="mb-8 rounded-xl border border-molten-orange/25 bg-molten-orange/5 p-5">
+                <div className="mb-2 text-xs uppercase tracking-[0.18em] text-molten-orange">Key Notes</div>
+                <ul className="list-disc space-y-2 pl-5 text-sm leading-7 text-foreground/90">
+                  {clusterPage.bullets.map((bullet) => (
+                    <li key={bullet}>{bullet}</li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="space-y-2 text-sm">
+                {clusterPage.relatedLinks.map((link) => (
+                  <Link key={link.href} href={link.href} className="block text-molten-orange transition-colors hover:text-ember-glow">
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            </section>
+          </div>
+        </div>
+      </>
+    );
+  }
 
   if (!relic || !relic.slug) {
     notFound();
