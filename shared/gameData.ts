@@ -284,10 +284,10 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     relatedLinks: [
       { href: '/news/slay-the-spire-2-steamdb-patch-tracker', label: 'Follow patch timeline and merge history' },
       { href: '/guides/act1-route-priority', label: 'Recheck Act 1 routing under new pressure curve' },
+      { href: '/news/slay-the-spire-2-first-run-guide-act-1-priorities', label: 'Apply these patch changes in your next Act 1 run' },
+      { href: '/news/best-starter-character-slay-the-spire-2-early-access', label: 'Pick the best starter character after v0.101.0' },
+      { href: '/news/slay-the-spire-2-top-10-beginner-mistakes', label: 'Avoid the common mistakes this patch exposes faster' },
       { href: '/guides/exhaust-mechanic-explained', label: 'Revisit core mechanic fundamentals after role changes' },
-      { href: '/cards/danse_macabre', label: 'Danse Macabre card page' },
-      { href: '/cards/hammer_time', label: 'Hammer Time card page' },
-      { href: '/relics/book_of_five_rings', label: 'Book of Five Rings relic page' },
     ],
   },
   {
