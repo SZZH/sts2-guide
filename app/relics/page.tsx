@@ -6,9 +6,9 @@ import { BreadcrumbSchema, CollectionPageSchema, FAQSchema, ItemListSchema } fro
 import MobileFiltersPanel from '@/components/MobileFiltersPanel';
 
 export const metadata: Metadata = {
-  title: 'Slay the Spire 2 Relics - Search by Rarity and Character',
+  title: 'Slay the Spire 2 Relics Database: Search All Relics by Rarity and Character',
   description:
-    'Search the Slay the Spire 2 relic index by rarity and character tag. Use this page for fast lookup instead of long guide text.',
+    'Search all Slay the Spire 2 relics by rarity, character, and keyword. Use this relic database for fast lookup and route directly into detailed relic pages.',
   keywords: [
     'Slay the Spire 2 relics',
     'StS2 relic database',
@@ -19,8 +19,8 @@ export const metadata: Metadata = {
     canonical: '/relics',
   },
   openGraph: {
-    title: 'Slay the Spire 2 Relics - Search Index',
-    description: 'Browse relics by rarity, character tag, and keyword in a clean lookup view.',
+    title: 'Slay the Spire 2 Relics Database and Search Index',
+    description: 'Browse all relics by rarity, character tag, and keyword in a fast lookup view.',
   },
 };
 
@@ -269,9 +269,9 @@ export default async function RelicsPage({ searchParams }: RelicsPageProps) {
               <div>
                 <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
                   <div>
-                    <h1 className="font-heading text-3xl font-bold md:text-4xl">Relic Database</h1>
+                    <h1 className="font-heading text-3xl font-bold md:text-4xl">All Relics Database</h1>
                     <p className="mt-2 text-sm leading-7 text-steel-blue">
-                      Showing {filteredRelics.length} relics in the current index. Use filters to narrow by rarity and class context.
+                      Showing {filteredRelics.length} relics in the current index. Filter by rarity, class context, and keyword to answer build decisions faster.
                     </p>
                   </div>
                   <Link href="/potions" className="text-sm font-semibold text-molten-orange transition-colors hover:text-ember-glow">

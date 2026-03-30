@@ -86,7 +86,21 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ slu
     article.url,
     ...(article.relatedLinks?.slice(0, 2).map((link) => `https://sts2guide.com${link.href}`) ?? []),
   ];
-  const quickAnswerLinks = article.relatedLinks?.slice(0, 3) ?? [];
+  const actionableSteps =
+    article.sections
+      ?.flatMap((section) => section.bullets ?? [])
+      .filter((bullet) => !bullet.startsWith('Q:'))
+      .slice(0, 3) ?? [];
+  const fallbackActionableSteps = [
+    'Confirm the latest patch status first before changing your setup.',
+    'Use one focused test case, then verify whether the issue is reproducible.',
+    'Move to a specific guide page instead of broad browsing when you need the next action fast.',
+  ];
+  const funnelLinks = article.relatedLinks?.slice(0, 2) ?? [];
+  const fallbackFunnelLinks = [
+    { href: '/mechanics', label: 'Need quick definitions before deciding your next run?' },
+    { href: '/guides', label: 'Need a practical build path instead of patch reading?' },
+  ];
   const updatedTodayLinks = [
     {
       href: '/news/slay-the-spire-2-known-issues-and-fixes',
@@ -178,18 +192,23 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ slu
             {isInternalArticle && (
               <div className="grid gap-4 mb-10 md:grid-cols-3">
                 <section className="rounded-xl border border-molten-orange/30 bg-background/70 p-5">
-                  <h2 className="font-heading text-lg font-bold mb-3">Quick answers</h2>
+                  <h2 className="font-heading text-lg font-bold mb-3">One-line conclusion</h2>
+                  <p className="text-sm text-muted-foreground leading-6">
+                    {quickConclusion}
+                  </p>
+                </section>
+                <section className="rounded-xl border border-border bg-background/70 p-5">
+                  <h2 className="font-heading text-lg font-bold mb-3">3 actions to do now</h2>
                   <ul className="space-y-2 text-sm text-muted-foreground leading-6">
-                    <li>Early Access is live, so this page is tuned for launch-week questions.</li>
-                    <li>Use this article for the fast answer, then branch into mechanics or character pages.</li>
-                    <li>Prioritize practical routes over full-read theory when checking updates during launch week.</li>
+                    {(actionableSteps.length > 0 ? actionableSteps : fallbackActionableSteps).map((step) => (
+                      <li key={step} className="list-disc ml-4">{step}</li>
+                    ))}
                   </ul>
                 </section>
                 <section className="rounded-xl border border-border bg-background/70 p-5">
-                  <h2 className="font-heading text-lg font-bold mb-3">Best next page to read</h2>
+                  <h2 className="font-heading text-lg font-bold mb-3">Next questions to open</h2>
                   <div className="flex flex-col gap-2">
-                    {quickAnswerLinks.length > 0 ? (
-                      quickAnswerLinks.map((link) => (
+                    {(funnelLinks.length > 0 ? funnelLinks : fallbackFunnelLinks).map((link) => (
                         <Link
                           key={link.href}
                           href={link.href}
@@ -197,19 +216,8 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ slu
                         >
                           {link.label}
                         </Link>
-                      ))
-                    ) : (
-                      <Link href="/mechanics" className="text-sm text-molten-orange hover:text-ember-glow transition-colors">
-                        Read the mechanics guide
-                      </Link>
-                    )}
+                      ))}
                   </div>
-                </section>
-                <section className="rounded-xl border border-border bg-background/70 p-5">
-                  <h2 className="font-heading text-lg font-bold mb-3">Updated for launch week</h2>
-                  <p className="text-sm text-muted-foreground leading-6">
-                    Published {article.date}. Last updated {article.updatedAt}. This page is structured to answer current launch-week search intent before deeper browsing.
-                  </p>
                 </section>
               </div>
             )}

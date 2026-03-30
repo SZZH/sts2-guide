@@ -73,9 +73,9 @@ export const GUIDE_ARTICLES: GuideArticle[] = [
   },
   {
     slug: 'exhaust-mechanic-explained',
-    title: 'Exhaust Mechanic Guide for Slay the Spire 2 (When to Thin and When to Stop)',
+    title: 'What Is Exhaust in Slay the Spire 2? Timing Guide (When to Thin and When to Stop)',
     description:
-      'If you are asking whether to Exhaust now or hold, this guide gives a practical rule set for timing, over-thinning risk, and payoff setup in Slay the Spire 2.',
+      'If you are asking what Exhaust means in Slay the Spire 2 or whether to Exhaust now or hold, this guide gives practical timing rules, over-thinning risk checks, and payoff setup patterns.',
     readTime: '6 min',
     updatedAt: '2026-03-17',
     primaryKeyword: 'exhaust mechanic slay the spire 2',
@@ -116,9 +116,9 @@ export const GUIDE_ARTICLES: GuideArticle[] = [
       },
     ],
     relatedLinks: [
-      { href: '/cards/corruption', label: 'Should you force Corruption or keep a safer line?' },
+      { href: '/cards/corruption', label: 'Should you force Corruption or stay on a safer Exhaust line?' },
       { href: '/guides/ironclad-early-build', label: 'Need an Ironclad route before full Exhaust commitment?' },
-      { href: '/relics', label: 'Relic database' },
+      { href: '/mechanics', label: 'Need quick definitions for Sly, Doom, Stars, and Forge first?' },
     ],
   },
   {

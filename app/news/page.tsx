@@ -8,12 +8,51 @@ type NewsCategory = 'News' | 'Guide' | 'Analysis' | 'Update';
 
 const CATEGORIES: (NewsCategory | 'All')[] = ['All', 'News', 'Guide', 'Analysis', 'Update'];
 
+const CATEGORY_DISPLAY_LABELS: Record<NewsCategory | 'All', string> = {
+  All: 'All Topics',
+  News: 'Fixes & Issues',
+  Guide: 'How-To',
+  Analysis: 'Meta & Trends',
+  Update: 'Patch Updates',
+};
+
 const categoryColors: Record<NewsCategory, string> = {
   News: 'bg-molten-orange/20 text-molten-orange',
   Guide: 'bg-blue-500/20 text-blue-400',
   Update: 'bg-green-500/20 text-green-400',
   Analysis: 'bg-purple-500/20 text-purple-400',
 };
+
+function toQuestionTitle(title: string): string {
+  const lower = title.toLowerCase();
+
+  if (lower.includes('known issues') || lower.includes('black screen') || lower.includes('crash')) {
+    return 'How do I fix black screen, crash, or freeze right now?';
+  }
+  if (lower.includes('hotfix') || lower.includes('patch notes') || lower.includes('patch tracker')) {
+    return 'What changed in the latest patch and what should I adjust?';
+  }
+  if (lower.includes('steam deck')) {
+    return 'How can I improve Steam Deck performance and stability?';
+  }
+  if (lower.includes('co-op') || lower.includes('multiplayer')) {
+    return 'Does Slay the Spire 2 have co-op and how does it work?';
+  }
+  if (lower.includes('release date') || lower.includes('launch time')) {
+    return 'When does Slay the Spire 2 unlock in my region?';
+  }
+  if (lower.includes('player count') || lower.includes('steam charts')) {
+    return 'How many people are playing Slay the Spire 2 now?';
+  }
+
+  return 'What is the fastest answer this update gives me right now?';
+}
+
+function toOutcomeSubtitle(excerpt: string): string {
+  const sentence = excerpt.split('. ')[0]?.trim() ?? excerpt.trim();
+  const normalized = sentence.endsWith('.') ? sentence : `${sentence}.`;
+  return `Result: ${normalized}`;
+}
 
 export default function NewsPage() {
   const [selectedCategory, setSelectedCategory] = useState<NewsCategory | 'All'>('All');
@@ -53,7 +92,7 @@ export default function NewsPage() {
                   : 'bg-shadow-gray border border-border text-muted-foreground hover:border-molten-orange'
               }`}
             >
-              {category}
+              {CATEGORY_DISPLAY_LABELS[category]}
             </button>
           ))}
         </div>
@@ -95,11 +134,12 @@ export default function NewsPage() {
               <span className="text-xs text-muted-foreground">{featuredLaunchArticle.readTime}</span>
             </div>
             <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4 group-hover:text-molten-orange transition-colors">
-              {featuredLaunchArticle.title}
+              {toQuestionTitle(featuredLaunchArticle.title)}
             </h2>
             <p className="text-base md:text-lg text-muted-foreground max-w-3xl leading-8 mb-5">
-              {featuredLaunchArticle.excerpt}
+              {toOutcomeSubtitle(featuredLaunchArticle.excerpt)}
             </p>
+            <p className="text-sm text-steel-blue mb-5">Source topic: {featuredLaunchArticle.title}</p>
             <div className="flex items-center gap-2 text-molten-orange font-semibold">
               Read this update
               <span aria-hidden="true" className="transition-transform duration-300 group-hover:translate-x-1">
@@ -129,9 +169,10 @@ export default function NewsPage() {
                   <span className="text-xs text-muted-foreground">{article.source}</span>
                 </div>
                 <h2 className="font-heading text-xl font-bold mb-2 group-hover:text-molten-orange transition-colors">
-                  {article.title}
+                  {toQuestionTitle(article.title)}
                 </h2>
-                <p className="text-muted-foreground text-sm mb-4">{article.excerpt}</p>
+                <p className="text-muted-foreground text-sm mb-2">{toOutcomeSubtitle(article.excerpt)}</p>
+                <p className="text-steel-blue text-xs mb-4">Source topic: {article.title}</p>
                 <div className="flex items-center justify-between text-xs text-steel-blue">
                   <span>{article.date}</span>
                   <span>{article.readTime}</span>

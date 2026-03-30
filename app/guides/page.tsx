@@ -4,9 +4,9 @@ import { CHARACTERS } from '@/shared/gameData';
 import { GUIDE_ARTICLES } from '@/shared/guidesData';
 
 export const metadata: Metadata = {
-  title: 'Slay the Spire 2 Build Guides and Starter Strategy',
+  title: 'Slay the Spire 2 Builds and Strategy Guide: Starter to Advanced Paths',
   description:
-    'Build guides for Slay the Spire 2 characters with starter strategy, card synergies, and practical deck plans for Early Access runs.',
+    'Slay the Spire 2 build and strategy guides for starter and advanced runs. Compare practical deck paths, card synergies, and decision rules by character.',
   keywords: [
     'Slay the Spire 2 builds',
     'StS2 build guide',
@@ -17,9 +17,9 @@ export const metadata: Metadata = {
     canonical: '/guides',
   },
   openGraph: {
-    title: 'Slay the Spire 2 Build Guides and Deck Strategy',
+    title: 'Slay the Spire 2 Builds and Strategy Guide',
     description:
-      'Character build guides with practical StS2 deck plans, card synergy tips, and first-run strategy.',
+      'Character build guides with practical deck plans, card synergy tips, and first-run strategy checklists.',
   },
 };
 
@@ -296,10 +296,10 @@ export default function GuidesPage() {
         <div className="container relative">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-orange-400 via-red-400 to-purple-400 bg-clip-text text-transparent">
-              SLAY THE SPIRE 2 BUILD GUIDES
+              STS2 BUILDS & STRATEGY
             </h1>
             <p className="text-xl text-muted-foreground">
-              Expert strategies for every character. Learn proven builds, card synergies, and winning tactics to conquer the Spire.
+              Find the exact Slay the Spire 2 build guide you need: first-run safety lines, character-specific plans, and mechanic-driven strategy pivots.
             </p>
           </div>
         </div>

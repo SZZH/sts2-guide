@@ -6,13 +6,13 @@ import { WebsiteSchema, OrganizationSchema, VideoGameSchema } from './schema';
 import { siteAssetUrl } from '@/shared/siteAssets';
 
 export const metadata: Metadata = {
-  title: 'Slay the Spire 2 Guide, Starter Tips, and Card Database',
+  title: 'StS2 Guide: Slay the Spire 2 Builds, Tips, Cards, and Relics Database',
   description:
-    'StS2 Guide for Slay the Spire 2: starter character picks, first-run tips, mechanics, and searchable card/relic/potion databases.',
+    'StS2 guide hub for Slay the Spire 2 builds, starter tips, mechanics, and searchable cards/relics/potions. Use this page to open the exact answer for launch-week questions fast.',
   openGraph: {
-    title: 'StS2 Guide: Slay the Spire 2 Starter Tips, Builds, and Card Lookup',
+    title: 'StS2 Guide Hub: Slay the Spire 2 Builds, Tips, Cards, Relics',
     description:
-      'Find Slay the Spire 2 launch-week updates, beginner routes, mechanics, and fast card lookup pages in one place.',
+      'Find launch-week updates, beginner routes, mechanics explanations, and fast card/relic lookup pages in one place.',
   },
 };
 
@@ -142,10 +142,10 @@ export default function HomePage() {
         {/* Hero Content */}
         <div className="relative z-10 text-center px-4">
           <h1 className="font-heading text-5xl md:text-7xl font-bold mb-6 text-gradient glow-orange">
-            SLAY THE SPIRE 2
+            STS2 GUIDE HUB
           </h1>
           <p className="text-xl md:text-2xl text-steel-blue mb-8 max-w-3xl mx-auto">
-            Early Access is live. Start with the best Slay the Spire 2 guide pages for launch week, starter picks, and core mechanics.
+            Early Access is live. Open the exact Slay the Spire 2 page you need for builds, starter picks, mechanics, and card or relic lookup.
           </p>
 
           <div className="mx-auto grid max-w-5xl gap-4 md:grid-cols-3">

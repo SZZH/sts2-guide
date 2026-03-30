@@ -21,9 +21,9 @@ import { BreadcrumbSchema, CollectionPageSchema, FAQSchema, ItemListSchema } fro
 import MobileFiltersPanel from '@/components/MobileFiltersPanel';
 
 export const metadata: Metadata = {
-  title: 'Slay the Spire 2 Cards Database: Search by Character, Type, and Cost',
+  title: 'Slay the Spire 2 Cards Database: Search All Cards by Character, Type, Rarity, and Cost',
   description:
-    'Search all Slay the Spire 2 cards by character, type, rarity, cost, and keyword. Fast card lookup for Early Access deck decisions.',
+    'Search all Slay the Spire 2 cards by character, type, rarity, cost, and keyword. Use this card database for fast lookup, build routing, and patch-era deck decisions.',
   keywords: [
     'Slay the Spire 2 cards',
     'Slay the Spire 2 all cards',
@@ -35,9 +35,9 @@ export const metadata: Metadata = {
     canonical: '/cards',
   },
   openGraph: {
-    title: 'Slay the Spire 2 Card Database and Search',
+    title: 'Slay the Spire 2 Cards Database and Search Index',
     description:
-      'Filter and browse StS2 cards by character, rarity, type, and cost with direct detail pages.',
+      'Filter and browse all StS2 cards by character, rarity, type, and cost with direct detail pages.',
   },
 };
 
@@ -510,9 +510,9 @@ export default async function CardsPage({ searchParams }: CardsPageProps) {
               <div className="lg:flex lg:h-full lg:min-h-0 lg:flex-col">
                 <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
                   <div>
-                    <h2 className="font-heading text-2xl font-bold">Structured Card Index</h2>
+                    <h1 className="font-heading text-2xl font-bold">All Cards Database</h1>
                     <p className="text-sm text-steel-blue mt-1">
-                      Showing {filteredCards.length} results from {CARDS.length} structured cards. Page {safePage} of {totalPages}.
+                      Showing {filteredCards.length} results from {CARDS.length} cards. Page {safePage} of {totalPages}.
                     </p>
                   </div>
                   <Link href="/mechanics" className="text-sm font-semibold text-molten-orange hover:text-ember-glow transition-colors">

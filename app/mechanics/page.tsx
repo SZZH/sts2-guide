@@ -3,9 +3,9 @@ import Link from 'next/link';
 import { GAME_MECHANICS } from '@/shared/gameData';
 
 export const metadata: Metadata = {
-  title: 'Slay the Spire 2 Mechanics Guide - Sly, Doom, Stars, Forge',
+  title: 'Slay the Spire 2 Mechanics Explained: What Are Sly, Doom, Stars, and Forge?',
   description:
-    'Mechanics guide for Slay the Spire 2 covering Sly, Doom, Stars, Forge, Drawpile, and Exhaust. Use this page to map common questions to practical run decisions.',
+    'What do Sly, Doom, Stars, Forge, Drawpile, and Exhaust mean in Slay the Spire 2? Use this mechanics guide to get quick definitions, then jump to practical pages for run decisions.',
   keywords: [
     'Slay the Spire 2 mechanics',
     'StS2 Sly mechanic',
@@ -16,8 +16,8 @@ export const metadata: Metadata = {
     canonical: '/mechanics',
   },
   openGraph: {
-    title: 'Slay the Spire 2 Mechanics Guide - Sly, Doom, Stars, Forge',
-    description: 'Complete guide to Slay the Spire 2 game mechanics including Sly, Doom, Stars, Forge, Enchantments, and more.',
+    title: 'Slay the Spire 2 Mechanics Explained: Sly, Doom, Stars, Forge',
+    description: 'Quick-reference mechanics wiki for Slay the Spire 2 covering Sly, Doom, Stars, Forge, Drawpile, and Exhaust with practical next-page routes.',
   },
 };
 
@@ -65,12 +65,12 @@ export default function MechanicsPage() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(168,85,247,0.1),transparent_50%)]" />
         <div className="container relative">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-orange-400 to-red-400 bg-clip-text text-transparent">
-              SLAY THE SPIRE 2 MECHANICS
-            </h1>
-            <p className="text-xl text-muted-foreground">
-              Your Slay the Spire 2 mechanics wiki for launch week. Start here if you need a fast beginner guide to Sly, Doom, Stars, Forge, and the systems shaping Early Access runs.
-            </p>
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-orange-400 to-red-400 bg-clip-text text-transparent">
+                WHAT DO STS2 MECHANICS MEAN?
+              </h1>
+              <p className="text-xl text-muted-foreground">
+                Your Slay the Spire 2 mechanics wiki for launch week. Start here if you need fast answers for Sly, Doom, Stars, Forge, Drawpile, and Exhaust before jumping into build decisions.
+              </p>
             <div className="mt-8 grid gap-4 text-left md:grid-cols-3">
               <div className="rounded-xl border border-orange-500/30 bg-card/80 p-5">
                 <div className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-orange-400">

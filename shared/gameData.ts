@@ -801,8 +801,8 @@ export const NEWS_ARTICLES: NewsArticle[] = [
   },
   {
     slug: 'slay-the-spire-2-known-issues-and-fixes',
-    title: 'Slay the Spire 2 Known Issues and Fixes: Crash, Black Screen, Freeze',
-    excerpt: 'The most common Slay the Spire 2 launch-week problems are crashes, black screens, freezes, and language-related display errors. This troubleshooting guide prioritizes the fastest checks first, then separates patched issues from problems that may still need a workaround.',
+    title: 'Slay the Spire 2 Black Screen, Crash, and Freeze Fixes (Known Issues Guide)',
+    excerpt: 'Black screen, startup crash, freeze, or broken text in Slay the Spire 2? This known-issues troubleshooting guide starts with the fastest fixes first, then separates hotfix-resolved problems from issues that still need local workaround checks.',
     date: '2026-03-06',
     category: 'News',
     readTime: '8 min',
@@ -813,8 +813,8 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     sourceType: 'internal',
     updatedAt: '2026-03-06',
     intro: [
-      'The most common Slay the Spire 2 launch-week problems are startup crashes, black screens, freezes, and text display issues. The practical goal of this page is to help you separate “already addressed by the hotfix” from “still worth troubleshooting locally.”',
-      'Start with the fastest checks first. In launch week, that usually beats overcomplicated system tweaking.',
+      'The most common Slay the Spire 2 launch-week problems are startup crashes, black screens, freezes, and text display issues. The practical goal of this page is to separate what the hotfix likely already resolved from what still needs local troubleshooting.',
+      'If you are searching for a fast Slay the Spire 2 crash fix or black screen fix, start with the short checklist first before deep system tweaks.',
     ],
     sections: [
       {
@@ -889,15 +889,15 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     relatedLinks: [
       {
         href: '/news/slay-the-spire-2-hotfix-patch-notes',
-        label: 'Hotfix patch notes: what v0.98.1 fixed on day one',
+        label: 'Hotfix notes: which crash and language issues v0.98.1 already fixed',
       },
       {
         href: '/news/slay-the-spire-2-steam-deck-performance-guide',
-        label: 'Steam Deck guide: current performance picture and common fixes',
+        label: 'Steam Deck troubleshooting: current performance picture and common fixes',
       },
       {
         href: '/news/slay-the-spire-2-launch-time-us-china',
-        label: 'Launch hub: live status, FAQ, and launch-week routing',
+        label: 'Launch hub: live status, FAQ, and next troubleshooting routes',
       },
       {
         href: '/news',

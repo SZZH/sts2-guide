@@ -8,9 +8,9 @@ import { siteAssetUrl } from '@/shared/siteAssets';
 import MobileFiltersPanel from '@/components/MobileFiltersPanel';
 
 export const metadata: Metadata = {
-  title: 'Slay the Spire 2 Characters: Roster, Unlock Order, and Card Pools',
+  title: 'Slay the Spire 2 Characters Guide: Roster, Unlock Order, and Card Pools',
   description:
-    'Compare Slay the Spire 2 characters, unlock order, and card pools. Use this roster page to pick your best starter and jump into each character build path.',
+    'Compare Slay the Spire 2 characters, unlock order, mechanics focus, and card pools. Use this roster guide to pick your best starter and jump into each character build path.',
   keywords: [
     'Slay the Spire 2 characters',
     'Slay the Spire 2 roster',
@@ -21,9 +21,9 @@ export const metadata: Metadata = {
     canonical: '/characters',
   },
   openGraph: {
-    title: 'Slay the Spire 2 Character Roster and Unlock Paths',
+    title: 'Slay the Spire 2 Characters Guide: Roster and Unlock Paths',
     description:
-      'Browse all StS2 characters with unlock order, role summaries, and direct links to each card pool.',
+      'Browse all StS2 characters with unlock order, role summaries, mechanics focus, and direct links to each card pool.',
   },
 };
 
