@@ -286,6 +286,16 @@ export default function GuidesPage() {
       query: 'slay the spire 2 hammer time',
       label: 'Hammer Time Card',
     },
+    {
+      href: '/guides/regent-card-pool-priority',
+      query: 'regent card pool',
+      label: 'Regent Card Pool Priority',
+    },
+    {
+      href: '/guides/celestial-might-regent-guide',
+      query: 'celestial might regent',
+      label: 'Celestial Might Regent Guide',
+    },
   ];
 
   return (

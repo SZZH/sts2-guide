@@ -172,6 +172,186 @@ export const GUIDE_ARTICLES: GuideArticle[] = [
     ],
   },
   {
+    slug: 'regent-card-pool-priority',
+    title: 'Regent Card Pool Priority in Slay the Spire 2 (All Regent Cards by Role)',
+    description:
+      'Use this Regent card pool guide to sort all Regent cards by role, not by raw rarity. It focuses on the exact picks that stabilize Act 1 and avoid Star-engine dead turns.',
+    readTime: '9 min',
+    updatedAt: '2026-03-30',
+    primaryKeyword: 'regent card pool slay the spire 2',
+    sections: [
+      {
+        heading: 'How to Read the Regent Card Pool Without Bricking Your Deck',
+        points: [
+          'Regent card quality is role-dependent: Star generation, Star payoff, defense conversion, and deck smoothing must stay in balance.',
+          'In early acts, prioritize cards that both progress your plan and fix turn quality; pure setup cards are dangerous when your floor is still weak.',
+          'A simple checkpoint is 2 to 3 reliable Star producers before adding expensive payoff cards that cannot function on empty Stars.',
+        ],
+      },
+      {
+        heading: 'Act 1 Priority Buckets (Draft Order That Holds Up Under Pressure)',
+        points: [
+          'First bucket: low-risk enablers such as Glow, Hidden Cache, and Shining Strike that improve both tempo and Star access.',
+          'Second bucket: stabilizers like Cloak of Stars and Reflect so your scaling plan does not collapse in elite fights.',
+          'Third bucket: commitment cards such as Genesis, Gamma Blast, and Alignment once your deck already has enough hands that can actually spend Stars.',
+        ],
+      },
+      {
+        heading: 'What to Skip Even When It Looks Strong',
+        points: [
+          'Skip duplicate high-cost payoff cards when your current list still misses basic block checks or draw consistency.',
+          'Skip narrow Forge-only lines if your current relics and pathing reward flexible Star turns more than long setup windows.',
+          'Skip vanity rare picks when they force awkward curves; Regent loses more runs to hand quality collapse than to low ceiling.',
+        ],
+      },
+      {
+        heading: 'Rare Card Discipline (Regent Rare Cards Are Not Auto-Picks)',
+        points: [
+          'Treat rare cards as role upgrades, not trophies: only take them when they replace an existing weak slot in your curve.',
+          'Genesis is premium when your deck survives setup turns; it is mediocre when your current route punishes slow openings.',
+          'Conqueror and The Smith scale hard in focused lists, but both underperform when you draft them before solving card flow and defense.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'Should I draft every card that says Stars when building Regent?',
+        answer:
+          'No. Too many Star-only cards create hands with no conversion. Keep a balanced split between Star production, payoff, and defense so every hand can do something useful.',
+      },
+      {
+        question: 'How many Regent rare cards should I usually keep in one run?',
+        answer:
+          'Most stable runs only need one to two rare cards that match the current shell. More than that is often win-more unless your draw and block base is already solved.',
+      },
+    ],
+    relatedLinks: [
+      { href: '/cards/character/regent', label: 'Need the full all Regent cards list before drafting?' },
+      { href: '/guides/regent-stars-vs-forge-build-path', label: 'Not sure whether to commit to Stars or Forge this run?' },
+      { href: '/guides/celestial-might-regent-guide', label: 'Trying to decide if Celestial Might is worth the slot now?' },
+    ],
+  },
+  {
+    slug: 'regent-stars-vs-forge-build-path',
+    title: 'The Regent in Slay the Spire 2: Stars vs Forge Build Path Guide',
+    description:
+      'This Regent build guide compares Stars and Forge by real run checkpoints: when to commit, when to pivot, and how to avoid dead-end drafts in Slay the Spire 2.',
+    readTime: '10 min',
+    updatedAt: '2026-03-30',
+    primaryKeyword: 'the regent sts2',
+    sections: [
+      {
+        heading: 'Pick Your Core Identity by Floor 10, Not by Dream Deck',
+        points: [
+          'Stars path is stronger when your early rewards provide repeat Star generation and at least one reliable conversion card.',
+          'Forge path is stronger when your draw sequence supports repeated Sovereign Blade access and you can afford setup turns.',
+          'If both plans are half-built, stay hybrid one more act and draft floor cards before forcing either identity.',
+        ],
+      },
+      {
+        heading: 'Stars Route: What Good Turns Actually Look Like',
+        points: [
+          'A healthy Stars deck can generate Stars, spend Stars, and still defend in the same turn cycle.',
+          'Core engine pieces usually include Glow, Hidden Cache, Shining Strike, then stronger payoff options like Gamma Blast or high-value spenders.',
+          'When Stars hands feel clunky, fix sequencing first with draw and retain support before adding more expensive payoff cards.',
+        ],
+      },
+      {
+        heading: 'Forge Route: Build Around Blade Access, Not Just Forge Numbers',
+        points: [
+          'Forge scaling fails if Sovereign Blade access is inconsistent, so card flow tools such as Summon Forth are priority picks.',
+          'Conqueror and Furnace are excellent only after your deck can survive the setup turns required to cash them in.',
+          'The best Forge lists still keep lightweight defense and one secondary damage lane to avoid single-point failure.',
+        ],
+      },
+      {
+        heading: 'Pivot Rules Between Stars and Forge',
+        points: [
+          'Pivot from Forge to Stars when you keep missing Blade access but see repeatable Star economy cards and payoff.',
+          'Pivot from Stars to Forge when your Stars generation is shallow but you already hold high-value Forge multipliers and Blade support.',
+          'Never pivot by adding random top-end cards; remove weak links first so the new lane has room to function.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'Is Stars always better than Forge for Regent?',
+        answer:
+          'No. Stars is often more flexible, but Forge wins plenty of runs when Blade access and setup windows are already solved by your draft and relic state.',
+      },
+      {
+        question: 'When should I stop forcing a build and just stabilize?',
+        answer:
+          'If your next elite or boss check is likely to fail, stop forcing synergy and draft immediate floor cards first. Regent loses many runs to unstable midgame, not low ceiling.',
+      },
+    ],
+    relatedLinks: [
+      { href: '/guides/regent-card-pool-priority', label: 'Need a role-based Regent draft order before committing?' },
+      { href: '/cards/character/regent', label: 'Open the Regent card list before full Forge commitment' },
+      { href: '/mechanics', label: 'Need a quick Stars and Forge mechanic refresher first?' },
+    ],
+  },
+  {
+    slug: 'celestial-might-regent-guide',
+    title: 'Celestial Might Regent Guide: When to Draft, Upgrade, and Skip',
+    description:
+      'A practical Celestial Might Regent guide for Slay the Spire 2. Learn when the card is a win condition, when it is bait, and how to slot it without hurting deck consistency.',
+    readTime: '8 min',
+    updatedAt: '2026-03-30',
+    primaryKeyword: 'celestial might regent',
+    sections: [
+      {
+        heading: 'What Celestial Might Is Supposed to Solve',
+        points: [
+          'Celestial Might is strongest as a payoff accelerator when your deck already produces stable Stars and can protect setup turns.',
+          'It is not an early universal fixer; drafting it too early often worsens draw quality and delays survival upgrades.',
+          'Treat it as a role card for closing combat windows, not as a standalone plan.',
+        ],
+      },
+      {
+        heading: 'Draft Timing Checklist',
+        points: [
+          'Draft now when you already have repeatable Star generation and one consistent defensive lane.',
+          'Delay when your current list still loses to basic elite damage checks or suffers from hand clogging.',
+          'Skip when your current run is clearly Forge-centric and Celestial Might does not improve the actual win line.',
+        ],
+      },
+      {
+        heading: 'Upgrade and Sequencing Rules',
+        points: [
+          'Upgrade priority rises when Celestial Might is your main conversion window; otherwise keep upgrades for stability cards first.',
+          'Plan Celestial turns around guaranteed follow-up, not around hopeful draws, so the payoff actually converts into lethal or control.',
+          'Pair with low-cost setup cards so the turn does not collapse if one premium payoff card is missing.',
+        ],
+      },
+      {
+        heading: 'Common Misplays That Make the Card Look Worse Than It Is',
+        points: [
+          'Playing it on low-resource turns with no conversion follow-up and then blaming card quality.',
+          'Overcommitting to one flashy line instead of preserving a backup defensive path.',
+          'Keeping too many expensive cards around it, creating turns where everything is powerful but nothing is playable.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'Is Celestial Might mandatory in every Regent run?',
+        answer:
+          'No. It is a high-upside option, not a mandatory card. Many winning Regent runs prioritize consistency tools over one marquee payoff card.',
+      },
+      {
+        question: 'Can Celestial Might work in both Stars and Forge shells?',
+        answer:
+          'It is usually better in Stars-focused shells. In Forge-heavy lists, take it only when the card clearly improves your real combat sequence rather than adding more setup load.',
+      },
+    ],
+    relatedLinks: [
+      { href: '/cards/celestial_might', label: 'Read Celestial Might card text and cost details' },
+      { href: '/guides/regent-stars-vs-forge-build-path', label: 'Need the full Stars vs Forge decision framework?' },
+      { href: '/cards/character/regent', label: 'Compare Celestial lines with the rest of the Regent card pool' },
+    ],
+  },
+  {
     slug: 'retain-mechanic-explained',
     title: 'Retain Mechanic Explained in Slay the Spire 2',
     description: 'How to use Retain cards to bank tempo and line up stronger multi-turn turns.',

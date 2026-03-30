@@ -47,6 +47,14 @@ export default async function CharacterDetailPage({ params }: { params: Promise<
   const { slug } = await params;
   const character = CHARACTERS.find((c) => c.slug === slug);
   const characterIndex = getCharacterIndexEntry(slug);
+  const deepGuides =
+    slug === 'regent'
+      ? [
+          { href: '/guides/regent-card-pool-priority', label: 'Regent card pool priority (all cards by role)' },
+          { href: '/guides/regent-stars-vs-forge-build-path', label: 'Regent Stars vs Forge build path' },
+          { href: '/guides/celestial-might-regent-guide', label: 'Celestial Might draft and upgrade guide' },
+        ]
+      : [];
 
   if (!character) {
     notFound();
@@ -131,12 +139,23 @@ export default async function CharacterDetailPage({ params }: { params: Promise<
                 <div className="text-xs font-semibold uppercase tracking-[0.18em] text-molten-orange mb-2">
                   Best Next Query
                 </div>
-                <Link
-                  href={`/cards/character/${character.slug}`}
-                  className="text-sm font-semibold text-molten-orange transition-colors hover:text-ember-glow"
-                >
-                  Browse all {character.name} cards
-                </Link>
+                <div className="flex flex-col gap-2">
+                  <Link
+                    href={`/cards/character/${character.slug}`}
+                    className="text-sm font-semibold text-molten-orange transition-colors hover:text-ember-glow"
+                  >
+                    Browse all {character.name} cards
+                  </Link>
+                  {deepGuides.map((guide) => (
+                    <Link
+                      key={guide.href}
+                      href={guide.href}
+                      className="text-xs text-steel-blue transition-colors hover:text-molten-orange"
+                    >
+                      {guide.label}
+                    </Link>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

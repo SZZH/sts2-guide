@@ -90,6 +90,18 @@ function getCharacterSummary(slug: CardCharacter) {
   };
 }
 
+function getCharacterDeepGuideLinks(slug: CardCharacter) {
+  if (slug === 'regent') {
+    return [
+      { href: '/guides/regent-card-pool-priority', label: 'Regent card pool priority (all cards by role)' },
+      { href: '/guides/regent-stars-vs-forge-build-path', label: 'Regent Stars vs Forge build path' },
+      { href: '/guides/celestial-might-regent-guide', label: 'Celestial Might draft and upgrade guide' },
+    ];
+  }
+
+  return [];
+}
+
 export default async function CharacterCardsPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
 
@@ -111,6 +123,7 @@ export default async function CharacterCardsPage({ params }: { params: Promise<{
     count: cards.filter((card) => card.type === entry.value).length,
   })).filter((entry) => entry.count > 0);
   const featuredCards = cards.slice(0, 18);
+  const deepGuideLinks = getCharacterDeepGuideLinks(slug);
 
   return (
     <>
@@ -178,6 +191,23 @@ export default async function CharacterCardsPage({ params }: { params: Promise<{
                 See every {label} starter card
               </Link>
             </div>
+
+            {deepGuideLinks.length > 0 ? (
+              <div className="mt-5 rounded-xl border border-border bg-forge-black/35 p-4">
+                <div className="text-xs font-semibold uppercase tracking-[0.18em] text-molten-orange">High-Intent Guide Routes</div>
+                <div className="mt-3 flex flex-col gap-2">
+                  {deepGuideLinks.map((guide) => (
+                    <Link
+                      key={guide.href}
+                      href={guide.href}
+                      className="text-sm text-steel-blue transition-colors hover:text-molten-orange"
+                    >
+                      {guide.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ) : null}
           </section>
 
           <aside className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
