@@ -10,6 +10,32 @@ const RELIC_SLUG_ALIASES: Record<string, string> = {
   prismatic_shard: 'prismatic_gem',
 };
 
+type RelicSeoOverride = {
+  title: string;
+  description: string;
+  openGraphTitle: string;
+  openGraphDescription: string;
+  intro: string;
+  questionLinks: Array<{ href: string; label: string }>;
+};
+
+const RELIC_SEO_OVERRIDES: Record<string, RelicSeoOverride> = {
+  book_of_five_rings: {
+    title: 'Book of Five Rings Relic Guide (Slay the Spire 2)',
+    description:
+      'Book of Five Rings relic guide for Slay the Spire 2: what deck states convert it into stable value, where it underperforms, and how to route around it in Act 1-2.',
+    openGraphTitle: 'Book of Five Rings Relic Guide for Slay the Spire 2',
+    openGraphDescription:
+      'When to take Book of Five Rings, what card pools support it, and which route decisions reduce fail states.',
+    intro:
+      'Book of Five Rings should be evaluated as a consistency lever, not a free scaling shortcut. It performs best when your deck already has clear sequencing lines and enough floor defense to survive weak draws.',
+    questionLinks: [
+      { href: '/guides/act1-route-priority', label: 'Unsure if your route can afford this relic line?' },
+      { href: '/guides/card-upgrade-priority', label: 'Not sure which upgrades make this relic pay off faster?' },
+    ],
+  },
+};
+
 type RelicClusterPage = {
   slug: string;
   title: string;
@@ -102,6 +128,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const relic = getRelicBySlug(slug);
   const clusterPage = getRelicClusterPage(slug);
+  const seoOverride = relic?.slug ? RELIC_SEO_OVERRIDES[relic.slug] : undefined;
 
   if (clusterPage) {
     return {
@@ -125,8 +152,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   }
 
   return {
-    title: `${relic.name} Relic Guide (${relic.rarity})`,
-    description: `${relic.name} relic in Slay the Spire 2: rarity ${relic.rarity}, character tag ${getCharacterTag(relic.character)}, and effect summary.`,
+    title: seoOverride?.title ?? `${relic.name} Relic Guide (${relic.rarity})`,
+    description:
+      seoOverride?.description ??
+      `${relic.name} relic in Slay the Spire 2: rarity ${relic.rarity}, character tag ${getCharacterTag(relic.character)}, and effect summary.`,
     keywords: [
       `${relic.name} relic`,
       `${relic.name} slay the spire 2`,
@@ -137,8 +166,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       canonical: `/relics/${relic.slug}`,
     },
     openGraph: {
-      title: `${relic.name} Relic Guide for Slay the Spire 2`,
-      description: `${relic.name} effect text, rarity, and character context.`,
+      title: seoOverride?.openGraphTitle ?? `${relic.name} Relic Guide for Slay the Spire 2`,
+      description: seoOverride?.openGraphDescription ?? `${relic.name} effect text, rarity, and character context.`,
       url: `https://sts2guide.com/relics/${relic.slug}`,
       type: 'article',
       images: relic.image ? [{ url: relic.image }] : undefined,
@@ -150,6 +179,7 @@ export default async function RelicDetailPage({ params }: { params: Promise<{ sl
   const { slug } = await params;
   const relic = getRelicBySlug(slug);
   const clusterPage = getRelicClusterPage(slug);
+  const seoOverride = relic?.slug ? RELIC_SEO_OVERRIDES[relic.slug] : undefined;
 
   if (clusterPage) {
     return (
@@ -262,6 +292,7 @@ export default async function RelicDetailPage({ params }: { params: Promise<{ sl
                 </div>
               </div>
 
+              {seoOverride ? <p className="mb-4 text-base leading-7 text-foreground/90">{seoOverride.intro}</p> : null}
               <p className="mb-8 text-lg leading-8 text-muted-foreground">{relic.description}</p>
 
               <div className="rounded-xl border border-molten-orange/25 bg-molten-orange/5 p-5">
@@ -299,6 +330,13 @@ export default async function RelicDetailPage({ params }: { params: Promise<{ sl
                   <Link href="/characters" className="text-molten-orange transition-colors hover:text-ember-glow">
                     Compare character playstyles
                   </Link>
+                  {seoOverride
+                    ? seoOverride.questionLinks.map((link) => (
+                        <Link key={link.href} href={link.href} className="text-molten-orange transition-colors hover:text-ember-glow">
+                          {link.label}
+                        </Link>
+                      ))
+                    : null}
                 </div>
               </section>
 

@@ -73,9 +73,9 @@ export const GUIDE_ARTICLES: GuideArticle[] = [
   },
   {
     slug: 'exhaust-mechanic-explained',
-    title: 'Exhaust Mechanic Guide for Slay the Spire 2',
+    title: 'Exhaust Mechanic Guide for Slay the Spire 2 (When to Thin and When to Stop)',
     description:
-      'Understand when Exhaust improves consistency, how to avoid over-thinning, and how to build around key Exhaust payoffs.',
+      'If you are asking whether to Exhaust now or hold, this guide gives a practical rule set for timing, over-thinning risk, and payoff setup in Slay the Spire 2.',
     readTime: '6 min',
     updatedAt: '2026-03-17',
     primaryKeyword: 'exhaust mechanic slay the spire 2',
@@ -116,16 +116,16 @@ export const GUIDE_ARTICLES: GuideArticle[] = [
       },
     ],
     relatedLinks: [
-      { href: '/cards/corruption', label: 'Corruption card guide' },
-      { href: '/guides/ironclad-early-build', label: 'Ironclad early build guide' },
+      { href: '/cards/corruption', label: 'Should you force Corruption or keep a safer line?' },
+      { href: '/guides/ironclad-early-build', label: 'Need an Ironclad route before full Exhaust commitment?' },
       { href: '/relics', label: 'Relic database' },
     ],
   },
   {
     slug: 'act1-route-priority',
-    title: 'Act 1 Route Priority in Slay the Spire 2',
+    title: 'Act 1 Route Priority in Slay the Spire 2 (Elite Risk vs Safe Scaling)',
     description:
-      'A practical Act 1 route framework: when to fight elites, when to take safer nodes, and how to protect first-run consistency.',
+      'If your Act 1 routes keep collapsing, use this checklist to decide when to take elites, when to path safer, and how to preserve scaling into Act 2.',
     readTime: '7 min',
     updatedAt: '2026-03-17',
     primaryKeyword: 'slay the spire 2 act 1 route',
@@ -166,8 +166,8 @@ export const GUIDE_ARTICLES: GuideArticle[] = [
       },
     ],
     relatedLinks: [
-      { href: '/guides/common-beginner-mistakes', label: 'Common beginner mistakes' },
-      { href: '/guides/what-to-upgrade-first', label: 'What to upgrade first' },
+      { href: '/guides/common-beginner-mistakes', label: 'Why does this route keep failing even with good cards?' },
+      { href: '/guides/what-to-upgrade-first', label: 'Which campfire upgrade fixes your next two fights fastest?' },
       { href: '/characters', label: 'Character overview' },
     ],
   },

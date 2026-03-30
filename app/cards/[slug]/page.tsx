@@ -12,6 +12,32 @@ import {
 } from '@/shared/cardsData';
 import { BreadcrumbSchema, CollectionPageSchema } from '@/app/schema';
 
+type CardSeoOverride = {
+  title: string;
+  description: string;
+  openGraphTitle: string;
+  openGraphDescription: string;
+  intro: string;
+  questionLinks: Array<{ href: string; label: string }>;
+};
+
+const CARD_SEO_OVERRIDES: Record<string, CardSeoOverride> = {
+  hammer_time: {
+    title: 'Hammer Time Card Guide (Slay the Spire 2 Regent)',
+    description:
+      'Hammer Time card guide for Slay the Spire 2: when Regent Forge chains are worth building around, where it fails, and what support cards fix consistency.',
+    openGraphTitle: 'Hammer Time Card Guide for Slay the Spire 2 Regent',
+    openGraphDescription:
+      'When to draft Hammer Time, how to sequence Forge turns, and what setup pieces you need for stable Regent runs.',
+    intro:
+      'Hammer Time is strongest when your run already has repeatable Forge sequencing, not when you need a standalone spike card. Treat it as a role card for Regent tempo loops, then draft support around hand quality and turn order.',
+    questionLinks: [
+      { href: '/guides/act1-route-priority', label: 'Not sure if Act 1 route is safe enough for Forge lines?' },
+      { href: '/guides/exhaust-mechanic-explained', label: 'Need a backup plan when Forge turns brick your hand?' },
+    ],
+  },
+};
+
 export async function generateStaticParams() {
   return CARDS.map((card) => ({
     slug: card.slug,
@@ -26,9 +52,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     return { title: 'Card Not Found' };
   }
 
+  const seoOverride = CARD_SEO_OVERRIDES[card.slug];
+
   return {
-    title: `${card.name} Card Guide (${getCardCharacterLabel(card.character)})`,
-    description: `${card.name} card guide for Slay the Spire 2: cost ${card.costText}, ${getCardRarityLabel(card.rarity)} ${getCardTypeLabel(card.type)}, full text, and related cards.`,
+    title: seoOverride?.title ?? `${card.name} Card Guide (${getCardCharacterLabel(card.character)})`,
+    description:
+      seoOverride?.description ??
+      `${card.name} card guide for Slay the Spire 2: cost ${card.costText}, ${getCardRarityLabel(card.rarity)} ${getCardTypeLabel(card.type)}, full text, and related cards.`,
     keywords: [
       `${card.name} Slay the Spire 2`,
       `${card.name} card Slay the Spire 2`,
@@ -40,8 +70,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       canonical: `/cards/${card.slug}`,
     },
     openGraph: {
-      title: `${card.name} Card Guide for Slay the Spire 2`,
-      description: `${card.name} card details, rarity, cost, and effect text for ${getCardCharacterLabel(card.character)} runs.`,
+      title: seoOverride?.openGraphTitle ?? `${card.name} Card Guide for Slay the Spire 2`,
+      description:
+        seoOverride?.openGraphDescription ??
+        `${card.name} card details, rarity, cost, and effect text for ${getCardCharacterLabel(card.character)} runs.`,
     },
   };
 }
@@ -68,6 +100,7 @@ export default async function CardDetailPage({
   }
 
   const backHref = buildBackHref(search.from);
+  const seoOverride = CARD_SEO_OVERRIDES[card.slug];
 
   const relatedCards = CARDS.filter((entry) => {
     if (entry.slug === card.slug) return false;
@@ -134,6 +167,7 @@ export default async function CardDetailPage({
             </div>
 
             <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">{card.name}</h1>
+            {seoOverride ? <p className="text-base leading-7 text-foreground/90 mb-4">{seoOverride.intro}</p> : null}
             <p className="text-lg text-muted-foreground leading-8 mb-8">{card.text}</p>
 
             <div className="rounded-xl border border-molten-orange/25 bg-molten-orange/5 p-5">
@@ -200,6 +234,13 @@ export default async function CardDetailPage({
                 <Link href="/characters" className="text-molten-orange transition-colors hover:text-ember-glow">
                   Compare the full character roster
                 </Link>
+                {seoOverride
+                  ? seoOverride.questionLinks.map((link) => (
+                      <Link key={link.href} href={link.href} className="text-molten-orange transition-colors hover:text-ember-glow">
+                        {link.label}
+                      </Link>
+                    ))
+                  : null}
               </div>
             </section>
 

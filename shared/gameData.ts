@@ -200,8 +200,8 @@ export interface NewsArticle {
 export const NEWS_ARTICLES: NewsArticle[] = [
   {
     slug: 'slay-the-spire-2-beta-patch-v0-101-0-analysis',
-    title: 'Slay the Spire 2 Beta Patch v0.101.0 Analysis: Reworks, Reverts, and Why This Update Feels Different',
-    excerpt: 'v0.101.0 is more than a balance pass. It reveals a clearer design loop: revert changes that hurt class feel, rework swingy mechanics, and slow low-effort dominant lines without flattening build diversity.',
+    title: 'Slay the Spire 2 v0.101.0 Patch Analysis: Prepared, Arsenal, Voltaic and the New Balance Direction',
+    excerpt: 'What actually changed in v0.101.0 and what should you retest first? This analysis focuses on Prepared, Arsenal, Voltaic, route pressure, and practical run-level adaptation.',
     date: '2026-03-27',
     category: 'Analysis',
     readTime: '12 min',
@@ -212,8 +212,8 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     sourceType: 'internal',
     updatedAt: '2026-03-27',
     intro: [
-      'At first glance, v0.101.0 looks messy: some cards got reverted, others got reworked, and several pacing levers were changed at once. Read as isolated lines, it looks inconsistent. Read as a full patch, it is surprisingly coherent.',
-      'This is not just a number patch. It is a direction patch. Mega Crit is trying to make the game less autopilot at the top end while preserving what makes each class feel like itself.',
+      'If you are trying to answer "what do I retest first after v0.101.0," start with Prepared, Arsenal trigger logic, and Voltaic tempo assumptions. Those three shifts change real run decisions faster than most numeric tweaks.',
+      'This is not just a number patch. It is a direction patch aimed at reducing autopilot lines while preserving class identity, so role interpretation now matters more than one-line stat deltas.',
     ],
     sections: [
       {
@@ -283,11 +283,11 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     ],
     relatedLinks: [
       { href: '/news/slay-the-spire-2-steamdb-patch-tracker', label: 'Follow patch timeline and merge history' },
-      { href: '/guides/act1-route-priority', label: 'Recheck Act 1 routing under new pressure curve' },
+      { href: '/guides/act1-route-priority', label: 'Is your Act 1 route still correct after floor-6 elite pressure changes?' },
       { href: '/news/slay-the-spire-2-first-run-guide-act-1-priorities', label: 'Apply these patch changes in your next Act 1 run' },
       { href: '/news/best-starter-character-slay-the-spire-2-early-access', label: 'Pick the best starter character after v0.101.0' },
       { href: '/news/slay-the-spire-2-top-10-beginner-mistakes', label: 'Avoid the common mistakes this patch exposes faster' },
-      { href: '/guides/exhaust-mechanic-explained', label: 'Revisit core mechanic fundamentals after role changes' },
+      { href: '/guides/exhaust-mechanic-explained', label: 'Which mechanic guide helps if your post-patch hands feel inconsistent?' },
     ],
   },
   {
