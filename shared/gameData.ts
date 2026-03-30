@@ -284,6 +284,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     relatedLinks: [
       { href: '/news/slay-the-spire-2-steamdb-patch-tracker', label: 'Follow patch timeline and merge history' },
       { href: '/guides/act1-route-priority', label: 'Is your Act 1 route still correct after floor-6 elite pressure changes?' },
+      { href: '/guides/regent-stars-vs-forge-build-path', label: 'How should Regent players pivot between Stars and Forge after this patch?' },
       { href: '/news/slay-the-spire-2-first-run-guide-act-1-priorities', label: 'Apply these patch changes in your next Act 1 run' },
       { href: '/news/best-starter-character-slay-the-spire-2-early-access', label: 'Pick the best starter character after v0.101.0' },
       { href: '/news/slay-the-spire-2-top-10-beginner-mistakes', label: 'Avoid the common mistakes this patch exposes faster' },
@@ -1619,6 +1620,10 @@ export const NEWS_ARTICLES: NewsArticle[] = [
         label: 'Top 10 beginner mistakes if your first runs keep collapsing early',
       },
       {
+        href: '/guides/regent-card-pool-priority',
+        label: 'Starting Regent soon? Use this card-pool priority guide before forcing builds',
+      },
+      {
         href: '/news/slay-the-spire-2-what-to-upgrade-first',
         label: 'What to upgrade first if you want stronger early decisions',
       },
@@ -1891,6 +1896,10 @@ export const NEWS_ARTICLES: NewsArticle[] = [
       {
         href: '/news/slay-the-spire-2-launch-time-us-china',
         label: 'Launch time and first-24h checklist hub',
+      },
+      {
+        href: '/guides/celestial-might-regent-guide',
+        label: 'Need a Regent decision example? See when Celestial Might is worth drafting',
       },
       {
         href: '/mechanics',
