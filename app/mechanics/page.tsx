@@ -5,7 +5,7 @@ import { GAME_MECHANICS } from '@/shared/gameData';
 export const metadata: Metadata = {
   title: 'Slay the Spire 2 Mechanics Explained: What Are Sly, Doom, Stars, and Forge?',
   description:
-    'What do Sly, Doom, Stars, Forge, Drawpile, and Exhaust mean in Slay the Spire 2? Use this mechanics guide to get quick definitions, then jump to practical pages for run decisions.',
+    'What do Sly, Doom, Stars, Forge, Drawpile, and Exhaust mean in Slay the Spire 2? Use this mechanics guide for quick definitions, then jump to practical pages and confirmed v0.101.0 entity updates.',
   keywords: [
     'Slay the Spire 2 mechanics',
     'StS2 Sly mechanic',
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Slay the Spire 2 Mechanics Explained: Sly, Doom, Stars, Forge',
-    description: 'Quick-reference mechanics wiki for Slay the Spire 2 covering Sly, Doom, Stars, Forge, Drawpile, and Exhaust with practical next-page routes.',
+    description: 'Quick-reference mechanics wiki for Slay the Spire 2 with practical next-page routes into confirmed v0.101.0 card and relic updates.',
   },
 };
 

@@ -8,7 +8,7 @@ import MobileFiltersPanel from '@/components/MobileFiltersPanel';
 export const metadata: Metadata = {
   title: 'Slay the Spire 2 Relics Database: Search All Relics by Rarity and Character',
   description:
-    'Search all Slay the Spire 2 relics by rarity, character, and keyword. Use this relic database for fast lookup and route directly into detailed relic pages.',
+    'Search all Slay the Spire 2 relics by rarity, character, and keyword, including confirmed v0.101.0 updates like Pendulum, Tiny Mailbox, Vexing Puzzlebox, and relic rarity shifts.',
   keywords: [
     'Slay the Spire 2 relics',
     'StS2 relic database',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Slay the Spire 2 Relics Database and Search Index',
-    description: 'Browse all relics by rarity, character tag, and keyword in a fast lookup view.',
+    description: 'Browse all relics by rarity, character tag, and keyword with confirmed v0.101.0 relic updates already reflected.',
   },
 };
 

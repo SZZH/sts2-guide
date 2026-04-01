@@ -23,7 +23,7 @@ import MobileFiltersPanel from '@/components/MobileFiltersPanel';
 export const metadata: Metadata = {
   title: 'Slay the Spire 2 Cards Database: Search All Cards by Character, Type, Rarity, and Cost',
   description:
-    'Search all Slay the Spire 2 cards by character, type, rarity, cost, and keyword. Use this card database for fast lookup, build routing, and patch-era deck decisions.',
+    'Search all Slay the Spire 2 cards by character, type, rarity, cost, and keyword, including confirmed v0.101.0 updates like Arsenal, Guiding Star, Tremble, Sword Sage, and Voltaic.',
   keywords: [
     'Slay the Spire 2 cards',
     'Slay the Spire 2 all cards',
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Slay the Spire 2 Cards Database and Search Index',
     description:
-      'Filter and browse all StS2 cards by character, rarity, type, and cost with direct detail pages.',
+      'Filter and browse all StS2 cards by character, rarity, type, and cost with direct detail pages and confirmed v0.101.0 card changes.',
   },
 };
 

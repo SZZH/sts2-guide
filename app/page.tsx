@@ -8,11 +8,11 @@ import { siteAssetUrl } from '@/shared/siteAssets';
 export const metadata: Metadata = {
   title: 'StS2 Guide: Slay the Spire 2 Builds, Tips, Cards, and Relics Database',
   description:
-    'StS2 guide hub for Slay the Spire 2 builds, starter tips, mechanics, and searchable cards/relics/potions. Use this page to open the exact answer for launch-week questions fast.',
+    'StS2 guide hub for Slay the Spire 2 builds, starter tips, mechanics, and searchable cards/relics/potions, including confirmed v0.101.0 card and relic updates.',
   openGraph: {
     title: 'StS2 Guide Hub: Slay the Spire 2 Builds, Tips, Cards, Relics',
     description:
-      'Find launch-week updates, beginner routes, mechanics explanations, and fast card/relic lookup pages in one place.',
+      'Find beginner routes, mechanics explanations, patch analysis, and confirmed v0.101.0 card and relic lookup pages in one place.',
   },
 };
 
