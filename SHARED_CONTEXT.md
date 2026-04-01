@@ -162,3 +162,62 @@
   - 持续有曝光页面 30-50 个
 - 达标后的执行方式：先灰度 10%-20% 页面，仅在 news 长文页底部放 1 个广告位；不放首屏，不放 `/cards`、`/relics`、`/guides` 查询页；观察 14 天后再决定是否扩大。
 - 运营要求：每日观测数据，达到阈值时主动提醒“可进入 AdSense 灰度测试”。
+
+## 2026-03-30 下午
+- Task: 延续 Steam 社媒运维，完成“至少 5 条高质量回复”目标。
+- 执行前置: 已先阅读 `STS2_LAUNCH_EXECUTION_CHECKLIST.md` 模块六，并按 `quote -> reply` 规则执行。
+- 执行结果:
+  - 在同一目标帖 `https://steamcommunity.com/app/2868840/discussions/0/798965575663499797/?ctp=5` 连续完成 5 条高质量英文回复。
+  - 本轮新增回复楼层：`#61`、`#62`、`#63`、`#64`、`#65`（其中 `#65` 引用对象为 `Dr.Monarch`）。
+  - 页面计数由“正在显示第 `61-64` 条，共 `64` 条留言”更新为“正在显示第 `61-65` 条，共 `65` 条留言”。
+- 数据信号:
+  - 回复文本均为机制讨论导向，未使用对抗式语气；每条最多一个观点焦点，便于后续继续讨论。
+  - Steam 提交存在偶发无即时反馈现象，但本轮通过楼层号与总评论数双重核验均已落地。
+- 风险/阻塞:
+  - 平台端“主题详情”区域的“回复数”字段与楼层统计偶发不同步，需以后者（楼层 + 分页统计）为主。
+- 下一步:
+  - 转入低频巡检模式（上午/下午各 1 次），优先回复新增高质量评论，不做短时高频刷屏。
+  - 24-72 小时后回看该讨论串新增互动质量，再决定是否补充 1-2 条延展回复。
+
+## 2026-04-01 线程切换交接（关键执行快照）
+
+### DONE｜已完成动作（代码 + 平台）
+- 新增 3 篇 Regent 高质量攻略并上线（由 `shared/guidesData.ts` 驱动 `app/guides/[slug]/page.tsx` 动态路由）：
+  - `/guides/regent-card-pool-priority`
+  - `/guides/regent-stars-vs-forge-build-path`
+  - `/guides/celestial-might-regent-guide`
+- 已把 Regent 攻略入口补到角色承接链路：
+  - `app/characters/[slug]/page.tsx`（Regent 角色页新增 deep guide links）
+  - `app/cards/character/[slug]/page.tsx`（Regent 卡池页新增 high-intent guide routes）
+  - `app/guides/page.tsx`（Guides intent shortcuts 新增 Regent 入口）
+- 已把高曝光 news 页补到 Regent 攻略分发链路（news -> guide）：
+  - 修改文件：`shared/gameData.ts`
+  - 追加内链的新闻 slug：
+    - `slay-the-spire-2-beta-patch-v0-101-0-analysis`
+    - `best-starter-character-slay-the-spire-2-early-access`
+    - `slay-the-spire-2-first-run-guide-act-1-priorities`
+- 已完成索引提交三件套：
+  - IndexNow API：3 条 URL 提交成功（返回 `ok=true`）
+  - Bing URL Submission：3 条 URL 已出现在今日提交列表，`URLs submitted today=3`，额度从 `100` 到 `97`
+  - GSC URL Inspection：3 条 URL 均执行“请求编入索引”，均出现“已请求编入索引”确认弹窗
+- 回归验证：两轮改动后均通过 `pnpm lint && pnpm build`（仅既有 warning，无 error）
+
+### DONE｜本轮关键提交（已 push main）
+- `ab12a27`：新增 Regent 专题攻略并打通角色/卡池/guides 的站内承接
+- `988f0fa`：补充高曝光 news 页到 Regent 攻略的分发内链
+- 远端状态：`main` 已包含以上提交（Vercel 自动部署链路生效）
+
+### P0｜当前事实与判断
+- 仍处于验证阶段：闸门未确认过线前，继续只做“词池/模板/内链”，不做扩量。
+- Regent 相关关键词已有 GSC 信号（如 `regent card pool`、`regent rare cards`、`the regent sts2`、`celestial might regent`），但点击仍偏低，属于“有曝光待转化”阶段。
+- 现阶段重点不是再大批量发文，而是让新页先被抓取、被展示、被点击。
+
+### P0｜下一线程直接执行清单（可复制）
+- 第 1 步（T+48h）：四端复核一次页级数据（GSC + Vercel + Bing + Trends），重点看 3 个新攻略页的收录/曝光/CTR。
+- 第 2 步（T+72h）：若“有曝光低 CTR”，仅小步改 `title + 首段一句 + 1 条问题导向锚文本`，不要重写正文。
+- 第 3 步（T+72h）：继续从 2-3 个高曝光 news 页补 1 条到 Regent 攻略的上下文内链（保持低噪音）。
+- 第 4 步（周复盘）：输出闸门状态（收录率/曝光页占比/前30页数）后，再决定是否开 Defect 批次。
+
+### 线程接手提示
+- 当前工作区仍有 `SHARED_CONTEXT.md` 本地未提交改动（用于持续交接日志）。
+- 接手时优先读：`AGENTS.md`、`STS2_LAUNCH_EXECUTION_CHECKLIST.md`、本文件本节。
