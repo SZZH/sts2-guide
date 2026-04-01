@@ -321,61 +321,66 @@ export const GUIDE_ARTICLES: GuideArticle[] = [
   },
   {
     slug: 'celestial-might-regent-guide',
-    title: 'Celestial Might Regent Guide: When to Draft, Upgrade, and Skip',
+    title: 'Celestial Might in Slay the Spire 2: When It Wins Runs, When It Is Bait, and When Regent Should Skip It',
     description:
-      'A practical Celestial Might Regent guide for Slay the Spire 2. Learn when the card is a win condition, when it is bait, and how to slot it without hurting deck consistency.',
+      'A practical Celestial Might guide for Slay the Spire 2. Learn when Regent decks should treat it as real payoff, when it is just bait, and why it is not a universal early draft.',
     readTime: '8 min',
-    updatedAt: '2026-03-30',
-    primaryKeyword: 'celestial might regent',
+    updatedAt: '2026-04-01',
+    primaryKeyword: 'celestial might sts2',
     sections: [
       {
-        heading: 'What Celestial Might Is Supposed to Solve',
+        heading: 'What Celestial Might Actually Solves',
         points: [
-          'Celestial Might is strongest as a payoff accelerator when your deck already produces stable Stars and can protect setup turns.',
-          'It is not an early universal fixer; drafting it too early often worsens draw quality and delays survival upgrades.',
-          'Treat it as a role card for closing combat windows, not as a standalone plan.',
+          'Celestial Might is usually discussed as a payoff card, not as a card that fixes weak early turns by itself.',
+          'It reads best in decks that already know how they are surviving and only need a cleaner way to convert setup into pressure.',
+          'Treat it as a closing tool for a working shell, not as proof that your run suddenly has a plan.',
         ],
       },
       {
-        heading: 'Draft Timing Checklist',
+        heading: 'When It Deserves the Draft Slot',
         points: [
-          'Draft now when you already have repeatable Star generation and one consistent defensive lane.',
-          'Delay when your current list still loses to basic elite damage checks or suffers from hand clogging.',
-          'Skip when your current run is clearly Forge-centric and Celestial Might does not improve the actual win line.',
+          'Draft it when Regent already has one stable lane, enough setup support, and a real reason to convert those turns into payoff.',
+          'Delay it when the deck still fails basic elite checks or keeps producing awkward hands with too much setup and not enough floor.',
+          'Skip it when the current run is winning by cleaner Forge lines or by simpler mid-cost sequencing that Celestial Might does not actually improve.',
         ],
       },
       {
-        heading: 'Upgrade and Sequencing Rules',
+        heading: 'When It Starts to Become Bait',
         points: [
-          'Upgrade priority rises when Celestial Might is your main conversion window; otherwise keep upgrades for stability cards first.',
-          'Plan Celestial turns around guaranteed follow-up, not around hopeful draws, so the payoff actually converts into lethal or control.',
-          'Pair with low-cost setup cards so the turn does not collapse if one premium payoff card is missing.',
+          'It becomes bait when the card looks like payoff but the rest of the deck still lacks stable block, draw quality, or a clean Stars shell.',
+          'It also becomes bait when players take it just because the text looks explosive, even though their real losses still come from tempo and survival gaps.',
+          'If adding Celestial Might only increases setup load without fixing the combat pattern you are losing to, it is probably the wrong draft now.',
         ],
       },
       {
-        heading: 'Common Misplays That Make the Card Look Worse Than It Is',
+        heading: 'How Players Usually Judge the Card',
         points: [
-          'Playing it on low-resource turns with no conversion follow-up and then blaming card quality.',
-          'Overcommitting to one flashy line instead of preserving a backup defensive path.',
-          'Keeping too many expensive cards around it, creating turns where everything is powerful but nothing is playable.',
+          'Players usually rate Celestial Might higher once the deck already has enough room to spend turns on payoff instead of patching over weak floors.',
+          'Most of the disagreement around the card comes from runs where it is drafted too early and then blamed for problems it never claimed to solve.',
+          'A useful test is simple: if Regent still needs consistency help, Celestial Might is often a luxury; if the shell is already stable, it can become a real closer.',
         ],
       },
     ],
     faqs: [
       {
-        question: 'Is Celestial Might mandatory in every Regent run?',
+        question: 'Is Celestial Might good in Slay the Spire 2?',
         answer:
-          'No. It is a high-upside option, not a mandatory card. Many winning Regent runs prioritize consistency tools over one marquee payoff card.',
+          'It can be, but mostly in decks that already have the support to cash it in. It is usually worse when drafted as an early rescue card.',
       },
       {
-        question: 'Can Celestial Might work in both Stars and Forge shells?',
+        question: 'When should Regent players draft Celestial Might?',
         answer:
-          'It is usually better in Stars-focused shells. In Forge-heavy lists, take it only when the card clearly improves your real combat sequence rather than adding more setup load.',
+          'Draft it once your run already has enough stability to spend a slot on payoff. If the deck still needs floor, block, or cleaner sequencing, keep solving those first.',
+      },
+      {
+        question: 'Is Celestial Might only good in Stars shells?',
+        answer:
+          'It is usually easier to justify there, but the real question is not the label of the shell. The real question is whether the card improves your actual combat sequence instead of adding one more expensive dream turn.',
       },
     ],
     relatedLinks: [
-      { href: '/cards/celestial_might', label: 'Read Celestial Might card text and cost details' },
-      { href: '/guides/regent-stars-vs-forge-build-path', label: 'Need the full Stars vs Forge decision framework?' },
+      { href: '/cards/celestial_might', label: 'Read Celestial Might card text before deciding where it fits' },
+      { href: '/guides/regent-stars-vs-forge-build-path', label: 'Need the full Stars vs Forge decision framework first?' },
       { href: '/cards/character/regent', label: 'Compare Celestial lines with the rest of the Regent card pool' },
     ],
   },
