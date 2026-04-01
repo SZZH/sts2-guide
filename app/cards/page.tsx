@@ -479,6 +479,9 @@ export default async function CardsPage({ searchParams }: CardsPageProps) {
                     <Link href="/relics/book_of_five_rings" className="text-molten-orange transition-colors hover:text-ember-glow">
                       Which cards pair with Book of Five Rings?
                     </Link>
+                    <Link href="/guides/exhaust-mechanic-explained" className="text-molten-orange transition-colors hover:text-ember-glow">
+                      How does Exhaust work in Slay the Spire 2?
+                    </Link>
                     <Link
                       href="/news/slay-the-spire-2-multiplayer-coop-guide"
                       className="text-molten-orange transition-colors hover:text-ember-glow"
@@ -630,6 +633,9 @@ export default async function CardsPage({ searchParams }: CardsPageProps) {
                     </Link>
                     <Link href="/relics/book_of_five_rings" className="text-molten-orange transition-colors hover:text-ember-glow">
                       Which cards pair with Book of Five Rings?
+                    </Link>
+                    <Link href="/guides/exhaust-mechanic-explained" className="text-molten-orange transition-colors hover:text-ember-glow">
+                      How does Exhaust work in Slay the Spire 2?
                     </Link>
                     <Link
                       href="/news/slay-the-spire-2-multiplayer-coop-guide"
