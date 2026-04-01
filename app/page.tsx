@@ -75,9 +75,9 @@ export default function HomePage() {
       label: 'Best Starter Character',
     },
     {
-      href: '/cards/celestial_might',
-      query: 'celestial might slay the spire',
-      label: 'Celestial Might Card',
+      href: '/guides/celestial-might-regent-guide',
+      query: 'celestial might sts2',
+      label: 'Celestial Might Guide',
     },
     {
       href: '/cards',

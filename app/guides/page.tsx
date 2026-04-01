@@ -293,8 +293,8 @@ export default function GuidesPage() {
     },
     {
       href: '/guides/celestial-might-regent-guide',
-      query: 'celestial might regent',
-      label: 'Celestial Might Regent Guide',
+      query: 'celestial might sts2',
+      label: 'Celestial Might Guide',
     },
   ];
 
