@@ -385,6 +385,71 @@ export const GUIDE_ARTICLES: GuideArticle[] = [
     ],
   },
   {
+    slug: 'necrobinder-common-cards',
+    title: 'Necrobinder Common Cards in Slay the Spire 2: Which Ones Stabilize Early Runs and Which Ones Only Support Synergy',
+    description:
+      'A practical Necrobinder common cards guide for Slay the Spire 2. Use it to sort the common pool into early stabilizers, engine support, and synergy pieces without turning every pick into a tier list.',
+    readTime: '9 min',
+    updatedAt: '2026-04-01',
+    primaryKeyword: 'necrobinder common cards',
+    sections: [
+      {
+        heading: 'How to Read Necrobinder Common Cards Without Forcing a Fake Archetype',
+        points: [
+          'Necrobinder commons are easier to read by job than by hype: some cards stabilize runs, some support Osty tempo, and some only make sense once a Doom or Soul lane already exists.',
+          'That matters because early Necrobinder losses usually come from weak floors and awkward turns, not from failing to draft one flashy payoff.',
+          'Use the common pool as a map for how the character survives its first acts, not as a shortcut to a fixed best deck.',
+        ],
+      },
+      {
+        heading: 'Commons That Mainly Stabilize Early Runs',
+        points: [
+          'Cards like Defy, Negative Pulse, Grave Warden, and Pull Aggro are easiest to read as floor tools because they help you survive turns that would otherwise collapse.',
+          'Afterlife, Invoke, and Wisp also fit this group when the run still needs smoother turns more than it needs higher ceiling.',
+          'These picks are usually easier to justify than speculative synergy cards when elite checks and HP pressure are still the real problem.',
+        ],
+      },
+      {
+        heading: 'Commons That Look Better Once a Lane Already Exists',
+        points: [
+          'Scourge leans toward Doom support, while Poke, Snap, and Flatten read more clearly once you already know Osty is part of the combat plan.',
+          'Blight Strike, Fear, Defile, Reave, Reap, Graveblast, Sculpting Strike, Drain Power, and Sow are easier to draft once you know whether the deck needs pressure, spread damage, or conversion turns.',
+          'These cards are not bad early by default, but they become much easier to evaluate after the run already has one stable lane.',
+        ],
+      },
+      {
+        heading: 'The Common-Pool Mistake New Necrobinder Runs Keep Repeating',
+        points: [
+          'The common mistake is reading every common as either weak filler or mandatory synergy, when many of them are just role players that depend on what the deck is still missing.',
+          'Another common trap is chasing a Doom, Osty, or Soul identity before the deck has enough floor to survive the fights that come before the payoff.',
+          'A safer reading order is simple: secure survival first, then add support pieces, then let the run decide which commons become real glue.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'What counts as a Necrobinder common card in Slay the Spire 2?',
+        answer:
+          'This page uses the current local card pool and looks only at Necrobinder cards marked common, not starter, uncommon, or rare.',
+      },
+      {
+        question: 'Are Necrobinder commons supposed to be ranked?',
+        answer:
+          'Not here. The goal is to sort them by role so you can read draft context more clearly, not to pretend one fixed ranking survives every run state.',
+      },
+      {
+        question: 'Which Necrobinder commons should I review first?',
+        answer:
+          'Start with the commons that help you survive awkward early turns, then review the ones that only become strong after Doom, Osty, or Soul lines are already making sense.',
+      },
+    ],
+    relatedLinks: [
+      { href: '/cards/character/necrobinder', label: 'Open the full Necrobinder card pool before narrowing to commons' },
+      { href: '/characters/necrobinder', label: 'Need the broader Necrobinder character overview first?' },
+      { href: '/mechanics', label: 'Refresh Doom and other core mechanics before reading commons as synergy tools' },
+    ],
+  },
+  {
     slug: 'retain-mechanic-explained',
     title: 'Retain Mechanic Explained in Slay the Spire 2',
     description: 'How to use Retain cards to bank tempo and line up stronger multi-turn turns.',
