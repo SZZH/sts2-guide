@@ -361,7 +361,7 @@ export const GENERATED_CARDS: GeneratedCardRecord[] = [
     type: 'power',
     rarity: 'rare',
     costText: '1',
-    text: 'Whenever you play a Colorless card, gain ArsenalPower Strength.',
+    text: 'Innate. Whenever you create a card, gain 1 Strength.',
     image: {
       localPath: '/assets/sts2/cards/arsenal.webp',
       width: 1000,
@@ -9887,7 +9887,7 @@ export const GENERATED_CARDS: GeneratedCardRecord[] = [
     type: 'power',
     rarity: 'rare',
     costText: '2',
-    text: 'Increase the cost of Sovereign Blade by 1. Sovereign Blade now hits an additional time.',
+    text: 'Sovereign Blade now hits an additional time.',
     image: {
       localPath: '/assets/sts2/cards/sword_sage.webp',
       width: 1000,
@@ -10481,7 +10481,7 @@ export const GENERATED_CARDS: GeneratedCardRecord[] = [
     type: 'skill',
     rarity: 'common',
     costText: '1',
-    text: 'Apply 2 Vulnerable.',
+    text: 'Apply 2 Vulnerable. Exhaust.',
     image: {
       localPath: '/assets/sts2/cards/tremble.webp',
       width: 1000,
@@ -10920,7 +10920,7 @@ export const GENERATED_CARDS: GeneratedCardRecord[] = [
     color: 'defect',
     type: 'skill',
     rarity: 'rare',
-    costText: '2',
+    costText: '3',
     text: 'Channel Lightning equal to the Lightning already Channeled this combat.{InCombat:',
     image: {
       localPath: '/assets/sts2/cards/voltaic.webp',
