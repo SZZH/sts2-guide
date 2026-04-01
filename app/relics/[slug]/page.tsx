@@ -298,7 +298,7 @@ export default async function RelicDetailPage({ params }: { params: Promise<{ sl
               <div className="rounded-xl border border-molten-orange/25 bg-molten-orange/5 p-5">
                 <div className="mb-2 text-xs uppercase tracking-[0.18em] text-molten-orange">Data Source</div>
                 <p className="text-sm leading-7 text-foreground/90">
-                  Relic facts are synced from the local extract bundle and may still change during Early Access patches.
+                  Relic facts on this page already include confirmed v0.101.0 updates. Any remaining Early Access items that are not yet fully confirmed stay pending instead of being guessed.
                 </p>
               </div>
             </section>

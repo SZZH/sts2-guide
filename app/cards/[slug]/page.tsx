@@ -173,7 +173,7 @@ export default async function CardDetailPage({
             <div className="rounded-xl border border-molten-orange/25 bg-molten-orange/5 p-5">
               <div className="text-xs uppercase tracking-[0.18em] text-molten-orange mb-2">Data Source</div>
               <p className="text-sm text-foreground/90 leading-7">
-                Card facts on this page are merged from the local game extract bundle and verified on {card.source.verifiedAt}.
+                Card facts on this page are based on the local extract dataset plus public cross-checks. Confirmed v0.101.0 changes have already been synced, while unresolved Early Access items remain pending verification.
               </p>
             </div>
           </section>
