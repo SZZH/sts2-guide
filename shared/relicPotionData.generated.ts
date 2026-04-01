@@ -88,7 +88,7 @@ export const RELICS_GENERATED: GeneratedRelic[] = [
   {
     "slug": "bag_of_marbles",
     "name": "Bag of Marbles",
-    "rarity": "Uncommon",
+    "rarity": "Common",
     "character": "Neutral",
     "description": "at the start of each combat, apply 1 vulnerable to all enemies.",
     "image": "https://assets.sts2guide.com/assets/sts2/relics-v20260310-wiki-r1/bag_of_marbles.png"
@@ -120,7 +120,7 @@ export const RELICS_GENERATED: GeneratedRelic[] = [
   {
     "slug": "bellows",
     "name": "Bellows",
-    "rarity": "Uncommon",
+    "rarity": "Rare",
     "character": "Neutral",
     "description": "the first hand you draw each combat is upgraded.",
     "image": "https://assets.sts2guide.com/assets/sts2/relics-v20260310-wiki-r1/bellows.png"
@@ -808,7 +808,7 @@ export const RELICS_GENERATED: GeneratedRelic[] = [
   {
     "slug": "lasting_candy",
     "name": "Lasting Candy",
-    "rarity": "Rare",
+    "rarity": "Uncommon",
     "character": "Neutral",
     "description": "every other combat, your card rewards gain an additional power.",
     "image": "https://assets.sts2guide.com/assets/sts2/relics-v20260310-wiki-r1/lasting_candy.png"
@@ -1154,13 +1154,13 @@ export const RELICS_GENERATED: GeneratedRelic[] = [
     "name": "Pendulum",
     "rarity": "Common",
     "character": "Neutral",
-    "description": "whenever you shuffle your draw pile, draw a card.",
+    "description": "every 3 turns, draw a card.",
     "image": "https://assets.sts2guide.com/assets/sts2/relics-v20260310-wiki-r1/pendulum.png"
   },
   {
     "slug": "permafrost",
     "name": "Permafrost",
-    "rarity": "Common",
+    "rarity": "Uncommon",
     "character": "Neutral",
     "description": "the first time you play a power each combat, gain 6 block.",
     "image": "https://assets.sts2guide.com/assets/sts2/relics-v20260310-wiki-r1/permafrost.png"
@@ -1304,7 +1304,7 @@ export const RELICS_GENERATED: GeneratedRelic[] = [
   {
     "slug": "red_mask",
     "name": "Red Mask",
-    "rarity": "Uncommon",
+    "rarity": "Common",
     "character": "Neutral",
     "description": "at the start of each combat, apply 1 weak to all enemies.",
     "image": "https://assets.sts2guide.com/assets/sts2/relics-v20260310-wiki-r1/red_mask.png"
@@ -1656,9 +1656,9 @@ export const RELICS_GENERATED: GeneratedRelic[] = [
   {
     "slug": "tiny_mailbox",
     "name": "Tiny Mailbox",
-    "rarity": "Common",
+    "rarity": "Uncommon",
     "character": "Neutral",
-    "description": "whenever you rest, procure a random potion.",
+    "description": "whenever you rest, procure 2 random potions.",
     "image": "https://assets.sts2guide.com/assets/sts2/relics-v20260310-wiki-r1/tiny_mailbox.png"
   },
   {
@@ -1810,7 +1810,7 @@ export const RELICS_GENERATED: GeneratedRelic[] = [
     "name": "Vexing Puzzlebox",
     "rarity": "Rare",
     "character": "Neutral",
-    "description": "at the start of each combat, add a random card into your hand. it costs 0 energy.",
+    "description": "at the start of each combat, add a random card into your hand. it's free to play this turn.",
     "image": "https://assets.sts2guide.com/assets/sts2/relics-v20260310-wiki-r1/vexing_puzzlebox.png"
   },
   {
