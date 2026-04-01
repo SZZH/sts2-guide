@@ -284,6 +284,9 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     relatedLinks: [
       { href: '/news/slay-the-spire-2-steamdb-patch-tracker', label: 'Follow patch timeline and merge history' },
       { href: '/guides/act1-route-priority', label: 'Is your Act 1 route still correct after floor-6 elite pressure changes?' },
+      { href: '/cards/arsenal', label: 'Open Arsenal card page after the v0.101.0 trigger rewrite' },
+      { href: '/cards/voltaic', label: 'Check Voltaic cost and text after the v0.101.0 tempo nerf' },
+      { href: '/relics/pendulum', label: 'Review Pendulum after its fixed-cadence draw rework' },
       { href: '/guides/regent-stars-vs-forge-build-path', label: 'How should Regent players pivot between Stars and Forge after this patch?' },
       { href: '/news/slay-the-spire-2-first-run-guide-act-1-priorities', label: 'Apply these patch changes in your next Act 1 run' },
       { href: '/news/best-starter-character-slay-the-spire-2-early-access', label: 'Pick the best starter character after v0.101.0' },

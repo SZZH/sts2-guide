@@ -52,6 +52,16 @@ export default function MechanicsPage() {
       label: 'Book of Five Rings Relic',
     },
     {
+      href: '/cards/arsenal',
+      query: 'arsenal sts2',
+      label: 'Arsenal Card',
+    },
+    {
+      href: '/cards/voltaic',
+      query: 'voltaic sts2',
+      label: 'Voltaic Card',
+    },
+    {
       href: '/cards/abrasive',
       query: 'abrasive sts2',
       label: 'Abrasive Card',
