@@ -73,52 +73,80 @@ export const GUIDE_ARTICLES: GuideArticle[] = [
   },
   {
     slug: 'exhaust-mechanic-explained',
-    title: 'What Is Exhaust in Slay the Spire 2? Timing Guide (When to Thin and When to Stop)',
+    title: 'What Is Exhaust in Slay the Spire 2? When to Use It, When to Stop, and What Players Mean by "Remove Exhaust"',
     description:
-      'If you are asking what Exhaust means in Slay the Spire 2 or whether to Exhaust now or hold, this guide gives practical timing rules, over-thinning risk checks, and payoff setup patterns.',
-    readTime: '6 min',
-    updatedAt: '2026-03-17',
+      'If you are asking what Exhaust means in Slay the Spire 2, when to use it, or what players usually mean by "remove exhaust," this guide gives practical timing rules, over-thinning checks, and a clear way to tell whether your deck is actually becoming an Exhaust build.',
+    readTime: '8 min',
+    updatedAt: '2026-04-01',
     primaryKeyword: 'exhaust mechanic slay the spire 2',
     sections: [
       {
-        heading: 'Why Exhaust Is a Tempo Tool',
+        heading: 'What Exhaust Actually Does',
         points: [
-          'Exhaust removes low-impact cards so each future draw step has higher average quality.',
-          'In long fights, this becomes an indirect scaling engine when paired with payoff relics/cards.',
-          'Treat Exhaust as deck-shaping, not random card deletion.',
+          'Exhaust removes a card from your deck for the rest of the current combat, so it changes your later draw quality rather than only your current turn.',
+          'That is why players often describe Exhaust as deck shaping: weak or temporary cards leave circulation, and stronger hands appear more often later.',
+          'The mechanic is not automatically good or bad. Its value depends on whether the card you remove was hurting future hands more than it was helping right now.',
         ],
       },
       {
-        heading: 'Best Use Cases',
+        heading: 'When Exhaust Usually Helps',
         points: [
-          'Use Exhaust to remove starter cards after you have replacements.',
-          'Target temporary or low-scaling cards first in boss fights.',
-          'Keep at least one emergency block line before aggressive thinning.',
+          'Exhaust tends to help most once your deck already has replacements for starter cards and can afford to improve hand quality over multiple turns.',
+          'In longer fights, selective Exhaust often functions like slow scaling because each future draw has a better chance to hit your real payoff cards.',
+          'Many players also start valuing Exhaust more once their deck has draw, payoff cards, or relic/card text that explicitly rewards exhausted cards.',
         ],
       },
       {
-        heading: 'Failure Patterns',
+        heading: 'When Exhaust Starts Hurting You',
         points: [
-          'Exhausting too fast in short elite fights and losing defensive floor.',
-          'Building around Exhaust without enough draw to see payoffs.',
-          'Forcing Exhaust in decks that already have low card quality variance.',
+          'The most common failure pattern is thinning too fast in short elite or high-pressure fights and accidentally deleting your own defensive floor.',
+          'Exhaust also underperforms when players chase the idea of an Exhaust deck before they actually have draw support, payoff text, or enough card quality to benefit from thinning.',
+          'If your deck is already small, flat, or low on replacement quality, further Exhaust can make hands less stable instead of more stable.',
+        ],
+      },
+      {
+        heading: 'What Players Usually Mean by "Remove Exhaust"',
+        points: [
+          'Most searches for "remove exhaust" are not really asking for a hidden game system that cancels Exhaust. They are usually asking how to reduce the downside of exhausting too many cards too early.',
+          'In practice, that question is usually about pacing: stop deleting cards before your deck has enough replacement value, draw support, or payoff for doing so.',
+          'So the useful answer is not "how do I undo Exhaust," but "how do I avoid exhausting the wrong cards, at the wrong time, in the wrong fight?"',
+        ],
+      },
+      {
+        heading: 'What Counts as an Exhaust Build',
+        points: [
+          'A deck is not an Exhaust build just because it contains a few cards that Exhaust. The mechanic has to be doing real structural work for your deck.',
+          'In most runs, that means Exhaust is improving hand quality on purpose, and the deck also contains enough draw, payoff, or scaling to benefit from the cards leaving circulation.',
+          'If Exhaust is only appearing incidentally while your real plan comes from elsewhere, it is better to think of it as support text rather than the identity of the deck.',
         ],
       },
     ],
     faqs: [
       {
-        question: 'Should beginners build Exhaust on first runs?',
-        answer: 'Only partially. Learn selective Exhaust first, then commit to full synergy once your deck can recover hand size.',
+        question: 'Should beginners force an Exhaust build on early runs?',
+        answer:
+          'Usually no. A safer approach is to learn selective Exhaust first, then move toward heavier Exhaust synergies only when your deck already has enough draw, payoff, or replacement quality.',
       },
       {
         question: 'Does Exhaust always mean late-game scaling?',
-        answer: 'Not always. It can also be a short-fight stabilization tool if used on weak openers.',
+        answer:
+          'Not always. In some fights it simply improves hand quality or removes weak openers. The scaling side becomes more obvious once the fight is long enough for better future draws to matter.',
+      },
+      {
+        question: 'What does "remove exhaust" usually mean in player searches?',
+        answer:
+          'Most of the time, players are asking how to avoid the downside of over-thinning a deck, not how to reverse the mechanic itself. The practical fix is better pacing and better target selection.',
+      },
+      {
+        question: 'How do I know if my deck is actually an Exhaust build?',
+        answer:
+          'Ask whether Exhaust is central to your deck becoming better over time. If the answer depends on draw support, payoff effects, and repeated hand-quality improvement, then the deck is likely leaning into Exhaust as a real plan.',
       },
     ],
     relatedLinks: [
-      { href: '/cards/corruption', label: 'Should you force Corruption or stay on a safer Exhaust line?' },
-      { href: '/guides/ironclad-early-build', label: 'Need an Ironclad route before full Exhaust commitment?' },
-      { href: '/mechanics', label: 'Need quick definitions for Sly, Doom, Stars, and Forge first?' },
+      { href: '/guides/ironclad-early-build', label: 'Need an Ironclad route before heavier Exhaust commitment?' },
+      { href: '/mechanics', label: 'Need the full mechanics page before comparing Exhaust to other systems?' },
+      { href: '/cards', label: 'Browse the card database if you want to inspect current Exhaust-related cards.' },
     ],
   },
   {
