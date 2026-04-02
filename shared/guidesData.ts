@@ -388,7 +388,7 @@ export const GUIDE_ARTICLES: GuideArticle[] = [
     slug: 'necrobinder-common-cards',
     title: 'Necrobinder Common Cards in Slay the Spire 2: Which Ones Stabilize Early Runs and Which Ones Only Support Synergy',
     description:
-      'A practical Necrobinder common cards guide for Slay the Spire 2. Use it to sort the common pool into early stabilizers, engine support, and synergy pieces without turning every pick into a tier list.',
+      'A practical Necrobinder common cards guide for Slay the Spire 2. Use it to sort the common pool into early stabilizers, engine support, and synergy pieces without turning every pick into a fixed ranking.',
     readTime: '9 min',
     updatedAt: '2026-04-01',
     primaryKeyword: 'necrobinder common cards',
