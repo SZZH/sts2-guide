@@ -99,6 +99,12 @@ function getCharacterDeepGuideLinks(slug: CardCharacter) {
     ];
   }
 
+  if (slug === 'necrobinder') {
+    return [
+      { href: '/guides/necrobinder-common-cards', label: 'Necrobinder common cards guide (role-first, not tier list)' },
+    ];
+  }
+
   return [];
 }
 

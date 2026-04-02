@@ -296,6 +296,11 @@ export default function GuidesPage() {
       query: 'celestial might sts2',
       label: 'Celestial Might Guide',
     },
+    {
+      href: '/guides/necrobinder-common-cards',
+      query: 'necrobinder common cards',
+      label: 'Necrobinder Common Cards',
+    },
   ];
 
   return (
