@@ -1,0 +1,57 @@
+profiles:
+  operations-daily:
+    first_read:
+      - docs/ops-center/NOW.md
+      - docs/ops-center/INDEX.md
+      - docs/ops-center/00-dashboard.md
+      - docs/ops-center/02-decisions.md
+      - docs/ops-center/03-roadmap.md
+      - docs/ops-center/05-kpi-gates.md
+    include:
+      - docs/ops-center/NOW.md
+      - docs/ops-center/INDEX.md
+      - docs/ops-center/**
+      - AGENTS.md
+      - README.md
+      - ops-logs/**
+      - scripts/**
+    exclude:
+      - .next/**
+      - node_modules/**
+      - .cache/**
+      - docs/archive/**
+
+  code-change:
+    first_read:
+      - docs/ops-center/NOW.md
+      - docs/ops-center/INDEX.md
+      - docs/ops-center/05-kpi-gates.md
+      - AGENTS.md
+    include:
+      - app/**
+      - components/**
+      - shared/**
+      - scripts/**
+      - AGENTS.md
+      - docs/ops-center/05-kpi-gates.md
+    exclude:
+      - .next/**
+      - node_modules/**
+      - .cache/**
+      - docs/archive/**
+
+  reporting:
+    first_read:
+      - docs/ops-center/NOW.md
+      - docs/ops-center/INDEX.md
+      - docs/ops-center/00-dashboard.md
+      - docs/ops-center/01-daily-log.md
+      - docs/ops-center/02-decisions.md
+    include:
+      - docs/ops-center/**
+      - ops-logs/**
+      - docs/archive/**
+    exclude:
+      - .next/**
+      - node_modules/**
+      - .cache/**
