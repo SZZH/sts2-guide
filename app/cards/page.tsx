@@ -508,6 +508,39 @@ export default async function CardsPage({ searchParams }: CardsPageProps) {
                     </Link>
                   </div>
                 </div>
+
+                <div className="hidden rounded-xl border border-border bg-background/40 p-4 lg:block">
+                  <h3 className="font-heading text-lg font-bold">High-Intent Card Routes</h3>
+                  <div className="mt-3 flex flex-wrap gap-3 text-sm">
+                    <Link href="/cards/accelerant" className="text-molten-orange transition-colors hover:text-ember-glow">
+                      When is Accelerant worth taking?
+                    </Link>
+                    <Link href="/cards/bullet_time" className="text-molten-orange transition-colors hover:text-ember-glow">
+                      Is Bullet Time still a strong Silent pick?
+                    </Link>
+                    <Link href="/cards/biased_cognition" className="text-molten-orange transition-colors hover:text-ember-glow">
+                      How do I use Biased Cognition safely?
+                    </Link>
+                    <Link href="/cards/ball_lightning" className="text-molten-orange transition-colors hover:text-ember-glow">
+                      Why pick Ball Lightning early on Defect?
+                    </Link>
+                    <Link href="/cards/twin_strike" className="text-molten-orange transition-colors hover:text-ember-glow">
+                      Is Twin Strike enough for Act 1 damage checks?
+                    </Link>
+                    <Link href="/cards/machine_learning" className="text-molten-orange transition-colors hover:text-ember-glow">
+                      When does Machine Learning stop being too slow?
+                    </Link>
+                    <Link href="/cards/tools_of_the_trade" className="text-molten-orange transition-colors hover:text-ember-glow">
+                      How good is Tools of the Trade in early Silent runs?
+                    </Link>
+                    <Link href="/cards/hidden_gem" className="text-molten-orange transition-colors hover:text-ember-glow">
+                      Is Hidden Gem a trap or a real payoff?
+                    </Link>
+                    <Link href="/cards/dagger_throw" className="text-molten-orange transition-colors hover:text-ember-glow">
+                      Should I keep Dagger Throw after early game?
+                    </Link>
+                  </div>
+                </div>
               </aside>
 
               <div className="lg:flex lg:h-full lg:min-h-0 lg:flex-col">
@@ -660,6 +693,39 @@ export default async function CardsPage({ searchParams }: CardsPageProps) {
                       className="text-molten-orange transition-colors hover:text-ember-glow"
                     >
                       What is the release date and status?
+                    </Link>
+                  </div>
+                </div>
+
+                <div className="mt-6 rounded-xl border border-border bg-background/40 p-4 lg:hidden">
+                  <h3 className="font-heading text-lg font-bold">High-Intent Card Routes</h3>
+                  <div className="mt-3 flex flex-wrap gap-3 text-sm">
+                    <Link href="/cards/accelerant" className="text-molten-orange transition-colors hover:text-ember-glow">
+                      When is Accelerant worth taking?
+                    </Link>
+                    <Link href="/cards/bullet_time" className="text-molten-orange transition-colors hover:text-ember-glow">
+                      Is Bullet Time still a strong Silent pick?
+                    </Link>
+                    <Link href="/cards/biased_cognition" className="text-molten-orange transition-colors hover:text-ember-glow">
+                      How do I use Biased Cognition safely?
+                    </Link>
+                    <Link href="/cards/ball_lightning" className="text-molten-orange transition-colors hover:text-ember-glow">
+                      Why pick Ball Lightning early on Defect?
+                    </Link>
+                    <Link href="/cards/twin_strike" className="text-molten-orange transition-colors hover:text-ember-glow">
+                      Is Twin Strike enough for Act 1 damage checks?
+                    </Link>
+                    <Link href="/cards/machine_learning" className="text-molten-orange transition-colors hover:text-ember-glow">
+                      When does Machine Learning stop being too slow?
+                    </Link>
+                    <Link href="/cards/tools_of_the_trade" className="text-molten-orange transition-colors hover:text-ember-glow">
+                      How good is Tools of the Trade in early Silent runs?
+                    </Link>
+                    <Link href="/cards/hidden_gem" className="text-molten-orange transition-colors hover:text-ember-glow">
+                      Is Hidden Gem a trap or a real payoff?
+                    </Link>
+                    <Link href="/cards/dagger_throw" className="text-molten-orange transition-colors hover:text-ember-glow">
+                      Should I keep Dagger Throw after early game?
                     </Link>
                   </div>
                 </div>

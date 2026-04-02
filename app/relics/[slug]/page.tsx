@@ -34,6 +34,20 @@ const RELIC_SEO_OVERRIDES: Record<string, RelicSeoOverride> = {
       { href: '/guides/card-upgrade-priority', label: 'Not sure which upgrades make this relic pay off faster?' },
     ],
   },
+  pocketwatch: {
+    title: 'Pocketwatch Relic Guide (Slay the Spire 2)',
+    description:
+      'Pocketwatch relic guide for Slay the Spire 2: when 3-card pacing improves hand quality, when it conflicts with your deck tempo, and how to route around it safely.',
+    openGraphTitle: 'Pocketwatch Relic Guide for Slay the Spire 2',
+    openGraphDescription:
+      'How to evaluate Pocketwatch across early and mid-game turns, including build fit, tempo tradeoffs, and common fail states.',
+    intro:
+      'Pocketwatch is strongest when your run benefits from controlled turn pacing and higher average hand quality. If your deck needs rapid card dumping every turn, this relic can become awkward.',
+    questionLinks: [
+      { href: '/guides/how-to-evaluate-opening-hand', label: 'Need a hand-quality framework before forcing 3-card pacing?' },
+      { href: '/guides/card-upgrade-priority', label: 'Unsure which upgrades improve Pocketwatch turn quality first?' },
+    ],
+  },
 };
 
 type RelicClusterPage = {
@@ -50,9 +64,9 @@ const RELIC_CLUSTER_PAGES: Record<string, RelicClusterPage> = {
     slug: 'energy_relics_guide',
     title: 'Energy Relics Guide',
     description:
-      'Core Slay the Spire 2 energy relic picks, when to draft around them, and what to avoid in early routes.',
+      'Core Slay the Spire 2 energy relic picks, when to draft around them, and how to avoid early-route tempo traps.',
     intro:
-      'Use this quick guide to decide whether an energy relic is actually solving your run bottleneck, or just adding raw output without consistency.',
+      'Use this quick guide to decide whether an energy relic is solving your actual run bottleneck, or only inflating output while your turn quality still breaks under pressure.',
     bullets: [
       'Prioritize relics that improve turn consistency before raw spike turns.',
       'If your deck already has draw problems, avoid relics that punish hand quality.',
@@ -60,6 +74,8 @@ const RELIC_CLUSTER_PAGES: Record<string, RelicClusterPage> = {
     ],
     relatedLinks: [
       { href: '/relics', label: 'Browse all relics' },
+      { href: '/relics/pocketwatch', label: 'Is Pocketwatch helping your turn quality or slowing your deck?' },
+      { href: '/relics/prismatic_shard', label: 'How does Prismatic Shard change energy planning?' },
       { href: '/guides/act1-route-priority', label: 'Review Act 1 route planning' },
       { href: '/guides/card-upgrade-priority', label: 'Check upgrade priority rules' },
     ],
@@ -70,7 +86,7 @@ const RELIC_CLUSTER_PAGES: Record<string, RelicClusterPage> = {
     description:
       'How to evaluate draw-focused relics in Slay the Spire 2 and when they outperform direct damage scaling.',
     intro:
-      'Draw relics are strongest when they improve decision quality. If your hand remains cluttered, they can still underperform even with high card volume.',
+      'Draw relics are strongest when they improve decision quality, not when they only increase card volume. If your hand stays cluttered, extra draw can still underperform.',
     bullets: [
       'Treat draw relics as consistency tools, not automatic power spikes.',
       'Check whether your deck has enough playable cards to exploit extra draw.',
@@ -78,6 +94,8 @@ const RELIC_CLUSTER_PAGES: Record<string, RelicClusterPage> = {
     ],
     relatedLinks: [
       { href: '/relics', label: 'Browse all relics' },
+      { href: '/relics/pocketwatch', label: 'Can Pocketwatch improve your draw turns consistently?' },
+      { href: '/cards/machine_learning', label: 'Compare relic draw with Machine Learning style scaling' },
       { href: '/guides/drawpile-mechanic-explained', label: 'Open drawpile mechanic guide' },
       { href: '/cards', label: 'Find draw-friendly cards' },
     ],
@@ -86,9 +104,9 @@ const RELIC_CLUSTER_PAGES: Record<string, RelicClusterPage> = {
     slug: 'starter_relics_tier_list',
     title: 'Starter Relics Tier List',
     description:
-      'Starter relic priority for early runs in Slay the Spire 2, focused on consistency and route safety.',
+      'Starter relic priority for early runs in Slay the Spire 2, focused on consistency, route safety, and avoidable trap picks.',
     intro:
-      'This tier view favors relics that reduce early-run volatility and keep your Act 1/Act 2 routes flexible.',
+      'This tier view favors relics that reduce early-run volatility and keep your Act 1/Act 2 routes flexible, especially when your opening hand quality is inconsistent.',
     bullets: [
       'Top tier relics should improve both weak and average opening hands.',
       'Mid tier relics are strong only when your deck already supports them.',
@@ -96,6 +114,8 @@ const RELIC_CLUSTER_PAGES: Record<string, RelicClusterPage> = {
     ],
     relatedLinks: [
       { href: '/relics', label: 'Browse all relics' },
+      { href: '/relics/pocketwatch', label: 'Should Pocketwatch be a starter-priority relic for your route?' },
+      { href: '/guides/how-to-evaluate-opening-hand', label: 'Use a turn-1 checklist before locking relic priorities' },
       { href: '/guides/common-beginner-mistakes', label: 'Avoid beginner trap decisions' },
       { href: '/characters', label: 'Match relic picks to character' },
     ],

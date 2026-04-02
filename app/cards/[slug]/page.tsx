@@ -22,6 +22,62 @@ type CardSeoOverride = {
 };
 
 const CARD_SEO_OVERRIDES: Record<string, CardSeoOverride> = {
+  accelerant: {
+    title: 'Accelerant Card Guide (Slay the Spire 2 Silent)',
+    description:
+      'Accelerant card guide for Slay the Spire 2: when poison-trigger scaling is worth taking early, when to skip it, and which support cards keep the line stable.',
+    openGraphTitle: 'Accelerant Card Guide for Slay the Spire 2 Silent',
+    openGraphDescription:
+      'When to draft Accelerant in Silent runs, what poison density you need first, and which routes avoid dead draws.',
+    intro:
+      'Accelerant is best as a multiplier card after your poison baseline is already online. If your deck cannot apply poison reliably every cycle, this card often underperforms.',
+    questionLinks: [
+      { href: '/guides/silent-early-build', label: 'Need a safer Silent early-build baseline before poison scaling?' },
+      { href: '/guides/card-upgrade-priority', label: 'Not sure whether to upgrade poison engine pieces first?' },
+    ],
+  },
+  bullet_time: {
+    title: 'Bullet Time Card Guide (Slay the Spire 2 Silent)',
+    description:
+      'Bullet Time card guide for Slay the Spire 2: when full-hand tempo spikes are worth the draw lockout, and how to avoid bricking follow-up turns.',
+    openGraphTitle: 'Bullet Time Card Guide for Slay the Spire 2 Silent',
+    openGraphDescription:
+      'How to evaluate Bullet Time in Silent runs, what hand quality you need first, and when to skip it.',
+    intro:
+      'Bullet Time is a conversion tool, not free value. Draft it when your hand quality is already consistent enough to convert one explosive turn into tempo, instead of gambling on random hand states.',
+    questionLinks: [
+      { href: '/guides/how-to-evaluate-opening-hand', label: 'Do your opening hands already support high-tempo turns?' },
+      { href: '/guides/silent-early-build', label: 'Need a stable Silent shell before taking hand-lock cards?' },
+    ],
+  },
+  biased_cognition: {
+    title: 'Biased Cognition Card Guide (Slay the Spire 2 Defect)',
+    description:
+      'Biased Cognition card guide for Slay the Spire 2: when Focus burst wins runs, where decay risk is too high, and what orb lines protect consistency.',
+    openGraphTitle: 'Biased Cognition Card Guide for Slay the Spire 2 Defect',
+    openGraphDescription:
+      'When to take Biased Cognition in Defect runs, how to offset Focus decay, and what setups fail most often.',
+    intro:
+      'Biased Cognition is strongest when your deck can end combat during the high-focus window. If fights drag, treat the decay as a real cost and draft recovery tools first.',
+    questionLinks: [
+      { href: '/guides/defect-early-build', label: 'Need a safer Defect baseline before committing to Focus burst?' },
+      { href: '/guides/act1-route-priority', label: 'Is your current route short enough to exploit burst scaling?' },
+    ],
+  },
+  ball_lightning: {
+    title: 'Ball Lightning Card Guide (Slay the Spire 2 Defect)',
+    description:
+      'Ball Lightning card guide for Slay the Spire 2: early Defect pick priority, orb-tempo value, and when to replace it as your deck scales.',
+    openGraphTitle: 'Ball Lightning Card Guide for Slay the Spire 2 Defect',
+    openGraphDescription:
+      'How Ball Lightning stabilizes early Defect turns and which upgrade paths keep it relevant.',
+    intro:
+      'Ball Lightning is a tempo stabilizer for early Defect fights. It is strongest when your deck still needs clean front-load plus passive orb value in the same card slot.',
+    questionLinks: [
+      { href: '/guides/defect-early-build', label: 'Need a Defect early-game plan that keeps orb tempo consistent?' },
+      { href: '/guides/card-upgrade-priority', label: 'Not sure when this upgrade beats other Defect upgrades?' },
+    ],
+  },
   hammer_time: {
     title: 'Hammer Time Card Guide (Slay the Spire 2 Regent)',
     description:
@@ -34,6 +90,76 @@ const CARD_SEO_OVERRIDES: Record<string, CardSeoOverride> = {
     questionLinks: [
       { href: '/guides/act1-route-priority', label: 'Not sure if Act 1 route is safe enough for Forge lines?' },
       { href: '/guides/exhaust-mechanic-explained', label: 'Need a backup plan when Forge turns brick your hand?' },
+    ],
+  },
+  twin_strike: {
+    title: 'Twin Strike Card Guide (Slay the Spire 2 Ironclad)',
+    description:
+      'Twin Strike card guide for Slay the Spire 2: when multi-hit front-load is worth an early pick, and how it compares against other Ironclad damage options.',
+    openGraphTitle: 'Twin Strike Card Guide for Slay the Spire 2 Ironclad',
+    openGraphDescription:
+      'When to draft Twin Strike in Ironclad runs and what support keeps it from falling off.',
+    intro:
+      'Twin Strike is valuable when your run still needs reliable early damage checks. Treat it as route insurance first, then evaluate whether your scaling plan can keep it relevant.',
+    questionLinks: [
+      { href: '/guides/ironclad-early-build', label: 'Need a safer Ironclad early route before greedier picks?' },
+      { href: '/guides/act1-route-priority', label: 'Are your next elites demanding immediate damage density?' },
+    ],
+  },
+  machine_learning: {
+    title: 'Machine Learning Card Guide (Slay the Spire 2 Defect)',
+    description:
+      'Machine Learning card guide for Slay the Spire 2: when recurring draw improves Defect consistency, when it is too slow, and which shells convert it best.',
+    openGraphTitle: 'Machine Learning Card Guide for Slay the Spire 2 Defect',
+    openGraphDescription:
+      'How to evaluate Machine Learning timing, upgrades, and fit in Defect early-to-mid runs.',
+    intro:
+      'Machine Learning is a consistency card, not immediate survival. Prioritize it when your run can already pass near-term damage and block checks.',
+    questionLinks: [
+      { href: '/guides/defect-early-build', label: 'Need to confirm your Defect shell is stable enough for slower draw setup?' },
+      { href: '/guides/how-to-evaluate-opening-hand', label: 'Still losing on weak opening turns before draw engines matter?' },
+    ],
+  },
+  tools_of_the_trade: {
+    title: 'Tools of the Trade Card Guide (Slay the Spire 2 Silent)',
+    description:
+      'Tools of the Trade card guide for Slay the Spire 2: when draw-discard smoothing is worth setup tempo, and which discard lines convert it into real value.',
+    openGraphTitle: 'Tools of the Trade Card Guide for Slay the Spire 2 Silent',
+    openGraphDescription:
+      'When to take Tools of the Trade in Silent runs and how to avoid low-impact setup turns.',
+    intro:
+      'Tools of the Trade is strongest when your deck already gains value from discard decisions, not when you still lack stable turn-one defense.',
+    questionLinks: [
+      { href: '/guides/silent-early-build', label: 'Need a Silent baseline before adding discard setup pieces?' },
+      { href: '/guides/card-upgrade-priority', label: 'Unsure whether this upgrade outranks immediate survival upgrades?' },
+    ],
+  },
+  hidden_gem: {
+    title: 'Hidden Gem Card Guide (Slay the Spire 2 Colorless)',
+    description:
+      'Hidden Gem card guide for Slay the Spire 2: when replay scaling is worth a slot, where it whiffs, and what deck states convert it into consistent value.',
+    openGraphTitle: 'Hidden Gem Card Guide for Slay the Spire 2',
+    openGraphDescription:
+      'How to evaluate Hidden Gem as a colorless pickup and when to skip it for cleaner tempo.',
+    intro:
+      'Hidden Gem is a payoff card that wants a deck with enough quality hits in the draw pile. If your pool is still noisy, this effect can be too inconsistent for early fights.',
+    questionLinks: [
+      { href: '/guides/how-to-evaluate-opening-hand', label: 'Need a quick way to judge whether your draw pile quality is ready?' },
+      { href: '/guides/common-beginner-mistakes', label: 'Avoid over-greedy pickups that reduce run consistency' },
+    ],
+  },
+  dagger_throw: {
+    title: 'Dagger Throw Card Guide (Slay the Spire 2 Silent)',
+    description:
+      'Dagger Throw card guide for Slay the Spire 2: how to value early damage plus filtering, when discard upside is real, and when to cut it later.',
+    openGraphTitle: 'Dagger Throw Card Guide for Slay the Spire 2 Silent',
+    openGraphDescription:
+      'When Dagger Throw stabilizes Silent turns and what discard shells keep it relevant.',
+    intro:
+      'Dagger Throw is most useful when your Silent run still needs both front-load and hand cleanup in one slot. Its value drops if your deck already has strong filtering density.',
+    questionLinks: [
+      { href: '/guides/silent-early-build', label: 'Need the Silent early routing baseline before discard pivots?' },
+      { href: '/guides/act1-route-priority', label: 'Is this card solving your next elite damage check?' },
     ],
   },
 };
