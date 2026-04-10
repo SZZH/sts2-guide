@@ -17,6 +17,7 @@ type RelicSeoOverride = {
   openGraphDescription: string;
   intro: string;
   questionLinks: Array<{ href: string; label: string }>;
+  relatedLinks?: Array<{ href: string; label: string }>;
 };
 
 const RELIC_SEO_OVERRIDES: Record<string, RelicSeoOverride> = {
@@ -46,6 +47,32 @@ const RELIC_SEO_OVERRIDES: Record<string, RelicSeoOverride> = {
     questionLinks: [
       { href: '/guides/how-to-evaluate-opening-hand', label: 'Need a hand-quality framework before forcing 3-card pacing?' },
       { href: '/guides/card-upgrade-priority', label: 'Unsure which upgrades improve Pocketwatch turn quality first?' },
+      { href: '/guides/common-beginner-mistakes', label: 'Want to avoid beginner traps before locking in Pocketwatch?' },
+    ],
+    relatedLinks: [
+      { href: '/guides/how-to-evaluate-opening-hand', label: 'Is 3-card pacing actually helping your opening turns?' },
+      { href: '/guides/card-upgrade-priority', label: 'Which upgrades protect Pocketwatch paced turns?' },
+      { href: '/guides/act1-route-priority', label: 'Need to align Pocketwatch with your Act 1 route plan?' },
+    ],
+  },
+  prismatic_shard: {
+    title: 'Prismatic Shard Relic Guide (Slay the Spire 2)',
+    description:
+      'Prismatic Shard relic guide for Slay the Spire 2: how it upgrades your energy budget, which combos need the extra charge, and when it becomes a liability.',
+    openGraphTitle: 'Prismatic Shard Relic Guide for Slay the Spire 2',
+    openGraphDescription:
+      'When to draft Prismatic Shard, how to stack it with retain mechanics, and what counter-decks punish the extra energy tank.',
+    intro:
+      'Prismatic Shard turns every energy spike into an available option, but it still needs a plan for how to spend that surplus. Without retain or reliable upgrades, extra energy can just bloat your hand.',
+    questionLinks: [
+      { href: '/guides/retain-mechanic-explained', label: 'Need to align Prismatic Shard with your retain mechanics?' },
+      { href: '/guides/card-upgrade-priority', label: 'Which upgrades turn Prismatic Shard energy into consistent power?' },
+      { href: '/guides/common-beginner-mistakes', label: 'Want to skip the beginner trap of hoarding energy without payoff?' },
+    ],
+    relatedLinks: [
+      { href: '/guides/retain-mechanic-explained', label: 'Should Prismatic Shard lock in your retain plan?' },
+      { href: '/guides/card-upgrade-priority', label: 'Which upgrades convert surplus energy into stable value?' },
+      { href: '/guides/common-beginner-mistakes', label: 'How do beginners waste this relic by holding energy?' },
     ],
   },
 };
@@ -350,13 +377,38 @@ export default async function RelicDetailPage({ params }: { params: Promise<{ sl
                   <Link href="/characters" className="text-molten-orange transition-colors hover:text-ember-glow">
                     Compare character playstyles
                   </Link>
-                  {seoOverride
-                    ? seoOverride.questionLinks.map((link) => (
-                        <Link key={link.href} href={link.href} className="text-molten-orange transition-colors hover:text-ember-glow">
+                  {seoOverride ? (
+                    <>
+                      <div className="pt-4 text-[0.65rem] uppercase tracking-[0.3em] text-molten-orange">
+                        Key questions
+                      </div>
+                      {seoOverride.questionLinks.map((link) => (
+                        <Link
+                          key={link.href}
+                          href={link.href}
+                          className="text-molten-orange transition-colors hover:text-ember-glow"
+                        >
                           {link.label}
                         </Link>
-                      ))
-                    : null}
+                      ))}
+                      {seoOverride.relatedLinks?.length ? (
+                        <>
+                          <div className="pt-4 text-[0.65rem] uppercase tracking-[0.3em] text-molten-orange">
+                            Related entry points
+                          </div>
+                          {seoOverride.relatedLinks.map((link) => (
+                            <Link
+                              key={link.href}
+                              href={link.href}
+                              className="text-molten-orange transition-colors hover:text-ember-glow"
+                            >
+                              {link.label}
+                            </Link>
+                          ))}
+                        </>
+                      ) : null}
+                    </>
+                  ) : null}
                 </div>
               </section>
 

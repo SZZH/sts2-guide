@@ -53,15 +53,19 @@ const CARD_SEO_OVERRIDES: Record<string, CardSeoOverride> = {
   biased_cognition: {
     title: 'Biased Cognition Card Guide (Slay the Spire 2 Defect)',
     description:
-      'Biased Cognition card guide for Slay the Spire 2: when Focus burst wins runs, where decay risk is too high, and what orb lines protect consistency.',
-    openGraphTitle: 'Biased Cognition Card Guide for Slay the Spire 2 Defect',
+      'Biased Cognition card guide for Slay the Spire 2: how to decide whether focus burst is worth the risk, when decay outpaces the payoff, and what guardrails keep it stable for new players.',
+    openGraphTitle: 'Biased Cognition Focus Burst Guide for Slay the Spire 2 Defect',
     openGraphDescription:
-      'When to take Biased Cognition in Defect runs, how to offset Focus decay, and what setups fail most often.',
+      'Should Defect early routes commit to Biased Cognition or wait for a safer shell, and which cards help you survive the decay trials?',
     intro:
-      'Biased Cognition is strongest when your deck can end combat during the high-focus window. If fights drag, treat the decay as a real cost and draft recovery tools first.',
+      'Biased Cognition can win runs if you already dodge long fights; if your early game feels shaky, treat the decay as a hard guardrail and draft recovery tools first.',
     questionLinks: [
-      { href: '/guides/defect-early-build', label: 'Need a safer Defect baseline before committing to Focus burst?' },
-      { href: '/guides/act1-route-priority', label: 'Is your current route short enough to exploit burst scaling?' },
+      { href: '/guides/defect-early-build', label: 'Need a steadier Defect baseline before going all-in on Focus burst?' },
+      {
+        href: '/guides/card-upgrade-priority',
+        label: 'Can you afford to upgrade this focus burst crit or should you shore up defense first?',
+      },
+      { href: '/guides/common-beginner-mistakes', label: 'Feeling like you keep over-committing on cards that die to decay?' },
     ],
   },
   ball_lightning: {
@@ -90,6 +94,30 @@ const CARD_SEO_OVERRIDES: Record<string, CardSeoOverride> = {
     questionLinks: [
       { href: '/guides/act1-route-priority', label: 'Not sure if Act 1 route is safe enough for Forge lines?' },
       { href: '/guides/exhaust-mechanic-explained', label: 'Need a backup plan when Forge turns brick your hand?' },
+    ],
+  },
+  corruption: {
+    title: 'Corruption Card Guide (Slay the Spire 2 Ironclad)',
+    description:
+      'Corruption card guide for Slay the Spire 2: when high-damage commits pay off, when to hold off for a safer route, and what new player checks keep the build stable.',
+    openGraphTitle: 'Corruption Card Prioritization for Slay the Spire 2 Ironclad',
+    openGraphDescription:
+      'Deciding when to draft Corruption in Ironclad runs, what early checkpoints prove the payoff, and which upgrades protect the route.',
+    intro:
+      'Corruption rewards confident Ironclad plans; if you still miss damage checks or tech coverage, treat it as a mid-game payoff and keep looking for protections.',
+    questionLinks: [
+      {
+        href: '/guides/ironclad-early-build',
+        label: 'Need a safer Ironclad early route before leaning on Corruption for burst?',
+      },
+      {
+        href: '/guides/card-upgrade-priority',
+        label: 'Not sure whether to upgrade this card or the defensive anchors that keep Corruption reliable?',
+      },
+      {
+        href: '/guides/common-beginner-mistakes',
+        label: 'Wondering if you are over-committing to damage cards that melt when you miss a block?',
+      },
     ],
   },
   twin_strike: {

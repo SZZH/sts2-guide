@@ -264,7 +264,17 @@ const BUILDS: Build[] = [
 ];
 
 export default function GuidesPage() {
-  const highlightedGuides = GUIDE_ARTICLES.slice(0, 6);
+  const highlightedGuideSlugs = [
+    'exhaust-mechanic-explained',
+    'drawpile-mechanic-explained',
+    'retain-mechanic-explained',
+    'card-upgrade-priority',
+    'how-to-evaluate-opening-hand',
+    'ironclad-early-build',
+  ];
+  const highlightedGuides = highlightedGuideSlugs
+    .map((slug) => GUIDE_ARTICLES.find((guide) => guide.slug === slug))
+    .filter((guide): guide is (typeof GUIDE_ARTICLES)[number] => Boolean(guide));
   const intentLinks = [
     {
       href: '/guides/exhaust-mechanic-explained',
@@ -280,6 +290,26 @@ export default function GuidesPage() {
       href: '/guides/act1-route-priority',
       query: 'sts2 act 1 route',
       label: 'Act 1 Route Priority',
+    },
+    {
+      href: '/guides/card-upgrade-priority',
+      query: 'slay the spire 2 upgrade priority',
+      label: 'Card Upgrade Priority',
+    },
+    {
+      href: '/guides/common-beginner-mistakes',
+      query: 'sts2 beginner mistakes',
+      label: 'Common Beginner Mistakes',
+    },
+    {
+      href: '/guides/how-to-evaluate-opening-hand',
+      query: 'slay the spire 2 opening hand',
+      label: 'Opening Hand Checklist',
+    },
+    {
+      href: '/guides/retain-mechanic-explained',
+      query: 'slay the spire 2 retain',
+      label: 'Retain Guide',
     },
     {
       href: '/cards/hammer_time',

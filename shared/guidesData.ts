@@ -451,134 +451,405 @@ export const GUIDE_ARTICLES: GuideArticle[] = [
   },
   {
     slug: 'retain-mechanic-explained',
-    title: 'Retain Mechanic Explained in Slay the Spire 2 (When to Hold, When to Spend)',
+    title: 'Retain in Slay the Spire 2: When to Hold Cards, When to Spend Them, and When Retain Starts Ruining Your Hand',
     description: 'How to use Retain cards to bank tempo, line up stronger multi-turn turns, and avoid dead-hand overholding.',
     readTime: '5 min',
-    updatedAt: '2026-03-17',
+    updatedAt: '2026-04-10',
     primaryKeyword: 'retain slay the spire 2',
     sections: [
-      { heading: 'Retain Fundamentals', points: ['Retain stores future tempo.', 'Retain is strongest with burst windows.'] },
-      { heading: 'Deck Construction', points: ['Avoid over-retaining low-impact cards.', 'Use retain as setup, not as a full plan.'] },
+      {
+        heading: 'What Retain Actually Solves',
+        points: [
+          'Retain lets you carry specific card value into a better turn instead of forcing a weak tempo line right now.',
+          'That makes Retain strongest in decks that have clear burst windows, cleaner setup turns, or one payoff card that matters more next turn than this turn.',
+          'If holding a card does not improve your next turn quality, Retain is usually not buying tempo. It is only delaying a weak play.',
+        ],
+      },
+      {
+        heading: 'When to Hold Retain Cards',
+        points: [
+          'Hold Retain cards when the next fight pattern is obvious: a safer block check next turn, a better damage window, or a turn where energy converts more cleanly.',
+          'Retain is also stronger when your opening hand already passes this turn floor, so you can bank value without dying for it.',
+          'The practical question is simple: does holding this card improve the next turn more than spending it now improves this one?',
+        ],
+      },
+      {
+        heading: 'When Retain Starts Hurting',
+        points: [
+          'Retain becomes a trap when you keep low-impact cards too long and your hand stops finding the cards that actually solve the current fight.',
+          'It also becomes worse in decks that already have awkward opening hands, because over-holding reduces your ability to redraw into cleaner turns.',
+          'If your hand keeps feeling clogged, stop treating Retain as free value and ask whether you are preserving the wrong card for the wrong payoff window.',
+        ],
+      },
+      {
+        heading: 'Deck Rules That Keep Retain Useful',
+        points: [
+          'Use Retain as support for a real plan, not as the entire identity of the deck.',
+          'Favor Retain when it protects one high-value turn, one defense checkpoint, or one setup card that actually changes the next combat cycle.',
+          'If the deck does not have clear spend windows, Retain cards need stricter standards than they do in burst-oriented lists.',
+        ],
+      },
     ],
     faqs: [
-      { question: 'Is Retain a beginner mechanic in Slay the Spire 2?', answer: 'Yes, but only when paired with simple payoff timing.' },
-      { question: 'How many turns should I hold Retain cards before spending?', answer: 'Usually 1-2 turns. If you hold longer without a clear payoff window, hand quality often drops.' },
+      {
+        question: 'Is Retain a beginner-friendly mechanic in Slay the Spire 2?',
+        answer: 'Yes, but only when you use it for clear next-turn value. Beginners get punished when they treat every Retain card like a free keep.',
+      },
+      {
+        question: 'How many turns should I hold Retain cards before spending?',
+        answer: 'Usually one to two turns. If you hold longer without a clear burst, defense, or setup payoff, hand quality usually gets worse instead of better.',
+      },
+      {
+        question: 'How do I know whether a Retain hand is getting clogged?',
+        answer: 'If your hand keeps preserving medium cards while missing damage, block, or draw you actually need, you are probably over-retaining and lowering redraw quality.',
+      },
     ],
     relatedLinks: [
-      { href: '/mechanics', label: 'Refresh mechanic keywords before forcing Retain-heavy turns' },
-      { href: '/guides/how-to-evaluate-opening-hand', label: 'Need a quick hand-quality check before holding cards?' },
-      { href: '/cards', label: 'Open card database to find Retain-support pieces' },
+      { href: '/guides/how-to-evaluate-opening-hand', label: 'Check opening-hand quality before carrying cards into turn 2' },
+      { href: '/guides/card-upgrade-priority', label: 'Upgrade the cards that make your Retain turns actually worth holding' },
+      { href: '/mechanics', label: 'Compare Retain with other mechanic keywords before overcommitting' },
     ],
   },
   {
     slug: 'card-upgrade-priority',
-    title: 'Card Upgrade Priority for Early Access Runs (Act 1 Stability First)',
-    description: 'A role-based upgrade order that improves consistency instead of chasing high-roll outcomes, with Act 1 route pressure in mind.',
+    title: 'What to Upgrade First in Slay the Spire 2: Card Upgrade Priority for Act 1, Early Elites, and Unstable Runs',
+    description: 'Use this Slay the Spire 2 upgrade priority guide to choose upgrades that fix real Act 1 fail states first, then scale into cleaner elite and boss turns.',
     readTime: '6 min',
-    updatedAt: '2026-03-17',
+    updatedAt: '2026-04-10',
     primaryKeyword: 'slay the spire 2 card upgrade priority',
     sections: [
-      { heading: 'Upgrade Order', points: ['Stability first.', 'Payoff second.', 'Luxury upgrades last.'] },
-      { heading: 'Class Nuance', points: ['Ironclad favors immediate floor.', 'Silent values sequencing.'] },
+      {
+        heading: 'Upgrade Order That Actually Wins Early Runs',
+        points: [
+          'Upgrade stability first: the cards that stop your next elite, hallway, or boss check from collapsing.',
+          'Upgrade payoff second: once the run already passes immediate damage and defense checks, upgrades that improve scaling become worth more.',
+          'Luxury upgrades come last: if the upgrade only looks impressive in dream turns, it is usually not the campfire upgrade your current route needs.',
+        ],
+      },
+      {
+        heading: 'How to Judge the Next Upgrade',
+        points: [
+          'Ask which upgrade changes your next two fights, not which upgrade has the biggest number in a vacuum.',
+          'A good early upgrade often fixes tempo, hand quality, or survival on awkward turns instead of simply adding ceiling.',
+          'If the route is unstable, the best upgrade is usually the one that removes a fail state before it boosts long-game payoff.',
+        ],
+      },
+      {
+        heading: 'Class-Specific Biases',
+        points: [
+          'Ironclad usually values immediate floor and cleaner damage checks more than speculative scaling upgrades.',
+          'Silent upgrades are often about sequencing and hand quality, because dead turns punish greedy setup harder.',
+          'Defect upgrades should respect orb tempo first; slower scaling upgrades only become premium once the loop is already stable.',
+        ],
+      },
     ],
     faqs: [
-      { question: 'Should I upgrade attacks first in Slay the Spire 2?', answer: 'Only if your next route fails damage checks.' },
-      { question: 'What should I upgrade if my run is unstable?', answer: 'Prioritize cards that reduce immediate fail states first, then upgrade scaling pieces.' },
+      {
+        question: 'Should I upgrade attacks first in Slay the Spire 2?',
+        answer: 'Only when your next path still fails damage checks. If the real problem is block, hand quality, or setup tempo, attack upgrades can be a trap.',
+      },
+      {
+        question: 'What should I upgrade if my run is unstable?',
+        answer: 'Upgrade the card that removes the next obvious fail state first, then return to scaling. Unstable runs usually lose because players upgrade ceiling before floor.',
+      },
+      {
+        question: 'How do I know an upgrade is just luxury?',
+        answer: 'If the upgrade only matters when your best-case line already happens, and does little for your weak or average turns, it is usually a luxury upgrade.',
+      },
     ],
     relatedLinks: [
-      { href: '/guides/act1-route-priority', label: 'Check Act 1 route pressure before deciding upgrades' },
-      { href: '/guides/common-beginner-mistakes', label: 'Avoid common upgrade-order mistakes in early runs' },
-      { href: '/cards', label: 'Compare upgrade targets directly in the card database' },
+      { href: '/guides/act1-route-priority', label: 'Check route pressure before locking the wrong campfire upgrade' },
+      { href: '/guides/how-to-evaluate-opening-hand', label: 'Use a turn-1 checklist to see whether an upgrade really fixes weak hands' },
+      { href: '/guides/common-beginner-mistakes', label: 'Avoid the upgrade mistakes that quietly break stable runs' },
     ],
   },
   {
     slug: 'ironclad-early-build',
-    title: 'Ironclad Early Build Guide (StS2): Safe Act 1 Pathing and Damage Checks',
-    description: 'A practical Ironclad early-game path with stable damage, manageable HP loss, and scalable pivots for safer Act 1/2 transitions.',
+    title: 'Ironclad Early Build Guide for Slay the Spire 2: Safe Act 1 Damage, HP Management, and When to Pivot',
+    description: 'A practical Ironclad early build guide for Slay the Spire 2 that focuses on safe Act 1 damage checks, manageable HP loss, and cleaner pivots into scaling.',
     readTime: '7 min',
-    updatedAt: '2026-03-17',
+    updatedAt: '2026-04-10',
     primaryKeyword: 'ironclad early build slay the spire 2',
-    sections: [{ heading: 'Core Path', points: ['Secure floor damage.', 'Add one scaling lane.', 'Protect recovery windows.'] }],
+    sections: [
+      {
+        heading: 'What Ironclad Early Game Actually Needs',
+        points: [
+          'Ironclad does not need a dream scaling package on floor one. It needs reliable damage, controllable HP loss, and enough floor to keep elite routes honest.',
+          'Your first goal is passing early damage checks without turning every hallway into a recovery tax.',
+          'A stable Ironclad run usually adds one clear scaling lane only after the basic floor is already solved.',
+        ],
+      },
+      {
+        heading: 'Act 1 Draft Priorities',
+        points: [
+          'Secure floor damage first so the deck can kill before HP bleed becomes the real boss.',
+          'Add one scaling lane second, not three half-finished ones. Ironclad runs get messy fast when every pick is a future idea.',
+          'Protect recovery windows by respecting campfire value and not overloading on self-damage before the deck can cash it in.',
+        ],
+      },
+      {
+        heading: 'When to Pivot Out of Greed',
+        points: [
+          'If the next elite still looks shaky, stop drafting vanity scaling and add one more immediate floor card.',
+          'If HP loss is climbing faster than your damage is improving, your current build is not actually ahead even if the ceiling looks good.',
+          'A clean pivot is usually about route survival first, not about abandoning your whole archetype.',
+        ],
+      },
+    ],
     faqs: [
-      { question: 'Is Strength build mandatory for Ironclad early runs?', answer: 'No. Strength is strong but not required for early consistency.' },
-      { question: 'What if my Ironclad damage is still low before elites?', answer: 'Trim greedy picks and add one reliable front-load line before forcing scaling.' },
+      {
+        question: 'Is Strength mandatory for Ironclad early runs?',
+        answer: 'No. Strength is strong, but early consistency comes more from passing damage checks and controlling HP loss than from forcing one specific scaling lane.',
+      },
+      {
+        question: 'What if my Ironclad damage is still low before elites?',
+        answer: 'Trim greed, add one more reliable front-load line, and reconsider route risk before forcing heavier scaling picks.',
+      },
+      {
+        question: 'How do I know I am over-greeding on Ironclad?',
+        answer: 'If your picks look amazing in long fights but your next elite or hallway still threatens to cost too much HP, you are probably drafting too far ahead.',
+      },
     ],
     relatedLinks: [
-      { href: '/cards/twin_strike', label: 'Check Twin Strike as an early multi-hit damage option' },
-      { href: '/guides/act1-route-priority', label: 'Re-check route risk if your current damage line is thin' },
-      { href: '/guides/card-upgrade-priority', label: 'Use upgrade priority to stabilize Ironclad breakpoints' },
+      { href: '/guides/act1-route-priority', label: 'Re-check elite risk when Ironclad damage still feels thin' },
+      { href: '/guides/card-upgrade-priority', label: 'Use upgrade order to stabilize Ironclad breakpoints before scaling' },
+      { href: '/cards/twin_strike', label: 'Check Twin Strike when you need a cleaner early multi-hit line' },
     ],
   },
   {
     slug: 'silent-early-build',
-    title: 'Silent Early Build Guide (StS2): Discard Tempo Without Bricking Early Fights',
-    description: 'Silent early-game setup focused on sequencing, discard tempo, and survival consistency before greedy Sly spikes.',
+    title: 'Silent Early Build Guide for Slay the Spire 2: Safer Discard Tempo, Cleaner Hands, and Fewer Dead Starts',
+    description: 'A practical Silent early build guide for Slay the Spire 2 focused on safer discard tempo, cleaner hand quality, and survival before greedy Sly spikes.',
     readTime: '7 min',
-    updatedAt: '2026-03-17',
+    updatedAt: '2026-04-10',
     primaryKeyword: 'silent early build slay the spire 2',
-    sections: [{ heading: 'Core Path', points: ['Fix hand quality first.', 'Convert discard into tempo.', 'Do not over-greed setup.'] }],
+    sections: [
+      {
+        heading: 'What Silent Early Game Actually Rewards',
+        points: [
+          'Silent early runs reward hand quality and turn sequencing more than flashy payoff cards.',
+          'The class feels strongest once discard improves tempo instead of just moving cards around for no real gain.',
+          'That means your first job is not forcing Sly. It is making sure weak hands still produce defendable turns.',
+        ],
+      },
+      {
+        heading: 'Safe Draft Priorities',
+        points: [
+          'Fix hand quality first so discard effects improve real turn quality instead of creating new dead starts.',
+          'Convert discard into tempo second by pairing it with damage, draw, or cleaner action sequencing.',
+          'Delay greedier setup until the deck can survive average hands, not just high-roll ones.',
+        ],
+      },
+      {
+        heading: 'When Silent Starts Bricking',
+        points: [
+          'Silent bricks early when the deck adds too many setup or discard payoffs before it has enough floor to survive the first two turns.',
+          'It also bricks when players treat every discard card as progress even though the hand still lacks damage or block conversion.',
+          'If your opening turns keep doing card movement without stabilizing the fight, your build is not online yet.',
+        ],
+      },
+    ],
     faqs: [
-      { question: 'Should I force Sly immediately on Silent?', answer: 'No. Build the engine first, then push Sly conversions.' },
-      { question: 'How do I avoid dead hands in early Silent runs?', answer: 'Prioritize hand-quality and survival tools first, then add discard payoffs.' },
+      {
+        question: 'Should I force Sly immediately on Silent?',
+        answer: 'No. Build the engine first. Sly payoffs get much better once your hands already have enough floor to survive awkward turns.',
+      },
+      {
+        question: 'How do I avoid dead hands in early Silent runs?',
+        answer: 'Prioritize hand-quality tools and survival first, then add discard payoffs that actually convert those cleaner hands into tempo.',
+      },
+      {
+        question: 'What is the most common early Silent mistake?',
+        answer: 'Adding too much setup before the deck can pass average fight patterns. Silent usually loses more to weak openers than to low ceiling.',
+      },
     ],
     relatedLinks: [
-      { href: '/cards/dagger_throw', label: 'Use Dagger Throw when you need early damage plus hand filtering' },
-      { href: '/cards/tools_of_the_trade', label: 'Check when Tools of the Trade is worth the setup tempo' },
-      { href: '/cards/bullet_time', label: 'Only pivot to Bullet Time once hand quality is stable' },
+      { href: '/guides/how-to-evaluate-opening-hand', label: 'Check whether Silent opening hands are failing before blaming payoff cards' },
+      { href: '/cards/dagger_throw', label: 'Use Dagger Throw when you need damage plus hand filtering in one slot' },
+      { href: '/cards/tools_of_the_trade', label: 'Only take slower setup once Silent hand quality is already stable' },
     ],
   },
   {
     slug: 'defect-early-build',
-    title: 'Defect Early Build Guide (StS2): Orb Tempo First, Scaling Second',
-    description: 'Defect early routing and build priorities with orb tempo checkpoints before committing to slower scaling lines.',
+    title: 'Defect Early Build Guide for Slay the Spire 2: Orb Tempo First, Scaling Second, and When to Stop Greeding',
+    description: 'Use this Defect early build guide for Slay the Spire 2 to stabilize orb tempo first, then scale only after your first loop stops collapsing.',
     readTime: '7 min',
-    updatedAt: '2026-03-17',
+    updatedAt: '2026-04-10',
     primaryKeyword: 'defect early build slay the spire 2',
-    sections: [{ heading: 'Core Path', points: ['Stabilize first loop.', 'Choose one orb identity early.', 'Scale with focus timing.'] }],
+    sections: [
+      {
+        heading: 'What Defect Early Game Actually Needs',
+        points: [
+          'Defect early runs are mostly about making the first orb loop stable enough to survive normal fights without waiting forever for payoff.',
+          'That means immediate tempo matters more than dream scaling until the deck can consistently produce useful early turns.',
+          'If the first two turns are weak, the scaling plan often never gets enough time to matter.',
+        ],
+      },
+      {
+        heading: 'Draft Priorities That Keep Defect Stable',
+        points: [
+          'Stabilize the first loop before anything else by favoring cards that give immediate orb value or immediate tempo.',
+          'Choose one orb identity early enough that the deck stops pulling in unrelated payoffs with no support.',
+          'Scale with Focus timing only after the list already has enough floor to cash those slower turns in.',
+        ],
+      },
+      {
+        heading: 'When to Stop Greeding on Scaling',
+        points: [
+          'If your Defect hands keep waiting for turn three to become playable, you are probably taking scaling too early.',
+          'A lot of early Defect losses come from overrating cards that look amazing later but do little for hallway and elite tempo now.',
+          'When in doubt, take the card that makes the next combat smoother before the card that only improves a solved fight.',
+        ],
+      },
+    ],
     faqs: [
-      { question: 'Can Defect force late-game cards early?', answer: 'Usually no. Fix consistency before greedy payoffs.' },
-      { question: 'What is the safest early Defect card profile?', answer: 'Cards that combine immediate tempo with orb value tend to stabilize runs fastest.' },
+      {
+        question: 'Can Defect force late-game cards early?',
+        answer: 'Usually no. Fix consistency and orb tempo first, then add greedier scaling once the deck stops failing ordinary early fights.',
+      },
+      {
+        question: 'What is the safest early Defect card profile?',
+        answer: 'Cards that combine immediate tempo with orb value tend to stabilize runs fastest because they help both this turn and the next loop.',
+      },
+      {
+        question: 'How do I know a Defect run is scaling too greedily?',
+        answer: 'If your hands keep promising future power while losing current tempo, you are probably drafting too much payoff before the loop is stable.',
+      },
     ],
     relatedLinks: [
-      { href: '/cards/ball_lightning', label: 'Ball Lightning as a stable early orb-tempo option' },
-      { href: '/cards/machine_learning', label: 'Check when Machine Learning stops being too slow' },
-      { href: '/cards/biased_cognition', label: 'Use Biased Cognition only when burst windows are ready' },
+      { href: '/cards/ball_lightning', label: 'Start with Ball Lightning when you need a safer orb-tempo baseline' },
+      { href: '/guides/card-upgrade-priority', label: 'Use upgrade order to fix Defect tempo before adding greedier scaling' },
+      { href: '/cards/biased_cognition', label: 'Only lean on Biased Cognition once Defect burst windows are already real' },
     ],
   },
   {
     slug: 'how-to-evaluate-opening-hand',
-    title: 'How to Evaluate Your Opening Hand in StS2 (Fast Turn-1 Checklist)',
-    description: 'A simple opening-hand framework for safer first turns, fewer avoidable losses, and cleaner early-turn routing decisions.',
+    title: 'How to Evaluate Your Opening Hand in Slay the Spire 2: A Fast Turn-1 Checklist for Weak Starts and Safer Lines',
+    description: 'Use this fast Slay the Spire 2 opening-hand checklist to judge weak starts, avoid trap turn-1 lines, and preserve cleaner outs for turn 2.',
     readTime: '5 min',
-    updatedAt: '2026-03-17',
+    updatedAt: '2026-04-10',
     primaryKeyword: 'slay the spire 2 opening hand',
-    sections: [{ heading: 'Turn-1 Checklist', points: ['Check lethal risk.', 'Pick one line.', 'Preserve next-turn outs.'] }],
+    sections: [
+      {
+        heading: 'The Fast Turn-1 Checklist',
+        points: [
+          'Check lethal risk first so you do not talk yourself into a clever line that loses to the obvious damage pattern.',
+          'Pick one line for this hand instead of pretending every resource can do two jobs at once.',
+          'Preserve next-turn outs whenever possible, because many bad openings become recoverable if turn two is still live.',
+        ],
+      },
+      {
+        heading: 'What a Trap Hand Usually Looks Like',
+        points: [
+          'A trap hand spends energy but does not improve immediate survival, damage threshold, or next-turn redraw quality.',
+          'Another common trap is spending key utility now even though holding it creates a cleaner two-turn sequence.',
+          'If your line only looks good when the next draw is perfect, the hand is usually weaker than it feels.',
+        ],
+      },
+      {
+        heading: 'How to Recover From Weak Starts',
+        points: [
+          'Weak starts become less dangerous when you identify the one card or line that keeps the next turn playable.',
+          'This usually means treating turn one as setup for a survivable combat cycle, not as a forced all-in tempo turn.',
+          'The goal is not to maximize this hand. It is to stop this hand from collapsing the whole fight.',
+        ],
+      },
+    ],
     faqs: [
-      { question: 'Should I always play all energy on turn 1?', answer: 'No. Sometimes holding a key block/utility line is better.' },
-      { question: 'How do I tell if my opening hand is a trap?', answer: 'If your line spends resources without improving next-turn survivability, it is usually a trap hand sequence.' },
+      {
+        question: 'Should I always spend all energy on turn 1?',
+        answer: 'No. Sometimes the best turn-one play is the line that preserves a key block, retain, or setup piece for a much cleaner turn two.',
+      },
+      {
+        question: 'How do I tell if my opening hand is a trap?',
+        answer: 'If the line spends resources without improving survival, damage threshold, or next-turn outs, it is usually a trap sequence even if it looks active.',
+      },
+      {
+        question: 'What should I optimize first in a weak opening hand?',
+        answer: 'Optimize the next two turns, not just the current one. A weaker-looking turn-one line is often correct if it keeps the fight recoverable.',
+      },
     ],
     relatedLinks: [
-      { href: '/guides/act1-route-priority', label: 'Act 1 routing framework for hand-dependent fights' },
-      { href: '/guides/common-beginner-mistakes', label: 'See common turn-1 mistakes that chain into losses' },
-      { href: '/guides/retain-mechanic-explained', label: 'Retain timing rules when your hand needs carryover value' },
+      { href: '/guides/retain-mechanic-explained', label: 'Use Retain rules when a weak hand might be worth carrying forward' },
+      { href: '/guides/card-upgrade-priority', label: 'Spot the upgrades that reduce weak opening hands instead of boosting dream turns' },
+      { href: '/guides/common-beginner-mistakes', label: 'See the early-run mistakes that start with bad turn-1 decisions' },
     ],
   },
   {
     slug: 'common-beginner-mistakes',
-    title: 'Common Slay the Spire 2 Beginner Mistakes (And Quick Fixes)',
-    description: 'The most common early-run errors and quick fixes to stabilize progression without over-greedy route or build decisions.',
-    readTime: '6 min',
-    updatedAt: '2026-03-17',
-    primaryKeyword: 'slay the spire 2 beginner mistakes',
-    sections: [{ heading: 'Top Errors', points: ['Over-greeding elites.', 'Forcing builds.', 'Ignoring route context.'] }],
+    title: 'Common Slay the Spire 2 Beginner Mistakes and How to Fix Them Fast',
+    description:
+      'Pinpoint the early-run blind spots that derail progression and apply quick fixes for route choices, build pacing, and resource usage in Slay the Spire 2.',
+    readTime: '7 min',
+    updatedAt: '2026-04-10',
+    primaryKeyword: 'sts2 beginner mistakes',
+    sections: [
+      {
+        heading: 'Stop expanding your route before the base is stabilized',
+        points: [
+          'Over-greeding elites before you can defend the next campfire turns your path into a liability instead of a buffer.',
+          'Route greed without a consistent block/damage baseline leaves you scrambling for energy in Act 1 and Act 2.',
+          'Treat a safe Act 1 patch as permission to take a new route. If you are still learning the enemies, avoid extra branching.',
+        ],
+      },
+      {
+        heading: 'Choose upgrades and relics that shore up the fundamentals',
+        points: [
+          'Chasing the flashy upgrade wastes energy; focus on the cards that keep you alive through the next two combats.',
+          'Don’t upgrade a card that keeps failing in your opening hand—fix the hand first and the upgrades follow.',
+          'New relics are exciting but useless unless they support your deck’s defense and damage balance.',
+        ],
+      },
+      {
+        heading: 'Read the deck’s signals before locking in a build',
+        points: [
+          'Weak opening hands often mean you need to lean on retain, block, or setup, not riskier combo pieces.',
+          'Forcing a build when your draw doesn’t cooperate is the fastest way to smash your consistency.',
+          'When the run tells you to slow roll (low energy, no draw), revert to simple lines until a stronger corridor opens up.',
+        ],
+      },
+      {
+        heading: 'A quick recovery checklist for each failure',
+        points: [
+          'Pause and ask: Did I skip the Act 1 route priority or upgrade stability review? If yes, fix that first.',
+          'Use the opening hand checklist to see if you are committing too hard to a single card.',
+          'Lean on retain and exhaust mechanics to tuck away a bad turn instead of gambling on perfect draws.',
+        ],
+      },
+    ],
     faqs: [
-      { question: 'Can one mistake ruin a run in StS2?', answer: 'Usually not. Chains of small mistakes are the bigger issue.' },
-      { question: 'What is the most common early-run mistake?', answer: 'Over-greeding routes before your deck can pass basic damage and block checks.' },
+      {
+        question: 'What counts as a beginner mistake in Slay the Spire 2?',
+        answer:
+          'The most common ones are over-greeding your route, forcing costly upgrades before basic defense is stable, and ignoring the hand signals that say "slow down."',
+      },
+      {
+        question: 'Can I recover from a run that already has a few mistakes?',
+        answer:
+          'Yes, but only if you stop adding new mistakes: stabilize your Act 1 route, reprioritize your upgrades, and treat the next few turns like a clean-up wave.',
+      },
+      {
+        question: 'Should I chase new relics every time I hit a campfire?',
+        answer:
+          'Not unless they reinforce the fundamentals: block, draw, or a reliable damage line. A new relic that does nothing for your stability is a false positive.',
+      },
+      {
+        question: 'How do I fix the upgrade path when Act 1 keeps failing?',
+        answer:
+          'Use a priority framework that locks the most stabilizing cards first, and keep enough energy to defend the bosses you will face in the next act.',
+      },
+      {
+        question: 'Is there a shortcut to avoid wasting time on weak openings?',
+        answer:
+          'Yes, apply the opening-hand checklist, cut down to one solid line, and support it with retain or exhaust tools; that stops the rookie mistakes mid-turn.',
+      },
     ],
     relatedLinks: [
-      { href: '/guides/card-upgrade-priority', label: 'Use upgrade priority to patch common early mistakes' },
-      { href: '/guides/how-to-evaluate-opening-hand', label: 'Apply a turn-1 checklist before committing to risky lines' },
-      { href: '/guides/act1-route-priority', label: 'Rebalance route risk when consistency is still low' },
+      { href: '/guides/card-upgrade-priority', label: 'Use upgrade priority to patch shaky runs before the mistakes stack' },
+      { href: '/guides/how-to-evaluate-opening-hand', label: 'Apply the opening-hand checklist before committing to risky lines' },
+      { href: '/guides/act1-route-priority', label: 'Rebalance Act 1 route risk when consistency is still low' },
+      { href: '/guides/retain-mechanic-explained', label: 'Use retain decisions to keep a bad turn salvageable' },
+      { href: '/guides/exhaust-mechanic-explained', label: 'Lean on exhaust synergies when you need to recover from a fast mistake' },
     ],
   },
 ];
