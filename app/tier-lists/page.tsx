@@ -1,6 +1,21 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 
 const currentVersion = 'v0.103.0';
+
+export const metadata: Metadata = {
+  title: 'Slay the Spire 2 Tier Lists | Current patch decision lenses',
+  description:
+    'Use four patch-aware tier lenses for Slay the Spire 2: characters, beginner stability, archetypes, and card priority. Built to support current v0.103.0 decisions without pretending the beta is fully settled.',
+  alternates: {
+    canonical: '/tier-lists',
+  },
+  openGraph: {
+    title: 'StS2 Tier Lists — current patch decision lenses',
+    description:
+      'Character, beginner, archetype, and card tier guidance for Slay the Spire 2 with conservative, versioned recommendations tied to the current patch.',
+  },
+};
 
 const sectionData = [
   {
