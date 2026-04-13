@@ -27,6 +27,8 @@
 - 站点重构基线：`docs/ops-center/10-site-rebuild-governance-and-ia-blueprint.md`
 - 页面级治理表：`docs/ops-center/11-page-governance-table.md`
 - 入口页蓝图：`docs/ops-center/12-entry-blueprints.md`
+- 关键词映射：`docs/ops-center/13-keyword-to-page-map.md`
+- 重构验证闭环：`docs/ops-center/14-rebuild-verification-loop.md`
 - 决策索引：`docs/ops-center/decision-register.md`
 - 数据快照目录：`docs/ops-center/data-snapshots/`
 - 免提醒执行流：`docs/ops-center/RUNBOOK.md`

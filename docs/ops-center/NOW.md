@@ -7,9 +7,14 @@
 - 目标：稳定收录与曝光质量，同时启动站点系统级重构的止血与 IA 基线设计
 
 ## 当前 P0（最多 3 项）
-- P0-1：按 `10-site-rebuild-governance-and-ia-blueprint.md` 完成旧页治理表与入口重构蓝图
-- P0-2：基于今天四端结果，优先处理高曝光低点击词（`builds / tier list / patch`）与高跳出入口页的承接问题
+- P0-1：按 `13-keyword-to-page-map.md` 检查主词是否都已绑定唯一主页面
+- P0-2：按 `14-rebuild-verification-loop.md` 复检重构后的 CTR / bounce / 二跳流转
 - P0-3：补完今日游戏动态巡检，并根据结果决定是否要发 `v0.103.0` 相关新闻页与做 IndexNow
+
+## 当前重构硬约束
+- 涉及攻略、玩法、build、tier list、patch 影响、角色推荐、新手路线时，必须按“官方 > 高质量社区 > 高质量工具站 > 站内数据”取证
+- 没有证据不下强结论
+- subagent 默认按 Agent A（研究）/ B（治理）/ C（IA）/ D（主线内容）/ E（reference）拆分
 
 ## 当前阻塞
 - 平台侧数据延迟（GSC/Bing 常见）

@@ -22,9 +22,13 @@
 - [ ] `TODO` 任务标题（Owner: ，DDL: ，验收: ）
 - [ ] `TODO` 高展现低点击新词提质（仅改现有页词池/模板/内链，不扩量）（Owner: ，DDL: 今日，验收: 完成一轮页面级改写清单）
 - [ ] `TODO` 当日日志与看板收口（Owner: ，DDL: 今日，验收: 00-dashboard + 01-daily-log 完整）
+- [x] `DONE` 建立“关键词 -> 主落地页 -> 支撑页 -> 禁止抢词页”映射表（Owner: Codex，DDL: 本轮重构后，验收: builds/tier list/patch/beginner 关键词有唯一主页面）
 
 ### P2（观察项/优化项）
 - [ ] `TODO` 任务标题（Owner: ，DDL: ，验收: ）
+- [x] `DONE` 建立证据优先的内容写作规则与来源池（Owner: Codex，DDL: 本轮，验收: 攻略/玩法/patch/build/tier 内容均绑定官方/社区/工具来源）
+- [x] `DONE` 固化重构 subagent 架构模板（Owner: Codex，DDL: 本轮，验收: 后续批次可按 Agent A-E + 主线程执行）
+- [x] `DONE` 建立重构验证闭环（Owner: Codex，DDL: 本轮，验收: 已定义 CTR/bounce/二跳/patch 联动的复检规则）
 
 ## 历史任务清算
 - `DONE`：2026-04-10 四端实时采集；社媒未回复巡检；外链生效复核；30 页曝光占比复判
