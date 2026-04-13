@@ -75,12 +75,35 @@ const RESOURCE_CARDS = [
   },
 ];
 
+const STATUS_TIER_HINTS = [
+  {
+    tier: 'Beginner',
+    title: 'Beginner primer',
+    summary: 'Lean on builds that trade burst for guarded pacing so first runs survive patch 0.103.0.',
+  },
+  {
+    tier: 'Stable',
+    title: 'Stable core',
+    summary: 'Repeatable Strength, Sly, and Forge threads now pay off more consistently than last patch’s spike plays.',
+  },
+  {
+    tier: 'Watchlist',
+    title: 'Watchlist picks',
+    summary: 'These lines still have upside but demand tight pacing since nerf adjustments make missteps punitive.',
+  },
+];
+
 type BuildTile = {
   slug: 'ironclad' | 'silent' | 'regent' | 'necrobinder' | 'defect';
   archetype: string;
   patchImpact: string;
   focus: string;
   guideHref: string;
+  statusTier: 'Beginner' | 'Stable' | 'Watchlist';
+  actionCue: string;
+  cardFocus: string;
+  relicFocus: string;
+  watchlistReason?: string;
 };
 
 const BUILD_TILES: BuildTile[] = [
@@ -90,6 +113,10 @@ const BUILD_TILES: BuildTile[] = [
     patchImpact: 'Patch 0.103.0 trimmed the snappier self-damage lines so Block-based Strength ramps are safer.',
     focus: 'Lean toward consistent guard and Strength cards before tilting into explosive finishers.',
     guideHref: '/guides/ironclad-early-build',
+    statusTier: 'Beginner',
+    actionCue: 'Draft guard-heavy draws, then layer Strength when the map calms before branching out.',
+    cardFocus: 'Track guard + Strength card pairs in the first 4 elites.',
+    relicFocus: 'Favor relics boosting Strength or Block in tandem, not one-shot damage spikes.',
   },
   {
     slug: 'silent',
@@ -97,6 +124,10 @@ const BUILD_TILES: BuildTile[] = [
     patchImpact: 'Patch 0.103.0 sharpened Sly triggers and made Poison timing more reliable for mid-game hooks.',
     focus: 'Build hand quality and sequencing before locking into high-variance Sly payoffs.',
     guideHref: '/guides/silent-early-build',
+    statusTier: 'Stable',
+    actionCue: 'Prioritize clean sequencing, then layer Poison while keeping draw and discard consistent.',
+    cardFocus: 'Emphasize card draw and discard smoothing to bait reliable Poisons.',
+    relicFocus: 'Lean into relics that reward discard cycling rather than random burst boosts.',
   },
   {
     slug: 'regent',
@@ -104,6 +135,10 @@ const BUILD_TILES: BuildTile[] = [
     patchImpact: 'Forge tweaks from 0.103.0 reward clearer Stars-to-artifact paths and discourage overtaxed setups.',
     focus: 'Prioritize Stars generation that feeds your Forge toolkit and only load artifact burst when the map is stable.',
     guideHref: '/guides/regent-stars-vs-forge-build-path',
+    statusTier: 'Stable',
+    actionCue: 'Stack Stars early, set up Forge triggers, and delay artifact burst until your map reading is reliable.',
+    cardFocus: 'Monitor Stars generation vs. artifact payoff so you know when to pull trigger.',
+    relicFocus: 'Pick relics that smooth extra Stars or offset Forge cooldowns.',
   },
   {
     slug: 'necrobinder',
@@ -111,6 +146,11 @@ const BUILD_TILES: BuildTile[] = [
     patchImpact: 'Doom timing and Soul gains got calibration love, so early Osty plays need cleaner setup windows.',
     focus: 'Stagger Osty usage, stack Souls, and keep Doom thresholds readable for patch 0.103.0.',
     guideHref: '/guides/necrobinder-common-cards',
+    statusTier: 'Watchlist',
+    actionCue: 'Manage Soul stacks closely and only deploy Osty when the board is stable.',
+    cardFocus: 'Watch guard timing and Soul pacing to avoid Doom backfires.',
+    relicFocus: 'Consider relics that smooth Soul generation or protect against delayed Doom.',
+    watchlistReason: 'Still prone to variance if Doom windows misalign or if patch tweaks reduce Soul gains.',
   },
   {
     slug: 'defect',
@@ -118,6 +158,10 @@ const BUILD_TILES: BuildTile[] = [
     patchImpact: 'Orb stability from 0.103.0 means your Focus investments now unlock more reliable evocations.',
     focus: 'Balance early control orbs with late-game investment orbs without going full random burst.',
     guideHref: '/guides/defect-early-build',
+    statusTier: 'Stable',
+    actionCue: 'Layer control orbs early, then transition into scaling Focus stacks once you lock cadence.',
+    cardFocus: 'Highlight orbs that pair with Focus ramps instead of random burst draws.',
+    relicFocus: 'Seek relics that tack on orb generation or steady Focus gains.',
   },
 ];
 
@@ -181,6 +225,24 @@ export default function BuildsPage() {
                 </span>
               </Link>
             ))}
+          </div>
+        </section>
+
+        <section className="container mx-auto px-4 py-6">
+          <div className="rounded-2xl border border-border bg-background/60 p-6">
+            <div className="mb-4 flex items-center justify-between">
+              <p className="text-xs uppercase tracking-[0.4em] text-molten-orange">Status tiers</p>
+              <span className="text-xs text-steel-blue">Patch {CURRENT_PATCH}</span>
+            </div>
+            <div className="flex flex-wrap gap-4">
+              {STATUS_TIER_HINTS.map((hint) => (
+                <div key={hint.tier} className="flex-1 min-w-[180px] rounded-2xl border border-border bg-forge-black/40 p-4">
+                  <p className="text-xs uppercase tracking-[0.3em] text-molten-orange">{hint.tier}</p>
+                  <h3 className="mt-2 font-heading text-lg font-bold text-white">{hint.title}</h3>
+                  <p className="mt-2 text-sm text-steel-blue">{hint.summary}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -249,11 +311,23 @@ export default function BuildsPage() {
                       {character.difficulty ?? 'Advanced'}
                     </span>
                   </div>
-                  <p className="mt-4 text-sm text-steel-blue">{tile.archetype}</p>
+                  <div className="mt-4 flex flex-wrap items-center gap-3">
+                    <span className="rounded-full border border-molten-orange px-3 py-1 text-xs font-semibold text-molten-orange">
+                      {tile.statusTier} tier
+                    </span>
+                    <p className="text-sm text-steel-blue">{tile.actionCue}</p>
+                  </div>
                   <p className="mt-3 text-sm text-steel-blue">{tile.focus}</p>
                   <div className="mt-4 rounded-2xl border border-border bg-background/40 px-4 py-3">
                     <p className="text-xs uppercase tracking-[0.3em] text-molten-orange">Patch focus</p>
                     <p className="mt-2 text-sm text-steel-blue">{tile.patchImpact}</p>
+                  </div>
+                  <div className="mt-4 grid gap-2 text-xs text-steel-blue">
+                    <p>Card focus: {tile.cardFocus}</p>
+                    <p>Relic focus: {tile.relicFocus}</p>
+                    {tile.watchlistReason && (
+                      <p className="text-molten-orange">Watchlist note: {tile.watchlistReason}</p>
+                    )}
                   </div>
                   <div className="mt-5 flex flex-wrap items-center gap-3 text-sm">
                     <Link
@@ -267,6 +341,18 @@ export default function BuildsPage() {
                       className="rounded-full border border-border px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-steel-blue transition hover:border-molten-orange hover:text-molten-orange"
                     >
                       Character detail →
+                    </Link>
+                    <Link
+                      href="/cards"
+                      className="rounded-full border border-border px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-steel-blue transition hover:border-molten-orange hover:text-molten-orange"
+                    >
+                      Cards reference →
+                    </Link>
+                    <Link
+                      href="/relics"
+                      className="rounded-full border border-border px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-steel-blue transition hover:border-molten-orange hover:text-molten-orange"
+                    >
+                      Relics reference →
                     </Link>
                   </div>
                   <div className="mt-5 grid gap-3 text-xs text-steel-blue">

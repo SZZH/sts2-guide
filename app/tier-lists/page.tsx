@@ -6,41 +6,85 @@ const sectionData = [
   {
     id: 'characters',
     title: 'Characters',
-    description:
-      'See how current patch weights each hero for new and returning players, then jump straight to the builds that make them shine.',
+    description: (
+      <>
+        <p>
+          For early and returning runs, Ironclad remains the safest character to recommend because the current patch
+          direction still favors clearer survivability and more forgiving act-one pacing. Silent and Regent can be
+          strong, but they should be treated as patch-sensitive choices until the current balance window settles.
+        </p>
+        <p className="mt-3 text-sm text-slate-400">
+          Version {currentVersion} · Stability range: current patch window with conservative role-based evaluation ·
+          Use the builds hub before turning a character ranking into a concrete deck decision.
+        </p>
+      </>
+    ),
     calls: [
-      { label: 'Character Tier List', href: '#characters' },
-      { label: 'Top Builds by Role', href: '/builds' },
+      { label: 'View builds by hero', href: '/builds' },
+      { label: 'Character details', href: '/characters' },
     ],
   },
   {
     id: 'beginner',
     title: 'Beginner',
-    description:
-      'Get a calm starter loop: recommended unlock order, first-run choices, and the safest cards to pick in the latest meta.',
+    description: (
+      <>
+        <p>
+          In the current beta branch, first-run players should favor safer defensive lines, cleaner upgrades, and
+          consistent route control before committing to high-variance archetypes. Use this lens when you need the most
+          forgiving path, not the highest ceiling.
+        </p>
+        <p className="mt-3 text-sm text-slate-400">
+          Applicable when your goal is repeatable act-one and act-two stability. Once your runs stop collapsing to
+          early mistakes, move into the builds hub for more specific archetype calls.
+        </p>
+      </>
+    ),
     calls: [
-      { label: 'Beginner Focus', href: '#beginner' },
-      { label: 'Starter Builds', href: '/builds' },
+      { label: 'Starter builds', href: '/builds' },
+      { label: 'Character card primers', href: '/cards' },
     ],
   },
   {
     id: 'archetypes',
     title: 'Archetypes',
-    description:
-      'Choose from today’s most resilient archetypes, compare their stability scores, and see what makes them work in patch-vetted runs.',
+    description: (
+      <>
+        <p>
+          The most reliable archetypes this patch are the ones that still produce stable defense, scaling, and route
+          flexibility without depending on one narrow combo line. Use the watchlist label for burst-heavy or highly
+          sequencing-dependent paths that still look strong but have not settled enough to promote aggressively.
+        </p>
+        <p className="mt-3 text-sm text-slate-400">
+          Controversy note: any archetype that depends on the beta branch’s newest timing or scoring behavior should
+          stay in watchlist territory until it survives more than one patch cycle.
+        </p>
+      </>
+    ),
     calls: [
-      { label: 'Archetype Stability Grid', href: '#archetypes' },
-      { label: 'Builds-by-Archetype', href: '/builds' },
+      { label: 'Archetype grid', href: '/builds' },
+      { label: 'Character breakdowns', href: '/characters' },
     ],
   },
   {
     id: 'cards',
     title: 'Cards',
-    description:
-      'Drill into the cards that matter for each hero or archetype, including synergy cues and the cards you can stop prioritizing after patch shifts.',
+    description: (
+      <>
+        <p>
+          This lens is for cards whose value changes with the build you are actually running. Use it to separate
+          “core to a stable route” cards from “still promising but patch-sensitive” cards, then jump into builds or
+          character pages for the full decision context.
+        </p>
+        <p className="mt-3 text-sm text-slate-400">
+          When a card drops into watchlist territory, treat it as a re-test candidate rather than an automatic pick.
+          That keeps this page aligned with current patch uncertainty instead of pretending card rankings are final.
+        </p>
+      </>
+    ),
     calls: [
-      { label: 'Card Priority Lens', href: '#cards' },
-      { label: 'Character Card Breakdowns', href: '/characters' },
+      { label: 'Card deep dives', href: '/cards' },
+      { label: 'Related builds', href: '/builds' },
     ],
   },
 ];
@@ -67,7 +111,7 @@ export default function TierListsPage() {
           <h2 className="text-2xl font-semibold">Stability pulse</h2>
           <p className="text-slate-200">
             Builds that appear in the Characters or Archetype leg must hit a 60% success ceiling across the latest
-            patch window before we keep promoting them; anything below that is tagged as “volatile” and surfaced
+            patch window before we keep promoting them; anything below that is tagged as &quot;volatile&quot; and surfaced
             inside the cards section for deeper review.
           </p>
           <div className="mt-3 flex flex-wrap gap-3 text-sm">

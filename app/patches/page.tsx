@@ -68,6 +68,36 @@ const followUpRoutes = [
   },
 ];
 
+const outdatedAdvice = [
+  'Do not assume every hotfix is a full meta reset. Only rewrite build priorities when cards, relics, or encounter pacing actually changed.',
+  'Do not keep quoting launch-week co-op or release-date pages as if they answer current patch decisions.',
+  'Do not treat beta-branch balance notes as final live truth unless the same change is visible on the active branch.',
+  'Do not let old route advice survive without checking whether elite pressure, starter relics, or event pacing changed.',
+];
+
+const updatedAssets = [
+  {
+    href: '/builds',
+    title: 'Builds hub',
+    description: 'Re-check current routes and stable archetypes before carrying old patch assumptions into a new run.',
+  },
+  {
+    href: '/tier-lists',
+    title: 'Tier lists hub',
+    description: 'Use patch-aware tier framing before promoting or dropping a role, card package, or archetype.',
+  },
+  {
+    href: '/characters',
+    title: 'Character picks',
+    description: 'Review beginner-friendliness and current patch role shifts before changing your character recommendation.',
+  },
+  {
+    href: '/guides',
+    title: 'Guide hub',
+    description: 'Open first-run, route, and mechanic guides once you know which patch changes actually matter.',
+  },
+];
+
 export default function PatchesPage() {
   const latestArticle = patchArticles[0];
 
@@ -182,6 +212,18 @@ export default function PatchesPage() {
 
             <div className="rounded-2xl border border-border bg-background/40 p-6">
               <div className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-molten-orange">
+                Outdated Advice To Retire
+              </div>
+              <h2 className="font-heading text-2xl font-bold">Stop carrying these assumptions forward</h2>
+              <ul className="mt-4 space-y-3 text-sm leading-7 text-muted-foreground">
+                {outdatedAdvice.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="rounded-2xl border border-border bg-background/40 p-6">
+              <div className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-molten-orange">
                 Next Routes
               </div>
               <h2 className="font-heading text-2xl font-bold">Where To Go After Reading Patch Notes</h2>
@@ -197,6 +239,32 @@ export default function PatchesPage() {
                 ))}
               </div>
             </div>
+          </div>
+        </section>
+
+        <section className="mt-10">
+          <div className="mb-5 flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
+            <div>
+              <div className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-molten-orange">
+                Updated Assets
+              </div>
+              <h2 className="font-heading text-3xl font-bold">What should be re-read after a patch?</h2>
+            </div>
+            <p className="max-w-2xl text-sm text-steel-blue">
+              Patch notes are only the start. These are the content layers that should absorb every meaningful gameplay or balance shift.
+            </p>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            {updatedAssets.map((asset) => (
+              <Link
+                key={asset.href}
+                href={asset.href}
+                className="rounded-xl border border-border bg-background/55 p-5 transition-all duration-300 hover:border-molten-orange"
+              >
+                <h3 className="font-heading text-xl font-bold text-white">{asset.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-muted-foreground">{asset.description}</p>
+              </Link>
+            ))}
           </div>
         </section>
       </div>
