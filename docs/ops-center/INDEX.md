@@ -2,7 +2,7 @@
 
 > 目标：无论在哪个线程启动优化工作，都先从本页拿到同一份上下文。
 
-## 0. 首读顺序（强制）
+## 0. 建议首读顺序
 1. `docs/ops-center/NOW.md`
 2. `docs/ops-center/00-dashboard.md`
 3. `docs/ops-center/02-decisions.md`
@@ -22,19 +22,22 @@
 - 路线图：`docs/ops-center/03-roadmap.md`
 - 执行手册：`docs/ops-center/04-playbook.md`
 - KPI闸门：`docs/ops-center/05-kpi-gates.md`
+- 游戏动态情报台账：`docs/ops-center/08-game-dynamics-intel.md`
+- 更新核对单：`docs/ops-center/09-update-verification-checklists.md`
+- 站点重构基线：`docs/ops-center/10-site-rebuild-governance-and-ia-blueprint.md`
+- 页面级治理表：`docs/ops-center/11-page-governance-table.md`
+- 入口页蓝图：`docs/ops-center/12-entry-blueprints.md`
 - 决策索引：`docs/ops-center/decision-register.md`
 - 数据快照目录：`docs/ops-center/data-snapshots/`
 - 免提醒执行流：`docs/ops-center/RUNBOOK.md`
 
-## 3. 线程启动检查清单
-- [ ] 已读取 `NOW.md`
-- [ ] 已确认最近 3 条决策与当前任务不冲突
-- [ ] 已确认当前闸门是否允许推进下一阶段
-- [ ] 已将本次动作写入 `01-daily-log.md`
-- [ ] 已检查外链发布状态与评论回复积压
-- [ ] 已补齐五类状态标记（DONE/IN_PROGRESS/TODO/BLOCKED/SKIP）
-- [ ] 已完成并行拆分前置检查（可并行则必须拆 subagent）
-- [ ] 已输出 subagent 分工表与并行执行证据
+## 3. 线程启动检查（按需）
+- [ ] 已读取 `NOW.md` 与最新 `daily-log/dashboard`
+- [ ] 若本轮涉及游戏动态，已先读取 `08-game-dynamics-intel.md`
+- [ ] 已区分：哪些已完成、哪些还缺口
+- [ ] 本轮仅选择需要执行的动作（非全量模板）
+- [ ] 若识别到 `>=3` 个独立任务，已决定是否并行并说明原因
+- [ ] 已将本轮新增结果写入日志
 
 ## 4. 并行任务派发建议
 - 可并行任务：

@@ -458,53 +458,65 @@ export default async function CardsPage({ searchParams }: CardsPageProps) {
                 <div className="hidden rounded-xl border border-border bg-background/40 p-4 lg:block">
                   <h3 className="font-heading text-lg font-bold">Related Queries</h3>
                   <div className="mt-3 flex flex-wrap gap-3 text-sm">
-                    <Link href="/characters" className="text-molten-orange transition-colors hover:text-ember-glow">
-                      Which character should I start with?
-                    </Link>
-                    <Link href="/relics" className="text-molten-orange transition-colors hover:text-ember-glow">
-                      Which relics matter for this build?
-                    </Link>
-                    <Link href="/potions" className="text-molten-orange transition-colors hover:text-ember-glow">
-                      Which potions save weak runs?
-                    </Link>
-                    <Link href="/cards/hammer_time" className="text-molten-orange transition-colors hover:text-ember-glow">
-                      How does Hammer Time scale Forge turns?
-                    </Link>
-                    <Link href="/cards/danse_macabre" className="text-molten-orange transition-colors hover:text-ember-glow">
-                      Is Danse Macabre worth in Necrobinder decks?
-                    </Link>
-                    <Link href="/cards/eradicate" className="text-molten-orange transition-colors hover:text-ember-glow">
-                      How do I pilot Eradicate lines?
-                    </Link>
-                    <Link href="/relics/book_of_five_rings" className="text-molten-orange transition-colors hover:text-ember-glow">
-                      Which cards pair with Book of Five Rings?
-                    </Link>
-                    <Link href="/guides/exhaust-mechanic-explained" className="text-molten-orange transition-colors hover:text-ember-glow">
-                      How does Exhaust work in Slay the Spire 2?
-                    </Link>
                     <Link
-                      href="/news/slay-the-spire-2-multiplayer-coop-guide"
-                      className="text-molten-orange transition-colors hover:text-ember-glow"
-                    >
-                      Does Slay the Spire 2 have co-op?
-                    </Link>
-                    <Link
-                      href="/news/slay-the-spire-2-steam-charts-player-count"
-                      className="text-molten-orange transition-colors hover:text-ember-glow"
-                    >
-                      How many players are online now?
-                    </Link>
-                    <Link
-                      href="/news/slay-the-spire-2-steamdb-patch-tracker"
+                      href="/news/slay-the-spire-2-hotfix-patch-notes"
                       className="text-molten-orange transition-colors hover:text-ember-glow"
                     >
                       What changed in the latest patch?
                     </Link>
                     <Link
-                      href="/news/slay-the-spire-2-release-date"
+                      href="/news/slay-the-spire-2-known-issues-and-fixes"
                       className="text-molten-orange transition-colors hover:text-ember-glow"
                     >
-                      What is the release date and status?
+                      Which known issues are still active?
+                    </Link>
+                    <Link
+                      href="/news/slay-the-spire-2-first-run-guide-act-1-priorities"
+                      className="text-molten-orange transition-colors hover:text-ember-glow"
+                    >
+                      What should I do in my first runs?
+                    </Link>
+                    <Link
+                      href="/guides"
+                      className="text-molten-orange transition-colors hover:text-ember-glow"
+                    >
+                      Need builds & strategy guidance?
+                    </Link>
+                    <Link
+                      href="/relics"
+                      className="text-molten-orange transition-colors hover:text-ember-glow"
+                    >
+                      Which relics support those builds?
+                    </Link>
+                    <Link
+                      href="/characters"
+                      className="text-molten-orange transition-colors hover:text-ember-glow"
+                    >
+                      Which character fits my current plan?
+                    </Link>
+                    <Link
+                      href="/cards/hammer_time"
+                      className="text-molten-orange transition-colors hover:text-ember-glow"
+                    >
+                      How does Hammer Time scale Forge turns?
+                    </Link>
+                    <Link
+                      href="/cards/danse_macabre"
+                      className="text-molten-orange transition-colors hover:text-ember-glow"
+                    >
+                      Is Danse Macabre worth in Necrobinder decks?
+                    </Link>
+                    <Link
+                      href="/guides/exhaust-mechanic-explained"
+                      className="text-molten-orange transition-colors hover:text-ember-glow"
+                    >
+                      How does Exhaust work in Slay the Spire 2?
+                    </Link>
+                    <Link
+                      href="/news/slay-the-spire-2-steamdb-patch-tracker"
+                      className="text-molten-orange transition-colors hover:text-ember-glow"
+                    >
+                      Track the patch timeline for this change
                     </Link>
                   </div>
                 </div>
@@ -646,53 +658,53 @@ export default async function CardsPage({ searchParams }: CardsPageProps) {
                 <div className="mt-6 rounded-xl border border-border bg-background/40 p-4 lg:hidden">
                   <h3 className="font-heading text-lg font-bold">Related Queries</h3>
                   <div className="mt-3 flex flex-wrap gap-3 text-sm">
-                    <Link href="/characters" className="text-molten-orange transition-colors hover:text-ember-glow">
-                      Which character should I start with?
-                    </Link>
-                    <Link href="/relics" className="text-molten-orange transition-colors hover:text-ember-glow">
-                      Which relics matter for this build?
-                    </Link>
-                    <Link href="/potions" className="text-molten-orange transition-colors hover:text-ember-glow">
-                      Which potions save weak runs?
-                    </Link>
-                    <Link href="/cards/hammer_time" className="text-molten-orange transition-colors hover:text-ember-glow">
-                      How does Hammer Time scale Forge turns?
-                    </Link>
-                    <Link href="/cards/danse_macabre" className="text-molten-orange transition-colors hover:text-ember-glow">
-                      Is Danse Macabre worth in Necrobinder decks?
-                    </Link>
-                    <Link href="/cards/eradicate" className="text-molten-orange transition-colors hover:text-ember-glow">
-                      How do I pilot Eradicate lines?
-                    </Link>
-                    <Link href="/relics/book_of_five_rings" className="text-molten-orange transition-colors hover:text-ember-glow">
-                      Which cards pair with Book of Five Rings?
-                    </Link>
-                    <Link href="/guides/exhaust-mechanic-explained" className="text-molten-orange transition-colors hover:text-ember-glow">
-                      How does Exhaust work in Slay the Spire 2?
-                    </Link>
                     <Link
-                      href="/news/slay-the-spire-2-multiplayer-coop-guide"
-                      className="text-molten-orange transition-colors hover:text-ember-glow"
-                    >
-                      Does Slay the Spire 2 have co-op?
-                    </Link>
-                    <Link
-                      href="/news/slay-the-spire-2-steam-charts-player-count"
-                      className="text-molten-orange transition-colors hover:text-ember-glow"
-                    >
-                      How many players are online now?
-                    </Link>
-                    <Link
-                      href="/news/slay-the-spire-2-steamdb-patch-tracker"
+                      href="/news/slay-the-spire-2-hotfix-patch-notes"
                       className="text-molten-orange transition-colors hover:text-ember-glow"
                     >
                       What changed in the latest patch?
                     </Link>
                     <Link
-                      href="/news/slay-the-spire-2-release-date"
+                      href="/news/slay-the-spire-2-known-issues-and-fixes"
                       className="text-molten-orange transition-colors hover:text-ember-glow"
                     >
-                      What is the release date and status?
+                      Which known issues remain?
+                    </Link>
+                    <Link
+                      href="/news/slay-the-spire-2-first-run-guide-act-1-priorities"
+                      className="text-molten-orange transition-colors hover:text-ember-glow"
+                    >
+                      First-run priorities
+                    </Link>
+                    <Link
+                      href="/guides"
+                      className="text-molten-orange transition-colors hover:text-ember-glow"
+                    >
+                      Need builds & strategy assistance?
+                    </Link>
+                    <Link
+                      href="/cards/hammer_time"
+                      className="text-molten-orange transition-colors hover:text-ember-glow"
+                    >
+                      How does Hammer Time scale Forge turns?
+                    </Link>
+                    <Link
+                      href="/cards/danse_macabre"
+                      className="text-molten-orange transition-colors hover:text-ember-glow"
+                    >
+                      Is Danse Macabre worth in Necrobinder decks?
+                    </Link>
+                    <Link
+                      href="/guides/exhaust-mechanic-explained"
+                      className="text-molten-orange transition-colors hover:text-ember-glow"
+                    >
+                      How does Exhaust work in StS2?
+                    </Link>
+                    <Link
+                      href="/news/slay-the-spire-2-steamdb-patch-tracker"
+                      className="text-molten-orange transition-colors hover:text-ember-glow"
+                    >
+                      Track the latest patch timeline
                     </Link>
                   </div>
                 </div>

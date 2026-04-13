@@ -31,38 +31,6 @@ export default function HomePage() {
       .filter((article) => !prioritizedLatestNewsSlugs.includes(article.slug))
       .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()),
   ].slice(0, 3);
-  const launchWeekArticles = [
-    {
-      href: '/news/slay-the-spire-2-steam-charts-player-count',
-      label: 'Steam Charts Tracker',
-      description: 'Current players, 24-hour peak, and all-time peak with timestamped context.',
-    },
-    {
-      href: '/news/slay-the-spire-2-steamdb-patch-tracker',
-      label: 'SteamDB Patch Tracker',
-      description: 'Patch timeline mapped to official notes and practical player impact.',
-    },
-    {
-      href: '/news/slay-the-spire-2-multiplayer-coop-guide',
-      label: 'Multiplayer Co-op Guide',
-      description: 'Official 4-player co-op support, launch checks, and fastest setup path.',
-    },
-    {
-      href: '/news/slay-the-spire-2-release-date',
-      label: 'Release Date & Time',
-      description: 'Official release date answer with launch status and next-step links.',
-    },
-    {
-      href: '/news/slay-the-spire-2-hotfix-patch-notes',
-      label: 'Hotfix Patch Notes',
-      description: 'Track launch hotfixes and check what changed before your next run.',
-    },
-    {
-      href: '/news/slay-the-spire-2-known-issues-and-fixes',
-      label: 'Known Issues',
-      description: 'Current known problems, temporary workarounds, and fix status.',
-    },
-  ];
   const intentShortcuts = [
     {
       href: '/news/slay-the-spire-2-first-run-guide-act-1-priorities',
@@ -116,6 +84,33 @@ export default function HomePage() {
     },
   ];
 
+  const decisionModules = [
+    {
+      href: '/news/slay-the-spire-2-first-run-guide-act-1-priorities',
+      label: 'Beginner Path',
+      description: 'Fast entry advice for first runs, starter priorities, and immediate guardrails.',
+      badge: 'Beginner',
+    },
+    {
+      href: '/guides',
+      label: 'Build Guides',
+      description: 'Character archetypes and deck blueprints ready for patch 0.103.0.',
+      badge: 'Builds',
+    },
+    {
+      href: '/news/slay-the-spire-2-steamdb-patch-tracker',
+      label: 'Patch Impact',
+      description: 'Track what changed and which decisions shift after each fix.',
+      badge: 'Patch',
+    },
+    {
+      href: '/characters',
+      label: 'Character Choice',
+      description: 'Compare availability, difficulty, and card pools before locking your next hero.',
+      badge: 'Characters',
+    },
+  ];
+
   return (
     <>
       <WebsiteSchema />
@@ -150,31 +145,31 @@ export default function HomePage() {
 
           <div className="mx-auto grid max-w-5xl gap-4 md:grid-cols-3">
             <Link
-              href="/mechanics"
-              className="rounded-xl border border-molten-orange/40 bg-forge-black/70 p-5 text-left backdrop-blur-sm transition-all duration-300 hover:border-molten-orange hover:bg-forge-black/85"
-            >
-              <div className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-molten-orange">
-                Start Here
-              </div>
-              <h2 className="font-heading text-2xl font-bold text-white">
-                Mechanics Guide
-              </h2>
-              <p className="mt-2 text-sm text-steel-blue">
-                Learn Sly, Doom, Stars, Forge, and the systems that shape early winning runs.
-              </p>
-            </Link>
-            <Link
               href="/news/slay-the-spire-2-first-run-guide-act-1-priorities"
               className="rounded-xl border border-border bg-forge-black/70 p-5 text-left backdrop-blur-sm transition-all duration-300 hover:border-molten-orange hover:bg-forge-black/85"
             >
               <div className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-molten-orange">
-                Launch Week
+                Beginner Path
               </div>
               <h2 className="font-heading text-2xl font-bold text-white">
-                First-Run Guide
+                First Run Guide
               </h2>
               <p className="mt-2 text-sm text-steel-blue">
-                Fast setup advice for Act 1 pathing, starter priorities, and launch-day decision making.
+                Immediate starter priorities, Act 1 pathing, and what to focus on before your first serious run.
+              </p>
+            </Link>
+            <Link
+              href="/guides"
+              className="rounded-xl border border-border bg-forge-black/70 p-5 text-left backdrop-blur-sm transition-all duration-300 hover:border-molten-orange hover:bg-forge-black/85"
+            >
+              <div className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-molten-orange">
+                Builds Hub
+              </div>
+              <h2 className="font-heading text-2xl font-bold text-white">
+                Current Builds
+              </h2>
+              <p className="mt-2 text-sm text-steel-blue">
+                Character-by-character archetypes, decision points, and quick links into archetype cards.
               </p>
             </Link>
             <Link
@@ -182,53 +177,44 @@ export default function HomePage() {
               className="rounded-xl border border-border bg-forge-black/70 p-5 text-left backdrop-blur-sm transition-all duration-300 hover:border-molten-orange hover:bg-forge-black/85"
             >
               <div className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-molten-orange">
-                Pick Fast
+                Character Choice
               </div>
               <h2 className="font-heading text-2xl font-bold text-white">
-                Starter Characters
+                Starter Roster
               </h2>
               <p className="mt-2 text-sm text-steel-blue">
-                Compare the current five-character roster before you lock your first serious run.
+                Compare difficulty, availability, and card pools before locking your next hero.
               </p>
             </Link>
           </div>
 
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3 text-sm text-steel-blue">
             <span className="rounded-full border border-border bg-forge-black/60 px-4 py-2">
-              Released on March 5, 2026
+              Patch 0.103.0 context
             </span>
             <span className="rounded-full border border-border bg-forge-black/60 px-4 py-2">
-              Early Access live on Steam
+              Updated daily for decision flows
             </span>
             <span className="rounded-full border border-border bg-forge-black/60 px-4 py-2">
-              Updated for launch-week search trends
+              Data backed by patch tracker + community testing
             </span>
-          </div>
-
-          <div className="mt-4 text-sm text-steel-blue">
-            <Link
-              href="/news/slay-the-spire-2-launch-time-us-china"
-              className="text-molten-orange hover:text-ember-glow font-semibold transition-colors"
-            >
-              Launch status, release details, and first 24h checklist
-            </Link>
           </div>
 
           <div className="flex gap-4 justify-center mt-8">
-            <Link 
-              href="/mechanics"
+            <Link
+              href="/news/slay-the-spire-2-steamdb-patch-tracker"
               className="bg-molten-orange hover:bg-ember-glow text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300 flex items-center gap-2"
             >
-              Explore Mechanics
+              Latest Patch Tracker
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
             </Link>
-            <Link 
-              href="/characters"
+            <Link
+              href="/guides"
               className="bg-shadow-gray hover:bg-muted border border-border text-foreground font-semibold px-8 py-3 rounded-lg transition-all duration-300"
             >
-              Compare Characters
+              Explore Builds
             </Link>
           </div>
         </div>
@@ -278,18 +264,21 @@ export default function HomePage() {
               </h2>
             </div>
             <p className="max-w-2xl text-sm text-steel-blue">
-              Start here if you need immediate answers after launch. These pages are built for live patch notes, crash fixes, co-op questions, and Steam Deck checks.
+              Start here when you just need to know which build, beginner path, patch insight, or character choice to follow next.
             </p>
           </div>
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-            {launchWeekArticles.map((article) => (
+            {decisionModules.map((module) => (
               <Link
-                key={article.href}
-                href={article.href}
+                key={module.href}
+                href={module.href}
                 className="rounded-xl border border-border bg-forge-black/70 p-5 transition-all duration-300 hover:border-molten-orange hover:bg-forge-black/85"
               >
-                <h3 className="font-heading text-xl font-bold text-white">{article.label}</h3>
-                <p className="mt-3 text-sm leading-6 text-steel-blue">{article.description}</p>
+                <div className="text-xs uppercase tracking-[0.2em] text-steel-blue mb-2">
+                  {module.badge}
+                </div>
+                <h3 className="font-heading text-xl font-bold text-white">{module.label}</h3>
+                <p className="mt-3 text-sm leading-6 text-steel-blue">{module.description}</p>
               </Link>
             ))}
           </div>

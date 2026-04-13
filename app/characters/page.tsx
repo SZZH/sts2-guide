@@ -111,6 +111,29 @@ export default async function CharactersPage({ searchParams }: CharactersPagePro
     },
   ];
 
+  const characterTaskCards = [
+    {
+      href: '/news/slay-the-spire-2-first-run-guide-act-1-priorities',
+      title: 'Beginner Path',
+      subtitle: 'Starter priorities, first-act pacing, and what to do next.',
+    },
+    {
+      href: '/guides',
+      title: 'Build Guides',
+      subtitle: 'Current archetypes and character plans for patch 0.103.0.',
+    },
+    {
+      href: '/news/slay-the-spire-2-steamdb-patch-tracker',
+      title: 'Patch Impact',
+      subtitle: 'See which builds, roles, and cards shifted this patch.',
+    },
+    {
+      href: '/cards',
+      title: 'Card Pools',
+      subtitle: 'Jump to the card database for each hero.',
+    },
+  ];
+
   return (
     <>
       <BreadcrumbSchema
@@ -249,10 +272,16 @@ export default async function CharactersPage({ searchParams }: CharactersPagePro
                     What should I upgrade first?
                   </Link>
                   <Link
-                    href="/news/slay-the-spire-2-multiplayer-coop-guide"
+                    href="/news/slay-the-spire-2-steamdb-patch-tracker"
                     className="text-molten-orange transition-colors hover:text-ember-glow"
                   >
-                    How does co-op work in Slay the Spire 2?
+                    What changed in the latest patch?
+                  </Link>
+                  <Link
+                    href="/news/slay-the-spire-2-first-run-guide-act-1-priorities"
+                    className="text-molten-orange transition-colors hover:text-ember-glow"
+                  >
+                    Where should my first run begin?
                   </Link>
                 </div>
               </div>
@@ -272,6 +301,19 @@ export default async function CharactersPage({ searchParams }: CharactersPagePro
                 >
                   Open full cards database
                 </Link>
+              </div>
+
+              <div className="mb-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+                {characterTaskCards.map((card) => (
+                  <Link
+                    key={card.href}
+                    href={card.href}
+                    className="rounded-xl border border-border bg-background/60 p-4 transition-all duration-300 hover:border-molten-orange hover:bg-forge-black/70"
+                  >
+                    <h3 className="text-lg font-semibold text-white">{card.title}</h3>
+                    <p className="mt-1 text-sm text-muted-foreground">{card.subtitle}</p>
+                  </Link>
+                ))}
               </div>
 
               <div className="mb-6 rounded-xl border border-border bg-background/40 p-4">
@@ -380,18 +422,18 @@ export default async function CharactersPage({ searchParams }: CharactersPagePro
                   >
                     What should I upgrade first?
                   </Link>
-                  <Link
-                    href="/news/slay-the-spire-2-multiplayer-coop-guide"
-                    className="text-molten-orange transition-colors hover:text-ember-glow"
-                  >
-                    How does co-op work in Slay the Spire 2?
-                  </Link>
-                  <Link
-                    href="/news/slay-the-spire-2-release-date"
-                    className="text-molten-orange transition-colors hover:text-ember-glow"
-                  >
-                    Is Slay the Spire 2 already released?
-                  </Link>
+                <Link
+                  href="/news/slay-the-spire-2-steamdb-patch-tracker"
+                  className="text-molten-orange transition-colors hover:text-ember-glow"
+                >
+                  What changed in the latest patch?
+                </Link>
+                <Link
+                  href="/news/slay-the-spire-2-first-run-guide-act-1-priorities"
+                  className="text-molten-orange transition-colors hover:text-ember-glow"
+                >
+                  Where should my first run begin?
+                </Link>
                   <Link
                     href="/characters/necrobinder"
                     className="text-molten-orange transition-colors hover:text-ember-glow"

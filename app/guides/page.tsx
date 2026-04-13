@@ -333,6 +333,29 @@ export default function GuidesPage() {
     },
   ];
 
+  const guideTaskCards = [
+    {
+      href: '/news/slay-the-spire-2-first-run-guide-act-1-priorities',
+      title: 'Beginner Path',
+      subtitle: 'First-run focus, pathing, and starter priorities.',
+    },
+    {
+      href: '/guides',
+      title: 'Build Decisions',
+      subtitle: 'Character archetypes and deck blueprints ready for patch 0.103.0.',
+    },
+    {
+      href: '/news/slay-the-spire-2-steamdb-patch-tracker',
+      title: 'Patch Impact',
+      subtitle: 'Track what changed and which decisions shift now.',
+    },
+    {
+      href: '/characters',
+      title: 'Character Choice',
+      subtitle: 'Compare availability, difficulty, and card pools.',
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-background via-background/95 to-background">
       {/* Hero Section */}
@@ -392,9 +415,34 @@ export default function GuidesPage() {
             </div>
           </div>
         </div>
-      </section>
+    </section>
 
-      {/* Builds by Character */}
+    <section className="px-4 pb-10">
+      <div className="container">
+        <div className="rounded-2xl border border-border bg-background/40 p-6 md:p-8">
+          <div className="mb-5 flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
+            <h2 className="font-heading text-2xl font-bold">Decision Shortcuts</h2>
+            <p className="text-sm text-muted-foreground max-w-2xl">
+              Choose a task lane to turn search intent into immediate action—beginner, builds, patch shifts, or character choice.
+            </p>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            {guideTaskCards.map((card) => (
+              <Link
+                key={card.href}
+                href={card.href}
+                className="rounded-xl border border-border bg-forge-black/70 p-5 transition-all duration-300 hover:border-molten-orange hover:bg-forge-black/85"
+              >
+                <h3 className="font-heading text-xl font-bold text-white">{card.title}</h3>
+                <p className="mt-2 text-sm text-steel-blue">{card.subtitle}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* Builds by Character */}
       {CHARACTERS.map((character) => {
         const characterBuilds = BUILDS.filter(b => b.character === character.slug);
         

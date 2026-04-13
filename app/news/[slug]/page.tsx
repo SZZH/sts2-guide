@@ -74,11 +74,10 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ slu
   const isLaunchGuide = article.slug === 'slay-the-spire-2-launch-time-us-china';
   const isInternalArticle = article.sourceType === 'internal';
   const HIGH_INTENT_NEWS_SLUGS = new Set([
-    'slay-the-spire-2-multiplayer-coop-guide',
-    'slay-the-spire-2-co-op-guide-how-it-works',
-    'slay-the-spire-2-steam-charts-player-count',
+    'slay-the-spire-2-hotfix-patch-notes',
+    'slay-the-spire-2-known-issues-and-fixes',
+    'slay-the-spire-2-first-run-guide-act-1-priorities',
     'slay-the-spire-2-steamdb-patch-tracker',
-    'slay-the-spire-2-release-date',
   ]);
   const isHighIntentNews = HIGH_INTENT_NEWS_SLUGS.has(article.slug);
   const quickConclusion = article.intro?.[0] ?? article.excerpt;
@@ -103,20 +102,28 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ slu
   ];
   const updatedTodayLinks = [
     {
-      href: '/news/slay-the-spire-2-known-issues-and-fixes',
-      label: 'Known issues and fixes',
-    },
-    {
       href: '/news/slay-the-spire-2-hotfix-patch-notes',
       label: 'Hotfix patch notes',
     },
     {
-      href: '/news/slay-the-spire-2-co-op-guide-how-it-works',
-      label: 'Co-op guide',
+      href: '/news/slay-the-spire-2-known-issues-and-fixes',
+      label: 'Known issues and fixes',
     },
     {
-      href: '/news/slay-the-spire-2-steam-deck-performance-guide',
-      label: 'Steam Deck guide',
+      href: '/news/slay-the-spire-2-first-run-guide-act-1-priorities',
+      label: 'First-run priorities',
+    },
+    {
+      href: '/cards',
+      label: 'Card lookup for current builds',
+    },
+    {
+      href: '/relics',
+      label: 'Relic reference for today',
+    },
+    {
+      href: '/guides',
+      label: 'Browse builds and beginner routes',
     },
   ];
   const launchFaqItems = [

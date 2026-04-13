@@ -235,32 +235,53 @@ export default async function RelicsPage({ searchParams }: RelicsPageProps) {
                 <div className="hidden rounded-xl border border-border bg-background/40 p-4 lg:block">
                   <h3 className="font-heading text-lg font-bold">Related Queries</h3>
                   <div className="mt-3 flex flex-wrap gap-3 text-sm">
-                    <Link href="/cards" className="text-molten-orange transition-colors hover:text-ember-glow">
+                    <Link
+                      href="/news/slay-the-spire-2-hotfix-patch-notes"
+                      className="text-molten-orange transition-colors hover:text-ember-glow"
+                    >
+                      What changed in the latest patch?
+                    </Link>
+                    <Link
+                      href="/news/slay-the-spire-2-known-issues-and-fixes"
+                      className="text-molten-orange transition-colors hover:text-ember-glow"
+                    >
+                      Which known issues are still active?
+                    </Link>
+                    <Link
+                      href="/news/slay-the-spire-2-first-run-guide-act-1-priorities"
+                      className="text-molten-orange transition-colors hover:text-ember-glow"
+                    >
+                      First-run priorities
+                    </Link>
+                    <Link
+                      href="/guides"
+                      className="text-molten-orange transition-colors hover:text-ember-glow"
+                    >
+                      Need builds & strategy paths?
+                    </Link>
+                    <Link
+                      href="/cards"
+                      className="text-molten-orange transition-colors hover:text-ember-glow"
+                    >
                       Which cards combo with this relic?
                     </Link>
-                    <Link href="/characters" className="text-molten-orange transition-colors hover:text-ember-glow">
-                      Which character should use this relic?
-                    </Link>
-                    <Link href="/potions" className="text-molten-orange transition-colors hover:text-ember-glow">
+                    <Link
+                      href="/potions"
+                      className="text-molten-orange transition-colors hover:text-ember-glow"
+                    >
                       Which potions pair with this relic?
                     </Link>
-                    <Link href="/relics/book_of_five_rings" className="text-molten-orange transition-colors hover:text-ember-glow">
-                      What does Book of Five Rings do in current runs?
-                    </Link>
-                    <Link href="/relics/pocketwatch" className="text-molten-orange transition-colors hover:text-ember-glow">
-                      Is Pocketwatch still worth around 3-card turns?
+                    <Link
+                      href="/relics/book_of_five_rings"
+                      className="text-molten-orange transition-colors hover:text-ember-glow"
+                    >
+                      What does Book of Five Rings do now?
                     </Link>
                     <Link
                       href="/news/slay-the-spire-2-steamdb-patch-tracker"
                       className="text-molten-orange transition-colors hover:text-ember-glow"
                     >
-                      Which relics changed in the latest patch?
-                    </Link>
-                    <Link
-                      href="/news/slay-the-spire-2-multiplayer-coop-guide"
-                      className="text-molten-orange transition-colors hover:text-ember-glow"
-                    >
-                      Is relic sharing relevant in co-op runs?
+                      Track which relics moved this patch
                     </Link>
                   </div>
                 </div>
@@ -338,38 +359,53 @@ export default async function RelicsPage({ searchParams }: RelicsPageProps) {
                 <div className="mt-6 rounded-xl border border-border bg-background/40 p-4 lg:hidden">
                   <h3 className="font-heading text-lg font-bold">Related Queries</h3>
                   <div className="mt-3 flex flex-wrap gap-3 text-sm">
-                    <Link href="/cards" className="text-molten-orange transition-colors hover:text-ember-glow">
+                    <Link
+                      href="/news/slay-the-spire-2-hotfix-patch-notes"
+                      className="text-molten-orange transition-colors hover:text-ember-glow"
+                    >
+                      What changed in the latest patch?
+                    </Link>
+                    <Link
+                      href="/news/slay-the-spire-2-known-issues-and-fixes"
+                      className="text-molten-orange transition-colors hover:text-ember-glow"
+                    >
+                      Which known issues are still active?
+                    </Link>
+                    <Link
+                      href="/news/slay-the-spire-2-first-run-guide-act-1-priorities"
+                      className="text-molten-orange transition-colors hover:text-ember-glow"
+                    >
+                      First-run priorities
+                    </Link>
+                    <Link
+                      href="/guides"
+                      className="text-molten-orange transition-colors hover:text-ember-glow"
+                    >
+                      Need builds & strategy paths?
+                    </Link>
+                    <Link
+                      href="/cards"
+                      className="text-molten-orange transition-colors hover:text-ember-glow"
+                    >
                       Which cards combo with this relic?
                     </Link>
-                    <Link href="/characters" className="text-molten-orange transition-colors hover:text-ember-glow">
-                      Which character should use this relic?
-                    </Link>
-                    <Link href="/potions" className="text-molten-orange transition-colors hover:text-ember-glow">
+                    <Link
+                      href="/potions"
+                      className="text-molten-orange transition-colors hover:text-ember-glow"
+                    >
                       Which potions pair with this relic?
                     </Link>
-                    <Link href="/relics/book_of_five_rings" className="text-molten-orange transition-colors hover:text-ember-glow">
-                      What does Book of Five Rings do in current runs?
-                    </Link>
-                    <Link href="/relics/pocketwatch" className="text-molten-orange transition-colors hover:text-ember-glow">
-                      Is Pocketwatch still worth around 3-card turns?
+                    <Link
+                      href="/relics/book_of_five_rings"
+                      className="text-molten-orange transition-colors hover:text-ember-glow"
+                    >
+                      What does Book of Five Rings do now?
                     </Link>
                     <Link
                       href="/news/slay-the-spire-2-steamdb-patch-tracker"
                       className="text-molten-orange transition-colors hover:text-ember-glow"
                     >
-                      Which relics changed in the latest patch?
-                    </Link>
-                    <Link
-                      href="/news/slay-the-spire-2-multiplayer-coop-guide"
-                      className="text-molten-orange transition-colors hover:text-ember-glow"
-                    >
-                      Is relic sharing relevant in co-op runs?
-                    </Link>
-                    <Link
-                      href="/news/slay-the-spire-2-release-date"
-                      className="text-molten-orange transition-colors hover:text-ember-glow"
-                    >
-                      What is the current release status?
+                      Track the latest relic changes
                     </Link>
                   </div>
                 </div>

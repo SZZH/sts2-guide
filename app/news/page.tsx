@@ -106,11 +106,11 @@ export default function NewsPage() {
             <Link href="/news/slay-the-spire-2-known-issues-and-fixes" className="text-molten-orange transition-colors hover:text-ember-glow">
               Which known issues are still active?
             </Link>
-            <Link href="/news/slay-the-spire-2-multiplayer-coop-guide" className="text-molten-orange transition-colors hover:text-ember-glow">
-              How does Slay the Spire 2 co-op work?
+            <Link href="/news/slay-the-spire-2-first-run-guide-act-1-priorities" className="text-molten-orange transition-colors hover:text-ember-glow">
+              What should I do in my first runs?
             </Link>
-            <Link href="/news/slay-the-spire-2-release-date" className="text-molten-orange transition-colors hover:text-ember-glow">
-              What is the confirmed release date and status?
+            <Link href="/news/slay-the-spire-2-steamdb-patch-tracker" className="text-molten-orange transition-colors hover:text-ember-glow">
+              Which builds and relics changed this patch?
             </Link>
             <Link href="/characters/necrobinder" className="text-molten-orange transition-colors hover:text-ember-glow">
               How should I play Necrobinder?

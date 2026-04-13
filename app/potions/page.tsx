@@ -231,26 +231,41 @@ export default async function PotionsPage({ searchParams }: PotionsPageProps) {
                 <div className="hidden rounded-xl border border-border bg-background/40 p-4 lg:block">
                   <h3 className="font-heading text-lg font-bold">Related Queries</h3>
                   <div className="mt-3 flex flex-wrap gap-3 text-sm">
-                    <Link href="/cards" className="text-molten-orange transition-colors hover:text-ember-glow">
+                    <Link
+                      href="/news/slay-the-spire-2-hotfix-patch-notes"
+                      className="text-molten-orange transition-colors hover:text-ember-glow"
+                    >
+                      What changed in the latest patch?
+                    </Link>
+                    <Link
+                      href="/news/slay-the-spire-2-known-issues-and-fixes"
+                      className="text-molten-orange transition-colors hover:text-ember-glow"
+                    >
+                      Which known issues are still active?
+                    </Link>
+                    <Link
+                      href="/news/slay-the-spire-2-first-run-guide-act-1-priorities"
+                      className="text-molten-orange transition-colors hover:text-ember-glow"
+                    >
+                      What should I do in my first runs?
+                    </Link>
+                    <Link
+                      href="/cards"
+                      className="text-molten-orange transition-colors hover:text-ember-glow"
+                    >
                       Which cards work best with this potion?
                     </Link>
-                    <Link href="/characters" className="text-molten-orange transition-colors hover:text-ember-glow">
-                      Which character benefits most from this potion?
-                    </Link>
-                    <Link href="/relics" className="text-molten-orange transition-colors hover:text-ember-glow">
+                    <Link
+                      href="/relics"
+                      className="text-molten-orange transition-colors hover:text-ember-glow"
+                    >
                       Which relics synergize with this potion?
                     </Link>
                     <Link
-                      href="/news/slay-the-spire-2-steam-charts-player-count"
+                      href="/guides"
                       className="text-molten-orange transition-colors hover:text-ember-glow"
                     >
-                      Is the player base growing right now?
-                    </Link>
-                    <Link
-                      href="/news/slay-the-spire-2-multiplayer-coop-guide"
-                      className="text-molten-orange transition-colors hover:text-ember-glow"
-                    >
-                      Does co-op change potion value?
+                      Need builds & strategy paths?
                     </Link>
                   </div>
                 </div>
@@ -310,32 +325,41 @@ export default async function PotionsPage({ searchParams }: PotionsPageProps) {
                 <div className="mt-6 rounded-xl border border-border bg-background/40 p-4 lg:hidden">
                   <h3 className="font-heading text-lg font-bold">Related Queries</h3>
                   <div className="mt-3 flex flex-wrap gap-3 text-sm">
-                    <Link href="/cards" className="text-molten-orange transition-colors hover:text-ember-glow">
-                      Which cards work best with this potion?
+                    <Link
+                      href="/news/slay-the-spire-2-hotfix-patch-notes"
+                      className="text-molten-orange transition-colors hover:text-ember-glow"
+                    >
+                      What changed in the latest patch?
                     </Link>
-                    <Link href="/characters" className="text-molten-orange transition-colors hover:text-ember-glow">
-                      Which character benefits most from this potion?
+                    <Link
+                      href="/news/slay-the-spire-2-known-issues-and-fixes"
+                      className="text-molten-orange transition-colors hover:text-ember-glow"
+                    >
+                      Which known issues are still active?
                     </Link>
-                    <Link href="/relics" className="text-molten-orange transition-colors hover:text-ember-glow">
+                    <Link
+                      href="/news/slay-the-spire-2-first-run-guide-act-1-priorities"
+                      className="text-molten-orange transition-colors hover:text-ember-glow"
+                    >
+                      First-run priorities
+                    </Link>
+                    <Link
+                      href="/guides"
+                      className="text-molten-orange transition-colors hover:text-ember-glow"
+                    >
+                      Need builds & strategy paths?
+                    </Link>
+                    <Link
+                      href="/cards"
+                      className="text-molten-orange transition-colors hover:text-ember-glow"
+                    >
+                      Which cards pair with this potion?
+                    </Link>
+                    <Link
+                      href="/relics"
+                      className="text-molten-orange transition-colors hover:text-ember-glow"
+                    >
                       Which relics synergize with this potion?
-                    </Link>
-                    <Link
-                      href="/news/slay-the-spire-2-steam-charts-player-count"
-                      className="text-molten-orange transition-colors hover:text-ember-glow"
-                    >
-                      Is the player base growing right now?
-                    </Link>
-                    <Link
-                      href="/news/slay-the-spire-2-multiplayer-coop-guide"
-                      className="text-molten-orange transition-colors hover:text-ember-glow"
-                    >
-                      Does co-op change potion value?
-                    </Link>
-                    <Link
-                      href="/news/slay-the-spire-2-release-date"
-                      className="text-molten-orange transition-colors hover:text-ember-glow"
-                    >
-                      Is the game live in Early Access now?
                     </Link>
                   </div>
                 </div>
