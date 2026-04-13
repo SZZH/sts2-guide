@@ -96,8 +96,7 @@ export default function HomePage() {
             <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-forge-black to-transparent" />
           </div>
           <div className="relative z-10 container mx-auto flex h-full flex-col items-center justify-center gap-6 px-4 text-center">
-            <p className="text-xs uppercase tracking-[0.3em] text-molten-orange">DECISION HUB</p>
-            <h1 className="font-heading text-5xl md:text-7xl font-bold text-white">Slay the Spire 2 — Now Live</h1>
+            <h1 className="font-heading text-5xl md:text-7xl font-bold text-white">Slay the Spire 2</h1>
             <p className="max-w-2xl text-base md:text-xl text-steel-blue">
               Skip the noise. This page routes you straight to the builds, guides, patches, and card lookup
               tailored to patch 0.103.0 and the latest Early Access narrative.

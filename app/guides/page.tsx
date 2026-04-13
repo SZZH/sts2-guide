@@ -90,19 +90,22 @@ const GUIDE_SECTIONS = [
 
 export default function GuidesPage() {
   return (
-    <main className="px-6 py-10 lg:px-16">
+    <main className="min-h-screen bg-gradient-to-b from-background via-background/95 to-background px-6 py-10 lg:px-16">
       <section className="max-w-4xl space-y-6">
-        <p className="text-sm uppercase tracking-[0.3em] text-slate-500">Decision hub</p>
-        <h1 className="text-4xl font-semibold text-slate-900">Task-oriented guidance for every Slay the Spire 2 run</h1>
-        <p className="text-lg text-slate-700">
+        <p className="text-sm uppercase tracking-[0.3em] text-molten-orange">Decision hub</p>
+        <h1 className="font-heading text-4xl font-bold text-white md:text-5xl">Task-oriented guidance for every Slay the Spire 2 run</h1>
+        <p className="text-lg leading-8 text-steel-blue">
           This page doesn’t dump every article at you. It organizes the guidance you actually need today—beginner moves, build paths,
           patch fixes, route choices, and mechanic primers—so you can tap the next decision without scrolling through old news or co-op filler.
         </p>
         <div className="grid gap-4 sm:grid-cols-2">
-          {GUIDE_SECTIONS.slice(0, 2).map((section) => (
-            <article key={section.title} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-              <p className="text-xs uppercase tracking-widest text-slate-500">{section.title}</p>
-              <p className="mt-2 text-sm text-slate-600">{section.description}</p>
+          {GUIDE_SECTIONS.slice(0, 2).map((section, index) => (
+            <article
+              key={section.title}
+              className={`rounded-2xl border p-5 ${index === 0 ? 'border-molten-orange/30 bg-forge-black/70' : 'border-border bg-background/40'}`}
+            >
+              <p className="text-xs uppercase tracking-widest text-molten-orange">{section.title}</p>
+              <p className="mt-2 text-sm leading-7 text-steel-blue">{section.description}</p>
             </article>
           ))}
         </div>
@@ -110,16 +113,16 @@ export default function GuidesPage() {
 
       <section className="mt-16 grid gap-8">
         {GUIDE_SECTIONS.map((section) => (
-          <article key={section.title} className="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-inner">
+          <article key={section.title} className="rounded-3xl border border-border bg-forge-black/70 p-6 shadow-inner">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm uppercase tracking-[0.4em] text-slate-500">{section.title}</p>
-                <p className="mt-1 text-xl font-semibold text-slate-900">{section.description}</p>
+                <p className="text-sm uppercase tracking-[0.4em] text-molten-orange">{section.title}</p>
+                <p className="mt-1 text-xl font-semibold text-white">{section.description}</p>
               </div>
             </div>
-            <div className="mt-4 grid gap-3 text-sm text-slate-700">
+            <div className="mt-4 grid gap-3 text-sm text-steel-blue">
               {section.tasks.map((task) => (
-                <p key={task} className="rounded-2xl border border-dashed border-slate-300 bg-white/80 px-4 py-3">
+                <p key={task} className="rounded-2xl border border-dashed border-border bg-background/50 px-4 py-3">
                   {task}
                 </p>
               ))}
@@ -129,7 +132,7 @@ export default function GuidesPage() {
                 <Link
                   key={cta.href + cta.label}
                   href={cta.href}
-                  className="rounded-full border border-transparent bg-slate-900 px-5 py-2 text-sm font-semibold text-white transition hover:bg-slate-800"
+                  className="rounded-full border border-border bg-shadow-gray px-5 py-2 text-sm font-semibold text-white transition hover:border-molten-orange hover:bg-muted"
                 >
                   {cta.label}
                 </Link>
