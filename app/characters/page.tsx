@@ -118,12 +118,12 @@ export default async function CharactersPage({ searchParams }: CharactersPagePro
       subtitle: 'Starter priorities, first-act pacing, and what to do next.',
     },
     {
-      href: '/guides',
+      href: '/builds',
       title: 'Build Guides',
       subtitle: 'Current archetypes and character plans for patch 0.103.0.',
     },
     {
-      href: '/news/slay-the-spire-2-steamdb-patch-tracker',
+      href: '/patches',
       title: 'Patch Impact',
       subtitle: 'See which builds, roles, and cards shifted this patch.',
     },

@@ -340,12 +340,12 @@ export default function GuidesPage() {
       subtitle: 'First-run focus, pathing, and starter priorities.',
     },
     {
-      href: '/guides',
+      href: '/builds',
       title: 'Build Decisions',
       subtitle: 'Character archetypes and deck blueprints ready for patch 0.103.0.',
     },
     {
-      href: '/news/slay-the-spire-2-steamdb-patch-tracker',
+      href: '/patches',
       title: 'Patch Impact',
       subtitle: 'Track what changed and which decisions shift now.',
     },

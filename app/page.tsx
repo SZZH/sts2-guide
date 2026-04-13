@@ -92,13 +92,13 @@ export default function HomePage() {
       badge: 'Beginner',
     },
     {
-      href: '/guides',
+      href: '/builds',
       label: 'Build Guides',
       description: 'Character archetypes and deck blueprints ready for patch 0.103.0.',
       badge: 'Builds',
     },
     {
-      href: '/news/slay-the-spire-2-steamdb-patch-tracker',
+      href: '/patches',
       label: 'Patch Impact',
       description: 'Track what changed and which decisions shift after each fix.',
       badge: 'Patch',
@@ -159,7 +159,7 @@ export default function HomePage() {
               </p>
             </Link>
             <Link
-              href="/guides"
+              href="/builds"
               className="rounded-xl border border-border bg-forge-black/70 p-5 text-left backdrop-blur-sm transition-all duration-300 hover:border-molten-orange hover:bg-forge-black/85"
             >
               <div className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-molten-orange">
@@ -202,16 +202,16 @@ export default function HomePage() {
 
           <div className="flex gap-4 justify-center mt-8">
             <Link
-              href="/news/slay-the-spire-2-steamdb-patch-tracker"
+              href="/patches"
               className="bg-molten-orange hover:bg-ember-glow text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300 flex items-center gap-2"
             >
-              Latest Patch Tracker
+              Latest Patch Impact
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
             </Link>
             <Link
-              href="/guides"
+              href="/builds"
               className="bg-shadow-gray hover:bg-muted border border-border text-foreground font-semibold px-8 py-3 rounded-lg transition-all duration-300"
             >
               Explore Builds
