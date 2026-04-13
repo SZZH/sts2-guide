@@ -42,7 +42,7 @@ const AVAILABILITY_FILTERS = [
 const CHARACTERS_FAQ_ITEMS = [
   {
     question: 'Which page should I use to compare Slay the Spire 2 characters fast?',
-    answer: 'Use this character roster page to compare availability, mechanic focus, and direct links into each character detail and card pool.',
+    answer: 'Use this character roster page to compare beginner-friendliness, patch context, mechanic focus, and the fastest next route into each character’s build or card pool.',
   },
   {
     question: 'Can I filter between starter and unlockable characters?',
@@ -50,7 +50,41 @@ const CHARACTERS_FAQ_ITEMS = [
   },
   {
     question: 'Where do I go after picking a character?',
-    answer: 'Open the character detail page first, then jump to that character card pool or the full cards database for draft-level decisions.',
+    answer: 'Start with the matching character detail page, then move into the builds hub or the character card pool depending on whether you need strategy direction or draft-level detail.',
+  },
+];
+
+const QUICK_PICKS = [
+  {
+    title: 'Safest first pick',
+    value: 'Ironclad',
+    detail: 'Best for learning Act 1 pacing, damage checks, and HP management without overload.',
+    href: '/news/best-starter-character-slay-the-spire-2-early-access',
+  },
+  {
+    title: 'Next step after basics',
+    value: 'Silent',
+    detail: 'Best follow-up if you want more sequencing depth after your first clean runs.',
+    href: '/builds',
+  },
+  {
+    title: 'Highest setup overhead',
+    value: 'Necrobinder / Regent',
+    detail: 'Take these later once your route and draft discipline are already stable.',
+    href: '/patches',
+  },
+];
+
+const PATCH_CALLOUTS = [
+  {
+    title: 'Patch 0.103.0 favors cleaner routes',
+    body: 'Use the current patch hub before assuming old role advice is still valid, especially for build pivots and archetype timing.',
+    href: '/patches',
+  },
+  {
+    title: 'Character choice should lead into builds',
+    body: 'This page helps you pick the right hero; the real next step is opening the current build route for that character.',
+    href: '/builds',
   },
 ];
 
@@ -158,6 +192,46 @@ export default async function CharactersPage({ searchParams }: CharactersPagePro
       <FAQSchema questions={CHARACTERS_FAQ_ITEMS} />
       <div className="min-h-screen py-12">
         <div className="container mx-auto px-4">
+          <section className="mb-8 rounded-3xl border border-border bg-gradient-to-br from-forge-black to-shadow-gray/70 p-6 md:p-8">
+            <div className="max-w-4xl">
+              <div className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-molten-orange">
+                Character Decision Center
+              </div>
+              <h1 className="font-heading text-4xl font-bold md:text-5xl">Choose the right hero for the current patch</h1>
+              <p className="mt-4 text-base leading-8 text-steel-blue">
+                Don’t treat the roster like a wiki first. Use this page to decide who fits your current skill level,
+                then jump into the build or card pool that matches your next run.
+              </p>
+            </div>
+
+            <div className="mt-8 grid gap-4 md:grid-cols-3">
+              {QUICK_PICKS.map((pick) => (
+                <Link
+                  key={pick.title}
+                  href={pick.href}
+                  className="rounded-2xl border border-border bg-background/50 p-5 transition-colors hover:border-molten-orange"
+                >
+                  <div className="text-xs font-semibold uppercase tracking-[0.18em] text-molten-orange">{pick.title}</div>
+                  <h2 className="mt-3 font-heading text-2xl font-bold text-white">{pick.value}</h2>
+                  <p className="mt-2 text-sm leading-7 text-muted-foreground">{pick.detail}</p>
+                </Link>
+              ))}
+            </div>
+
+            <div className="mt-8 grid gap-4 md:grid-cols-2">
+              {PATCH_CALLOUTS.map((callout) => (
+                <Link
+                  key={callout.title}
+                  href={callout.href}
+                  className="rounded-2xl border border-border bg-background/40 p-5 transition-colors hover:border-molten-orange"
+                >
+                  <h3 className="font-heading text-xl font-bold text-white">{callout.title}</h3>
+                  <p className="mt-2 text-sm leading-7 text-steel-blue">{callout.body}</p>
+                </Link>
+              ))}
+            </div>
+          </section>
+
           <div className="rounded-2xl border border-border bg-forge-black/70 p-6 md:p-8">
           <MobileFiltersPanel
             title="Filters"
@@ -250,14 +324,17 @@ export default async function CharactersPage({ searchParams }: CharactersPagePro
               <div className="hidden rounded-xl border border-border bg-background/40 p-4 lg:block">
                 <h3 className="font-heading text-lg font-bold">Related Queries</h3>
                 <div className="mt-3 flex flex-wrap gap-3 text-sm">
-                  <Link href="/cards" className="text-molten-orange transition-colors hover:text-ember-glow">
-                    Which cards belong to each character?
+                  <Link href="/builds" className="text-molten-orange transition-colors hover:text-ember-glow">
+                    Which build should I read next?
+                  </Link>
+                  <Link href="/news/best-starter-character-slay-the-spire-2-early-access" className="text-molten-orange transition-colors hover:text-ember-glow">
+                    Who is the safest first pick right now?
                   </Link>
                   <Link href="/relics" className="text-molten-orange transition-colors hover:text-ember-glow">
                     Which relics fit each character?
                   </Link>
-                  <Link href="/potions" className="text-molten-orange transition-colors hover:text-ember-glow">
-                    Which potions are best per character?
+                  <Link href="/cards" className="text-molten-orange transition-colors hover:text-ember-glow">
+                    Which cards belong to each character?
                   </Link>
                   <Link
                     href="/news/slay-the-spire-2-top-10-beginner-mistakes"
@@ -266,16 +343,16 @@ export default async function CharactersPage({ searchParams }: CharactersPagePro
                     What beginner mistakes should I avoid?
                   </Link>
                   <Link
-                    href="/news/slay-the-spire-2-what-to-upgrade-first"
+                    href="/patches"
                     className="text-molten-orange transition-colors hover:text-ember-glow"
                   >
-                    What should I upgrade first?
+                    Which characters changed most this patch?
                   </Link>
                   <Link
-                    href="/news/slay-the-spire-2-steamdb-patch-tracker"
+                    href="/potions"
                     className="text-molten-orange transition-colors hover:text-ember-glow"
                   >
-                    What changed in the latest patch?
+                    Which potions help weak characters stabilize?
                   </Link>
                   <Link
                     href="/news/slay-the-spire-2-first-run-guide-act-1-priorities"
@@ -290,17 +367,25 @@ export default async function CharactersPage({ searchParams }: CharactersPagePro
             <div>
               <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
                 <div>
-                  <h1 className="font-heading text-3xl font-bold md:text-4xl">Character Roster</h1>
+                  <h1 className="font-heading text-3xl font-bold md:text-4xl">Character roster and quick picks</h1>
                   <p className="mt-2 text-sm leading-7 text-steel-blue">
-                    Showing {filteredCharacters.length} characters from the current five-character roster. Use this page to query unlock order and jump straight into each character&apos;s card pool.
+                    Showing {filteredCharacters.length} characters from the current five-character roster. Use this page to compare who is safest now, who has more setup overhead, and where to go next for each hero.
                   </p>
                 </div>
-                <Link
-                  href="/cards"
-                  className="text-sm font-semibold text-molten-orange transition-colors hover:text-ember-glow"
-                >
-                  Open full cards database
-                </Link>
+                <div className="flex flex-wrap gap-3 text-sm">
+                  <Link
+                    href="/builds"
+                    className="font-semibold text-molten-orange transition-colors hover:text-ember-glow"
+                  >
+                    Open builds hub
+                  </Link>
+                  <Link
+                    href="/cards"
+                    className="font-semibold text-molten-orange transition-colors hover:text-ember-glow"
+                  >
+                    Open full cards database
+                  </Link>
+                </div>
               </div>
 
               <div className="mb-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
@@ -401,14 +486,17 @@ export default async function CharactersPage({ searchParams }: CharactersPagePro
               <div className="mt-6 rounded-xl border border-border bg-background/40 p-4 lg:hidden">
                 <h3 className="font-heading text-lg font-bold">Related Queries</h3>
                 <div className="mt-3 flex flex-wrap gap-3 text-sm">
-                  <Link href="/cards" className="text-molten-orange transition-colors hover:text-ember-glow">
-                    Which cards belong to each character?
+                  <Link href="/builds" className="text-molten-orange transition-colors hover:text-ember-glow">
+                    Which build should I read next?
+                  </Link>
+                  <Link href="/news/best-starter-character-slay-the-spire-2-early-access" className="text-molten-orange transition-colors hover:text-ember-glow">
+                    Who is the safest first pick right now?
                   </Link>
                   <Link href="/relics" className="text-molten-orange transition-colors hover:text-ember-glow">
                     Which relics fit each character?
                   </Link>
-                  <Link href="/potions" className="text-molten-orange transition-colors hover:text-ember-glow">
-                    Which potions are best per character?
+                  <Link href="/cards" className="text-molten-orange transition-colors hover:text-ember-glow">
+                    Which cards belong to each character?
                   </Link>
                   <Link
                     href="/news/slay-the-spire-2-top-10-beginner-mistakes"
@@ -417,23 +505,23 @@ export default async function CharactersPage({ searchParams }: CharactersPagePro
                     What beginner mistakes should I avoid?
                   </Link>
                   <Link
-                    href="/news/slay-the-spire-2-what-to-upgrade-first"
+                    href="/patches"
                     className="text-molten-orange transition-colors hover:text-ember-glow"
                   >
-                    What should I upgrade first?
+                    Which characters changed most this patch?
                   </Link>
-                <Link
-                  href="/news/slay-the-spire-2-steamdb-patch-tracker"
-                  className="text-molten-orange transition-colors hover:text-ember-glow"
-                >
-                  What changed in the latest patch?
-                </Link>
-                <Link
-                  href="/news/slay-the-spire-2-first-run-guide-act-1-priorities"
-                  className="text-molten-orange transition-colors hover:text-ember-glow"
-                >
-                  Where should my first run begin?
-                </Link>
+                  <Link
+                    href="/potions"
+                    className="text-molten-orange transition-colors hover:text-ember-glow"
+                  >
+                    Which potions help weak characters stabilize?
+                  </Link>
+                  <Link
+                    href="/news/slay-the-spire-2-first-run-guide-act-1-priorities"
+                    className="text-molten-orange transition-colors hover:text-ember-glow"
+                  >
+                    Where should my first run begin?
+                  </Link>
                   <Link
                     href="/characters/necrobinder"
                     className="text-molten-orange transition-colors hover:text-ember-glow"

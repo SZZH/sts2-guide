@@ -1,585 +1,143 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { CHARACTERS } from '@/shared/gameData';
-import { GUIDE_ARTICLES } from '@/shared/guidesData';
 
 export const metadata: Metadata = {
-  title: 'Slay the Spire 2 Builds and Strategy Guide: Starter to Advanced Paths',
+  title: 'Slay the Spire 2 Guide Hub — Decision Paths',
   description:
-    'Slay the Spire 2 build and strategy guides for starter and advanced runs. Compare practical deck paths, card synergies, and decision rules by character.',
+    'Task-oriented Slay the Spire 2 guidance grouped into Beginner, Build Path, Patch Adjustments, Route Decisions, and Mechanics so you know exactly what to read next.',
   keywords: [
-    'Slay the Spire 2 builds',
-    'StS2 build guide',
-    'best StS2 decks',
-    'Slay the Spire 2 strategy guide',
+    'Slay the Spire 2 guide hub',
+    'Slay the Spire 2 decisions',
+    'Slay the Spire 2 beginner path',
   ],
   alternates: {
     canonical: '/guides',
   },
-  openGraph: {
-    title: 'Slay the Spire 2 Builds and Strategy Guide',
-    description:
-      'Character build guides with practical deck plans, card synergy tips, and first-run strategy checklists.',
-  },
 };
 
-interface Build {
-  name: string;
-  character: string;
-  difficulty: '⭐' | '⭐⭐' | '⭐⭐⭐';
-  strength: '⭐⭐⭐' | '⭐⭐⭐⭐' | '⭐⭐⭐⭐⭐';
-  description: string;
-  coreIdea: string;
-  keyCards: string[];
-  recommendedRelics: string[];
-  strengths: string[];
-  weaknesses: string[];
-  tips: string[];
-}
-
-const BUILDS: Build[] = [
-  // Ironclad Builds
+const GUIDE_SECTIONS = [
   {
-    name: 'Strength Scaling',
-    character: 'ironclad',
-    difficulty: '⭐⭐',
-    strength: '⭐⭐⭐⭐⭐',
-    description: 'Stack Strength to astronomical levels and crush enemies with overwhelming damage.',
-    coreIdea: 'Build Strength early through cards like Aggression and Hellraiser, then leverage that Strength with multi-hit attacks and self-damage cards for explosive turns.',
-    keyCards: ['Aggression', 'Hellraiser', 'Limit Break', 'Inflame', 'Spot Weakness', 'Heavy Blade'],
-    recommendedRelics: ['Vajra', 'Girya', 'Chemical X', 'Pen Nib'],
-    strengths: ['Incredible late-game scaling', 'Simple to execute', 'Crushes bosses', 'Consistent damage output'],
-    weaknesses: ['Weak early game', 'Vulnerable to artifact removal', 'Requires time to set up', 'Struggles against fast enemies'],
-    tips: [
-      'Prioritize Strength gain in Act 1 to snowball into Acts 2 and 3',
-      'Look for Limit Break to double your Strength stacks',
-      'Pair with Exhaust synergies to thin your deck',
-      'Self-damage cards like Hellraiser provide excellent value with high Strength',
+    title: 'Beginner Path',
+    description:
+      'First ten runs, starter character picks, and early campfire choices that keep new players alive long enough to reach Act 2.',
+    tasks: [
+      'Follow a single, high-value build until you understand timing and ramp-up',
+      'Understand starter relics and why protecting Osty matters',
+      'Master first-run priorities: when to rest, upgrade, or skip',
+    ],
+    ctas: [
+      { label: 'Browse beginner builds', href: '/builds' },
+      { label: 'Compare starter characters', href: '/characters' },
     ],
   },
   {
-    name: 'Exhaust Synergy',
-    character: 'ironclad',
-    difficulty: '⭐⭐⭐',
-    strength: '⭐⭐⭐⭐',
-    description: 'Use Exhaust mechanics to thin your deck while triggering powerful synergies.',
-    coreIdea: 'Build around cards that benefit from Exhausting, using Feel No Pain for block and Dead Branch for card generation. Create a lean, powerful deck that cycles quickly.',
-    keyCards: ['Feel No Pain', 'Dark Embrace', 'Burning Pact', 'Fiend Fire', 'Corruption', 'Second Wind'],
-    recommendedRelics: ['Dead Branch', 'Charon\'s Ashes', 'Strange Spoon', 'Tough Bandages'],
-    strengths: ['Excellent deck cycling', 'Strong defensive capabilities', 'Scales well into late game', 'Flexible strategy'],
-    weaknesses: ['Relic dependent (Dead Branch)', 'Complex to pilot', 'Can brick without setup', 'Vulnerable to status effects'],
-    tips: [
-      'Dead Branch transforms this build from good to exceptional',
-      'Corruption is the ultimate payoff card if you can survive without Defends',
-      'Balance Exhaust cards with sustainable damage sources',
-      'Dark Embrace provides crucial card draw to maintain tempo',
+    title: 'Build Path',
+    description:
+      'Decide which builds to chase based on the current patch, which archetypes still win, and how to sequence upgrades for the core cards you actually find.',
+    tasks: [
+      'Identify a role (damage, control, tank) and stick to builds that support it',
+      'Track key card synergies that scale through Acts 2 and 3',
+      'Pair relics with build goals so you know what to keep and what to sell',
+    ],
+    ctas: [
+      { label: 'Go to the builds hub', href: '/builds' },
+      { label: 'Reference characters for build flavor', href: '/characters' },
     ],
   },
   {
-    name: 'Barricade Tank',
-    character: 'ironclad',
-    difficulty: '⭐⭐',
-    strength: '⭐⭐⭐⭐',
-    description: 'Stack massive amounts of Block and never lose it, becoming an unstoppable fortress.',
-    coreIdea: 'Use Barricade to retain Block between turns, then stack it infinitely with Entrench and Body Slam for both defense and offense.',
-    keyCards: ['Barricade', 'Entrench', 'Body Slam', 'Ghostly Armor', 'Blood Wall', 'Impervious'],
-    recommendedRelics: ['Calipers', 'Runic Pyramid', 'Frozen Egg', 'Anchor'],
-    strengths: ['Nearly invincible once set up', 'Unique playstyle', 'Crushes multi-turn fights', 'Block IS your damage'],
-    weaknesses: ['Very slow to set up', 'Vulnerable before Barricade', 'Weak to artifact removal', 'Struggles in Act 1'],
-    tips: [
-      'Prioritize finding Barricade early - the build doesn\'t work without it',
-      'Calipers relic makes you nearly unkillable',
-      'Body Slam becomes your primary damage source',
-      'Self-damage cards are risky but provide excellent Block generation',
+    title: 'Patch Adjustments',
+    description:
+      'Summaries of recent balance shifts, plus the quick decisions you need to rewrite your priorities when a relic gets nerfed or a card buff lands.',
+    tasks: [
+      'Read the latest patch impact and what it means for your win conditions',
+      'Retrofit current builds with buffed cards or avoid nerfed chains',
+      'Update your tier expectations based on fresh stability signals',
     ],
-  },
-
-  // Silent Builds
-  {
-    name: 'Sly Discard',
-    character: 'silent',
-    difficulty: '⭐⭐⭐',
-    strength: '⭐⭐⭐⭐⭐',
-    description: 'Master the new Sly mechanic to play multiple cards per turn through strategic discarding.',
-    coreIdea: 'Use Master Planner to grant Sly to powerful cards, then discard them with Calculated Gamble or Acrobatics to play them for free. Chain multiple Sly cards in a single turn for explosive combos.',
-    keyCards: ['Master Planner', 'Flick Flack', 'Reflex', 'Calculated Gamble', 'Acrobatics', 'Prepared'],
-    recommendedRelics: ['Tough Bandages', 'Gambling Chip', 'Tingsha', 'Runic Pyramid'],
-    strengths: ['Highest combo potential', 'Incredible card advantage', 'Flexible and adaptive', 'Unique to StS2'],
-    weaknesses: ['Very complex to pilot', 'Requires specific cards', 'Can brick without setup', 'Difficult for beginners'],
-    tips: [
-      'Master Planner is the core enabler - prioritize finding it',
-      'Reflex is a free draw engine when combined with discard effects',
-      'Plan your discards carefully to maximize Sly triggers',
-      'Tough Bandages provides free damage on every discard',
+    ctas: [
+      { label: 'Plan around the latest patch', href: '/patches' },
+      { label: 'Link to builds influenced by this patch', href: '/builds' },
     ],
   },
   {
-    name: 'Poison Stack',
-    character: 'silent',
-    difficulty: '⭐⭐',
-    strength: '⭐⭐⭐⭐',
-    description: 'Apply massive Poison stacks and watch enemies melt over time.',
-    coreIdea: 'Focus on Poison application cards early, then scale with Catalyst to multiply Poison stacks. Use defensive cards to survive while Poison does the work.',
-    keyCards: ['Deadly Poison', 'Noxious Fumes', 'Catalyst', 'Bouncing Flask', 'Corpse Explosion', 'Envenom'],
-    recommendedRelics: ['Snecko Skull', 'Toxic Egg', 'Kunai', 'Ornamental Fan'],
-    strengths: ['Excellent boss killer', 'Scales infinitely', 'Energy efficient', 'Consistent strategy'],
-    weaknesses: ['Slow against fast enemies', 'Weak in Act 1', 'Struggles with artifact', 'Requires defensive support'],
-    tips: [
-      'Catalyst is the key payoff - double your Poison for instant value',
-      'Noxious Fumes provides passive Poison every turn',
-      'Corpse Explosion clears multi-enemy fights efficiently',
-      'Balance Poison application with defensive cards to survive',
+    title: 'Route Decisions',
+    description:
+      'Which elites to fight, when to visit the new optional fights, and how to sequence upgrade nodes, shrines, and camps for the rolls that maximize survival.',
+    tasks: [
+      'Decide early whether you are a damage dealer, tank, or hybrid',
+      'Track which characters thrive against upcoming elites',
+      'Force/(or avoid) branching paths when their rewards sync with your build',
+    ],
+    ctas: [
+      { label: 'See character decision matrices', href: '/characters' },
+      { label: 'Pull detailed route scenarios', href: '/patches' },
     ],
   },
   {
-    name: 'Shiv Spam',
-    character: 'silent',
-    difficulty: '⭐⭐',
-    strength: '⭐⭐⭐⭐',
-    description: 'Generate endless 0-cost Shivs and overwhelm enemies with sheer volume.',
-    coreIdea: 'Use Blade Dance and Cloak and Dagger to flood your hand with Shivs, then boost their damage with Accuracy and After Image. Trigger relics and powers with every Shiv played.',
-    keyCards: ['Blade Dance', 'Cloak and Dagger', 'Accuracy', 'After Image', 'Infinite Blades', 'Storm of Steel'],
-    recommendedRelics: ['Kunai', 'Shuriken', 'Ornamental Fan', 'Tingsha', 'Ninja Scroll'],
-    strengths: ['Explosive burst turns', 'Excellent relic synergies', 'Fun to pilot', 'Strong defensive scaling'],
-    weaknesses: ['Hand size limitations', 'Relic dependent', 'Weak without setup', 'Vulnerable to Time Eater'],
-    tips: [
-      'Kunai and Shuriken are game-changing relics for this build',
-      'After Image provides scaling Block with every Shiv',
-      'Accuracy is crucial - +4 damage per Shiv adds up fast',
-      'Storm of Steel can generate massive Shiv counts in one turn',
+    title: 'Mechanics & References',
+    description:
+      'Need to understand a new mechanic, relic interaction, or how cards stack with status effects? These quick summaries tie back to the builds that rely on them.',
+    tasks: [
+      'Review the refreshed mechanics before you invest in a build',
+      'Cross-reference cards and relics that interact with your chosen archetype',
+      'Confirm the current version notes so you know what is still viable',
     ],
-  },
-
-  // Necrobinder Builds
-  {
-    name: 'Doom Control',
-    character: 'necrobinder',
-    difficulty: '⭐⭐',
-    strength: '⭐⭐⭐⭐⭐',
-    description: 'Stack Doom on enemies to punish their attacks and control the battlefield.',
-    coreIdea: 'Apply Doom stacks to enemies before they attack, causing them to take massive damage when they try to hit you. Use Osty as a defensive wall while Doom does the work.',
-    keyCards: ['Blight Strike', 'Deathbringer', 'Oblivion', 'Scourge', 'Doom Cascade', 'Inevitable End'],
-    recommendedRelics: ['Doom Hourglass', 'Runic Pyramid', 'Frozen Eye', 'Sundial'],
-    strengths: ['Punishes aggressive enemies', 'Excellent scaling', 'Strong defensive synergy', 'Unique mechanic'],
-    weaknesses: ['Weak against defensive enemies', 'Requires setup time', 'Doom Hourglass dependent', 'Complex timing'],
-    tips: [
-      'Doom Hourglass is the ultimate payoff relic - gain energy when Doom triggers',
-      'Stack Doom before enemies attack for maximum value',
-      'Use Osty to absorb hits while Doom accumulates',
-      'Doom Cascade can spread Doom to all enemies',
-    ],
-  },
-  {
-    name: 'Osty Tank',
-    character: 'necrobinder',
-    difficulty: '⭐',
-    strength: '⭐⭐⭐⭐',
-    description: 'Use Osty as an invincible shield while you set up your win condition.',
-    coreIdea: 'Invest heavily in Osty\'s HP and damage output, using Bodyguard and Pull Aggro to redirect all damage to Osty. Heal Osty between fights and use it as your primary defensive tool.',
-    keyCards: ['Bodyguard', 'Pull Aggro', 'Empower', 'Plague Carrier', 'Bone Armor', 'Skeletal Reinforcement'],
-    recommendedRelics: ['Osty\'s Binding', 'Anchor', 'Torii', 'Tungsten Rod'],
-    strengths: ['Beginner friendly', 'Consistent defense', 'Osty scales well', 'Forgiving gameplay'],
-    weaknesses: ['Over-reliant on Osty', 'Weak if Osty dies', 'Limited scaling', 'Predictable'],
-    tips: [
-      'Always protect Osty - it\'s your primary defensive tool',
-      'Empower makes Osty hit harder and tank better',
-      'Bodyguard redirects all damage to Osty for one turn',
-      'Heal Osty at campfires to maintain your defense',
-    ],
-  },
-  {
-    name: 'Soul Engine',
-    character: 'necrobinder',
-    difficulty: '⭐⭐⭐',
-    strength: '⭐⭐⭐⭐',
-    description: 'Generate endless Soul cards for massive card draw and energy advantage.',
-    coreIdea: 'Use Carve Ghost and Grave Warden to generate Soul cards, then use them to draw through your deck and play long combo turns. Combine with Severance for energy generation.',
-    keyCards: ['Carve Ghost', 'Grave Warden', 'Severance', 'Friendship', 'Soul Harvest', 'Spectral Chains'],
-    recommendedRelics: ['Runic Pyramid', 'Bag of Preparation', 'Lantern', 'Ice Cream'],
-    strengths: ['Incredible card draw', 'Long combo turns', 'Flexible strategy', 'High skill ceiling'],
-    weaknesses: ['Complex to pilot', 'Energy hungry', 'Can brick', 'Requires specific cards'],
-    tips: [
-      'Souls provide +2 card draw each - use them to cycle your deck',
-      'Severance converts Souls into energy for explosive turns',
-      'Runic Pyramid lets you hoard Souls for a massive turn',
-      'Balance Soul generation with actual win conditions',
-    ],
-  },
-
-  // Regent Builds
-  {
-    name: 'Stars Accumulation',
-    character: 'regent',
-    difficulty: '⭐⭐⭐',
-    strength: '⭐⭐⭐⭐⭐',
-    description: 'Hoard Stars across multiple turns, then unleash devastating cosmic abilities.',
-    coreIdea: 'Use Hidden Cache and Starlight to accumulate Stars without spending them. Save up 20+ Stars, then spend them all at once on Falling Stars or Celestial Barrage for massive burst damage.',
-    keyCards: ['Hidden Cache', 'Starlight', 'Falling Stars', 'Celestial Barrage', 'Cosmic Alignment', 'Star Storm'],
-    recommendedRelics: ['Stellar Compass', 'Ice Cream', 'Runic Pyramid', 'Bottled Stars'],
-    strengths: ['Massive burst potential', 'Flexible timing', 'Scales infinitely', 'Unique resource system'],
-    weaknesses: ['Weak early game', 'Requires patience', 'Vulnerable before payoff', 'Complex planning'],
-    tips: [
-      'Stars don\'t reset between turns - save them for critical moments',
-      'Stellar Compass gives you 3 Stars every combat',
-      'Ice Cream preserves unused energy for even bigger turns',
-      'Plan 2-3 turns ahead to maximize Star efficiency',
-    ],
-  },
-  {
-    name: 'Forge Artifacts',
-    character: 'regent',
-    difficulty: '⭐⭐',
-    strength: '⭐⭐⭐⭐',
-    description: 'Create permanent artifacts that snowball into overwhelming advantage.',
-    coreIdea: 'Use Forge cards to create Sovereign Blade and other artifacts early. Each Forge makes your blade stronger, creating a permanent scaling damage source that retains between turns.',
-    keyCards: ['Forge', 'Sovereign Blade', 'Reforge', 'Master Smith', 'Tempered Steel', 'Blade Dance'],
-    recommendedRelics: ['Runic Pyramid', 'Pen Nib', 'Kunai', 'Shuriken'],
-    strengths: ['Permanent scaling', 'Retain synergies', 'Simple execution', 'Strong late game'],
-    weaknesses: ['Slow to set up', 'Weak Act 1', 'Requires specific cards', 'Vulnerable to artifact removal'],
-    tips: [
-      'Forge early and often - each Forge adds permanent damage',
-      'Sovereign Blade Retains, so you can save it for bosses',
-      'Runic Pyramid lets you hold your blade indefinitely',
-      'Combine with Strength gain for even more damage',
-    ],
-  },
-  {
-    name: 'Minion Swarm',
-    character: 'regent',
-    difficulty: '⭐⭐',
-    strength: '⭐⭐⭐⭐',
-    description: 'Summon an army of celestial minions to fight alongside you.',
-    coreIdea: 'Use Summon Minion and Celestial Army to create temporary allies that attack and block for you. Unlike Necrobinder\'s Osty, Regent\'s minions are disposable but powerful.',
-    keyCards: ['Summon Minion', 'Celestial Army', 'Minion Empowerment', 'Royal Guard', 'Astral Projection', 'Legion'],
-    recommendedRelics: ['Champion Belt', 'Girya', 'Vajra', 'Chemical X'],
-    strengths: ['Strong multi-enemy fights', 'Good defensive scaling', 'Flexible strategy', 'Fun to pilot'],
-    weaknesses: ['Minions are temporary', 'Weak single-target', 'Energy hungry', 'Requires setup'],
-    tips: [
-      'Minions attack automatically - use them for passive damage',
-      'Celestial Army summons multiple minions at once',
-      'Minion Empowerment makes your minions hit harder',
-      'Use minions to tank hits while you set up your win condition',
+    ctas: [
+      { label: 'Lookup mechanics', href: '/mechanics' },
+      { label: 'Cross-check cards and relics', href: '/mechanics' },
     ],
   },
 ];
 
 export default function GuidesPage() {
-  const highlightedGuideSlugs = [
-    'exhaust-mechanic-explained',
-    'drawpile-mechanic-explained',
-    'retain-mechanic-explained',
-    'card-upgrade-priority',
-    'how-to-evaluate-opening-hand',
-    'ironclad-early-build',
-  ];
-  const highlightedGuides = highlightedGuideSlugs
-    .map((slug) => GUIDE_ARTICLES.find((guide) => guide.slug === slug))
-    .filter((guide): guide is (typeof GUIDE_ARTICLES)[number] => Boolean(guide));
-  const intentLinks = [
-    {
-      href: '/guides/exhaust-mechanic-explained',
-      query: 'slay the spire 2 exhaust mechanic',
-      label: 'Exhaust Mechanic Explained',
-    },
-    {
-      href: '/guides/drawpile-mechanic-explained',
-      query: 'sts2 drawpile mechanic',
-      label: 'Drawpile Mechanic Explained',
-    },
-    {
-      href: '/guides/act1-route-priority',
-      query: 'sts2 act 1 route',
-      label: 'Act 1 Route Priority',
-    },
-    {
-      href: '/guides/card-upgrade-priority',
-      query: 'slay the spire 2 upgrade priority',
-      label: 'Card Upgrade Priority',
-    },
-    {
-      href: '/guides/common-beginner-mistakes',
-      query: 'sts2 beginner mistakes',
-      label: 'Common Beginner Mistakes',
-    },
-    {
-      href: '/guides/how-to-evaluate-opening-hand',
-      query: 'slay the spire 2 opening hand',
-      label: 'Opening Hand Checklist',
-    },
-    {
-      href: '/guides/retain-mechanic-explained',
-      query: 'slay the spire 2 retain',
-      label: 'Retain Guide',
-    },
-    {
-      href: '/cards/hammer_time',
-      query: 'slay the spire 2 hammer time',
-      label: 'Hammer Time Card',
-    },
-    {
-      href: '/guides/regent-card-pool-priority',
-      query: 'regent card pool',
-      label: 'Regent Card Pool Priority',
-    },
-    {
-      href: '/guides/celestial-might-regent-guide',
-      query: 'celestial might sts2',
-      label: 'Celestial Might Guide',
-    },
-    {
-      href: '/guides/necrobinder-common-cards',
-      query: 'necrobinder common cards',
-      label: 'Necrobinder Common Cards',
-    },
-  ];
-
-  const guideTaskCards = [
-    {
-      href: '/news/slay-the-spire-2-first-run-guide-act-1-priorities',
-      title: 'Beginner Path',
-      subtitle: 'First-run focus, pathing, and starter priorities.',
-    },
-    {
-      href: '/builds',
-      title: 'Build Decisions',
-      subtitle: 'Character archetypes and deck blueprints ready for patch 0.103.0.',
-    },
-    {
-      href: '/patches',
-      title: 'Patch Impact',
-      subtitle: 'Track what changed and which decisions shift now.',
-    },
-    {
-      href: '/characters',
-      title: 'Character Choice',
-      subtitle: 'Compare availability, difficulty, and card pools.',
-    },
-  ];
-
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background via-background/95 to-background">
-      {/* Hero Section */}
-      <section className="relative py-20 px-4">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(249,115,22,0.1),transparent_50%)]" />
-        <div className="container relative">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-orange-400 via-red-400 to-purple-400 bg-clip-text text-transparent">
-              STS2 BUILDS & STRATEGY
-            </h1>
-            <p className="text-xl text-muted-foreground">
-              Find the exact Slay the Spire 2 build guide you need: first-run safety lines, character-specific plans, and mechanic-driven strategy pivots.
-            </p>
-          </div>
+    <main className="px-6 py-10 lg:px-16">
+      <section className="max-w-4xl space-y-6">
+        <p className="text-sm uppercase tracking-[0.3em] text-slate-500">Decision hub</p>
+        <h1 className="text-4xl font-semibold text-slate-900">Task-oriented guidance for every Slay the Spire 2 run</h1>
+        <p className="text-lg text-slate-700">
+          This page doesn’t dump every article at you. It organizes the guidance you actually need today—beginner moves, build paths,
+          patch fixes, route choices, and mechanic primers—so you can tap the next decision without scrolling through old news or co-op filler.
+        </p>
+        <div className="grid gap-4 sm:grid-cols-2">
+          {GUIDE_SECTIONS.slice(0, 2).map((section) => (
+            <article key={section.title} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+              <p className="text-xs uppercase tracking-widest text-slate-500">{section.title}</p>
+              <p className="mt-2 text-sm text-slate-600">{section.description}</p>
+            </article>
+          ))}
         </div>
       </section>
 
-      <section className="px-4 pb-6">
-        <div className="container">
-          <div className="rounded-2xl border border-border bg-card/40 p-6 md:p-8">
-            <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
-              <h2 className="font-heading text-2xl font-bold">Foundational Guides</h2>
-              <Link href="/mechanics" className="text-sm font-semibold text-molten-orange transition-colors hover:text-ember-glow">
-                Need mechanic basics first?
-              </Link>
+      <section className="mt-16 grid gap-8">
+        {GUIDE_SECTIONS.map((section) => (
+          <article key={section.title} className="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-inner">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-sm uppercase tracking-[0.4em] text-slate-500">{section.title}</p>
+                <p className="mt-1 text-xl font-semibold text-slate-900">{section.description}</p>
+              </div>
             </div>
-            <div className="grid gap-3 md:grid-cols-2">
-              {highlightedGuides.map((guide) => (
+            <div className="mt-4 grid gap-3 text-sm text-slate-700">
+              {section.tasks.map((task) => (
+                <p key={task} className="rounded-2xl border border-dashed border-slate-300 bg-white/80 px-4 py-3">
+                  {task}
+                </p>
+              ))}
+            </div>
+            <div className="mt-6 flex flex-wrap gap-3">
+              {section.ctas.map((cta) => (
                 <Link
-                  key={guide.slug}
-                  href={`/guides/${guide.slug}`}
-                  className="rounded-xl border border-border bg-background/50 px-4 py-3 transition-colors hover:border-molten-orange"
+                  key={cta.href + cta.label}
+                  href={cta.href}
+                  className="rounded-full border border-transparent bg-slate-900 px-5 py-2 text-sm font-semibold text-white transition hover:bg-slate-800"
                 >
-                  <div className="font-semibold">{guide.title}</div>
-                  <div className="mt-1 text-xs text-muted-foreground">{guide.readTime} · Updated {guide.updatedAt}</div>
+                  {cta.label}
                 </Link>
               ))}
             </div>
-
-            <div className="mt-6 rounded-xl border border-border bg-background/40 p-4">
-              <h3 className="font-heading text-lg font-bold">Search Intent Shortcuts</h3>
-              <p className="mt-1 text-sm text-muted-foreground">
-                Open the exact guide or card page that matches recurring player questions.
-              </p>
-              <div className="mt-3 grid gap-3 md:grid-cols-2">
-                {intentLinks.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className="rounded-lg border border-border bg-background/50 px-3 py-2 transition-colors hover:border-molten-orange"
-                  >
-                    <div className="text-[11px] uppercase tracking-[0.16em] text-steel-blue">Query: {item.query}</div>
-                    <div className="mt-1 text-sm font-semibold">{item.label}</div>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-    </section>
-
-    <section className="px-4 pb-10">
-      <div className="container">
-        <div className="rounded-2xl border border-border bg-background/40 p-6 md:p-8">
-          <div className="mb-5 flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-            <h2 className="font-heading text-2xl font-bold">Decision Shortcuts</h2>
-            <p className="text-sm text-muted-foreground max-w-2xl">
-              Choose a task lane to turn search intent into immediate action—beginner, builds, patch shifts, or character choice.
-            </p>
-          </div>
-          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-            {guideTaskCards.map((card) => (
-              <Link
-                key={card.href}
-                href={card.href}
-                className="rounded-xl border border-border bg-forge-black/70 p-5 transition-all duration-300 hover:border-molten-orange hover:bg-forge-black/85"
-              >
-                <h3 className="font-heading text-xl font-bold text-white">{card.title}</h3>
-                <p className="mt-2 text-sm text-steel-blue">{card.subtitle}</p>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-
-    {/* Builds by Character */}
-      {CHARACTERS.map((character) => {
-        const characterBuilds = BUILDS.filter(b => b.character === character.slug);
-        
-        return (
-          <section key={character.slug} className="py-12 px-4">
-            <div className="container">
-              <div className="mb-8">
-                <Link
-                  href={`/characters/${character.slug}`}
-                  className="inline-flex items-center gap-3 group mb-4"
-                >
-                  <h2 className="text-3xl font-bold group-hover:text-orange-400 transition-colors">
-                    {character.name}
-                  </h2>
-                  <span className="text-sm text-muted-foreground">→ View Character</span>
-                </Link>
-                <p className="text-muted-foreground">{character.description}</p>
-              </div>
-
-              <div className="grid lg:grid-cols-3 gap-6">
-                {characterBuilds.map((build) => (
-                  <div
-                    key={build.name}
-                    className="group bg-card border border-border rounded-lg p-6 hover:border-orange-500/50 transition-all duration-300"
-                  >
-                    <div className="mb-4">
-                      <h3 className="text-2xl font-bold mb-2 group-hover:text-orange-400 transition-colors">
-                        {build.name}
-                      </h3>
-                      <div className="flex gap-4 text-sm">
-                        <div>
-                          <span className="text-muted-foreground">Difficulty: </span>
-                          <span>{build.difficulty}</span>
-                        </div>
-                        <div>
-                          <span className="text-muted-foreground">Strength: </span>
-                          <span>{build.strength}</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    <p className="text-sm text-muted-foreground mb-4">{build.description}</p>
-
-                    <div className="space-y-4">
-                      <div>
-                        <h4 className="text-sm font-semibold text-orange-400 mb-2">Core Idea</h4>
-                        <p className="text-sm text-muted-foreground">{build.coreIdea}</p>
-                      </div>
-
-                      <div>
-                        <h4 className="text-sm font-semibold text-orange-400 mb-2">Key Cards</h4>
-                        <div className="flex flex-wrap gap-1">
-                          {build.keyCards.map((card) => (
-                            <span
-                              key={card}
-                              className="text-xs px-2 py-1 bg-background border border-border rounded"
-                            >
-                              {card}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-
-                      <div>
-                        <h4 className="text-sm font-semibold text-orange-400 mb-2">Recommended Relics</h4>
-                        <div className="flex flex-wrap gap-1">
-                          {build.recommendedRelics.map((relic) => (
-                            <span
-                              key={relic}
-                              className="text-xs px-2 py-1 bg-purple-500/10 border border-purple-500/30 rounded"
-                            >
-                              {relic}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-
-                      <div>
-                        <h4 className="text-sm font-semibold text-green-400 mb-2">Strengths</h4>
-                        <ul className="text-xs text-muted-foreground space-y-1">
-                          {build.strengths.map((strength, i) => (
-                            <li key={i}>• {strength}</li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      <div>
-                        <h4 className="text-sm font-semibold text-red-400 mb-2">Weaknesses</h4>
-                        <ul className="text-xs text-muted-foreground space-y-1">
-                          {build.weaknesses.map((weakness, i) => (
-                            <li key={i}>• {weakness}</li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      <div>
-                        <h4 className="text-sm font-semibold text-blue-400 mb-2">Tips</h4>
-                        <ul className="text-xs text-muted-foreground space-y-1">
-                          {build.tips.map((tip, i) => (
-                            <li key={i}>• {tip}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-        );
-      })}
-
-      {/* CTA Section */}
-      <section className="py-16 px-4 bg-gradient-to-r from-orange-500/10 via-red-500/10 to-purple-500/10">
-        <div className="container">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-4">Ready to Climb the Spire?</h2>
-            <p className="text-muted-foreground mb-8">
-              These builds are starting points - experiment, adapt, and create your own strategies. The best build is the one that works for your playstyle.
-            </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <Link
-                href="/characters"
-                className="px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-lg transition-colors"
-              >
-                View Characters
-              </Link>
-              <Link
-                href="/mechanics"
-                className="px-6 py-3 bg-card border border-border hover:border-orange-400 font-semibold rounded-lg transition-colors"
-              >
-                Learn Mechanics
-              </Link>
-            </div>
-          </div>
-        </div>
+          </article>
+        ))}
       </section>
-    </div>
+    </main>
   );
 }
