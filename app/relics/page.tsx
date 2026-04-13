@@ -6,21 +6,21 @@ import { BreadcrumbSchema, CollectionPageSchema, FAQSchema, ItemListSchema } fro
 import MobileFiltersPanel from '@/components/MobileFiltersPanel';
 
 export const metadata: Metadata = {
-  title: 'Slay the Spire 2 Relics Database: Search All Relics by Rarity and Character',
+  title: 'Slay the Spire 2 Relics Reference for Builds and Patch Updates',
   description:
-    'Search all Slay the Spire 2 relics by rarity, character, and keyword, including confirmed v0.101.0 updates like Pendulum, Tiny Mailbox, Vexing Puzzlebox, and relic rarity shifts.',
+    'Reference every Slay the Spire 2 relic with current v0.103.0 notes so you can pair each effect with builds, characters, cards, or recent patch shifts.',
   keywords: [
     'Slay the Spire 2 relics',
-    'StS2 relic database',
+    'StS2 relic reference',
     'Slay the Spire 2 relic list',
-    'StS2 relic search',
+    'StS2 relic support',
   ],
   alternates: {
     canonical: '/relics',
   },
   openGraph: {
-    title: 'Slay the Spire 2 Relics Database and Search Index',
-    description: 'Browse all relics by rarity, character tag, and keyword with confirmed v0.101.0 relic updates already reflected.',
+    title: 'Slay the Spire 2 Relics Reference and Patch Context',
+    description: 'Browse relic effects with v0.103.0 context so your builds and characters stay aligned with the latest meta balance.',
   },
 };
 
@@ -288,16 +288,41 @@ export default async function RelicsPage({ searchParams }: RelicsPageProps) {
               </aside>
 
               <div>
-                <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
+                <div className="mb-3 space-y-1">
+                  <h1 className="font-heading text-3xl font-bold md:text-4xl">Relics support reference</h1>
+                  <p className="text-sm leading-7 text-steel-blue">
+                    The v0.103.0 meta leans on defensive relic synergies for Ironclad while putting Silent and Regent relics on the watchlist until the
+                    next hotfix. Use this reference to double-check each effect before slotting it into builds, characters, cards, or patch adjustments so the page stays
+                    in a support role instead of trying to act as the decision endpoint.
+                  </p>
+                  <p className="text-sm leading-7 text-steel-blue">
+                    Every relic listed below links into builds, characters, cards, and patch guidance, making it easy to trace why a pick still makes sense in
+                    the current balance window instead of guessing at meta shifts.
+                  </p>
+                </div>
+                <div className="mb-6 grid gap-3 rounded-2xl border border-border bg-background/50 p-4 text-sm text-steel-blue md:grid-cols-2">
                   <div>
-                    <h1 className="font-heading text-3xl font-bold md:text-4xl">All Relics Database</h1>
-                    <p className="mt-2 text-sm leading-7 text-steel-blue">
-                      Showing {filteredRelics.length} relics in the current index. Filter by rarity, class context, and keyword to answer build decisions faster.
+                    <p className="font-semibold text-foreground">Current version positioning</p>
+                    <p className="mt-1 text-muted-foreground">
+                      Pendulum, Tiny Mailbox, and Vexing Puzzlebox reinforce defensive sustain while Silent and Regent relics still move each patch.
                     </p>
                   </div>
-                  <Link href="/potions" className="text-sm font-semibold text-molten-orange transition-colors hover:text-ember-glow">
-                    Open potions database
-                  </Link>
+                  <div className="flex flex-wrap gap-2">
+                    <Link href="/builds" className="rounded-full border border-molten-orange px-4 py-2 text-xs font-semibold text-molten-orange">
+                      Browse builds
+                    </Link>
+                    <Link href="/characters" className="rounded-full border border-border px-4 py-2 text-xs font-semibold text-foreground">
+                      Character choices
+                    </Link>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <Link href="/cards" className="rounded-full border border-border px-4 py-2 text-xs font-semibold text-foreground">
+                      Card synergies
+                    </Link>
+                    <Link href="/patches" className="rounded-full border border-border px-4 py-2 text-xs font-semibold text-foreground">
+                      Patch notes
+                    </Link>
+                  </div>
                 </div>
 
                 {filteredRelics.length === 0 ? (

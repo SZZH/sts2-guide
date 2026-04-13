@@ -21,9 +21,9 @@ import { BreadcrumbSchema, CollectionPageSchema, FAQSchema, ItemListSchema } fro
 import MobileFiltersPanel from '@/components/MobileFiltersPanel';
 
 export const metadata: Metadata = {
-  title: 'Slay the Spire 2 Cards Database: Search All Cards by Character, Type, Rarity, and Cost',
+  title: 'Slay the Spire 2 Cards Database: Support for Builds, Tier Lists, and Patch Decisions',
   description:
-    'Search all Slay the Spire 2 cards by character, type, rarity, cost, and keyword, including confirmed v0.101.0 updates like Arsenal, Guiding Star, Tremble, Sword Sage, and Voltaic.',
+    'Search all Slay the Spire 2 cards by character, type, rarity, cost, and keyword to support build/tier/patch decisions for the active Early Access version v0.103.0.',
   keywords: [
     'Slay the Spire 2 cards',
     'Slay the Spire 2 all cards',
@@ -35,9 +35,9 @@ export const metadata: Metadata = {
     canonical: '/cards',
   },
   openGraph: {
-    title: 'Slay the Spire 2 Cards Database and Search Index',
+    title: 'Slay the Spire 2 Cards Database and Support Index',
     description:
-      'Filter and browse all StS2 cards by character, rarity, type, and cost with direct detail pages and confirmed v0.101.0 card changes.',
+      'Filter and browse StS2 cards by character, rarity, type, and cost to support the builds, tier lists, patch notes, and character guides that define the current meta.',
   },
 };
 
@@ -183,6 +183,38 @@ export default async function CardsPage({ searchParams }: CardsPageProps) {
         }))}
       />
       <FAQSchema questions={CARDS_FAQ_ITEMS} />
+      <section className="px-4 pb-10">
+        <div className="container">
+          <div className="rounded-2xl border border-border bg-card/80 p-6">
+            <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground">Current version</p>
+            <h2 className="text-2xl font-bold mt-1">Early Access v0.103.0 reference</h2>
+            <p className="mt-2 text-base text-muted-foreground">
+              This index is a supporting reference for the current patch. It does not replace builds, tier lists, or patch notes—instead we rely on it to explain why specific cards show up in the decisions you make elsewhere.
+            </p>
+            <p className="mt-1 text-sm text-muted-foreground">
+              Use the filters below to answer a question from the builds, tier lists, patch impact, or character hubs and then jump back to those decision points.
+            </p>
+            <div className="mt-4 grid gap-3 md:grid-cols-2">
+              {[
+                { href: '/builds', label: 'Builds Dashboard', description: 'See which cards power the current archetypes.' },
+                { href: '/tier-lists', label: 'Tier List Support', description: 'Understand where each card slots in the meta.' },
+                { href: '/patches', label: 'Patch Impact', description: 'Check which cards are affected by the latest changes.' },
+                { href: '/characters', label: 'Character Routes', description: 'Link cards back to playable characters and builds.' },
+              ].map((cta) => (
+                <Link
+                  key={cta.href}
+                  href={cta.href}
+                  className="rounded-xl border border-border px-4 py-3 text-left transition-colors hover:border-primary"
+                >
+                  <div className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">Support path</div>
+                  <div className="mt-1 text-lg font-bold text-foreground">{cta.label}</div>
+                  <p className="text-sm text-muted-foreground">{cta.description}</p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
       <div className="min-h-screen bg-gradient-to-b from-background via-background/95 to-background">
       <section className="px-4 pt-4 pb-16 lg:pb-6">
         <div className="container">

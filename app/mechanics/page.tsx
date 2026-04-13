@@ -3,21 +3,21 @@ import Link from 'next/link';
 import { GAME_MECHANICS } from '@/shared/gameData';
 
 export const metadata: Metadata = {
-  title: 'Slay the Spire 2 Mechanics Explained: What Are Sly, Doom, Stars, and Forge?',
+  title: 'Slay the Spire 2 Mechanics Reference for Builds, Tier Lists, and Patches',
   description:
-    'What do Sly, Doom, Stars, Forge, Drawpile, and Exhaust mean in Slay the Spire 2? Use this mechanics guide for quick definitions, then jump to practical pages and confirmed v0.101.0 entity updates.',
+    'Understand the current Early Access mechanics so you can tie Sly, Doom, Stars, Forge, Drawpile, and Exhaust back into the builds, tier lists, patch notes, and character hubs for v0.103.0.',
   keywords: [
     'Slay the Spire 2 mechanics',
-    'StS2 Sly mechanic',
-    'StS2 Doom Stars Forge',
-    'Slay the Spire 2 systems guide',
+    'StS2 mechanics reference',
+    'Slay the Spire 2 builds support',
+    'Slay the Spire 2 tier list support',
   ],
   alternates: {
     canonical: '/mechanics',
   },
   openGraph: {
-    title: 'Slay the Spire 2 Mechanics Explained: Sly, Doom, Stars, Forge',
-    description: 'Quick-reference mechanics wiki for Slay the Spire 2 with practical next-page routes into confirmed v0.101.0 card and relic updates.',
+    title: 'Slay the Spire 2 Mechanics Reference',
+    description: 'Support the current builds, tier lists, patch impact notes, and character routes with a versioned mechanics reference for Slay the Spire 2.',
   },
 };
 
@@ -70,6 +70,35 @@ export default function MechanicsPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-background via-background/95 to-background">
+      <section className="px-4 pt-6">
+        <div className="container">
+          <div className="rounded-2xl border border-border bg-card/80 p-6">
+            <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Current version</p>
+            <h2 className="text-2xl font-bold mt-1">Early Access v0.103.0 support</h2>
+            <p className="mt-2 text-base text-muted-foreground">
+              This page is a reference layer: we explain the mechanics so you can return to `/builds`, `/tier-lists`, `/patches`, and `/characters` with the vocabulary needed to make confident run decisions.
+            </p>
+            <div className="mt-4 grid gap-3 md:grid-cols-2">
+              {[
+                { href: '/builds', label: 'Builds dashboard', description: 'See which mechanics power your top archetypes.' },
+                { href: '/tier-lists', label: 'Tier list support', description: 'Understand how each mechanic influences rankings.' },
+                { href: '/patches', label: 'Patch impact', description: 'Translate the latest changes into pilotable adjustments.' },
+                { href: '/characters', label: 'Character routes', description: 'Link mechanics back to who you can actually play.' },
+              ].map((cta) => (
+                <Link
+                  key={cta.href}
+                  href={cta.href}
+                  className="rounded-xl border border-border px-4 py-3 text-left transition-colors hover:border-primary"
+                >
+                  <div className="text-[11px] uppercase tracking-[0.2em] text-muted-foreground">Support path</div>
+                  <div className="mt-1 text-lg font-semibold text-foreground">{cta.label}</div>
+                  <p className="text-sm text-muted-foreground">{cta.description}</p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
       {/* Hero Section */}
       <section className="relative py-20 px-4">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(168,85,247,0.1),transparent_50%)]" />

@@ -6,21 +6,21 @@ import { BreadcrumbSchema, CollectionPageSchema, FAQSchema, ItemListSchema } fro
 import MobileFiltersPanel from '@/components/MobileFiltersPanel';
 
 export const metadata: Metadata = {
-  title: 'Slay the Spire 2 Potions - Search by Rarity and Character',
+  title: 'Slay the Spire 2 Potions Reference for Builds and Patches',
   description:
-    'Search the Slay the Spire 2 potion index by rarity and character tag. Quickly find potion effects without scanning long guides.',
+    'Reference every StS2 potion effect in the v0.103.0 meta, with guidance on how each potion ties into builds, cards, characters, and patches.',
   keywords: [
     'Slay the Spire 2 potions',
-    'StS2 potion database',
+    'StS2 potion reference',
     'Slay the Spire 2 potion list',
-    'StS2 potion search',
+    'StS2 potion builds',
   ],
   alternates: {
     canonical: '/potions',
   },
   openGraph: {
-    title: 'Slay the Spire 2 Potions - Search Index',
-    description: 'Browse potion effects by rarity, class context, and keyword filters.',
+    title: 'Slay the Spire 2 Potions Reference and Build Context',
+    description: 'Browse potion effects with v0.103.0 patch framing so every pick fits your build, character, and card decisions.',
   },
 };
 
@@ -152,21 +152,21 @@ export default async function PotionsPage({ searchParams }: PotionsPageProps) {
                 </div>
               </div>
 
-              <div>
-                <h2 className="mb-3 text-xl font-bold">Character</h2>
-                <div className="flex flex-wrap gap-2">
-                  {CHARACTER_FILTERS.map((entry) => (
-                    <Link
-                      key={entry}
-                      href={buildHref({ q: query || undefined, rarity, character: entry })}
-                      scroll={false}
-                      className={`rounded-full border px-3 py-2 text-sm transition-colors ${character === entry ? 'border-molten-orange text-molten-orange' : 'border-border text-muted-foreground hover:border-molten-orange'}`}
-                    >
-                      {entry}
-                    </Link>
-                  ))}
+                <div>
+                  <h2 className="mb-3 text-xl font-bold">Character</h2>
+                  <div className="flex flex-wrap gap-2">
+                    {CHARACTER_FILTERS.map((entry) => (
+                      <Link
+                        key={entry}
+                        href={buildHref({ q: query || undefined, rarity, character: entry })}
+                        scroll={false}
+                        className={`rounded-full border px-3 py-2 text-sm transition-colors ${character === entry ? 'border-molten-orange text-molten-orange' : 'border-border text-muted-foreground hover:border-molten-orange'}`}
+                      >
+                        {entry}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
-              </div>
             </MobileFiltersPanel>
             <div className="grid gap-6 lg:grid-cols-[300px_minmax(0,1fr)]">
               <aside className="hidden space-y-6 lg:block">
