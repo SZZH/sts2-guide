@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 import { ArrowLeft, ExternalLink } from 'lucide-react';
 import { NEWS_ARTICLES } from '@/shared/gameData';
 import { ArticleSchema, BreadcrumbSchema, FAQSchema } from '@/app/schema';
@@ -14,6 +14,11 @@ const ARCHIVED_NEWS_SLUGS = new Set([
   'ign-official-announcement',
 ]);
 
+const COOP_REDIRECTS: Record<string, string> = {
+  'slay-the-spire-2-co-op-guide-how-it-works': '/news/slay-the-spire-2-multiplayer-guide',
+  'slay-the-spire-2-multiplayer-coop-guide': '/news/slay-the-spire-2-multiplayer-guide',
+};
+
 export async function generateStaticParams() {
   return NEWS_ARTICLES.map((article) => ({
     slug: article.slug,
@@ -22,6 +27,17 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
+  const canonicalRedirect = COOP_REDIRECTS[slug];
+
+  if (canonicalRedirect) {
+    return {
+      title: 'Redirecting…',
+      alternates: {
+        canonical: canonicalRedirect,
+      },
+    };
+  }
+
   const article = NEWS_ARTICLES.find((item) => item.slug === slug);
 
   if (!article) {
@@ -65,6 +81,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function NewsDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
+  const canonicalRedirect = COOP_REDIRECTS[slug];
+
+  if (canonicalRedirect) {
+    redirect(canonicalRedirect);
+  }
+
   const article = NEWS_ARTICLES.find((item) => item.slug === slug);
 
   if (!article) {

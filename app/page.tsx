@@ -19,9 +19,9 @@ export const metadata: Metadata = {
 export default function HomePage() {
   const featuredCharacters = CHARACTERS.slice(0, 2);
   const prioritizedLatestNewsSlugs = [
+    'slay-the-spire-2-hotfix-patch-notes',
     'slay-the-spire-2-steam-charts-player-count',
     'slay-the-spire-2-steamdb-patch-tracker',
-    'slay-the-spire-2-multiplayer-coop-guide',
   ];
   const latestNews = [
     ...prioritizedLatestNewsSlugs
