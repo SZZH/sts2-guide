@@ -671,8 +671,8 @@ export const NEWS_ARTICLES: NewsArticle[] = [
         label: 'Hotfix patch notes: what v0.98.1 fixed on day one',
       },
       {
-        href: '/news/slay-the-spire-2-co-op-guide-how-it-works',
-        label: 'Co-op guide: what launch-week multiplayer confirms so far',
+        href: '/news/slay-the-spire-2-multiplayer-guide',
+        label: 'Multiplayer FAQ: co-op rules, limits, and setup',
       },
       {
         href: '/news/slay-the-spire-2-steam-deck-performance-guide',
@@ -697,10 +697,6 @@ export const NEWS_ARTICLES: NewsArticle[] = [
       {
         href: '/news',
         label: 'Read more Slay the Spire 2 news and updates',
-      },
-      {
-        href: '/news/slay-the-spire-2-co-op-guide-how-it-works',
-        label: 'Co-op guide: what launch-week multiplayer confirms so far',
       },
     ],
   },
@@ -924,7 +920,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
     updatedAt: '2026-03-06',
     intro: [
       'Yes. Slay the Spire 2 has online co-op, and the official Steam page confirms support for up to 4 players.',
-      'What matters in launch week is separating confirmed multiplayer facts from details that still need broader player testing. This page is built around that split so you can make decisions without pretending every system interaction is already settled.',
+      'What matters in launch week is separating confirmed multiplayer facts from details that still need broader player testing. This page is built around that split so you can make decisions without pretending every system interaction is already settled, while the canonical multiplayer FAQ at /news/slay-the-spire-2-multiplayer-guide stays focused on the quick answer.',
     ],
     sections: [
       {
@@ -978,7 +974,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
       {
         heading: 'Launch-week takeaway',
         paragraphs: [
-          'The highest-value co-op answer right now is simple: Slay the Spire 2 supports online co-op for up to 4 players, and it is already part of the live Early Access build. If your group wants the cleanest start, combine that answer with one first-run page and one starter-character page instead of trying to learn everything inside multiplayer itself.',
+          'The highest-value co-op answer right now is simple: Slay the Spire 2 supports online co-op for up to 4 players, and it is already part of the live Early Access build. If your group wants the cleanest start, combine that answer with the canonical multiplayer FAQ plus one first-run page and one starter-character page instead of trying to learn everything inside multiplayer itself.',
         ],
       },
     ],

@@ -36,10 +36,10 @@ function toQuestionTitle(title: string): string {
     return 'How can I improve Steam Deck performance and stability?';
   }
   if (lower.includes('co-op') || lower.includes('multiplayer')) {
-    return 'Does Slay the Spire 2 have co-op and how does it work?';
+    return 'Where do builds and strategies shift when playing co-op?';
   }
   if (lower.includes('release date') || lower.includes('launch time')) {
-    return 'When does Slay the Spire 2 unlock in my region?';
+    return 'What timeline should I expect for the next incremental patch?';
   }
   if (lower.includes('player count') || lower.includes('steam charts')) {
     return 'How many people are playing Slay the Spire 2 now?';
@@ -109,14 +109,14 @@ export default function NewsPage() {
             <Link href="/news/slay-the-spire-2-first-run-guide-act-1-priorities" className="text-molten-orange transition-colors hover:text-ember-glow">
               What should I do in my first runs?
             </Link>
-            <Link href="/news/slay-the-spire-2-steamdb-patch-tracker" className="text-molten-orange transition-colors hover:text-ember-glow">
-              Which builds and relics changed this patch?
+            <Link href="/builds" className="text-molten-orange transition-colors hover:text-ember-glow">
+              Which builds should I prioritize after this patch?
             </Link>
-            <Link href="/characters/necrobinder" className="text-molten-orange transition-colors hover:text-ember-glow">
-              How should I play Necrobinder?
+            <Link href="/characters" className="text-molten-orange transition-colors hover:text-ember-glow">
+              Which character fits my current playstyle?
             </Link>
-            <Link href="/cards/character/necrobinder" className="text-molten-orange transition-colors hover:text-ember-glow">
-              Which cards are in the Necrobinder pool?
+            <Link href="/patches" className="text-molten-orange transition-colors hover:text-ember-glow">
+              What decisions shift after the latest patch?
             </Link>
           </div>
         </div>

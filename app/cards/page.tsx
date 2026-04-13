@@ -448,7 +448,7 @@ export default async function CardsPage({ searchParams }: CardsPageProps) {
                 <div className="rounded-xl border border-border bg-background/40 p-4">
                   <h2 className="font-heading text-lg font-bold mb-2">Reset Filters</h2>
                   <p className="text-sm text-muted-foreground leading-6 mb-3">
-                    Clear the current query and reopen the full launch-week card index.
+                    Clear the current query and reopen the live patch-aligned card index.
                   </p>
                   <Link href="/cards" className="text-sm font-semibold text-molten-orange hover:text-ember-glow transition-colors">
                     Reset all filters
@@ -572,7 +572,7 @@ export default async function CardsPage({ searchParams }: CardsPageProps) {
                   <div className="rounded-xl border border-border bg-background/40 p-10 text-center lg:flex-1">
                     <h3 className="font-heading text-2xl font-bold mb-3">No cards match this filter</h3>
                     <p className="text-muted-foreground mb-5">
-                      Clear one filter or search a broader keyword to reopen the launch-week card preview.
+                      Clear one filter or search a broader keyword to reopen the live patch-aligned card preview.
                     </p>
                     <Link href="/cards" className="text-sm font-semibold text-molten-orange hover:text-ember-glow transition-colors">
                       Reset all filters

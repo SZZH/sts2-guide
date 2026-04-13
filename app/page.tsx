@@ -257,14 +257,14 @@ export default function HomePage() {
           <div className="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
             <div>
               <div className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-molten-orange">
-                Launch Week
+                Decision Console
               </div>
               <h2 className="font-heading text-3xl md:text-4xl font-bold">
-                Updated Today
+                Decision-ready anchors
               </h2>
             </div>
             <p className="max-w-2xl text-sm text-steel-blue">
-              Start here when you just need to know which build, beginner path, patch insight, or character choice to follow next.
+              Tap these cards when you need to pick your next build, resolve first-run friction, sync with the latest patch, or pull quick reference details.
             </p>
           </div>
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
