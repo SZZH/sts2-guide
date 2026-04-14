@@ -57,6 +57,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/builds`,
+      lastModified: latestGuideUpdate,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/tier-lists`,
+      lastModified: latestGuideUpdate,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/patches`,
+      lastModified: latestNewsUpdate,
+      changeFrequency: 'daily',
+      priority: 0.88,
+    },
+    {
       url: `${baseUrl}/cards`,
       lastModified: latestCardUpdate,
       changeFrequency: 'daily',
