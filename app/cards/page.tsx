@@ -21,9 +21,9 @@ import { BreadcrumbSchema, CollectionPageSchema, FAQSchema, ItemListSchema } fro
 import MobileFiltersPanel from '@/components/MobileFiltersPanel';
 
 export const metadata: Metadata = {
-  title: 'Slay the Spire 2 Cards Database: Support for Builds, Tier Lists, and Patch Decisions',
+  title: 'StS2 Cards: Slay the Spire 2 Cards Database and Card List',
   description:
-    'Search all Slay the Spire 2 cards by character, type, rarity, cost, and keyword to support build/tier/patch decisions for the active Early Access version v0.103.0.',
+    'Browse all StS2 cards by character, type, rarity, cost, and keyword. Use this Slay the Spire 2 cards database and card list for the current Early Access version v0.103.2.',
   keywords: [
     'Slay the Spire 2 cards',
     'Slay the Spire 2 all cards',
@@ -187,12 +187,12 @@ export default async function CardsPage({ searchParams }: CardsPageProps) {
         <div className="container">
           <div className="rounded-2xl border border-border bg-card/80 p-6">
             <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground">Current version</p>
-            <h2 className="text-2xl font-bold mt-1">Early Access v0.103.0 reference</h2>
+            <h2 className="text-2xl font-bold mt-1">Slay the Spire 2 Cards Database</h2>
             <p className="mt-2 text-base text-muted-foreground">
-              This index is a supporting reference for the current patch. It does not replace builds, tier lists, or patch notes—instead we rely on it to explain why specific cards show up in the decisions you make elsewhere.
+              Browse card text, costs, keywords, rarities, and character pools for the current Early Access version v0.103.2.
             </p>
             <p className="mt-1 text-sm text-muted-foreground">
-              Use the filters below to answer a question from the builds, tier lists, patch impact, or character hubs and then jump back to those decision points.
+              Use the filters below to find cards fast, then jump back into builds, patch notes, tier lists, or character pages once you have the exact card you need.
             </p>
             <div className="mt-4 grid gap-3 md:grid-cols-2">
               {[

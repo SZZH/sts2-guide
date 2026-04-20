@@ -3,9 +3,9 @@ import Link from 'next/link';
 import { NEWS_ARTICLES } from '@/shared/gameData';
 
 export const metadata: Metadata = {
-  title: 'Slay the Spire 2 Patch Hub: Latest Patch Impact, Hotfixes, and Meta Shifts',
+  title: 'Slay the Spire 2 Patch Notes: Latest Updates, Hotfixes, and Meta Impact',
   description:
-    'Track Slay the Spire 2 patch notes, hotfixes, and balance impact in one place. Use this hub to see what changed, what advice is outdated, and which builds or guides to review next.',
+    'Read the latest Slay the Spire 2 patch notes, hotfixes, and balance updates in one place. Use this page to see what changed and what to recheck next.',
   alternates: {
     canonical: '/patches',
   },
@@ -29,8 +29,8 @@ const patchArticles = NEWS_ARTICLES.filter(
 const impactCards = [
   {
     href: '/news/slay-the-spire-2-beta-patch-v0-101-0-analysis',
-    title: 'Current Balance Direction',
-    description: 'Review the last major balance read before changing your current build assumptions.',
+    title: 'Latest Patch Notes',
+    description: 'Start with the newest official patch read before changing your current build assumptions.',
   },
   {
     href: '/news/slay-the-spire-2-steamdb-patch-tracker',
@@ -106,12 +106,11 @@ export default function PatchesPage() {
       <div className="container mx-auto px-4">
         <section className="rounded-2xl border border-border bg-forge-black/70 p-8">
           <div className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-molten-orange">
-            Patch & Meta
+            Patch Notes
           </div>
-          <h1 className="font-heading text-4xl font-bold md:text-5xl">Slay the Spire 2 Patch Hub</h1>
+          <h1 className="font-heading text-4xl font-bold md:text-5xl">Slay the Spire 2 Patch Notes</h1>
           <p className="mt-4 max-w-3xl text-base leading-8 text-steel-blue">
-            Start here whenever the current question is not “what exists” but “what changed, what broke, and which
-            build or guide should I trust now.”
+            Read the latest Slay the Spire 2 patch notes, hotfixes, and balance updates in one place, then decide which builds, guides, or cards need a recheck.
           </p>
 
           <div className="mt-6 flex flex-wrap gap-3 text-sm text-steel-blue">
@@ -137,7 +136,7 @@ export default function PatchesPage() {
                   href={`/news/${latestArticle.slug}`}
                   className="inline-flex items-center rounded-lg bg-molten-orange px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-ember-glow"
                 >
-                  Read latest patch impact
+                  Read latest patch notes
                 </Link>
               </div>
             </div>

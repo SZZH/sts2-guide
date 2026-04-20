@@ -9,7 +9,7 @@
 ## 当前 P0（最多 3 项）
 - P0-1：按 `13-keyword-to-page-map.md` 检查主词是否都已绑定唯一主页面
 - P0-2：按 `14-rebuild-verification-loop.md` 复检重构后的 CTR / bounce / 二跳流转
-- P0-3：补完今日游戏动态巡检，并根据结果决定是否要发 `v0.103.0` 相关新闻页与做 IndexNow
+- P0-3：围绕已确认上线的 `v0.103.2` 修正站内 patch 口径，决定是补新闻页还是直接强化 `/patches` 承接并补 IndexNow
 
 ## 当前重构硬约束
 - 涉及攻略、玩法、build、tier list、patch 影响、角色推荐、新手路线时，必须按“官方 > 高质量社区 > 高质量工具站 > 站内数据”取证
@@ -18,17 +18,18 @@
 
 ## 当前阻塞
 - 平台侧数据延迟（GSC/Bing 常见）
-- Bing `Sitemaps` 页面 `0 rows`
-- Vercel API token 对 `szzhs-projects` scope 仍 `403`
+- Bing `URL Submission` 页面 `No pages found`
+- Vercel 国家维度 `Singapore 47%` 仍明显偏高，需继续判断是 Bot / 统计噪音还是真实流量
 
 ## 当前约束
 - 未过闸门不得扩量
 - 每次策略变化必须登记决策 ID
 - 每次关键动作后留痕（按时间戳记录）
+- Vercel 相关动作统一走 `Vercel MCP`（不再以本地 token 脚本作为默认路径）
 - 社媒评论按“有积压/超时”触发巡检与回复
 - 每日运维默认包含一次“近窗增量”游戏动态巡检，不能只看当天新闻，也不能只做流量和社媒
 - 若存在 `>=3` 个独立未完成任务，优先并行；否则按实际依赖处理
 
 ## 下一次更新人/时间
-- Owner：
-- 时间：
+- Owner：Codex
+- 时间：2026-04-20 18:13

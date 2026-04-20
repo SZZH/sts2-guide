@@ -8,7 +8,7 @@ import MobileFiltersPanel from '@/components/MobileFiltersPanel';
 export const metadata: Metadata = {
   title: 'Slay the Spire 2 Relics Reference for Builds and Patch Updates',
   description:
-    'Reference every Slay the Spire 2 relic with current v0.103.0 notes so you can pair each effect with builds, characters, cards, or recent patch shifts.',
+    'Reference every Slay the Spire 2 relic with current v0.103.2 notes so you can pair each effect with builds, characters, cards, or recent patch shifts.',
   keywords: [
     'Slay the Spire 2 relics',
     'StS2 relic reference',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Slay the Spire 2 Relics Reference and Patch Context',
-    description: 'Browse relic effects with v0.103.0 context so your builds and characters stay aligned with the latest meta balance.',
+    description: 'Browse relic effects with v0.103.2 context so your builds and characters stay aligned with the current meta balance.',
   },
 };
 
@@ -239,7 +239,7 @@ export default async function RelicsPage({ searchParams }: RelicsPageProps) {
                       href="/news/slay-the-spire-2-hotfix-patch-notes"
                       className="text-molten-orange transition-colors hover:text-ember-glow"
                     >
-                      What changed in the latest patch?
+                      What changed in patch v0.103.2?
                     </Link>
                     <Link
                       href="/news/slay-the-spire-2-known-issues-and-fixes"
@@ -291,7 +291,7 @@ export default async function RelicsPage({ searchParams }: RelicsPageProps) {
                 <div className="mb-3 space-y-1">
                   <h1 className="font-heading text-3xl font-bold md:text-4xl">Relics support reference</h1>
                   <p className="text-sm leading-7 text-steel-blue">
-                    The v0.103.0 meta leans on defensive relic synergies for Ironclad while putting Silent and Regent relics on the watchlist until the
+                    The v0.103.2 meta leans on defensive relic synergies for Ironclad while putting Silent and Regent relics on the watchlist until the
                     next hotfix. Use this reference to double-check each effect before slotting it into builds, characters, cards, or patch adjustments so the page stays
                     in a support role instead of trying to act as the decision endpoint.
                   </p>
@@ -388,7 +388,7 @@ export default async function RelicsPage({ searchParams }: RelicsPageProps) {
                       href="/news/slay-the-spire-2-hotfix-patch-notes"
                       className="text-molten-orange transition-colors hover:text-ember-glow"
                     >
-                      What changed in the latest patch?
+                      What changed in patch v0.103.2?
                     </Link>
                     <Link
                       href="/news/slay-the-spire-2-known-issues-and-fixes"
@@ -430,7 +430,7 @@ export default async function RelicsPage({ searchParams }: RelicsPageProps) {
                       href="/news/slay-the-spire-2-steamdb-patch-tracker"
                       className="text-molten-orange transition-colors hover:text-ember-glow"
                     >
-                      Track the latest relic changes
+                      Track relic changes in v0.103.2
                     </Link>
                   </div>
                 </div>

@@ -8,7 +8,7 @@ import MobileFiltersPanel from '@/components/MobileFiltersPanel';
 export const metadata: Metadata = {
   title: 'Slay the Spire 2 Potions Reference for Builds and Patches',
   description:
-    'Reference every StS2 potion effect in the v0.103.0 meta, with guidance on how each potion ties into builds, cards, characters, and patches.',
+    'Reference every StS2 potion effect in the v0.103.2 meta, with guidance on how each potion ties into builds, cards, characters, and patches.',
   keywords: [
     'Slay the Spire 2 potions',
     'StS2 potion reference',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Slay the Spire 2 Potions Reference and Build Context',
-    description: 'Browse potion effects with v0.103.0 patch framing so every pick fits your build, character, and card decisions.',
+    description: 'Browse potion effects with v0.103.2 patch framing so every pick fits your build, character, and card decisions.',
   },
 };
 
@@ -235,7 +235,7 @@ export default async function PotionsPage({ searchParams }: PotionsPageProps) {
                       href="/news/slay-the-spire-2-hotfix-patch-notes"
                       className="text-molten-orange transition-colors hover:text-ember-glow"
                     >
-                      What changed in the latest patch?
+                      What changed in patch v0.103.2?
                     </Link>
                     <Link
                       href="/news/slay-the-spire-2-known-issues-and-fixes"
@@ -329,7 +329,7 @@ export default async function PotionsPage({ searchParams }: PotionsPageProps) {
                       href="/news/slay-the-spire-2-hotfix-patch-notes"
                       className="text-molten-orange transition-colors hover:text-ember-glow"
                     >
-                      What changed in the latest patch?
+                      What changed in patch v0.103.2?
                     </Link>
                     <Link
                       href="/news/slay-the-spire-2-known-issues-and-fixes"

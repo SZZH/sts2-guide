@@ -77,7 +77,7 @@ const QUICK_PICKS = [
 
 const PATCH_CALLOUTS = [
   {
-    title: 'Patch 0.103.0 favors cleaner routes',
+    title: 'Patch 0.103.2 favors cleaner routes',
     body: 'Use the current patch hub before assuming old role advice is still valid, especially for build pivots and archetype timing.',
     href: '/patches',
   },
@@ -154,7 +154,7 @@ export default async function CharactersPage({ searchParams }: CharactersPagePro
     {
       href: '/builds',
       title: 'Build Guides',
-      subtitle: 'Current archetypes and character plans for patch 0.103.0.',
+      subtitle: 'Current archetypes and character plans for patch 0.103.2.',
     },
     {
       href: '/patches',

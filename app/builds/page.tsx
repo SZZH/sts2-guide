@@ -6,20 +6,20 @@ import { siteAssetUrl } from '@/shared/siteAssets';
 import { OrganizationSchema, VideoGameSchema, WebsiteSchema } from '@/app/schema';
 
 export const metadata: Metadata = {
-  title: 'Slay the Spire 2 Builds Hub | Current patch decision flows',
+  title: 'Slay the Spire 2 Builds: Best Current Builds by Character',
   description:
-    'Current Slay the Spire 2 builds hub with hero summaries, character archetype tiles, patch-aware notes, and quick links into the starter, guides, cards, and relic resources.',
+    'Find the best current Slay the Spire 2 builds by character for patch v0.103.2, with beginner-friendly build paths, archetype summaries, and direct links into cards, relics, and patch notes.',
   alternates: {
     canonical: '/builds',
   },
   openGraph: {
-    title: 'StS2 Builds Hub — current patch 0.103.0 decision flows',
+    title: 'StS2 Builds Hub — current patch 0.103.2 decision flows',
     description:
       'Plan your next run with patched build summaries, character archetypes, and the latest patch tracker, cards, and relic resources.',
   },
 };
 
-const CURRENT_PATCH = 'v0.103.0';
+const CURRENT_PATCH = 'v0.103.2';
 
 const DECISION_TILES = [
   {
@@ -30,8 +30,8 @@ const DECISION_TILES = [
   },
   {
     href: '/guides',
-    label: 'Build Guides',
-    description: 'Character archetypes, matchup notes, and recommendations vetted for patch 0.103.0.',
+    label: 'Best Builds by Character',
+    description: 'Character archetypes, matchup notes, and build paths vetted for patch 0.103.2.',
     badge: 'Builds',
   },
   {
@@ -79,7 +79,7 @@ const STATUS_TIER_HINTS = [
   {
     tier: 'Beginner',
     title: 'Beginner primer',
-    summary: 'Lean on builds that trade burst for guarded pacing so first runs survive patch 0.103.0.',
+    summary: 'Lean on builds that trade burst for guarded pacing so first runs survive patch 0.103.2.',
   },
   {
     tier: 'Stable',
@@ -110,7 +110,7 @@ const BUILD_TILES: BuildTile[] = [
   {
     slug: 'ironclad',
     archetype: 'Strength ramp + controlled HP trade-offs',
-    patchImpact: 'Patch 0.103.0 trimmed the snappier self-damage lines so Block-based Strength ramps are safer.',
+    patchImpact: 'Patch 0.103.2 trimmed the snappier self-damage lines so Block-based Strength ramps are safer.',
     focus: 'Lean toward consistent guard and Strength cards before tilting into explosive finishers.',
     guideHref: '/guides/ironclad-early-build',
     statusTier: 'Beginner',
@@ -121,7 +121,7 @@ const BUILD_TILES: BuildTile[] = [
   {
     slug: 'silent',
     archetype: 'Discard tempo with Sly/Poison follow-through',
-    patchImpact: 'Patch 0.103.0 sharpened Sly triggers and made Poison timing more reliable for mid-game hooks.',
+    patchImpact: 'Patch 0.103.2 sharpened Sly triggers and made Poison timing more reliable for mid-game hooks.',
     focus: 'Build hand quality and sequencing before locking into high-variance Sly payoffs.',
     guideHref: '/guides/silent-early-build',
     statusTier: 'Stable',
@@ -132,7 +132,7 @@ const BUILD_TILES: BuildTile[] = [
   {
     slug: 'regent',
     archetype: 'Stars economy and Forge artifacts',
-    patchImpact: 'Forge tweaks from 0.103.0 reward clearer Stars-to-artifact paths and discourage overtaxed setups.',
+    patchImpact: 'Forge tweaks from 0.103.2 reward clearer Stars-to-artifact paths and discourage overtaxed setups.',
     focus: 'Prioritize Stars generation that feeds your Forge toolkit and only load artifact burst when the map is stable.',
     guideHref: '/guides/regent-stars-vs-forge-build-path',
     statusTier: 'Stable',
@@ -144,7 +144,7 @@ const BUILD_TILES: BuildTile[] = [
     slug: 'necrobinder',
     archetype: 'Doom + Souls + Osty control',
     patchImpact: 'Doom timing and Soul gains got calibration love, so early Osty plays need cleaner setup windows.',
-    focus: 'Stagger Osty usage, stack Souls, and keep Doom thresholds readable for patch 0.103.0.',
+    focus: 'Stagger Osty usage, stack Souls, and keep Doom thresholds readable for patch 0.103.2.',
     guideHref: '/guides/necrobinder-common-cards',
     statusTier: 'Watchlist',
     actionCue: 'Manage Soul stacks closely and only deploy Osty when the board is stable.',
@@ -155,7 +155,7 @@ const BUILD_TILES: BuildTile[] = [
   {
     slug: 'defect',
     archetype: 'Orb sequencing and Focus scaling',
-    patchImpact: 'Orb stability from 0.103.0 means your Focus investments now unlock more reliable evocations.',
+    patchImpact: 'Orb stability from 0.103.2 means your Focus investments now unlock more reliable evocations.',
     focus: 'Balance early control orbs with late-game investment orbs without going full random burst.',
     guideHref: '/guides/defect-early-build',
     statusTier: 'Stable',
@@ -172,7 +172,7 @@ function heroMechanicNames(characterSlug: BuildTile['slug']) {
 
 export default function BuildsPage() {
   const heroSignals = [
-    'Patch-aware builds for the current patch (patch 0.103.0) so you can spot the safe upgrade paths.',
+    'Patch-aware builds for the current patch (patch 0.103.2) so you can spot the safe upgrade paths.',
     'Each character tile highlights the archetype focus, patch impact, and where to go next for guides or cards.',
     'Decision tiles funnel you into beginners, builds, patch details, and the reference resources you need right away.',
   ];
@@ -195,9 +195,9 @@ export default function BuildsPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-forge-black/80 to-forge-black" />
           <div className="relative z-10 container mx-auto flex h-full flex-col justify-center gap-6 px-4 py-12 text-white">
             <p className="text-xs uppercase tracking-[0.4em] text-molten-orange">Current patch {CURRENT_PATCH}</p>
-            <h1 className="max-w-4xl text-4xl font-bold leading-tight md:text-5xl">Slay the Spire 2 builds hub</h1>
+            <h1 className="max-w-4xl text-4xl font-bold leading-tight md:text-5xl">Slay the Spire 2 builds</h1>
             <p className="max-w-3xl text-base leading-relaxed text-steel-blue md:text-lg">
-              Plan your run with patched archetypes, clear build cards, and instant links into the starter, guides, cards, and relics resources.
+              Find the best current Slay the Spire 2 builds by character for patch {CURRENT_PATCH}, including beginner-friendly builds, archetype pivots, and direct links into cards, relics, and patch notes.
             </p>
             <div className="grid gap-4 md:grid-cols-2">
               {heroSignals.map((signal) => (
@@ -206,6 +206,9 @@ export default function BuildsPage() {
                 </div>
               ))}
             </div>
+            <p className="max-w-3xl text-sm text-steel-blue">
+              Ironclad, Silent, Regent, Necrobinder, and Defect build paths for the current patch.
+            </p>
           </div>
         </section>
 
@@ -252,7 +255,7 @@ export default function BuildsPage() {
               <p className="text-xs uppercase tracking-[0.3em] text-molten-orange">Patch Signal</p>
               <h3 className="font-heading text-3xl font-bold mt-2">What patch {CURRENT_PATCH} means for builds</h3>
               <p className="mt-4 text-base text-steel-blue">
-                The latest patch kept the Early Access metagame nimble: repeatable Strength, Sly, and Forge lines are rewarded while unpredictable spike builds are dialed down. These tiles highlight what to test in your current run.
+                Patch {CURRENT_PATCH} keeps the Early Access metagame nimble: repeatable Strength, Sly, and Forge lines are rewarded while unpredictable spike builds are dialed down. These tiles highlight what to test in your current run.
               </p>
               <div className="mt-6 flex flex-wrap gap-3 text-sm">
                 <Link

@@ -5,7 +5,7 @@ import { GAME_MECHANICS } from '@/shared/gameData';
 export const metadata: Metadata = {
   title: 'Slay the Spire 2 Mechanics Reference for Builds, Tier Lists, and Patches',
   description:
-    'Understand the current Early Access mechanics so you can tie Sly, Doom, Stars, Forge, Drawpile, and Exhaust back into the builds, tier lists, patch notes, and character hubs for v0.103.0.',
+    'Understand the current Early Access mechanics so you can tie Sly, Doom, Stars, Forge, Drawpile, and Exhaust back into the builds, tier lists, patch notes, and character hubs for v0.103.2.',
   keywords: [
     'Slay the Spire 2 mechanics',
     'StS2 mechanics reference',
@@ -74,7 +74,7 @@ export default function MechanicsPage() {
         <div className="container">
           <div className="rounded-2xl border border-border bg-card/80 p-6">
             <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Current version</p>
-            <h2 className="text-2xl font-bold mt-1">Early Access v0.103.0 support</h2>
+            <h2 className="text-2xl font-bold mt-1">Early Access v0.103.2 support</h2>
             <p className="mt-2 text-base text-muted-foreground">
               This page is a reference layer: we explain the mechanics so you can return to `/builds`, `/tier-lists`, `/patches`, and `/characters` with the vocabulary needed to make confident run decisions.
             </p>
@@ -82,7 +82,7 @@ export default function MechanicsPage() {
               {[
                 { href: '/builds', label: 'Builds dashboard', description: 'See which mechanics power your top archetypes.' },
                 { href: '/tier-lists', label: 'Tier list support', description: 'Understand how each mechanic influences rankings.' },
-                { href: '/patches', label: 'Patch impact', description: 'Translate the latest changes into pilotable adjustments.' },
+                { href: '/patches', label: 'Patch impact', description: 'Translate patch v0.103.2 changes into pilotable adjustments.' },
                 { href: '/characters', label: 'Character routes', description: 'Link mechanics back to who you can actually play.' },
               ].map((cta) => (
                 <Link

@@ -1,12 +1,12 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
-const currentVersion = 'v0.103.0';
+const currentVersion = 'v0.103.2';
 
 export const metadata: Metadata = {
   title: 'Slay the Spire 2 Tier Lists | Current patch decision lenses',
   description:
-    'Use four patch-aware tier lenses for Slay the Spire 2: characters, beginner stability, archetypes, and card priority. Built to support current v0.103.0 decisions without pretending the beta is fully settled.',
+    'Use four patch-aware tier lenses for Slay the Spire 2: characters, beginner stability, archetypes, and card priority. Built to support current v0.103.2 decisions without pretending the beta is fully settled.',
   alternates: {
     canonical: '/tier-lists',
   },
@@ -111,11 +111,11 @@ export default function TierListsPage() {
         <p className="text-sm uppercase tracking-[0.3em] text-slate-400">Current version</p>
         <h1 className="text-4xl font-semibold">Tier lists for {currentVersion}</h1>
         <p className="text-lg text-slate-200">
-          Four living lenses for the latest patch: hero strength, new player stability, archetype resilience, and
+          Four living lenses for patch {currentVersion}: hero strength, new player stability, archetype resilience, and
           card decisiveness. Each section points back to builds or reference pages so you finish with a decision.
         </p>
         <div className="flex flex-wrap gap-3 text-sm">
-          <span className="rounded-full border border-slate-600 px-3 py-1">Last validated Apr 13, 2026</span>
+          <span className="rounded-full border border-slate-600 px-3 py-1">Last validated Apr 20, 2026</span>
           <span className="rounded-full border border-slate-600 px-3 py-1">Sources: patch notes · community testers</span>
           <span className="rounded-full border border-slate-600 px-3 py-1">Stability window: 14-day rolling</span>
         </div>
