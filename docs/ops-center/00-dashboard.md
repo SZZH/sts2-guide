@@ -40,9 +40,9 @@
 - `DONE`: 2026-04-20 18:13 近窗游戏动态巡检（Steam 新闻确认最近公开口径已到 `v0.103.2`，并有 `Neowsletter - April 2026`）
 - `DONE`: 2026-04-20 18:13 `IndexNow` 提交 `/` `/builds` `/cards` `/patches`（脚本回执成功）
 - `IN_PROGRESS`: 按 `14-rebuild-verification-loop.md` 继续回流窗复检（主词迁移 + `/` 与 `/guides` bounce + 新主线承接）
-- `TODO`: 针对 `slay the spire 2 builds`、`sts2 cards`、`sts 2 patch notes` 做标题 / 摘要 / 内链补位方案
+- `DONE`: 针对 `slay the spire 2 builds`、`sts2 cards`、`sts 2 patch notes` 完成最小补丁级补位（`/builds` `/cards` `/patches` 的 title / 首屏文案 / CTA 收口，更像搜索落地页而非导航页）
 - `DONE`: 修正主入口仍停留在 `v0.103.0` 的 patch 口径，并补做 `/` `/builds` `/cards` `/patches` 的 `IndexNow`
-- `TODO`: 复核 Vercel `Singapore 47%` 是否为 Bot / 统计噪音
+- `DONE`: 复核 Vercel `Singapore` 异常流量（过滤到 `SG` 后为 `269 Visitors / 320 PV / Bounce 90%`，`Desktop 99%`、`Windows 97%`，落点集中 `/cards`、`/potions` 与多条字母序 card detail 页，更像抓取/统计噪音而非真实承接流量）
 - `BLOCKED`: Bing URL Submission 页面 `No pages found`
 - `SKIP`: 今日未重跑社媒巡检（本轮优先完成 patch 口径与提交流程闭环）
 
@@ -53,5 +53,5 @@
 ## 明日优先事项（最多3个）
 - P0: 先完成 `v0.103.2` 口径同步，至少修正首页 / `/builds` / `/patches` / `/cards` 等仍写 `0.103.0` 的主入口文案
 - P0: 延续 `14-rebuild-verification-loop.md` 回流复检，重点盯 `/builds` 承接增长是否继续放大，并压 `/` 与 `/guides` 跳出
-- P0: 观察 `/` `/builds` `/cards` `/patches` 本轮 `IndexNow` 回流后，继续补 `slay the spire 2 builds`、`sts2 cards`、`sts 2 patch notes` 的标题/摘要/内链
+- P0: 观察 `/` `/builds` `/cards` `/patches` 本轮 `IndexNow` 与 CTR 补位回流，确认点击和承接是否改善
 - P1: 继续排障 Bing URL Submission `No pages found`，并复核 Vercel `Singapore` 异常流量

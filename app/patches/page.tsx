@@ -10,9 +10,9 @@ export const metadata: Metadata = {
     canonical: '/patches',
   },
   openGraph: {
-    title: 'Slay the Spire 2 Patch Hub',
+    title: 'Slay the Spire 2 Patch Notes: Latest Updates, Hotfixes, and Meta Impact',
     description:
-      'Patch-first decision hub for Slay the Spire 2 hotfixes, balance notes, known issues, and build-impact updates.',
+      'Read the latest Slay the Spire 2 patch notes, hotfixes, and balance updates in one place, then recheck builds, cards, and guides that changed.',
   },
 };
 
@@ -122,7 +122,7 @@ export default function PatchesPage() {
           {latestArticle ? (
             <div className="mt-8 rounded-xl border border-molten-orange/30 bg-background/40 p-5">
               <div className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-molten-orange">
-                Latest Priority Read
+                Latest Patch Read
               </div>
               <h2 className="font-heading text-2xl font-bold">{latestArticle.title}</h2>
               <p className="mt-3 text-sm leading-7 text-muted-foreground">{latestArticle.excerpt}</p>
@@ -147,7 +147,7 @@ export default function PatchesPage() {
           <div className="mb-5 flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
             <div>
               <div className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-molten-orange">
-                What To Check
+                After The Notes
               </div>
               <h2 className="font-heading text-3xl font-bold">Decision Routes After Every Patch</h2>
             </div>

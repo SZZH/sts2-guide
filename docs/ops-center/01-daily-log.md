@@ -55,12 +55,13 @@
 - 执行动作状态：
   - `DONE`：站点可用性校验；四端实时采集；GSC/Bing 细项复核；近窗游戏动态巡检。
   - `DONE`：主入口 `v0.103.2` 口径同步；`IndexNow` 提交 `/` `/builds` `/cards` `/patches`。
+  - `DONE`：Vercel `Singapore` 异常流量复核（过滤到 `SG` 后为 `269 Visitors / 320 PV / Bounce 90%`，`Desktop 99%`、`Windows 97%`；Top landing 不是首页/主线页，而是 `/cards`、`/potions` 与多条字母序 card detail 页）。
+  - `DONE`：高曝光低 CTR 词补位（`slay the spire 2 builds` -> `/builds`、`sts2 cards` -> `/cards`、`sts 2 patch notes` -> `/patches`；完成 title / 首屏描述 / section label / CTA 的最小补丁收口）。
   - `IN_PROGRESS`：回流窗效果复检（主词迁移、首页与 `/guides` 承接、`/builds` landing 增长）。
-  - `TODO`：高曝光低 CTR 词补位；Vercel `Singapore` 异常排查。
   - `BLOCKED`：Bing `URL Submission` 仍 `No pages found`。
   - `SKIP`：今日社媒巡检延后。
 - 验证结果：闸门结论仍为 `未通过`。虽然 `/builds` 已开始承接真实流量，但 30 页验证批的“有曝光页面占比 >= 40%”暂无新证据可推翻 `8/30 = 26.7%` 的旧结论，因此仍不得扩量。
-- 下一步：观察本轮 `IndexNow` 回流，再继续补 `builds/cards/patch notes` 这组高曝光低 CTR 词的标题、摘要与内链，并排查 Vercel `Singapore 47%`。
+- 下一步：观察本轮 `IndexNow` 与 CTR 补位回流，重点看 `/builds` 是否继续扩大第一跳承接，以及 `/cards` `/patches` 的点击是否开始改善。`Singapore` 这批流量暂按抓取/统计噪音处理，不再直接用于判断真实承接质量。
 
 ### 2026-04-14 21:50
 - 观察：已完成今天一轮四端实时采集与近窗游戏动态巡检；Bing 通过 Google 授权恢复登录态可读，Vercel API token 依旧 `403` 但已用登录态后台补位，SteamDB 受访问限制未取到当日构建明细。

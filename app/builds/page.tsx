@@ -13,9 +13,9 @@ export const metadata: Metadata = {
     canonical: '/builds',
   },
   openGraph: {
-    title: 'StS2 Builds Hub — current patch 0.103.2 decision flows',
+    title: 'Slay the Spire 2 Builds: Best Current Builds by Character',
     description:
-      'Plan your next run with patched build summaries, character archetypes, and the latest patch tracker, cards, and relic resources.',
+      'Best current Slay the Spire 2 builds by character for patch v0.103.2, with beginner-friendly build paths and direct links into cards, relics, and patch notes.',
   },
 };
 
@@ -42,7 +42,7 @@ const DECISION_TILES = [
   },
   {
     href: '/cards',
-    label: 'Card Lookup',
+    label: 'Cards for These Builds',
     description: 'Search cards, potions, and synergies that plug into each hero archetype.',
     badge: 'Reference',
   },
@@ -194,7 +194,7 @@ export default function BuildsPage() {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-forge-black/80 to-forge-black" />
           <div className="relative z-10 container mx-auto flex h-full flex-col justify-center gap-6 px-4 py-12 text-white">
-            <p className="text-xs uppercase tracking-[0.4em] text-molten-orange">Current patch {CURRENT_PATCH}</p>
+            <p className="text-xs uppercase tracking-[0.4em] text-molten-orange">Best builds · patch {CURRENT_PATCH}</p>
             <h1 className="max-w-4xl text-4xl font-bold leading-tight md:text-5xl">Slay the Spire 2 builds</h1>
             <p className="max-w-3xl text-base leading-relaxed text-steel-blue md:text-lg">
               Find the best current Slay the Spire 2 builds by character for patch {CURRENT_PATCH}, including beginner-friendly builds, archetype pivots, and direct links into cards, relics, and patch notes.

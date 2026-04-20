@@ -35,9 +35,9 @@ export const metadata: Metadata = {
     canonical: '/cards',
   },
   openGraph: {
-    title: 'Slay the Spire 2 Cards Database and Support Index',
+    title: 'StS2 Cards: Slay the Spire 2 Cards Database and Card List',
     description:
-      'Filter and browse StS2 cards by character, rarity, type, and cost to support the builds, tier lists, patch notes, and character guides that define the current meta.',
+      'Browse all StS2 cards by character, type, rarity, cost, and keyword with a searchable Slay the Spire 2 card database for patch v0.103.2.',
   },
 };
 
@@ -186,7 +186,7 @@ export default async function CardsPage({ searchParams }: CardsPageProps) {
       <section className="px-4 pb-10">
         <div className="container">
           <div className="rounded-2xl border border-border bg-card/80 p-6">
-            <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground">Current version</p>
+            <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground">Card database</p>
             <h2 className="text-2xl font-bold mt-1">Slay the Spire 2 Cards Database</h2>
             <p className="mt-2 text-base text-muted-foreground">
               Browse card text, costs, keywords, rarities, and character pools for the current Early Access version v0.103.2.
@@ -206,7 +206,7 @@ export default async function CardsPage({ searchParams }: CardsPageProps) {
                   href={cta.href}
                   className="rounded-xl border border-border px-4 py-3 text-left transition-colors hover:border-primary"
                 >
-                  <div className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">Support path</div>
+                  <div className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">Next step</div>
                   <div className="mt-1 text-lg font-bold text-foreground">{cta.label}</div>
                   <p className="text-sm text-muted-foreground">{cta.description}</p>
                 </Link>
