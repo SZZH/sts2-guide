@@ -39,7 +39,7 @@
   - `P1` 排查 Vercel `Singapore 47%` 是否为 Bot / 统计噪音；Bing `URL Submission` 继续记为平台阻塞。
 - 异常与影响：
   - `BLOCKED` Bing `URL Submission` 页面仍 `No pages found`（影响：提交明细链路仍不可见）。
-  - `BLOCKED` Vercel 国家维度 `Singapore 47%` 异常偏高（影响：流量质量判断可能被噪音干扰）。
+  - `BLOCKED` Vercel 国家维度 `Singapore 47%` 异常偏高（影响：流量质量判断可能被噪音干扰）。补充时间线：最早可见异常样本出现在 `2026-03-23`（`2 total / 2 devices`），但从 `2026-04-11` 开始明显抬升（`43 / 42`），并在 `2026-04-14` 达到第一波峰值（`100 / 74`），因此更像“持续存在的抓取流量在 4 月 11 日后放大”，不是 4 月 20 日当天突然出现。
   - `RISK` 站内主入口仍多处展示 `v0.103.0`（影响：patch 口径落后于官方公开版本 `v0.103.2`）。
 - 外链发布与收录跟进：
   - 当日外链动作（平台/链接/目标页）：`DONE` 已通过脚本提交 `IndexNow`：`https://sts2guide.com/`、`/builds`、`/cards`、`/patches`。
