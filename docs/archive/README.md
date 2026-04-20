@@ -20,4 +20,4 @@
 - relic-potion-import-report.md
 - 2026-04-01-sts2-content-execution-rules.md
 - 2026-04-01-sts2-data-audit.md
-- 2026-04-02-sts2-3-topic-content-implementation-plan.md
+- （已迁出）2026-04-02-sts2-3-topic-content-implementation-plan.md -> `docs/ops-center/2026-04-02-sts2-3-topic-content-implementation-plan.md`

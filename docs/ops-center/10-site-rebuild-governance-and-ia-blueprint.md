@@ -469,3 +469,121 @@
   - `/characters`
   - `/builds`
 
+## 11. 证据优先内容规则（强制）
+
+后续凡是涉及以下内容，不允许临场发挥或仅凭模型记忆写结论：
+
+- 攻略
+- build 建议
+- tier list
+- patch 影响
+- 角色推荐
+- 新手路线
+
+### 11.1 来源优先级
+
+必须按以下优先级组织证据：
+
+1. 官方一手来源
+  - Steam 商店页
+  - Steam News / 官方 patch notes
+  - Mega Crit 官方内容
+2. 高质量社区经验
+  - 高水平玩家 / 纪录保持者 / 高信噪比长帖
+  - 社区对“哪些攻略不靠谱”的反向反馈
+3. 高质量工具 / 数据站
+  - 可复现、可解释、非低质量 SEO 套壳页
+4. 站内自己的真实数据
+  - GSC
+  - Vercel
+  - Bing Webmaster
+  - Google Trends
+
+### 11.2 写作约束
+
+- 没有官方或高质量社区证据，不下强结论。
+- 有争议的结论，必须写明“适用条件 / 争议点 / 版本范围”。
+- tier list 不能伪装成绝对真理，必须标版本、样本、边界。
+- build 建议至少结合以下三类证据中的两类：
+  - 官方 patch / 更新说明
+  - 高质量社区经验
+  - 站内数据 / 行为信号
+- 新手内容必须优先回答真实玩家问题，不允许空泛术语堆叠。
+
+### 11.3 可直接复用的证据池
+
+- 官方：
+  - <https://store.steampowered.com/app/2868840/Slay_the_Spire_2/>
+- 社区：
+  - <https://www.reddit.com/r/slaythespire/comments/1s5tfso/where_to_find_sts2_guides/>
+  - <https://www.reddit.com/r/slaythespire/comments/1sa33d3/regent_tierlist_by_navegreed_sts1_world_record/>
+  - <https://www.reddit.com/r/slaythespire/comments/1s63nb4/slaying_the_second_spire_a_vaguely_uncrunchy/>
+  - <https://www.reddit.com/r/slaythespire/comments/1seyj93/slay_the_spire_2_tools_update_now_works_live/>
+- 竞品/工具：
+  - <https://slaythespire-2.com/builds>
+  - <https://sts2-wiki.org/en/best-builds-slay-the-spire-2>
+
+## 12. 剩余重构批次执行顺序
+
+在已完成治理基线、Batch 1 止血、Batch 2 主线入口页、Batch 3 co-op/release 路由收口后，剩余批次固定为：
+
+### Batch 4：旧页治理落地
+- co-op 内容真正合并到单一 canonical 页面
+- `cards-tier-list` 等高风险旧页治理
+- `release-date` 内容降级重写
+- 清理仍带预发布/旧口径的高意图页
+
+### Batch 5：入口页完整重构
+- 首页完整改造成任务型分流
+- `/guides` 完整改造成任务型 hub
+- `/characters` 完整改造成角色决策中心
+
+### Batch 6：Builds 主线内容实体化
+- 为每个角色建立真实 build 资产页
+- 补 archetype 级内容
+- 让 `/builds` 从 hub 升级为完整主线
+
+### Batch 7：Tier Lists 主线内容实体化
+- Characters / Beginner / Archetypes / Cards 四层 tier 体系
+- 迁移/收口旧 tier list 搜索资产
+
+### Batch 8：Patch & Meta 闭环
+- patch 页面模板固定
+- patch -> builds / characters / guides / reference 更新闭环建立
+
+### Batch 9：Reference 层重构
+- `/cards` `/relics` `/potions` `/mechanics` 统一变成支撑层
+- 补当前版本定位与反链
+
+### Batch 10：关键词映射与验证闭环
+- 关键词 -> 主落地页 -> 支撑页 -> 禁止抢词页 映射表
+- CTR / bounce / 二跳流转 验证模板
+
+## 13. Subagent 架构（默认模板）
+
+后续重构默认按以下角色拆分：
+
+### Agent A：证据研究
+- 负责官方 / 社区 / 工具站内容检索
+- 输出：证据摘要、来源链接、冲突点、适用条件
+
+### Agent B：旧页治理
+- 负责页面盘点、301/canonical/降级/合并建议
+- 输出：治理表、风险说明、路由动作
+
+### Agent C：入口页与 IA
+- 负责首页、`/guides`、`/characters`、`/builds`、`/tier-lists`、`/patches` 的模块设计与实现
+
+### Agent D：内容主线
+- 负责 Beginner / Builds / Tier Lists / Patch 的正文资产页
+- 必须以 Agent A 提供的证据池为输入，不得自由发挥
+
+### Agent E：Reference 支撑层
+- 负责 cards / relics / potions / mechanics 的当前版本定位与反链补齐
+
+### 主线程
+- 统一标准与优先级
+- 审查 subagent 改动范围
+- 执行 lint/build/smoke checks
+- 分批提交
+- 回填 ops-center 文档

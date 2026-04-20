@@ -12,11 +12,11 @@
 - 执行手册（SOP）：`docs/ops-center/04-playbook.md`
 - KPI 与闸门：`docs/ops-center/05-kpi-gates.md`
 
-## 2. 固定巡检节奏
-- 每天两次（上午/下午）
-- 每次必须覆盖四端：`GSC + Vercel + Bing Webmaster + Google Trends`
-- 每次必须补充：外链发布状态检查 + 评论巡检与回复（Reddit/X/Steam）
-- 每次巡检后必须更新：
+## 2. 巡检与执行节奏（按需）
+- 按任务与数据变化触发巡检
+- 涉及“数据调研/复盘/增长分析”时，覆盖四端：`GSC + Vercel + Bing Webmaster + Google Trends`
+- 有新内容或积压信号时，再补充：外链状态检查 + 评论巡检与回复（Reddit/X/Steam）
+- 执行后更新相关文档（按本轮动作决定）：
   - `docs/ops-center/01-daily-log.md`
   - `docs/ops-center/00-dashboard.md`
 
