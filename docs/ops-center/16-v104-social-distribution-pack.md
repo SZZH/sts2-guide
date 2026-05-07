@@ -10,6 +10,7 @@
 
 执行边界：
 
+- 发帖前必须确认代码已推送 `main`、Vercel Production 已 `Ready`、正式域名目标页返回 `HTTP 200`，且正文可检索到 `v0.104.0` 等目标内容
 - 主事实源只用官方 Steam patch notes
 - 不把 beta branch 写成 main branch 结论
 - 每个平台最多 1 个链接
@@ -98,13 +99,15 @@ I collected the official-note-based summary here:
 https://sts2guide.com/news/slay-the-spire-2-beta-patch-v0-104-0-analysis
 ```
 
-## 5. 今日建议
+## 5. 发布优先级
 
-如果今天还要发，优先只发 `X` 或 `Reddit` 其中一个，不要三端同时铺开。当前最稳选择是：
+当前默认优先级：
 
-1. `X` 短串：低摩擦，适合先测试话题反馈
-2. `Reddit` 讨论帖：有潜在价值，但需要发后 30-60 分钟跟评论
-3. `Steam`：只补已有相关讨论，不主动新开导流帖
+1. `Steam`：第一优先。先找已有 `v0.104.0` / `beta patch` / `Doormaker` / `Ironclad` 相关讨论，优先补充官方 notes 总结和 retest 观点；不主动开纯导流帖。
+2. `Reddit`：第二优先。适合发讨论帖，但主贴默认不放链接，且需要发后 30-60 分钟看评论。
+3. `X`：最后优先。适合低成本短串，但不作为主要分发阵地。
+
+如果今天只能做一个平台，优先做 `Steam`。若 Steam 当下没有合适已有讨论，再转 `Reddit`。只有 Steam / Reddit 都不适合时，才发 `X` 短串。
 
 ## 6. 后续记录要求
 
@@ -116,3 +119,14 @@ https://sts2guide.com/news/slay-the-spire-2-beta-patch-v0-104-0-analysis
 - 是否带链接
 - 30-60 分钟互动复查结果
 - 是否触发过滤 / 移除 / 限流
+
+## 7. 发布前部署闸门
+
+本分发包只允许在以下证据齐全后执行：
+
+- `git status --short --branch` 显示本轮改动已提交并推送，不存在待发布的代码差异
+- Vercel Production 最新部署状态为 `Ready`
+- `curl -I -L https://sts2guide.com/news/slay-the-spire-2-beta-patch-v0-104-0-analysis` 返回 `HTTP 200`
+- 正文快检能命中 `v0.104.0`、`Conflagration`、`Drum of Battle`、`Doormaker`
+
+若任一项不满足，标准动作是先部署/等部署/修缓存，不进入 X、Reddit 或 Steam 发帖。
