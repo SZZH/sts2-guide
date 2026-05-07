@@ -18,6 +18,7 @@ export const metadata: Metadata = {
 
 const patchArticles = NEWS_ARTICLES.filter(
   (article) =>
+    article.slug === 'slay-the-spire-2-beta-patch-v0-104-0-analysis' ||
     article.slug === 'slay-the-spire-2-steamdb-patch-tracker' ||
     article.slug === 'slay-the-spire-2-hotfix-patch-notes' ||
     article.slug === 'slay-the-spire-2-known-issues-and-fixes' ||
@@ -28,9 +29,9 @@ const patchArticles = NEWS_ARTICLES.filter(
 
 const impactCards = [
   {
-    href: '/news/slay-the-spire-2-beta-patch-v0-101-0-analysis',
+    href: '/news/slay-the-spire-2-beta-patch-v0-104-0-analysis',
     title: 'Latest Patch Notes',
-    description: 'Start with the newest official patch read before changing your current build assumptions.',
+    description: 'Start with the latest official beta patch read before changing your current build assumptions.',
   },
   {
     href: '/news/slay-the-spire-2-steamdb-patch-tracker',
@@ -110,7 +111,7 @@ export default function PatchesPage() {
           </div>
           <h1 className="font-heading text-4xl font-bold md:text-5xl">Slay the Spire 2 Patch Notes</h1>
           <p className="mt-4 max-w-3xl text-base leading-8 text-steel-blue">
-            Read the latest Slay the Spire 2 patch notes, hotfixes, and balance updates in one place, then decide which builds, guides, or cards need a recheck.
+            Read the latest Slay the Spire 2 patch notes, hotfixes, and balance updates in one place, then decide which builds, guides, or cards need a recheck. Latest official beta note: v0.104.0.
           </p>
 
           <div className="mt-6 flex flex-wrap gap-3 text-sm text-steel-blue">

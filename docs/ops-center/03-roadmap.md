@@ -14,12 +14,13 @@
 ### P0（必须先做）
 - [ ] `TODO` 完成旧页治理表（Owner: Codex，DDL: 今日，验收: 高风险页已完成 `KEEP/REFRESH/DEMOTE/MERGE/REMOVE_OR_REDIRECT` 分级）
 - [ ] `TODO` 完成首页 / `guides` / `characters` / `builds` 新 IA 蓝图（Owner: Codex，DDL: 今日，验收: 已形成模块级重构方案与执行顺序）
-- [ ] `TODO` 社媒未回复清理（Reddit/X/Steam）（Owner: ，DDL: 今日，验收: 24h 超时项清零）
+- [x] `SKIP` 社媒未回复清理（Reddit/X/Steam）（Owner: Codex，日期: 2026-05-07，原因: 旧帖已跨期太久，继续补回复价值低；已改为新内容轻分发）
 - [ ] `TODO` 外链生效复核与补链登记（Owner: ，DDL: 今日，验收: 已发链接状态完整可追踪）
-- [ ] `TODO` 闸门关键口径补齐：曝光页面占比全量复核（Owner: ，DDL: 今日，验收: 得到可复算口径与结论）
+- [ ] `BLOCKED` 闸门关键口径补齐：曝光页面占比全量复核（Owner: Codex，DDL: 今日，验收: 得到可复算口径与结论；原因: 2026-05-07 Bing Webmaster 服务不可达，GSC 今日仅完成总览与可见页级复核，未完成 30 页全量复算）
+- [x] `DONE` 同步 `v0.104.0` patch 口径（Owner: Codex，完成: 2026-05-07 14:55，验收: 已补 `/news/slay-the-spire-2-beta-patch-v0-104-0-analysis`，同步 `/patches` 与主入口页，`pnpm lint` / `pnpm build` 通过，并提交 IndexNow 13 URL；Bing URL Submission 因平台不可达仍 BLOCKED）
 
 ### P1（重要但不阻塞）
-- [ ] `TODO` 任务标题（Owner: ，DDL: ，验收: ）
+- [ ] `BLOCKED` v0.104.0 新内容轻分发（Owner: Codex，DDL: 今日或明早，验收: 仅选择 X 或 Reddit 其中一个发布，发后 30-60 分钟复查互动并回填链接；原因: 2026-05-07 15:09 X compose 导航超时，Reddit/Steam 不建议无复查窗口硬发）
 - [ ] `TODO` 高展现低点击新词提质（仅改现有页词池/模板/内链，不扩量）（Owner: ，DDL: 今日，验收: 完成一轮页面级改写清单）
 - [ ] `TODO` 当日日志与看板收口（Owner: ，DDL: 今日，验收: 00-dashboard + 01-daily-log 完整）
 - [x] `DONE` 建立“关键词 -> 主落地页 -> 支撑页 -> 禁止抢词页”映射表（Owner: Codex，DDL: 本轮重构后，验收: builds/tier list/patch/beginner 关键词有唯一主页面）
@@ -37,11 +38,11 @@
 - `SKIP`（含原因）：
 
 ## 今日执行队列（运维后必填）
-- 今日未处理 P0：Batch-30 零曝光 22 页微调；Bing sitemap / URL submission 明细异常排查
-- 今日未处理 P1：高展现低点击新词提质清单落地；当日日志与看板二次收口（如晚间再跑一轮）
+- 今日未处理 P0：Bing Webmaster / Google Trends 补采；Batch-30 零曝光 22 页微调
+- 今日未处理 P1：v0.104.0 新内容择一平台发布；高展现低点击新词提质清单落地；当日日志与看板二次收口（如晚间再跑一轮）
 - 今日未处理 P2：
-- 今日计划完成：四端实时采集、社媒评论巡检、外链生效复核、闸门复判
-- 今日 `SKIP`（含原因）：
+- 今日计划完成：已完成 GSC / Vercel 登录态采集、游戏动态巡检、v0.104.0 官方 patch 口径同步、IndexNow 提交、v0.104.0 社媒轻分发草稿
+- 今日 `SKIP`（含原因）：旧社媒未回复清理（Reddit/X/Steam 已跨期太久，改为新内容轻分发）
 
 ## 当前执行批次
 - 批次名称：30页验证批

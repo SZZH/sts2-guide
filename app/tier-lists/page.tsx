@@ -1,12 +1,12 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
-const currentVersion = 'v0.103.2';
+const currentVersion = 'v0.104.0 beta';
 
 export const metadata: Metadata = {
   title: 'Slay the Spire 2 Tier Lists | Current patch decision lenses',
   description:
-    'Use four patch-aware tier lenses for Slay the Spire 2: characters, beginner stability, archetypes, and card priority. Built to support current v0.103.2 decisions without pretending the beta is fully settled.',
+    'Use four patch-aware tier lenses for Slay the Spire 2: characters, beginner stability, archetypes, and card priority. Built around official v0.104.0 beta notes without pretending the beta is fully settled.',
   alternates: {
     canonical: '/tier-lists',
   },
@@ -24,12 +24,12 @@ const sectionData = [
     description: (
       <>
         <p>
-          For early and returning runs, Ironclad remains the safest character to recommend because the current patch
-          direction still favors clearer survivability and more forgiving act-one pacing. Silent and Regent can be
-          strong, but they should be treated as patch-sensitive choices until the current balance window settles.
+          For early and returning runs, Ironclad remains the safest character to recommend, but v0.104.0 beta makes
+          Strength AoE and Exhaust turns the first retest target rather than a settled promotion. Silent and Regent can
+          be strong, but they should be treated as patch-sensitive choices until the beta window settles.
         </p>
         <p className="mt-3 text-sm text-slate-400">
-          Version {currentVersion} · Stability range: current patch window with conservative role-based evaluation ·
+          Version {currentVersion} · Stability range: beta watchlist with conservative role-based evaluation ·
           Use the builds hub before turning a character ranking into a concrete deck decision.
         </p>
       </>
@@ -45,9 +45,9 @@ const sectionData = [
     description: (
       <>
         <p>
-          In the current beta branch, first-run players should favor safer defensive lines, cleaner upgrades, and
-          consistent route control before committing to high-variance archetypes. Use this lens when you need the most
-          forgiving path, not the highest ceiling.
+          In the current beta branch, official notes point toward slightly easier lower Ascensions while preserving high
+          Ascension pressure. First-run players should still favor safer defensive lines, cleaner upgrades, and route
+          control before committing to high-variance archetypes.
         </p>
         <p className="mt-3 text-sm text-slate-400">
           Applicable when your goal is repeatable act-one and act-two stability. Once your runs stop collapsing to
@@ -66,7 +66,7 @@ const sectionData = [
     description: (
       <>
         <p>
-          The most reliable archetypes this patch are the ones that still produce stable defense, scaling, and route
+          The most reliable archetypes in this beta window are the ones that still produce stable defense, scaling, and route
           flexibility without depending on one narrow combo line. Use the watchlist label for burst-heavy or highly
           sequencing-dependent paths that still look strong but have not settled enough to promote aggressively.
         </p>
@@ -111,12 +111,12 @@ export default function TierListsPage() {
         <p className="text-sm uppercase tracking-[0.3em] text-slate-400">Current version</p>
         <h1 className="text-4xl font-semibold">Tier lists for {currentVersion}</h1>
         <p className="text-lg text-slate-200">
-          Four living lenses for patch {currentVersion}: hero strength, new player stability, archetype resilience, and
+          Four living lenses for {currentVersion}: hero strength, new player stability, archetype resilience, and
           card decisiveness. Each section points back to builds or reference pages so you finish with a decision.
         </p>
         <div className="flex flex-wrap gap-3 text-sm">
-          <span className="rounded-full border border-slate-600 px-3 py-1">Last validated Apr 20, 2026</span>
-          <span className="rounded-full border border-slate-600 px-3 py-1">Sources: patch notes · community testers</span>
+          <span className="rounded-full border border-slate-600 px-3 py-1">Last validated May 7, 2026</span>
+          <span className="rounded-full border border-slate-600 px-3 py-1">Sources: official Steam notes · community signals</span>
           <span className="rounded-full border border-slate-600 px-3 py-1">Stability window: 14-day rolling</span>
         </div>
       </header>

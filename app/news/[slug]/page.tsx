@@ -96,6 +96,7 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ slu
   const isLaunchGuide = article.slug === 'slay-the-spire-2-launch-time-us-china';
   const isInternalArticle = article.sourceType === 'internal';
   const HIGH_INTENT_NEWS_SLUGS = new Set([
+    'slay-the-spire-2-beta-patch-v0-104-0-analysis',
     'slay-the-spire-2-hotfix-patch-notes',
     'slay-the-spire-2-known-issues-and-fixes',
     'slay-the-spire-2-first-run-guide-act-1-priorities',
@@ -123,6 +124,10 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ slu
     { href: '/guides', label: 'Need a practical build path instead of patch reading?' },
   ];
   const updatedTodayLinks = [
+    {
+      href: '/news/slay-the-spire-2-beta-patch-v0-104-0-analysis',
+      label: 'v0.104.0 beta patch notes',
+    },
     {
       href: '/news/slay-the-spire-2-hotfix-patch-notes',
       label: 'Hotfix patch notes',

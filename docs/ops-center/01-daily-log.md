@@ -15,6 +15,72 @@
 - 同一天内允许多次更新，按时间倒序追加。
 - 每条更新至少包含：已完成事项、未完成事项、下一步动作。
 
+### 2026-05-07 15:09
+- 观察：用户明确指出“方案不应该死板”，旧社媒回复已经过期，不应继续机械追旧帖。已将本日社媒策略从“补旧回复”调整为“围绕 v0.104.0 新内容做轻分发准备”。
+- 已完成：
+  - `DONE` 阅读 `04-playbook.md` 模块六社媒发布规则，确认 Reddit 主贴默认不放链接、每帖最多 1 链接、发后 30-60 分钟需要互动复查。
+  - `DONE` 新增 `docs/ops-center/16-v104-social-distribution-pack.md`，包含 Reddit 讨论帖、X 三条短串、Steam 补充回复三套差异化草稿。
+  - `DONE` 新增决策 `DEC-20260507-02`：社媒从旧帖补回复切换为新内容轻分发。
+  - `SKIP` 旧 Reddit/X/Steam 未回复清理：旧帖已跨期太久，继续补回复价值低。
+- 未完成 / 阻塞：
+  - `BLOCKED` X 实际发布：尝试打开 `https://x.com/compose/post`，浏览器导航超时并进入 Chrome error 页，未发布。
+  - `READY` v0.104.0 新内容发布：若稍后 X 可访问，优先发 X 短串；Reddit 需要发后 30-60 分钟盯评论，Steam 只建议补已有相关讨论，不建议今天硬开新帖。
+  - `BLOCKED` Bing Webmaster / Google Trends 仍按 14:55 状态待补。
+- 下一步：
+  - 若今天继续执行社媒，等 X 可访问后发短串；如果选择 Reddit，则主贴不放链接，15-60 分钟后再视情况补评论链接。
+
+### 2026-05-07 14:55
+- 观察：已按官方 Steam `Beta Patch Notes - v0.104.0` 完成站内 patch 口径同步。本轮事实口径只以官方 patch notes 为准；竞品与高热社区讨论仅作为“哪些主题更值得优先承接”的参考，不作为卡牌/数值/版本状态事实来源。
+- 已完成：
+  - `DONE` 新增 `/news/slay-the-spire-2-beta-patch-v0-104-0-analysis`，明确 `v0.104.0` 是 beta branch 证据，不写成 main branch 既定事实。
+  - `DONE` 同步首页、`/patches`、`/builds`、`/cards`、`/relics`、`/potions`、`/tier-lists`、`/characters`、`/mechanics`、`/news`、`/llms.txt` 与 `app/sitemap.ts`。
+  - `DONE` 校正新文章来源 URL 为官方 Steam Store News：`https://store.steampowered.com/news/app/2868840/view/535507353628312243`。
+  - `DONE` `pnpm lint` 通过（0 errors；4 个既有 warning：脚本未使用变量与 generated eslint-disable）。
+  - `DONE` `pnpm build` 通过，成功生成 `810` 个页面。
+  - `DONE` IndexNow 提交 `13` 个 URL：新 v0.104.0 新闻页、`/patches`、首页、`/builds`、`/cards`、`/relics`、`/potions`、`/tier-lists`、`/characters`、`/mechanics`、`/news`、`/llms.txt`、`/sitemap.xml`。
+- 未完成 / 阻塞：
+  - `BLOCKED` Bing URL Submission：Bing Webmaster 今日服务不可达，沿用 Ref C=`2026-05-07T03:25:16Z`，不能假装已提交。
+  - `BLOCKED` Google Trends：仍受 `/sorry` 人机验证影响，趋势信号待补采。
+  - `TODO` Reddit/X/Steam 未回复清理仍未执行。
+- 下一步：
+  - `P0` 平台恢复后补 Bing Webmaster / Google Trends，并补做 Bing URL Submission。
+  - `P0` 观察新 patch 新闻页、`/patches`、`/builds` 的收录与点击回流；未过维护方案继续线前不扩量。
+
+### 2026-05-07 11:26
+- 观察：已完成今天一轮可执行实时采集。GSC 与 Vercel 登录态可读，站点可用；Bing Webmaster 与 Google Trends 当下受阻，不能用历史口径冒充实时结果。Steam 官方新闻 API/RSS 发现 `Beta Patch Notes - v0.104.0（2026-04-24）`，说明站内仍以 `v0.103.2` 为当前口径的主入口已经再次落后。
+- 数据（四端）：
+  - GSC（3 个月，搜索类型=网页）：`866 clicks / 6.31万 impressions / 1.4% CTR / 平均排名 8.9`；上次更新 `11小时前`，图表窗口 `2026-03-16 ~ 2026-05-04`；查询 Top 包括 `sts2 guide (92/887)`、`sts 2 guide (18/246)`、`sts2 guides (16/127)`、`slay the spire 2 hammer time (14/287)`；页面 Top 包括 `/ (172/4,344)`、`/relics/book_of_five_rings (92/1,485)`、`/cards/hammer_time (67/2,257)`、`/guides/exhaust-mechanic-explained (64/7,120)`、`/news/slay-the-spire-2-steam-deck-performance-guide (62/5,496)`；国家 Top=`美国 349/30,628`、`英国 61/3,584`、`加拿大 58/4,676`；设备=`桌面 462/43,225`、`移动 398/19,685`、`平板 6/211`；搜索结果呈现=`无数据`；索引覆盖=`已编入索引 79 / 未编入索引 721`，未索引主因仍是 `已发现 - 尚未编入索引 706`；增强结果：`Breadcrumbs 19 有效 / 0 无效`、`FAQ 7 有效 / 0 无效`。
+  - Vercel（登录态 Analytics，Last 30 Days，`Apr 7, 10:00 - May 7, 10:59`）：`Visitors 2,087 / Page Views 4,675 / Bounce Rate 79%`；Top Pages=`/ (388)`、`/guides (282)`、`/builds (188)`、`/cards (159)`、`/characters (138)`、`/news/slay-the-spire-2-first-run-guide-act-1-priorities (99)`、`/news/slay-the-spire-2-known-issues-and-fixes (88)`；Top Referrer=`google.com 488`、`duckduckgo.com 157`、`bing.com 97`、`search.brave.com 65`；国家 Top=`Singapore 42%`、`US 22%`、`China 7%`；设备=`Desktop 79% / Mobile 20% / Tablet <0.5%`；操作系统=`Windows 71% / iOS 10% / Android 10% / Mac 7%`。本地 Vercel token 脚本仍全接口 `403`，已落盘 `ops-logs/vercel/2026-05-07/2026-05-07T03-21-51-202Z.json`。
+  - Bing Webmaster：`BLOCKED`。登录入口可打开，但进入后返回 `Bing Webmaster services could not be reached`，Ref C=`2026-05-07T03:25:16Z`；Search Performance、Index Coverage、Sitemaps、URL Submission、IndexNow 明细均无法实时采集。
+  - Google Trends：`BLOCKED`。访问 Trends 查询时进入 Google `/sorry` 人机验证页，无法读取核心词/品牌词/意图词趋势、区域差异、相关主题和相关查询。
+- 表现对比（vs 2026-04-20 18:13）：
+  - GSC：`624 -> 866 clicks`、`4.56万 -> 6.31万 impressions`，CTR `1.4%` 持平，平均排名 `9.2 -> 8.9` 小幅改善；搜索侧继续增长。
+  - Vercel：窗口从 7 天变为 30 天，不能直接同比总量；但 `/builds` 从 4 月 20 日 7 天窗口 `65` 到本次 30 天窗口 `188`，说明它仍是有效 landing 页，不是一次性噪音。
+  - Bing / Trends：今日不可实时对比，必须标 `BLOCKED`，只能等平台恢复后补采。
+- 变化原因（上涨/下滑驱动）：
+  - GSC 增长仍由首页、实体页与机制页驱动，说明 reference + guide 资产继续吃到自然搜索；但 `/builds` 尚未进入 GSC Top Page，可见主词迁移没有完全完成（中高置信度）。
+  - Vercel 侧 `/builds` 已稳定承接，但首页和 `/guides` 仍排在最前，说明新主线页有流量，但旧入口压力仍高（高置信度）。
+  - `Singapore 42%` 仍异常偏高，且设备/系统侧继续偏 Desktop/Windows，需要继续按抓取或统计噪音处理，不能把它直接当真实玩家需求（中高置信度）。
+  - 官方 beta 已推进到 `v0.104.0`，而站内主入口仍大量写 `v0.103.2`，当前最明确的内容风险是 patch 口径再次过期（高置信度）。
+- 建议动作（含优先级）：
+  - `P0` 先同步 `v0.104.0` patch 口径，优先 `/patches`、首页、`/builds`、`/cards`、`/relics`、`/tier-lists`、`/characters`；是否补独立新闻页取决于是否要把 Ironclad/Ascension/Doormaker 变化做成可索引资产。
+  - `P0` 等 Bing/Trends 可访问后补采缺口，再复判 30 页验证批，当前仍不得扩量。
+  - `P0` 社媒未回复清理仍未执行，需要单独补 Reddit/X/Steam。
+  - `P1` 继续追踪 Vercel `Singapore` 异常，必要时按国家过滤看 Top Pages 与 Bounce。
+- 异常与影响：
+  - `BLOCKED` Bing Webmaster 服务不可达（影响：Bing 搜索表现、提交、抓取/索引异常今天无法确认）。
+  - `BLOCKED` Google Trends 人机验证（影响：趋势词和区域差异今天无法确认）。
+  - `RISK` 站内 patch 口径落后于官方 beta `v0.104.0`（影响：搜索摘要与用户判断会感知过时）。
+- 最近游戏动态：
+  - `DONE` Steam 官方新闻 API/RSS 确认 `Beta Patch Notes - v0.104.0`，公开时间为 `2026-04-24`，重点包括 Ascension 难度调整、Doormaker 观察、Conflagration/Drum of Battle/Parry rework、新 Badges、Neow's Fury/Conch 等 buff，以及大量 bug fix。
+  - 内容动作：`TODO` 同步站内 patch 口径；内容完成后再做 `IndexNow` 与 Bing URL Submission。
+- 执行动作状态：
+  - `DONE`：站点可用性；GSC 登录态复核；Vercel 登录态复核；Steam 官方近窗动态巡检；当日看板/日志/NOW/动态台账更新。
+  - `BLOCKED`：Bing Webmaster；Google Trends；Vercel 本地 token API。
+  - `TODO`：v0.104.0 内容同步；Bing/Trends 补采；社媒未回复清理；内容发布后的 IndexNow / Bing 提交。
+- 验证结果：闸门结论仍维持 `未通过`。今天没有拿到 Bing 与 Trends，且 GSC 仅完成总览与可见页级复核，尚不足以推翻历史 `8/30 = 26.7%` 的有曝光页面占比下限。
+- 下一步：优先把站内 `v0.104.0` 口径补上，再补采 Bing/Trends；若发布新内容或改动主入口，必须同步提交 IndexNow 并回填执行日志。
+
 ### 2026-04-20 18:13
 - 观察：已完成今天一轮四端实时采集与近窗游戏动态巡检。与 `2026-04-14` 相比，搜索总量继续抬升，`/builds` 已进入真实 landing 队列，但站内 patch 口径仍停留在 `v0.103.0`，已经落后于 Steam 官方最新公开更新 `v0.103.2`。
 - 数据（四端）：

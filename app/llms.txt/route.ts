@@ -17,6 +17,7 @@ const LLMSText = `# sts2guide.com
 - https://sts2guide.com/mechanics
 
 ## High-intent news pages
+- https://sts2guide.com/news/slay-the-spire-2-beta-patch-v0-104-0-analysis
 - https://sts2guide.com/news/slay-the-spire-2-hotfix-patch-notes
 - https://sts2guide.com/news/slay-the-spire-2-known-issues-and-fixes
 - https://sts2guide.com/news/slay-the-spire-2-first-run-guide-act-1-priorities
@@ -36,7 +37,7 @@ const LLMSText = `# sts2guide.com
 - Primary language: English.
 - Primary audience: players searching patch decisions, builds, mechanic explanations, and database lookup answers.
 
-Last updated: 2026-04-13
+Last updated: 2026-05-07
 `;
 
 export function GET() {

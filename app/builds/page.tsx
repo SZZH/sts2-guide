@@ -8,18 +8,18 @@ import { OrganizationSchema, VideoGameSchema, WebsiteSchema } from '@/app/schema
 export const metadata: Metadata = {
   title: 'Slay the Spire 2 Builds: Best Current Builds by Character',
   description:
-    'Find the best current Slay the Spire 2 builds by character for patch v0.103.2, with beginner-friendly build paths, archetype summaries, and direct links into cards, relics, and patch notes.',
+    'Find current Slay the Spire 2 builds by character with v0.104.0 beta watchlist notes, beginner-friendly build paths, archetype summaries, and direct links into cards, relics, and patch notes.',
   alternates: {
     canonical: '/builds',
   },
   openGraph: {
     title: 'Slay the Spire 2 Builds: Best Current Builds by Character',
     description:
-      'Best current Slay the Spire 2 builds by character for patch v0.103.2, with beginner-friendly build paths and direct links into cards, relics, and patch notes.',
+      'Best current Slay the Spire 2 builds by character with v0.104.0 beta watchlist notes, beginner-friendly build paths, and direct links into cards, relics, and patch notes.',
   },
 };
 
-const CURRENT_PATCH = 'v0.103.2';
+const CURRENT_PATCH = 'v0.104.0 beta';
 
 const DECISION_TILES = [
   {
@@ -31,11 +31,11 @@ const DECISION_TILES = [
   {
     href: '/guides',
     label: 'Best Builds by Character',
-    description: 'Character archetypes, matchup notes, and build paths vetted for patch 0.103.2.',
+    description: 'Character archetypes, matchup notes, and build paths checked against official v0.104.0 beta notes.',
     badge: 'Builds',
   },
   {
-    href: '/news/slay-the-spire-2-steamdb-patch-tracker',
+    href: '/news/slay-the-spire-2-beta-patch-v0-104-0-analysis',
     label: 'Patch Impact',
     description: 'Track what changed, why it matters, and which builds need a retest.',
     badge: 'Patch',
@@ -56,9 +56,9 @@ const RESOURCE_CARDS = [
     badge: 'Guides',
   },
   {
-    href: '/news/slay-the-spire-2-steamdb-patch-tracker',
-    title: 'Patch tracker & notes',
-    copy: 'Follow every hotfix, know what touched your deck, and keep your assumptions fresh.',
+    href: '/news/slay-the-spire-2-beta-patch-v0-104-0-analysis',
+    title: 'v0.104.0 beta notes',
+    copy: 'Start with official beta notes, then decide which build assumptions need retesting.',
     badge: 'Patch',
   },
   {
@@ -79,7 +79,7 @@ const STATUS_TIER_HINTS = [
   {
     tier: 'Beginner',
     title: 'Beginner primer',
-    summary: 'Lean on builds that trade burst for guarded pacing so first runs survive patch 0.103.2.',
+    summary: 'Lean on builds that trade burst for guarded pacing while v0.104.0 beta eases lower Ascension pressure.',
   },
   {
     tier: 'Stable',
@@ -110,18 +110,18 @@ const BUILD_TILES: BuildTile[] = [
   {
     slug: 'ironclad',
     archetype: 'Strength ramp + controlled HP trade-offs',
-    patchImpact: 'Patch 0.103.2 trimmed the snappier self-damage lines so Block-based Strength ramps are safer.',
-    focus: 'Lean toward consistent guard and Strength cards before tilting into explosive finishers.',
+    patchImpact: 'v0.104.0 beta reworks Conflagration into a Strength-friendly multi-hit AoE and moves Drum of Battle into Exhaust payoff territory.',
+    focus: 'Retest Strength AoE and Exhaust energy turns before treating old Ironclad ratings as settled.',
     guideHref: '/guides/ironclad-early-build',
     statusTier: 'Beginner',
     actionCue: 'Draft guard-heavy draws, then layer Strength when the map calms before branching out.',
-    cardFocus: 'Track guard + Strength card pairs in the first 4 elites.',
+    cardFocus: 'Track Conflagration, Drum of Battle, guard, and Strength pairings in early elite paths.',
     relicFocus: 'Favor relics boosting Strength or Block in tandem, not one-shot damage spikes.',
   },
   {
     slug: 'silent',
     archetype: 'Discard tempo with Sly/Poison follow-through',
-    patchImpact: 'Patch 0.103.2 sharpened Sly triggers and made Poison timing more reliable for mid-game hooks.',
+    patchImpact: 'v0.104.0 beta does not headline Silent as a primary rework target, so keep prior Sly and Poison guidance conservative.',
     focus: 'Build hand quality and sequencing before locking into high-variance Sly payoffs.',
     guideHref: '/guides/silent-early-build',
     statusTier: 'Stable',
@@ -132,8 +132,8 @@ const BUILD_TILES: BuildTile[] = [
   {
     slug: 'regent',
     archetype: 'Stars economy and Forge artifacts',
-    patchImpact: 'Forge tweaks from 0.103.2 reward clearer Stars-to-artifact paths and discourage overtaxed setups.',
-    focus: 'Prioritize Stars generation that feeds your Forge toolkit and only load artifact burst when the map is stable.',
+    patchImpact: 'v0.104.0 beta makes Parry clearer by moving Block display and scaling onto Sovereign Blade.',
+    focus: 'Retest Blade lines with Dexterity and Frail in mind before promoting Regent rankings.',
     guideHref: '/guides/regent-stars-vs-forge-build-path',
     statusTier: 'Stable',
     actionCue: 'Stack Stars early, set up Forge triggers, and delay artifact burst until your map reading is reliable.',
@@ -143,8 +143,8 @@ const BUILD_TILES: BuildTile[] = [
   {
     slug: 'necrobinder',
     archetype: 'Doom + Souls + Osty control',
-    patchImpact: 'Doom timing and Soul gains got calibration love, so early Osty plays need cleaner setup windows.',
-    focus: 'Stagger Osty usage, stack Souls, and keep Doom thresholds readable for patch 0.103.2.',
+    patchImpact: 'v0.104.0 beta does not make Necrobinder the headline; keep Doom and Soul plans in watchlist language until more run evidence lands.',
+    focus: 'Stagger Osty usage, stack Souls, and keep Doom thresholds readable while beta balance settles.',
     guideHref: '/guides/necrobinder-common-cards',
     statusTier: 'Watchlist',
     actionCue: 'Manage Soul stacks closely and only deploy Osty when the board is stable.',
@@ -155,7 +155,7 @@ const BUILD_TILES: BuildTile[] = [
   {
     slug: 'defect',
     archetype: 'Orb sequencing and Focus scaling',
-    patchImpact: 'Orb stability from 0.103.2 means your Focus investments now unlock more reliable evocations.',
+    patchImpact: 'v0.104.0 beta is more about Ascension curve, Ironclad, Regent, Ancients, and enemy tuning than Defect-specific promotion.',
     focus: 'Balance early control orbs with late-game investment orbs without going full random burst.',
     guideHref: '/guides/defect-early-build',
     statusTier: 'Stable',
@@ -172,7 +172,7 @@ function heroMechanicNames(characterSlug: BuildTile['slug']) {
 
 export default function BuildsPage() {
   const heroSignals = [
-    'Patch-aware builds for the current patch (patch 0.103.2) so you can spot the safe upgrade paths.',
+    'Patch-aware builds for the latest official beta patch (v0.104.0 beta) so you can spot retest priorities.',
     'Each character tile highlights the archetype focus, patch impact, and where to go next for guides or cards.',
     'Decision tiles funnel you into beginners, builds, patch details, and the reference resources you need right away.',
   ];
@@ -197,7 +197,7 @@ export default function BuildsPage() {
             <p className="text-xs uppercase tracking-[0.4em] text-molten-orange">Best builds · patch {CURRENT_PATCH}</p>
             <h1 className="max-w-4xl text-4xl font-bold leading-tight md:text-5xl">Slay the Spire 2 builds</h1>
             <p className="max-w-3xl text-base leading-relaxed text-steel-blue md:text-lg">
-              Find the best current Slay the Spire 2 builds by character for patch {CURRENT_PATCH}, including beginner-friendly builds, archetype pivots, and direct links into cards, relics, and patch notes.
+              Find the best current Slay the Spire 2 builds by character for {CURRENT_PATCH}, including beginner-friendly builds, archetype pivots, and direct links into cards, relics, and patch notes.
             </p>
             <div className="grid gap-4 md:grid-cols-2">
               {heroSignals.map((signal) => (
@@ -207,7 +207,7 @@ export default function BuildsPage() {
               ))}
             </div>
             <p className="max-w-3xl text-sm text-steel-blue">
-              Ironclad, Silent, Regent, Necrobinder, and Defect build paths for the current patch.
+              Ironclad, Silent, Regent, Necrobinder, and Defect build paths for the current beta watchlist.
             </p>
           </div>
         </section>
@@ -255,14 +255,14 @@ export default function BuildsPage() {
               <p className="text-xs uppercase tracking-[0.3em] text-molten-orange">Patch Signal</p>
               <h3 className="font-heading text-3xl font-bold mt-2">What patch {CURRENT_PATCH} means for builds</h3>
               <p className="mt-4 text-base text-steel-blue">
-                Patch {CURRENT_PATCH} keeps the Early Access metagame nimble: repeatable Strength, Sly, and Forge lines are rewarded while unpredictable spike builds are dialed down. These tiles highlight what to test in your current run.
+                Patch {CURRENT_PATCH} is a beta-branch signal, not final main-branch law: Ironclad Strength/Exhaust lines, Regent Blade interactions, Ancient buffs, and lower-Ascension route pressure are the first things to retest.
               </p>
               <div className="mt-6 flex flex-wrap gap-3 text-sm">
                 <Link
-                  href="/news/slay-the-spire-2-steamdb-patch-tracker"
+                  href="/news/slay-the-spire-2-beta-patch-v0-104-0-analysis"
                   className="inline-flex items-center rounded-full border border-molten-orange px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-molten-orange"
                 >
-                  Patch tracker
+                  v0.104.0 beta notes
                 </Link>
                 <Link
                   href="/news/slay-the-spire-2-hotfix-patch-notes"

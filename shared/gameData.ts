@@ -199,6 +199,106 @@ export interface NewsArticle {
 
 export const NEWS_ARTICLES: NewsArticle[] = [
   {
+    slug: 'slay-the-spire-2-beta-patch-v0-104-0-analysis',
+    title: 'Slay the Spire 2 v0.104.0 Beta Patch Notes: Ascension Tuning, Ironclad Reworks, and Doormaker Watch',
+    excerpt: 'Official v0.104.0 beta notes adjust the Ascension difficulty curve, rework Conflagration, Drum of Battle, and Parry, buff several Ancient tools, and keep Doormaker on the watchlist rather than declaring a final meta.',
+    date: '2026-04-24',
+    category: 'Analysis',
+    readTime: '10 min',
+    featured: true,
+    image: 'https://clan.akamai.steamstatic.com/images/44971832/52d0afb58122687b0a9242f5b216994973b336af.png',
+    url: 'https://store.steampowered.com/news/app/2868840/view/535507353628312243',
+    source: 'Steam News',
+    sourceType: 'internal',
+    updatedAt: '2026-05-07',
+    intro: [
+      'v0.104.0 is a beta-branch patch, so treat it as current beta evidence rather than final main-branch law. The practical read is still important: lower Ascensions are being softened, high Ascension pressure is being preserved, Ironclad gets two meaningful card reworks, Regent gets a clearer Parry implementation, and Doormaker remains under observation.',
+      'Use this page to decide what to retest first. Do not rewrite every build from one beta note, but do stop quoting v0.103.2 advice as if nothing changed.',
+    ],
+    sections: [
+      {
+        heading: 'Official source of truth: what v0.104.0 actually says',
+        paragraphs: [
+          'Mega Crit frames this beta patch around three official goals: make base difficulty more accessible, keep high Ascension wins meaningful, and avoid overreacting to early Doormaker complaints before players and metrics settle.',
+          'That matters because the patch is not a single-card hype cycle. It is a calibration pass: lower Ascension enemies are eased in several places, some high Ascension values remain firm or slightly sharper, and multiple cards are reworked to make their role clearer.',
+        ],
+        bullets: [
+          'Branch status: beta branch, not a confirmed main-branch merge yet',
+          'Difficulty direction: easier low Ascensions, still demanding high Ascensions',
+          'Doormaker status: monitored, not declared solved or broken',
+        ],
+      },
+      {
+        heading: 'Ironclad retest first: Conflagration and Drum of Battle',
+        paragraphs: [
+          'The official notes rework Conflagration from a one-hit scaling AoE into repeated small AoE hits. That changes its job: it now reads more like a Strength payout and less like a generic card-count payoff.',
+          'Drum of Battle changes from a 0-cost Power that draws immediately and exhausts the top draw-pile card each turn into a 1-cost Skill that draws cards and gives Energy when exhausted. Official notes call out its low pick rate, so this is not flavor text; it is a direct attempt to make the card more interesting inside Exhaust lines.',
+        ],
+        bullets: [
+          'Retest Conflagration in Strength decks before keeping old rare-card ratings',
+          'Retest Drum of Battle with Exhaust payoffs instead of evaluating it as old passive draw',
+          'Do not assume every Ironclad build improved; this is role cleanup, not a blanket buff',
+        ],
+      },
+      {
+        heading: 'Regent and Ancient changes: clearer interactions, not instant tier-list certainty',
+        paragraphs: [
+          'Parry now pushes its Block value onto Sovereign Blade directly, which makes the Blade display and scaling behavior clearer. The important part is interaction clarity: Dexterity and Frail can now matter in a way players can read on the card itself.',
+          'Ancient tools also get meaningful buffs. Neow\'s Booming Conch adds Energy in Elite combats, Neow\'s Fury lets players choose the cards returned from discard, and Tezcatara\'s Nutritious Soup adds damage to Strikes. These are concrete retest candidates, not proof that every Ancient route is suddenly top tier.',
+        ],
+        bullets: [
+          'Regent: retest Parry with Dexterity/Frail-aware Sovereign Blade lines',
+          'Ancients: retest Neow\'s Fury and Booming Conch in Elite-heavy paths',
+          'Tier lists should mark these as watchlist-to-retest, not settled promotions',
+        ],
+      },
+      {
+        heading: 'Enemy and multiplayer tuning points to smoother early runs',
+        paragraphs: [
+          'The official notes include several enemy adjustments that explicitly reduce low-Ascension pressure while preserving or increasing high-Ascension pressure. Vantom, Waterfall Giant, Scrolls of Biting, Owl Magistrate, and Slimed Berserker are all part of that direction.',
+          'Multiplayer also gets scaling and bug fixes, including Artifact, Slippery, and Skittish power scaling changes plus multiple timing fixes. If your group had run-state divergence or odd multiplayer interactions, retest before assuming the issue is still active.',
+        ],
+        bullets: [
+          'Beginner guidance can be slightly less pessimistic on lower Ascensions',
+          'High Ascension advice should stay conservative until repeated runs confirm the new curve',
+          'Multiplayer advice should point to retesting known bugs after updating',
+        ],
+      },
+      {
+        heading: 'Community signal: what to use, and what not to overuse',
+        paragraphs: [
+          'Early community and press discussion is useful for prioritizing retests: Ironclad reworks, Ascension feel, Doormaker friction, and Ancient buffs are the loudest themes to watch. Those signals help decide which pages to update first.',
+          'But community reaction is not the source of truth for card text or branch status. Official notes decide what changed; community posts help us decide what players are likely to search, question, or misunderstand next.',
+        ],
+        bullets: [
+          'Use community heat to choose update priority',
+          'Use official Steam notes for facts and wording',
+          'Avoid declaring final meta winners from first-day beta reactions',
+        ],
+      },
+      {
+        heading: 'What to update on this site first',
+        paragraphs: [
+          'The first update should be the patch hub and build hub language. Pages that still say v0.103.2 is the current decision window need to acknowledge v0.104.0 beta and clearly separate beta-watchlist guidance from main-branch certainty.',
+          'Cards and character pages should not invent exhaustive rankings. The safe move is to add retest guidance around Conflagration, Drum of Battle, Parry, Neow\'s Fury, Booming Conch, and lower-Ascension route pressure.',
+        ],
+        bullets: [
+          'Patch hub: promote v0.104.0 beta as the latest official beta note',
+          'Builds: retest Ironclad Strength/Exhaust and Regent Blade lines',
+          'Tier lists: keep beta changes in watchlist language until more evidence arrives',
+        ],
+      },
+    ],
+    relatedLinks: [
+      { href: '/patches', label: 'Open the patch hub for the latest versioned context' },
+      { href: '/builds', label: 'Retest current builds after v0.104.0 beta' },
+      { href: '/tier-lists', label: 'Keep v0.104.0 changes in watchlist tier framing' },
+      { href: '/characters', label: 'Compare which characters need retesting first' },
+      { href: '/cards', label: 'Look up cards affected by Ironclad and Regent reworks' },
+      { href: '/news/slay-the-spire-2-steamdb-patch-tracker', label: 'Track beta-to-main patch sequence' },
+    ],
+  },
+  {
     slug: 'slay-the-spire-2-beta-patch-v0-101-0-analysis',
     title: 'Slay the Spire 2 v0.101.0 Patch Analysis: Prepared, Arsenal, Voltaic and the New Balance Direction',
     excerpt: 'What actually changed in v0.101.0 and what should you retest first? This analysis focuses on Prepared, Arsenal, Voltaic, route pressure, and practical run-level adaptation.',

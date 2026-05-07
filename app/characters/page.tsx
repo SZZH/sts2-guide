@@ -77,8 +77,8 @@ const QUICK_PICKS = [
 
 const PATCH_CALLOUTS = [
   {
-    title: 'Patch 0.103.2 favors cleaner routes',
-    body: 'Use the current patch hub before assuming old role advice is still valid, especially for build pivots and archetype timing.',
+    title: 'v0.104.0 beta changes what to retest first',
+    body: 'Use the current patch hub before assuming old role advice is still valid, especially for Ironclad reworks, Regent Blade lines, Ancient buffs, and lower-Ascension pacing.',
     href: '/patches',
   },
   {
@@ -154,7 +154,7 @@ export default async function CharactersPage({ searchParams }: CharactersPagePro
     {
       href: '/builds',
       title: 'Build Guides',
-      subtitle: 'Current archetypes and character plans for patch 0.103.2.',
+      subtitle: 'Current archetypes and character plans for the v0.104.0 beta watchlist.',
     },
     {
       href: '/patches',

@@ -10,17 +10,17 @@
 - `BLOCKED`：受阻（需注明原因）
 - `SKIP`：今日不做（需注明原因）
 
-## 今日状态（2026-04-20 18:13）
-- 站点可用性：`DONE`（`https://sts2guide.com` 返回 `HTTP 200`）
-- 流量总览（Vercel）：`DONE`（登录态 `Last 7 Days`：`Visitors 550 / PV 1,252 / Bounce Rate 77%`；Top Landing=`/ 100`、`/guides 74`、`/builds 65`；Top Referrer 仍为搜索；`Singapore 47%` 依旧异常偏高）
-- 搜索总览（GSC）：`DONE`（3 个月：`624 clicks / 4.56万 impressions / CTR 1.4% / 平均排名 9.2`；上次更新约 `3 小时前`，数据截止 `2026-04-18`；Top Page 已是 `/ 103 / 2789`、`/relics/book_of_five_rings 70 / 1059`、`/guides/exhaust-mechanic-explained 52 / 4774`）
-- Bing 总览：`DONE`（3 个月：`173 clicks / 9.6K impressions`；Sitemaps=`1`、URLs discovered=`792`、`Last crawl=2026-04-18 Success`；IndexNow 最近 `10h=0`；URL Submission=`No pages found`）
-- 趋势总览（Google Trends）：`DONE`（美国过去 12 个月平均值 `10 / 2 / 0`；最近一周约 `49 / 16 / 0`；相关上升词继续包括 `slay the spire 2 patch`、`sts2 cards`、`sts2 tier list`）
+## 今日状态（2026-05-07 15:09）
+- 站点可用性：`DONE`（`https://sts2guide.com` 返回 `HTTP 200`，Vercel cache=`HIT`）
+- 流量总览（Vercel）：`DONE`（登录态 `Last 30 Days`：`Visitors 2,087 / PV 4,675 / Bounce Rate 79%`；Top Pages=`/ 388`、`/guides 282`、`/builds 188`、`/cards 159`、`/characters 138`；Top Referrer=`google.com 488`、`duckduckgo.com 157`、`bing.com 97`；国家=`Singapore 42% / US 22% / China 7%`；设备=`Desktop 79% / Mobile 20%`；本地 token API 仍 `403`，仅作 `BLOCKED` 证据）
+- 搜索总览（GSC）：`DONE`（3 个月：`866 clicks / 6.31万 impressions / CTR 1.4% / 平均排名 8.9`；上次更新 `11小时前`，图表窗口 `2026-03-16 ~ 2026-05-04`；Top Page=`/ 172 / 4,344`、`/relics/book_of_five_rings 92 / 1,485`、`/cards/hammer_time 67 / 2,257`、`/guides/exhaust-mechanic-explained 64 / 7,120`）
+- Bing 总览：`BLOCKED`（登录入口可打开，但 Bing Webmaster 返回 `services could not be reached`；Ref C=`2026-05-07T03:25:16Z`，无法实时采集 Search Performance / Sitemaps / URL Submission / IndexNow 明细）
+- 趋势总览（Google Trends）：`BLOCKED`（访问 Trends 时进入 Google `/sorry` 人机验证页，无法实时读取核心词/品牌词/意图词趋势）
 - 生产发布总览：`SKIP`（今日未触发新发布）
-- 线上结构验证：`DONE`（重构后的主线承接已出现：Vercel Top Landing 中 `/builds=65`，说明新主线页不再只是结构壳）
-- 游戏动态总览：`DONE`（近窗最新明确官方口径已推进到 `重大更新1号 - v0.103.2（2026-04-17）`；`Neowsletter - April 2026` 已上线）
-- 外链发布总览：`DONE`（已补提 `IndexNow`：`/` `/builds` `/cards` `/patches`）
-- 社媒互动总览：`SKIP`（本轮优先处理四端与 patch 动态；今日未重跑社媒巡检）
+- 线上结构验证：`DONE`（`/builds` 在 Vercel 30 天窗口为 `188 visitors`，继续是真实 landing 页；但 GSC Top Page 仍由首页、实体页和机制页主导，主词迁移仍需复检）
+- 游戏动态总览：`DONE`（Steam 官方新闻确认 `Beta Patch Notes - v0.104.0（2026-04-24）`；已补 `/news/slay-the-spire-2-beta-patch-v0-104-0-analysis` 并同步首页、patch hub、builds、cards、relics、potions、tier-lists、characters、mechanics、news、llms 与 sitemap）
+- 外链发布总览：`DONE`（IndexNow 已提交 13 个 URL：新 v0.104.0 新闻页、`/patches`、首页、`/builds`、`/cards`、`/relics`、`/potions`、`/tier-lists`、`/characters`、`/mechanics`、`/news`、`/llms.txt`、`/sitemap.xml`；Bing URL Submission 仍因 Bing Webmaster `BLOCKED` 无法执行）
+- 社媒互动总览：`SKIP`（旧 Reddit/X/Steam 待回复已跨期太久，今天不追旧帖；已改为 v0.104.0 新内容轻分发草稿，见 `16-v104-social-distribution-pack.md`）
 
 ## 闸门状态（当前批次）
 - 收录率 >= 60%：`90.0%（27/30，代理口径，待 URL Inspection 全量复核）`
@@ -30,28 +30,28 @@
 
 ## 今日异常
 - [ ] 无
-- [x] 有（Bing URL Submission 页面 `No pages found` 持续；Vercel `Singapore 47%` 占比异常；站内多处 patch 文案仍停留在 `v0.103.0`）
+- [x] 有（Bing Webmaster 服务不可达；Google Trends 人机验证阻塞；Vercel `Singapore 42%` 占比仍异常；v0.104.0 口径已同步，后续只需观察收录与点击回流）
 
 ## 今日动作状态（必须完整）
-- `DONE`: 2026-04-20 18:13 站点可用性校验（`HTTP 200`）
-- `DONE`: 2026-04-20 18:13 四端实时采集（GSC / Vercel 登录态 / Bing 登录态 / Google Trends）
-- `DONE`: 2026-04-20 18:13 GSC `网页 / 国家 / 设备 / FAQ / Breadcrumbs` 复核（`已编入索引 83`、`未编入索引 717`、`FAQ 7 有效`、`Breadcrumbs 17 有效`）
-- `DONE`: 2026-04-20 18:13 Bing `Search Performance / Sitemaps / IndexNow / URL Submission` 细项复核（`Sitemaps` 已恢复 `Success`，`URL Submission` 仍 `No pages found`）
-- `DONE`: 2026-04-20 18:13 近窗游戏动态巡检（Steam 新闻确认最近公开口径已到 `v0.103.2`，并有 `Neowsletter - April 2026`）
-- `DONE`: 2026-04-20 18:13 `IndexNow` 提交 `/` `/builds` `/cards` `/patches`（脚本回执成功）
-- `IN_PROGRESS`: 按 `14-rebuild-verification-loop.md` 继续回流窗复检（主词迁移 + `/` 与 `/guides` bounce + 新主线承接）
-- `DONE`: 针对 `slay the spire 2 builds`、`sts2 cards`、`sts 2 patch notes` 完成最小补丁级补位（`/builds` `/cards` `/patches` 的 title / 首屏文案 / CTA 收口，更像搜索落地页而非导航页）
-- `DONE`: 修正主入口仍停留在 `v0.103.0` 的 patch 口径，并补做 `/` `/builds` `/cards` `/patches` 的 `IndexNow`
-- `DONE`: 复核 Vercel `Singapore` 异常流量（过滤到 `SG` 后为 `269 Visitors / 320 PV / Bounce 90%`，`Desktop 99%`、`Windows 97%`，落点集中 `/cards`、`/potions` 与多条字母序 card detail 页，更像抓取/统计噪音而非真实承接流量）
-- `BLOCKED`: Bing URL Submission 页面 `No pages found`
-- `SKIP`: 今日未重跑社媒巡检（本轮优先完成 patch 口径与提交流程闭环）
+- `DONE`: 2026-05-07 11:26 站点可用性校验（`HTTP 200`）
+- `DONE`: 2026-05-07 11:26 GSC `效果 / 网页 / 国家 / 设备 / 搜索结果呈现 / 索引覆盖 / Breadcrumbs / FAQ` 复核
+- `DONE`: 2026-05-07 11:26 Vercel 登录态 Analytics 30 天窗口复核；本地 token API 仍 `403`
+- `DONE`: 2026-05-07 11:26 近窗游戏动态巡检，发现官方 beta 新口径 `v0.104.0`
+- `BLOCKED`: 2026-05-07 11:26 Bing Webmaster 实时采集（服务不可达，Ref C=`2026-05-07T03:25:16Z`）
+- `BLOCKED`: 2026-05-07 11:26 Google Trends 实时采集（Google `/sorry` 人机验证）
+- `DONE`: 2026-05-07 14:55 基于官方 Steam `Beta Patch Notes - v0.104.0` 发布独立新闻页，并同步 `/patches`、首页、`/builds`、`/cards`、`/relics`、`/potions`、`/tier-lists`、`/characters`、`/mechanics`、`/news`、`/llms.txt`、`app/sitemap.ts`
+- `DONE`: 2026-05-07 14:55 `pnpm lint`（0 errors，4 既有 warnings）与 `pnpm build`（成功生成 810 页）
+- `DONE`: 2026-05-07 14:55 IndexNow 提交 13 个 URL
+- `BLOCKED`: 2026-05-07 14:55 Bing URL Submission（Bing Webmaster 服务不可达，沿用 Ref C=`2026-05-07T03:25:16Z`）
+- `SKIP`: 2026-05-07 15:09 旧社媒未回复清理（Reddit/X/Steam 已跨期太久，继续追旧帖价值低）
+- `DONE`: 2026-05-07 15:09 新增 v0.104.0 社媒轻分发草稿（Reddit / X / Steam 三端差异化文案，默认低链接、低推广感）
+- `BLOCKED`: 2026-05-07 15:09 X 实际发布（`https://x.com/compose/post` 导航超时并进入 Chrome error 页，未发布）
 
 ## 今日决策
 - 关联决策日志：`docs/ops-center/02-decisions.md`
 - 决策编号：`DEC-20260402-03（继续维持不扩量，待全量口径补齐前不推进下一批）`
 
 ## 明日优先事项（最多3个）
-- P0: 先完成 `v0.103.2` 口径同步，至少修正首页 / `/builds` / `/patches` / `/cards` 等仍写 `0.103.0` 的主入口文案
-- P0: 延续 `14-rebuild-verification-loop.md` 回流复检，重点盯 `/builds` 承接增长是否继续放大，并压 `/` 与 `/guides` 跳出
-- P0: 观察 `/` `/builds` `/cards` `/patches` 本轮 `IndexNow` 与 CTR 补位回流，确认点击和承接是否改善
-- P1: 继续排障 Bing URL Submission `No pages found`，并复核 Vercel `Singapore` 异常流量
+- P0: 补采 Bing Webmaster / Google Trends；若平台恢复，补齐今天缺口并复判闸门
+- P0: 若稍后 X 可访问，再发布 v0.104.0 短串并预留 30-60 分钟互动复查；Reddit/Steam 今天不硬发
+- P1: 观察 v0.104.0 内容同步后的收录、点击与 `/patches` / `/builds` 回流

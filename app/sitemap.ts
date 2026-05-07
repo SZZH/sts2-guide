@@ -112,6 +112,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     (article) => !archivedNewsSlugs.has(article.slug)
   ).map((article) => {
     const isPriorityHotfix =
+      article.slug === 'slay-the-spire-2-beta-patch-v0-104-0-analysis' ||
       article.slug === 'slay-the-spire-2-hotfix-patch-notes' ||
       article.slug === 'slay-the-spire-2-known-issues-and-fixes';
 

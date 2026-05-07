@@ -20,6 +20,7 @@
 
 | 日期 | 来源 | 标题 | 摘要 | 影响判断 | 内容动作 | 状态 | 链接 |
 |---|---|---|---|---|---|---|---|
+| 2026-04-24 | Steam 新闻 | `Beta Patch Notes - v0.104.0` | 官方 beta 分支继续更新，重点包括 Ascension 难度基线调整、Doormaker 观察、Conflagration/Drum of Battle/Parry rework、新 Badges、Ancients buff 与大量 bug fix。 | 这把当前可跟踪口径从 `v0.103.2` 推进到 beta `v0.104.0`；已完成站内主入口同步，后续观察收录和搜索回流。 | 已发布 `/news/slay-the-spire-2-beta-patch-v0-104-0-analysis`，同步首页、patch hub、builds、cards、relics、potions、tier-lists、characters、mechanics、news、llms 与 sitemap；IndexNow 已提交，Bing URL Submission 因平台不可达待补。 | `ACTIONED` | https://store.steampowered.com/news/app/2868840/view/535507353628312243 |
 | 2026-04-18 | Steam 新闻 | `Neowsletter - April 2026` | 官方月报明确过去一个月重点都在修重大问题、改反馈系统、打磨美术，并承接到最近一轮 live patch 后的持续打磨。 | 这是比单条 patch notes 更高层的方向信号，说明近期内容不该只盯数值改动，还要同步修正文案里对“当前阶段”的描述。 | 补进 patch/news 语境；后续写 patch 解读时引用为背景，不单独抢发新页。 | `TRACKING` | https://store.steampowered.com/news/app/2868840/view/798967297093116494 |
 | 2026-04-17 | Steam 新闻 | `重大更新1号 - 版本0.103.2` | 过去一个月 beta 分支累计的改动、修复与平衡调整已正式并入主分支。 | 这已经把“最新明确补丁口径”从 `v0.103.0` 推进到 `v0.103.2`；站内首页、builds、patch、cards 等当前仍写 `0.103.0` 的内容出现过时风险。 | `P0` 更新站内 patch 口径与相关摘要；补新闻页或 patch hub 承接，并在完成后提交 IndexNow。 | `NEW` | https://store.steampowered.com/news/app/2868840/view/798967297093041491 |
 | 2026-04-16 | Steam 新闻 | `Beta Hotfix Patch Notes - v0.103.1` | `0.103.0` 后紧接着又有一轮 beta hotfix。 | 说明 `0.103.x` 这一波不是单点 patch，而是连续修正链；做内容时不能停留在 `0.103.0` 单版本视角。 | 作为 `0.103.2` 的前置脉络保留，不单独起稿。 | `TRACKING` | https://store.steampowered.com/news/app/2868840/view/798967297092965705 |

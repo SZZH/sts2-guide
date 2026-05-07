@@ -23,7 +23,7 @@ import MobileFiltersPanel from '@/components/MobileFiltersPanel';
 export const metadata: Metadata = {
   title: 'StS2 Cards: Slay the Spire 2 Cards Database and Card List',
   description:
-    'Browse all StS2 cards by character, type, rarity, cost, and keyword. Use this Slay the Spire 2 cards database and card list for the current Early Access version v0.103.2.',
+    'Browse all StS2 cards by character, type, rarity, cost, and keyword. Use this Slay the Spire 2 cards database and card list with v0.104.0 beta patch context.',
   keywords: [
     'Slay the Spire 2 cards',
     'Slay the Spire 2 all cards',
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'StS2 Cards: Slay the Spire 2 Cards Database and Card List',
     description:
-      'Browse all StS2 cards by character, type, rarity, cost, and keyword with a searchable Slay the Spire 2 card database for patch v0.103.2.',
+      'Browse all StS2 cards by character, type, rarity, cost, and keyword with a searchable Slay the Spire 2 card database for the v0.104.0 beta watchlist.',
   },
 };
 
@@ -189,7 +189,7 @@ export default async function CardsPage({ searchParams }: CardsPageProps) {
             <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground">Card database</p>
             <h2 className="text-2xl font-bold mt-1">Slay the Spire 2 Cards Database</h2>
             <p className="mt-2 text-base text-muted-foreground">
-              Browse card text, costs, keywords, rarities, and character pools for the current Early Access version v0.103.2.
+              Browse card text, costs, keywords, rarities, and character pools with the official v0.104.0 beta patch watchlist in mind.
             </p>
             <p className="mt-1 text-sm text-muted-foreground">
               Use the filters below to find cards fast, then jump back into builds, patch notes, tier lists, or character pages once you have the exact card you need.
@@ -491,7 +491,7 @@ export default async function CardsPage({ searchParams }: CardsPageProps) {
                   <h3 className="font-heading text-lg font-bold">Related Queries</h3>
                   <div className="mt-3 flex flex-wrap gap-3 text-sm">
                     <Link
-                      href="/news/slay-the-spire-2-hotfix-patch-notes"
+                      href="/news/slay-the-spire-2-beta-patch-v0-104-0-analysis"
                       className="text-molten-orange transition-colors hover:text-ember-glow"
                     >
                       What changed in the latest patch?
@@ -691,7 +691,7 @@ export default async function CardsPage({ searchParams }: CardsPageProps) {
                   <h3 className="font-heading text-lg font-bold">Related Queries</h3>
                   <div className="mt-3 flex flex-wrap gap-3 text-sm">
                     <Link
-                      href="/news/slay-the-spire-2-hotfix-patch-notes"
+                      href="/news/slay-the-spire-2-beta-patch-v0-104-0-analysis"
                       className="text-molten-orange transition-colors hover:text-ember-glow"
                     >
                       What changed in the latest patch?
