@@ -163,7 +163,7 @@ export default function HomePage() {
           <div className="container mx-auto px-4">
             <div className="mb-8 flex flex-col items-center gap-3 text-center">
               <p className="text-xs uppercase tracking-[0.3em] text-molten-orange">This Week</p>
-              <h2 className="font-heading text-3xl font-bold">本周最该看</h2>
+              <h2 className="font-heading text-3xl font-bold">What to Read This Week</h2>
               <p className="max-w-3xl text-sm text-steel-blue">
                 Signals pulled from patch notes, community highlights, and first-run learnings. Tap the card that matches your next decision.
               </p>
