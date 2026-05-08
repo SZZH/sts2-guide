@@ -14,6 +14,7 @@
 
 ### P0（必须先做）
 - [x] `DONE` 入口页轻改量化执行（Owner: Codex，完成: 2026-05-08 10:14，验收: `/builds`、`/cards`、`/tier-lists`、`/patches`、`/relics` 已完成 title/H1/首段/内链轻改，`pnpm lint` / `pnpm build` 通过，IndexNow 提交 7 URL）
+- [x] `DONE` 关键词证据清单（Owner: Codex，完成: 2026-05-08 10:30，验收: `18-keyword-evidence-ledger.md` 已建立，核心词均标注证据等级、来源、主落地页和下一步动作）
 - [ ] `TODO` 四端中期复采（Owner: Codex，DDL: 2026-05-14，验收: GSC + Vercel + Bing Webmaster + Google Trends 均标清 `DONE/BLOCKED`，并与 2026-05-07 基线对比）
 - [ ] `TODO` 完成旧页治理表（Owner: Codex，DDL: 今日，验收: 高风险页已完成 `KEEP/REFRESH/DEMOTE/MERGE/REMOVE_OR_REDIRECT` 分级）
 - [ ] `TODO` 完成首页 / `guides` / `characters` / `builds` 新 IA 蓝图（Owner: Codex，DDL: 今日，验收: 已形成模块级重构方案与执行顺序）

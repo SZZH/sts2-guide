@@ -60,6 +60,16 @@
 - 下一步：
   - `P0` 后续首页或入口页任何补词，先拿查询证据；没有证据只记录为候选，不执行 title / H1 / 首段强化。
 
+### 2026-05-08 10:30
+- 观察：已按“SEO 不猜关键词”规则执行关键词证据清单。本轮只整理证据，不改页面。
+- 已完成：
+  - `DONE` 新增 `18-keyword-evidence-ledger.md`，记录核心查询词、证据等级、来源与时间、主落地页、当前动作和下一次复核时间。
+  - `DONE` 首页相关词结论：`sts2 guide`、`slay the spire 2 guide` 为 `CONFIRMED`；`slay the spire 2 wiki` 为 `WEAK_SIGNAL`；`guide hub`、`searchable database` 为 `REJECTED`。
+  - `DONE` 泛词入口结论：`slay the spire 2 builds`、`slay the spire 2 cards`、`slay the spire 2 tier list`、`slay the spire 2 patch notes`、`slay the spire 2 relics` 均已有历史或趋势证据，维持现有主落地页。
+  - `DONE` 更新 `INDEX.md`、`NOW.md`、`03-roadmap.md`，要求后续关键词新增/替换/强化先查证据台账。
+- 下一步：
+  - `P0` 不继续改首页；等 2026-05-14 四端中期复采后，按新数据更新证据等级和是否允许页面动作。
+
 ### 2026-05-07 15:27
 - 观察：用户明确调整社媒优先级：主要做 Steam，其次 Reddit，最后 X。已同步到当前社媒分发包和 NOW。
 - 已完成：
