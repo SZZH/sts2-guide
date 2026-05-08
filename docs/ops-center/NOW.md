@@ -26,6 +26,7 @@
 - 未过闸门不得扩量
 - 默认遵循 `15-maintenance-and-stoploss-plan.md`：每周投入 `3-5 小时`，只做 patch 轻维护、主入口维护、每周数据复盘和明显问题修复
 - 默认遵循 `17-quantified-seo-execution-plan.md`：泛词页做骨架，长尾页拿点击；每一步必须绑定指标、DDL、验收和记录方式
+- SEO 关键词必须以 GSC / Bing Webmaster / Google Trends / Vercel / 历史快照 / 可复查竞品结果为依据；无数据证据的词只能标为候选或自然描述，不能作为 title / H1 / 首段 SEO 主目标
 - 每次策略变化必须登记决策 ID
 - 每次关键动作后留痕（按时间戳记录）
 - Vercel 相关动作统一走 `Vercel MCP`（不再以本地 token 脚本作为默认路径）

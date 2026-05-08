@@ -4,6 +4,24 @@
 > 适用周期：2026-05-08 ~ 2026-05-21
 > 当前原则：泛词页做骨架，长尾页拿点击；未过闸门前不扩量。
 
+## 0. SEO 数据证据硬规则
+
+- SEO 关键词必须以真实数据为准，禁止凭“听起来合理”或页面定位直接当作目标词。
+- 可作为关键词执行依据的数据源：
+  - GSC 查询 / 页面数据
+  - Bing Webmaster 查询 / 页面数据
+  - Google Trends 相关查询 / 相关主题
+  - 站内 Vercel landing / referrer 数据
+  - 已记录的历史日志或数据快照
+  - 明确可复查的竞品公开搜索结果
+- 不能作为主关键词依据：
+  - 单纯主观判断
+  - 只因为文案自然就写入目标词
+  - 只因为竞品页面这样命名
+  - 未标注时间和来源的历史印象
+- 若关键词没有数据证据，只能标为 `候选词` 或自然描述，不能写入 title / H1 / 首段作为 SEO 主目标。
+- 每次新增、替换或强化关键词时，必须同步写明来源、时间和判断等级：`CONFIRMED`、`WEAK_SIGNAL`、`CANDIDATE`、`REJECTED`。
+
 ## 1. 当前状态
 
 ### 1.1 已做到的程度
@@ -54,14 +72,15 @@
 
 目标：建立主题骨架，不以短期排名第一为目标。
 
-| 关键词簇 | 主落地页 | 验收标准 |
-|---|---|---|
-| slay the spire 2 builds | `/builds` | Title / H1 / 首段命中；链接到具体 build / patch 影响页 |
-| slay the spire 2 cards | `/cards` | Title / H1 / 首段命中；链接到关键卡牌与 patch 变动 |
-| slay the spire 2 tier list | `/tier-lists` | Title / H1 / 首段命中；说明版本适用范围 |
-| slay the spire 2 patch notes | `/patches` | Title / H1 / 首段命中；最新 patch 可见 |
-| slay the spire 2 relics | `/relics` | Title / H1 / 首段命中；链接到关键遗物与角色关系 |
-| slay the spire 2 wiki | `/` | 暂由首页承接；未触发数据条件前不新建 `/wiki` |
+| 关键词簇 | 主落地页 | 证据等级 | 证据来源 | 验收标准 |
+|---|---|---|---|---|
+| slay the spire 2 builds | `/builds` | `CONFIRMED` | Bing/GSC 历史日志与词页映射 | Title / H1 / 首段命中；链接到具体 build / patch 影响页 |
+| slay the spire 2 cards | `/cards` | `CONFIRMED` | Google Trends 历史记录与查询页规划 | Title / H1 / 首段命中；链接到关键卡牌与 patch 变动 |
+| slay the spire 2 tier list | `/tier-lists` | `CONFIRMED` | Google Trends 历史记录与词页映射 | Title / H1 / 首段命中；说明版本适用范围 |
+| slay the spire 2 patch notes | `/patches` | `CONFIRMED` | GSC/Bing 日志与 patch 内容更新记录 | Title / H1 / 首段命中；最新 patch 可见 |
+| slay the spire 2 relics | `/relics` | `CONFIRMED` | 查询页规划与 GSC/Bing 历史日志 | Title / H1 / 首段命中；链接到关键遗物与角色关系 |
+| slay the spire 2 wiki | `/` | `WEAK_SIGNAL` | 2026-03-05 日志记录新增展示与少量点击信号 | 暂由首页轻承接；未触发数据条件前不新建 `/wiki` |
+| guide hub / searchable database | 无主落地页 | `REJECTED` | 2026-05-08 复核未见独立搜索量证据 | 只能作为自然描述，不能作为 SEO 主关键词 |
 
 ### 3.2 长尾主攻层
 

@@ -96,6 +96,17 @@
 - 回滚条件：若 2026-05-21 触发止损线，停止主动 SEO 改造，切换最低成本保活；若入口页轻改导致 CTR 或 Bounce 明显恶化，回滚对应文案与内链。
 - 下一次复盘时间：2026-05-14 中期复采；2026-05-21 决策复盘。
 
+### DEC-20260508-02：SEO 关键词执行必须以数据证据为准
+- 日期：2026-05-08
+- 背景：讨论首页是否加强 `guide hub`、`searchable database` 时，发现这两个短语更多是页面定位描述，当前没有看到独立搜索量证据。用户明确要求 SEO 必须以数据为准，不能猜。
+- 备选方案：继续用主观语义词做首页轻补；只在最终复盘时检查关键词；建立关键词证据硬规则。
+- 最终决策：SEO 关键词新增、替换或强化前，必须先有 GSC / Bing Webmaster / Google Trends / Vercel / 历史快照 / 可复查竞品结果等证据，并标注 `CONFIRMED`、`WEAK_SIGNAL`、`CANDIDATE` 或 `REJECTED`。没有证据的词只能作为自然描述，不能写入 title / H1 / 首段作为 SEO 主目标。
+- 数据依据（四端/实验/日志）：2026-05-08 当前复核：`sts2 guide`、`slay the spire 2 guide`、`slay the spire 2 wiki`、`slay the spire 2 tier list`、`slay the spire 2 cards` 等在历史日志或词页映射中有证据；`guide hub`、`searchable database` 未见独立搜索量证据。
+- 影响范围：SEO 文案、title / H1 / 首段、关键词映射、首页是否补词、后续所有入口页轻改。
+- 风险：执行节奏会变慢，但能避免主观猜词和关键词内耗。
+- 回滚条件：无。若未来某候选词出现真实查询证据，可从 `CANDIDATE` 升级为 `CONFIRMED` 或 `WEAK_SIGNAL` 后再执行。
+- 下一次复盘时间：2026-05-14 四端中期复采。
+
 ---
 
 ## 已合并背景上下文

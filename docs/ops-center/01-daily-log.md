@@ -50,6 +50,16 @@
 - 下一步：
   - `P0` 等待 24-48 小时抓取回流；2026-05-14 执行 GSC + Vercel + Bing Webmaster + Google Trends 中期复采，不能用今天改动后的主观判断替代数据。
 
+### 2026-05-08 10:23
+- 观察：用户明确要求 SEO 一定以数据为准，不能猜关键词。已将该要求固化为关键词证据硬规则。
+- 已完成：
+  - `DONE` 更新 `17-quantified-seo-execution-plan.md`：新增“SEO 数据证据硬规则”，要求关键词必须标注 `CONFIRMED / WEAK_SIGNAL / CANDIDATE / REJECTED`。
+  - `DONE` 将 `guide hub / searchable database` 标为 `REJECTED`：当前未见独立搜索量证据，只能作为自然描述，不能作为 SEO 主目标。
+  - `DONE` 更新 `NOW.md` 当前约束：SEO 关键词必须基于 GSC / Bing Webmaster / Google Trends / Vercel / 历史快照 / 可复查竞品结果。
+  - `DONE` 新增决策 `DEC-20260508-02`，并同步 `decision-register.md`。
+- 下一步：
+  - `P0` 后续首页或入口页任何补词，先拿查询证据；没有证据只记录为候选，不执行 title / H1 / 首段强化。
+
 ### 2026-05-07 15:27
 - 观察：用户明确调整社媒优先级：主要做 Steam，其次 Reddit，最后 X。已同步到当前社媒分发包和 NOW。
 - 已完成：
