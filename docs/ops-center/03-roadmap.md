@@ -5,6 +5,7 @@
 ## 本周目标
 - O1: 完成 STS2 Guide 站点系统级重构的止血与 IA 基线，明确旧页治理范围、主入口重构方向、Builds/Tier Lists/Patch 主线
 - O2: 在不扩量前提下，优先改善高曝光低点击与高跳出入口页的承接质量
+- O3: 执行量化 SEO 方案，确保每个动作都有指标、DDL、验收和决策记录
 
 ## Backlog（按优先级）
 
@@ -12,6 +13,8 @@
 > `BLOCKED/SKIP` 必须附原因。
 
 ### P0（必须先做）
+- [ ] `TODO` 入口页轻改量化执行（Owner: Codex，DDL: 2026-05-10，验收: `/builds`、`/cards`、`/tier-lists`、`/patches`、`/relics` 完成 title/H1/首段/内链轻改，`pnpm lint` / `pnpm build` 通过，IndexNow 提交）
+- [ ] `TODO` 四端中期复采（Owner: Codex，DDL: 2026-05-14，验收: GSC + Vercel + Bing Webmaster + Google Trends 均标清 `DONE/BLOCKED`，并与 2026-05-07 基线对比）
 - [ ] `TODO` 完成旧页治理表（Owner: Codex，DDL: 今日，验收: 高风险页已完成 `KEEP/REFRESH/DEMOTE/MERGE/REMOVE_OR_REDIRECT` 分级）
 - [ ] `TODO` 完成首页 / `guides` / `characters` / `builds` 新 IA 蓝图（Owner: Codex，DDL: 今日，验收: 已形成模块级重构方案与执行顺序）
 - [x] `SKIP` 社媒未回复清理（Reddit/X/Steam）（Owner: Codex，日期: 2026-05-07，原因: 旧帖已跨期太久，继续补回复价值低；已改为新内容轻分发）
@@ -38,7 +41,7 @@
 - `SKIP`（含原因）：
 
 ## 今日执行队列（运维后必填）
-- 今日未处理 P0：Bing Webmaster / Google Trends 补采；Batch-30 零曝光 22 页微调
+- 今日未处理 P0：入口页轻改量化执行；Bing Webmaster / Google Trends 补采；Batch-30 零曝光 22 页微调
 - 今日未处理 P1：v0.104.0 新内容择一平台发布；高展现低点击新词提质清单落地；当日日志与看板二次收口（如晚间再跑一轮）
 - 今日未处理 P2：
 - 今日计划完成：已完成 GSC / Vercel 登录态采集、游戏动态巡检、v0.104.0 官方 patch 口径同步、IndexNow 提交、v0.104.0 社媒轻分发草稿
@@ -51,6 +54,16 @@
   - 有曝光页面占比 >= 40%
   - 前30页面 >= 6
 - 未过闸门时只允许：词池/模板/内链调整
+
+## 当前量化 SEO 方案
+- 方案文件：`docs/ops-center/17-quantified-seo-execution-plan.md`
+- 生效周期：`2026-05-08 ~ 2026-05-21`
+- 主策略：泛词页做骨架，长尾页拿点击；未过闸门前不扩量
+- 近期 DDL：
+  - 2026-05-10：入口页轻改完成
+  - 2026-05-14：四端中期复采
+  - 2026-05-16：词页映射复核
+  - 2026-05-21：继续 / 止损 / 小范围恢复投入决策
 
 ## 已合并计划来源
 - `docs/archive/seo-batch-30-execution-plan.md`

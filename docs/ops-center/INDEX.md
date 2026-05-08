@@ -9,6 +9,7 @@
 4. `docs/ops-center/03-roadmap.md`
 5. `docs/ops-center/05-kpi-gates.md`
 6. `docs/ops-center/15-maintenance-and-stoploss-plan.md`
+7. `docs/ops-center/17-quantified-seo-execution-plan.md`
 
 ## 1. 当前状态速览（手动更新）
 - 当前阶段：30页验证批
@@ -32,6 +33,7 @@
 - 重构验证闭环：`docs/ops-center/14-rebuild-verification-loop.md`
 - 轻维护与止损方案：`docs/ops-center/15-maintenance-and-stoploss-plan.md`
 - v0.104.0 社媒分发包：`docs/ops-center/16-v104-social-distribution-pack.md`
+- 量化 SEO 执行方案：`docs/ops-center/17-quantified-seo-execution-plan.md`
 - 决策索引：`docs/ops-center/decision-register.md`
 - 数据快照目录：`docs/ops-center/data-snapshots/`
 - 免提醒执行流：`docs/ops-center/RUNBOOK.md`
@@ -39,6 +41,7 @@
 ## 3. 线程启动检查（按需）
 - [ ] 已读取 `NOW.md` 与最新 `daily-log/dashboard`
 - [ ] 已读取 `15-maintenance-and-stoploss-plan.md`，确认是否允许扩量或大改
+- [ ] 若涉及 SEO 执行，已读取 `17-quantified-seo-execution-plan.md`，确认指标、DDL、验收和记录方式
 - [ ] 若本轮涉及游戏动态，已先读取 `08-game-dynamics-intel.md`
 - [ ] 已区分：哪些已完成、哪些还缺口
 - [ ] 本轮仅选择需要执行的动作（非全量模板）

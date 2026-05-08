@@ -7,9 +7,9 @@
 - 目标：进入 `2026-05-07 ~ 2026-05-21` 轻维护观察周期，验证真实承接；未满足继续投入线前不扩量、不重构大页面
 
 ## 当前 P0（最多 3 项）
-- P0-1：补采 Bing Webmaster 与 Google Trends 的 2026-05-07 缺口，再复判闸门
-- P0-2：若平台恢复，补 Bing URL Submission；社媒分发优先级为 `Steam > Reddit > X`，只择一平台发布 v0.104.0 新内容并预留互动复查
-- P0-3：观察 v0.104.0 内容同步后的收录、点击与 `/patches` / `/builds` 回流，不扩量
+- P0-1：按 `17-quantified-seo-execution-plan.md` 在 2026-05-10 前完成 `/builds`、`/cards`、`/tier-lists`、`/patches`、`/relics` 入口页轻改；只改 title / H1 / 首段 / 内链，不扩量
+- P0-2：2026-05-14 执行四端中期复采，GSC + Vercel + Bing Webmaster + Google Trends 必须标清 `DONE / BLOCKED`
+- P0-3：2026-05-21 对照量化指标做继续轻维护 / 止损 / 小范围恢复投入决策，并新增决策 ID
 
 ## 当前重构硬约束
 - 涉及攻略、玩法、build、tier list、patch 影响、角色推荐、新手路线时，必须按“官方 > 高质量社区 > 高质量工具站 > 站内数据”取证
@@ -25,6 +25,7 @@
 ## 当前约束
 - 未过闸门不得扩量
 - 默认遵循 `15-maintenance-and-stoploss-plan.md`：每周投入 `3-5 小时`，只做 patch 轻维护、主入口维护、每周数据复盘和明显问题修复
+- 默认遵循 `17-quantified-seo-execution-plan.md`：泛词页做骨架，长尾页拿点击；每一步必须绑定指标、DDL、验收和记录方式
 - 每次策略变化必须登记决策 ID
 - 每次关键动作后留痕（按时间戳记录）
 - Vercel 相关动作统一走 `Vercel MCP`（不再以本地 token 脚本作为默认路径）
@@ -36,4 +37,4 @@
 
 ## 下一次更新人/时间
 - Owner：Codex
-- 时间：2026-05-07 15:23
+- 时间：2026-05-08 10:04
