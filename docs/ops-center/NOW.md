@@ -8,7 +8,7 @@
 
 ## 当前 P0（最多 3 项）
 - P0-1：观察 2026-05-08 入口页轻改后的抓取与回流；不追加新页面、不新建 `/wiki`；关键词变更先查 `18-keyword-evidence-ledger.md`
-- P0-2：2026-05-14 执行四端中期复采，GSC + Vercel + Bing Webmaster + Google Trends 必须标清 `DONE / BLOCKED`
+- P0-2：2026-05-14 按 `19-midpoint-recheck-checklist-2026-05-14.md` 执行四端中期复采，GSC + Vercel + Bing Webmaster + Google Trends 必须标清 `DONE / BLOCKED`
 - P0-3：2026-05-21 对照量化指标做继续轻维护 / 止损 / 小范围恢复投入决策，并新增决策 ID
 
 ## 当前重构硬约束

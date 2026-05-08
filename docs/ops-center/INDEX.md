@@ -35,6 +35,7 @@
 - v0.104.0 社媒分发包：`docs/ops-center/16-v104-social-distribution-pack.md`
 - 量化 SEO 执行方案：`docs/ops-center/17-quantified-seo-execution-plan.md`
 - 关键词证据台账：`docs/ops-center/18-keyword-evidence-ledger.md`
+- 2026-05-14 中期复采清单：`docs/ops-center/19-midpoint-recheck-checklist-2026-05-14.md`
 - 决策索引：`docs/ops-center/decision-register.md`
 - 数据快照目录：`docs/ops-center/data-snapshots/`
 - 免提醒执行流：`docs/ops-center/RUNBOOK.md`
@@ -44,6 +45,7 @@
 - [ ] 已读取 `15-maintenance-and-stoploss-plan.md`，确认是否允许扩量或大改
 - [ ] 若涉及 SEO 执行，已读取 `17-quantified-seo-execution-plan.md`，确认指标、DDL、验收和记录方式
 - [ ] 若涉及关键词新增/替换/强化，已读取 `18-keyword-evidence-ledger.md`，确认证据等级
+- [ ] 若执行 2026-05-14 中期复采，已读取 `19-midpoint-recheck-checklist-2026-05-14.md`
 - [ ] 若本轮涉及游戏动态，已先读取 `08-game-dynamics-intel.md`
 - [ ] 已区分：哪些已完成、哪些还缺口
 - [ ] 本轮仅选择需要执行的动作（非全量模板）
