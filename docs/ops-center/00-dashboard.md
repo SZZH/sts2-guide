@@ -10,17 +10,17 @@
 - `BLOCKED`：受阻（需注明原因）
 - `SKIP`：今日不做（需注明原因）
 
-## 今日状态（2026-05-07 15:09）
-- 站点可用性：`DONE`（`https://sts2guide.com` 返回 `HTTP 200`，Vercel cache=`HIT`）
-- 流量总览（Vercel）：`DONE`（登录态 `Last 30 Days`：`Visitors 2,087 / PV 4,675 / Bounce Rate 79%`；Top Pages=`/ 388`、`/guides 282`、`/builds 188`、`/cards 159`、`/characters 138`；Top Referrer=`google.com 488`、`duckduckgo.com 157`、`bing.com 97`；国家=`Singapore 42% / US 22% / China 7%`；设备=`Desktop 79% / Mobile 20%`；本地 token API 仍 `403`，仅作 `BLOCKED` 证据）
-- 搜索总览（GSC）：`DONE`（3 个月：`866 clicks / 6.31万 impressions / CTR 1.4% / 平均排名 8.9`；上次更新 `11小时前`，图表窗口 `2026-03-16 ~ 2026-05-04`；Top Page=`/ 172 / 4,344`、`/relics/book_of_five_rings 92 / 1,485`、`/cards/hammer_time 67 / 2,257`、`/guides/exhaust-mechanic-explained 64 / 7,120`）
-- Bing 总览：`BLOCKED`（登录入口可打开，但 Bing Webmaster 返回 `services could not be reached`；Ref C=`2026-05-07T03:25:16Z`，无法实时采集 Search Performance / Sitemaps / URL Submission / IndexNow 明细）
-- 趋势总览（Google Trends）：`BLOCKED`（访问 Trends 时进入 Google `/sorry` 人机验证页，无法实时读取核心词/品牌词/意图词趋势）
-- 生产发布总览：`SKIP`（今日未触发新发布）
-- 线上结构验证：`DONE`（`/builds` 在 Vercel 30 天窗口为 `188 visitors`，继续是真实 landing 页；但 GSC Top Page 仍由首页、实体页和机制页主导，主词迁移仍需复检）
-- 游戏动态总览：`DONE`（Steam 官方新闻确认 `Beta Patch Notes - v0.104.0（2026-04-24）`；已补 `/news/slay-the-spire-2-beta-patch-v0-104-0-analysis` 并同步首页、patch hub、builds、cards、relics、potions、tier-lists、characters、mechanics、news、llms 与 sitemap）
-- 外链发布总览：`DONE`（IndexNow 已提交 13 个 URL：新 v0.104.0 新闻页、`/patches`、首页、`/builds`、`/cards`、`/relics`、`/potions`、`/tier-lists`、`/characters`、`/mechanics`、`/news`、`/llms.txt`、`/sitemap.xml`；Bing URL Submission 仍因 Bing Webmaster `BLOCKED` 无法执行）
-- 社媒互动总览：`SKIP`（旧 Reddit/X/Steam 待回复已跨期太久，今天不追旧帖；已改为 v0.104.0 新内容轻分发草稿，见 `16-v104-social-distribution-pack.md`）
+## 今日状态（2026-05-08 17:21）
+- 站点可用性：`DONE`（2026-05-08 入口页部署后验证：`/builds`、`/cards`、`/tier-lists`、`/patches`、`/relics`、`/news/slay-the-spire-2-beta-patch-v0-104-0-analysis` 均返回 `HTTP 200`）
+- 流量总览（Vercel）：`TODO`（今日不重采实时流量；等待 2026-05-14 按 `19-midpoint-recheck-checklist-2026-05-14.md` 四端复采，避免改动当天归因混乱）
+- 搜索总览（GSC）：`TODO`（今日不重采实时搜索；2026-05-07 基线仍为 `866 clicks / 6.31万 impressions / CTR 1.4% / 平均排名 8.9`，下一次复采为 2026-05-14）
+- Bing 总览：`BLOCKED`（沿用 2026-05-07 平台阻塞：Bing Webmaster 返回 `services could not be reached`；待 2026-05-14 重新尝试，不用历史口径冒充今日实时结果）
+- 趋势总览（Google Trends）：`BLOCKED`（沿用 2026-05-07 Google `/sorry` 人机验证阻塞；待 2026-05-14 重新尝试）
+- 生产发布总览：`DONE`（入口页 SEO 轻改已提交并推送 `main`：`3d94eef feat: 优化SEO入口页泛词承接`；正式域名目标页均 `HTTP 200`）
+- 线上结构验证：`DONE`（已完成 `/builds`、`/cards`、`/tier-lists`、`/patches`、`/relics` title/H1/首屏/内链轻改；未新增页面、未新建 `/wiki`、未扩量）
+- 游戏动态总览：`SKIP`（今日未执行新的官方动态巡检；本日主线为 SEO 入口页轻改与复采准备，下一轮如继续运营需先查官方 Steam / SteamDB / 官方社媒）
+- 外链发布总览：`DONE`（IndexNow 已提交 7 URL：`/builds`、`/cards`、`/tier-lists`、`/patches`、`/relics`、最新 v0.104.0 新闻页、`/sitemap.xml`；未做额外外链发布）
+- 社媒互动总览：`SKIP`（今日未执行 Steam / Reddit / X 分发；SEO 已进入观察窗，不用社媒动作干扰当前归因）
 
 ## 闸门状态（当前批次）
 - 收录率 >= 60%：`90.0%（27/30，代理口径，待 URL Inspection 全量复核）`
@@ -30,9 +30,25 @@
 
 ## 今日异常
 - [ ] 无
-- [x] 有（Bing Webmaster 服务不可达；Google Trends 人机验证阻塞；Vercel `Singapore 42%` 占比仍异常；v0.104.0 口径已同步，后续只需观察收录与点击回流）
+- [x] 有（Bing Webmaster 与 Google Trends 仍待 2026-05-14 复采确认；Vercel `Singapore 42%` 噪音风险仍需继续观察；SEO 入口页改动后进入观察窗，今日不再追加页面动作）
 
 ## 今日动作状态（必须完整）
+- `DONE`: 2026-05-08 10:04 制定量化 SEO 执行方案：新增 `17-quantified-seo-execution-plan.md`，设定指标、DDL、验收和决策记录规则
+- `DONE`: 2026-05-08 10:14 执行入口页轻改：`/builds`、`/cards`、`/tier-lists`、`/patches`、`/relics`
+- `DONE`: 2026-05-08 10:14 `pnpm lint` 通过（0 errors，4 既有 warnings）与 `pnpm build` 通过（810 页）
+- `DONE`: 2026-05-08 10:14 IndexNow 提交 7 URL
+- `DONE`: 2026-05-08 10:14 推送入口页轻改到 `main`，commit=`3d94eef`
+- `DONE`: 2026-05-08 10:14 正式域名验证 6 个目标 URL 均 `HTTP 200`
+- `DONE`: 2026-05-08 10:23 固化 SEO 关键词数据证据规则，commit=`4699dae`
+- `DONE`: 2026-05-08 10:30 建立 `18-keyword-evidence-ledger.md` 关键词证据台账，commit=`d199cb2`
+- `DONE`: 2026-05-08 10:39 建立 `19-midpoint-recheck-checklist-2026-05-14.md` 四端复采清单，commit=`42674f6`
+- `SKIP`: 2026-05-08 首页关键词改动（原因：缺少新的首页关键词数据证据；`guide hub` / `searchable database` 已标为 `REJECTED`）
+- `SKIP`: 2026-05-08 新建 `/wiki`（原因：`slay the spire 2 wiki` 仅为 `WEAK_SIGNAL`，未满足触发条件）
+- `SKIP`: 2026-05-08 社媒分发（原因：当前 SEO 进入观察窗，且社媒需要互动跟进窗口）
+- `TODO`: 2026-05-14 四端中期复采（按 `19-midpoint-recheck-checklist-2026-05-14.md` 执行）
+- `TODO`: 2026-05-21 继续 / 止损 / 小范围恢复投入决策
+
+## 昨日动作状态（保留）
 - `DONE`: 2026-05-07 11:26 站点可用性校验（`HTTP 200`）
 - `DONE`: 2026-05-07 11:26 GSC `效果 / 网页 / 国家 / 设备 / 搜索结果呈现 / 索引覆盖 / Breadcrumbs / FAQ` 复核
 - `DONE`: 2026-05-07 11:26 Vercel 登录态 Analytics 30 天窗口复核；本地 token API 仍 `403`
@@ -49,9 +65,10 @@
 
 ## 今日决策
 - 关联决策日志：`docs/ops-center/02-decisions.md`
-- 决策编号：`DEC-20260402-03（继续维持不扩量，待全量口径补齐前不推进下一批）`
+- 决策编号：`DEC-20260508-01（采用量化 SEO 方案执行泛词骨架与长尾主攻）`
+- 决策编号：`DEC-20260508-02（SEO 关键词执行必须以数据证据为准）`
 
 ## 明日优先事项（最多3个）
-- P0: 补采 Bing Webmaster / Google Trends；若平台恢复，补齐今天缺口并复判闸门
-- P0: 若稍后 X 可访问，再发布 v0.104.0 短串并预留 30-60 分钟互动复查；Reddit/Steam 今天不硬发
-- P1: 观察 v0.104.0 内容同步后的收录、点击与 `/patches` / `/builds` 回流
+- P0: 不继续改页面，等待 2026-05-14 四端中期复采
+- P0: 若发生新的官方 patch / hotfix / newsletter，先做官方动态巡检并按 patch 轻维护规则处理
+- P1: 若需要继续运营，只做非页面动作或证据整理；任何关键词动作先查 `18-keyword-evidence-ledger.md`
