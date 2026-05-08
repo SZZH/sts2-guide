@@ -11,6 +11,7 @@
 | `slay the spire 2 build guide` | `/builds` | `/guides` `/characters` | 旧 launch-week news、reference 页 | 由 `/builds` 承接，`/guides` 做任务支撑 |
 | `sts2 builds` | `/builds` | `/guides` `/characters` | 旧 news / co-op / release-date | 与主 builds 词同路由处理 |
 | `slay the spire 2 tier list` | `/tier-lists` | `/builds` `/characters` `/cards` | 旧 `cards-tier-list` 页面（重写前不能继续抢词） | tier 主词统一收口到 `/tier-lists` |
+| `slay the spire 2 tier lists` / `tier lists` | `/tier-lists` | `/builds` `/cards` `/relics` `/patches` | 旧 `cards-tier-list` 页面、co-op / release-date / patch 时间线页 | 复数与泛词 tier lists 同样收口到 `/tier-lists`，入口页再分流到 builds/reference/patch |
 | `sts2 tier list` | `/tier-lists` | `/builds` `/characters` | co-op / release-date / patch 时间线页 | 与主 tier 词同路由 |
 | `slay the spire 2 patch notes` | `/patches` | `/news/slay-the-spire-2-steamdb-patch-tracker` `/news/slay-the-spire-2-hotfix-patch-notes` | 首页、`release-date`、co-op | `/patches` 是决策入口，news 页是证据层 |
 | `sts2 patch` | `/patches` | `/news/slay-the-spire-2-steamdb-patch-tracker` | 旧 launch-time/release-date | patch 主词统一到 `/patches` |
@@ -49,4 +50,3 @@
 2. 若已有主落地页，新页面只能做支撑，不得重新抢主词
 3. 若主词发生变化，先更新本表，再改页面
 4. 任何旧页面若仍在抢主词，必须在治理表中标记并处理
-

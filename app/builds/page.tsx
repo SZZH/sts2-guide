@@ -6,16 +6,16 @@ import { siteAssetUrl } from '@/shared/siteAssets';
 import { OrganizationSchema, VideoGameSchema, WebsiteSchema } from '@/app/schema';
 
 export const metadata: Metadata = {
-  title: 'Slay the Spire 2 Builds: Best Current Builds by Character',
+  title: 'Slay the Spire 2 Builds v0.104.0 Beta: Best Current Builds by Character',
   description:
-    'Find current Slay the Spire 2 builds by character with v0.104.0 beta watchlist notes, beginner-friendly build paths, archetype summaries, and direct links into cards, relics, and patch notes.',
+    'Find current Slay the Spire 2 builds for the official v0.104.0 beta scope, with character build paths and links to patch notes, cards, relics, and tier lists.',
   alternates: {
     canonical: '/builds',
   },
   openGraph: {
-    title: 'Slay the Spire 2 Builds: Best Current Builds by Character',
+    title: 'Slay the Spire 2 Builds v0.104.0 Beta: Best Current Builds by Character',
     description:
-      'Best current Slay the Spire 2 builds by character with v0.104.0 beta watchlist notes, beginner-friendly build paths, and direct links into cards, relics, and patch notes.',
+      'Best current Slay the Spire 2 builds for the official v0.104.0 beta scope, with character build paths and links to patch notes, cards, relics, and tier lists.',
   },
 };
 
@@ -23,10 +23,10 @@ const CURRENT_PATCH = 'v0.104.0 beta';
 
 const DECISION_TILES = [
   {
-    href: '/news/slay-the-spire-2-first-run-guide-act-1-priorities',
-    label: 'Beginner Path',
-    description: 'Starter priorities, first-act pacing, and the next actions to keep new runs stable.',
-    badge: 'Beginner',
+    href: '/patches',
+    label: 'Slay the Spire 2 Patch Notes',
+    description: 'Start with the v0.104.0 beta patch hub before changing build priorities.',
+    badge: 'Patch hub',
   },
   {
     href: '/guides',
@@ -36,24 +36,24 @@ const DECISION_TILES = [
   },
   {
     href: '/news/slay-the-spire-2-beta-patch-v0-104-0-analysis',
-    label: 'Patch Impact',
+    label: 'Latest Patch Article',
     description: 'Track what changed, why it matters, and which builds need a retest.',
-    badge: 'Patch',
+    badge: 'v0.104.0',
   },
   {
-    href: '/cards',
-    label: 'Cards for These Builds',
-    description: 'Search cards, potions, and synergies that plug into each hero archetype.',
-    badge: 'Reference',
+    href: '/tier-lists',
+    label: 'Tier Lists After Patch',
+    description: 'Compare build and character rankings against current beta assumptions.',
+    badge: 'Tiers',
   },
 ];
 
 const RESOURCE_CARDS = [
   {
-    href: '/guides',
-    title: 'Step through the builds library',
-    copy: 'Pin your archetype, read the practical guide, and lock in upgrade/crafting calls.',
-    badge: 'Guides',
+    href: '/patches',
+    title: 'Slay the Spire 2 patch notes hub',
+    copy: 'Use the patch hub to confirm the current official beta scope before changing a build.',
+    badge: 'Patches',
   },
   {
     href: '/news/slay-the-spire-2-beta-patch-v0-104-0-analysis',
@@ -195,10 +195,42 @@ export default function BuildsPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-forge-black/80 to-forge-black" />
           <div className="relative z-10 container mx-auto flex h-full flex-col justify-center gap-6 px-4 py-12 text-white">
             <p className="text-xs uppercase tracking-[0.4em] text-molten-orange">Best builds · patch {CURRENT_PATCH}</p>
-            <h1 className="max-w-4xl text-4xl font-bold leading-tight md:text-5xl">Slay the Spire 2 builds</h1>
+            <h1 className="max-w-4xl text-4xl font-bold leading-tight md:text-5xl">Slay the Spire 2 builds v0.104.0 beta</h1>
             <p className="max-w-3xl text-base leading-relaxed text-steel-blue md:text-lg">
-              Find the best current Slay the Spire 2 builds by character for {CURRENT_PATCH}, including beginner-friendly builds, archetype pivots, and direct links into cards, relics, and patch notes.
+              Find the best current Slay the Spire 2 builds by character for the official {CURRENT_PATCH} scope, including beginner-friendly builds, archetype pivots, and direct links into patch notes, cards, relics, and tier lists.
             </p>
+            <div className="flex flex-wrap gap-3 text-sm">
+              <Link
+                href="/patches"
+                className="rounded-full border border-molten-orange px-4 py-2 font-semibold text-molten-orange transition-colors hover:text-ember-glow"
+              >
+                Patch notes hub
+              </Link>
+              <Link
+                href="/news/slay-the-spire-2-beta-patch-v0-104-0-analysis"
+                className="rounded-full border border-border px-4 py-2 font-semibold text-steel-blue transition-colors hover:border-molten-orange hover:text-molten-orange"
+              >
+                Latest v0.104.0 article
+              </Link>
+              <Link
+                href="/cards"
+                className="rounded-full border border-border px-4 py-2 font-semibold text-steel-blue transition-colors hover:border-molten-orange hover:text-molten-orange"
+              >
+                Cards
+              </Link>
+              <Link
+                href="/relics"
+                className="rounded-full border border-border px-4 py-2 font-semibold text-steel-blue transition-colors hover:border-molten-orange hover:text-molten-orange"
+              >
+                Relics
+              </Link>
+              <Link
+                href="/tier-lists"
+                className="rounded-full border border-border px-4 py-2 font-semibold text-steel-blue transition-colors hover:border-molten-orange hover:text-molten-orange"
+              >
+                Tier lists
+              </Link>
+            </div>
             <div className="grid gap-4 md:grid-cols-2">
               {heroSignals.map((signal) => (
                 <div key={signal} className="rounded-2xl border border-border bg-background/60 p-5 text-sm text-steel-blue">

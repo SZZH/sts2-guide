@@ -3,16 +3,16 @@ import Link from 'next/link';
 import { NEWS_ARTICLES } from '@/shared/gameData';
 
 export const metadata: Metadata = {
-  title: 'Slay the Spire 2 Patch Notes: Latest Updates, Hotfixes, and Meta Impact',
+  title: 'Slay the Spire 2 Patch Notes v0.104.0 Beta: Latest Updates and Build Impact',
   description:
-    'Read the latest Slay the Spire 2 patch notes, hotfixes, and balance updates in one place. Use this page to see what changed and what to recheck next.',
+    'Read the current Slay the Spire 2 patch notes for the official v0.104.0 beta scope, then recheck builds, cards, relics, and tier lists that may have changed.',
   alternates: {
     canonical: '/patches',
   },
   openGraph: {
-    title: 'Slay the Spire 2 Patch Notes: Latest Updates, Hotfixes, and Meta Impact',
+    title: 'Slay the Spire 2 Patch Notes v0.104.0 Beta: Latest Updates and Build Impact',
     description:
-      'Read the latest Slay the Spire 2 patch notes, hotfixes, and balance updates in one place, then recheck builds, cards, and guides that changed.',
+      'Read the current Slay the Spire 2 patch notes for the official v0.104.0 beta scope, then recheck builds, cards, relics, and tier lists that changed.',
   },
 };
 
@@ -53,19 +53,19 @@ const impactCards = [
 const followUpRoutes = [
   {
     href: '/builds',
-    label: 'Re-check current builds after a patch',
-  },
-  {
-    href: '/guides',
-    label: 'Open the updated guide hub',
-  },
-  {
-    href: '/characters',
-    label: 'Compare which characters benefit most',
+    label: 'Re-check Slay the Spire 2 builds after v0.104.0',
   },
   {
     href: '/cards',
-    label: 'Look up cards that changed your line',
+    label: 'Look up cards affected by patch notes',
+  },
+  {
+    href: '/relics',
+    label: 'Review relics before changing build advice',
+  },
+  {
+    href: '/tier-lists',
+    label: 'Update tier list assumptions with patch context',
   },
 ];
 
@@ -88,14 +88,14 @@ const updatedAssets = [
     description: 'Use patch-aware tier framing before promoting or dropping a role, card package, or archetype.',
   },
   {
-    href: '/characters',
-    title: 'Character picks',
-    description: 'Review beginner-friendliness and current patch role shifts before changing your character recommendation.',
+    href: '/cards',
+    title: 'Cards database',
+    description: 'Confirm whether card roles, draft priorities, or named v0.104.0 beta watchlist cards changed.',
   },
   {
-    href: '/guides',
-    title: 'Guide hub',
-    description: 'Open first-run, route, and mechanic guides once you know which patch changes actually matter.',
+    href: '/relics',
+    title: 'Relics database',
+    description: 'Check relic synergies before treating a patch note as a full build or tier-list reset.',
   },
 ];
 
@@ -109,9 +109,9 @@ export default function PatchesPage() {
           <div className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-molten-orange">
             Patch Notes
           </div>
-          <h1 className="font-heading text-4xl font-bold md:text-5xl">Slay the Spire 2 Patch Notes</h1>
+          <h1 className="font-heading text-4xl font-bold md:text-5xl">Slay the Spire 2 Patch Notes v0.104.0 Beta</h1>
           <p className="mt-4 max-w-3xl text-base leading-8 text-steel-blue">
-            Read the latest Slay the Spire 2 patch notes, hotfixes, and balance updates in one place, then decide which builds, guides, or cards need a recheck. Latest official beta note: v0.104.0.
+            Read the latest Slay the Spire 2 patch notes, hotfixes, and balance updates in one place. The current official beta scope is v0.104.0, so use this hub to decide which builds, cards, relics, and tier lists need a recheck.
           </p>
 
           <div className="mt-6 flex flex-wrap gap-3 text-sm text-steel-blue">
@@ -142,6 +142,33 @@ export default function PatchesPage() {
               </div>
             </div>
           ) : null}
+
+          <div className="mt-6 flex flex-wrap gap-3 text-sm">
+            <Link
+              href="/builds"
+              className="rounded-full border border-molten-orange px-4 py-2 font-semibold text-molten-orange transition-colors hover:text-ember-glow"
+            >
+              Builds after v0.104.0
+            </Link>
+            <Link
+              href="/cards"
+              className="rounded-full border border-border px-4 py-2 font-semibold text-steel-blue transition-colors hover:border-molten-orange hover:text-molten-orange"
+            >
+              Cards reference
+            </Link>
+            <Link
+              href="/relics"
+              className="rounded-full border border-border px-4 py-2 font-semibold text-steel-blue transition-colors hover:border-molten-orange hover:text-molten-orange"
+            >
+              Relics reference
+            </Link>
+            <Link
+              href="/tier-lists"
+              className="rounded-full border border-border px-4 py-2 font-semibold text-steel-blue transition-colors hover:border-molten-orange hover:text-molten-orange"
+            >
+              Tier lists
+            </Link>
+          </div>
         </section>
 
         <section className="mt-10">

@@ -30,6 +30,26 @@
 - 下一步：
   - `P0` 按新方案执行 `/builds`、`/cards`、`/tier-lists`、`/patches`、`/relics` 的 title/H1/首段/内链轻改；改完必须 `pnpm lint`、`pnpm build`、IndexNow 提交并回填日志。
 
+### 2026-05-08 10:14
+- 观察：已执行量化 SEO 方案 P0-1。此次只做入口页轻改和词页映射补充，没有新增页面、没有新开 `/wiki`、没有做站点级重构。
+- 已完成：
+  - `DONE` `/builds`：title / H1 / 首屏文案加入 `Slay the Spire 2 builds`、`v0.104.0 beta` 与 patch scope，并补 `/patches`、最新 patch article、`/cards`、`/relics`、`/tier-lists` 首屏内链。
+  - `DONE` `/patches`：title / H1 / 首屏文案加入 `Slay the Spire 2 patch notes`、`v0.104.0 beta` 与 build impact，并补 `/builds`、`/cards`、`/relics`、`/tier-lists` 承接。
+  - `DONE` `/cards`：强化 `Slay the Spire 2 cards`、`card database`、`card list` 泛词，并补 builds / tier lists / patches / v0.104.0 article 内链。
+  - `DONE` `/relics`：强化 `Slay the Spire 2 relics`、`relic database`、`relic list` 泛词，并补 builds / tier lists / patches / v0.104.0 article 内链。
+  - `DONE` `/tier-lists`：强化 `Slay the Spire 2 tier list` / `tier lists` 泛词，并补 builds / cards / relics / patches / v0.104.0 article 内链。
+  - `DONE` 更新 `13-keyword-to-page-map.md`：补 `slay the spire 2 tier lists` / `tier lists` 映射，继续收口到 `/tier-lists`。
+  - `DONE` `pnpm lint` 通过（0 errors；4 个既有 warnings：脚本未使用变量与 generated eslint-disable）。
+  - `DONE` `pnpm build` 通过，成功生成 `810` 个页面。
+  - `DONE` IndexNow 提交 7 个 URL：`/builds`、`/cards`、`/tier-lists`、`/patches`、`/relics`、最新 v0.104.0 新闻页、`/sitemap.xml`。
+- 当前完成度：
+  - `DONE` P0-1 入口页轻改量化执行。
+  - `TODO` P0-2 四端中期复采，DDL=`2026-05-14`。
+  - `TODO` P1 词页映射复核，DDL=`2026-05-16`。
+  - `TODO` 2026-05-21 决策复盘。
+- 下一步：
+  - `P0` 等待 24-48 小时抓取回流；2026-05-14 执行 GSC + Vercel + Bing Webmaster + Google Trends 中期复采，不能用今天改动后的主观判断替代数据。
+
 ### 2026-05-07 15:27
 - 观察：用户明确调整社媒优先级：主要做 Steam，其次 Reddit，最后 X。已同步到当前社媒分发包和 NOW。
 - 已完成：

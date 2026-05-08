@@ -21,9 +21,9 @@ import { BreadcrumbSchema, CollectionPageSchema, FAQSchema, ItemListSchema } fro
 import MobileFiltersPanel from '@/components/MobileFiltersPanel';
 
 export const metadata: Metadata = {
-  title: 'StS2 Cards: Slay the Spire 2 Cards Database and Card List',
+  title: 'Slay the Spire 2 Cards: Card Database, List, and Patch Links',
   description:
-    'Browse all StS2 cards by character, type, rarity, cost, and keyword. Use this Slay the Spire 2 cards database and card list with v0.104.0 beta patch context.',
+    'Browse the Slay the Spire 2 cards database and card list by character, type, rarity, cost, and keyword, with links to builds, tier lists, patches, and v0.104.0 beta changes.',
   keywords: [
     'Slay the Spire 2 cards',
     'Slay the Spire 2 all cards',
@@ -35,9 +35,9 @@ export const metadata: Metadata = {
     canonical: '/cards',
   },
   openGraph: {
-    title: 'StS2 Cards: Slay the Spire 2 Cards Database and Card List',
+    title: 'Slay the Spire 2 Cards Database and Card List',
     description:
-      'Browse all StS2 cards by character, type, rarity, cost, and keyword with a searchable Slay the Spire 2 card database for the v0.104.0 beta watchlist.',
+      'Browse all Slay the Spire 2 cards by character, type, rarity, cost, and keyword with direct links into builds, tier lists, patches, and the v0.104.0 beta watchlist.',
   },
 };
 
@@ -187,19 +187,19 @@ export default async function CardsPage({ searchParams }: CardsPageProps) {
         <div className="container">
           <div className="rounded-2xl border border-border bg-card/80 p-6">
             <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground">Card database</p>
-            <h2 className="text-2xl font-bold mt-1">Slay the Spire 2 Cards Database</h2>
+            <h2 className="text-2xl font-bold mt-1">Slay the Spire 2 Cards Database and Card List</h2>
             <p className="mt-2 text-base text-muted-foreground">
-              Browse card text, costs, keywords, rarities, and character pools with the official v0.104.0 beta patch watchlist in mind.
+              Browse {CARDS.length} Slay the Spire 2 cards with searchable card text, costs, keywords, rarities, and character pools, all framed around the official v0.104.0 beta patch watchlist.
             </p>
             <p className="mt-1 text-sm text-muted-foreground">
-              Use the filters below to find cards fast, then jump back into builds, patch notes, tier lists, or character pages once you have the exact card you need.
+              Use this card database to find a specific card fast, then jump into builds, patch notes, tier lists, or the latest v0.104.0 patch article once you know what needs a retest.
             </p>
             <div className="mt-4 grid gap-3 md:grid-cols-2">
               {[
                 { href: '/builds', label: 'Builds Dashboard', description: 'See which cards power the current archetypes.' },
                 { href: '/tier-lists', label: 'Tier List Support', description: 'Understand where each card slots in the meta.' },
-                { href: '/patches', label: 'Patch Impact', description: 'Check which cards are affected by the latest changes.' },
-                { href: '/characters', label: 'Character Routes', description: 'Link cards back to playable characters and builds.' },
+                { href: '/patches', label: 'Patch Notes Hub', description: 'Check which cards are affected by recent patches.' },
+                { href: '/news/slay-the-spire-2-beta-patch-v0-104-0-analysis', label: 'v0.104.0 Patch Article', description: 'Read the latest beta patch analysis before retesting cards.' },
               ].map((cta) => (
                 <Link
                   key={cta.href}
@@ -590,9 +590,9 @@ export default async function CardsPage({ searchParams }: CardsPageProps) {
               <div className="lg:flex lg:h-full lg:min-h-0 lg:flex-col">
                 <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
                   <div>
-                    <h1 className="font-heading text-2xl font-bold">All Cards Database</h1>
+                    <h1 className="font-heading text-2xl font-bold">Slay the Spire 2 Cards Database</h1>
                     <p className="text-sm text-steel-blue mt-1">
-                      Showing {filteredCards.length} results from {CARDS.length} cards. Page {safePage} of {totalPages}.
+                      Showing {filteredCards.length} results from the {CARDS.length}-card Slay the Spire 2 card list. Page {safePage} of {totalPages}.
                     </p>
                   </div>
                   <Link href="/mechanics" className="text-sm font-semibold text-molten-orange hover:text-ember-glow transition-colors">

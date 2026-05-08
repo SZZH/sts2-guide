@@ -6,21 +6,23 @@ import { BreadcrumbSchema, CollectionPageSchema, FAQSchema, ItemListSchema } fro
 import MobileFiltersPanel from '@/components/MobileFiltersPanel';
 
 export const metadata: Metadata = {
-  title: 'Slay the Spire 2 Relics Reference for Builds and Patch Updates',
+  title: 'Slay the Spire 2 Relics: Relic List, Database, and Patch Links',
   description:
-    'Reference every Slay the Spire 2 relic with v0.104.0 beta context so you can pair each effect with builds, characters, cards, or recent patch shifts.',
+    'Browse the Slay the Spire 2 relics database and relic list by rarity, character, and keyword, with links to builds, tier lists, patches, and v0.104.0 beta changes.',
   keywords: [
     'Slay the Spire 2 relics',
+    'Slay the Spire 2 relic database',
     'StS2 relic reference',
     'Slay the Spire 2 relic list',
+    'Slay the Spire 2 relics list',
     'StS2 relic support',
   ],
   alternates: {
     canonical: '/relics',
   },
   openGraph: {
-    title: 'Slay the Spire 2 Relics Reference and Patch Context',
-    description: 'Browse relic effects with v0.104.0 beta context so your builds and characters stay aligned with current official patch signals.',
+    title: 'Slay the Spire 2 Relics Database and Relic List',
+    description: 'Browse Slay the Spire 2 relic effects with links to builds, tier lists, patches, and v0.104.0 beta context.',
   },
 };
 
@@ -289,14 +291,12 @@ export default async function RelicsPage({ searchParams }: RelicsPageProps) {
 
               <div>
                 <div className="mb-3 space-y-1">
-                  <h1 className="font-heading text-3xl font-bold md:text-4xl">Relics support reference</h1>
+                  <h1 className="font-heading text-3xl font-bold md:text-4xl">Slay the Spire 2 Relics Database</h1>
                   <p className="text-sm leading-7 text-steel-blue">
-                    The v0.104.0 beta note puts Ancient buffs and character-specific interactions back on the watchlist, while Doormaker balance remains under observation. Use this reference to double-check each effect before slotting it into builds, characters, cards, or patch adjustments so the page stays
-                    in a support role instead of trying to act as the decision endpoint.
+                    Browse {RELICS.length} Slay the Spire 2 relics by rarity, character tag, and keyword. The v0.104.0 beta note puts Ancient buffs and character-specific interactions back on the watchlist, while Doormaker balance remains under observation.
                   </p>
                   <p className="text-sm leading-7 text-steel-blue">
-                    Every relic listed below links into builds, characters, cards, and patch guidance, making it easy to trace why a pick still makes sense in
-                    the current balance window instead of guessing at meta shifts.
+                    Use this relic list to double-check each effect before slotting it into builds, cards, tier lists, or patch adjustments, then follow the links below when a pick needs current-version context.
                   </p>
                 </div>
                 <div className="mb-6 grid gap-3 rounded-2xl border border-border bg-background/50 p-4 text-sm text-steel-blue md:grid-cols-2">
@@ -320,6 +320,12 @@ export default async function RelicsPage({ searchParams }: RelicsPageProps) {
                     </Link>
                     <Link href="/patches" className="rounded-full border border-border px-4 py-2 text-xs font-semibold text-foreground">
                       Patch notes
+                    </Link>
+                    <Link href="/tier-lists" className="rounded-full border border-border px-4 py-2 text-xs font-semibold text-foreground">
+                      Tier lists
+                    </Link>
+                    <Link href="/news/slay-the-spire-2-beta-patch-v0-104-0-analysis" className="rounded-full border border-border px-4 py-2 text-xs font-semibold text-foreground">
+                      v0.104.0 article
                     </Link>
                   </div>
                 </div>

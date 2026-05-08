@@ -4,18 +4,26 @@ import Link from 'next/link';
 const currentVersion = 'v0.104.0 beta';
 
 export const metadata: Metadata = {
-  title: 'Slay the Spire 2 Tier Lists | Current patch decision lenses',
+  title: 'Slay the Spire 2 Tier List & Tier Lists | v0.104.0 Beta',
   description:
-    'Use four patch-aware tier lenses for Slay the Spire 2: characters, beginner stability, archetypes, and card priority. Built around official v0.104.0 beta notes without pretending the beta is fully settled.',
+    'Use the Slay the Spire 2 tier list hub for patch-aware tier lists covering characters, beginner stability, archetypes, cards, relics, builds, and v0.104.0 beta patch changes.',
   alternates: {
     canonical: '/tier-lists',
   },
   openGraph: {
-    title: 'StS2 Tier Lists — current patch decision lenses',
+    title: 'Slay the Spire 2 Tier List & Tier Lists',
     description:
-      'Character, beginner, archetype, and card tier guidance for Slay the Spire 2 with conservative, versioned recommendations tied to the current patch.',
+      'Character, beginner, archetype, card, relic, build, and patch-aware tier guidance for Slay the Spire 2 with conservative recommendations tied to v0.104.0 beta.',
   },
 };
+
+const heroLinks = [
+  { label: 'Builds', href: '/builds' },
+  { label: 'Cards', href: '/cards' },
+  { label: 'Relics', href: '/relics' },
+  { label: 'Patch notes', href: '/patches' },
+  { label: 'v0.104.0 analysis', href: '/news/slay-the-spire-2-beta-patch-v0-104-0-analysis' },
+];
 
 const sectionData = [
   {
@@ -37,6 +45,7 @@ const sectionData = [
     calls: [
       { label: 'View builds by hero', href: '/builds' },
       { label: 'Character details', href: '/characters' },
+      { label: 'Patch impact', href: '/patches' },
     ],
   },
   {
@@ -58,6 +67,7 @@ const sectionData = [
     calls: [
       { label: 'Starter builds', href: '/builds' },
       { label: 'Character card primers', href: '/cards' },
+      { label: 'Latest beta notes', href: '/news/slay-the-spire-2-beta-patch-v0-104-0-analysis' },
     ],
   },
   {
@@ -79,6 +89,7 @@ const sectionData = [
     calls: [
       { label: 'Archetype grid', href: '/builds' },
       { label: 'Character breakdowns', href: '/characters' },
+      { label: 'Relic checks', href: '/relics' },
     ],
   },
   {
@@ -100,6 +111,7 @@ const sectionData = [
     calls: [
       { label: 'Card deep dives', href: '/cards' },
       { label: 'Related builds', href: '/builds' },
+      { label: 'Patch notes', href: '/patches' },
     ],
   },
 ];
@@ -108,12 +120,24 @@ export default function TierListsPage() {
   return (
     <main className="mx-auto flex max-w-6xl flex-col space-y-12 px-6 py-12 text-white">
       <header className="space-y-4">
-        <p className="text-sm uppercase tracking-[0.3em] text-slate-400">Current version</p>
-        <h1 className="text-4xl font-semibold">Tier lists for {currentVersion}</h1>
+        <p className="text-sm uppercase tracking-[0.3em] text-slate-400">Slay the Spire 2 tier list hub</p>
+        <h1 className="text-4xl font-semibold">Slay the Spire 2 tier list and tier lists for {currentVersion}</h1>
         <p className="text-lg text-slate-200">
-          Four living lenses for {currentVersion}: hero strength, new player stability, archetype resilience, and
-          card decisiveness. Each section points back to builds or reference pages so you finish with a decision.
+          Use this Slay the Spire 2 tier list page as a current-patch index for tier lists by hero strength, new
+          player stability, archetype resilience, card decisiveness, and retest priority. Each section points back to
+          builds, cards, relics, patches, or the latest v0.104.0 beta analysis so you finish with a decision.
         </p>
+        <nav aria-label="Tier list decision links" className="flex flex-wrap gap-3 text-sm">
+          {heroLinks.map((link) => (
+            <Link
+              key={link.href}
+              className="rounded-full bg-slate-800 px-4 py-2 font-medium text-white transition hover:bg-slate-700"
+              href={link.href}
+            >
+              {link.label}
+            </Link>
+          ))}
+        </nav>
         <div className="flex flex-wrap gap-3 text-sm">
           <span className="rounded-full border border-slate-600 px-3 py-1">Last validated May 7, 2026</span>
           <span className="rounded-full border border-slate-600 px-3 py-1">Sources: official Steam notes · community signals</span>
@@ -127,7 +151,7 @@ export default function TierListsPage() {
           <p className="text-slate-200">
             Builds that appear in the Characters or Archetype leg must hit a 60% success ceiling across the latest
             patch window before we keep promoting them; anything below that is tagged as &quot;volatile&quot; and surfaced
-            inside the cards section for deeper review.
+            inside the cards, relics, or patch notes path for deeper review.
           </p>
           <div className="mt-3 flex flex-wrap gap-3 text-sm">
             <span className="rounded-full bg-emerald-500/10 px-3 py-1 text-emerald-300">Stable</span>
@@ -170,10 +194,12 @@ export default function TierListsPage() {
         <div className="flex flex-col gap-2 text-sm">
           <p>
             Characters feed the Builds hub, archetypes keep the tier map honest, and cards explain why something
-            previously ranked high may fall to watchlist. Use the buttons above or hop into builds/characters/cards
-            for the full decision flow.
+            previously ranked high may fall to watchlist. Use the buttons above or hop into builds, cards, relics,
+            patches, or the v0.104.0 beta analysis for the full decision flow.
           </p>
-          <p className="font-mono text-xs uppercase tracking-wider text-slate-500">CTA ⟶ /builds · /characters · /cards</p>
+          <p className="font-mono text-xs uppercase tracking-wider text-slate-500">
+            CTA -&gt; /builds · /cards · /relics · /patches · /news/slay-the-spire-2-beta-patch-v0-104-0-analysis
+          </p>
         </div>
       </section>
     </main>
