@@ -15,6 +15,34 @@
 - 同一天内允许多次更新，按时间倒序追加。
 - 每条更新至少包含：已完成事项、未完成事项、下一步动作。
 
+### 2026-05-11 16:34
+- 观察：执行前历史核对发现 dashboard 仍停留在 2026-05-08，今天没有当日完成证据；按规则未把历史四端口径冒充今日实时结果。正式域名基础页可用，Steam 官方 RSS 发现新增 `Beta Patch Notes - v0.105.0`（2026-05-08 00:53:30 UTC）和 `Beta Hotfix Notes - v0.105.1`（2026-05-09 03:14:26 UTC）。
+- 当前情况分析：
+  - 站点可用性：`DONE`，`/`、`/sitemap.xml`、`/builds`、`/patches`、`/news/slay-the-spire-2-beta-patch-v0-104-0-analysis` 均返回 `HTTP 200`。
+  - 游戏动态：`DONE`，官方 beta 最新口径已从 v0.104.0 推进到 v0.105.1/v0.105.0。
+  - 四端中期复采：`TODO`，仍按 2026-05-14 checklist 执行，今天不提前重采 GSC / Vercel / Bing / Trends，避免观察窗归因混乱。
+- 原因判断（置信度高）：这次不是 SEO 闸门通过，也不是扩量信号；它是官方内容时效更新。若站内继续把 v0.104.0 写成 current beta scope，会产生内容过时风险；但 v0.105.1 是 hotfix，不足以支撑 build/tier 大改。
+- 建议动作：
+  - `P0` 完成本轮最小内容同步：新增一篇 v0.105.1/v0.105.0 合并解读，更新首页与 `/patches` 当前版本文案，确保 sitemap 包含新 URL。
+  - `P0` 推送后等待 Vercel 自动部署，再提交 IndexNow：新 v0.105 新闻页、`/patches`、首页、`/sitemap.xml`。
+  - `P1` 2026-05-14 继续执行四端中期复采；不执行 `/wiki`、不扩量。
+- 执行动作：
+  - `DONE` 新增 `/news/slay-the-spire-2-beta-patch-v0-105-0-aeonglass-bestiary-hotfix`。
+  - `DONE` 更新首页 current patch 文案到 `v0.105.1`。
+  - `DONE` 更新 `/patches` metadata、H1、主描述、latest patch 链接和 follow-up 文案到 `v0.105.1/v0.105.0`。
+  - `DONE` 更新 `app/sitemap.ts`，将新 v0.105 新闻页列入高优先 patch/news URL。
+  - `DONE` 更新 `08-game-dynamics-intel.md` 与 `00-dashboard.md`。
+- 验证：
+  - `DONE` `pnpm lint` 通过（0 errors；4 个既有 warnings：脚本未使用变量与 generated eslint-disable）。
+  - `DONE` `pnpm build` 通过，成功生成 `811` 个页面；新路由 `/news/slay-the-spire-2-beta-patch-v0-105-0-aeonglass-bestiary-hotfix` 已进入 SSG 列表。
+- DONE / IN_PROGRESS / TODO / BLOCKED：
+  - `DONE`：站点可用性验证；Steam 官方动态巡检；v0.105.1/v0.105.0 最小内容同步；lint/build 验证；运维文档回填。
+  - `IN_PROGRESS`：生产发布与线上生效验证。
+  - `TODO`：提交并推送 `main`；Vercel 自动部署 Ready 后验证新 URL；提交 IndexNow；2026-05-14 四端中期复采。
+  - `BLOCKED`：无当下新增阻塞；SteamDB 页面 `403 Checking your browser`，本轮已用 Steam 官方 RSS 作为 source of truth。
+- 关键词证据等级变化：无。`slay the spire 2 patch notes` 继续维持 `CONFIRMED`；`wiki` 不升级。
+- 是否允许页面动作：仅允许本轮官方 patch 时效同步；不允许新建 `/wiki`、不允许扩量、不允许大批量改 build/tier 页面。
+
 ### 2026-05-08 10:04
 - 观察：用户要求 SEO 方案必须量化，明确“什么时候做什么事、任务做到什么程度、每一步决策如何记录”。已将“泛词页做骨架，长尾页拿点击”的策略落成可执行指标矩阵。
 - 已完成：

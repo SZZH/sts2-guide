@@ -16,6 +16,13 @@
 
 ## 当前已关注情报
 
+### 2026-05 近窗
+
+| 日期 | 来源 | 标题 | 摘要 | 影响判断 | 内容动作 | 状态 | 链接 |
+|---|---|---|---|---|---|---|---|
+| 2026-05-09 | Steam 新闻 | `Beta Hotfix Notes - v0.105.1` | 官方在 v0.105.0 后发布小热修，重点修 Aeonglass intent / music、Ceremonial Beast music timing，以及 Silken Tress、treasure reward、Crystal Sphere 等 multiplayer state divergence。 | 当前站内若仍把 v0.104.0 写作最新 beta scope，会显得过时；但 v0.105.1 是 hotfix，不应直接触发大规模 build/tier 重写。 | 已新增 `/news/slay-the-spire-2-beta-patch-v0-105-0-aeonglass-bestiary-hotfix`，并更新首页、patch hub、sitemap 高优先新闻配置；待推送部署后提交 IndexNow。 | `ACTIONED` | https://store.steampowered.com/news/app/2868840/view/664987110632064377 |
+| 2026-05-08 | Steam 新闻 | `Beta Patch Notes - v0.105.0` | 官方 beta patch 替换 Doormaker 为新 Act 3 boss `Aeonglass`，上线 Bestiary 初版，并说明 beta patch cadence 从 weekly 转向 bi-weekly。 | 这是当前 patch 语境变化，不只是数值小改；需要站内主入口停止把 v0.104.0 当最新，但仍需保持“官方事实优先、构建建议慢更新”。 | 与 v0.105.1 合并成一篇版本解读，不新建 wiki、不扩量；后续 2026-05-14 仍按四端复采闸门验证 SEO。 | `ACTIONED` | https://store.steampowered.com/news/app/2868840/view/664987110632063988 |
+
 ### 2026-04 近窗
 
 | 日期 | 来源 | 标题 | 摘要 | 影响判断 | 内容动作 | 状态 | 链接 |

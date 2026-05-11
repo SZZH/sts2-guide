@@ -199,6 +199,93 @@ export interface NewsArticle {
 
 export const NEWS_ARTICLES: NewsArticle[] = [
   {
+    slug: 'slay-the-spire-2-beta-patch-v0-105-0-aeonglass-bestiary-hotfix',
+    title: 'Slay the Spire 2 v0.105.1 Hotfix and v0.105.0 Beta Patch: Aeonglass, Bestiary, and Bi-Weekly Patching',
+    excerpt: 'Official v0.105.0 beta notes replace Doormaker with Aeonglass, add the Bestiary shell, move toward bi-weekly beta patching, and v0.105.1 follows with Aeonglass and multiplayer divergence fixes.',
+    date: '2026-05-09',
+    category: 'Analysis',
+    readTime: '9 min',
+    featured: true,
+    image: 'https://clan.fastly.steamstatic.com/images/44971832/bcf1a1b14356dcaed73042d288bd62bc84bcde5a.jpg',
+    url: 'https://store.steampowered.com/news/app/2868840/view/664987110632064377',
+    source: 'Steam News',
+    sourceType: 'internal',
+    updatedAt: '2026-05-11',
+    intro: [
+      'v0.105.0 is the first beta patch after the v0.104.0 watchlist that changes the shape of the current patch conversation: Doormaker is out, Aeonglass is in, the Bestiary is visible in the Compendium, and Mega Crit says beta patches are moving toward a bi-weekly cadence.',
+      'v0.105.1 is a focused hotfix on top of that patch. Treat it as stability and correctness follow-up, not a separate full meta reset: Aeonglass intent/music fixes and multiplayer state divergence fixes are the practical headline.',
+    ],
+    sections: [
+      {
+        heading: 'Official source of truth: v0.105.0 changed the active beta topic',
+        paragraphs: [
+          'The biggest versioned change is not a tiny number tweak. Mega Crit explicitly replaced Doormaker with a new Act 3 boss, Aeonglass, while also adding the early Bestiary view to the Compendium.',
+          'That matters for this site because older v0.104.0 language framed Doormaker as a watchlist boss. The current beta conversation now needs to point players toward Aeonglass testing, encounter learning, and fresh boss-read guidance.',
+        ],
+        bullets: [
+          'Current beta scope: v0.105.1 hotfix on top of v0.105.0 beta',
+          'Boss focus: Doormaker out, Aeonglass in',
+          'System focus: Bestiary shell is now visible in the Compendium',
+        ],
+      },
+      {
+        heading: 'What v0.105.1 actually fixes',
+        paragraphs: [
+          'The v0.105.1 hotfix is narrow and useful: it updates the Aeonglass boss icon, fixes Aeonglass first-move intent display, fixes Aeonglass music behavior, and cleans up Ceremonial Beast music timing.',
+          'The multiplayer notes are also important because they target state divergence. Silken Tress card-reward behavior, treasure-room reward handling, and the Crystal Sphere event all get fixes, so co-op groups should retest before assuming those bugs remain live.',
+        ],
+        bullets: [
+          'Retest Aeonglass after updating if first-move intent or music looked wrong',
+          'Retest multiplayer reward flows after treasure rooms and Crystal Sphere',
+          'Do not rewrite build advice from this hotfix alone',
+        ],
+      },
+      {
+        heading: 'Bi-weekly patching changes how to read patch intent',
+        paragraphs: [
+          'v0.105.0 says the team is moving from weekly beta patches toward a two-week cadence. That is a meaningful operations signal: individual beta notes may become larger, but the site should avoid panic-updating every minor hotfix into a new strategy headline.',
+          'The better rhythm is to update the patch hub quickly, publish a concise versioned read when the official note changes current decisions, then wait for player evidence before rewriting tier lists or build priorities.',
+        ],
+        bullets: [
+          'Patch hub should move fast on version facts',
+          'Build and tier-list advice should move slower unless card/relic/encounter decisions changed',
+          'The May 14 data checkpoint should still stay intact for SEO validation',
+        ],
+      },
+      {
+        heading: 'Practical retest order after v0.105',
+        paragraphs: [
+          'Start with boss learning and multiplayer correctness rather than broad card reranking. Aeonglass replaces the old Doormaker conversation, so run notes should focus on intent reading, turn pacing, and how often old Act 3 assumptions break.',
+          'Then check the Bestiary as a reference feature. It is not yet a complete data source, but its presence means players may begin searching for monster data and encounter references sooner than before.',
+        ],
+        bullets: [
+          'First: Aeonglass fight reads and Act 3 routing assumptions',
+          'Second: multiplayer reward/state divergence repros',
+          'Third: Bestiary search intent and monster reference demand',
+        ],
+      },
+      {
+        heading: 'What this site should update now',
+        paragraphs: [
+          'The safe minimum update is to make the patch hub and homepage stop presenting v0.104.0 as the current beta scope. v0.104.0 remains useful history, but the visible current patch should now be v0.105.1.',
+          'Because this is a content freshness update, not a passed SEO expansion gate, the right action is one new news analysis page, a patch-hub pointer, sitemap inclusion, and IndexNow submission. No new wiki section or batch expansion is justified from this alone.',
+        ],
+        bullets: [
+          'Publish one v0.105.1/v0.105.0 news analysis page',
+          'Update patch hub and homepage current-version language',
+          'Submit the new URL, patch hub, homepage, and sitemap through IndexNow',
+        ],
+      },
+    ],
+    relatedLinks: [
+      { href: '/patches', label: 'Open the patch hub for the current v0.105 context' },
+      { href: '/builds', label: 'Retest builds only after version facts are clear' },
+      { href: '/tier-lists', label: 'Keep tier advice conservative until run evidence lands' },
+      { href: '/news/slay-the-spire-2-beta-patch-v0-104-0-analysis', label: 'Compare the previous v0.104.0 beta watchlist' },
+      { href: '/news/slay-the-spire-2-steamdb-patch-tracker', label: 'Track beta-to-main patch sequence' },
+    ],
+  },
+  {
     slug: 'slay-the-spire-2-beta-patch-v0-104-0-analysis',
     title: 'Slay the Spire 2 v0.104.0 Beta Patch Notes: Ascension Tuning, Ironclad Reworks, and Doormaker Watch',
     excerpt: 'Official v0.104.0 beta notes adjust the Ascension difficulty curve, rework Conflagration, Drum of Battle, and Parry, buff several Ancient tools, and keep Doormaker on the watchlist rather than declaring a final meta.',
