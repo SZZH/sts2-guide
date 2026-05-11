@@ -16,10 +16,10 @@
 - 搜索总览（GSC）：`TODO`（今天不提前执行四端中期复采；2026-05-07 基线仍只作为历史对比，不冒充今日实时数据）
 - Bing 总览：`TODO`（今天未登录 Bing Webmaster 实时采集；待 2026-05-14 按四端 checklist 复采，若平台不可用再标 `BLOCKED`）
 - 趋势总览（Google Trends）：`TODO`（今天未执行 Trends 实时采集；待 2026-05-14 按四端 checklist 复采）
-- 生产发布总览：`IN_PROGRESS`（已完成本地 v0.105.1/v0.105.0 内容同步、`pnpm lint`、`pnpm build`；待提交并推送 `main` 后由 Vercel 自动部署）
+- 生产发布总览：`DONE`（v0.105.1/v0.105.0 内容同步已提交并推送 `main`：`40e0e8e feat: 同步v0.105.1补丁口径`；Vercel 自动部署后新 URL 返回 `HTTP 200`）
 - 线上结构验证：`DONE`（本轮仅做内容时效最小同步：新增 v0.105.1/v0.105.0 新闻页，更新首页与 `/patches` 当前版本文案，更新 sitemap；未新建 `/wiki`、未扩量）
 - 游戏动态总览：`DONE`（Steam 官方 RSS 确认 `Beta Patch Notes - v0.105.0`，2026-05-08 00:53:30 UTC；`Beta Hotfix Notes - v0.105.1`，2026-05-09 03:14:26 UTC）
-- 外链发布总览：`TODO`（待代码推送并线上 URL 生效后，提交 IndexNow：新 v0.105 新闻页、`/patches`、首页、`/sitemap.xml`）
+- 外链发布总览：`DONE`（IndexNow 已提交 4 URL：新 v0.105 新闻页、`/patches`、首页、`/sitemap.xml`）
 - 社媒互动总览：`SKIP`（今天主线是官方 patch 时效同步；不做 Reddit / X / Steam 分发，避免需要额外互动窗口）
 
 ## 闸门状态（当前批次）
@@ -38,8 +38,9 @@
 - `DONE`: 2026-05-11 16:34 新增 `/news/slay-the-spire-2-beta-patch-v0-105-0-aeonglass-bestiary-hotfix`，并同步首页、`/patches`、`app/sitemap.ts`
 - `DONE`: 2026-05-11 16:34 `pnpm lint` 通过（0 errors，4 个既有 warnings）
 - `DONE`: 2026-05-11 16:34 `pnpm build` 通过，成功生成 `811` 个页面
-- `TODO`: 2026-05-11 提交并推送 `main`，等待 Vercel 自动生产部署
-- `TODO`: 2026-05-11 线上新 URL 生效后提交 IndexNow（新 v0.105 新闻页、`/patches`、首页、`/sitemap.xml`）
+- `DONE`: 2026-05-11 16:38 提交并推送 `main`，commit=`40e0e8e`
+- `DONE`: 2026-05-11 16:38 Vercel 自动部署后，新 URL `/news/slay-the-spire-2-beta-patch-v0-105-0-aeonglass-bestiary-hotfix` 返回 `HTTP 200` 且正文命中 `v0.105.1 / Aeonglass / Bestiary`
+- `DONE`: 2026-05-11 16:39 IndexNow 提交 4 URL：新 v0.105 新闻页、`/patches`、首页、`/sitemap.xml`
 - `TODO`: 2026-05-14 四端中期复采（按 `19-midpoint-recheck-checklist-2026-05-14.md` 执行）
 - `TODO`: 2026-05-21 继续 / 止损 / 小范围恢复投入决策
 
@@ -79,6 +80,6 @@
 - 今日判断：v0.105.1/v0.105.0 属于官方内容时效更新，允许最小 patch/news 同步；不代表 SEO 闸门通过，也不允许扩量或新建 `/wiki`
 
 ## 明日优先事项（最多3个）
-- P0: 推送 v0.105.1/v0.105.0 内容同步后，确认 Vercel Production `Ready` 与新 URL `HTTP 200`
-- P0: 线上生效后提交 IndexNow，并回填今日日志
+- P0: 观察 v0.105 新页面收录/曝光回流，但不提前替代 2026-05-14 四端复采
+- P0: 若再出现官方 patch / hotfix / newsletter，继续按最小 patch/news 同步处理
 - P1: 继续等待 2026-05-14 四端中期复采；任何关键词动作先查 `18-keyword-evidence-ledger.md`

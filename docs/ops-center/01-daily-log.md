@@ -24,7 +24,7 @@
 - 原因判断（置信度高）：这次不是 SEO 闸门通过，也不是扩量信号；它是官方内容时效更新。若站内继续把 v0.104.0 写成 current beta scope，会产生内容过时风险；但 v0.105.1 是 hotfix，不足以支撑 build/tier 大改。
 - 建议动作：
   - `P0` 完成本轮最小内容同步：新增一篇 v0.105.1/v0.105.0 合并解读，更新首页与 `/patches` 当前版本文案，确保 sitemap 包含新 URL。
-  - `P0` 推送后等待 Vercel 自动部署，再提交 IndexNow：新 v0.105 新闻页、`/patches`、首页、`/sitemap.xml`。
+  - `P0` 推送后等待 Vercel 自动部署，再提交 IndexNow：新 v0.105 新闻页、`/patches`、首页、`/sitemap.xml`。（已完成）
   - `P1` 2026-05-14 继续执行四端中期复采；不执行 `/wiki`、不扩量。
 - 执行动作：
   - `DONE` 新增 `/news/slay-the-spire-2-beta-patch-v0-105-0-aeonglass-bestiary-hotfix`。
@@ -37,8 +37,8 @@
   - `DONE` `pnpm build` 通过，成功生成 `811` 个页面；新路由 `/news/slay-the-spire-2-beta-patch-v0-105-0-aeonglass-bestiary-hotfix` 已进入 SSG 列表。
 - DONE / IN_PROGRESS / TODO / BLOCKED：
   - `DONE`：站点可用性验证；Steam 官方动态巡检；v0.105.1/v0.105.0 最小内容同步；lint/build 验证；运维文档回填。
-  - `IN_PROGRESS`：生产发布与线上生效验证。
-  - `TODO`：提交并推送 `main`；Vercel 自动部署 Ready 后验证新 URL；提交 IndexNow；2026-05-14 四端中期复采。
+  - `DONE`：生产发布与线上生效验证；commit=`40e0e8e`；新 URL 返回 `HTTP 200` 且命中 `v0.105.1 / Aeonglass / Bestiary`；IndexNow 已提交 4 URL。
+  - `TODO`：2026-05-14 四端中期复采。
   - `BLOCKED`：无当下新增阻塞；SteamDB 页面 `403 Checking your browser`，本轮已用 Steam 官方 RSS 作为 source of truth。
 - 关键词证据等级变化：无。`slay the spire 2 patch notes` 继续维持 `CONFIRMED`；`wiki` 不升级。
 - 是否允许页面动作：仅允许本轮官方 patch 时效同步；不允许新建 `/wiki`、不允许扩量、不允许大批量改 build/tier 页面。
