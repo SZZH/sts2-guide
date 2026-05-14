@@ -23,7 +23,7 @@ import MobileFiltersPanel from '@/components/MobileFiltersPanel';
 export const metadata: Metadata = {
   title: 'Slay the Spire 2 Cards: Card Database, List, and Patch Links',
   description:
-    'Browse the Slay the Spire 2 cards database and card list by character, type, rarity, cost, and keyword, with links to builds, tier lists, patches, and v0.104.0 beta changes.',
+    'Browse the Slay the Spire 2 cards database and card list by character, type, rarity, cost, and keyword, with links to builds, guides, patches, and the current Early Access balance cycle.',
   keywords: [
     'Slay the Spire 2 cards',
     'Slay the Spire 2 all cards',
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Slay the Spire 2 Cards Database and Card List',
     description:
-      'Browse all Slay the Spire 2 cards by character, type, rarity, cost, and keyword with direct links into builds, tier lists, patches, and the v0.104.0 beta watchlist.',
+      'Browse all Slay the Spire 2 cards by character, type, rarity, cost, and keyword with direct links into builds, guides, patches, and the current Early Access watchlist.',
   },
 };
 
@@ -68,6 +68,33 @@ const CARDS_FAQ_ITEMS = [
     answer: 'Yes. This index is maintained for the active Early Access cycle and is updated when higher-confidence data checks are completed.',
   },
 ];
+
+const CARD_JOURNEY_CTAS = [
+  { href: '/builds', label: 'Build guides', description: 'Use the card you found to see which archetypes, payoffs, and support packages actually want it.' },
+  { href: '/guides', label: 'Guide hub', description: 'Jump from raw card text into route planning, mechanics explanations, and run-level decisions.' },
+  { href: '/patches', label: 'Patch notes', description: 'Check whether this card, package, or character pool changed in the latest balance update.' },
+] as const;
+
+const CARD_INTENT_ROUTES = [
+  { href: '/cards?character=regent', label: 'Regent cards', description: 'Open the Regent pool first, then branch into character plans and payoff cards.' },
+  { href: '/cards?character=silent', label: 'Silent cards', description: 'Scan Silent card picks, then move into discard, draw, and tempo build routes.' },
+  { href: '/cards?character=defect', label: 'Defect cards', description: 'Filter Defect cards fast before comparing orb, scaling, and setup-heavy lines.' },
+  { href: '/patches', label: 'Patch-affected cards', description: 'Review recently changed cards before retesting older heuristics or tier calls.' },
+] as const;
+
+const CARD_TASK_FLOWS = [
+  { href: '/characters', label: 'Pick a character pool first', description: 'Not sure where to start? Compare character identities, then reopen the matching card pool.' },
+  { href: '/news/slay-the-spire-2-first-run-guide-act-1-priorities', label: 'Need a first-run plan?', description: 'Go from generic card browsing into a safer Act 1 route and early pick order.' },
+  { href: '/news/slay-the-spire-2-known-issues-and-fixes', label: 'Checking whether a card is bugged?', description: 'Use the live known-issues tracker before trusting old card evaluations.' },
+  { href: '/guides/common-beginner-mistakes', label: 'Keep misplaying early card picks?', description: 'Jump into the beginner mistakes guide before adding more greed to your draft.' },
+] as const;
+
+const CARD_RESULT_FLOWS = [
+  { href: '/cards/hammer_time', label: 'Open a proven card route', description: 'Start with Hammer Time if you want an example of how a card page should connect into build decisions.' },
+  { href: '/guides/ironclad-early-build', label: 'Need an Ironclad follow-up?', description: 'Turn damage cards and Forge payoffs into an actual early-game shell.' },
+  { href: '/guides/silent-early-build', label: 'Need a Silent follow-up?', description: 'Move from Silent card browsing into discard, draw, and tempo priorities.' },
+  { href: '/guides/defect-early-build', label: 'Need a Defect follow-up?', description: 'Bridge from Defect card text into orb tempo, scaling, and safer setup lines.' },
+] as const;
 
 function buildHref(filters: {
   character?: string;
@@ -189,24 +216,49 @@ export default async function CardsPage({ searchParams }: CardsPageProps) {
             <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground">Card database</p>
             <h2 className="text-2xl font-bold mt-1">Slay the Spire 2 Cards Database and Card List</h2>
             <p className="mt-2 text-base text-muted-foreground">
-              Browse {CARDS.length} Slay the Spire 2 cards with searchable card text, costs, keywords, rarities, and character pools, all framed around the official v0.104.0 beta patch watchlist.
+              Browse {CARDS.length} Slay the Spire 2 cards with searchable card text, costs, keywords, rarities, and character pools, all framed around the current v0.105.1 / v0.105.0 Early Access watchlist.
             </p>
             <p className="mt-1 text-sm text-muted-foreground">
-              Use this card database to find a specific card fast, then jump into builds, patch notes, tier lists, or the latest v0.104.0 patch article once you know what needs a retest.
+              This Slay the Spire 2 cards hub is meant to do more than answer “what does this card do?” Use it to find the card fast, then keep moving into builds, guides, and patch follow-up once you know what needs a retest.
             </p>
+            <div className="mt-4 rounded-xl border border-border bg-background/40 p-4">
+              <div className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">Use cards as a starting point</div>
+              <div className="mt-2 grid gap-3 md:grid-cols-2">
+                {CARD_INTENT_ROUTES.map((route) => (
+                  <Link
+                    key={route.href}
+                    href={route.href}
+                    className="rounded-xl border border-border px-4 py-3 transition-colors hover:border-primary"
+                  >
+                    <div className="text-base font-bold text-foreground">{route.label}</div>
+                    <p className="mt-1 text-sm text-muted-foreground">{route.description}</p>
+                  </Link>
+                ))}
+              </div>
+            </div>
+            <div className="mt-4 rounded-xl border border-border bg-background/40 p-4">
+              <div className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">Choose the next job, not just the next card</div>
+              <div className="mt-2 grid gap-3 md:grid-cols-2">
+                {CARD_TASK_FLOWS.map((flow) => (
+                  <Link
+                    key={flow.href}
+                    href={flow.href}
+                    className="rounded-xl border border-border px-4 py-3 transition-colors hover:border-primary"
+                  >
+                    <div className="text-base font-bold text-foreground">{flow.label}</div>
+                    <p className="mt-1 text-sm text-muted-foreground">{flow.description}</p>
+                  </Link>
+                ))}
+              </div>
+            </div>
             <div className="mt-4 grid gap-3 md:grid-cols-2">
-              {[
-                { href: '/builds', label: 'Builds Dashboard', description: 'See which cards power the current archetypes.' },
-                { href: '/tier-lists', label: 'Tier List Support', description: 'Understand where each card slots in the meta.' },
-                { href: '/patches', label: 'Patch Notes Hub', description: 'Check which cards are affected by recent patches.' },
-                { href: '/news/slay-the-spire-2-beta-patch-v0-104-0-analysis', label: 'v0.104.0 Patch Article', description: 'Read the latest beta patch analysis before retesting cards.' },
-              ].map((cta) => (
+              {CARD_JOURNEY_CTAS.map((cta) => (
                 <Link
                   key={cta.href}
                   href={cta.href}
                   className="rounded-xl border border-border px-4 py-3 text-left transition-colors hover:border-primary"
                 >
-                  <div className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">Next step</div>
+                  <div className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">Keep going</div>
                   <div className="mt-1 text-lg font-bold text-foreground">{cta.label}</div>
                   <p className="text-sm text-muted-foreground">{cta.description}</p>
                 </Link>
@@ -594,10 +646,29 @@ export default async function CardsPage({ searchParams }: CardsPageProps) {
                     <p className="text-sm text-steel-blue mt-1">
                       Showing {filteredCards.length} results from the {CARDS.length}-card Slay the Spire 2 card list. Page {safePage} of {totalPages}.
                     </p>
+                    <p className="mt-2 max-w-3xl text-sm text-muted-foreground">
+                      Best use of this page: filter for a card or character pool, open the card you care about, then continue into the matching build, guide, patch note, or character overview instead of stopping at the card text.
+                    </p>
                   </div>
                   <Link href="/mechanics" className="text-sm font-semibold text-molten-orange hover:text-ember-glow transition-colors">
                     Read mechanics first
                   </Link>
+                </div>
+
+                <div className="mb-6 rounded-xl border border-border bg-background/35 p-4">
+                  <div className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">Best second click from cards</div>
+                  <div className="mt-3 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+                    {CARD_RESULT_FLOWS.map((flow) => (
+                      <Link
+                        key={flow.href}
+                        href={flow.href}
+                        className="rounded-xl border border-border px-4 py-3 transition-colors hover:border-primary"
+                      >
+                        <div className="text-sm font-bold text-foreground">{flow.label}</div>
+                        <p className="mt-1 text-xs leading-6 text-muted-foreground">{flow.description}</p>
+                      </Link>
+                    ))}
+                  </div>
                 </div>
 
                 {paginatedCards.length === 0 ? (

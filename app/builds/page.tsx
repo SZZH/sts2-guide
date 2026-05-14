@@ -6,45 +6,78 @@ import { siteAssetUrl } from '@/shared/siteAssets';
 import { OrganizationSchema, VideoGameSchema, WebsiteSchema } from '@/app/schema';
 
 export const metadata: Metadata = {
-  title: 'Slay the Spire 2 Builds v0.104.0 Beta: Best Current Builds by Character',
+  title: 'Slay the Spire 2 Builds v0.105.1 / v0.105.0: Best Current Builds by Character',
   description:
-    'Find current Slay the Spire 2 builds for the official v0.104.0 beta scope, with character build paths and links to patch notes, cards, relics, and tier lists.',
+    'Find current Slay the Spire 2 builds for the active v0.105.1 / v0.105.0 Early Access cycle, with character build paths and links to patch notes, cards, and relic references.',
   alternates: {
     canonical: '/builds',
   },
   openGraph: {
-    title: 'Slay the Spire 2 Builds v0.104.0 Beta: Best Current Builds by Character',
+    title: 'Slay the Spire 2 Builds v0.105.1 / v0.105.0: Best Current Builds by Character',
     description:
-      'Best current Slay the Spire 2 builds for the official v0.104.0 beta scope, with character build paths and links to patch notes, cards, relics, and tier lists.',
+      'Best current Slay the Spire 2 builds for the active v0.105.1 / v0.105.0 Early Access cycle, with character build paths and links to patch notes, cards, and relic references.',
   },
 };
 
-const CURRENT_PATCH = 'v0.104.0 beta';
+const CURRENT_PATCH = 'v0.105.1 / v0.105.0';
+
+const QUICK_START_LINKS = [
+  {
+    href: '/guides/ironclad-early-build',
+    label: 'Ironclad beginner build',
+    description: 'Start with the safest early build guide if you want a clean first run.',
+    badge: 'Beginner',
+  },
+  {
+    href: '/guides/silent-early-build',
+    label: 'Silent build guide',
+    description: 'Go straight into a reliable build guide built around sequencing, draw, and discard tempo.',
+    badge: 'Build guide',
+  },
+  {
+    href: '/guides/regent-stars-vs-forge-build-path',
+    label: 'Regent patch-aware route',
+    description: 'Check the current Stars vs. Forge route before committing to Regent artifact payoffs.',
+    badge: 'Patch-aware',
+  },
+  {
+    href: '/guides/defect-early-build',
+    label: 'Defect early build',
+    description: 'Use the low-variance Defect route if you need a stable early-game build plan.',
+    badge: 'Starter route',
+  },
+  {
+    href: '/patches',
+    label: 'Patch notes before you reroute',
+    description: 'Open the current patch hub if you need to sanity-check build priorities first.',
+    badge: 'Retest',
+  },
+];
 
 const DECISION_TILES = [
   {
-    href: '/patches',
-    label: 'Slay the Spire 2 Patch Notes',
-    description: 'Start with the v0.104.0 beta patch hub before changing build priorities.',
-    badge: 'Patch hub',
+    href: '/guides/ironclad-early-build',
+    label: 'Beginner build route',
+    description: 'Need a fast answer? Start with a beginner-friendly Ironclad route before branching into harder builds.',
+    badge: 'Start here',
+  },
+  {
+    href: '/guides/regent-stars-vs-forge-build-path',
+    label: 'Patch-aware build path',
+    description: 'Jump into a Regent build path if you want the clearest patch-aware build decision on this patch.',
+    badge: 'Patch-aware',
   },
   {
     href: '/guides',
-    label: 'Best Builds by Character',
-    description: 'Character archetypes, matchup notes, and build paths checked against official v0.104.0 beta notes.',
-    badge: 'Builds',
+    label: 'All character build guides',
+    description: 'Browse character-specific build guides if you already know who you want to play.',
+    badge: 'Characters',
   },
   {
-    href: '/news/slay-the-spire-2-beta-patch-v0-104-0-analysis',
-    label: 'Latest Patch Article',
-    description: 'Track what changed, why it matters, and which builds need a retest.',
-    badge: 'v0.104.0',
-  },
-  {
-    href: '/tier-lists',
-    label: 'Tier Lists After Patch',
-    description: 'Compare build and character rankings against current beta assumptions.',
-    badge: 'Tiers',
+    href: '/patches',
+    label: 'Retest build priorities',
+    description: 'Open patch notes first if you need to confirm whether an older build guide still holds.',
+    badge: 'Retest',
   },
 ];
 
@@ -57,8 +90,8 @@ const RESOURCE_CARDS = [
   },
   {
     href: '/news/slay-the-spire-2-beta-patch-v0-104-0-analysis',
-    title: 'v0.104.0 beta notes',
-    copy: 'Start with official beta notes, then decide which build assumptions need retesting.',
+    title: 'Balance patch notes',
+    copy: 'Start with the current balance notes, then decide which build assumptions need retesting.',
     badge: 'Patch',
   },
   {
@@ -79,7 +112,7 @@ const STATUS_TIER_HINTS = [
   {
     tier: 'Beginner',
     title: 'Beginner primer',
-    summary: 'Lean on builds that trade burst for guarded pacing while v0.104.0 beta eases lower Ascension pressure.',
+    summary: 'Lean on builds that trade burst for guarded pacing while the current balance cycle settles.',
   },
   {
     tier: 'Stable',
@@ -110,7 +143,7 @@ const BUILD_TILES: BuildTile[] = [
   {
     slug: 'ironclad',
     archetype: 'Strength ramp + controlled HP trade-offs',
-    patchImpact: 'v0.104.0 beta reworks Conflagration into a Strength-friendly multi-hit AoE and moves Drum of Battle into Exhaust payoff territory.',
+    patchImpact: 'The current balance cycle keeps Ironclad focused on Strength-friendly AoE lines and cleaner Exhaust payoffs.',
     focus: 'Retest Strength AoE and Exhaust energy turns before treating old Ironclad ratings as settled.',
     guideHref: '/guides/ironclad-early-build',
     statusTier: 'Beginner',
@@ -121,7 +154,7 @@ const BUILD_TILES: BuildTile[] = [
   {
     slug: 'silent',
     archetype: 'Discard tempo with Sly/Poison follow-through',
-    patchImpact: 'v0.104.0 beta does not headline Silent as a primary rework target, so keep prior Sly and Poison guidance conservative.',
+    patchImpact: 'Silent is still less about headline reworks and more about keeping Sly and Poison guidance conservative.',
     focus: 'Build hand quality and sequencing before locking into high-variance Sly payoffs.',
     guideHref: '/guides/silent-early-build',
     statusTier: 'Stable',
@@ -132,7 +165,7 @@ const BUILD_TILES: BuildTile[] = [
   {
     slug: 'regent',
     archetype: 'Stars economy and Forge artifacts',
-    patchImpact: 'v0.104.0 beta makes Parry clearer by moving Block display and scaling onto Sovereign Blade.',
+    patchImpact: 'Regent still rewards cleaner Block and Blade reading, so Stars and Forge decisions should stay grounded in current patch context.',
     focus: 'Retest Blade lines with Dexterity and Frail in mind before promoting Regent rankings.',
     guideHref: '/guides/regent-stars-vs-forge-build-path',
     statusTier: 'Stable',
@@ -143,7 +176,7 @@ const BUILD_TILES: BuildTile[] = [
   {
     slug: 'necrobinder',
     archetype: 'Doom + Souls + Osty control',
-    patchImpact: 'v0.104.0 beta does not make Necrobinder the headline; keep Doom and Soul plans in watchlist language until more run evidence lands.',
+    patchImpact: 'Necrobinder is still not the safest headline route, so Doom and Soul plans belong in watchlist language until more run evidence lands.',
     focus: 'Stagger Osty usage, stack Souls, and keep Doom thresholds readable while beta balance settles.',
     guideHref: '/guides/necrobinder-common-cards',
     statusTier: 'Watchlist',
@@ -155,7 +188,7 @@ const BUILD_TILES: BuildTile[] = [
   {
     slug: 'defect',
     archetype: 'Orb sequencing and Focus scaling',
-    patchImpact: 'v0.104.0 beta is more about Ascension curve, Ironclad, Regent, Ancients, and enemy tuning than Defect-specific promotion.',
+    patchImpact: 'Defect remains more about stable orb sequencing and Focus pacing than any one headline patch push.',
     focus: 'Balance early control orbs with late-game investment orbs without going full random burst.',
     guideHref: '/guides/defect-early-build',
     statusTier: 'Stable',
@@ -170,11 +203,39 @@ function heroMechanicNames(characterSlug: BuildTile['slug']) {
   return character?.mechanics?.map((mechanic) => mechanic.name) ?? [];
 }
 
+function buildNextSteps(tile: BuildTile, characterName: string) {
+  const patchLabel =
+    tile.statusTier === 'Watchlist' ? 'Retest patch risks' : `Retest ${characterName} on patch`;
+
+  return [
+    {
+      href: tile.guideHref,
+      label: `Open ${characterName} build guide`,
+      variant: 'primary' as const,
+    },
+    {
+      href: `/characters/${tile.slug}`,
+      label: `${characterName} overview`,
+      variant: 'secondary' as const,
+    },
+    {
+      href: `/cards/character/${tile.slug}`,
+      label: `${characterName} cards`,
+      variant: 'secondary' as const,
+    },
+    {
+      href: '/patches',
+      label: patchLabel,
+      variant: 'secondary' as const,
+    },
+  ];
+}
+
 export default function BuildsPage() {
   const heroSignals = [
-    'Patch-aware builds for the latest official beta patch (v0.104.0 beta) so you can spot retest priorities.',
-    'Each character tile highlights the archetype focus, patch impact, and where to go next for guides or cards.',
-    'Decision tiles funnel you into beginners, builds, patch details, and the reference resources you need right away.',
+    'Use this page to choose a Slay the Spire 2 build fast: beginner route, character build guide, or patch-aware retest path.',
+    'Every build tile tells you what the build does, what changed on this patch, and where to click next for cards or deeper guides.',
+    'The quickest win is to pick a character build and move into the second hop instead of staying on overview text.',
   ];
 
   return (
@@ -195,22 +256,31 @@ export default function BuildsPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-forge-black/80 to-forge-black" />
           <div className="relative z-10 container mx-auto flex h-full flex-col justify-center gap-6 px-4 py-12 text-white">
             <p className="text-xs uppercase tracking-[0.4em] text-molten-orange">Best builds · patch {CURRENT_PATCH}</p>
-            <h1 className="max-w-4xl text-4xl font-bold leading-tight md:text-5xl">Slay the Spire 2 builds v0.104.0 beta</h1>
+            <h1 className="max-w-4xl text-4xl font-bold leading-tight md:text-5xl">Slay the Spire 2 builds for v0.105.1 / v0.105.0</h1>
             <p className="max-w-3xl text-base leading-relaxed text-steel-blue md:text-lg">
-              Find the best current Slay the Spire 2 builds by character for the official {CURRENT_PATCH} scope, including beginner-friendly builds, archetype pivots, and direct links into patch notes, cards, relics, and tier lists.
+              Find the best current Slay the Spire 2 builds for the official {CURRENT_PATCH} scope, then jump straight into a build guide, a beginner-friendly route, or a patch-aware retest path by character.
+            </p>
+            <p className="max-w-3xl text-sm text-steel-blue md:text-base">
+              If you came here looking for a Slay the Spire 2 build guide, start with the quick links below, pick your character, and use the second hop to reach the exact build, cards, or patch context you need.
             </p>
             <div className="flex flex-wrap gap-3 text-sm">
               <Link
-                href="/patches"
+                href="/guides/ironclad-early-build"
                 className="rounded-full border border-molten-orange px-4 py-2 font-semibold text-molten-orange transition-colors hover:text-ember-glow"
               >
-                Patch notes hub
+                Beginner build
               </Link>
               <Link
-                href="/news/slay-the-spire-2-beta-patch-v0-104-0-analysis"
+                href="/guides/regent-stars-vs-forge-build-path"
                 className="rounded-full border border-border px-4 py-2 font-semibold text-steel-blue transition-colors hover:border-molten-orange hover:text-molten-orange"
               >
-                Latest v0.104.0 article
+                Patch-aware route
+              </Link>
+              <Link
+                href="/guides"
+                className="rounded-full border border-border px-4 py-2 font-semibold text-steel-blue transition-colors hover:border-molten-orange hover:text-molten-orange"
+              >
+                All build guides
               </Link>
               <Link
                 href="/cards"
@@ -219,16 +289,10 @@ export default function BuildsPage() {
                 Cards
               </Link>
               <Link
-                href="/relics"
+                href="/patches"
                 className="rounded-full border border-border px-4 py-2 font-semibold text-steel-blue transition-colors hover:border-molten-orange hover:text-molten-orange"
               >
-                Relics
-              </Link>
-              <Link
-                href="/tier-lists"
-                className="rounded-full border border-border px-4 py-2 font-semibold text-steel-blue transition-colors hover:border-molten-orange hover:text-molten-orange"
-              >
-                Tier lists
+                Patch notes
               </Link>
             </div>
             <div className="grid gap-4 md:grid-cols-2">
@@ -239,12 +303,39 @@ export default function BuildsPage() {
               ))}
             </div>
             <p className="max-w-3xl text-sm text-steel-blue">
-              Ironclad, Silent, Regent, Necrobinder, and Defect build paths for the current beta watchlist.
+              Ironclad, Silent, Regent, Necrobinder, and Defect build paths for the current Early Access watchlist.
             </p>
           </div>
         </section>
 
         <section className="container mx-auto flex flex-col gap-4 px-4 py-12">
+          <div className="rounded-2xl border border-border bg-background/50 p-5">
+            <div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
+              <div>
+                <p className="text-xs uppercase tracking-[0.4em] text-molten-orange">Quick start</p>
+                <h2 className="font-heading text-2xl font-bold text-white">Pick your next build guide in one click</h2>
+              </div>
+              <p className="max-w-2xl text-sm text-steel-blue">
+                These are the fastest second-hop routes if you came in looking for a beginner build, a character guide, or a patch-aware retest.
+              </p>
+            </div>
+            <div className="mt-5 grid gap-4 md:grid-cols-2 xl:grid-cols-5">
+              {QUICK_START_LINKS.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="group rounded-2xl border border-border bg-forge-black/40 p-4 transition hover:border-molten-orange"
+                >
+                  <div className="text-xs font-semibold uppercase tracking-[0.3em] text-molten-orange">{link.badge}</div>
+                  <h3 className="mt-3 font-heading text-lg font-bold text-white">{link.label}</h3>
+                  <p className="mt-2 text-sm text-steel-blue">{link.description}</p>
+                  <span className="mt-4 inline-flex text-xs font-semibold text-molten-orange underline decoration-dotted decoration-molten-orange/60">
+                    Open next →
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {DECISION_TILES.map((tile) => (
               <Link
@@ -287,14 +378,14 @@ export default function BuildsPage() {
               <p className="text-xs uppercase tracking-[0.3em] text-molten-orange">Patch Signal</p>
               <h3 className="font-heading text-3xl font-bold mt-2">What patch {CURRENT_PATCH} means for builds</h3>
               <p className="mt-4 text-base text-steel-blue">
-                Patch {CURRENT_PATCH} is a beta-branch signal, not final main-branch law: Ironclad Strength/Exhaust lines, Regent Blade interactions, Ancient buffs, and lower-Ascension route pressure are the first things to retest.
+                Patch {CURRENT_PATCH} is your current balance baseline: retest Ironclad Strength and Exhaust lines, Regent Blade interactions, and any route assumptions that still depend on older beta reads.
               </p>
               <div className="mt-6 flex flex-wrap gap-3 text-sm">
                 <Link
                   href="/news/slay-the-spire-2-beta-patch-v0-104-0-analysis"
                   className="inline-flex items-center rounded-full border border-molten-orange px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-molten-orange"
                 >
-                  v0.104.0 beta notes
+                  Patch analysis
                 </Link>
                 <Link
                   href="/news/slay-the-spire-2-hotfix-patch-notes"
@@ -320,7 +411,7 @@ export default function BuildsPage() {
             <div>
               <p className="text-xs uppercase tracking-[0.4em] text-molten-orange">Character builds</p>
               <h2 className="font-heading text-3xl font-bold text-white">Hero cards with patch notes</h2>
-              <p className="text-sm text-steel-blue">Each tile packs the archetype, patch impact, focus, and where to go next.</p>
+              <p className="text-sm text-steel-blue">Each tile packs the archetype, patch context, focus, and where to go next.</p>
             </div>
             <Link
               href="/guides"
@@ -334,6 +425,8 @@ export default function BuildsPage() {
               const character = CHARACTERS.find((entry) => entry.slug === tile.slug);
 
               if (!character) return null;
+
+              const nextSteps = buildNextSteps(tile, character.name);
 
               return (
                 <article key={tile.slug} className="rounded-3xl border border-border bg-gradient-to-br from-forge-black/70 to-shadow-gray p-6">
@@ -364,31 +457,26 @@ export default function BuildsPage() {
                       <p className="text-molten-orange">Watchlist note: {tile.watchlistReason}</p>
                     )}
                   </div>
-                  <div className="mt-5 flex flex-wrap items-center gap-3 text-sm">
-                    <Link
-                      href={tile.guideHref}
-                      className="rounded-full border border-molten-orange px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-molten-orange"
-                    >
-                      Open guide →
-                    </Link>
-                    <Link
-                      href={`/characters/${character.slug}`}
-                      className="rounded-full border border-border px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-steel-blue transition hover:border-molten-orange hover:text-molten-orange"
-                    >
-                      Character detail →
-                    </Link>
-                    <Link
-                      href="/cards"
-                      className="rounded-full border border-border px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-steel-blue transition hover:border-molten-orange hover:text-molten-orange"
-                    >
-                      Cards reference →
-                    </Link>
-                    <Link
-                      href="/relics"
-                      className="rounded-full border border-border px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-steel-blue transition hover:border-molten-orange hover:text-molten-orange"
-                    >
-                      Relics reference →
-                    </Link>
+                  <div className="mt-5 rounded-2xl border border-border bg-background/30 p-4">
+                    <p className="text-xs uppercase tracking-[0.3em] text-molten-orange">Next step</p>
+                    <div className="mt-3 flex flex-wrap items-center gap-3 text-sm">
+                      {nextSteps.map((step) => (
+                        <Link
+                          key={step.href + step.label}
+                          href={step.href}
+                          className={
+                            step.variant === 'primary'
+                              ? 'rounded-full border border-molten-orange px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-molten-orange'
+                              : 'rounded-full border border-border px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-steel-blue transition hover:border-molten-orange hover:text-molten-orange'
+                          }
+                        >
+                          {step.label} →
+                        </Link>
+                      ))}
+                    </div>
+                    <p className="mt-3 text-xs text-steel-blue">
+                      Pick the guide for the build line, the character page for baseline context, the character cards page for exact pool checks, or patch retest if this route still feels unsettled.
+                    </p>
                   </div>
                   <div className="mt-5 grid gap-3 text-xs text-steel-blue">
                     {heroMechanicNames(tile.slug).slice(0, 3).map((mechanic) => (
