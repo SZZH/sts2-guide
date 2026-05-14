@@ -16,7 +16,7 @@
 - [x] `DONE` 入口页轻改量化执行（Owner: Codex，完成: 2026-05-08 10:14，验收: `/builds`、`/cards`、`/tier-lists`、`/patches`、`/relics` 已完成 title/H1/首段/内链轻改，`pnpm lint` / `pnpm build` 通过，IndexNow 提交 7 URL）
 - [x] `DONE` 关键词证据清单（Owner: Codex，完成: 2026-05-08 10:30，验收: `18-keyword-evidence-ledger.md` 已建立，核心词均标注证据等级、来源、主落地页和下一步动作）
 - [x] `DONE` 2026-05-14 四端复采 checklist（Owner: Codex，完成: 2026-05-08 10:39，验收: `19-midpoint-recheck-checklist-2026-05-14.md` 已建立，覆盖 GSC / Vercel / Bing / Trends 指标、判定、输出格式和页面动作闸门）
-- [ ] `TODO` 四端中期复采（Owner: Codex，DDL: 2026-05-14，验收: GSC + Vercel + Bing Webmaster + Google Trends 均标清 `DONE/BLOCKED`，并与 2026-05-07 基线对比）
+- [x] `DONE` 四端中期复采（Owner: Codex，完成: 2026-05-14 18:27，验收: GSC / Bing Webmaster / Google Trends 已完成当日采集，Vercel API 明确标清 `BLOCKED`，并已与 2026-05-07 / 2026-04-20 基线对比）
 - [ ] `TODO` 完成旧页治理表（Owner: Codex，DDL: 今日，验收: 高风险页已完成 `KEEP/REFRESH/DEMOTE/MERGE/REMOVE_OR_REDIRECT` 分级）
 - [ ] `TODO` 完成首页 / `guides` / `characters` / `builds` 新 IA 蓝图（Owner: Codex，DDL: 今日，验收: 已形成模块级重构方案与执行顺序）
 - [x] `SKIP` 社媒未回复清理（Reddit/X/Steam）（Owner: Codex，日期: 2026-05-07，原因: 旧帖已跨期太久，继续补回复价值低；已改为新内容轻分发）

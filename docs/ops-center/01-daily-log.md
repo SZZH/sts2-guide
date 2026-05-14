@@ -15,6 +15,62 @@
 - 同一天内允许多次更新，按时间倒序追加。
 - 每条更新至少包含：已完成事项、未完成事项、下一步动作。
 
+### 2026-05-14 18:59
+- 观察：已完成 2026-05-14 四端中期复采闭环，连 Vercel 也通过浏览器登录态补采成功。API 侧依旧 `403`，但今天已经拿到可复核的真实 Vercel Analytics 口径，所以项目级流量总览不再是 `BLOCKED`。
+- 当前情况分析：
+  - 站点可用性：`DONE`，`https://sts2guide.com/` 返回 `HTTP 200`（17:47 CST）。
+  - Vercel Analytics（`Last 7 Days / Production`）：`344 Visitors (+22%) / 673 Page Views (-15%) / Bounce Rate 83% (+6%)`，当前在线 `0`。Top Pages=`/ (116 PV)`、`/builds (96)`、`/guides (70)`、`/cards (56)`、`/characters (32)`、`/news/slay-the-spire-2-known-issues-and-fixes (19)`、`/patches (16)`。
+  - Vercel Referrers=`google.com (118 PV)`、`bing.com (10)`、`search.brave.com (10)`、`duckduckgo.com (9)`、`vercel.com (5)`、`cn.bing.com (2)`、`ecosia.org (2)`。
+  - Vercel Countries=`United States 32%`、`Singapore 16%`、`People's Republic of China 6%`、`Japan 5%`、`Germany 4%`；Devices=`Desktop 73% / Mobile 26% / Tablet 1%`；Operating Systems=`Windows 56% / Mac 15% / Android 14% / iOS 13% / GNU/Linux 2%`。
+  - Vercel Observability（`Last 6 Hours`）：`Edge Requests 1.9K / Function Invocations 973 / Error Rate 0%`。
+  - GSC（3 个月 / Web，可见数据更新约滞后 3 小时）：`1160 clicks / 8.43万 impressions / 1.4% CTR / 8.8 Avg position`。对比 2026-05-07 基线 `866 / 6.31万 / 1.4% / 8.9`：点击约 `+34%`，展现约 `+34%`，CTR 持平，平均排名小幅改善。
+  - GSC Top 查询可见样本：`sts2 guide (115/1,098)`、`sts 2 guide (23/326)`、`sts2 guides (20/143)`、`hammer time slay the spire 2 (15/411)`、`slay the spire 2 hammer time (15/316)`、`sts2 book of five rings (13/58)`、`sts2 stomp (11/275)`、`stomp sts2 (9/491)`、`book of five rings slay the spire (9/153)`、`book of five rings sts2 (9/114)`。
+  - Bing Webmaster（3 个月，图表范围 `2026-02-14 ~ 2026-05-13`）：`214 clicks / 13.3K impressions / 1.61% CTR`。对比 2026-04-20 口径 `173 / 9.6K`：点击约 `+24%`，展现约 `+39%`。
+  - Bing Top 查询可见样本：`slay the spire 2 builds (1.5K/9/0.60%/7.32)`、`sts2 (621/1/0.16%/6.21)`、`slay the spire 2 build (305/4/1.31%/7.27)`、`slay the spire 2 guide (285/32/11.23%/2.93)`、`slay the spire 2 tips (100/11/11.00%/3.31)`、`sts2 builds (70/1/1.43%/5.01)`、`slay the spire 2 best builds (64/2/3.12%/7.02)`、`slay the spire 2 cards (25/0/0.00%/9.28)`、`sts2 regent cards (22/0/0.00%/5.50)`、`sts 2 patch notes (15/0/0.00%/7.13)`。
+  - Bing 索引/提交：Sitemaps=`1`，errors=`0`，warnings=`0`，URLs discovered=`794`，`https://sts2guide.com/sitemap.xml` status=`Success`，Last submit=`2026-04-14`，Last crawl=`2026-05-12`；IndexNow 最近 10 小时提交=`0`，累计 Submitted URLs=`44`，最近一批仍为 `2026-05-11 16:39` 的 4 URL；URL Inspection 首页=`Indexed successfully`，`No SEO/GEO issues found`，`2 Markup types found`。
+  - Google Trends（US / past 90 days / Web）：平均热度 `slay the spire 2=27`、`sts2=8`、`slay the spire 2 guide=0`、`slay the spire 2 builds=0`、`slay the spire 2 cards=1`。上升查询集中在 `slay the spire 2 the regent`、`sts2 cards`、`sts2 tier list`、`slay the spire 2 build guide`、`ironclad builds slay the spire 2`、`slay the spire 2 defect builds`、`silent cards slay the spire 2`、`defect cards slay the spire 2`。
+  - Vercel API：`BLOCKED`，`node scripts/monitor-vercel.mjs` 落盘正常，但 `realtime/overview/topReferrer/topPath/speedEnabled` 全部 `403`；这条阻塞已由浏览器登录态补采绕过。
+- 原因判断（置信度中高）：搜索侧整体不是衰退，而是在继续放量，但站内承接有分化。GSC 与 Bing 点击、展现同步上升，Vercel Visitors 也上升 `+22%`，说明 5 月初入口页轻改和 patch/news 时效同步没有伤到获客；不过 PV `-15%` 且 Bounce `83% (+6%)`，说明新增流量质量或首跳承接没有同步变好，用户到站后继续浏览的深度反而变浅了。
+- 原因判断（置信度中）：Trends 的精确 `guide/builds` 平均热度为 `0`，但相关上升查询明显指向角色、卡牌、构筑和 tier list，说明用户搜索更偏具体实体与玩法问题；继续用泛词扩页面不划算，应该把现有 `/builds`、`/cards`、`/tier-lists`、`/guides` 内的实体锚文本和摘要做薄补位。
+- 建议动作：
+  - `P0` 不扩量、不新建 `/wiki`。虽然 Vercel 行为口径补齐了，但 30 页验证批的曝光页面占比还没有按新窗口全量复算，闸门仍不能判通过。
+  - `P0` 做现有页最小提质清单，不先动代码：优先围绕 `slay the spire 2 builds`、`slay the spire 2 cards`、`sts2 regent cards`、`sts 2 patch notes`、`hammer time`、`book of five rings`、`stomp` 补 title/snippet 候选与内链锚文本方案，目标是先压 Bounce、提第二跳。
+  - `P1` 恢复 IndexNow 轻提交节奏。最近 10 小时为 `0` 不一定是异常，但今天如有改动，必须提交目标页与 sitemap 并回填。
+  - `P1` 继续排 Vercel API 权限；浏览器补采今天够用，但脚本链路不恢复的话，后续自动化日报还是会断。
+- DONE / IN_PROGRESS / TODO / BLOCKED：
+  - `DONE`：站点可用性；Vercel 浏览器登录态 Analytics / Referrers / Countries / Devices / Observability；GSC 主指标与 Top 查询；Bing Search Performance / Sitemaps / IndexNow / URL Inspection；Google Trends 核心词与相关上升查询；`00-dashboard.md` 与本日志回填。
+  - `DONE`：2026-05-14 四端中期复采已完成到 `DONE/BLOCKED` 粒度。
+  - `TODO`：基于证据更新 `18-keyword-evidence-ledger.md`；整理“不扩量的现有页提质清单”。
+  - `BLOCKED`：Vercel API `403`（影响：脚本化 `realtime/overview/topReferrer/topPath/speedEnabled` 自动采集链路，今天已由浏览器登录态补位）。
+- 关键词证据等级变化：
+  - `slay the spire 2 builds`：维持 `CONFIRMED`，信号增强；Bing `1.5K impressions / 9 clicks`，但 CTR `0.60%` 偏低。
+  - `slay the spire 2 cards`：维持 `CONFIRMED`，信号增强但点击弱；Bing `25 impressions / 0 clicks`，Trends 相关上升词出现 `silent cards / defect cards / regent cards`。
+  - `slay the spire 2 tier list`：维持 `CONFIRMED`，Trends 相关上升词继续出现 `sts2 tier list / slay the spire 2 tier list`。
+  - `slay the spire 2 wiki`：维持 `WEAK_SIGNAL`，本轮没有拿到足以新建 `/wiki` 的直接证据。
+  - 新增候选观察词：`the regent guide`、`ironclad guide`、`ironclad builds`、`defect builds`、`silent cards`、`defect cards`、`hammer time`、`book of five rings`、`stomp`。
+- 是否允许页面动作：只允许现有页的词池、模板、内链小改方案；不允许扩量、不允许新建 `/wiki`、不允许结构性 IA 改动。
+
+### 2026-05-14 17:47
+- 观察：收到“执行吧”后，先按强制规则做执行前历史核对。`00-dashboard.md` 与 `01-daily-log.md` 的上一条实时采集停留在 `2026-05-13 16:48`，已跨自然日，四端实时任务自动回退为 `TODO`，不能复用昨日口径冒充今日结果。
+- 当前情况分析：
+  - 站点可用性：`DONE`，`https://sts2guide.com/` 返回 `HTTP 200`（采集时间 `2026-05-14 17:47 CST`）。
+  - Vercel：`BLOCKED`，执行 `node scripts/monitor-vercel.mjs` 已落盘 `ops-logs/vercel/2026-05-14/2026-05-14T09-47-13-810Z.json` 与 `ops-logs/2026-05-14.md`，但 `realtime/overview/topReferrer/topPath/speedEnabled` 全部 `403`。
+  - GSC：`TODO`，本轮尚未拿到可复核实时读数。
+  - Bing Webmaster：`TODO`，本轮尚未拿到可复核实时读数。
+  - Google Trends：`TODO`，本轮尚未拿到可复核实时读数。
+- 原因判断（置信度高）：当前瓶颈仍是平台访问与登录态采集链路，不是站点可用性问题。Vercel 已形成“当日有执行证据但无可读实时指标”的稳定阻塞态；GSC/Bing/Trends 若未采到读数必须维持 `TODO`，避免伪完成。
+- 建议动作：
+  - `P0` 继续按登录态完成 `GSC + Bing + Trends` 实时补采并回填同日时间戳。
+  - `P0` Vercel 保持 `BLOCKED`，直到权限恢复或采集路径切换到可用口径。
+  - `P1` 四端复采闭环后再更新 `18-keyword-evidence-ledger.md`，避免无新证据误升级词级。
+- DONE / IN_PROGRESS / TODO / BLOCKED：
+  - `DONE`：历史核对；当日站点可用性验证；当日 Vercel 脚本采集尝试；当日证据落盘（`ops-logs/vercel/2026-05-14/2026-05-14T09-47-13-810Z.json`、`ops-logs/2026-05-14.md`）。
+  - `IN_PROGRESS`：2026-05-14 四端中期复采任务（已执行可自动化部分，待补齐三端登录态数据）。
+  - `TODO`：GSC / Bing / Trends 实时补采与综合结论。
+  - `BLOCKED`：Vercel API `403`（影响：Visitors/PV/Bounce 与 referrer/path 当日实时口径不可得）。
+- 关键词证据等级变化：无（今日尚未获得新查询/趋势证据，维持现有 `CONFIRMED/WEAK_SIGNAL/REJECTED`）。
+- 是否允许页面动作：不允许。当前仅完成复采前置与部分采集证据，未满足“复采后数据判定”闸门；继续维持“不扩量、不新建 `/wiki`、不做结构改动”。
+
 ### 2026-05-11 16:34
 - 观察：执行前历史核对发现 dashboard 仍停留在 2026-05-08，今天没有当日完成证据；按规则未把历史四端口径冒充今日实时结果。正式域名基础页可用，Steam 官方 RSS 发现新增 `Beta Patch Notes - v0.105.0`（2026-05-08 00:53:30 UTC）和 `Beta Hotfix Notes - v0.105.1`（2026-05-09 03:14:26 UTC）。
 - 当前情况分析：
@@ -42,6 +98,24 @@
   - `BLOCKED`：无当下新增阻塞；SteamDB 页面 `403 Checking your browser`，本轮已用 Steam 官方 RSS 作为 source of truth。
 - 关键词证据等级变化：无。`slay the spire 2 patch notes` 继续维持 `CONFIRMED`；`wiki` 不升级。
 - 是否允许页面动作：仅允许本轮官方 patch 时效同步；不允许新建 `/wiki`、不允许扩量、不允许大批量改 build/tier 页面。
+
+### 2026-05-13 16:48
+- 观察：收到“做一下今天的数据采集”后，先执行历史核对。`00-dashboard.md` 与 `01-daily-log.md` 今日状态仍停留在 `2026-05-11`，按“跨天实时任务必须重跑”规则，四端采集状态自动回退为 `TODO`，不可复用历史结果冒充今日实时口径。
+- 当前情况分析：
+  - 站点可用性：`DONE`，`https://sts2guide.com/` 返回 `HTTP 200`（采集时间 `2026-05-13 16:48 CST`）。
+  - Vercel：`BLOCKED`（脚本 `node scripts/monitor-vercel.mjs` 当日已执行并落盘，但 `realtime/overview/topReferrer/topPath/speedEnabled` 全部 `403`）。
+  - GSC：`TODO`（本轮未拿到可复核实时读数，待登录态采集）。
+  - Bing Webmaster：`TODO`（本轮未拿到可复核实时读数，待登录态采集）。
+  - Google Trends：`TODO`（本轮未拿到可复核实时读数，待登录态采集）。
+- 原因判断（置信度高）：当前主要阻塞来自 Vercel API 访问权限，不是站点可用性问题；其余三端尚未执行到“可证明实时读数”的状态，因此必须保持 `TODO`，避免伪完成。
+- 建议动作：
+  - `P0` 继续用登录态补采 `GSC + Bing + Trends` 实时数据并回填同日时间戳。
+  - `P0` Vercel 继续保留 `BLOCKED`，直到权限恢复或改用可用采集路径拿到实时口径。
+- DONE / IN_PROGRESS / TODO / BLOCKED：
+  - `DONE`：历史核对；当日 Vercel 脚本采集尝试；正式域名可用性验证；当日证据落盘（`ops-logs/vercel/2026-05-13/2026-05-13T08-48-41-802Z.json`、`ops-logs/2026-05-13.md`）。
+  - `IN_PROGRESS`：四端当日采集任务（已开始，尚未完成全端闭环）。
+  - `TODO`：GSC / Bing / Trends 实时补采与综合结论。
+  - `BLOCKED`：Vercel API `403`（影响：Visitors/PV/Bounce 及 referrer/path 实时口径不可得）。
 
 ### 2026-05-08 10:04
 - 观察：用户要求 SEO 方案必须量化，明确“什么时候做什么事、任务做到什么程度、每一步决策如何记录”。已将“泛词页做骨架，长尾页拿点击”的策略落成可执行指标矩阵。

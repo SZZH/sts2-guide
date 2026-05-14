@@ -8,7 +8,7 @@ import MobileFiltersPanel from '@/components/MobileFiltersPanel';
 export const metadata: Metadata = {
   title: 'Slay the Spire 2 Relics: Relic List, Database, and Patch Links',
   description:
-    'Browse the Slay the Spire 2 relics database and relic list by rarity, character, and keyword, with links to builds, tier lists, patches, and v0.104.0 beta changes.',
+    'Browse the Slay the Spire 2 relics database and relic list by rarity, character, and keyword, with links to builds, tier lists, patches, and the v0.105.1 beta hotfix plus v0.105.0 beta patch changes.',
   keywords: [
     'Slay the Spire 2 relics',
     'Slay the Spire 2 relic database',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Slay the Spire 2 Relics Database and Relic List',
-    description: 'Browse Slay the Spire 2 relic effects with links to builds, tier lists, patches, and v0.104.0 beta context.',
+    description: 'Browse Slay the Spire 2 relic effects with links to builds, tier lists, patches, and current v0.105.1 beta hotfix plus v0.105.0 beta patch context.',
   },
 };
 
@@ -241,7 +241,7 @@ export default async function RelicsPage({ searchParams }: RelicsPageProps) {
                       href="/news/slay-the-spire-2-beta-patch-v0-104-0-analysis"
                       className="text-molten-orange transition-colors hover:text-ember-glow"
                     >
-                      What changed in patch v0.104.0 beta?
+                      What changed in v0.105.1 beta hotfix and v0.105.0 beta patch?
                     </Link>
                     <Link
                       href="/news/slay-the-spire-2-known-issues-and-fixes"
@@ -293,7 +293,7 @@ export default async function RelicsPage({ searchParams }: RelicsPageProps) {
                 <div className="mb-3 space-y-1">
                   <h1 className="font-heading text-3xl font-bold md:text-4xl">Slay the Spire 2 Relics Database</h1>
                   <p className="text-sm leading-7 text-steel-blue">
-                    Browse {RELICS.length} Slay the Spire 2 relics by rarity, character tag, and keyword. The v0.104.0 beta note puts Ancient buffs and character-specific interactions back on the watchlist, while Doormaker balance remains under observation.
+                    Browse {RELICS.length} Slay the Spire 2 relics by rarity, character tag, and keyword. The current v0.105.1 beta hotfix and v0.105.0 beta patch keep Ancient tuning, character-specific interactions, and Doormaker balance on the watchlist.
                   </p>
                   <p className="text-sm leading-7 text-steel-blue">
                     Use this relic list to double-check each effect before slotting it into builds, cards, tier lists, or patch adjustments, then follow the links below when a pick needs current-version context.
@@ -303,7 +303,7 @@ export default async function RelicsPage({ searchParams }: RelicsPageProps) {
                   <div>
                     <p className="font-semibold text-foreground">Current version positioning</p>
                     <p className="mt-1 text-muted-foreground">
-                      Neow&apos;s Booming Conch, Neow&apos;s Fury, and Tezcatara&apos;s Nutritious Soup are official v0.104.0 beta retest points.
+                      Neow&apos;s Booming Conch, Neow&apos;s Fury, and Tezcatara&apos;s Nutritious Soup remain active retest points under the v0.105.1 beta hotfix and v0.105.0 beta patch context.
                     </p>
                   </div>
                   <div className="flex flex-wrap gap-2">
@@ -325,7 +325,7 @@ export default async function RelicsPage({ searchParams }: RelicsPageProps) {
                       Tier lists
                     </Link>
                     <Link href="/news/slay-the-spire-2-beta-patch-v0-104-0-analysis" className="rounded-full border border-border px-4 py-2 text-xs font-semibold text-foreground">
-                      v0.104.0 article
+                      Current patch article
                     </Link>
                   </div>
                 </div>
@@ -393,7 +393,7 @@ export default async function RelicsPage({ searchParams }: RelicsPageProps) {
                       href="/news/slay-the-spire-2-beta-patch-v0-104-0-analysis"
                       className="text-molten-orange transition-colors hover:text-ember-glow"
                     >
-                      What changed in patch v0.104.0 beta?
+                      What changed in v0.105.1 beta hotfix and v0.105.0 beta patch?
                     </Link>
                     <Link
                       href="/news/slay-the-spire-2-known-issues-and-fixes"
@@ -435,7 +435,7 @@ export default async function RelicsPage({ searchParams }: RelicsPageProps) {
                       href="/news/slay-the-spire-2-steamdb-patch-tracker"
                       className="text-molten-orange transition-colors hover:text-ember-glow"
                     >
-                      Track relic changes in v0.104.0 beta
+                      Track relic changes in the current patch cycle
                     </Link>
                   </div>
                 </div>

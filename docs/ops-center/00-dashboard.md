@@ -10,12 +10,12 @@
 - `BLOCKED`：受阻（需注明原因）
 - `SKIP`：今日不做（需注明原因）
 
-## 今日状态（2026-05-11 16:34）
-- 站点可用性：`DONE`（`https://sts2guide.com/`、`/sitemap.xml`、`/builds`、`/patches`、`/news/slay-the-spire-2-beta-patch-v0-104-0-analysis` 均返回 `HTTP 200`）
-- 流量总览（Vercel）：`TODO`（今天不提前执行四端中期复采；按 `19-midpoint-recheck-checklist-2026-05-14.md` 保持 2026-05-14 复采窗口，避免 2026-05-08 入口页改动归因混乱）
-- 搜索总览（GSC）：`TODO`（今天不提前执行四端中期复采；2026-05-07 基线仍只作为历史对比，不冒充今日实时数据）
-- Bing 总览：`TODO`（今天未登录 Bing Webmaster 实时采集；待 2026-05-14 按四端 checklist 复采，若平台不可用再标 `BLOCKED`）
-- 趋势总览（Google Trends）：`TODO`（今天未执行 Trends 实时采集；待 2026-05-14 按四端 checklist 复采）
+## 今日状态（2026-05-14 18:59）
+- 站点可用性：`DONE`（`https://sts2guide.com/` 返回 `HTTP 200`，采集时间 `2026-05-14 17:47 CST`）
+- 流量总览（Vercel）：`DONE`（浏览器登录态补采，`Last 7 Days / Production`：`344 Visitors (+22%) / 673 Page Views (-15%) / Bounce Rate 83% (+6%)`；Top Pages=`/` `116`、`/builds` `96`、`/guides` `70`、`/cards` `56`；Top Referrer=`google.com 118 PV`）
+- 搜索总览（GSC）：`DONE`（3 个月 / Web：`1160 clicks / 8.43万 impressions / 1.4% CTR / 8.8 Avg position`，可见数据更新约滞后 3 小时；Top 查询含 `sts2 guide`、`hammer time slay the spire 2`、`book of five rings sts2`）
+- Bing 总览：`DONE`（Search Performance 3 个月：`214 clicks / 13.3K impressions / 1.61% CTR`；Sitemaps=`1`、errors=`0`、warnings=`0`、URLs discovered=`794`；首页 URL Inspection=`Indexed successfully`）
+- 趋势总览（Google Trends）：`DONE`（美国 90 天：`slay the spire 2` 平均热度 `27`，`sts2` `8`，`slay the spire 2 cards` `1`，`guide/builds` 精确词均 `0`；上升词集中在 Regent / Ironclad / Defect / Silent / tier list / cards / builds）
 - 生产发布总览：`DONE`（v0.105.1/v0.105.0 内容同步已提交并推送 `main`：`40e0e8e feat: 同步v0.105.1补丁口径`；Vercel 自动部署后新 URL 返回 `HTTP 200`）
 - 线上结构验证：`DONE`（本轮仅做内容时效最小同步：新增 v0.105.1/v0.105.0 新闻页，更新首页与 `/patches` 当前版本文案，更新 sitemap；未新建 `/wiki`、未扩量）
 - 游戏动态总览：`DONE`（Steam 官方 RSS 确认 `Beta Patch Notes - v0.105.0`，2026-05-08 00:53:30 UTC；`Beta Hotfix Notes - v0.105.1`，2026-05-09 03:14:26 UTC）
@@ -33,6 +33,21 @@
 - [x] 有（官方 beta 已推进到 v0.105.1/v0.105.0，站内 v0.104.0 口径存在时效风险；Bing/GSC/Vercel/Trends 中期复采仍保持 2026-05-14 窗口）
 
 ## 今日动作状态（必须完整）
+- `DONE`: 2026-05-14 17:47 执行前历史核对（`01-daily-log.md` + `00-dashboard.md` + `ops-logs`），确认跨天后四端实时采集必须重跑，不能复用 2026-05-13 口径
+- `DONE`: 2026-05-14 17:47 正式域名可用性验证：`https://sts2guide.com/` 返回 `HTTP 200`
+- `DONE`: 2026-05-14 17:47 执行 `node scripts/monitor-vercel.mjs`，落盘 `ops-logs/vercel/2026-05-14/2026-05-14T09-47-13-810Z.json` 与 `ops-logs/2026-05-14.md`
+- `BLOCKED`: 2026-05-14 17:47 Vercel API 全端点 `403`（影响：Visitors/PV/Bounce 及 referrer/path 当日实时口径不可得）
+- `DONE`: 2026-05-14 18:27 GSC 实时采集（3 个月 / Web：`1160 clicks / 8.43万 impressions / 1.4% CTR / 8.8 Avg position`；Top 查询已回填日志）
+- `DONE`: 2026-05-14 18:27 Bing Webmaster 实时采集（Search Performance / Sitemaps / IndexNow / URL Inspection：`214 clicks / 13.3K impressions / 1.61% CTR`，Sitemap `Success`，URLs discovered `794`，IndexNow 最近 10 小时 `0`，首页已索引）
+- `DONE`: 2026-05-14 18:27 Google Trends 实时采集（美国 90 天核心词、相关上升查询、区域差异已回填日志）
+- `DONE`: 2026-05-14 18:59 Vercel 浏览器登录态补采（`Last 7 Days / Production`：`344 Visitors / 673 PV / 83% Bounce`；Top Pages / Referrers / Countries / Devices 已回填日志）
+- `DONE`: 2026-05-13 16:48 执行前历史核对（`01-daily-log.md` + `00-dashboard.md` + `ops-logs`），确认跨天后四端实时采集必须重跑，不能复用 2026-05-11 口径
+- `DONE`: 2026-05-13 16:48 正式域名可用性验证：`https://sts2guide.com/` 返回 `HTTP 200`
+- `DONE`: 2026-05-13 16:48 执行 `node scripts/monitor-vercel.mjs`，落盘 `ops-logs/vercel/2026-05-13/2026-05-13T08-48-41-802Z.json` 与 `ops-logs/2026-05-13.md`
+- `BLOCKED`: 2026-05-13 16:48 Vercel API 全端点 `403`（影响：Visitors/PV/Bounce 及 referrer/path 当日实时口径不可得）
+- `TODO`: 2026-05-13 GSC 实时采集（点击/展现/CTR/平均排名/查询/页面/国家/设备/索引覆盖/Rich Results）
+- `TODO`: 2026-05-13 Bing Webmaster 实时采集（Search Performance/Index Coverage/Sitemaps/URL Inspection/IndexNow）
+- `TODO`: 2026-05-13 Google Trends 实时采集（核心词/品牌词/意图词趋势、区域差异、相关主题与相关查询）
 - `DONE`: 2026-05-11 16:31 正式域名基础可用性验证：`/`、`/sitemap.xml`、`/builds`、`/patches`、v0.104.0 新闻页均返回 `HTTP 200`
 - `DONE`: 2026-05-11 16:32 Steam 官方 RSS 巡检发现新增 `Beta Patch Notes - v0.105.0` 与 `Beta Hotfix Notes - v0.105.1`
 - `DONE`: 2026-05-11 16:34 新增 `/news/slay-the-spire-2-beta-patch-v0-105-0-aeonglass-bestiary-hotfix`，并同步首页、`/patches`、`app/sitemap.ts`
@@ -41,7 +56,7 @@
 - `DONE`: 2026-05-11 16:38 提交并推送 `main`，commit=`40e0e8e`
 - `DONE`: 2026-05-11 16:38 Vercel 自动部署后，新 URL `/news/slay-the-spire-2-beta-patch-v0-105-0-aeonglass-bestiary-hotfix` 返回 `HTTP 200` 且正文命中 `v0.105.1 / Aeonglass / Bestiary`
 - `DONE`: 2026-05-11 16:39 IndexNow 提交 4 URL：新 v0.105 新闻页、`/patches`、首页、`/sitemap.xml`
-- `TODO`: 2026-05-14 四端中期复采（按 `19-midpoint-recheck-checklist-2026-05-14.md` 执行）
+- `DONE`: 2026-05-14 四端中期复采（按 `19-midpoint-recheck-checklist-2026-05-14.md` 执行；Vercel API 明确标为 `BLOCKED`）
 - `TODO`: 2026-05-21 继续 / 止损 / 小范围恢复投入决策
 
 ## 2026-05-08 动作状态（保留）
