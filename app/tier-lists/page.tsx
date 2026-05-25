@@ -1,19 +1,19 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
-const currentVersion = 'v0.104.0 beta';
+const currentVersion = 'v0.105.1 / v0.105.0 beta';
 
 export const metadata: Metadata = {
-  title: 'Slay the Spire 2 Tier List & Tier Lists | v0.104.0 Beta',
+  title: 'Slay the Spire 2 Tier List & Tier Lists | v0.105.1 / v0.105.0 Beta',
   description:
-    'Use the Slay the Spire 2 tier list hub for patch-aware tier lists covering characters, beginner stability, archetypes, cards, relics, builds, and v0.104.0 beta patch changes.',
+    'Use the Slay the Spire 2 tier list hub for patch-aware tier lists covering characters, beginner stability, archetypes, cards, relics, builds, and the current v0.105.1 / v0.105.0 beta patch cycle.',
   alternates: {
     canonical: '/tier-lists',
   },
   openGraph: {
     title: 'Slay the Spire 2 Tier List & Tier Lists',
     description:
-      'Character, beginner, archetype, card, relic, build, and patch-aware tier guidance for Slay the Spire 2 with conservative recommendations tied to v0.104.0 beta.',
+      'Character, beginner, archetype, card, relic, build, and patch-aware tier guidance for Slay the Spire 2 with conservative recommendations tied to the current v0.105.1 / v0.105.0 beta cycle.',
   },
 };
 
@@ -22,7 +22,7 @@ const heroLinks = [
   { label: 'Cards', href: '/cards' },
   { label: 'Relics', href: '/relics' },
   { label: 'Patch notes', href: '/patches' },
-  { label: 'v0.104.0 analysis', href: '/news/slay-the-spire-2-beta-patch-v0-104-0-analysis' },
+  { label: 'Latest beta patch', href: '/news/slay-the-spire-2-beta-patch-v0-105-0-aeonglass-bestiary-hotfix' },
 ];
 
 const sectionData = [
@@ -32,9 +32,9 @@ const sectionData = [
     description: (
       <>
         <p>
-          For early and returning runs, Ironclad remains the safest character to recommend, but v0.104.0 beta makes
-          Strength AoE and Exhaust turns the first retest target rather than a settled promotion. Silent and Regent can
-          be strong, but they should be treated as patch-sensitive choices until the beta window settles.
+          For early and returning runs, Ironclad remains the safest character to recommend, but the current beta cycle
+          still makes Strength AoE and Exhaust turns the first retest target rather than a settled promotion. Silent
+          and Regent can be strong, but they should be treated as patch-sensitive choices until the beta window settles.
         </p>
         <p className="mt-3 text-sm text-slate-400">
           Version {currentVersion} · Stability range: beta watchlist with conservative role-based evaluation ·
@@ -60,14 +60,15 @@ const sectionData = [
         </p>
         <p className="mt-3 text-sm text-slate-400">
           Applicable when your goal is repeatable act-one and act-two stability. Once your runs stop collapsing to
-          early mistakes, move into the builds hub for more specific archetype calls.
+          early mistakes, move into the builds hub for more specific archetype calls, or check the current patch hub if
+          your old beginner route depended on pre-Aeonglass assumptions.
         </p>
       </>
     ),
     calls: [
       { label: 'Starter builds', href: '/builds' },
       { label: 'Character card primers', href: '/cards' },
-      { label: 'Latest beta notes', href: '/news/slay-the-spire-2-beta-patch-v0-104-0-analysis' },
+      { label: 'Latest beta notes', href: '/news/slay-the-spire-2-beta-patch-v0-105-0-aeonglass-bestiary-hotfix' },
     ],
   },
   {
@@ -81,7 +82,7 @@ const sectionData = [
           sequencing-dependent paths that still look strong but have not settled enough to promote aggressively.
         </p>
         <p className="mt-3 text-sm text-slate-400">
-          Controversy note: any archetype that depends on the beta branch’s newest timing or scoring behavior should
+          Controversy note: any archetype that depends on the beta branch’s newest timing, boss reads, or scoring behavior should
           stay in watchlist territory until it survives more than one patch cycle.
         </p>
       </>
@@ -104,7 +105,8 @@ const sectionData = [
         </p>
         <p className="mt-3 text-sm text-slate-400">
           When a card drops into watchlist territory, treat it as a re-test candidate rather than an automatic pick.
-          That keeps this page aligned with current patch uncertainty instead of pretending card rankings are final.
+          That keeps this page aligned with current patch uncertainty instead of pretending card rankings are final,
+          especially when patch notes and boss updates are moving faster than run-proofed rankings.
         </p>
       </>
     ),
@@ -125,7 +127,8 @@ export default function TierListsPage() {
         <p className="text-lg text-slate-200">
           Use this Slay the Spire 2 tier list page as a current-patch index for tier lists by hero strength, new
           player stability, archetype resilience, card decisiveness, and retest priority. Each section points back to
-          builds, cards, relics, patches, or the latest v0.104.0 beta analysis so you finish with a decision.
+          builds, cards, relics, patches, or the latest v0.105 beta notes so you finish with a decision instead of a
+          flat ranking.
         </p>
         <nav aria-label="Tier list decision links" className="flex flex-wrap gap-3 text-sm">
           {heroLinks.map((link) => (
@@ -139,11 +142,34 @@ export default function TierListsPage() {
           ))}
         </nav>
         <div className="flex flex-wrap gap-3 text-sm">
-          <span className="rounded-full border border-slate-600 px-3 py-1">Last validated May 7, 2026</span>
+          <span className="rounded-full border border-slate-600 px-3 py-1">Last validated May 25, 2026</span>
           <span className="rounded-full border border-slate-600 px-3 py-1">Sources: official Steam notes · community signals</span>
           <span className="rounded-full border border-slate-600 px-3 py-1">Stability window: 14-day rolling</span>
         </div>
       </header>
+
+      <section className="rounded-2xl border border-molten-orange/30 bg-slate-900/70 p-6 shadow-xl">
+        <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p className="text-sm uppercase tracking-[0.3em] text-molten-orange">Quick route</p>
+            <h2 className="text-2xl font-semibold text-white">What should you open after this tier page?</h2>
+          </div>
+          <p className="max-w-2xl text-sm text-slate-300">
+            Use tier lists to narrow the question, then switch to the page that actually changes your next run.
+          </p>
+        </div>
+        <div className="mt-5 grid gap-3 md:grid-cols-3">
+          <Link className="rounded-xl border border-slate-700 bg-slate-800/70 px-4 py-4 text-sm font-medium text-white transition hover:border-molten-orange" href="/builds">
+            Open build guides for the current patch
+          </Link>
+          <Link className="rounded-xl border border-slate-700 bg-slate-800/70 px-4 py-4 text-sm font-medium text-white transition hover:border-molten-orange" href="/patches">
+            Re-check patch notes before changing rankings
+          </Link>
+          <Link className="rounded-xl border border-slate-700 bg-slate-800/70 px-4 py-4 text-sm font-medium text-white transition hover:border-molten-orange" href="/cards">
+            Check cards when a tier call still feels volatile
+          </Link>
+        </div>
+      </section>
 
       <section className="rounded-2xl border border-slate-700 bg-slate-900/60 p-6 shadow-xl">
         <div className="flex flex-col gap-2">
@@ -195,10 +221,10 @@ export default function TierListsPage() {
           <p>
             Characters feed the Builds hub, archetypes keep the tier map honest, and cards explain why something
             previously ranked high may fall to watchlist. Use the buttons above or hop into builds, cards, relics,
-            patches, or the v0.104.0 beta analysis for the full decision flow.
+            patches, or the latest v0.105 beta analysis for the full decision flow.
           </p>
           <p className="font-mono text-xs uppercase tracking-wider text-slate-500">
-            CTA -&gt; /builds · /cards · /relics · /patches · /news/slay-the-spire-2-beta-patch-v0-104-0-analysis
+            CTA -&gt; /builds · /cards · /relics · /patches · /news/slay-the-spire-2-beta-patch-v0-105-0-aeonglass-bestiary-hotfix
           </p>
         </div>
       </section>

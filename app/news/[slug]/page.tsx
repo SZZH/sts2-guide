@@ -96,6 +96,7 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ slu
   const isLaunchGuide = article.slug === 'slay-the-spire-2-launch-time-us-china';
   const isInternalArticle = article.sourceType === 'internal';
   const HIGH_INTENT_NEWS_SLUGS = new Set([
+    'slay-the-spire-2-beta-patch-v0-105-0-aeonglass-bestiary-hotfix',
     'slay-the-spire-2-beta-patch-v0-104-0-analysis',
     'slay-the-spire-2-hotfix-patch-notes',
     'slay-the-spire-2-known-issues-and-fixes',
@@ -125,6 +126,10 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ slu
   ];
   const updatedTodayLinks = [
     {
+      href: '/news/slay-the-spire-2-beta-patch-v0-105-0-aeonglass-bestiary-hotfix',
+      label: 'Current v0.105 beta patch notes',
+    },
+    {
       href: '/news/slay-the-spire-2-beta-patch-v0-104-0-analysis',
       label: 'v0.104.0 beta patch notes',
     },
@@ -152,6 +157,11 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ slu
       href: '/guides',
       label: 'Browse builds and beginner routes',
     },
+  ];
+  const patchDecisionLinks = [
+    { href: '/patches', label: 'Open the patch hub for the full decision flow' },
+    { href: '/builds', label: 'Re-check build guides after this patch' },
+    { href: '/tier-lists', label: 'Keep tier calls conservative until runs settle' },
   ];
   const launchFaqItems = [
     {
@@ -262,6 +272,29 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ slu
                   <p key={paragraph}>{paragraph}</p>
                 ))}
               </div>
+            )}
+
+            {article.slug === 'slay-the-spire-2-beta-patch-v0-105-0-aeonglass-bestiary-hotfix' && (
+              <section className="mb-10 rounded-xl border border-molten-orange/30 bg-background/70 p-5">
+                <div className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-molten-orange">
+                  Next Decision
+                </div>
+                <h2 className="font-heading text-2xl font-bold mb-3">Where should you go after reading this patch?</h2>
+                <p className="mb-5 text-sm text-muted-foreground leading-7">
+                  Use this patch page to lock the version facts, then move into the page that changes your next run: builds for routes, tier lists for conservative rankings, or the full patch hub for all current notes.
+                </p>
+                <div className="grid gap-3 md:grid-cols-3">
+                  {patchDecisionLinks.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className="rounded-lg border border-border bg-shadow-gray/50 px-4 py-3 text-molten-orange transition-colors hover:text-ember-glow"
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              </section>
             )}
 
             {isLaunchGuide && (

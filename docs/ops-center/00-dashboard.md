@@ -10,17 +10,17 @@
 - `BLOCKED`：受阻（需注明原因）
 - `SKIP`：今日不做（需注明原因）
 
-## 今日状态（2026-05-14 18:59）
-- 站点可用性：`DONE`（`https://sts2guide.com/` 返回 `HTTP 200`，采集时间 `2026-05-14 17:47 CST`）
-- 流量总览（Vercel）：`DONE`（浏览器登录态补采，`Last 7 Days / Production`：`344 Visitors (+22%) / 673 Page Views (-15%) / Bounce Rate 83% (+6%)`；Top Pages=`/` `116`、`/builds` `96`、`/guides` `70`、`/cards` `56`；Top Referrer=`google.com 118 PV`）
-- 搜索总览（GSC）：`DONE`（3 个月 / Web：`1160 clicks / 8.43万 impressions / 1.4% CTR / 8.8 Avg position`，可见数据更新约滞后 3 小时；Top 查询含 `sts2 guide`、`hammer time slay the spire 2`、`book of five rings sts2`）
-- Bing 总览：`DONE`（Search Performance 3 个月：`214 clicks / 13.3K impressions / 1.61% CTR`；Sitemaps=`1`、errors=`0`、warnings=`0`、URLs discovered=`794`；首页 URL Inspection=`Indexed successfully`）
-- 趋势总览（Google Trends）：`DONE`（美国 90 天：`slay the spire 2` 平均热度 `27`，`sts2` `8`，`slay the spire 2 cards` `1`，`guide/builds` 精确词均 `0`；上升词集中在 Regent / Ironclad / Defect / Silent / tier list / cards / builds）
-- 生产发布总览：`DONE`（v0.105.1/v0.105.0 内容同步已提交并推送 `main`：`40e0e8e feat: 同步v0.105.1补丁口径`；Vercel 自动部署后新 URL 返回 `HTTP 200`）
-- 线上结构验证：`DONE`（本轮仅做内容时效最小同步：新增 v0.105.1/v0.105.0 新闻页，更新首页与 `/patches` 当前版本文案，更新 sitemap；未新建 `/wiki`、未扩量）
-- 游戏动态总览：`DONE`（Steam 官方 RSS 确认 `Beta Patch Notes - v0.105.0`，2026-05-08 00:53:30 UTC；`Beta Hotfix Notes - v0.105.1`，2026-05-09 03:14:26 UTC）
-- 外链发布总览：`DONE`（IndexNow 已提交 4 URL：新 v0.105 新闻页、`/patches`、首页、`/sitemap.xml`）
-- 社媒互动总览：`SKIP`（今天主线是官方 patch 时效同步；不做 Reddit / X / Steam 分发，避免需要额外互动窗口）
+## 今日状态（2026-05-26 00:06）
+- 站点可用性：`DONE`（`https://sts2guide.com/` 返回 `HTTP 200`，采集时间 `2026-05-25 22:32 CST`）
+- 流量总览（Vercel）：`DONE`（浏览器登录态补采，`Last 7 Days / Production`：`388 Visitors (+11%) / 725 Page Views (+2%) / Bounce Rate 85% (+3%)`；Top Pages=`/cards 70`、`/ 60`、`/news/slay-the-spire-2-known-issues-and-fixes 43`、`/guides 29`、`/builds 24`；Top Referrer=`google.com 162`）
+- 搜索总览（GSC）：`DONE`（3 个月 / Web：`1300 clicks / 9.51万 impressions / 1.4% CTR / 8.8 Avg position`，上次更新约 `4.5 小时前`；Top 查询含 `sts2 guide`、`sts2 guides`、`hammer time slay the spire 2`、`slay the spire 2 guide`）
+- Bing 总览：`DONE`（3 个月：`219 clicks / 13.8K impressions / 1.59% CTR`；Top queries 含 `slay the spire 2 guide`、`slay the spire 2 tips`、`slay the spire 2 strategies`；Sitemap=`Success`，`794` URLs discovered，Last crawl=`2026-05-24`；IndexNow 最近 `14h=0`）
+- 趋势总览（Google Trends）：`DONE`（US / 过去 12 个月 / Web Search：平均热度 `slay the spire 2=12`、`sts2=3`、`slay the spire 2 guide=0`；`2026-05-24` 周点位分别为 `23 / 12 / 0`；相关上升查询含 `the regent slay the spire 2`、`slay the spire 2 patch notes`、`sts2 tier list`）
+- 生产发布总览：`DONE`（当前生产域名可访问；本轮未做新发布）
+- 线上结构验证：`DONE`（已对 `/builds`、`/patches`、`/tier-lists`、最新 v0.105 patch news 做最小承接补强；本地浏览器验收通过）
+- 游戏动态总览：`DONE`（本轮围绕当前官方 `v0.105.1 / v0.105.0` patch 口径完成主入口承接补强）
+- 外链发布总览：`SKIP`（今天未发生新页面或新路由上线，无 IndexNow 差量提交）
+- 社媒互动总览：`SKIP`（今天主线不是分发；先完成复盘决策）
 
 ## 闸门状态（当前批次）
 - 收录率 >= 60%：`90.0%（27/30，代理口径，待 URL Inspection 全量复核）`
@@ -30,9 +30,20 @@
 
 ## 今日异常
 - [ ] 无
-- [x] 有（官方 beta 已推进到 v0.105.1/v0.105.0，站内 v0.104.0 口径存在时效风险；Bing/GSC/Vercel/Trends 中期复采仍保持 2026-05-14 窗口）
+- [x] 有（Vercel 脚本链路 `vercel.com:443` 连接超时；Bounce Rate 升至 `85%`；Google Trends 多关键词组合页曾报错，改用 3 词组合页补采）
 
 ## 今日动作状态（必须完整）
+- `DONE`: 2026-05-25 22:32 执行前历史核对（`01-daily-log.md` + `00-dashboard.md` + `ops-logs`），确认上一轮完整闭环停留在 `2026-05-14`，`2026-05-21` 决策复盘已过期，今天必须重做实时采集后再判断继续/止损
+- `DONE`: 2026-05-25 22:32 正式域名可用性验证：`https://sts2guide.com/` 返回 `HTTP 200`
+- `BLOCKED`: 2026-05-25 22:32 执行 `node scripts/monitor-vercel.mjs` 失败，报错 `Connect Timeout Error (attempted address: vercel.com:443, timeout: 10000ms)`（影响：脚本化 Vercel 采集链路不可用）
+- `DONE`: 2026-05-25 22:32 Vercel 浏览器登录态补采（`Last 7 Days / Production`：`388 Visitors / 725 PV / 85% Bounce`；Top Pages / Referrers / Countries / Devices / Operating Systems 已回填）
+- `DONE`: 2026-05-25 22:32 GSC 实时采集（3 个月 / Web：`1300 clicks / 9.51万 impressions / 1.4% CTR / 8.8 Avg position`；Top 查询已回填）
+- `DONE`: 2026-05-25 23:18 Bing Webmaster 实时采集补齐（3 个月：`219 clicks / 13.8K impressions / 1.59% CTR`；Sitemap=`Success`，`794` URLs discovered，Last crawl=`2026-05-24`；IndexNow 最近 `14h=0`）
+- `DONE`: 2026-05-25 23:18 Google Trends 实时采集补齐（US / 过去 12 个月 / Web Search：`slay the spire 2=12`、`sts2=3`、`slay the spire 2 guide=0`；上升查询与区域差异已回填）
+- `DONE`: 2026-05-25 23:18 基于四端完整口径重做 `2026-05-21` 继续 / 止损复盘，结论调整为“保守轻维护，不恢复投入，也暂不升级为硬止损”
+- `DONE`: 2026-05-26 00:06 完成 `/builds`、`/patches`、`/tier-lists`、`/news/slay-the-spire-2-beta-patch-v0-105-0-aeonglass-bestiary-hotfix` 最小承接补强：只补当前 patch 版本口径、下一步 CTA、patch -> builds/tier/cards 分流，不新增路由
+- `DONE`: 2026-05-26 00:06 `pnpm lint` 通过（0 errors，4 个既有 warnings）与 `pnpm build` 通过（成功生成 `811` 个页面）
+- `DONE`: 2026-05-26 00:06 本地浏览器验收通过：`/builds`、`/patches`、`/tier-lists`、最新 v0.105 patch news 新增区块与跳转正常
 - `DONE`: 2026-05-14 17:47 执行前历史核对（`01-daily-log.md` + `00-dashboard.md` + `ops-logs`），确认跨天后四端实时采集必须重跑，不能复用 2026-05-13 口径
 - `DONE`: 2026-05-14 17:47 正式域名可用性验证：`https://sts2guide.com/` 返回 `HTTP 200`
 - `DONE`: 2026-05-14 17:47 执行 `node scripts/monitor-vercel.mjs`，落盘 `ops-logs/vercel/2026-05-14/2026-05-14T09-47-13-810Z.json` 与 `ops-logs/2026-05-14.md`
@@ -57,7 +68,7 @@
 - `DONE`: 2026-05-11 16:38 Vercel 自动部署后，新 URL `/news/slay-the-spire-2-beta-patch-v0-105-0-aeonglass-bestiary-hotfix` 返回 `HTTP 200` 且正文命中 `v0.105.1 / Aeonglass / Bestiary`
 - `DONE`: 2026-05-11 16:39 IndexNow 提交 4 URL：新 v0.105 新闻页、`/patches`、首页、`/sitemap.xml`
 - `DONE`: 2026-05-14 四端中期复采（按 `19-midpoint-recheck-checklist-2026-05-14.md` 执行；Vercel API 明确标为 `BLOCKED`）
-- `TODO`: 2026-05-21 继续 / 止损 / 小范围恢复投入决策
+- `DONE`: 2026-05-21 继续 / 止损 / 小范围恢复投入决策（已于 2026-05-25 22:32 补做，结论：止损）
 
 ## 2026-05-08 动作状态（保留）
 - `DONE`: 2026-05-08 10:04 制定量化 SEO 执行方案：新增 `17-quantified-seo-execution-plan.md`，设定指标、DDL、验收和决策记录规则
@@ -92,9 +103,10 @@
 - 关联决策日志：`docs/ops-center/02-decisions.md`
 - 决策编号：沿用 `DEC-20260508-01（采用量化 SEO 方案执行泛词骨架与长尾主攻）`
 - 决策编号：沿用 `DEC-20260508-02（SEO 关键词执行必须以数据证据为准）`
-- 今日判断：v0.105.1/v0.105.0 属于官方内容时效更新，允许最小 patch/news 同步；不代表 SEO 闸门通过，也不允许扩量或新建 `/wiki`
+- 决策编号：`DEC-20260525-01（30页验证批复盘后维持保守轻维护，不恢复投入）`
+- 今日判断：四端补齐后，搜索侧仍是正增长：GSC 点击较 `2026-05-14` 约 `+12%`，Bing 点击较 `2026-05-14` 约 `+2%`、展现约 `+4%`；但站内承接继续走弱，Bounce 升到 `85%`，`/builds`、`/patches`、`/tier-lists` 仍未成为明确主承接页。结论不再是“信息不足下的硬止损”，而是“继续保守轻维护、只做 patch 和明确问题修复，不恢复新增投入”。
 
 ## 明日优先事项（最多3个）
-- P0: 观察 v0.105 新页面收录/曝光回流，但不提前替代 2026-05-14 四端复采
-- P0: 若再出现官方 patch / hotfix / newsletter，继续按最小 patch/news 同步处理
-- P1: 继续等待 2026-05-14 四端中期复采；任何关键词动作先查 `18-keyword-evidence-ledger.md`
+- P0: 维持保守轻维护节奏：只保留官方 patch / hotfix / newsletter 巡检与必要同步
+- P0: 将本轮承接补强发布到生产，并验证正式域名 4 个目标 URL 的内容已生效
+- P1: 记录 Google Trends 多关键词组合页异常；下次复盘时优先复查 `patch notes / tier list / regent` 三类 rising terms

@@ -100,6 +100,27 @@ const updatedAssets = [
   },
 ];
 
+const impactSections = [
+  {
+    title: 'Builds to re-check',
+    summary: 'Patch notes should push you into build retests when route pacing, boss reads, or archetype assumptions changed.',
+    href: '/builds',
+    label: 'Open build guides',
+  },
+  {
+    title: 'Tier calls to keep conservative',
+    summary: 'Use tier lists as a watchlist view until the latest patch survives enough runs to settle rankings.',
+    href: '/tier-lists',
+    label: 'Open tier list hub',
+  },
+  {
+    title: 'Issue triage before theorycraft',
+    summary: 'Separate live bugs and known issues from actual balance changes before you rewrite advice.',
+    href: '/news/slay-the-spire-2-known-issues-and-fixes',
+    label: 'Check known issues',
+  },
+];
+
 export default function PatchesPage() {
   const latestArticle = patchArticles[0];
 
@@ -194,6 +215,35 @@ export default function PatchesPage() {
               >
                 <h3 className="font-heading text-xl font-bold text-white">{card.title}</h3>
                 <p className="mt-3 text-sm leading-7 text-muted-foreground">{card.description}</p>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        <section className="mt-10">
+          <div className="mb-5 flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
+            <div>
+              <div className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-molten-orange">
+                Impact Sections
+              </div>
+              <h2 className="font-heading text-3xl font-bold">What changes after a meaningful patch?</h2>
+            </div>
+            <p className="max-w-2xl text-sm text-steel-blue">
+              Patch notes should end in a concrete next action: retest builds, keep a tier call conservative, or verify whether a bug is still live.
+            </p>
+          </div>
+          <div className="grid gap-4 md:grid-cols-3">
+            {impactSections.map((section) => (
+              <Link
+                key={section.href}
+                href={section.href}
+                className="rounded-xl border border-border bg-background/55 p-5 transition-all duration-300 hover:border-molten-orange"
+              >
+                <h3 className="font-heading text-xl font-bold text-white">{section.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-muted-foreground">{section.summary}</p>
+                <span className="mt-4 inline-flex text-xs font-semibold text-molten-orange underline decoration-dotted decoration-molten-orange/60">
+                  {section.label} →
+                </span>
               </Link>
             ))}
           </div>

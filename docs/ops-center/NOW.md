@@ -3,13 +3,13 @@
 > 只保留“当前生效”的内容。任何阶段切换先更新本文件。
 
 ## 当前阶段
-- 阶段：30页验证批（未过闸门前不扩量）
-- 目标：进入 `2026-05-07 ~ 2026-05-21` 轻维护观察周期，验证真实承接；未满足继续投入线前不扩量、不重构大页面
+- 阶段：保守轻维护模式
+- 目标：维持站点可用与版本时效，继续做 patch 轻维护、明确问题修复和定期复盘；不恢复新增 SEO 投入，也不做结构性优化
 
 ## 当前 P0（最多 3 项）
-- P0-1：观察 2026-05-08 入口页轻改后的抓取与回流；不追加新页面、不新建 `/wiki`；关键词变更先查 `18-keyword-evidence-ledger.md`
-- P0-2：2026-05-14 按 `19-midpoint-recheck-checklist-2026-05-14.md` 执行四端中期复采，GSC + Vercel + Bing Webmaster + Google Trends 必须标清 `DONE / BLOCKED`
-- P0-3：2026-05-21 对照量化指标做继续轻维护 / 止损 / 小范围恢复投入决策，并新增决策 ID
+- P0-1：每日按需巡检官方 patch / hotfix / newsletter；若有新增，仅做最小时效同步
+- P0-2：修复明确问题：404、sitemap 缺 URL、IndexNow 未提交、版本号过时、主入口文案与当前 patch 明显不一致
+- P0-3：2026-06-25 做下一次月度复盘；重点复查 Bounce、`/builds|/patches|/tier-lists` 承接位次、Bing 高 CTR 词表现
 
 ## 当前重构硬约束
 - 涉及攻略、玩法、build、tier list、patch 影响、角色推荐、新手路线时，必须按“官方 > 高质量社区 > 高质量工具站 > 站内数据”取证
@@ -18,14 +18,14 @@
 
 ## 当前阻塞
 - 平台侧数据延迟（GSC/Bing 常见）
-- Bing Webmaster 2026-05-07 返回 `services could not be reached`（Ref C=`2026-05-07T03:25:16Z`）
-- Google Trends 2026-05-07 触发 Google `/sorry` 人机验证
-- Vercel 国家维度 `Singapore 42%` 仍明显偏高，需继续判断是 Bot / 统计噪音还是真实流量
+- Google Trends 多关键词组合页偶发报错；当前已通过 3 词组合页补采
+- Vercel 脚本链路 2026-05-25 连接 `vercel.com:443` 超时
+- Vercel 国家维度 `Singapore 42%` 仍明显偏高，需继续按噪音风险处理
 
 ## 当前约束
-- 未过闸门不得扩量
-- 默认遵循 `15-maintenance-and-stoploss-plan.md`：每周投入 `3-5 小时`，只做 patch 轻维护、主入口维护、每周数据复盘和明显问题修复
-- 默认遵循 `17-quantified-seo-execution-plan.md`：泛词页做骨架，长尾页拿点击；每一步必须绑定指标、DDL、验收和记录方式
+- 当前维持保守轻维护，不恢复主动 SEO 投入
+- 不扩量、不新建 `/wiki`、不做站点级重构、不中途恢复“顺手优化”
+- 默认遵循 `15-maintenance-and-stoploss-plan.md` 的止损后模式：每周巡检 patch，有 patch 才更新，每月复盘一次
 - SEO 关键词必须以 GSC / Bing Webmaster / Google Trends / Vercel / 历史快照 / 可复查竞品结果为依据；无数据证据的词只能标为候选或自然描述，不能作为 title / H1 / 首段 SEO 主目标
 - 每次策略变化必须登记决策 ID
 - 每次关键动作后留痕（按时间戳记录）
@@ -38,4 +38,4 @@
 
 ## 下一次更新人/时间
 - Owner：Codex
-- 时间：2026-05-08 10:14
+- 时间：2026-05-25 22:32

@@ -89,9 +89,9 @@ const RESOURCE_CARDS = [
     badge: 'Patches',
   },
   {
-    href: '/news/slay-the-spire-2-beta-patch-v0-104-0-analysis',
-    title: 'Balance patch notes',
-    copy: 'Start with the current balance notes, then decide which build assumptions need retesting.',
+    href: '/news/slay-the-spire-2-beta-patch-v0-105-0-aeonglass-bestiary-hotfix',
+    title: 'Latest beta patch notes',
+    copy: 'Start with the current Aeonglass / Bestiary beta notes, then decide which build assumptions need retesting.',
     badge: 'Patch',
   },
   {
@@ -117,12 +117,12 @@ const STATUS_TIER_HINTS = [
   {
     tier: 'Stable',
     title: 'Stable core',
-    summary: 'Repeatable Strength, Sly, and Forge threads now pay off more consistently than last patch’s spike plays.',
+    summary: 'Repeatable Strength, Sly, and Forge threads still pay off more consistently than one-patch spike plays.',
   },
   {
     tier: 'Watchlist',
     title: 'Watchlist picks',
-    summary: 'These lines still have upside but demand tight pacing since nerf adjustments make missteps punitive.',
+    summary: 'These lines still have upside but demand tight pacing while the current patch cycle keeps encounter reads and role timing in motion.',
   },
 ];
 
@@ -309,6 +309,28 @@ export default function BuildsPage() {
         </section>
 
         <section className="container mx-auto flex flex-col gap-4 px-4 py-12">
+          <div className="rounded-2xl border border-molten-orange/30 bg-background/50 p-5">
+            <div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
+              <div>
+                <p className="text-xs uppercase tracking-[0.4em] text-molten-orange">Build guide intent</p>
+                <h2 className="font-heading text-2xl font-bold text-white">Use this page to pick the next exact build step</h2>
+              </div>
+              <p className="max-w-2xl text-sm text-steel-blue">
+                Searchers arriving on “build guide”, “tips”, or “strategies” should leave this overview in one click: open a character build, retest with patch notes, or verify key cards first.
+              </p>
+            </div>
+            <div className="mt-4 grid gap-3 md:grid-cols-3">
+              <Link href="/guides" className="rounded-xl border border-border bg-forge-black/40 px-4 py-4 text-sm font-semibold text-white transition hover:border-molten-orange">
+                Browse all character build guides
+              </Link>
+              <Link href="/patches" className="rounded-xl border border-border bg-forge-black/40 px-4 py-4 text-sm font-semibold text-white transition hover:border-molten-orange">
+                Check what changed in the current patch first
+              </Link>
+              <Link href="/cards" className="rounded-xl border border-border bg-forge-black/40 px-4 py-4 text-sm font-semibold text-white transition hover:border-molten-orange">
+                Verify card priorities before you reroute
+              </Link>
+            </div>
+          </div>
           <div className="rounded-2xl border border-border bg-background/50 p-5">
             <div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
               <div>
@@ -382,10 +404,10 @@ export default function BuildsPage() {
               </p>
               <div className="mt-6 flex flex-wrap gap-3 text-sm">
                 <Link
-                  href="/news/slay-the-spire-2-beta-patch-v0-104-0-analysis"
+                  href="/news/slay-the-spire-2-beta-patch-v0-105-0-aeonglass-bestiary-hotfix"
                   className="inline-flex items-center rounded-full border border-molten-orange px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-molten-orange"
                 >
-                  Patch analysis
+                  Latest beta patch
                 </Link>
                 <Link
                   href="/news/slay-the-spire-2-hotfix-patch-notes"

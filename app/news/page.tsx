@@ -100,8 +100,8 @@ export default function NewsPage() {
         <div className="mb-10 rounded-xl border border-border bg-shadow-gray/60 p-5">
           <h2 className="font-heading text-xl font-bold">Priority Updates</h2>
           <div className="mt-3 flex flex-wrap gap-4 text-sm">
-            <Link href="/news/slay-the-spire-2-beta-patch-v0-104-0-analysis" className="text-molten-orange transition-colors hover:text-ember-glow">
-              What changed in the latest beta patch?
+            <Link href="/news/slay-the-spire-2-beta-patch-v0-105-0-aeonglass-bestiary-hotfix" className="text-molten-orange transition-colors hover:text-ember-glow">
+              What changed in the current v0.105 beta patch?
             </Link>
             <Link href="/news/slay-the-spire-2-known-issues-and-fixes" className="text-molten-orange transition-colors hover:text-ember-glow">
               Which known issues are still active?
@@ -117,6 +117,9 @@ export default function NewsPage() {
             </Link>
             <Link href="/patches" className="text-molten-orange transition-colors hover:text-ember-glow">
               What decisions shift after the latest patch?
+            </Link>
+            <Link href="/tier-lists" className="text-molten-orange transition-colors hover:text-ember-glow">
+              Which tier calls should stay conservative right now?
             </Link>
           </div>
         </div>

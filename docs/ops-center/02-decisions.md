@@ -107,6 +107,17 @@
 - 回滚条件：无。若未来某候选词出现真实查询证据，可从 `CANDIDATE` 升级为 `CONFIRMED` 或 `WEAK_SIGNAL` 后再执行。
 - 下一次复盘时间：2026-05-14 四端中期复采。
 
+### DEC-20260525-01：30页验证批复盘后维持保守轻维护，不恢复投入
+- 日期：2026-05-25
+- 背景：`2026-05-21` 的继续 / 止损决策因未执行而过期。`2026-05-25 22:32` 先基于 GSC + Vercel 做了临时止损判断；随后在 `23:18` 补齐 Bing Webmaster 与 Google Trends 后，发现搜索侧信号比临时结论更稳，但站内承接问题依旧明显。
+- 备选方案：恢复投入并继续做入口页提质；直接切到最低成本保活；维持保守轻维护，只做 patch 同步和明确问题修复。
+- 最终决策：维持保守轻维护，不恢复投入。后续继续保留官方 patch / hotfix / newsletter 巡检与最小同步、明确问题修复（404 / sitemap / IndexNow / 版本号过时）和定期复盘；但不再追加 SEO 改造预算，不扩量，不新建 `/wiki`。
+- 数据依据（四端/实验/日志）：`docs/ops-center/01-daily-log.md`（2026-05-25 22:32 与 23:18 记录）；GSC=`1300 clicks / 9.51万 impressions / CTR 1.4% / 平均排名 8.8`；Vercel=`388 Visitors / 725 PV / Bounce Rate 85%`（Last 7 Days / Production）；Bing=`219 clicks / 13.8K impressions / CTR 1.59%`，Sitemap=`Success`，URLs discovered=`794`；Google Trends（US / 12 个月）显示 `slay the spire 2` 热度从 3 月峰值回落，当前意图集中在 `regent / patch notes / tier list`。
+- 影响范围：SEO 执行节奏、内容上线节奏、社媒分发优先级、后续所有“继续投入”判断。
+- 风险：继续轻维护可能错过部分长尾机会；但如果在 Bounce 仍 `85%` 的情况下继续加内容或改结构，大概率只会扩大低质量流量。
+- 回滚条件：后续复盘若同时出现任意两条，可重新讨论恢复小范围投入：Bounce 回落到 `<80%`；`/builds` / `/patches` / `/tier-lists` 任一进入稳定前 3 承接页；Bing 高 CTR 词（guide / tips / strategies）带来的承接页表现明显改善。
+- 下一次复盘时间：2026-06-25（月度复盘）
+
 ---
 
 ## 已合并背景上下文
