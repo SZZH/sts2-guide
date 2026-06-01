@@ -30,6 +30,53 @@
   - `P0` 提交并推送 `main`，走 Vercel 自动部署。
   - `P0` 部署完成后验证正式域名 4 个目标 URL 是否已生效；如通过，再补必要的 IndexNow。
 
+### 2026-06-01 18:02
+- 观察：用户要求“用已经登录了浏览器的窗口去执行”今天的数据采集，因此本轮全部优先走已登录 Chrome 登录态，不能复用 `2026-05-29` 的历史结果。执行前已核对 `00-dashboard.md` 与 `01-daily-log.md`，上一轮完整闭环停留在 `2026-05-29 14:02`，按跨天实时任务规则今天必须重跑四端。
+- 当前情况分析：
+  - 站点可用性：`DONE`，`https://sts2guide.com/` 返回 `HTTP 200`（`2026-06-01 17:39 CST`）。
+  - Vercel 浏览器登录态补采（`Last 7 Days / Production`，时间范围可见 `May 25, 15:00 - Jun 1, 15:59`）：`689 Visitors (+77%) / 1,034 Page Views (+42%) / Bounce Rate 84% (-1%) / Online 0`。Top Pages=`/cards 258`、`/ 80`、`/builds 31`、`/guides 31`、`/news/slay-the-spire-2-steam-deck-performance-guide 31`、`/news/slay-the-spire-2-known-issues-and-fixes 21`、`/cards/hammer_time 19`。Referrers=`google.com 143`、`search.brave.com 5`、`bing.com 4`、`google.com.ua 1`。Countries=`Singapore 69%`、`United States 13%`、`People's Republic of China 3%`、`France 1%`、`Germany 1%`。Devices=`Desktop 87% / Mobile 13%`。OS=`Windows 83% / iOS 7% / Android 6% / Mac 3% / GNU/Linux 1%`。
+  - Google Trends（US / 过去 12 个月 / Web Search）：平均热度 `slay the spire 2 = 12`、`sts2 = 3`、`slay the spire 2 guide = 0`；最近周点位 `2026-05-31` 为 `22 / 10 / 0`。上升查询里，主词侧能看到 `slay the spire 2 regent`、`the regent slay the spire 2`、`the regent`、`slay the spire 2 patch`、`slay the spire 2 golden compass`；`sts2` 侧有 `sts2 cards`、`regent sts2`、`ironclad sts2`、`sts2 silent`、`necrobinder sts2`；`slay the spire 2 guide` 侧有 `slay the spire 2 the regent guide`、`ironclad guide slay the spire 2`、`slay the spire 2 the silent guide`、`slay the spire strategy guide`、`slay the spire 2 mods`。
+  - Bing Webmaster（3 个月 / Search Performance）：`219 clicks / 13.8K impressions / 1.58% CTR`。Top query 仍是高意图词：`slay the spire 2 guide (295/32/10.85%/2.97)`、`slay the spire 2 tips (101/11/10.89%/3.30)`、`slay the spire 2 strategies (33/5/15.15%/2.82)`、`slay the spire 2 build guide (25/4/16.00%/3.68)`、`sts2 guide (19/6/31.58%/4.00)`。Country 维度头部为 `United States 7.3K / 127`、`Rest of World 3.2K / 39`、`United Kingdom 985 / 17`、`Canada 839 / 9`、`Germany 479 / 8`、`France 347 / 6`、`People's Republic of China 245 / 6`、`Spain 114 / 2`、`Brazil 108 / 0`、`Italy 103 / 0`、`Japan 96 / 5`，当前可见国家列表中仍未出现 Singapore。
+  - GSC：`BLOCKED`。同一已登录 Chrome 可正常访问 Gmail 和 Google Trends，但 `https://search.google.com/search-console?resource_id=sc-domain:sts2guide.com` 直接返回 `ERR_CONNECTION_CLOSED` / “无法访问此网站”。这说明不是账号没登录，而是今天这条 `search.google.com` 链路在当前网络条件下不可用，因此无法拿到当日 Google Search Console 点击/展现/CTR/国家维度实时口径。
+- 原因判断（置信度中高）：和 `2026-05-29` 相比，站点访问总量明显上升，Bounce 还从 `88%` 小幅回落到 `84%`，但结构性噪音并没有消失。`Singapore 69% + Desktop 87% + Windows 83% + /cards 258` 这个组合继续更像抓取器、代理出口或自动化访问，而不是健康的自然流量扩张。Bing Country 维度继续不支持“新加坡市场起来了”这个说法，Google Trends 也没有地域异常，只继续告诉我们需求仍集中在 `regent / patch / build guide / cards` 这些具体意图词。
+- 原因判断（置信度中）：由于 GSC 今日链路阻塞，关于 Google 搜索侧“点击和展现是否同步变化”的判断只能保留中等置信度。也就是说，我们可以相对稳地说“访问层的新加坡异常还在、Bing/Trends 侧没有新加坡需求证据”，但不能把今天这轮结论表述成“Google 搜索侧已完全确认”。
+- 建议动作：
+  - `P0` 后续关于国家市场和真实搜索增长的判断，继续优先用 `GSC + Bing`；本轮先保持“Vercel Singapore 默认按噪音观察项处理”的口径不变。
+  - `P0` 下一次实时采集前优先排查 `search.google.com` 在当前网络/代理环境下的连通性，补回 GSC 口径，避免 Google 侧连续缺口。
+  - `P1` 如果后面还要继续查流量质量，最有价值的还是盯 `Vercel Countries + Devices + Top Pages` 是否继续保持 `Singapore 高占比 + /cards detail 页集中` 这组特征。
+- DONE / IN_PROGRESS / TODO / BLOCKED：
+  - `DONE`：执行前历史核对；当日站点可用性验证；Vercel 浏览器登录态补采；Google Trends 当日补采；Bing Search Performance 与 Country 维度补采。
+  - `IN_PROGRESS`：无。
+  - `TODO`：补做 GSC 实时采集（前提是 `search.google.com` 链路恢复可用）。
+  - `BLOCKED`：GSC 今日登录态直连 `ERR_CONNECTION_CLOSED`；Vercel API 脚本链路仍未恢复到可直接用的实时口径。
+
+### 2026-05-29 14:02
+- 观察：用户追问“为什么最近流量里有很多新加坡访问，但 GSC 又没有”，因此本轮必须按实时任务重跑四端，不允许继续沿用 `2026-05-25` 的旧口径。重点不是单纯看总量，而是要判断“新加坡流量”究竟来自搜索、其他渠道，还是噪音请求。
+- 当前情况分析：
+  - 站点可用性：`DONE`，`https://sts2guide.com/` 返回 `HTTP 200`（`2026-05-29 13:41 CST`）。
+  - Vercel 脚本采集：`BLOCKED`。`node scripts/monitor-vercel.mjs` 成功落盘 `ops-logs/vercel/2026-05-29/2026-05-29T05-41-56-032Z.json`，但 API 返回 `403 You don't have permission to access this resource`，因此改为浏览器登录态补采。
+  - Vercel 浏览器补采（`Last 24 Hours / Production`，时间范围可见 `May 28, 14:00 - May 29, 13:59`）：`97 Visitors (+24%) / 123 Page Views (+19%) / Bounce Rate 88% (-2%) / Online 10`。Top Pages=`/cards 47`、`/ 6`、`/news/slay-the-spire-2-known-issues-and-fixes 4`、`/cards/accelerant 3`、`/news/slay-the-spire-2-steam-deck-performance-guide 3`、`/builds 2`。Referrers 仅见 `google.com 19`、`search.brave.com 2`。Countries=`Singapore 76%`、`United States 15%`、`Canada 2%`、`Switzerland 1%`、`China 1%`。Devices=`Desktop 93% / Mobile 7%`。OS=`Windows 90% / iOS 5% / Android 2% / GNU/Linux 2% / Mac 1%`。
+  - GSC（3 个月 / Web，更新时间约 `4.5 小时前`）：`1170 clicks / 8.77万 impressions / 1.3% CTR / 8.8 Avg position`。对比 `2026-05-25` 的 `1300 / 9.51万 / 1.4% / 8.8`：点击约 `-10%`，展现约 `-8%`，CTR 轻微回落，平均排名持平。
+  - GSC 国家/地区（3 个月 / Web）：Top 国家为 `美国 461 / 41,960`、`英国 85 / 5,202`、`加拿大 84 / 6,488`、`德国 60 / 2,732`、`澳大利亚 54 / 4,191`、`荷兰 32 / 2,023`；当前前 10 可见列表里 `新加坡 26 / 1,486`。这说明 Google Search 确实有少量新加坡搜索点击，但量级远低于 Vercel 访问层的 `Singapore 76%`。
+  - Google Trends（US / 过去 12 个月 / Web Search）：平均热度 `slay the spire 2 = 11`、`sts2 = 3`、`slay the spire 2 guide = 0`；最近周点位 `2026-05-24` 为 `21 / 10 / 0`。上升查询仍集中在 `regent`、`patch`、`cards`、`build guide` 这类具体意图词，没有出现与新加坡地域异常相关的趋势信号。
+  - Bing Webmaster（3 个月 / Search Performance）：`219 clicks / 13.8K impressions / 1.59% CTR`。Country 维度头部为 `United States 7.3K / 127`、`Rest of World 3.2K / 39`、`United Kingdom 968 / 17`、`Canada 839 / 9`、`Germany 478 / 8`、`France 347 / 6`、`People's Republic of China 245 / 6`。当前可见国家列表中未出现 Singapore。
+  - Vercel Singapore 过滤复查（`country=SG`，`Last 24 Hours / Production`）：过滤后 Pages 变为 `/cards 44`、`/cards/accelerant 3`、`/cards/adrenaline 2`、`/cards/aggression 2`、`/cards/anger 2`、`/cards/assassinate 2`、`/relics 2`；Referrers 区块显示 `No data for active filter`；Devices=`Desktop 100%`；Operating Systems=`Windows 100%`。
+- 原因判断（置信度高）：`Singapore 76%` 这一波访问大概率不是“真实搜索用户大规模增长”，而是以噪音/自动化请求为主、夹杂少量真实搜索点击。理由有四层：第一，GSC 虽然能看到 `新加坡 26 clicks / 1,486 impressions`，但这个量级和 Vercel 访问占比完全不匹配；第二，Bing 当前可见国家列表没有 Singapore，进一步说明主流搜索侧没有同步放大；第三，Vercel 过滤到 `SG` 后页面几乎被 `/cards` 和一串字母序 card detail 页吃满，Referrers 直接变成 `No data for active filter`；第四，这批流量设备和系统收敛到 `Desktop 100% / Windows 100%`，非常像抓取器、代理出口或某类自动化访问，而不像正常玩家流量。
+- 原因判断（置信度中高）：如果这批流量里混有真实用户，也更像“非 Google 搜索渠道的访问”而不是 SEO 增长。因为 GSC 和 Trends 都没有给出对应的新加坡需求抬升信号；本轮搜索侧反而是较 `2026-05-25` 小幅回落。
+- 建议动作：
+  - `P0` 后续关于 SEO 的国家判断继续以 `GSC/Bing` 为主，不把 `Vercel Singapore` 这类孤立地域高占比直接当成“真实新增市场”。
+  - `P0` 继续观察 `Vercel Countries + Devices + Top Pages` 组合。如果接下来几天仍维持 `Singapore 高占比 + Desktop/Windows 极端集中 + /cards 异常高浏览 + 高跳出`，可直接按噪音流量处理。
+  - `P1` 条件允许时补查 Vercel Bot/Firewall/请求日志口径，确认是否有抓取器、代理出口或第三方监控来源集中落在新加坡。
+  - `P1` 如后续还想再收紧归因，可补查更细粒度请求日志或 WAF/Bot 信号；但就搜索侧而言，GSC + Bing 已足够排除“Singapore 是新增搜索市场”。
+- 处理决定：
+  - `DONE` 先不对这批疑似脚本抓取流量做拦截或防火墙策略变更。
+  - `DONE` 从今天起，在后续流量统计、SEO 复盘和国家判断中，把 `Vercel Singapore` 高占比默认标记为“数据噪音风险”，除非未来 `GSC/Bing` 同步出现同量级新加坡搜索增长证据。
+- DONE / IN_PROGRESS / TODO / BLOCKED：
+  - `DONE`：历史核对；当日站点可用性验证；Vercel 浏览器登录态补采；GSC 总览与国家维度补采；Google Trends 当日补采；Bing Search Performance 与 Country 维度补采；Vercel `country=SG` 过滤复查。
+  - `IN_PROGRESS`：无。
+  - `TODO`：视需要补查 Vercel 更细粒度日志或防火墙来源。
+  - `BLOCKED`：Vercel API 仍 `403`。
+
 ### 2026-05-25 23:18
 - 观察：用户确认 Bing 和 Google Trends 当晚都可打开，因此补做四端完整复采，并重算今天的继续 / 止损判断，不能继续沿用 22:32 那版“平台阻塞下的临时结论”。
 - 当前情况分析：

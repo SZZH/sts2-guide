@@ -89,6 +89,12 @@ const CARD_TASK_FLOWS = [
   { href: '/guides/common-beginner-mistakes', label: 'Keep misplaying early card picks?', description: 'Jump into the beginner mistakes guide before adding more greed to your draft.' },
 ] as const;
 
+const CARD_DECISION_FLOWS = [
+  { href: '/patches', label: 'Cards to re-check after the current patch', description: 'Start with official patch notes before you trust an older card rating, route, or synergy call.' },
+  { href: '/builds', label: 'Use cards to pick a build path', description: 'Move from card lookup into the build hub when you need an actual archetype decision, not just raw card text.' },
+  { href: '/guides', label: 'Turn card text into play advice', description: 'Jump into current guides when card text is clear but your next run decision still is not.' },
+] as const;
+
 const CARD_RESULT_FLOWS = [
   { href: '/cards/hammer_time', label: 'Open a proven card route', description: 'Start with Hammer Time if you want an example of how a card page should connect into build decisions.' },
   { href: '/guides/ironclad-early-build', label: 'Need an Ironclad follow-up?', description: 'Turn damage cards and Forge payoffs into an actual early-game shell.' },
@@ -240,6 +246,21 @@ export default async function CardsPage({ searchParams }: CardsPageProps) {
               <div className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">Choose the next job, not just the next card</div>
               <div className="mt-2 grid gap-3 md:grid-cols-2">
                 {CARD_TASK_FLOWS.map((flow) => (
+                  <Link
+                    key={flow.href}
+                    href={flow.href}
+                    className="rounded-xl border border-border px-4 py-3 transition-colors hover:border-primary"
+                  >
+                    <div className="text-base font-bold text-foreground">{flow.label}</div>
+                    <p className="mt-1 text-sm text-muted-foreground">{flow.description}</p>
+                  </Link>
+                ))}
+              </div>
+            </div>
+            <div className="mt-4 rounded-xl border border-border bg-background/40 p-4">
+              <div className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">Most useful next clicks</div>
+              <div className="mt-2 grid gap-3 md:grid-cols-3">
+                {CARD_DECISION_FLOWS.map((flow) => (
                   <Link
                     key={flow.href}
                     href={flow.href}

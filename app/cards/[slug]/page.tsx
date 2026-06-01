@@ -21,6 +21,12 @@ type CardSeoOverride = {
   questionLinks: Array<{ href: string; label: string }>;
 };
 
+type NextStepLink = {
+  href: string;
+  label: string;
+  description: string;
+};
+
 const CARD_SEO_OVERRIDES: Record<string, CardSeoOverride> = {
   accelerant: {
     title: 'Accelerant Card Guide (Slay the Spire 2 Silent)',
@@ -238,6 +244,46 @@ function buildBackHref(from: string | undefined) {
   return normalized ? `/cards?${normalized}` : '/cards';
 }
 
+function getCharacterGuideHref(character: string) {
+  switch (character) {
+    case 'ironclad':
+      return '/guides/ironclad-early-build';
+    case 'silent':
+      return '/guides/silent-early-build';
+    case 'regent':
+      return '/guides/regent-stars-vs-forge-build-path';
+    case 'defect':
+      return '/guides/defect-early-build';
+    case 'necrobinder':
+      return '/guides/necrobinder-common-cards';
+    default:
+      return '/guides';
+  }
+}
+
+function buildDecisionLinks(card: (typeof CARDS)[number]): NextStepLink[] {
+  const characterLabel = getCardCharacterLabel(card.character);
+  const guideHref = getCharacterGuideHref(card.character);
+
+  return [
+    {
+      href: guideHref,
+      label: `Open ${characterLabel} build guide`,
+      description: `Use a real ${characterLabel} guide to see whether ${card.name} belongs in your current route or is still too early to force.`,
+    },
+    {
+      href: '/patches',
+      label: 'Check current patch notes',
+      description: `Verify whether the active v0.105.1 / v0.105.0 patch cycle changed the assumptions around ${card.name}, its package, or this character pool.`,
+    },
+    {
+      href: `/cards/character/${card.character}`,
+      label: `Browse all ${characterLabel} cards`,
+      description: `Compare ${card.name} against the rest of the ${characterLabel} pool before you lock in your next pick or cut.`,
+    },
+  ];
+}
+
 export default async function CardDetailPage({
   params,
   searchParams,
@@ -255,6 +301,7 @@ export default async function CardDetailPage({
 
   const backHref = buildBackHref(search.from);
   const seoOverride = CARD_SEO_OVERRIDES[card.slug];
+  const decisionLinks = buildDecisionLinks(card);
 
   const relatedCards = CARDS.filter((entry) => {
     if (entry.slug === card.slug) return false;
@@ -371,6 +418,22 @@ export default async function CardDetailPage({
             </section>
 
             <section className="rounded-2xl border border-border bg-background/55 p-6">
+              <h2 className="font-heading text-2xl font-bold mb-4">Turn This Card Into A Run Decision</h2>
+              <div className="space-y-3">
+                {decisionLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="block rounded-xl border border-border px-4 py-4 transition-colors hover:border-molten-orange"
+                  >
+                    <div className="font-semibold text-foreground">{link.label}</div>
+                    <p className="mt-2 text-sm leading-7 text-muted-foreground">{link.description}</p>
+                  </Link>
+                ))}
+              </div>
+            </section>
+
+            <section className="rounded-2xl border border-border bg-background/55 p-6">
               <h2 className="font-heading text-2xl font-bold mb-4">Best Next Read</h2>
               <div className="flex flex-col gap-3 text-sm">
                 <Link href={backHref} className="text-molten-orange transition-colors hover:text-ember-glow">
@@ -384,6 +447,12 @@ export default async function CardDetailPage({
                   className="text-molten-orange transition-colors hover:text-ember-glow"
                 >
                   Browse all {getCardCharacterLabel(card.character)} cards
+                </Link>
+                <Link href="/patches" className="text-molten-orange transition-colors hover:text-ember-glow">
+                  Re-check the current patch hub before trusting older card heuristics
+                </Link>
+                <Link href={getCharacterGuideHref(card.character)} className="text-molten-orange transition-colors hover:text-ember-glow">
+                  Open the matching {getCardCharacterLabel(card.character)} guide
                 </Link>
                 <Link href="/characters" className="text-molten-orange transition-colors hover:text-ember-glow">
                   Compare the full character roster
