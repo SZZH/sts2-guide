@@ -199,6 +199,195 @@ export interface NewsArticle {
 
 export const NEWS_ARTICLES: NewsArticle[] = [
   {
+    slug: 'slay-the-spire-2-beta-patch-v0-106-0-v0-106-1-hotfix',
+    title: 'Slay the Spire 2 v0.106.0 Beta Patch and v0.106.1 Hotfix: Enemy Reworks, Aeonglass Fixes, and Bestiary Follow-Through',
+    excerpt:
+      'Official v0.106.0 beta notes rework Infested Prism, continue Skulking Colony and Aeonglass tuning, and move several class cards and relics, while v0.106.1 follows with a very small Aeonglass-related hotfix.',
+    date: '2026-05-23',
+    category: 'Analysis',
+    readTime: '10 min',
+    featured: true,
+    image: 'https://clan.fastly.steamstatic.com/images/44971832/d356154903784c0317d29d7925f22908a1cccfb1.gif',
+    url: 'https://store.steampowered.com/news/app/2868840/view/670617878982033685',
+    source: 'Steam News',
+    sourceType: 'internal',
+    updatedAt: '2026-06-02',
+    intro: [
+      'v0.106.0 is the new current beta anchor. Mega Crit pushed enemy balance much harder here: Infested Prism is reworked, Skulking Colony gets another round of changes, Aeonglass gets move and Wither adjustments, and multiple class cards move enough that old build assumptions need a fresh pass.',
+      'v0.106.1 is a true hotfix, not a separate strategy reset. Its practical role is to clean up Aeonglass and Wither-state issues, plus a small localization update. Read it as stability follow-through on top of v0.106.0 rather than as a second major patch.',
+    ],
+    sections: [
+      {
+        heading: 'Official source of truth: v0.106.0 is the live beta conversation now',
+        paragraphs: [
+          'The big shift is not a single buff or nerf. Mega Crit kept pushing on encounter readability and enemy pacing: Infested Prism is reworked, Aeonglass gets another set of changes, Skulking Colony keeps evolving, and several class tools move enough that current build language should stop centering v0.105.x.',
+          'That matters for the site because players searching patch notes, build guides, and card context now need the current beta scope to start at v0.106.0 with the tiny v0.106.1 hotfix layered on top.',
+        ],
+        bullets: [
+          'Current beta scope: v0.106.1 hotfix on top of v0.106.0 beta',
+          'Enemy focus: Infested Prism rework, Skulking Colony follow-up, Aeonglass move and Wither changes',
+          'Decision focus: retest cards, builds, and encounter reads before carrying v0.105 assumptions forward',
+        ],
+      },
+      {
+        heading: 'What changed enough to matter in v0.106.0',
+        paragraphs: [
+          'The most actionable official changes are spread across enemies and class toolkits. Silent gets the Follow Through -> Scare rename/rework plus Predator and Pounce movement. Regent gets Furnace, Minion Sacrifice, Sealed Throne, and Astral Pulse changes. Defect sees Fusion, Synthesis, and Shatter adjustments. Ironclad also gets meaningful touch-ups like Drum of Battle, Howl From Beyond, Entrench, and Unrelenting.',
+          'On the encounter side, Aeonglass is not frozen yet. Official notes call out adjusted moveset work plus a reworked Wither status and Withering Presence power. That means boss-read advice should stay cautious while players absorb the new timings.',
+        ],
+        bullets: [
+          'Silent: Scare, Predator, and Pounce are the quickest re-check points',
+          'Regent: Furnace, Minion Sacrifice, Sealed Throne, and Astral Pulse need fresh context',
+          'Defect: Fusion, Synthesis, and Shatter are not safe to leave on old ratings',
+        ],
+      },
+      {
+        heading: 'What v0.106.1 actually does',
+        paragraphs: [
+          'v0.106.1 is intentionally small. Official notes describe it as a quick hotfix with a couple of Aeonglass-related fixes and some localization updates.',
+          'The practical read is straightforward: if you are writing build or tier guidance, v0.106.1 should not become a dramatic new meta headline. It does, however, matter for any advice touching Aeonglass or Wither-state edge cases.',
+        ],
+        bullets: [
+          'Player can no longer upgrade Wither status cards',
+          'Wither status cards no longer stick in hand after unusual Retain interactions',
+          'Treat this as correctness cleanup, not a second full patch cycle',
+        ],
+      },
+      {
+        heading: 'Why Bestiary and roadmap language still matter here',
+        paragraphs: [
+          'v0.106.0 keeps building on the same broader direction called out in the May newsletter: slower beta cadence, more time for testers to absorb changes, and continued Bestiary expansion as a practical player reference.',
+          'That means the site should update fast on version facts, but keep strategy claims conservative until repeated runs confirm what the new enemy and card timings actually feel like.',
+        ],
+        bullets: [
+          'Patch hub should move immediately to v0.106.x language',
+          'Build guides should be re-checked where official cards actually changed',
+          'Tier calls should stay watchlist-first while encounter evidence catches up',
+        ],
+      },
+      {
+        heading: 'What this site should update now',
+        paragraphs: [
+          'The safe minimum update is to move homepage, patch hub, and news priority routing onto v0.106.0 / v0.106.1. The goal is freshness and correct decision routing, not a sweeping content rewrite.',
+          'Because this is still a controlled freshness sync rather than a new expansion phase, the right move is one current patch analysis page, one bug-fix page, one newsletter context page, and the smallest possible routing updates around them.',
+        ],
+        bullets: [
+          'Publish one current v0.106.0 / v0.106.1 patch analysis page',
+          'Update homepage, news hub, builds hub, and patch hub current-version language',
+          'Keep deeper build and tier conclusions conservative until more run evidence lands',
+        ],
+      },
+    ],
+    relatedLinks: [
+      { href: '/patches', label: 'Open the patch hub for the current v0.106 context' },
+      { href: '/builds', label: 'Re-check builds only after version facts are clear' },
+      { href: '/news/slay-the-spire-2-may-bug-fixes-main-branch', label: 'Separate main-branch bug fixes from beta balance notes' },
+      { href: '/news/slay-the-spire-2-neowsletter-may-2026', label: 'Read the May roadmap context behind this patch cycle' },
+      { href: '/news/slay-the-spire-2-beta-patch-v0-105-0-aeonglass-bestiary-hotfix', label: 'Compare the previous v0.105 patch cycle' },
+    ],
+  },
+  {
+    slug: 'slay-the-spire-2-may-bug-fixes-main-branch',
+    title: 'Slay the Spire 2 May Bug Fixes: Main Branch Stability Push After the Beta Cycle',
+    excerpt:
+      'Official May 30 bug-fix notes bring a large set of beta-branch fixes onto the main branch, with stability, controller, Linux, event, relic, and multiplayer corrections rather than a fresh balance reset.',
+    date: '2026-05-30',
+    category: 'Update',
+    readTime: '7 min',
+    featured: false,
+    image: 'https://clan.fastly.steamstatic.com/images/44971832/ss_c3db69efd984ef012ae85c5b426663720152f0a4.jpg',
+    url: 'https://store.steampowered.com/news/app/2868840/view/668366713382766475',
+    source: 'Steam News',
+    sourceType: 'internal',
+    updatedAt: '2026-06-02',
+    intro: [
+      'May Bug Fixes is not a new balance patch. Mega Crit explicitly frames it as a main-branch bug-fix push that brings many beta fixes over to the live branch.',
+      'That makes this page useful for troubleshooting and branch-status clarity: if a player is still on main branch, this is the note that tells you whether a crash, controller issue, Linux problem, or event bug may already be resolved.',
+    ],
+    sections: [
+      {
+        heading: 'Official source of truth: this is a stability pass, not a new meta pass',
+        paragraphs: [
+          'The main thing to get right is branch interpretation. These notes are about shipping fixes from beta into main, not announcing a fresh theorycrafting season.',
+          'That means the right use of this page is issue triage, branch clarity, and support routing before you start rewriting build advice.',
+        ],
+        bullets: [
+          'Branch meaning: main branch catches up on bug fixes from beta',
+          'Best use: troubleshooting, stability checks, and issue-status confirmation',
+          'Do not treat this page as a new balance headline by itself',
+        ],
+      },
+      {
+        heading: 'What players should check first',
+        paragraphs: [
+          'The official notes heavily emphasize general stability, controller behavior, Linux fixes, and navigation problems. There are also targeted corrections across Regent, Defect, relics, events, Ancients, and multiplayer.',
+          'For this site, the practical answer is to route affected players toward known-issues and patch pages before they assume an observed problem is still live.',
+        ],
+        bullets: [
+          'General: crashes, input/navigation, settings saves, reward-flow issues',
+          'Regent: Summon Forth ordering fix is directly relevant to current play clarity',
+          'Multiplayer: multiple state and connection issues received follow-up fixes',
+        ],
+      },
+    ],
+    relatedLinks: [
+      { href: '/news/slay-the-spire-2-known-issues-and-fixes', label: 'Check whether your issue is still active' },
+      { href: '/patches', label: 'Keep branch status separate from current beta balance notes' },
+      { href: '/news/slay-the-spire-2-beta-patch-v0-106-0-v0-106-1-hotfix', label: 'Read the current beta balance cycle next' },
+    ],
+  },
+  {
+    slug: 'slay-the-spire-2-neowsletter-may-2026',
+    title: 'Slay the Spire 2 Neowsletter May 2026: Bi-Weekly Beta Cadence, Bestiary Progress, and Community Signals',
+    excerpt:
+      'The official May 2026 Neowsletter confirms the shift to a bi-weekly beta cadence, explains why Bestiary expansion and stability are still central, and gives live community metrics that help frame what players are actually touching this month.',
+    date: '2026-05-23',
+    category: 'News',
+    readTime: '8 min',
+    featured: false,
+    image: 'https://clan.fastly.steamstatic.com/images/44971832/48f9ccd5b45cab13b6717c2522787349d39941fa.png',
+    url: 'https://store.steampowered.com/news/app/2868840/view/701016542742053855',
+    source: 'Steam News',
+    sourceType: 'internal',
+    updatedAt: '2026-06-02',
+    intro: [
+      'The May Neowsletter is not just community flavor. It confirms operational context behind the current patch cycle: Mega Crit says beta patches have moved to a bi-weekly cadence so testers can absorb changes and the team can ship less frantically.',
+      'It also reinforces two product directions that matter for this site: the Bestiary is growing as a practical reference tool, and recent beta work has been tilted toward stability, performance, and selective balance adjustments rather than nonstop meta whiplash.',
+    ],
+    sections: [
+      {
+        heading: 'Why this newsletter matters for update strategy',
+        paragraphs: [
+          'The key roadmap signal is cadence. If official patching is slower and more deliberate, the site should move quickly on version facts but avoid overstating every small follow-up fix as a new strategy age.',
+          'The newsletter also repeats the importance of Bestiary progress and reminds readers that recent beta work has centered on stability, performance, and the Doormaker-to-Aeonglass transition.',
+        ],
+        bullets: [
+          'Cadence: beta patches are now bi-weekly, not weekly',
+          'Feature direction: Bestiary is expanding as a more useful player reference',
+          'Current development emphasis: stability, performance, and selective balance follow-through',
+        ],
+      },
+      {
+        heading: 'What this tells us about player intent',
+        paragraphs: [
+          'The newsletter shares broad community metrics and character popularity context, but the bigger site-level implication is intent clustering: players are still looking for patch context, card and encounter reference, and practical tools rather than lore-heavy reading.',
+          'That lines up with the current on-site traffic pattern where cards, patch context, and build routing remain the most useful surfaces to strengthen.',
+        ],
+        bullets: [
+          'Use newsletter context to explain why patch and database pages stay central',
+          'Keep build and tier claims grounded in official facts plus run evidence',
+          'Treat community projects and stats mentions as context, not as replacement source-of-truth data',
+        ],
+      },
+    ],
+    relatedLinks: [
+      { href: '/news/slay-the-spire-2-beta-patch-v0-106-0-v0-106-1-hotfix', label: 'Read the current beta patch cycle' },
+      { href: '/patches', label: 'Open the patch hub for current version decisions' },
+      { href: '/cards', label: 'Use the card database alongside Bestiary-era patch reading' },
+      { href: '/news/slay-the-spire-neowsletter-march-2026', label: 'Compare the previous Neowsletter context' },
+    ],
+  },
+  {
     slug: 'slay-the-spire-2-beta-patch-v0-105-0-aeonglass-bestiary-hotfix',
     title: 'Slay the Spire 2 v0.105.1 Hotfix and v0.105.0 Beta Patch: Aeonglass, Bestiary, and Bi-Weekly Patching',
     excerpt: 'Official v0.105.0 beta notes replace Doormaker with Aeonglass, add the Bestiary shell, move toward bi-weekly beta patching, and v0.105.1 follows with Aeonglass and multiplayer divergence fixes.',

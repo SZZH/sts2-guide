@@ -8,7 +8,7 @@ import MobileFiltersPanel from '@/components/MobileFiltersPanel';
 export const metadata: Metadata = {
   title: 'Slay the Spire 2 Potions Reference for Builds and Patches',
   description:
-    'Reference every StS2 potion effect with v0.105.1 beta hotfix and v0.105.0 beta patch framing, with guidance on how each potion ties into builds, cards, characters, and patches.',
+    'Reference every StS2 potion effect with v0.106.1 hotfix and v0.106.0 beta patch framing, with guidance on how each potion ties into builds, cards, characters, and patches.',
   keywords: [
     'Slay the Spire 2 potions',
     'StS2 potion reference',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Slay the Spire 2 Potions Reference and Build Context',
-    description: 'Browse potion effects with v0.105.1 beta hotfix and v0.105.0 beta patch framing so every pick fits your build, character, and card decisions.',
+    description: 'Browse potion effects with v0.106.1 hotfix and v0.106.0 beta patch framing so every pick fits your build, character, and card decisions.',
   },
 };
 

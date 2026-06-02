@@ -50,6 +50,48 @@
   - `TODO`：补做 GSC 实时采集（前提是 `search.google.com` 链路恢复可用）。
   - `BLOCKED`：GSC 今日登录态直连 `ERR_CONNECTION_CLOSED`；Vercel API 脚本链路仍未恢复到可直接用的实时口径。
 
+### 2026-06-02 18:24
+- 观察：用户要求“开始吧，浏览器一定要用已经完成 google 登录的，不然拿不到一些平台的登录态”，因此今天这轮继续全部使用已登录 Chrome。执行前已核对 `00-dashboard.md`、`01-daily-log.md`、`NOW.md`，上一轮完整闭环停留在 `2026-06-01 18:02`，今天跨天后必须重跑四端监测，不能直接沿用昨天的数字。
+- 当前情况分析：
+  - 站点可用性：`DONE`，`https://sts2guide.com/` 返回 `HTTP 200`（`2026-06-02 17:51 CST`）。
+  - Vercel 浏览器登录态补采（`Last 7 Days / Production`，时间范围可见 `May 26, 13:00 - Jun 2, 13:59`）：`807 Visitors (+85%) / 1,164 Page Views (+44%) / Bounce Rate 83% (-1%)`。Top Pages=`/cards 341`、`/ 75`、`/builds 31`、`/guides 31`、`/news/slay-the-spire-2-steam-deck-performance-guide 29`、`/cards/hammer_time 23`、`/news/slay-the-spire-2-known-issues-and-fixes 21`。Referrers=`google.com 132`、`search.brave.com 6`、`bing.com 4`、`google.com.ua 1`。Countries=`Singapore 74%`、`United States 12%`、`People's Republic of China 2%`、`France 1%`、`United Kingdom 1%`。Devices=`Desktop 88% / Mobile 12%`。OS=`Windows 85% / iOS 7% / Android 5% / Mac 3% / GNU/Linux 1%`。
+  - GSC（3 个月 / Web，浏览器登录态恢复可用，更新时间约 `4 小时前`）：`1228 clicks / 9.44万 impressions / 1.3% CTR / 9.1 Avg position`。Top 查询可见样本：`sts2 guide (135/1,144)`、`sts2 guides (32/174)`、`sts 2 guide (28/318)`、`hammer time slay the spire 2 (23/525)`、`slay the spire 2 guide (21/1,268)`、`slay the spire 2 hammer time (19/379)`。
+  - GSC 国家/地区（3 个月 / Web）：Top 国家为 `美国 489 / 46,001`、`加拿大 89 / 6,833`、`英国 88 / 5,513`、`德国 61 / 2,912`、`澳大利亚 58 / 4,433`、`荷兰 32 / 2,157`，`新加坡 26 / 1,555`。这说明 Google Search 的确有少量新加坡搜索流量，但量级远远撑不起 Vercel 的 `Singapore 74%`。
+  - Bing Webmaster（3 个月 / Search Performance）：`219 clicks / 13.8K impressions / 1.58% CTR`。Top query 仍由高意图词支撑：`slay the spire 2 guide (295/32/10.85%/2.97)`、`slay the spire 2 tips (101/11/10.89%/3.30)`、`slay the spire 2 strategies (33/5/15.15%/2.82)`、`slay the spire 2 build guide (25/4/16.00%/3.68)`、`sts2 guide (19/6/31.58%/4.00)`。Country 维度头部为 `United States 7.3K / 127`、`Rest of World 3.2K / 39`、`United Kingdom 985 / 17`、`Canada 839 / 9`、`Germany 479 / 8`、`France 347 / 6`、`People's Republic of China 245 / 6`，当前可见国家列表中仍未出现 Singapore。
+  - Google Trends（US / 过去 12 个月 / Web Search）：平均热度 `slay the spire 2 = 12`、`sts2 = 3`、`slay the spire 2 guide = 0`；最新周点位 `2026-05-31` 为 `18 / 9 / 0`。上升查询里，主词侧可见 `slay the spire 2 the regent`、`slay the spire 2 patch notes`；`sts2` 侧可见 `sts2 cards`、`sts2 patch`、`sts2 defect`；`slay the spire 2 guide` 侧可见 `slay the spire 2 regent guide`、`slay the spire 2 tier list`、`slay the spire strategy guide`。
+  - 官方动态：`DONE`。Steam News Hub 当前最新可复核公告为 `May Bug Fixes`（`2026-05-30`）、`The Neowsletter - May 2026`（`2026-05-23`）、`Beta Hotfix Patch Notes - v0.106.1`（`2026-05-23`）、`Beta Patch Notes - v0.106.0`（`2026-05-22`）。仓库当前未检索到 `v0.106` / `May Bug Fixes` / `The Neowsletter - May 2026` 的同步痕迹，说明今天已出现“比站内更新的官方口径未同步”。
+- 原因判断（置信度高）：cards 承接优化上线后的第一轮监测，更像“入口流量继续上升”而不是“二跳已经明显变好”。`/cards` 从昨天的 `258` 抬到 `341`，说明 cards 入口确实继续吸量；但 `/builds` 和 `/guides` 仍各自停在 `31`，没有出现同步抬升，所以现在还不能说 cards 优化已经把更多用户顺利送进第二层承接页。
+- 原因判断（置信度高）：新加坡异常访问仍然主要存在于访问层，不存在于搜索层。GSC 今日恢复后，Country 维度只有 `新加坡 26 / 1,555`；Bing Country 维度仍无 Singapore；Google Trends 也没有地域异常信号。这与 Vercel 的 `Singapore 74% + Desktop 88% + Windows 85% + /cards 341` 明显不匹配，因此继续把这波 SG 流量视为“访问层噪音风险”是成立的。
+- 原因判断（置信度中高）：真实搜索需求没有塌，且继续往具体意图词收口。Bing 与 Trends 仍然稳定指向 `regent / patch / cards / build guide / tier list` 这条链，所以当前最合理的策略仍然是继续观察现有页承接，而不是开新路由或重新扩量。
+- 原因判断（置信度高）：不过“继续观察”现在不能凌驾于官方内容时效之上。因为 Steam 官方已经发布了 `v0.106.0 / v0.106.1 / May Bug Fixes / May Neowsletter`，而站内还停在 `v0.105.x`。按内容站持续更新规则，今天的优先级已经从“纯监测”切换成“先做最小时效同步，再继续监测”。
+- 建议动作：
+  - `P0` 先同步官方 `v0.106.0 / v0.106.1 / May Bug Fixes / May Neowsletter` 到站内 patch/news 承接页，避免站内当前版本口径过时。
+  - `P0` 同步完成后继续 cards 承接优化后的监测窗口，观察 `/cards` 抬升后 `/builds`、`/guides`、`/patches` 是否在未来 `T+3 / T+7` 真正跟着抬起来。
+  - `P0` 继续把 `Vercel Singapore` 当成噪音观察项，而不是新增市场信号；国家判断仍以 `GSC + Bing` 为主。
+  - `P1` 同步后补 `IndexNow` 与相关承接页内链，继续保持最小动作面。
+- DONE / IN_PROGRESS / TODO / BLOCKED：
+  - `DONE`：执行前历史核对；当日站点可用性验证；Vercel 浏览器登录态补采；GSC 主指标与国家维度补采；Bing Search Performance 与 Country 维度补采；Google Trends 当日补采。
+  - `IN_PROGRESS`：无。
+  - `TODO`：执行官方 `v0.106.x` 与 `May Bug Fixes / May Neowsletter` 的最小时效同步；继续观察 cards 承接优化的 `T+3 / T+7` 信号。
+  - `BLOCKED`：无新增平台阻塞；今天 GSC 已恢复可达，Vercel API 仍未作为主要证据链使用。
+
+### 2026-06-02 19:12
+- 观察：基于同一轮已登录 Chrome 官方巡检结果，本轮直接执行最小时效同步，不虚构任何补丁影响，只写入 Steam 官方已确认内容，并优先更新当前版本入口页而不是扩新结构。
+- 已完成：
+  - `DONE` 新增 3 篇官方 news 数据：`v0.106.0 / v0.106.1 hotfix`、`May Bug Fixes`、`The Neowsletter - May 2026`，全部带真实 Steam 原文链接。
+  - `DONE` 更新 `首页 / news / patches / builds / tier-lists / cards / characters / mechanics / relics / potions / sitemap` 的当前版本口径到 `v0.106.1 / v0.106.0`。
+  - `DONE` `pnpm lint` 通过（0 errors，4 个既有 warnings）。
+  - `DONE` `pnpm build` 通过，成功生成 `814` 个页面；3 篇新 news 页进入 SSG 输出。
+  - `DONE` 本地浏览器验收通过：`/`、`/news`、`/patches`、`/news/slay-the-spire-2-beta-patch-v0-106-0-v0-106-1-hotfix` 均命中最新 `v0.106.x` 文案与官方链接。
+- 当前情况分析：
+  - 这轮不是新一波 SEO 扩量，而是把站内“当前版本口径仍停留在 v0.105.x”的时效风险补平。
+  - 监测信号本身没有被推翻：`/cards` 依旧是最强入口，后续仍应观察它能否把流量送进 `/builds / guides / patches`。
+- 原因判断（置信度高）：今天最值得做的不是继续调承接，而是先把官方版本口径补齐。否则用户和搜索引擎都会看到一个“监测做得很勤，但当前版本信息落后”的站。
+- 下一步：
+  - `P0` 提交并推送 `main`，等待 Vercel 自动部署。
+  - `P0` 部署完成后验证正式域名 `首页 / news / patches / 新 v0.106 news 页` 是否全部命中新文案。
+  - `P1` 恢复到观察窗，继续盯 `/cards` 抬升后 `/builds`、`/guides`、`/patches` 的承接变化。
+
 ### 2026-05-29 14:02
 - 观察：用户追问“为什么最近流量里有很多新加坡访问，但 GSC 又没有”，因此本轮必须按实时任务重跑四端，不允许继续沿用 `2026-05-25` 的旧口径。重点不是单纯看总量，而是要判断“新加坡流量”究竟来自搜索、其他渠道，还是噪音请求。
 - 当前情况分析：

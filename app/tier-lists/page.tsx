@@ -1,19 +1,19 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
-const currentVersion = 'v0.105.1 / v0.105.0 beta';
+const currentVersion = 'v0.106.1 / v0.106.0 beta';
 
 export const metadata: Metadata = {
-  title: 'Slay the Spire 2 Tier List & Tier Lists | v0.105.1 / v0.105.0 Beta',
+  title: 'Slay the Spire 2 Tier List & Tier Lists | v0.106.1 / v0.106.0 Beta',
   description:
-    'Use the Slay the Spire 2 tier list hub for patch-aware tier lists covering characters, beginner stability, archetypes, cards, relics, builds, and the current v0.105.1 / v0.105.0 beta patch cycle.',
+    'Use the Slay the Spire 2 tier list hub for patch-aware tier lists covering characters, beginner stability, archetypes, cards, relics, builds, and the current v0.106.1 / v0.106.0 beta patch cycle.',
   alternates: {
     canonical: '/tier-lists',
   },
   openGraph: {
     title: 'Slay the Spire 2 Tier List & Tier Lists',
     description:
-      'Character, beginner, archetype, card, relic, build, and patch-aware tier guidance for Slay the Spire 2 with conservative recommendations tied to the current v0.105.1 / v0.105.0 beta cycle.',
+      'Character, beginner, archetype, card, relic, build, and patch-aware tier guidance for Slay the Spire 2 with conservative recommendations tied to the current v0.106.1 / v0.106.0 beta cycle.',
   },
 };
 
@@ -22,7 +22,7 @@ const heroLinks = [
   { label: 'Cards', href: '/cards' },
   { label: 'Relics', href: '/relics' },
   { label: 'Patch notes', href: '/patches' },
-  { label: 'Latest beta patch', href: '/news/slay-the-spire-2-beta-patch-v0-105-0-aeonglass-bestiary-hotfix' },
+  { label: 'Latest beta patch', href: '/news/slay-the-spire-2-beta-patch-v0-106-0-v0-106-1-hotfix' },
 ];
 
 const sectionData = [
@@ -68,7 +68,7 @@ const sectionData = [
     calls: [
       { label: 'Starter builds', href: '/builds' },
       { label: 'Character card primers', href: '/cards' },
-      { label: 'Latest beta notes', href: '/news/slay-the-spire-2-beta-patch-v0-105-0-aeonglass-bestiary-hotfix' },
+      { label: 'Latest beta notes', href: '/news/slay-the-spire-2-beta-patch-v0-106-0-v0-106-1-hotfix' },
     ],
   },
   {
@@ -127,7 +127,7 @@ export default function TierListsPage() {
         <p className="text-lg text-slate-200">
           Use this Slay the Spire 2 tier list page as a current-patch index for tier lists by hero strength, new
           player stability, archetype resilience, card decisiveness, and retest priority. Each section points back to
-          builds, cards, relics, patches, or the latest v0.105 beta notes so you finish with a decision instead of a
+          builds, cards, relics, patches, or the latest v0.106 beta notes so you finish with a decision instead of a
           flat ranking.
         </p>
         <nav aria-label="Tier list decision links" className="flex flex-wrap gap-3 text-sm">

@@ -96,6 +96,9 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ slu
   const isLaunchGuide = article.slug === 'slay-the-spire-2-launch-time-us-china';
   const isInternalArticle = article.sourceType === 'internal';
   const HIGH_INTENT_NEWS_SLUGS = new Set([
+    'slay-the-spire-2-beta-patch-v0-106-0-v0-106-1-hotfix',
+    'slay-the-spire-2-may-bug-fixes-main-branch',
+    'slay-the-spire-2-neowsletter-may-2026',
     'slay-the-spire-2-beta-patch-v0-105-0-aeonglass-bestiary-hotfix',
     'slay-the-spire-2-beta-patch-v0-104-0-analysis',
     'slay-the-spire-2-hotfix-patch-notes',
@@ -126,8 +129,16 @@ export default async function NewsDetailPage({ params }: { params: Promise<{ slu
   ];
   const updatedTodayLinks = [
     {
-      href: '/news/slay-the-spire-2-beta-patch-v0-105-0-aeonglass-bestiary-hotfix',
-      label: 'Current v0.105 beta patch notes',
+      href: '/news/slay-the-spire-2-beta-patch-v0-106-0-v0-106-1-hotfix',
+      label: 'Current v0.106 beta patch notes',
+    },
+    {
+      href: '/news/slay-the-spire-2-may-bug-fixes-main-branch',
+      label: 'May bug fixes on the main branch',
+    },
+    {
+      href: '/news/slay-the-spire-2-neowsletter-may-2026',
+      label: 'May Neowsletter roadmap context',
     },
     {
       href: '/news/slay-the-spire-2-beta-patch-v0-104-0-analysis',

@@ -3,21 +3,24 @@ import Link from 'next/link';
 import { NEWS_ARTICLES } from '@/shared/gameData';
 
 export const metadata: Metadata = {
-  title: 'Slay the Spire 2 Patch Notes v0.105.1 Beta Hotfix: Latest Updates and Build Impact',
+  title: 'Slay the Spire 2 Patch Notes v0.106.1 Hotfix + v0.106.0 Beta: Latest Updates and Build Impact',
   description:
-    'Read the current Slay the Spire 2 patch notes for the official v0.105.1 beta hotfix scope, then recheck builds, cards, relics, and tier lists that may have changed.',
+    'Read the current Slay the Spire 2 patch notes for the official v0.106.1 hotfix plus v0.106.0 beta scope, then recheck builds, cards, relics, and tier lists that may have changed.',
   alternates: {
     canonical: '/patches',
   },
   openGraph: {
-    title: 'Slay the Spire 2 Patch Notes v0.105.1 Beta Hotfix: Latest Updates and Build Impact',
+    title: 'Slay the Spire 2 Patch Notes v0.106.1 Hotfix + v0.106.0 Beta: Latest Updates and Build Impact',
     description:
-      'Read the current Slay the Spire 2 patch notes for the official v0.105.1 beta hotfix scope, then recheck builds, cards, relics, and tier lists that changed.',
+      'Read the current Slay the Spire 2 patch notes for the official v0.106.1 hotfix plus v0.106.0 beta scope, then recheck builds, cards, relics, and tier lists that changed.',
   },
 };
 
 const patchArticles = NEWS_ARTICLES.filter(
   (article) =>
+    article.slug === 'slay-the-spire-2-beta-patch-v0-106-0-v0-106-1-hotfix' ||
+    article.slug === 'slay-the-spire-2-may-bug-fixes-main-branch' ||
+    article.slug === 'slay-the-spire-2-neowsletter-may-2026' ||
     article.slug === 'slay-the-spire-2-beta-patch-v0-105-0-aeonglass-bestiary-hotfix' ||
     article.slug === 'slay-the-spire-2-beta-patch-v0-104-0-analysis' ||
     article.slug === 'slay-the-spire-2-steamdb-patch-tracker' ||
@@ -30,9 +33,14 @@ const patchArticles = NEWS_ARTICLES.filter(
 
 const impactCards = [
   {
-    href: '/news/slay-the-spire-2-beta-patch-v0-105-0-aeonglass-bestiary-hotfix',
+    href: '/news/slay-the-spire-2-beta-patch-v0-106-0-v0-106-1-hotfix',
     title: 'Latest Patch Notes',
     description: 'Start with the latest official beta patch read before changing your current build assumptions.',
+  },
+  {
+    href: '/news/slay-the-spire-2-may-bug-fixes-main-branch',
+    title: 'Main Branch Bug Fixes',
+    description: 'Separate live bug-fix rollout from beta balance changes before you overreact to one symptom.',
   },
   {
     href: '/news/slay-the-spire-2-steamdb-patch-tracker',
@@ -54,7 +62,7 @@ const impactCards = [
 const followUpRoutes = [
   {
     href: '/builds',
-    label: 'Re-check Slay the Spire 2 builds after v0.105.1',
+    label: 'Re-check Slay the Spire 2 builds after v0.106.1 / v0.106.0',
   },
   {
     href: '/cards',
@@ -91,7 +99,7 @@ const updatedAssets = [
   {
     href: '/cards',
     title: 'Cards database',
-    description: 'Confirm whether card roles, draft priorities, or named v0.105 beta watchlist cards changed.',
+    description: 'Confirm whether card roles, draft priorities, or named v0.106 beta watchlist cards changed.',
   },
   {
     href: '/relics',
@@ -131,9 +139,9 @@ export default function PatchesPage() {
           <div className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-molten-orange">
             Patch Notes
           </div>
-          <h1 className="font-heading text-4xl font-bold md:text-5xl">Slay the Spire 2 Patch Notes v0.105.1 Beta Hotfix</h1>
+          <h1 className="font-heading text-4xl font-bold md:text-5xl">Slay the Spire 2 Patch Notes v0.106.1 Hotfix + v0.106.0 Beta</h1>
           <p className="mt-4 max-w-3xl text-base leading-8 text-steel-blue">
-            Read the latest Slay the Spire 2 patch notes, hotfixes, and balance updates in one place. The current official beta scope is v0.105.1 on top of v0.105.0, so use this hub to decide which builds, cards, relics, and tier lists need a recheck.
+            Read the latest Slay the Spire 2 patch notes, hotfixes, and balance updates in one place. The current official beta scope is v0.106.1 on top of v0.106.0, with May bug fixes also landing on the main branch, so use this hub to decide which builds, cards, relics, and tier lists need a recheck.
           </p>
 
           <div className="mt-6 flex flex-wrap gap-3 text-sm text-steel-blue">
@@ -170,7 +178,7 @@ export default function PatchesPage() {
               href="/builds"
               className="rounded-full border border-molten-orange px-4 py-2 font-semibold text-molten-orange transition-colors hover:text-ember-glow"
             >
-              Builds after v0.105.1
+              Builds after v0.106.1 / v0.106.0
             </Link>
             <Link
               href="/cards"

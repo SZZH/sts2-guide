@@ -8,7 +8,7 @@ import MobileFiltersPanel from '@/components/MobileFiltersPanel';
 export const metadata: Metadata = {
   title: 'Slay the Spire 2 Relics: Relic List, Database, and Patch Links',
   description:
-    'Browse the Slay the Spire 2 relics database and relic list by rarity, character, and keyword, with links to builds, tier lists, patches, and the v0.105.1 beta hotfix plus v0.105.0 beta patch changes.',
+    'Browse the Slay the Spire 2 relics database and relic list by rarity, character, and keyword, with links to builds, tier lists, patches, and the v0.106.1 hotfix plus v0.106.0 beta patch changes.',
   keywords: [
     'Slay the Spire 2 relics',
     'Slay the Spire 2 relic database',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Slay the Spire 2 Relics Database and Relic List',
-    description: 'Browse Slay the Spire 2 relic effects with links to builds, tier lists, patches, and current v0.105.1 beta hotfix plus v0.105.0 beta patch context.',
+    description: 'Browse Slay the Spire 2 relic effects with links to builds, tier lists, patches, and current v0.106.1 hotfix plus v0.106.0 beta patch context.',
   },
 };
 

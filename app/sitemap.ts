@@ -112,6 +112,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     (article) => !archivedNewsSlugs.has(article.slug)
   ).map((article) => {
     const isPriorityHotfix =
+      article.slug === 'slay-the-spire-2-beta-patch-v0-106-0-v0-106-1-hotfix' ||
+      article.slug === 'slay-the-spire-2-may-bug-fixes-main-branch' ||
+      article.slug === 'slay-the-spire-2-neowsletter-may-2026' ||
       article.slug === 'slay-the-spire-2-beta-patch-v0-105-0-aeonglass-bestiary-hotfix' ||
       article.slug === 'slay-the-spire-2-beta-patch-v0-104-0-analysis' ||
       article.slug === 'slay-the-spire-2-hotfix-patch-notes' ||

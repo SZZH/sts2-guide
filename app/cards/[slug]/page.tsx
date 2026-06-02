@@ -274,7 +274,7 @@ function buildDecisionLinks(card: (typeof CARDS)[number]): NextStepLink[] {
     {
       href: '/patches',
       label: 'Check current patch notes',
-      description: `Verify whether the active v0.105.1 / v0.105.0 patch cycle changed the assumptions around ${card.name}, its package, or this character pool.`,
+      description: `Verify whether the active v0.106.1 / v0.106.0 patch cycle changed the assumptions around ${card.name}, its package, or this character pool.`,
     },
     {
       href: `/cards/character/${card.character}`,

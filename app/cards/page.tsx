@@ -222,7 +222,7 @@ export default async function CardsPage({ searchParams }: CardsPageProps) {
             <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground">Card database</p>
             <h2 className="text-2xl font-bold mt-1">Slay the Spire 2 Cards Database and Card List</h2>
             <p className="mt-2 text-base text-muted-foreground">
-              Browse {CARDS.length} Slay the Spire 2 cards with searchable card text, costs, keywords, rarities, and character pools, all framed around the current v0.105.1 / v0.105.0 Early Access watchlist.
+              Browse {CARDS.length} Slay the Spire 2 cards with searchable card text, costs, keywords, rarities, and character pools, all framed around the current v0.106.1 / v0.106.0 Early Access watchlist.
             </p>
             <p className="mt-1 text-sm text-muted-foreground">
               This Slay the Spire 2 cards hub is meant to do more than answer “what does this card do?” Use it to find the card fast, then keep moving into builds, guides, and patch follow-up once you know what needs a retest.

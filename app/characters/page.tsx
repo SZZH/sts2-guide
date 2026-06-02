@@ -77,8 +77,8 @@ const QUICK_PICKS = [
 
 const PATCH_CALLOUTS = [
   {
-    title: 'v0.105.1 beta hotfix + v0.105.0 beta patch changed what to retest first',
-    body: 'Use the current patch hub before assuming old role advice is still valid, especially for Ironclad routes, Regent Blade lines, Ancient pacing, and any role that shifted again after the hotfix.',
+    title: 'v0.106.1 hotfix + v0.106.0 beta patch changed what to retest first',
+    body: 'Use the current patch hub before assuming old role advice is still valid, especially for enemy-read routes, Regent Blade lines, Defect orb timing, and any role that shifted again after the latest beta cycle.',
     href: '/patches',
   },
   {
@@ -154,7 +154,7 @@ export default async function CharactersPage({ searchParams }: CharactersPagePro
     {
       href: '/builds',
       title: 'Build Guides',
-      subtitle: 'Current archetypes and character plans for the v0.105.1 beta hotfix and v0.105.0 beta patch watchlist.',
+      subtitle: 'Current archetypes and character plans for the v0.106.1 hotfix and v0.106.0 beta patch watchlist.',
     },
     {
       href: '/patches',
