@@ -199,6 +199,82 @@ export interface NewsArticle {
 
 export const NEWS_ARTICLES: NewsArticle[] = [
   {
+    slug: 'slay-the-spire-2-beta-patch-v0-107-0-stability-and-defect-update',
+    title: 'Slay the Spire 2 Beta Patch v0.107.0: Stability First, Defect Animation, and the New Current Beta Anchor',
+    excerpt:
+      'Official v0.107.0 beta notes are now the active patch anchor, with a smaller balance pass, a large stability and QoL push, Defect animation work, and a clear signal that older v0.106 build assumptions need a fresh retest rather than blind carryover.',
+    date: '2026-06-04',
+    category: 'Analysis',
+    readTime: '9 min',
+    featured: true,
+    image: 'https://clan.fastly.steamstatic.com/images/44971832/96250518646cf2f0fecc834de558fd06e1f23d56.gif',
+    url: 'https://store.steampowered.com/news/app/2868840/view/714529243732640389',
+    source: 'Steam News',
+    sourceType: 'internal',
+    updatedAt: '2026-06-09',
+    intro: [
+      'v0.107.0 is now the current beta anchor. Mega Crit describes it as a smaller patch focused on stability groundwork for eventually moving the beta branch toward main, which means the headline is not “new meta solved” but “version facts moved again, and a few balance plus usability changes are now the live conversation.”',
+      'That is enough to force a site-level freshness sync. The safest read is to move patch, homepage, builds, and tier framing onto v0.107.0 immediately, then keep deeper build and tier claims conservative until repeated runs confirm what the new stability and timing changes actually feel like.',
+    ],
+    sections: [
+      {
+        heading: 'Official source of truth: v0.107.0 replaces v0.106.x as the current beta anchor',
+        paragraphs: [
+          'The key operational fact is simple: the current official beta scope is no longer v0.106.1 on top of v0.106.0. It is now v0.107.0.',
+          'That matters because current patch hubs, build summaries, and tier framing should always start from the newest official beta notes, even when the patch is intentionally stability-heavy rather than a giant balance reset.',
+        ],
+        bullets: [
+          'Current beta scope: v0.107.0',
+          'Patch posture: stability, performance, UI/UX/QoL, plus a smaller round of targeted balance changes',
+          'Site action: move current-version routing first, then retest specific build assumptions second',
+        ],
+      },
+      {
+        heading: 'What changed enough to matter in v0.107.0',
+        paragraphs: [
+          'Even though Mega Crit frames this as a smaller patch, the notes still include a practical retest list. Aeonglass changes again, Skulking Colony is buffed on high Ascension, The Boot now also works with Osty attacks, Juggernaut gets another bump, Monarch’s Gaze becomes cheaper, Reflect loses a point of Block on base, and Necrobinder gets help through Sic Em and The Scythe.',
+          'Those are not “rewrite the entire site” changes, but they are enough to invalidate any page still presenting v0.106 as the active decision layer.',
+        ],
+        bullets: [
+          'Enemy follow-up: Aeonglass and Skulking Colony still are not frozen',
+          'Relic/potion touchpoint: The Boot now matters more for Osty lines',
+          'Character touchpoints: Ironclad, Regent, and Necrobinder each receive concrete retest hooks',
+        ],
+      },
+      {
+        heading: 'Why the stability and UI pass matters anyway',
+        paragraphs: [
+          'The notes spend more space on crash prevention, state correctness, preview accuracy, controller and UI behavior, multiplayer fixes, and performance cleanup than on raw balance. That is useful information for players because many “is this patch changing my build?” questions are really bug-status or readability questions in disguise.',
+          'For the site, this means patch guidance should keep separating strategy changes from issue triage instead of flattening them into one undifferentiated update blob.',
+        ],
+        bullets: [
+          'Use v0.107.0 as a version and retest update, not as proof that every tier call needs rewriting',
+          'Keep known-issues and stability pages adjacent to patch coverage',
+          'Treat this patch as freshness-critical even if the meta shift is smaller than v0.106.0',
+        ],
+      },
+      {
+        heading: 'What this site should update now',
+        paragraphs: [
+          'The right minimum action is to publish one v0.107.0 current-patch analysis page and move homepage, builds hub, tier list hub, patch hub, and sitemap priority language onto the new version anchor.',
+          'That keeps the site factually current without overclaiming meta certainty we do not yet have.',
+        ],
+        bullets: [
+          'Publish one current v0.107.0 patch analysis page',
+          'Update homepage, builds, tier lists, patch hub, and news priority links to v0.107.0',
+          'Keep deeper build and tier takeaways watchlist-first until more run evidence lands',
+        ],
+      },
+    ],
+    relatedLinks: [
+      { href: '/patches', label: 'Open the patch hub for the current v0.107.0 context' },
+      { href: '/builds', label: 'Re-check builds only after the new version facts are clear' },
+      { href: '/tier-lists', label: 'Keep tier calls conservative while v0.107.0 settles' },
+      { href: '/news/slay-the-spire-2-beta-patch-v0-106-0-v0-106-1-hotfix', label: 'Compare the previous v0.106 beta cycle' },
+      { href: '/news/slay-the-spire-2-may-bug-fixes-main-branch', label: 'Keep main-branch bug fixes separate from current beta notes' },
+    ],
+  },
+  {
     slug: 'slay-the-spire-2-beta-patch-v0-106-0-v0-106-1-hotfix',
     title: 'Slay the Spire 2 v0.106.0 Beta Patch and v0.106.1 Hotfix: Enemy Reworks, Aeonglass Fixes, and Bestiary Follow-Through',
     excerpt:
