@@ -3,21 +3,22 @@ import Link from 'next/link';
 import { NEWS_ARTICLES } from '@/shared/gameData';
 
 export const metadata: Metadata = {
-  title: 'Slay the Spire 2 Patch Notes v0.107.0 Beta: Latest Updates and Build Impact',
+  title: 'Slay the Spire 2 Patch Notes v0.108.0 Beta: Latest Updates and Build Impact',
   description:
-    'Read the current Slay the Spire 2 patch notes for the official v0.107.0 beta scope, then recheck builds, cards, relics, and tier lists that may have changed.',
+    'Read the current Slay the Spire 2 patch notes for the official v0.108.0 beta scope, then recheck builds, cards, relics, and tier lists that may have changed.',
   alternates: {
     canonical: '/patches',
   },
   openGraph: {
-    title: 'Slay the Spire 2 Patch Notes v0.107.0 Beta: Latest Updates and Build Impact',
+    title: 'Slay the Spire 2 Patch Notes v0.108.0 Beta: Latest Updates and Build Impact',
     description:
-      'Read the current Slay the Spire 2 patch notes for the official v0.107.0 beta scope, then recheck builds, cards, relics, and tier lists that changed.',
+      'Read the current Slay the Spire 2 patch notes for the official v0.108.0 beta scope, then recheck builds, cards, relics, and tier lists that changed.',
   },
 };
 
 const patchArticles = NEWS_ARTICLES.filter(
   (article) =>
+    article.slug === 'slay-the-spire-2-beta-patch-v0-108-0-modding-multiplayer-and-current-beta-anchor' ||
     article.slug === 'slay-the-spire-2-beta-patch-v0-107-0-stability-and-defect-update' ||
     article.slug === 'slay-the-spire-2-beta-patch-v0-106-0-v0-106-1-hotfix' ||
     article.slug === 'slay-the-spire-2-may-bug-fixes-main-branch' ||
@@ -34,7 +35,7 @@ const patchArticles = NEWS_ARTICLES.filter(
 
 const impactCards = [
   {
-    href: '/news/slay-the-spire-2-beta-patch-v0-107-0-stability-and-defect-update',
+    href: '/news/slay-the-spire-2-beta-patch-v0-108-0-modding-multiplayer-and-current-beta-anchor',
     title: 'Latest Patch Notes',
     description: 'Start with the latest official beta patch read before changing your current build assumptions.',
   },
@@ -63,7 +64,7 @@ const impactCards = [
 const followUpRoutes = [
   {
     href: '/builds',
-    label: 'Re-check Slay the Spire 2 builds after v0.107.0',
+    label: 'Re-check Slay the Spire 2 builds after v0.108.0',
   },
   {
     href: '/cards',
@@ -140,9 +141,9 @@ export default function PatchesPage() {
           <div className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-molten-orange">
             Patch Notes
           </div>
-          <h1 className="font-heading text-4xl font-bold md:text-5xl">Slay the Spire 2 Patch Notes v0.107.0 Beta</h1>
+          <h1 className="font-heading text-4xl font-bold md:text-5xl">Slay the Spire 2 Patch Notes v0.108.0 Beta</h1>
           <p className="mt-4 max-w-3xl text-base leading-8 text-steel-blue">
-            Read the latest Slay the Spire 2 patch notes, hotfixes, and balance updates in one place. The current official beta scope is v0.107.0, with the previous v0.106 cycle and May main-branch bug fixes still useful as support context, so use this hub to decide which builds, cards, relics, and tier lists need a recheck.
+            Read the latest Slay the Spire 2 patch notes, hotfixes, and balance updates in one place. The current official beta scope is v0.108.0, with the previous v0.107 cycle and May main-branch bug fixes still useful as support context, so use this hub to decide which builds, cards, relics, and tier lists need a recheck.
           </p>
 
           <div className="mt-6 flex flex-wrap gap-3 text-sm text-steel-blue">
@@ -166,9 +167,9 @@ export default function PatchesPage() {
               <div className="mt-5">
                 <Link
                   href={`/news/${latestArticle.slug}`}
-                  className="inline-flex items-center rounded-lg bg-molten-orange px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-ember-glow"
-                >
-                  Read latest patch notes
+              className="inline-flex items-center rounded-lg bg-molten-orange px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-ember-glow"
+            >
+              Read latest patch notes
                 </Link>
               </div>
             </div>
@@ -179,7 +180,7 @@ export default function PatchesPage() {
               href="/builds"
               className="rounded-full border border-molten-orange px-4 py-2 font-semibold text-molten-orange transition-colors hover:text-ember-glow"
             >
-              Builds after v0.107.0
+              Builds after v0.108.0
             </Link>
             <Link
               href="/cards"

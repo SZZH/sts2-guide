@@ -10,17 +10,17 @@
 - `BLOCKED`：受阻（需注明原因）
 - `SKIP`：今日不做（需注明原因）
 
-## 今日状态（2026-06-09 22:43）
-- 站点可用性：`DONE`（`https://sts2guide.com/` 返回 `HTTP 200`，采集时间 `2026-06-09 22:35 CST`）
-- 流量总览（Vercel）：`DONE`（浏览器登录态补采，`Last 7 Days / Production`：`3,164 Visitors (+265%) / 9,054 Page Views (+623%) / Bounce Rate 32% (-50%)`；时间范围可见 `Jun 2, 22:00 - Jun 9, 22:59`；Top Pages=`/cards 1.5K`、`/cards/acrobatics 189`、`/cards/adaptive_strike 175`、`/cards/adrenaline 172`、`/cards/all_for_one 165`、`/cards/accuracy 164`、`/cards/abrasive 163`；Countries=`Singapore 94% / United States 2% / People's Republic of China 1%`；Devices=`Desktop 98% / Mobile 2%`；OS=`Windows 97% / iOS 1% / Android 1% / Mac 1%`；Top Referrers=`google.com 110`、`search.brave.com 8`、`bing.com 1`、`chatgpt.com 1`）
-- 搜索总览（GSC）：`DONE`（3 个月 / Web，浏览器登录态可达：`1,322 clicks / 102,984 impressions / 1.3% CTR / 9.2 Avg position`；Top queries=`sts2 guide 146/1,198`、`sts2 guides 32/177`、`sts 2 guide 31/336`、`hammer time slay the spire 2 28/547`、`slay the spire 2 guide 26/1,479`）
-- Bing 总览：`DONE`（3 个月 / Search Performance：`219 clicks / 13.8K impressions / 1.58% CTR`；当前首页口径与 `2026-06-02` 基本持平，仍由 `guide / tips / strategies / build guide` 等高意图词支撑）
-- 趋势总览（Google Trends）：`BLOCKED`（US / 过去 12 个月 / Web Search 页面报错“糟糕！出了点问题”，并显示 `无法连接到 reCAPTCHA 服务`，未获得当日可复核趋势口径）
-- 生产发布总览：`IN_PROGRESS`（本地 `lint + build` 已完成；待提交并推送 `main` 触发 Vercel 自动部署）
-- 线上结构验证：`DONE`（本轮新增 1 篇 `v0.107.0` news 页，并补入 `app/sitemap.ts` 高优先 URL）
-- 游戏动态总览：`DONE`（官方 Steam News RSS 最新可复核公告已推进到 `Beta Patch Notes - v0.107.0`（`2026-06-04`），站内已完成 `news / patches / 首页 / builds / tier-lists / sitemap` 的最小时效同步）
-- 外链发布总览：`SKIP`（今天没有新页面或新路由上线）
-- 社媒互动总览：`SKIP`（今天主线是监测复查，不是分发）
+## 今日状态（2026-07-07 16:51）
+- 站点可用性：`DONE`（`https://sts2guide.com/` 返回 `HTTP 200`，采集时间 `2026-07-07 16:46 CST`）
+- 流量总览（Vercel）：`DONE`（浏览器登录态补采，`Last 7 Days / Production`：`747 Visitors (-6%) / 1,087 Page Views (-7%) / Bounce Rate 86% (+2%)`；时间范围可见 `Jun 30, 16:00 - Jul 7, 16:59`；Top Pages=`/cards 544`、`/ 56`、`/builds 25`、`/guides 20`、`/news/slay-the-spire-2-known-issues-and-fixes 17`、`/characters 14`、`/guides/ironclad-early-build 13`；Countries=`Singapore 79% / United States 9% / People's Republic of China 3% / Germany 2% / United Kingdom 1%`；Devices=`Desktop 92% / Mobile 8% / Tablet <0.5%`；OS=`Windows 88% / Android 5% / iOS 4% / GNU/Linux 2% / Mac 2%`；Top Referrers=`google.com 78`、`duckduckgo.com 17`、`search.brave.com 5`、`ecosia.org 4`、`bing.com 3`）
+- 搜索总览（GSC）：`DONE`（3 个月 / Web，浏览器登录态可达：`1,181 clicks / 11万 impressions / 1.1% CTR / 9.1 Avg position`；Top queries=`sts2 guide 139/926`、`sts2 guides 39/155`、`slay the spire 2 guide 38/2,208`、`hammer time slay the spire 2 35/543`、`sts 2 guide 33/274`）
+- Bing 总览：`BLOCKED`（当前仅打开到未登录 `Bing Webmaster Tools` 公开介绍页，未拿到 `sts2guide.com` 当日 Search Performance / Index Coverage / Sitemap / URL Inspection 实时口径；不得复用 `2026-06-09` 历史值冒充今日结果）
+- 趋势总览（Google Trends）：`DONE`（US / 过去 12 个月 / Web Search：平均热度 `slay the spire 2 = 13`、`sts2 = 4`、`slay the spire 2 guide = 0`；近期周点位可见 `2026-07-05 = 14 / 9 / 0`；上升查询含 `regent slay the spire 2`、`the regent`、`slay the spire 2 patch notes`、`sts2 cards`、`sts2 tier list`、`slay the spire 2 regent guide`）
+- 生产发布总览：`IN_PROGRESS`（`v0.108.0` 最小时效同步代码已落地；`lint + build` 尚未完成有效验证，当前被 `pnpm install` 依赖下载超时阻塞）
+- 线上结构验证：`IN_PROGRESS`（已新增 `v0.108.0` news 数据并更新 `首页 / builds / patches / tier-lists / sitemap` 版本锚点；待 `lint + build` 成功后才可转 `DONE`）
+- 游戏动态总览：`DONE`（官方 Steam News RSS 最新可复核公告已推进到 `Beta Patch Notes - v0.108.0`（`2026-06-19`）；今天已识别出站内仍停留在 `v0.107.0` 的时效缺口）
+- 外链发布总览：`SKIP`（今天主线是监测与版本时效同步，不是分发）
+- 社媒互动总览：`SKIP`（今天主线不是社媒巡检）
 
 ## 闸门状态（当前批次）
 - 收录率 >= 60%：`90.0%（27/30，代理口径，待 URL Inspection 全量复核）`
@@ -30,19 +30,18 @@
 
 ## 今日异常
 - [ ] 无
-- [x] 有（Vercel 今日异常进一步放大到 `Singapore 94% + Desktop 98% + Windows 97%`，且流量几乎被 `/cards` 与大量 card detail 页批量吃满；但 GSC 仅小幅增长到 `1,322 clicks / 102,984 impressions`，Bing 仍维持 `219 / 13.8K` 量级，不支持“真实搜索同步爆发”的解释；Google Trends 今日则因 `reCAPTCHA` 服务错误无法补采）
+- [x] 有（Vercel 访问层仍呈现 `Singapore 79% + Desktop 92% + Windows 88% + /cards 544` 的异常结构；GSC 与 Trends 只支持“需求仍在，但偏具体 patch / regent / cards / tier list 意图”，不支持“真实搜索爆发”；Bing 今日实时口径则因未进入登录态数据页而缺失）
 
 ## 今日动作状态（必须完整）
-- `DONE`: 2026-06-09 22:35 执行前历史核对（`01-daily-log.md` + `00-dashboard.md`），确认上一轮完整闭环停留在 `2026-06-02 19:12`，今天跨天后必须重跑四端实时运维
-- `DONE`: 2026-06-09 22:35 正式域名可用性验证：`https://sts2guide.com/` 返回 `HTTP 200`
-- `DONE`: 2026-06-09 22:37 Vercel 浏览器登录态补采（`Last 7 Days / Production`：`3,164 Visitors / 9,054 PV / 32% Bounce`；Top Pages / Referrers / Countries / Devices / Operating Systems 已回填）
-- `DONE`: 2026-06-09 22:39 GSC 浏览器登录态补采（3 个月 / Web：`1,322 clicks / 102,984 impressions / 1.3% CTR / 9.2 Avg position`；Top queries 已回填）
-- `DONE`: 2026-06-09 22:40 Bing Webmaster Search Performance 补采（3 个月：`219 clicks / 13.8K impressions / 1.58% CTR`；当前口径与上一轮基本持平）
-- `BLOCKED`: 2026-06-09 22:40 Google Trends 实时采集失败，页面报错“糟糕！出了点问题”并显示 `无法连接到 reCAPTCHA 服务`（影响：今日趋势口径缺失）
-- `DONE`: 2026-06-09 22:41 官方动态巡检（Steam News RSS 最新可复核公告：`Beta Patch Notes - v0.107.0`（`2026-06-04`））
-- `DONE`: 2026-06-09 22:42 最小时效同步官方 `v0.107.0`：新增 1 篇 news 数据并更新 `首页 / patches / builds / tier-lists / sitemap`
-- `DONE`: 2026-06-09 22:43 `pnpm lint` 通过（0 errors，4 个既有 warnings）
-- `DONE`: 2026-06-09 22:43 `pnpm build` 通过，成功生成 `815` 个页面，`/news/slay-the-spire-2-beta-patch-v0-107-0-stability-and-defect-update` 进入 SSG 输出
+- `DONE`: 2026-07-07 16:46 执行前历史核对（`01-daily-log.md` + `00-dashboard.md`），确认上一轮完整闭环停留在 `2026-06-09 22:43`，今天跨天后必须重跑四端实时运维
+- `DONE`: 2026-07-07 16:46 正式域名可用性验证：`https://sts2guide.com/` 返回 `HTTP 200`
+- `DONE`: 2026-07-07 16:47 Vercel 浏览器登录态补采（`Last 7 Days / Production`：`747 Visitors / 1,087 PV / 86% Bounce`；Top Pages / Referrers / Countries / Devices / Operating Systems 已回填）
+- `DONE`: 2026-07-07 16:51 GSC 浏览器登录态补采（3 个月 / Web：`1,181 clicks / 11万 impressions / 1.1% CTR / 9.1 Avg position`；Top queries 已回填）
+- `DONE`: 2026-07-07 16:52 Google Trends 实时采集（US / 过去 12 个月 / Web Search：平均热度 `13 / 4 / 0`；`2026-07-05` 周点位 `14 / 9 / 0`；上升查询含 `regent slay the spire 2`、`slay the spire 2 patch notes`、`sts2 cards`、`sts2 tier list`、`slay the spire 2 regent guide`）
+- `BLOCKED`: 2026-07-07 16:53 Bing Webmaster 实时采集未完成：当前仅打开到未登录 `Bing Webmaster Tools` 公开介绍页，未进入 `sts2guide.com` 数据面板（影响：今日 Bing Search Performance / Index Coverage / Sitemaps / URL Inspection 口径缺失）
+- `DONE`: 2026-07-07 16:50 官方动态巡检（Steam 官方 RSS 最新可复核公告：`Beta Patch Notes - v0.108.0`（`2026-06-19`））
+- `DONE`: 2026-07-07 17:00 最小时效同步官方 `v0.108.0`：新增 1 篇 news 数据并更新 `首页 / patches / builds / tier-lists / sitemap` 当前版本锚点
+- `BLOCKED`: 2026-07-07 17:10 `CI=true pnpm lint` / `CI=true pnpm build` 未取得有效结果；`pnpm install` 在依赖下载阶段多次 `ECONNRESET` / error `23` 并最终超时中断（影响：今天无法证明本轮代码改动已完成本地构建验证）
 - `DONE`: 2026-06-02 17:51 执行前历史核对（`01-daily-log.md` + `00-dashboard.md` + `NOW.md`），确认上一轮完整闭环停留在 `2026-06-01 18:02`，今天跨天后必须重跑四端实时监测
 - `DONE`: 2026-06-02 17:51 正式域名可用性验证：`https://sts2guide.com/` 返回 `HTTP 200`
 - `DONE`: 2026-06-02 18:00 Vercel 浏览器登录态补采（`Last 7 Days / Production`：`807 Visitors / 1,164 PV / 83% Bounce`；Top Pages / Referrers / Countries / Devices / Operating Systems 已回填）
@@ -141,9 +140,11 @@
 - 决策编号：沿用 `DEC-20260508-01（采用量化 SEO 方案执行泛词骨架与长尾主攻）`
 - 决策编号：沿用 `DEC-20260508-02（SEO 关键词执行必须以数据证据为准）`
 - 决策编号：`DEC-20260525-01（30页验证批复盘后维持保守轻维护，不恢复投入）`
-- 今日判断：`2026-06-09` 这轮四端监测显示，Vercel 访问量从 `807 / 1,164` 暴涨到 `3,164 / 9,054`，但结构同时恶化到 `Singapore 94% + Desktop 98% + Windows 97% + cards detail 页批量吃满`。GSC 只从 `1,228` 小幅升到 `1,322 clicks`，Bing 基本持平，因此高置信度继续把这波暴涨视为“访问层噪音进一步放大”，而不是健康搜索增长。
-- 今日判断：Google Trends 今日未能补采成功，阻塞原因为页面直接提示 `无法连接到 reCAPTCHA 服务`。因此今天关于需求方向的补充判断只能继续参考 `GSC + Bing + 6月2日` 的最近有效趋势，而不能把历史 Trends 口径冒充成今天结果。
-- 今日判断：今天真正的新缺口不是 SEO 承接，而是内容时效。Steam 官方已在 `2026-06-04` 发布 `Beta Patch Notes - v0.107.0`，而仓库仍停在 `v0.106.x`，所以优先级已经从“只看监测”切到“先做最小时效同步”，这一步今天已完成并通过 `lint + build` 验证。
+- 今日判断：`2026-07-07` 这轮监测显示，Vercel 总量回落到 `747 / 1,087`，但结构仍然异常：`Singapore 79% + Desktop 92% + Windows 88% + /cards 544`。因此访问层噪音问题没有消失，今天依然不能把访问量直接解读成真实增长。
+- 今日判断：GSC 与 Google Trends 共同支持“真实需求仍在，但继续集中在 `guide / hammer time / regent / patch notes / cards / tier list` 这类具体意图词”，而不是出现一轮新的广谱爆发。
+- 今日判断：今天真正的新缺口仍然是内容时效。Steam 官方已在 `2026-06-19` 发布 `Beta Patch Notes - v0.108.0`，而站内仍停留在 `v0.107.0`，所以今天主线必须从“只看监测”切到“先做最小时效同步”。
+- 今日判断：Bing 今天未补到实时数据页，因此四端口径仍不完整。关于“整体搜索表现”的结论只能以 `GSC + Trends + Vercel` 为主，并明确保留 Bing 缺口，而不能把 `2026-06-09` 的历史 Bing 值冒充成今天结果。
+- 今日判断：`v0.108.0` 的最小时效同步代码已经落地，但今天尚不能说“代码闭环完成”，因为 `lint + build` 被依赖下载超时阻塞，验证证据不足。
 - 今日判断：`2026-06-02` 这轮四端监测表明，cards 承接优化上线后的第一天，`/cards` 入口继续抬升到 `341`，但 `/builds`、`/guides` 仍各自停在 `31`，说明“入口增强”已经吃到更多流量，但“第二跳显著改善”证据还不够，当前更适合继续观察而不是继续改代码。
 - 今日判断：GSC 今日恢复可达，且 Country 维度只有 `新加坡 26 / 1,555`；Bing Country 维度仍无 Singapore；Google Trends 也没有地域异常。这与 Vercel 的 `Singapore 74% + Desktop 88% + Windows 85% + /cards 341` 形成强烈反差，因此可以高置信度继续把这批新加坡访问视为“访问层噪音风险”，而不是新增搜索市场。
 - 今日判断：官方动态巡检确认的 `v0.106.0 / v0.106.1 / May Bug Fixes / May Neowsletter` 已完成最小时效同步，并通过 `lint + build + 本地浏览器验收`。因此今天主线从“监测发现缺口”推进到“代码与内容已闭环，待推送生产部署”。
@@ -152,6 +153,6 @@
 - 处理口径：暂不拦截；从后续统计开始，默认把 `Vercel Singapore` 高占比标记为“数据噪音风险”，除非 `GSC/Bing` 也出现同量级新加坡搜索增长。
 
 ## 明日优先事项（最多3个）
-- P0: 提交并推送 `main`，等待 Vercel 自动部署后验证正式域名 `首页 / news / patches / 新 v0.107 news 页`
-- P0: 部署完成后继续观察 `Vercel Top Pages`，重点看异常流量是否仍集中在 `/cards` 与字母序 card detail 页，而不是被误判为真实承接改善
-- P1: 视 Google Trends 是否恢复，再补跑趋势口径；若仍失败，保持 `BLOCKED` 并继续用 `GSC + Bing` 做搜索侧判断
+- P0: 重新跑通 `lint + build`，拿到 `v0.108.0` 最小时效同步的有效本地验证结果；若依赖下载仍抖，优先解决 `pnpm install` 网络超时
+- P0: 补完 `Bing Webmaster` 今日实时口径，至少拿到 `Search Performance + Sitemaps/Index Coverage` 的当日证据，完成四端闭环或明确新的登录态阻塞
+- P1: 若 `v0.108.0` 验证通过，提交并推送 `main`，再验正式域名 `首页 / builds / patches / 新 v0.108 news 页`

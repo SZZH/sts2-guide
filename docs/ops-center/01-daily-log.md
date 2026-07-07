@@ -42,6 +42,33 @@
   - `TODO`：提交并推送 `main`；部署后正式域名验收。
   - `BLOCKED`：Google Trends 今日 `reCAPTCHA` / 页面错误，未取得当日趋势口径。
 
+### 2026-07-07 17:10
+- 观察：今天跨天后的第一轮运维已经重跑到关键节点，且网络恢复后 `GSC` 与 `Google Trends` 都重新可达。但这轮结果把主线再次从“只看流量”拽回到了“先补版本时效”：Steam 官方 RSS 最新已推进到 `Beta Patch Notes - v0.108.0`（`2026-06-19`），而站内仍停留在 `v0.107.0`。
+- 当前情况分析：
+  - 站点可用性：`DONE`，`https://sts2guide.com/` 返回 `HTTP 200`（`2026-07-07 16:46 CST`）。
+  - Vercel 浏览器登录态补采（`Last 7 Days / Production`，时间范围可见 `Jun 30, 16:00 - Jul 7, 16:59`）：`747 Visitors (-6%) / 1,087 Page Views (-7%) / Bounce Rate 86% (+2%)`。Top Pages=`/cards 544`、`/ 56`、`/builds 25`、`/guides 20`、`/news/slay-the-spire-2-known-issues-and-fixes 17`、`/characters 14`、`/guides/ironclad-early-build 13`。Referrers=`google.com 78`、`duckduckgo.com 17`、`search.brave.com 5`、`ecosia.org 4`、`bing.com 3`。Countries=`Singapore 79%`、`United States 9%`、`People's Republic of China 3%`、`Germany 2%`、`United Kingdom 1%`。Devices=`Desktop 92% / Mobile 8% / Tablet <0.5%`。OS=`Windows 88% / Android 5% / iOS 4% / GNU/Linux 2% / Mac 2%`。
+  - GSC（3 个月 / Web，浏览器登录态恢复可达，更新时间约 `9 小时前`）：`1,181 clicks / 11万 impressions / 1.1% CTR / 9.1 Avg position`。Top 查询可见样本：`sts2 guide (139/926)`、`sts2 guides (39/155)`、`slay the spire 2 guide (38/2,208)`、`hammer time slay the spire 2 (35/543)`、`sts 2 guide (33/274)`、`hammer time sts2 (19/300)`。
+  - Google Trends（US / 过去 12 个月 / Web Search）：平均热度 `slay the spire 2 = 13`、`sts2 = 4`、`slay the spire 2 guide = 0`；最新周点位 `2026-07-05` 为 `14 / 9 / 0`。上升查询里，主词侧可见 `regent slay the spire 2`、`the regent`、`slay the spire 2 patch notes`；`sts2` 侧可见 `sts2 cards`、`sts2 tier list`、`sts2 regent`、`sts2 silent`、`sts2 relics`；`slay the spire 2 guide` 侧可见 `slay the spire 2 regent guide`、`slay the spire 2 the silent guide`、`slay the spire 2 tier list`。
+  - Bing Webmaster：`BLOCKED`。今天浏览器只能打开到 `Bing Webmaster Tools` 公开介绍页（`bing.com/webmasters/about?...`），没有进入 `sts2guide.com` 的登录态 performance 面板，所以未取得当日 `Search Performance / Index Coverage / Sitemaps / URL Inspection` 证据。
+  - 官方动态：`DONE`。Steam 官方 RSS 当前最新可复核公告已推进到 `Beta Patch Notes - v0.108.0`（`2026-06-19`）。这比站内当前 `v0.107.0` 口径更新，说明今天存在明确的内容时效缺口。
+- 已完成：
+  - `DONE` 历史核对、正式域名可用性验证、Vercel / GSC / Google Trends 当日补采。
+  - `DONE` 通过 Steam RSS 确认 `v0.108.0` 已成为最新官方 beta patch。
+  - `DONE` 新增 `/news/slay-the-spire-2-beta-patch-v0-108-0-modding-multiplayer-and-current-beta-anchor` 数据，并同步 `首页 / builds / patches / tier-lists / sitemap` 的当前版本锚点到 `v0.108.0`。
+- 原因判断（置信度高）：Vercel 访问层仍然不干净。虽然总量比 `2026-06-09` 低很多，但 `Singapore 79% + Desktop 92% + Windows 88% + /cards 544` 这组结构没有从根上变健康，所以今天仍然不能把访问量波动当成真实增长或真实下滑。
+- 原因判断（置信度高）：真实搜索需求没有崩，但继续收敛在更具体的 patch / regent / cards / tier list / hammer time 这类意图词上。GSC 与 Trends 同时支持这一点，所以现在最该做的不是扩量，而是保证当前版本口径准确、承接页不过时。
+- 原因判断（置信度高）：今天最紧急的缺口依然是内容时效，而不是 SEO 结构。只要官方 `v0.108.0` 已发布，站内还停在 `v0.107.0`，就不适合继续围绕“观察访问层噪音”原地打转。
+- 原因判断（置信度中高）：本轮代码改动还不能宣称闭环。不是代码先报错，而是 `CI=true pnpm lint` / `CI=true pnpm build` 都在 `pnpm install` 依赖下载阶段被大量 `ECONNRESET` / error `23` 拖慢，并最终超时中断。因此今天只能确认“改动已落地”，不能确认“本地构建验证已通过”。
+- 下一步：
+  - `P0` 重新跑通 `lint + build`，先解决 `pnpm install` 下载超时问题，再拿到 `v0.108.0` 最小时效同步的有效验证结果。
+  - `P0` 补 Bing Webmaster 当日实时口径；若仍只能到公开介绍页，则继续保持 `BLOCKED`，不得复用历史 Bing 结果冒充今天完成。
+  - `P1` 如果验证通过，再提交并推送 `main`，然后验正式域名 `首页 / builds / patches / 新 v0.108 news 页`。
+- DONE / IN_PROGRESS / TODO / BLOCKED：
+  - `DONE`：历史核对；当日站点可用性；Vercel / GSC / Google Trends 实时补采；Steam RSS 官方动态巡检；`v0.108.0` 最小时效同步代码落地。
+  - `IN_PROGRESS`：`v0.108.0` 本地验证（`lint + build`）重跑排障。
+  - `TODO`：补 Bing Webmaster 实时口径；验证通过后推送 `main` 并验正式域名。
+  - `BLOCKED`：Bing 未进入登录态数据面板；`pnpm install` 在依赖下载阶段超时，导致 `lint/build` 未取得有效结果。
+
 ### 2026-05-26 00:06
 - 观察：用户确认“不是完全不调，而是顺着 patch / regent / tier list / build guide 这几个具体意图做最小补强”，因此本轮执行目标从“只给计划”转为“直接落代码、测试、发布”。
 - 已完成：

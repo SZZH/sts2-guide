@@ -1,19 +1,19 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
-const currentVersion = 'v0.107.0 beta';
+const currentVersion = 'v0.108.0 beta';
 
 export const metadata: Metadata = {
-  title: 'Slay the Spire 2 Tier List & Tier Lists | v0.107.0 Beta',
+  title: 'Slay the Spire 2 Tier List & Tier Lists | v0.108.0 Beta',
   description:
-    'Use the Slay the Spire 2 tier list hub for patch-aware tier lists covering characters, beginner stability, archetypes, cards, relics, builds, and the current v0.107.0 beta patch cycle.',
+    'Use the Slay the Spire 2 tier list hub for patch-aware tier lists covering characters, beginner stability, archetypes, cards, relics, builds, and the current v0.108.0 beta patch cycle.',
   alternates: {
     canonical: '/tier-lists',
   },
   openGraph: {
     title: 'Slay the Spire 2 Tier List & Tier Lists',
     description:
-      'Character, beginner, archetype, card, relic, build, and patch-aware tier guidance for Slay the Spire 2 with conservative recommendations tied to the current v0.107.0 beta cycle.',
+      'Character, beginner, archetype, card, relic, build, and patch-aware tier guidance for Slay the Spire 2 with conservative recommendations tied to the current v0.108.0 beta cycle.',
   },
 };
 
@@ -22,7 +22,7 @@ const heroLinks = [
   { label: 'Cards', href: '/cards' },
   { label: 'Relics', href: '/relics' },
   { label: 'Patch notes', href: '/patches' },
-  { label: 'Latest beta patch', href: '/news/slay-the-spire-2-beta-patch-v0-107-0-stability-and-defect-update' },
+  { label: 'Latest beta patch', href: '/news/slay-the-spire-2-beta-patch-v0-108-0-modding-multiplayer-and-current-beta-anchor' },
 ];
 
 const sectionData = [
@@ -61,14 +61,14 @@ const sectionData = [
         <p className="mt-3 text-sm text-slate-400">
           Applicable when your goal is repeatable act-one and act-two stability. Once your runs stop collapsing to
           early mistakes, move into the builds hub for more specific archetype calls, or check the current patch hub if
-          your old beginner route depended on pre-v0.107 assumptions.
+          your old beginner route depended on pre-v0.108 assumptions.
         </p>
       </>
     ),
     calls: [
       { label: 'Starter builds', href: '/builds' },
       { label: 'Character card primers', href: '/cards' },
-      { label: 'Latest beta notes', href: '/news/slay-the-spire-2-beta-patch-v0-107-0-stability-and-defect-update' },
+      { label: 'Latest beta notes', href: '/news/slay-the-spire-2-beta-patch-v0-108-0-modding-multiplayer-and-current-beta-anchor' },
     ],
   },
   {
@@ -127,7 +127,7 @@ export default function TierListsPage() {
         <p className="text-lg text-slate-200">
           Use this Slay the Spire 2 tier list page as a current-patch index for tier lists by hero strength, new
           player stability, archetype resilience, card decisiveness, and retest priority. Each section points back to
-          builds, cards, relics, patches, or the latest v0.107 beta notes so you finish with a decision instead of a
+      builds, cards, relics, patches, or the latest v0.108 beta notes so you finish with a decision instead of a
           flat ranking.
         </p>
         <nav aria-label="Tier list decision links" className="flex flex-wrap gap-3 text-sm">

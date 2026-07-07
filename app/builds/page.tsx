@@ -6,20 +6,20 @@ import { siteAssetUrl } from '@/shared/siteAssets';
 import { OrganizationSchema, VideoGameSchema, WebsiteSchema } from '@/app/schema';
 
 export const metadata: Metadata = {
-  title: 'Slay the Spire 2 Builds v0.107.0: Best Current Builds by Character',
+  title: 'Slay the Spire 2 Builds v0.108.0: Best Current Builds by Character',
   description:
-    'Find current Slay the Spire 2 builds for the active v0.107.0 Early Access cycle, with character build paths and links to patch notes, cards, and relic references.',
+    'Find current Slay the Spire 2 builds for the active v0.108.0 Early Access cycle, with character build paths and links to patch notes, cards, and relic references.',
   alternates: {
     canonical: '/builds',
   },
   openGraph: {
-    title: 'Slay the Spire 2 Builds v0.107.0: Best Current Builds by Character',
+    title: 'Slay the Spire 2 Builds v0.108.0: Best Current Builds by Character',
     description:
-      'Best current Slay the Spire 2 builds for the active v0.107.0 Early Access cycle, with character build paths and links to patch notes, cards, and relic references.',
+      'Best current Slay the Spire 2 builds for the active v0.108.0 Early Access cycle, with character build paths and links to patch notes, cards, and relic references.',
   },
 };
 
-const CURRENT_PATCH = 'v0.107.0';
+const CURRENT_PATCH = 'v0.108.0';
 
 const QUICK_START_LINKS = [
   {
@@ -89,9 +89,9 @@ const RESOURCE_CARDS = [
     badge: 'Patches',
   },
   {
-    href: '/news/slay-the-spire-2-beta-patch-v0-107-0-stability-and-defect-update',
+    href: '/news/slay-the-spire-2-beta-patch-v0-108-0-modding-multiplayer-and-current-beta-anchor',
     title: 'Latest beta patch notes',
-    copy: 'Start with the current v0.107.0 beta notes, then decide which build assumptions need retesting.',
+    copy: 'Start with the current v0.108.0 beta notes, then decide which build assumptions need retesting.',
     badge: 'Patch',
   },
   {
@@ -256,7 +256,7 @@ export default function BuildsPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-forge-black/80 to-forge-black" />
           <div className="relative z-10 container mx-auto flex h-full flex-col justify-center gap-6 px-4 py-12 text-white">
             <p className="text-xs uppercase tracking-[0.4em] text-molten-orange">Best builds · patch {CURRENT_PATCH}</p>
-            <h1 className="max-w-4xl text-4xl font-bold leading-tight md:text-5xl">Slay the Spire 2 builds for v0.107.0</h1>
+            <h1 className="max-w-4xl text-4xl font-bold leading-tight md:text-5xl">Slay the Spire 2 builds for v0.108.0</h1>
             <p className="max-w-3xl text-base leading-relaxed text-steel-blue md:text-lg">
               Find the best current Slay the Spire 2 builds for the official {CURRENT_PATCH} scope, then jump straight into a build guide, a beginner-friendly route, or a patch-aware retest path by character.
             </p>

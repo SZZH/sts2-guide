@@ -7,11 +7,11 @@ import { siteAssetUrl } from '@/shared/siteAssets';
 export const metadata: Metadata = {
   title: 'StS2 Guide: Slay the Spire 2 Builds, Tips, Cards, and Relics Database',
   description:
-    'StS2 guide hub for Slay the Spire 2 builds, starter tips, mechanics, and searchable cards/relics/potions, including the official v0.107.0 beta watchlist.',
+    'StS2 guide hub for Slay the Spire 2 builds, starter tips, mechanics, and searchable cards/relics/potions, including the official v0.108.0 beta watchlist.',
   openGraph: {
     title: 'StS2 Guide Hub: Slay the Spire 2 Builds, Tips, Cards, Relics',
     description:
-      'Find beginner routes, mechanics explanations, patch analysis, and official v0.107.0 beta notes in one place.',
+      'Find beginner routes, mechanics explanations, patch analysis, and official v0.108.0 beta notes in one place.',
   },
 };
 
@@ -33,7 +33,7 @@ export default function HomePage() {
       href: '/patches',
       badge: 'Patch',
       title: 'Patch Impact',
-      description: 'Live tracker for official beta notes and which strategies need a retest after v0.107.0.',
+      description: 'Live tracker for official beta notes and which strategies need a retest after v0.108.0.',
     },
     {
       href: '/characters',
@@ -44,7 +44,7 @@ export default function HomePage() {
   ];
 
   const trustSignals = [
-    { label: 'Updated for beta v0.107.0', detail: 'Built from official Steam notes first' },
+    { label: 'Updated for beta v0.108.0', detail: 'Built from official Steam notes first' },
     { label: 'Verified daily', detail: 'Community testing + patch metadata' },
     { label: 'Focus: decisions, not lore', detail: 'CTA routing + this week highlights always stay aligned' },
   ];
@@ -58,8 +58,8 @@ export default function HomePage() {
     },
     {
       href: '/patches',
-      title: 'Patch Impact — v0.107 retest list',
-      summary: 'Start with the current stability-heavy beta notes and the latest Aeonglass, Regent, Necrobinder, and Ironclad retest hooks before trusting older build assumptions.',
+      title: 'Patch Impact — v0.108 retest list',
+      summary: 'Start with the current beta notes and the latest multiplayer, Regent, Silent, Defect, and Doom retest hooks before trusting older build assumptions.',
       tag: 'Patch',
     },
     {
@@ -99,7 +99,7 @@ export default function HomePage() {
             <h1 className="font-heading text-5xl md:text-7xl font-bold text-white">Slay the Spire 2</h1>
             <p className="max-w-2xl text-base md:text-xl text-steel-blue">
               Skip the noise. This page routes you straight to the builds, guides, patches, and card lookup
-              tailored to beta v0.107.0 watchlist notes and the current Early Access narrative.
+              tailored to beta v0.108.0 watchlist notes and the current Early Access narrative.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link

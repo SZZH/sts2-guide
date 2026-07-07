@@ -199,6 +199,82 @@ export interface NewsArticle {
 
 export const NEWS_ARTICLES: NewsArticle[] = [
   {
+    slug: 'slay-the-spire-2-beta-patch-v0-108-0-modding-multiplayer-and-current-beta-anchor',
+    title: 'Slay the Spire 2 Beta Patch v0.108.0: Modding Fixes, Multiplayer Cards, and the New Current Beta Anchor',
+    excerpt:
+      'Official v0.108.0 beta notes are now the active patch anchor, adding a large round of fixes, multiplayer card support, modding cleanup, and enough balance movement that older v0.107 build assumptions should be treated as retest material rather than current truth.',
+    date: '2026-06-19',
+    category: 'Analysis',
+    readTime: '10 min',
+    featured: true,
+    image: 'https://clan.fastly.steamstatic.com/images/44971832/14c801fb4b18c99b5ae4ba9b03858d9f5bc971d5.png',
+    url: 'https://store.steampowered.com/news/app/2868840/view/710026912607505280',
+    source: 'Steam News',
+    sourceType: 'internal',
+    updatedAt: '2026-07-07',
+    intro: [
+      'v0.108.0 is now the current beta anchor. Mega Crit uses this patch to push a broader package than v0.107.0: bug fixes, multiplayer additions, modding support cleanup, UX improvements, and targeted balance changes across multiple characters.',
+      'That is enough to trigger another freshness sync across the site. The safest move is to shift homepage, builds, patch hub, tier framing, and sitemap priority language onto v0.108.0 first, then keep deeper meta claims conservative until repeated runs confirm what the new multiplayer and balance layer actually changes.',
+    ],
+    sections: [
+      {
+        heading: 'Official source of truth: v0.108.0 replaces v0.107.0 as the current beta anchor',
+        paragraphs: [
+          'The operational fact is simple: the active official beta scope is no longer v0.107.0. It is now v0.108.0.',
+          'That matters because every patch hub, build summary, and tier framing page should begin from the newest official beta notes, especially when the patch includes both systems changes and fresh card content.',
+        ],
+        bullets: [
+          'Current beta scope: v0.108.0',
+          'Patch posture: multiplayer additions, modding fixes, UX cleanup, performance work, and targeted balance changes',
+          'Site action: move current-version routing first, then retest specific build assumptions second',
+        ],
+      },
+      {
+        heading: 'What changed enough to matter in v0.108.0',
+        paragraphs: [
+          'The notes are not just another small balance nudge. Mega Crit adds a new batch of multiplayer cards across multiple classes, continues cleanup around modded saves and multiplayer version conflicts, and moves several cards, relics, enemies, and Doom interactions enough that old patch language should not stay frozen on v0.107.0.',
+          'That does not mean every build and tier page needs a hard rewrite today, but it does mean any page still presenting v0.107.0 as the current decision layer is now factually stale.',
+        ],
+        bullets: [
+          'General follow-up: end-of-turn/Doom ordering and Regen Potion interactions change edge-case outcomes',
+          'Character touchpoints: Ironclad, Silent, Regent, Necrobinder, and Defect all receive concrete retest hooks',
+          'Multiplayer touchpoints: new cards and co-op fixes justify keeping patch guidance adjacent to issue triage',
+        ],
+      },
+      {
+        heading: 'Why the modding and multiplayer layer matters anyway',
+        paragraphs: [
+          'A big share of the notes is about modding, multiplayer state correctness, save behavior, and user-facing error handling. That matters because a lot of “did this patch change my run?” questions are really version-conflict, co-op, or mod-state questions in disguise rather than pure balance questions.',
+          'For the site, that means patch coverage should keep separating strategy changes from issue and environment changes instead of flattening everything into one generic patch recap.',
+        ],
+        bullets: [
+          'Use v0.108.0 as a version and retest update, not as proof that every tier call is settled',
+          'Keep known-issues, patch notes, and build retest paths adjacent',
+          'Treat multiplayer and modding notes as player-facing decision support, not just developer trivia',
+        ],
+      },
+      {
+        heading: 'What this site should update now',
+        paragraphs: [
+          'The right minimum action is to publish one v0.108.0 current-patch analysis page and move homepage, builds hub, tier list hub, patch hub, and sitemap priority language onto the new version anchor.',
+          'That keeps the site current without pretending we already have enough run-proof to make sweeping new tier claims.',
+        ],
+        bullets: [
+          'Publish one current v0.108.0 patch analysis page',
+          'Update homepage, builds, tier lists, patch hub, and news priority links to v0.108.0',
+          'Keep deeper build and tier takeaways watchlist-first until more run evidence lands',
+        ],
+      },
+    ],
+    relatedLinks: [
+      { href: '/patches', label: 'Open the patch hub for the current v0.108.0 context' },
+      { href: '/builds', label: 'Re-check builds only after the new version facts are clear' },
+      { href: '/tier-lists', label: 'Keep tier calls conservative while v0.108.0 settles' },
+      { href: '/news/slay-the-spire-2-beta-patch-v0-107-0-stability-and-defect-update', label: 'Compare the previous v0.107 beta cycle' },
+      { href: '/news/slay-the-spire-2-may-bug-fixes-main-branch', label: 'Keep main-branch bug fixes separate from current beta notes' },
+    ],
+  },
+  {
     slug: 'slay-the-spire-2-beta-patch-v0-107-0-stability-and-defect-update',
     title: 'Slay the Spire 2 Beta Patch v0.107.0: Stability First, Defect Animation, and the New Current Beta Anchor',
     excerpt:
