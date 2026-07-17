@@ -15,6 +15,36 @@
 - 同一天内允许多次更新，按时间倒序追加。
 - 每条更新至少包含：已完成事项、未完成事项、下一步动作。
 
+### 2026-07-17 10:45
+- 观察：今天跨天后已按规则重跑实时任务。执行前已核对 `00-dashboard.md` 与 `01-daily-log.md`，上一轮完整闭环停留在 `2026-07-07 17:10`，所以四端口径与本地验证都必须重新取证，不能复用上次结果。
+- 当前情况分析：
+  - 站点可用性：`DONE`，`https://sts2guide.com/` 返回 `HTTP 200`（`2026-07-17 10:43 CST`）。
+  - Vercel 浏览器登录态补采（`Last 7 Days / Production`，时间范围可见 `Jul 10, 10:00 - Jul 17, 10:59`）：`801 Visitors (-9%) / 1,184 Page Views (-9%) / Bounce Rate 86% (+1%)`。Top Pages=`/cards 424`、`/ 61`、`/guides 32`、`/builds 30`、`/guides/ironclad-early-build 22`、`/patches 21`、`/characters 20`。Referrers=`google.com 135`、`bing.com 9`、`duckduckgo.com 9`、`ecosia.org 2`、`search.brave.com 2`、`cn.bing.com 1`、`coccoc.com 1`。Countries=`Singapore 68%`、`United States of America 14%`、`People's Republic of China 8%`、`Canada 2%`、`United Kingdom 2%`。Devices=`Desktop 90% / Mobile 10% / Tablet <0.5%`。OS=`Windows 80% / GNU/Linux 8% / Android 6% / iOS 5% / Mac 2%`。
+  - GSC（3 个月 / Web，浏览器登录态可达，更新时间约 `4 小时前`）：`1,150 clicks / 11万 impressions / 1% CTR / 9.1 Avg position`。Top 查询=`sts2 guide (129/811)`、`slay the spire 2 guide (44/2,431)`、`sts2 guides (39/135)`、`hammer time slay the spire 2 (37/495)`、`sts 2 guide (33/247)`、`hammer time sts2 (17/279)`。Top 页面=`/ 347/7,821`、`/cards/hammer_time 126/4,801`、`/news/slay-the-spire-2-known-issues-and-fixes 118/14,240`、`/news/slay-the-spire-2-steam-deck-performance-guide 113/11,452`、`/cards 64/6,281`、`/builds 36/1,746`。Top 国家=`美国 445/52,337`、`英国 92/6,726`、`加拿大 79/7,901`、`德国 69/3,648`、`澳大利亚 64/5,158`、`荷兰 27/2,768`、`新加坡 22/1,558`。设备=`桌面 661/75,133`、`移动设备 478/34,841`、`平板电脑 11/324`。搜索结果呈现=`无数据`。
+  - GSC 索引覆盖 / 结构化结果：`98` 个网页已编入索引、`709` 个网页未编入索引；原因头部为 `已发现 - 尚未编入索引 672`、`已抓取 - 尚未编入索引 28`。`sitemap.xml` 状态 `成功`，已发现 `799` 个 URL，上次读取 `2026-07-13`。Breadcrumbs 报告 `28` 个有效网页、`0` 个无效网页。
+  - Bing Webmaster：`BLOCKED`。今天浏览器仍只打开到 `https://www.bing.com/webmasters/about?from=home` 公共介绍页，没有进入 `sts2guide.com` 登录态后台，因此未取得 `Search Performance / Index Coverage / Sitemaps / URL Inspection / IndexNow` 的当日证据。
+  - Google Trends（US / 过去 12 个月 / Web Search）：平均热度 `slay the spire 2 = 13`、`sts2 = 4`、`slay the spire 2 guide = 0`；最近周点位 `2026-07-05 = 14 / 8 / 0`、`2026-07-12 = 14 / 8 / 0`。区域头部（主词）=`Wyoming`、`West Virginia`、`New Mexico`、`Hawaii`、`Kentucky`。上升查询：主词侧=`the regent slay the spire 2`、`regent slay the spire 2`、`slay the spire 2 regent`、`slay the spire 2 patch notes`、`golden compass slay the spire 2`；`sts2` 侧=`sts2 tier list`、`sts2 regent`、`sts2 silent`、`sts2 mods`、`sts2 necrobinder`；`guide` 侧=`ironclad guide slay the spire 2`、`slay the spire 2 regent guide`、`slay the spire 2 the regent guide`、`slay the spire 2 the silent guide`、`slay the spire 2 build guide`。
+  - 官方动态：`DONE`。Steam 官方 RSS 今天可复核的最新公告仍是 `Beta Patch Notes - v0.108.0`，RSS `pubDate` 为 `Fri, 03 Jul 2026 03:26:13 +0000`；其后是 `The Neowsletter - June 2026`（`Sat, 20 Jun 2026 01:11:49 +0000`）与 `Major Update #2 - v0.107.1`（`Fri, 19 Jun 2026 00:39:31 +0000`）。今天未发现比站内 `v0.108.0` 更晚的新官方更新。
+- 已完成：
+  - `DONE` 历史核对、正式域名可用性验证、Vercel / GSC / Google Trends 当日补采。
+  - `DONE` GSC 索引覆盖、站点地图、Breadcrumbs 结构化结果补采。
+  - `DONE` 官方 Steam RSS 巡检，确认今天没有新于 `v0.108.0` 的官方更新。
+  - `DONE` 通过 `pnpm install --offline` 补齐本地依赖缺口。
+  - `DONE` `CI=true pnpm lint` 通过（0 errors，4 个既有 warnings）；`CI=true pnpm build` 通过，成功生成 `816` 个页面，`v0.108.0` news 页进入 SSG 输出。
+- 原因判断（置信度高）：和 `2026-07-07` 相比，Vercel 总量小幅回升（`747 -> 801`，`1,087 -> 1,184`），但结构性噪音仍未消失。`Singapore 68% + Desktop 90% + Windows 80% + /cards 424` 依旧和健康搜索分布不匹配，所以不能把访问量小幅回升直接解读成自然增长恢复。
+- 原因判断（置信度高）：真实搜索需求继续稳定在具体意图词，而不是广谱扩张。GSC 查询、页面与 Google Trends rising queries 仍共同集中在 `guide / hammer time / patch notes / regent / tier list / build guide` 这条链上，说明现在最重要的是维护这些承接页的时效和内链，不是继续开新批量页面。
+- 原因判断（置信度中高）：索引闸门依旧没过。虽然代理口径收录率还在高位，但当前有曝光页面占比仍只有历史 `26.7%`，且 GSC 今日未给出能推翻这一结论的新证据，所以这轮仍不具备扩量条件。
+- 原因判断（置信度高）：今天最大的执行变化不是流量，而是验证链路恢复了。上次卡在依赖下载超时，这次通过离线安装补齐 `eslint` / `next` 后，`lint + build` 已重新拿到有效证据，因此 `v0.108.0` 这轮本地闭环已完成。
+- 下一步：
+  - `P0` 继续把 Bing 视为今日唯一缺口；若后续仍无法进入登录态面板，就只能维持 `BLOCKED`，不得用历史 Bing 数据冒充今天完成。收益：补齐四端闭环；不做代价：Bing 抓取/索引异常会继续处于盲区。
+  - `P0` 在未过 30 页验证闸门前，只允许继续做词池、模板、内链微调，不推进新一批扩量。收益：避免把噪音流量误判成扩量信号；不做代价：可能继续放大低质量页面或无效收录。
+  - `P1` 继续保持内容时效巡检，重点盯官方 Steam / Steam News / 官方社媒是否出现 `v0.108.x` 后续补丁或新公告。收益：守住当前高意图词承接；不做代价：patch / guide 查询可能再次被过时页面拖 CTR。
+- DONE / IN_PROGRESS / TODO / BLOCKED：
+  - `DONE`：历史核对；当日站点可用性；Vercel / GSC / Google Trends 实时补采；GSC 索引覆盖 / sitemap / Breadcrumbs 补采；Steam RSS 官方动态巡检；依赖恢复；`lint + build` 验证。
+  - `IN_PROGRESS`：无。
+  - `TODO`：无新的代码动作；仅保留 Bing 实时口径补采与后续日常巡检。
+  - `BLOCKED`：Bing 未进入登录态数据面板，今天仍缺 `Search Performance / Index Coverage / Sitemaps / URL Inspection / IndexNow` 实时证据。
+
 ### 2026-06-09 22:43
 - 观察：今天跨天后第一轮运维已按登录态完整重跑。执行前已核对 `00-dashboard.md` 与 `01-daily-log.md`，上一轮完整闭环停留在 `2026-06-02 19:12`，所以今天所有“实时”状态都必须重置为重新采集，不能复用旧口径。
 - 当前情况分析：

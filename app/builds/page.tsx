@@ -108,6 +108,24 @@ const RESOURCE_CARDS = [
   },
 ];
 
+const HIGH_INTENT_JUMPS = [
+  {
+    href: '/cards/hammer_time',
+    label: 'Hammer Time card page',
+    description: 'One of the clearest current query winners. Open it when your Regent route depends on exact card text and payoff timing.',
+  },
+  {
+    href: '/news/slay-the-spire-2-known-issues-and-fixes',
+    label: 'Known issues guide',
+    description: 'Use this before blaming a failed run, co-op bug, or UI problem on the build itself.',
+  },
+  {
+    href: '/news/slay-the-spire-2-steam-deck-performance-guide',
+    label: 'Steam Deck guide',
+    description: 'Keep launch-platform troubleshooting close to builds so Deck players do not bounce back to search.',
+  },
+];
+
 const STATUS_TIER_HINTS = [
   {
     tier: 'Beginner',
@@ -374,6 +392,32 @@ export default function BuildsPage() {
               </Link>
             ))}
           </div>
+          <div className="rounded-2xl border border-border bg-background/50 p-5">
+            <div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
+              <div>
+                <p className="text-xs uppercase tracking-[0.4em] text-molten-orange">High-intent jumps</p>
+                <h2 className="font-heading text-2xl font-bold text-white">Open the pages people actually need next</h2>
+              </div>
+              <p className="max-w-2xl text-sm text-steel-blue">
+                These shortcuts keep patch-aware build searchers moving toward the exact card, troubleshooting, or platform answer instead of bouncing back to Google.
+              </p>
+            </div>
+            <div className="mt-5 grid gap-4 md:grid-cols-3">
+              {HIGH_INTENT_JUMPS.map((jump) => (
+                <Link
+                  key={jump.href}
+                  href={jump.href}
+                  className="rounded-2xl border border-border bg-forge-black/40 p-4 transition hover:border-molten-orange"
+                >
+                  <h3 className="font-heading text-lg font-bold text-white">{jump.label}</h3>
+                  <p className="mt-2 text-sm text-steel-blue">{jump.description}</p>
+                  <span className="mt-4 inline-flex text-xs font-semibold text-molten-orange underline decoration-dotted decoration-molten-orange/60">
+                    Open next →
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
         </section>
 
         <section className="container mx-auto px-4 py-6">
@@ -404,7 +448,7 @@ export default function BuildsPage() {
               </p>
               <div className="mt-6 flex flex-wrap gap-3 text-sm">
                 <Link
-                  href="/news/slay-the-spire-2-beta-patch-v0-105-0-aeonglass-bestiary-hotfix"
+                  href="/news/slay-the-spire-2-beta-patch-v0-108-0-modding-multiplayer-and-current-beta-anchor"
                   className="inline-flex items-center rounded-full border border-molten-orange px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-molten-orange"
                 >
                   Latest beta patch

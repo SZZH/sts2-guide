@@ -23,6 +23,7 @@ const heroLinks = [
   { label: 'Relics', href: '/relics' },
   { label: 'Patch notes', href: '/patches' },
   { label: 'Latest beta patch', href: '/news/slay-the-spire-2-beta-patch-v0-108-0-modding-multiplayer-and-current-beta-anchor' },
+  { label: 'Known issues', href: '/news/slay-the-spire-2-known-issues-and-fixes' },
 ];
 
 const sectionData = [
@@ -142,7 +143,7 @@ export default function TierListsPage() {
           ))}
         </nav>
         <div className="flex flex-wrap gap-3 text-sm">
-          <span className="rounded-full border border-slate-600 px-3 py-1">Last validated May 25, 2026</span>
+          <span className="rounded-full border border-slate-600 px-3 py-1">Last validated Jul 17, 2026</span>
           <span className="rounded-full border border-slate-600 px-3 py-1">Sources: official Steam notes · community signals</span>
           <span className="rounded-full border border-slate-600 px-3 py-1">Stability window: 14-day rolling</span>
         </div>
@@ -165,8 +166,8 @@ export default function TierListsPage() {
           <Link className="rounded-xl border border-slate-700 bg-slate-800/70 px-4 py-4 text-sm font-medium text-white transition hover:border-molten-orange" href="/patches">
             Re-check patch notes before changing rankings
           </Link>
-          <Link className="rounded-xl border border-slate-700 bg-slate-800/70 px-4 py-4 text-sm font-medium text-white transition hover:border-molten-orange" href="/cards">
-            Check cards when a tier call still feels volatile
+          <Link className="rounded-xl border border-slate-700 bg-slate-800/70 px-4 py-4 text-sm font-medium text-white transition hover:border-molten-orange" href="/news/slay-the-spire-2-known-issues-and-fixes">
+            Check known issues before blaming a tier call
           </Link>
         </div>
       </section>

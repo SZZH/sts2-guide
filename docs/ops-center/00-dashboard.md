@@ -10,15 +10,15 @@
 - `BLOCKED`：受阻（需注明原因）
 - `SKIP`：今日不做（需注明原因）
 
-## 今日状态（2026-07-07 16:51）
-- 站点可用性：`DONE`（`https://sts2guide.com/` 返回 `HTTP 200`，采集时间 `2026-07-07 16:46 CST`）
-- 流量总览（Vercel）：`DONE`（浏览器登录态补采，`Last 7 Days / Production`：`747 Visitors (-6%) / 1,087 Page Views (-7%) / Bounce Rate 86% (+2%)`；时间范围可见 `Jun 30, 16:00 - Jul 7, 16:59`；Top Pages=`/cards 544`、`/ 56`、`/builds 25`、`/guides 20`、`/news/slay-the-spire-2-known-issues-and-fixes 17`、`/characters 14`、`/guides/ironclad-early-build 13`；Countries=`Singapore 79% / United States 9% / People's Republic of China 3% / Germany 2% / United Kingdom 1%`；Devices=`Desktop 92% / Mobile 8% / Tablet <0.5%`；OS=`Windows 88% / Android 5% / iOS 4% / GNU/Linux 2% / Mac 2%`；Top Referrers=`google.com 78`、`duckduckgo.com 17`、`search.brave.com 5`、`ecosia.org 4`、`bing.com 3`）
-- 搜索总览（GSC）：`DONE`（3 个月 / Web，浏览器登录态可达：`1,181 clicks / 11万 impressions / 1.1% CTR / 9.1 Avg position`；Top queries=`sts2 guide 139/926`、`sts2 guides 39/155`、`slay the spire 2 guide 38/2,208`、`hammer time slay the spire 2 35/543`、`sts 2 guide 33/274`）
-- Bing 总览：`BLOCKED`（当前仅打开到未登录 `Bing Webmaster Tools` 公开介绍页，未拿到 `sts2guide.com` 当日 Search Performance / Index Coverage / Sitemap / URL Inspection 实时口径；不得复用 `2026-06-09` 历史值冒充今日结果）
-- 趋势总览（Google Trends）：`DONE`（US / 过去 12 个月 / Web Search：平均热度 `slay the spire 2 = 13`、`sts2 = 4`、`slay the spire 2 guide = 0`；近期周点位可见 `2026-07-05 = 14 / 9 / 0`；上升查询含 `regent slay the spire 2`、`the regent`、`slay the spire 2 patch notes`、`sts2 cards`、`sts2 tier list`、`slay the spire 2 regent guide`）
-- 生产发布总览：`IN_PROGRESS`（`v0.108.0` 最小时效同步代码已落地；`lint + build` 尚未完成有效验证，当前被 `pnpm install` 依赖下载超时阻塞）
-- 线上结构验证：`IN_PROGRESS`（已新增 `v0.108.0` news 数据并更新 `首页 / builds / patches / tier-lists / sitemap` 版本锚点；待 `lint + build` 成功后才可转 `DONE`）
-- 游戏动态总览：`DONE`（官方 Steam News RSS 最新可复核公告已推进到 `Beta Patch Notes - v0.108.0`（`2026-06-19`）；今天已识别出站内仍停留在 `v0.107.0` 的时效缺口）
+## 今日状态（2026-07-17 10:45）
+- 站点可用性：`DONE`（`https://sts2guide.com/` 返回 `HTTP 200`，采集时间 `2026-07-17 10:43 CST`）
+- 流量总览（Vercel）：`DONE`（浏览器登录态补采，`Last 7 Days / Production`：`801 Visitors (-9%) / 1,184 Page Views (-9%) / Bounce Rate 86% (+1%)`；时间范围可见 `Jul 10, 10:00 - Jul 17, 10:59`；Top Pages=`/cards 424`、`/ 61`、`/guides 32`、`/builds 30`、`/guides/ironclad-early-build 22`、`/patches 21`、`/characters 20`；Countries=`Singapore 68% / United States of America 14% / People's Republic of China 8% / Canada 2% / United Kingdom 2%`；Devices=`Desktop 90% / Mobile 10% / Tablet <0.5%`；OS=`Windows 80% / GNU/Linux 8% / Android 6% / iOS 5% / Mac 2%`；Top Referrers=`google.com 135`、`bing.com 9`、`duckduckgo.com 9`、`ecosia.org 2`、`search.brave.com 2`、`cn.bing.com 1`、`coccoc.com 1`）
+- 搜索总览（GSC）：`DONE`（3 个月 / Web，浏览器登录态可达：`1,150 clicks / 11万 impressions / 1% CTR / 9.1 Avg position`；Top queries=`sts2 guide 129/811`、`slay the spire 2 guide 44/2,431`、`sts2 guides 39/135`、`hammer time slay the spire 2 37/495`、`sts 2 guide 33/247`；Top pages=`/ 347/7,821`、`/cards/hammer_time 126/4,801`、`known issues 118/14,240`、`steam deck guide 113/11,452`、`/builds 36/1,746`）
+- Bing 总览：`BLOCKED`（当前仍只打开到 `https://www.bing.com/webmasters/about?from=home` 公共介绍页，未拿到 `sts2guide.com` 当日 `Search Performance / Index Coverage / Sitemap / URL Inspection / IndexNow` 实时口径；不得复用历史值冒充今日结果）
+- 趋势总览（Google Trends）：`DONE`（US / 过去 12 个月 / Web Search：平均热度 `slay the spire 2 = 13`、`sts2 = 4`、`slay the spire 2 guide = 0`；近期周点位 `2026-07-05 = 14 / 8 / 0`、`2026-07-12 = 14 / 8 / 0`；上升查询含 `the regent slay the spire 2`、`slay the spire 2 patch notes`、`sts2 tier list`、`sts2 mods`、`slay the spire 2 build guide`）
+- 生产发布总览：`DONE`（`pnpm install --offline` 已补齐依赖，`CI=true pnpm lint` 与 `CI=true pnpm build` 已恢复通过；本轮生成 `816` 个页面）
+- 线上结构验证：`DONE`（`v0.108.0` news 数据、`首页 / builds / patches / tier-lists / sitemap` 版本锚点已在本地构建中通过验证）
+- 游戏动态总览：`DONE`（官方 Steam News RSS 今天最新可复核公告仍为 `Beta Patch Notes - v0.108.0`，`pubDate=2026-07-03 03:26 UTC`；今天未发现比站内口径更晚的新官方更新）
 - 外链发布总览：`SKIP`（今天主线是监测与版本时效同步，不是分发）
 - 社媒互动总览：`SKIP`（今天主线不是社媒巡检）
 
@@ -30,9 +30,20 @@
 
 ## 今日异常
 - [ ] 无
-- [x] 有（Vercel 访问层仍呈现 `Singapore 79% + Desktop 92% + Windows 88% + /cards 544` 的异常结构；GSC 与 Trends 只支持“需求仍在，但偏具体 patch / regent / cards / tier list 意图”，不支持“真实搜索爆发”；Bing 今日实时口径则因未进入登录态数据页而缺失）
+- [x] 有（Vercel 访问层仍呈现 `Singapore 68% + Desktop 90% + Windows 80% + /cards 424` 的异常结构；GSC 与 Trends 只支持“具体意图词持续有需求”，不支持“真实搜索爆发”；Bing 今日实时口径仍因未进入登录态数据页而缺失）
 
 ## 今日动作状态（必须完整）
+- `DONE`: 2026-07-17 10:43 执行前历史核对（`01-daily-log.md` + `00-dashboard.md`），确认上一轮完整闭环停留在 `2026-07-07 17:10`，今天跨天后必须重跑四端实时运维
+- `DONE`: 2026-07-17 10:43 正式域名可用性验证：`https://sts2guide.com/` 返回 `HTTP 200`
+- `DONE`: 2026-07-17 10:44 Vercel 浏览器登录态补采（`Last 7 Days / Production`：`801 Visitors / 1,184 PV / 86% Bounce`；Top Pages / Referrers / Countries / Devices / Operating Systems 已回填）
+- `DONE`: 2026-07-17 10:44 GSC 浏览器登录态补采（3 个月 / Web：`1,150 clicks / 11万 impressions / 1% CTR / 9.1 Avg position`；Top queries / pages / countries / devices 已回填）
+- `DONE`: 2026-07-17 10:44 GSC 索引覆盖与结构化结果补采（`98 indexed / 709 not indexed`；`sitemap.xml=Success / 799 URLs discovered / last read 2026-07-13`；Breadcrumbs=`28 valid / 0 invalid`）
+- `DONE`: 2026-07-17 10:44 Google Trends 实时采集（US / 过去 12 个月 / Web Search：平均热度 `13 / 4 / 0`；`2026-07-05` 与 `2026-07-12` 周点位 `14 / 8 / 0`；上升查询含 `the regent slay the spire 2`、`slay the spire 2 patch notes`、`sts2 tier list`、`slay the spire 2 build guide`）
+- `BLOCKED`: 2026-07-17 10:44 Bing Webmaster 实时采集未完成：当前仍只打开到公共介绍页，未进入 `sts2guide.com` 数据面板（影响：今日 Bing `Search Performance / Index Coverage / Sitemaps / URL Inspection / IndexNow` 口径缺失）
+- `DONE`: 2026-07-17 10:45 官方动态巡检（Steam 官方 RSS 今天最新可复核公告仍为 `Beta Patch Notes - v0.108.0`，`pubDate=2026-07-03 03:26:13 +0000`；未发现更晚官方更新）
+- `DONE`: 2026-07-17 10:45 `pnpm install --offline` 补齐依赖缺口，恢复 `eslint` 与 `next` 可执行
+- `DONE`: 2026-07-17 10:45 `CI=true pnpm lint` 通过（0 errors，4 个既有 warnings）
+- `DONE`: 2026-07-17 10:45 `CI=true pnpm build` 通过，成功生成 `816` 个页面，`v0.108.0` news 页进入 SSG 输出
 - `DONE`: 2026-07-07 16:46 执行前历史核对（`01-daily-log.md` + `00-dashboard.md`），确认上一轮完整闭环停留在 `2026-06-09 22:43`，今天跨天后必须重跑四端实时运维
 - `DONE`: 2026-07-07 16:46 正式域名可用性验证：`https://sts2guide.com/` 返回 `HTTP 200`
 - `DONE`: 2026-07-07 16:47 Vercel 浏览器登录态补采（`Last 7 Days / Production`：`747 Visitors / 1,087 PV / 86% Bounce`；Top Pages / Referrers / Countries / Devices / Operating Systems 已回填）
